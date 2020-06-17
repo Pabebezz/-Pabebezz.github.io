@@ -81,22 +81,22 @@
 
 
 
-<meta name="description" content="深度学习环境搭建">
+<meta name="description" content="深度学习环境与hexoBlog搭建">
 <meta name="keywords" content="tutorial">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu下深度学习环境与blog搭建">
-<meta property="og:url" content="https://pabebezz.github.io/article/46397481/index.html">
+<meta property="og:title" content="Ubuntu18.04下深度学习环境与blog搭建">
+<meta property="og:url" content="https://pabebezz.github.io/article/acdf71cc/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="深度学习环境搭建">
+<meta property="og:description" content="深度学习环境与hexoBlog搭建">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://pabebezz.github.io/article/46397481/GPU驱动.png">
-<meta property="og:image" content="https://pabebezz.github.io/article/46397481/深度学习环境.png">
-<meta property="og:image" content="https://pabebezz.github.io/article/46397481/更新node版本.png">
-<meta property="og:updated_time" content="2020-06-16T10:24:34.000Z">
+<meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/GPU驱动.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/深度学习环境.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/更新node版本.png">
+<meta property="og:updated_time" content="2020-06-17T01:49:14.606Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu下深度学习环境与blog搭建">
-<meta name="twitter:description" content="深度学习环境搭建">
-<meta name="twitter:image" content="https://pabebezz.github.io/article/46397481/GPU驱动.png">
+<meta name="twitter:title" content="Ubuntu18.04下深度学习环境与blog搭建">
+<meta name="twitter:description" content="深度学习环境与hexoBlog搭建">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/acdf71cc/GPU驱动.png">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="https://pabebezz.github.io/article/46397481/">
+  <link rel="canonical" href="https://pabebezz.github.io/article/acdf71cc/">
 
 
 <meta name="google-site-verification" content="skUdQN9cQrZuUJydKG0ivzB90q5kyLJMU5i5dt82GH4">
@@ -137,7 +137,7 @@
 
 
 
-  <title>Ubuntu下深度学习环境与blog搭建 | Pabebe's Blog</title>
+  <title>Ubuntu18.04下深度学习环境与blog搭建 | Pabebe's Blog</title>
   
 
 
@@ -306,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/46397481/">
+    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/acdf71cc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pabebe">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu下深度学习环境与blog搭建</h1>
+          <h1 class="post-title" itemprop="name headline">Ubuntu18.04下深度学习环境与blog搭建</h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-18T12:49:46+08:00">
-                2019-12-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-17T09:45:23+08:00">
+                2020-06-17
               </time>
             
 
@@ -419,7 +419,7 @@
 
           
               <div class="post-description">
-                  深度学习环境搭建
+                  深度学习环境与hexoBlog搭建
               </div>
           
 
@@ -446,7 +446,7 @@
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ubuntu-drivers devices</span><br><span class="line">sudo apt <span class="keyword">install</span>  nvidia-driver-<span class="number">440</span>(所推荐的驱动包)</span><br></pre></td></tr></table></figure>
 <p>or</p>
 <p>打开 Software &amp; Updates，选择 Additional Drivers，一般需要加载一定时间，会出现多个驱动，选择最新的也就是版本号最大的 NVIDIA-Driver，点击应用，需要等待一点时间生成应用，完成便成功安装了驱动</p>
-<p><img src="/article/46397481/GPU驱动.png" alt="image-20200523233440188"></p>
+<p><img src="/article/acdf71cc/GPU驱动.png" alt="image-20200523233440188"></p>
 <p>查看NVIDIA驱动版本</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi </span><br><span class="line"># 显示驱动版本<span class="number">440</span>和驱动的CUDA版本<span class="number">10.2</span>（和运行CUDA不同）</span><br></pre></td></tr></table></figure>
 <p>or</p>
@@ -520,7 +520,7 @@ show_channel_urls: true
 <p> <strong>Torch not compiled with CUDA enabled</strong></p>
 <p>不知道是什么原因，清华源下载的是cpu版pytorch</p>
 <p>我认为是没有检测到安装好的英伟达驱动程序，所以检查好驱动版本后重启电脑，重新安装pytorch（删掉这个虚拟环境，再来）。</p>
-<p><img src="/article/46397481/深度学习环境.png" alt="深度学习环境"></p>
+<p><img src="/article/acdf71cc/深度学习环境.png" alt="深度学习环境"></p>
 <h1 id="IDE-VScode"><a href="#IDE-VScode" class="headerlink" title="IDE-VScode"></a>IDE-VScode</h1><p>推荐Visual Studio Code，轻量快速，在终端激活环境，便可直接运行程序</p>
 <p>##安装</p>
 <p>1.进入官网，直接下载压缩包。（我的是64位）<br> <a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener">https://code.visualstudio.com/Download</a></p>
@@ -567,7 +567,7 @@ show_channel_urls: true
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br></pre></td></tr></table></figure>
 <h1 id="Bolg"><a href="#Bolg" class="headerlink" title="Bolg"></a>Bolg</h1><p><a href="https://www.jianshu.com/p/9b2f2de68838" target="_blank" rel="noopener">ubuntu下搭建Hexo+GitHub博客</a> </p>
 <p><a href="https://blog.csdn.net/u010277553/article/details/80938829" target="_blank" rel="noopener">Ubuntu16 升级nodejs版本</a></p>
-<p><img src="/article/46397481/更新node版本.png" alt="更新node版本"></p>
+<p><img src="/article/acdf71cc/更新node版本.png" alt="更新node版本"></p>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="https://www.jianshu.com/p/552bb5b5c03b" target="_blank" rel="noopener">Ubuntu 搭建深度学习环境</a>（直接安装anaconda，就不需要再繁琐安装cuda、cudann了）</p>
 <p><a href="https://blog.csdn.net/meiLin_Ya/article/details/103126921" target="_blank" rel="noopener">Pycharm没有菜单栏</a></p>
 <p><a href="https://blog.csdn.net/watermelon1123/article/details/88122020" target="_blank" rel="noopener">conda安装Pytorch下载过慢解决办法(11月26日更新ubuntu下pytorch1.3安装方法)</a></p>
@@ -597,12 +597,12 @@ show_channel_urls: true
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>Ubuntu下深度学习环境与blog搭建</p>
+  <p><span>本文标题:</span>Ubuntu18.04下深度学习环境与blog搭建</p>
   <p><span>文章作者:</span>Pabebe</p>
-  <p><span>发布时间:</span>2019年12月18日 - 12:49:46</p>
-  <p><span>最后更新:</span>2020年06月16日 - 18:24:34</p>
-  <p><span>原始链接:</span><a href="/article/46397481/" title="Ubuntu下深度学习环境与blog搭建">https://pabebezz.github.io/article/46397481/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/46397481/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2020年06月17日 - 09:45:23</p>
+  <p><span>最后更新:</span>2020年06月17日 - 09:49:14</p>
+  <p><span>原始链接:</span><a href="/article/acdf71cc/" title="Ubuntu18.04下深度学习环境与blog搭建">https://pabebezz.github.io/article/acdf71cc/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/acdf71cc/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -656,8 +656,8 @@ show_channel_urls: true
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/article/2a1314f5/" rel="next" title="英语笔试笔记">
-                <i class="fa fa-chevron-left"></i> 英语笔试笔记
+              <a href="/article/4b571488/" rel="next" title="paperMemo-3dShapeMeasurement">
+                <i class="fa fa-chevron-left"></i> paperMemo-3dShapeMeasurement
               </a>
             
           </div>
@@ -666,8 +666,8 @@ show_channel_urls: true
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/article/8ce3e425/" rel="prev" title="操作系统总结">
-                操作系统总结 <i class="fa fa-chevron-right"></i>
+              <a href="/article/e3c77110/" rel="prev" title="paperMemo-图片质量评价指标">
+                paperMemo-图片质量评价指标 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
