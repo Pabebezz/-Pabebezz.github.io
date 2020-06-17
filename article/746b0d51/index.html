@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="study notes,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pabebe's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="定义计算机利用相机和计算能力来感知现实世界">
+<meta name="keywords" content="study notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机视觉">
+<meta property="og:url" content="https://pabebezz.github.io/article/746b0d51/index.html">
+<meta property="og:site_name" content="Pabebe&#39;s Blog">
+<meta property="og:description" content="定义计算机利用相机和计算能力来感知现实世界">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pabebezz.github.io/article/746b0d51/相关学科.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/746b0d51/大致流程.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/746b0d51/文献期刊级别.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/746b0d51/常见激活函数.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/746b0d51/数据预处理.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/746b0d51/批归一化.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/746b0d51/动量梯度下降.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/746b0d51/牛顿动量.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/746b0d51/牛顿动量2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/746b0d51/动量梯度下降比较.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/746b0d51/任务.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/746b0d51/教学大纲.png">
+<meta property="og:updated_time" content="2020-06-16T10:24:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机视觉">
+<meta name="twitter:description" content="定义计算机利用相机和计算能力来感知现实世界">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/746b0d51/相关学科.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://pabebezz.github.io/article/746b0d51/">
+
+
+<meta name="google-site-verification" content="skUdQN9cQrZuUJydKG0ivzB90q5kyLJMU5i5dt82GH4">
+<meta name="google-site-verification" content="hv7_j7TFqTy83_mHkj5EDOJhzIl0_tusCnHJBxNOfAo">
+
+
+
+
+
+
+  <title>计算机视觉 | Pabebe's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"> 
+       
+    </div>
+ 
+
+      <!-- change "fork me on github" -->
+     <!--  <a href="https://github.com/Pabebezz" target="_blank" ><img style="position: absolute; top: 0; right: 1200; border: 0;"  width="149" height="149" src="/images/forkme_left_green.png" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a> -->
+     <a href="https://github.com/Pabebezz" class="github-corner" target="_blank" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #326755; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+       
+       <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pabebe's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">业精于勤，荒于嬉；行成于思，毁于随。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/746b0d51/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pabebe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pabebe's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机视觉</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-18T19:10:06+08:00">
+                2020-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Vision/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Vision</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+           
+           
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+            
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.5k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>计算机利用相机和计算能力来感知现实世界</p>
+<p><img src="/article/746b0d51/相关学科.png" alt="相关学科"></p>
+<a id="more"></a>
+<p>2.5维：在平面上浮凸出来的一个空间，可以想象是浮雕所处于的一种空间（伪3D）</p>
+<p>2.5维：在平面上浮凸出来的一个空间，可以想象是浮雕所处于的一种空间（伪3D）</p>
+<p>2.5D是从一个视角去看的，像素之间没有距离的概念，3D是从多视角去看的，有距离的概念</p>
+<p><img src="/article/746b0d51/大致流程.png" alt="大致流程"></p>
+<h1 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h1><p>传统算法</p>
+<p>HOG、金字塔、SIFT</p>
+<p>神经网络</p>
+<p>CNN</p>
+<p>数据集</p>
+<p><a href="http://www.image-net.org/" target="_blank" rel="noopener">IMAGENET</a>（李飞飞团队）<a href="https://v.qq.com/x/page/z0399f36dv1.html有关介绍" target="_blank" rel="noopener">https://v.qq.com/x/page/z0399f36dv1.html有关介绍</a></p>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><p>几何视觉（3D\2D）</p>
+<p>语义识别（分类、检测、提取）</p>
+<p><img src="/article/746b0d51/文献期刊级别.png" alt="文献期刊级别"></p>
+<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><p>图像的采样与量化</p>
+<h1 id="如何训练神经网络"><a href="#如何训练神经网络" class="headerlink" title="如何训练神经网络"></a>如何训练神经网络</h1><h2 id="关键"><a href="#关键" class="headerlink" title="关键"></a>关键</h2><p>Activation Functions<br>Data Preprocessing<br>Weight Initialization<br>Batch Normalization<br>Babysitting the Learning Process<br>Hyperparameter Optimization<br>optimization<br>Regularization<br>Transfer Learning</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>CPU vs GPU<br>Deep Learning Frameworks<br>Caffe / Caffe2<br>Theano / TensorFlow<br>Torch / PyTorch</p>
+<p><strong>TensorFlow</strong> is a safe bet for most projects. Not perfect but has  huge community, wide usage. Maybe pair with high-level wrapper  (Keras, Sonnet, etc)</p>
+<p>I think <strong>PyTorch</strong> is best for research. However still new, there can be  rough patches.</p>
+<p>Use <strong>TensorFlow</strong> for one graph over many machines</p>
+<p>Consider <strong>Caffe</strong>, <strong>Caffe2,</strong> or <strong>TensorFlow</strong> for production deployment  Consider <strong>TensorFlow</strong> or <strong>Caffe2</strong> for mobile</p>
+<h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p><img src="/article/746b0d51/常见激活函数.png" alt="常见激活函数"></p>
+<p>红色区域存在饱和(<strong>f(x)*f`(x)=0</strong>)神经元,黄色区域均为非饱和神经元</p>
+<h3 id="sigmoid激活函数"><a href="#sigmoid激活函数" class="headerlink" title="sigmoid激活函数"></a>sigmoid激活函数</h3><p>1.饱和神经元将会使得梯度消失</p>
+<p>2.Sigmoid输出不是以零为中心的</p>
+<p>3.exp() is a bit compute expensive</p>
+<p>由于使用sigmoid激活函数会造成神经网络的梯度消失和梯度爆炸问题，所以许多人提出了一些改进的激活函数，如：用ReLU、Leaky-ReLU、P-ReLU、R-ReLU、Maxout等替代sigmoid函数。</p>
+<h3 id="tanh-x-激活函数"><a href="#tanh-x-激活函数" class="headerlink" title="tanh(x)激活函数"></a>tanh(x)激活函数</h3><p>1.值均在[-1,1]之间</p>
+<p>2.以零为中心点（这点很优秀）</p>
+<p>3.仍然会在饱和时使得梯度消失</p>
+<h3 id="ReLU激活函数"><a href="#ReLU激活函数" class="headerlink" title="ReLU激活函数"></a>ReLU激活函数</h3><p>1.非饱和(在正区域)<br>2.非常计算效率<br>3.在实践中，收敛速度比sigmoid/tanh快得多(例如6x)<br>4.实际上比sigmoid更合理</p>
+<p>但是不是以零为中心点，并且容易出现死亡神经元</p>
+<h3 id="Leaky-ReLU激活函数"><a href="#Leaky-ReLU激活函数" class="headerlink" title="Leaky-ReLU激活函数"></a>Leaky-ReLU激活函数</h3><p>1.不饱和<br>2.计算效率高<br>3.在实践中比sigmoid/tanh收敛得快得多!(例如6 x)<br>4.不存在死亡神经元</p>
+<p><strong>Parametric Rectifier</strong> <strong>(PReLU)</strong>  f(x)  = max(ax, x)</p>
+<h3 id="ELU激活函数"><a href="#ELU激活函数" class="headerlink" title="ELU激活函数"></a>ELU激活函数</h3><p>1.继承ReLU的所有好处<br>2.接近于零的平均输出<br>3.负饱和状态与Leaky-ReLU相比，对<strong>噪声</strong>有一定的鲁棒性</p>
+<p>但是计算中需要exp(),意味着计算量较高</p>
+<h3 id="Maxout激活函数"><a href="#Maxout激活函数" class="headerlink" title="Maxout激活函数"></a>Maxout激活函数</h3><p>1.没有点积的基本形式——&gt;非线性？<br>2.泛化ReLU和Leaky-ReLU<br>3.线性!不饱和!没有死亡神经元!</p>
+<h3 id="实际使用"><a href="#实际使用" class="headerlink" title="实际使用"></a>实际使用</h3><p>Use <strong>ReLU</strong>. Be careful with your <strong>learning rates</strong><br>Try out Leaky ReLU / Maxout / ELU<br>Try out tanh but don’t expect much<br><strong>Don’t use sigmoid</strong></p>
+<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><p>使用PCA和数据增强使得数据以0为中心</p>
+<p><img src="/article/746b0d51/数据预处理.png" alt="数据预处理"></p>
+<p>就是尽可能的让输入和输出服从相同的分布，这样就能够避免后面层的激活函数的输出值趋向于0</p>
+<h2 id="网络参数初始化"><a href="#网络参数初始化" class="headerlink" title="网络参数初始化"></a>网络参数初始化</h2><ol>
+<li>很小的随机数（在小型神经网络中表现可以，但在深层网络存在问题）</li>
+<li>何凯明对ReLU的初始化方法</li>
+</ol>
+<h2 id="批归一化"><a href="#批归一化" class="headerlink" title="批归一化"></a>批归一化</h2><p>位置：通常插入在<strong>全连接层</strong>或<strong>卷积层</strong>之后，在非线性之前。</p>
+<p>作用：使得数据的分布更符合高斯或正态分布</p>
+<p><img src="/article/746b0d51/批归一化.png" alt="批归一化"></p>
+<h2 id="开始训练"><a href="#开始训练" class="headerlink" title="开始训练"></a>开始训练</h2><p>尝试输出每个epoch的损失值(是否下降、下降速率)、精准度</p>
+<p>尝试学习率按（一定规律）衰减</p>
+<h2 id="找到合适的超参"><a href="#找到合适的超参" class="headerlink" title="找到合适的超参"></a>找到合适的超参</h2><p>（1）交叉验证集</p>
+<p>（2）随机查找 or 网格查找(大概确定范围)</p>
+<p>（3） 正则化</p>
+<p>（4）可视化工具</p>
+<h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><h3 id="随机梯度下降"><a href="#随机梯度下降" class="headerlink" title="随机梯度下降"></a>随机梯度下降</h3><p>小批量SGD 会有噪声</p>
+<h3 id="动量梯度下降"><a href="#动量梯度下降" class="headerlink" title="动量梯度下降"></a>动量梯度下降</h3><p><img src="/article/746b0d51/动量梯度下降.png" alt="动量梯度下降"></p>
+<h3 id="牛顿动量"><a href="#牛顿动量" class="headerlink" title="牛顿动量"></a>牛顿动量</h3><p><img src="/article/746b0d51/牛顿动量.png" alt="牛顿动量"></p>
+<p><img src="/article/746b0d51/牛顿动量2.png" alt="牛顿动量"></p>
+<p><img src="/article/746b0d51/动量梯度下降比较.png" alt="动量梯度下降比较"></p>
+<p>以下算法查看大佬解析<a href="https://blog.csdn.net/willduan1/article/details/78070086" target="_blank" rel="noopener">深度学习优化算法解析(Momentum, RMSProp, Adam)</a></p>
+<h3 id="Adam适应性梯度算法"><a href="#Adam适应性梯度算法" class="headerlink" title="Adam适应性梯度算法"></a>Adam适应性梯度算法</h3><p>添加了基于每个维度的历史平方和的梯度元素的缩放</p>
+<h3 id="RMSProp"><a href="#RMSProp" class="headerlink" title="RMSProp"></a>RMSProp</h3><h3 id="L-BFGS"><a href="#L-BFGS" class="headerlink" title="L-BFGS"></a>L-BFGS</h3><p><strong>-</strong>  <strong>Usually works very well in</strong> <strong>full</strong> <strong>batch, deterministic</strong> <strong>mode</strong></p>
+<p>i.e. if you have a single, deterministic f(x) then L-BFGS will  probably work very nicely</p>
+<p>-  <strong>Does not</strong> <strong>transfer</strong> <strong>very well</strong> <strong>to</strong> <strong>mini-batch</strong> <strong>setting</strong>. Gives  bad results. Adapting L-BFGS to large-scale, stochastic  setting is an active area of research.</p>
+<h3 id="实际使用-1"><a href="#实际使用-1" class="headerlink" title="实际使用"></a>实际使用</h3><p>1.<strong>Adam</strong> is a good default choice in most cases</p>
+<p>2.If you can afford to do full batch updates then try out<br><strong>L-BFGS</strong> (and don’t forget to disable all sources of noise)</p>
+<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>主因：数据链不够大 or 多样性不足</p>
+<p>目的：提高模型泛化能力</p>
+<p>1.给损失函数增加正则项</p>
+<p>2.Dropout（随机删除）</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Activation Functions (use ReLU)<br>Data Preprocessing (images: subtract mean)<br>Weight Initialization (use Xavier init)<br>Batch Normalization (use)<br>Babysitting the Learning process<br>Hyperparameter Optimization<br>(random sample hyperparams, in log space when appropriate)</p>
+<p>Optimization</p>
+<p>​     - Momentum, RMSProp, Adam, etc</p>
+<p>- Regularization</p>
+<p>​      -  Dropout, etc</p>
+<p>-Transfer learning</p>
+<p>​       -Use this for your projects!</p>
+<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>小作业（小组的形式 各自合作共同大项目）</p>
+<p>复现一篇相关论文并完成10页的实验报告（类似论文）</p>
+<p>1、presentation部分按小组完成一个计算机视觉方向的文献（多篇）阅读，讲解并提交一份文献综述报告；<br>2、project 每个人完成一个（会下发题目），展示并讲解，提交源代码和实验报告。</p>
+<p><img src="/article/746b0d51/任务.png" alt="任务"></p>
+<p><img src="/article/746b0d51/教学大纲.png" alt="教学大纲"></p>
+<h1 id="所选论文"><a href="#所选论文" class="headerlink" title="所选论文"></a>所选论文</h1><p>Learning Efficient Single-stage Pedestrian Detectors by Asymptotic Localization Fitting</p>
+<p>论文链接：<a href="http://openaccess.thecvf.com/content_ECCV_2018/html/Wei_Liu_Learning_Efficient_Single-stage_ECCV_2018_paper.html" target="_blank" rel="noopener">http://openaccess.thecvf.com/content_ECCV_2018/html/Wei_Liu_Learning_Efficient_Single-stage_ECCV_2018_paper.html</a></p>
+<p>源代码：<a href="https://github.com/liuwei16/ALFNet" target="_blank" rel="noopener">https://github.com/liuwei16/ALFNet</a></p>
+<p>Is Faster R-CNN Doing Well for Pedestrian Detection?</p>
+<p>论文链接：<a href="https://arxiv.org/abs/1607.07032" target="_blank" rel="noopener">https://arxiv.org/abs/1607.07032</a></p>
+<p>源代码：<a href="https://github.com/zhangliliang/RPN_BF/tree/RPN-pedestrian" target="_blank" rel="noopener">https://github.com/zhangliliang/RPN_BF/tree/RPN-pedestrian</a> </p>
+<p>​               <a href="https://github.com/longcw/faster_rcnn_pytorch" target="_blank" rel="noopener">https://github.com/longcw/faster_rcnn_pytorch</a></p>
+<p>​               <a href="https://github.com/CharlesShang/TFFRCNN" target="_blank" rel="noopener">https://github.com/CharlesShang/TFFRCNN</a></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="https://www.cnblogs.com/wangxiaocvpr/p/5747095.html" target="_blank" rel="noopener">https://www.cnblogs.com/wangxiaocvpr/p/5747095.html</a></p>
+<p><a href="https://blog.csdn.net/qq_41648043/article/details/82933324" target="_blank" rel="noopener">Is Faster R-CNN Doing Well for Pedestrian Detection?论文阅读</a></p>
+<p><a href="https://blog.csdn.net/bi_diu1368/article/details/93114165" target="_blank" rel="noopener">Learning Efficient Single-stage Pedestrian Detectors by Asymptotic Localization Fitting</a></p>
+<p><a href="https://blog.csdn.net/wydbyxr/article/details/103118791" target="_blank" rel="noopener">行人检测/人体检测综述</a></p>
+<p><a href="https://www.ctolib.com/xingkongliang-Pedestrian-Detection.html" target="_blank" rel="noopener">行人检测（Pedestrian Detection）论文整理</a></p>
+<p><a href="https://blog.csdn.net/qq_17130909/article/details/80582226" target="_blank" rel="noopener">激活函数及其作用以及梯度消失、爆炸、神经元节点死亡的解释</a></p>
+<p><a href="https://blog.csdn.net/willduan1/article/details/78070086" target="_blank" rel="noopener">深度学习优化算法解析(Momentum, RMSProp, Adam)</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">----------------  本文结束  ----------------</div>
+<br>
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>计算机视觉</p>
+  <p><span>文章作者:</span>Pabebe</p>
+  <p><span>发布时间:</span>2020年02月18日 - 19:10:06</p>
+  <p><span>最后更新:</span>2020年06月16日 - 18:24:34</p>
+  <p><span>原始链接:</span><a href="/article/746b0d51/" title="计算机视觉">https://pabebezz.github.io/article/746b0d51/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/746b0d51/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+
+    
+</div>
+
+
+    
+
+    
+
+    
+    
+   <!-- 添加版权声明 -->
+    <div>
+    
+        
+     
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/study-notes/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;study notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/article/517840f3/" rel="next" title="并行计算机组成">
+                <i class="fa fa-chevron-left"></i> 并行计算机组成
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/515eae05/" rel="prev" title="并行算法分析">
+                并行算法分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Pabebe">
+            
+              <p class="site-author-name" itemprop="name">Pabebe</p>
+              <p class="site-description motion-element" itemprop="description">I have the soulful eyes of a cow</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Pabebezz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/Pabebe" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zezuwang@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现方案"><span class="nav-number">2.</span> <span class="nav-text">实现方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分类"><span class="nav-number">3.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础"><span class="nav-number">4.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何训练神经网络"><span class="nav-number">5.</span> <span class="nav-text">如何训练神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关键"><span class="nav-number">5.1.</span> <span class="nav-text">关键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">5.2.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#激活函数"><span class="nav-number">5.3.</span> <span class="nav-text">激活函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sigmoid激活函数"><span class="nav-number">5.3.1.</span> <span class="nav-text">sigmoid激活函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tanh-x-激活函数"><span class="nav-number">5.3.2.</span> <span class="nav-text">tanh(x)激活函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ReLU激活函数"><span class="nav-number">5.3.3.</span> <span class="nav-text">ReLU激活函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Leaky-ReLU激活函数"><span class="nav-number">5.3.4.</span> <span class="nav-text">Leaky-ReLU激活函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ELU激活函数"><span class="nav-number">5.3.5.</span> <span class="nav-text">ELU激活函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maxout激活函数"><span class="nav-number">5.3.6.</span> <span class="nav-text">Maxout激活函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实际使用"><span class="nav-number">5.3.7.</span> <span class="nav-text">实际使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预处理"><span class="nav-number">5.4.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络参数初始化"><span class="nav-number">5.5.</span> <span class="nav-text">网络参数初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#批归一化"><span class="nav-number">5.6.</span> <span class="nav-text">批归一化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始训练"><span class="nav-number">5.7.</span> <span class="nav-text">开始训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找到合适的超参"><span class="nav-number">5.8.</span> <span class="nav-text">找到合适的超参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-number">5.9.</span> <span class="nav-text">梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机梯度下降"><span class="nav-number">5.9.1.</span> <span class="nav-text">随机梯度下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动量梯度下降"><span class="nav-number">5.9.2.</span> <span class="nav-text">动量梯度下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#牛顿动量"><span class="nav-number">5.9.3.</span> <span class="nav-text">牛顿动量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adam适应性梯度算法"><span class="nav-number">5.9.4.</span> <span class="nav-text">Adam适应性梯度算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RMSProp"><span class="nav-number">5.9.5.</span> <span class="nav-text">RMSProp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#L-BFGS"><span class="nav-number">5.9.6.</span> <span class="nav-text">L-BFGS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实际使用-1"><span class="nav-number">5.9.7.</span> <span class="nav-text">实际使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化"><span class="nav-number">5.10.</span> <span class="nav-text">正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.11.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#任务"><span class="nav-number">6.</span> <span class="nav-text">任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#所选论文"><span class="nav-number">7.</span> <span class="nav-text">所选论文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">8.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pabebe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">本站总字数&#58;</span>
+    
+    <span title="本站总字数">86.2k</span> 
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+    总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+    </span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+    <span id="busuanzi_container_site_uv" style="display:none">
+    有<span id="busuanzi_value_site_uv"></span>人到访
+    </span>
+
+  
+</div>
+
+<div>
+
+</div>
+
+<!--  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div> 
+
+
+
+   <span class="post-meta-divider">|</span>
+ 
+
+ 
+ <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div> 
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+
+<!-- 页面点击出现文字 -->
+ <script type="text/javascript" src="/js/src/myLittleWits.js"></script>
+ 
+</html>

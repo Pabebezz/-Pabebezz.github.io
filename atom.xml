@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Pabebe&#39;s Blog</title>
+  
+  <subtitle>业精于勤，荒于嬉；行成于思，毁于随。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://pabebezz.github.io/"/>
+  <updated>2020-06-17T02:25:22.037Z</updated>
+  <id>https://pabebezz.github.io/</id>
+  
+  <author>
+    <name>Pabebe</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>paperMemo-图片质量评价指标</title>
+    <link href="https://pabebezz.github.io/article/e3c77110/"/>
+    <id>https://pabebezz.github.io/article/e3c77110/</id>
+    <published>2020-06-17T02:24:41.000Z</published>
+    <updated>2020-06-17T02:25:22.037Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SSIM&quot;&gt;&lt;a href=&quot;#SSIM&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
+    
+    
+      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>paperMemo-3dShapeMeasurement</title>
+    <link href="https://pabebezz.github.io/article/4b571488/"/>
+    <id>https://pabebezz.github.io/article/4b571488/</id>
+    <published>2020-05-19T07:58:56.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      计算机视觉与摄影测量
+    
+    </summary>
+    
+      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
+    
+    
+      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习-GAN</title>
+    <link href="https://pabebezz.github.io/article/f3e3799/"/>
+    <id>https://pabebezz.github.io/article/f3e3799/</id>
+    <published>2020-05-01T06:32:24.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;理解&quot;&gt;&lt;a href=&quot;#理解&quot; class=&quot;headerlink&quot; title=&quot;理解&quot;&gt;&lt;/a&gt;理解&lt;/h1&gt;&lt;p&gt;生成器与判别器相互博弈的过程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习-强化学习</title>
+    <link href="https://pabebezz.github.io/article/da29b4e7/"/>
+    <id>https://pabebezz.github.io/article/da29b4e7/</id>
+    <published>2020-04-27T08:15:15.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      人工智能的序列决策
+    
+    </summary>
+    
+      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习-聚类</title>
+    <link href="https://pabebezz.github.io/article/be746f28/"/>
+    <id>https://pabebezz.github.io/article/be746f28/</id>
+    <published>2020-04-25T12:41:43.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;p&gt;在“无监督学习” 任务中研究最多、 应用最广。&lt;br&gt; 聚类目标：将数据集中的样本划分为若干个通常不相交的子集（“簇” ， cluster）&lt;br&gt; 聚类既可以作为一个单独过程（用于找寻数据内在的分布结构） ， 也可作为分类等其他学习任务的前驱过程。&lt;/p&gt;
+&lt;p&gt;应用：1，分析数据内在结构；2，作为有监督学习的预处理部分，发掘数据的隐藏模式 &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="machine learning" scheme="https://pabebezz.github.io/categories/machine-learning/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习-领域自适应</title>
+    <link href="https://pabebezz.github.io/article/2d45afe4/"/>
+    <id>https://pabebezz.github.io/article/2d45afe4/</id>
+    <published>2020-04-20T08:51:54.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;迁移学习-transfer-learning&quot;&gt;&lt;a href=&quot;#迁移学习-transfer-learning&quot; class=&quot;headerlink&quot; title=&quot;迁移学习(transfer learning)&quot;&gt;&lt;/a&gt;迁移学习(transfer learning)&lt;/h1&gt;&lt;p&gt;给定源域的数据和任务，提高目标域的任务性能&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/article/2d45afe4/迁移学习任务分类表.png&quot; alt=&quot;迁移学习任务分类表&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习-RNN（比较浅）</title>
+    <link href="https://pabebezz.github.io/article/c91fc4b/"/>
+    <id>https://pabebezz.github.io/article/c91fc4b/</id>
+    <published>2020-04-20T08:18:06.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;面对序列信号（语音、视频）如何建模&quot;&gt;&lt;a href=&quot;#面对序列信号（语音、视频）如何建模&quot; class=&quot;headerlink&quot; title=&quot;面对序列信号（语音、视频）如何建模&quot;&gt;&lt;/a&gt;面对序列信号（语音、视频）如何建模&lt;/h1&gt;&lt;p&gt;无法保留时序信息；&lt;/p&gt;
+&lt;p&gt;无法建模长期依赖关系 ；&lt;/p&gt;
+&lt;p&gt;通用性差；&lt;/p&gt;
+&lt;p&gt;序列模型需要满足：&lt;br&gt;• 可处理变长输入序列&lt;br&gt;• 能够学习长期的依赖关系&lt;br&gt;• 保留序列本身的时序信息&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>环境配置版本备忘录</title>
+    <link href="https://pabebezz.github.io/article/724e4936/"/>
+    <id>https://pabebezz.github.io/article/724e4936/</id>
+    <published>2020-04-01T07:52:01.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      多台电脑配置环境记录
+    
+    </summary>
+    
+      <category term="tiny knowledge" scheme="https://pabebezz.github.io/categories/tiny-knowledge/"/>
+    
+    
+      <category term="tips" scheme="https://pabebezz.github.io/tags/tips/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习-决策树</title>
+    <link href="https://pabebezz.github.io/article/ae9520f1/"/>
+    <id>https://pabebezz.github.io/article/ae9520f1/</id>
+    <published>2020-03-30T08:11:37.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;剪枝分类器&quot;&gt;&lt;a href=&quot;#剪枝分类器&quot; class=&quot;headerlink&quot; title=&quot;剪枝分类器&quot;&gt;&lt;/a&gt;剪枝分类器&lt;/h1&gt;&lt;p&gt;剪枝分类器是指，对于d次维的输入变量x，任意选定其中一维，通过将其与给定阈值相比较来进行分类的线性分类器&lt;/p&gt;
+&lt;p&gt;剪枝分类器的要素：&lt;br&gt;• 一个输入维度&lt;br&gt;• 一个阈值 &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/article/ae9520f1/剪枝分类器.png&quot; alt=&quot;剪枝分类器&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="machine learning" scheme="https://pabebezz.github.io/categories/machine-learning/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>并行算法分析</title>
+    <link href="https://pabebezz.github.io/article/515eae05/"/>
+    <id>https://pabebezz.github.io/article/515eae05/</id>
+    <published>2020-02-20T12:33:43.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;并行与并发的区别&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;并行是指多个事件在同一时刻发生;&lt;/p&gt;
+&lt;p&gt;而并发是指多个事件在同一时间间隔内发生。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分布式计算与并行计算的区别&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/article/515eae05/分布式计算与并行计算的区别.png&quot; alt=&quot;分布式计算与并行计算的区别&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Parallel Algorithm" scheme="https://pabebezz.github.io/categories/Parallel-Algorithm/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机视觉</title>
+    <link href="https://pabebezz.github.io/article/746b0d51/"/>
+    <id>https://pabebezz.github.io/article/746b0d51/</id>
+    <published>2020-02-18T11:10:06.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h1&gt;&lt;p&gt;计算机利用相机和计算能力来感知现实世界&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/article/746b0d51/相关学科.png&quot; alt=&quot;相关学科&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Computer Vision" scheme="https://pabebezz.github.io/categories/Computer-Vision/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>并行计算机组成</title>
+    <link href="https://pabebezz.github.io/article/517840f3/"/>
+    <id>https://pabebezz.github.io/article/517840f3/</id>
+    <published>2020-02-18T00:53:29.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h1&gt;&lt;p&gt;并行计算机就是由多个处理单元组成的计算机系统，这些处理单元相互通信和协作，能快速，高效地求解大型复杂问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Parallel Computing" scheme="https://pabebezz.github.io/categories/Parallel-Computing/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英文摘要写作</title>
+    <link href="https://pabebezz.github.io/article/cb8609cd/"/>
+    <id>https://pabebezz.github.io/article/cb8609cd/</id>
+    <published>2020-01-10T11:25:20.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;   摘要( abstract) 也称为&lt;strong&gt;内容提要&lt;/strong&gt;，通常在学术论文中都必须附有摘要，其位子应放在论文的正文之前，对整个论文内容的概述。无论对专业读者还是对非专业读者而言，摘要都是一个非常重要的文件。&lt;/p&gt;
+&lt;p&gt;   摘要如果和论文一起发表，则被称为&lt;strong&gt;一次性出版物摘要&lt;/strong&gt;，主要用于帮助读者评价文章内容及其潜在作用，使读者不必阅读全文就可以了解论文的内容。除此之外，摘要也可以被单独收入文摘机构出版的摘要期刊如：生物学文摘(Biological Abstract)、化学文摘（Chemical Abstract）等，称为&lt;strong&gt;二次性出版物摘要&lt;/strong&gt;。此类脱离论文独立成篇的摘要主要用于方便读者检索文摘、收集信息，帮助研究者寻找新的研究领域。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="English" scheme="https://pabebezz.github.io/categories/English/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>操作系统总结</title>
+    <link href="https://pabebezz.github.io/article/8ce3e425/"/>
+    <id>https://pabebezz.github.io/article/8ce3e425/</id>
+    <published>2019-12-25T04:46:41.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;《计算机操作系统》复习大纲&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第一章 绪论 
+&lt;/strong&gt; 1.掌握操作系统的基本概念、主要功能、基本特征、主要类型；&lt;br&gt; 2.理解分时、实时系统的原理； &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Computer Operating" scheme="https://pabebezz.github.io/categories/Computer-Operating/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu下深度学习环境与blog搭建</title>
+    <link href="https://pabebezz.github.io/article/46397481/"/>
+    <id>https://pabebezz.github.io/article/46397481/</id>
+    <published>2019-12-18T04:49:46.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      深度学习环境搭建
+    
+    </summary>
+    
+      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu16.04下深度学习环境搭建</title>
+    <link href="https://pabebezz.github.io/article/46397481/"/>
+    <id>https://pabebezz.github.io/article/46397481/</id>
+    <published>2019-12-18T04:49:46.000Z</published>
+    <updated>2019-12-18T10:13:02.506Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;深度学习环境搭建&quot;&gt;&lt;a href=&quot;#深度学习环境搭建&quot; class=&quot;headerlink&quot; title=&quot;深度学习环境搭建&quot;&gt;&lt;/a&gt;深度学习环境搭建&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/Ding19950107/article/details/89538228&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ubuntu16.04+1080ti+cuda10.0+cudnn环境配置&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/meiLin_Ya/article/details/103126921&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Pycharm没有菜单栏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本文英伟达显卡驱动版本：430.64&lt;/p&gt;
+&lt;p&gt;cuda 10.0.130&lt;/p&gt;
+&lt;p&gt;cudann 7.6.4&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语笔试笔记</title>
+    <link href="https://pabebezz.github.io/article/2a1314f5/"/>
+    <id>https://pabebezz.github.io/article/2a1314f5/</id>
+    <published>2019-12-12T13:03:56.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;时间分配&quot;&gt;&lt;a href=&quot;#时间分配&quot; class=&quot;headerlink&quot; title=&quot;时间分配&quot;&gt;&lt;/a&gt;时间分配&lt;/h1&gt;&lt;p&gt;写作（25分钟写完，5分钟看听力文章）&lt;/p&gt;
+&lt;p&gt;听力（30分钟）&lt;/p&gt;
+&lt;p&gt;阅读理解：先&lt;strong&gt;仔细阅读&lt;/strong&gt;，再&lt;strong&gt;长篇阅读&lt;/strong&gt;，最后&lt;strong&gt;段落翻译&lt;/strong&gt;。选词填空能做就做。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/article/2a1314f5/时间分配.png&quot; alt=&quot;时间分配&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="English" scheme="https://pabebezz.github.io/categories/English/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自动化脚本</title>
+    <link href="https://pabebezz.github.io/article/1fbb7b95/"/>
+    <id>https://pabebezz.github.io/article/1fbb7b95/</id>
+    <published>2019-11-30T06:51:21.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      解放双手
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>英语口语考试笔记</title>
+    <link href="https://pabebezz.github.io/article/851220dd/"/>
+    <id>https://pabebezz.github.io/article/851220dd/</id>
+    <published>2019-11-23T08:10:38.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;六级口语考试&quot;&gt;&lt;a href=&quot;#六级口语考试&quot; class=&quot;headerlink&quot; title=&quot;六级口语考试&quot;&gt;&lt;/a&gt;六级口语考试&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/article/851220dd/考试安排1.png&quot; alt=&quot;考试安排1&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="English" scheme="https://pabebezz.github.io/categories/English/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络总结</title>
+    <link href="https://pabebezz.github.io/article/72b93d83/"/>
+    <id>https://pabebezz.github.io/article/72b93d83/</id>
+    <published>2019-11-19T02:42:48.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;协议体系&quot;&gt;&lt;a href=&quot;#协议体系&quot; class=&quot;headerlink&quot; title=&quot;协议体系&quot;&gt;&lt;/a&gt;协议体系&lt;/h1&gt;&lt;h2 id=&quot;OSI，TCP-IP，五层协议的体系结构&quot;&gt;&lt;a href=&quot;#OSI，TCP-IP，五层协议的体系结构&quot; class=&quot;headerlink&quot; title=&quot;OSI，TCP/IP，五层协议的体系结构&quot;&gt;&lt;/a&gt;OSI，TCP/IP，五层协议的体系结构&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;OSI分层 （7层）：&lt;/strong&gt;物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。&lt;br&gt; &lt;strong&gt;TCP/IP分层（4层）：&lt;/strong&gt;网络接口层、网际层、运输层、应用层。&lt;br&gt; &lt;strong&gt;五层协议 （5层）：&lt;/strong&gt;物理层、数据链路层、网络层、运输层、应用层。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Computer Networking" scheme="https://pabebezz.github.io/categories/Computer-Networking/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="code,C++,algorithm,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pabebe's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="前言主要以 C++字体为主。 输入输出文件尾类型C 版 1234567#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    int a,b;    while (scanf(&quot;%d %d&quot;,&amp;amp;a, &amp;amp;b) != EOF)        printf(&quot;%d\n&quot;,a+b);&amp;#125; C++ 版 123456#include&amp;lt;iostrea">
+<meta name="keywords" content="code,C++,algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码精炼">
+<meta property="og:url" content="https://pabebezz.github.io/article/2fdcd6a9/index.html">
+<meta property="og:site_name" content="Pabebe&#39;s Blog">
+<meta property="og:description" content="前言主要以 C++字体为主。 输入输出文件尾类型C 版 1234567#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    int a,b;    while (scanf(&quot;%d %d&quot;,&amp;amp;a, &amp;amp;b) != EOF)        printf(&quot;%d\n&quot;,a+b);&amp;#125; C++ 版 123456#include&amp;lt;iostrea">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pabebezz.github.io/article/2fdcd6a9/dev调试.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/2fdcd6a9/dev调试2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/2fdcd6a9/数据范围.jpeg">
+<meta property="og:image" content="https://pabebezz.github.io/article/2fdcd6a9/循环体内的局部变量内存分配和释放.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/2fdcd6a9/循环体内的局部变量内存分配和释放2.png">
+<meta property="og:updated_time" content="2020-06-16T10:24:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="代码精炼">
+<meta name="twitter:description" content="前言主要以 C++字体为主。 输入输出文件尾类型C 版 1234567#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    int a,b;    while (scanf(&quot;%d %d&quot;,&amp;amp;a, &amp;amp;b) != EOF)        printf(&quot;%d\n&quot;,a+b);&amp;#125; C++ 版 123456#include&amp;lt;iostrea">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/2fdcd6a9/dev调试.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://pabebezz.github.io/article/2fdcd6a9/">
+
+
+<meta name="google-site-verification" content="skUdQN9cQrZuUJydKG0ivzB90q5kyLJMU5i5dt82GH4">
+<meta name="google-site-verification" content="hv7_j7TFqTy83_mHkj5EDOJhzIl0_tusCnHJBxNOfAo">
+
+
+
+
+
+
+  <title>代码精炼 | Pabebe's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"> 
+       
+    </div>
+ 
+
+      <!-- change "fork me on github" -->
+     <!--  <a href="https://github.com/Pabebezz" target="_blank" ><img style="position: absolute; top: 0; right: 1200; border: 0;"  width="149" height="149" src="/images/forkme_left_green.png" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a> -->
+     <a href="https://github.com/Pabebezz" class="github-corner" target="_blank" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #326755; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+       
+       <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pabebe's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">业精于勤，荒于嬉；行成于思，毁于随。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/2fdcd6a9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pabebe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pabebe's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">代码精炼</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-24T10:04:33+08:00">
+                2019-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+           
+           
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+            
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.9k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>主要以<label style="color:blue"> C++</label>字体为主。</p>
+<h1 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h1><h2 id="文件尾类型"><a href="#文件尾类型" class="headerlink" title="文件尾类型"></a>文件尾类型</h2><p>C 版</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;a, &amp;b) != EOF)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a+b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>C++ 版</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">int</span> a,b;</span><br><span class="line">       <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b)&#123;<span class="built_in">cout</span>&lt;&lt;a+b&lt;&lt;<span class="built_in">endl</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在C++里，cin本身就是一个对象，因此可以直接运用到while( )检测是否有输入，若无输入则结束运行。</p>
+<a id="more"></a>
+<p>例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;a)&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>格式化输出</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"%d%c"</span>,bmax,<span class="string">" \n"</span>[i==n]);</span><br></pre></td></tr></table></figure>
+<p>当后面的执行条件i!=n的时候，%c就相当于空格<br>当后面的执行条件i==n的时候，%c就相当于\n 【<a href="https://blog.csdn.net/laichilizi/article/details/77161397" target="_blank" rel="noopener">来源</a>】</p>
+<h2 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h2><p><strong>(1)cin&gt;&gt;</strong> </p>
+<p>​        可接受字符串，但遇到“空格”、“TAB”、”回车”（<strong>下一次缓冲区读取时 会被cin自动丢弃</strong>）均结束从缓冲区读取</p>
+<p><strong>(2)getline()</strong></p>
+<p>​        默认”回车”（<strong>下一次缓冲区读取时 会被自动丢弃</strong>）结束</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> line;</span><br><span class="line">getline（<span class="built_in">cin</span>，line）;<span class="comment">//按回车键结束输入</span></span><br><span class="line">#指定分隔符</span><br><span class="line"><span class="function">istream&amp; <span class="title">getline</span><span class="params">(istream&amp; is,<span class="built_in">string</span>&amp; str,<span class="keyword">char</span> delimiter=<span class="string">'\n'</span>)</span>   </span></span><br><span class="line"><span class="function"><span class="comment">//输入一串字符（不管多少个回车键），只要是在‘#’号之 前的字符都会读取并保存</span></span></span><br><span class="line">getline（cin,line,'#');</span><br></pre></td></tr></table></figure>
+<p><strong>(3)cin.get()</strong></p>
+<p>​        默认”回车”（<strong>下一次缓冲区读取时 仍会被读取</strong>）结束</p>
+<p>​        两种用法：</p>
+<p>​        <strong>a.</strong> cin.get(字符变量名)可以用来接收<strong>一个</strong>字符　</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> ch;</span><br><span class="line">ch = <span class="built_in">cin</span>.get();   <span class="keyword">or</span>  <span class="built_in">cin</span>.get(ch);</span><br></pre></td></tr></table></figure>
+<p>​    　<strong>b.</strong>cin.get(字符数组名,接收字符数目)用来接收一行字符串,可以接收空格</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">20</span>];</span><br><span class="line"><span class="built_in">cin</span>.get(a,<span class="number">20</span>);</span><br></pre></td></tr></table></figure>
+<p>​      <label style="color:blue"> 注意：</label>  <strong>cin.get()会将回车键存储在缓存中，若后面还有cin.get()函数，则该函数会将缓存中的 <label style="color:blue"> 回车</label> 取出并赋予后面的输入变量中，故，使用了cin.get()函数就一定后面要加getchar()，将回车键读取并丢弃弃！！！</strong><br>​                </p>
+<p>  <strong>(4)cin.getline()</strong><br>​             接受一个字符串可以接受空格并输出    　</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> m[<span class="number">20</span>];</span><br><span class="line"><span class="built_in">cin</span>.getline(m,<span class="number">5</span>);</span><br><span class="line"><span class="comment">//输入：jkjkjkjkkjkjkjkj</span></span><br><span class="line"><span class="comment">//输出：jklj    第5个字符默认添加'\0'</span></span><br></pre></td></tr></table></figure>
+<p>  <strong>(5)gets()【c++11已弃用！！！】</strong><br>​        接受一个字符，可以接受空格并输出，需包含头文件<code>#include&lt;string&gt;</code></p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char ch<span class="comment">;</span></span><br><span class="line">gets(ch)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p> ​ <strong>(6)getchar()</strong></p>
+<pre><code>需包含头文件`#include&lt;stdio.h&gt;`
+</code></pre><p>getchar()是stdio.h中的库函数，它的作用是从stdin流中读入一个字符，也就是说，如果stdin有数据的话不用输入它就可以直接读取了，第一次getchar()时，确实需要人工的输入，但是如果你输了多个字符，以后的getchar()再执行时就会直接从缓冲区中读取了。<br>​            <strong>故一般用getchar()来清除缓存中的字符；</strong><br>​<br>​        <strong>4）输入强行退出</strong><br>​            Ctrl + Z 或输入EOF再按回车键</p>
+<p>大佬解析:<a href="https://www.cnblogs.com/zzw1024/p/10502011.html" target="_blank" rel="noopener">https://www.cnblogs.com/zzw1024/p/10502011.html</a></p>
+<h1 id="动态创建数组"><a href="#动态创建数组" class="headerlink" title="动态创建数组"></a>动态创建数组</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一维数组</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line">ll *aim = <span class="keyword">new</span> ll[n];</span><br><span class="line">ll *maxj = <span class="keyword">new</span> ll[n];</span><br><span class="line"><span class="built_in">memset</span>(aim,<span class="number">0</span>,<span class="keyword">sizeof</span>(aim)*n);</span><br><span class="line"><span class="built_in">memset</span>(maxj,<span class="number">0</span>,<span class="keyword">sizeof</span>(maxj)*n);</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/moonlightpeng/article/details/83661974" target="_blank" rel="noopener">为何动态创建二维数组必先预先知道二维数组每一列的长度</a></p>
+<p><a href="https://www.cnblogs.com/jiading/p/11101541.html" target="_blank" rel="noopener">大佬解析过</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  动态创建二维数组   */</span></span><br><span class="line"><span class="comment">//半自动化</span></span><br><span class="line"><span class="keyword">char</span> (*color)[<span class="number">20</span>] = <span class="keyword">new</span> <span class="keyword">char</span>[n][<span class="number">20</span>];  <span class="comment">// √</span></span><br><span class="line"><span class="keyword">char</span> *color[<span class="number">20</span>] = <span class="keyword">new</span> <span class="keyword">char</span>[n][<span class="number">20</span>];  <span class="comment">// × </span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">[] 的优先级高于 *  </span></span><br><span class="line"><span class="comment">*color[20] 为 指针数组（array of pointers），即20个 char 类型的指针</span></span><br><span class="line"><span class="comment">(*color)[20] 为 数组指针（a pointer to an array），即 指向数组（首地址，++按列大小）的指针</span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"><span class="comment">//释放</span></span><br><span class="line"> <span class="keyword">delete</span> [] color;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//真正意义上的创建二维数组</span></span><br><span class="line"><span class="keyword">int</span> **<span class="built_in">array</span>;</span><br><span class="line"><span class="built_in">array</span>=<span class="keyword">new</span> <span class="keyword">int</span> *[row];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row; i++)</span><br><span class="line">&#123;</span><br><span class="line">         <span class="built_in">array</span>[i]=<span class="keyword">new</span> <span class="keyword">int</span> [col];</span><br><span class="line">        <span class="comment">//以0初始化，#include &lt;string.h&gt;</span></span><br><span class="line">        <span class="built_in">memset</span>(<span class="built_in">array</span>[i],<span class="number">0</span>,col*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//释放</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row; i ++) &#123;</span><br><span class="line">     <span class="keyword">delete</span>[] <span class="built_in">array</span>[i];</span><br><span class="line">     <span class="built_in">array</span>[i] = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="comment">//不要忘记，释放空间后p[i]不会自动指向NULL值，还将守在原处，只是释放内存而已，仅此而已。</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">delete</span> [] <span class="built_in">array</span>；</span><br><span class="line"><span class="built_in">array</span>=<span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="计算数组长度"><a href="#计算数组长度" class="headerlink" title="计算数组长度"></a>计算数组长度</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="comment">//计算数组长度</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calculateLength</span><span class="params">(T &amp;arr)</span></span>&#123;</span><br><span class="line">     <span class="built_in">cout</span>&lt;&lt;<span class="string">"size arr:"</span>&lt;&lt;<span class="keyword">sizeof</span>(arr)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">     <span class="built_in">cout</span>&lt;&lt;<span class="string">"size arr[0]:"</span>&lt;&lt;<span class="keyword">sizeof</span>(arr[<span class="number">0</span>])&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">     <span class="keyword">return</span>  <span class="keyword">sizeof</span>(arr) / <span class="keyword">sizeof</span>(arr[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="STL标准库"><a href="#STL标准库" class="headerlink" title="STL标准库"></a>STL标准库</h1><p>首先<strong>使得dev 支持 C++11</strong></p>
+<p><a href="https://blog.csdn.net/Imagirl1/article/details/82707672" target="_blank" rel="noopener">使devc++拥有c++11的功能(如何让devc++支持c++11)</a></p>
+<p>tools-&gt;compiler options-&gt;add the following commands when calling the compiler(勾选) ，然后添加如下语句（最好release\debug都添上）</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">-std</span>=c++<span class="number">11</span></span><br></pre></td></tr></table></figure>
+<p>头文件</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//set、map属于std, unordered_map属于std::tr1;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;tr1/unordered_map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>::tr1;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h1><p> dev 首先设置”生成调试信息“</p>
+<p>(1)Tools -&gt; setting -&gt;linker-&gt; generate debugging information 那栏改为”Yes“</p>
+<p><img src="/article/2fdcd6a9/dev调试.png" alt="dev调试"></p>
+<p> (2) tool-&gt;environment options-&gt;watch variable under mouse(勾选)</p>
+<p><img src="/article/2fdcd6a9/dev调试2.png" alt="dev调试2"></p>
+<p>设置断点后 编译 F5 调试（勾勾） F7运行下一行</p>
+<h1 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">double</span> f = <span class="number">123456789</span>;</span><br><span class="line"><span class="comment">//  输出1.23457*（10,6）（采用科学记数法变成包含整数和小数，共6位，且最后一位四舍五入）</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;f&lt;&lt;<span class="built_in">endl</span>;    </span><br><span class="line"><span class="comment">//输出120000000  1.2*pow（10,6）采用科学记数法,包含整数和小数，共两位，且最后一位四舍五入）</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;setprecision(<span class="number">2</span>)&lt;&lt;f&lt;&lt;<span class="built_in">endl</span>;   </span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;fixed&lt;&lt;f&lt;&lt;<span class="built_in">endl</span>;   <span class="comment">//输出12345689.000000（小数6位补0）</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;setprecision(<span class="number">2</span>)&lt;&lt;fixed&lt;&lt;f&lt;&lt;<span class="built_in">endl</span>;  <span class="comment">//输出12345689.00</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;fixed&lt;&lt;setprecision(<span class="number">2</span>)&lt;&lt;f&lt;&lt;<span class="built_in">endl</span>;  <span class="comment">// 效果同上</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> f = <span class="number">3.123456789</span>;</span><br><span class="line"><span class="comment">//  输出3.12346 （包含整数和小数，且四舍五入）</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;f&lt;&lt;<span class="built_in">endl</span>;    </span><br><span class="line"><span class="comment">//输出3.1（包含整数和小数，共两位，且最后一位四舍五入），这条会作用到下一条去</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;setprecision(<span class="number">2</span>)&lt;&lt;f&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line"><span class="comment">//输出3.123457 （仅包含小数，且四舍五入），没有上一条，则输出六位小数3.123457</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;fixed&lt;&lt;f&lt;&lt;<span class="built_in">endl</span>;   </span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;setprecision(<span class="number">2</span>)&lt;&lt;fixed&lt;&lt;f&lt;&lt;<span class="built_in">endl</span>;  <span class="comment">//输出3.12  （小数2位，四舍五入）</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;fixed&lt;&lt;setprecision(<span class="number">2</span>)&lt;&lt;f&lt;&lt;<span class="built_in">endl</span>;  <span class="comment">// 效果同上</span></span><br><span class="line">    </span><br><span class="line">system(<span class="string">"pause"</span>); </span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>setprecision(n)是流格式控制符之一，在iomanip头文件中。</p>
+<p>c++<strong>默认的流输出数值有效位是6</strong>，<strong>包括整数和小数</strong>，若数值超出6位，则第七位四舍五入到6位数</p>
+<p><strong>fixed ：</strong>浮点值显示为<strong>定点十进制</strong>。 <strong>默认是小数6位数</strong>，不包含整数，若小数位超出6位，则四舍五入到6位数</p>
+<p>1.<strong>setprecision(n)</strong> 指定一个浮点数的精度默认设置输出的数字的<strong>总位数为n</strong>，<strong>包含整数和小数部分</strong>；其中<strong>setprecision（0）效果是跟c++默认的流输出数值一样</strong>，有效位是6位，包括整数和小数</p>
+<p>2.<strong>fixed</strong>  ：<strong>必须与setprecision(n)配合使用，用来控制小数位数</strong>，不够补0，只要写一次fixed，后面的setprecision（n）就都是指小数了。  fixed与setprecision谁先谁后没有关系，但通常是fixed在前先固定6位小数（若此时小数已经超出6位，则先四舍五入到6位）再precision(n)取n位小数（n&lt;6）</p>
+<p>3.如果<strong>与setiosnags(ios::scientific)合用</strong>， 可以控制<strong>指数表示法的小数位数</strong>。setiosflags(ios::scientific)是用指数方式表示实数。 </p>
+<p>4.<strong>resetiosflags(ios::fixed) 取消精度的设置。</strong></p>
+<p>1.）超出的位数会被四舍五入进去！！！</p>
+<p>2）与setw()不同 ，<strong>setprecision（n）一直作用到下一个setprecisin（n）之前</strong>，所以，只需要写一个setprecision（n）就可以。setw()要每次都写</p>
+<p> <strong>floor(), ceil()函数都包含在头文件“Math.h”中</strong> </p>
+<table>
+<thead>
+<tr>
+<th>Floor()</th>
+<th>不大于自变量的最大整数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ceil()</td>
+<td>不小于自变量的最大整数</td>
+</tr>
+</tbody>
+</table>
+<h1 id="数组开辟空间"><a href="#数组开辟空间" class="headerlink" title="数组开辟空间"></a>数组开辟空间</h1><p>来源：<a href="https://blog.csdn.net/zfjBIT/article/details/88638547" target="_blank" rel="noopener">C/C++数组的大小最大能有多大？</a></p>
+<p><strong>局部变量：函数内申请的变量，数组，</strong>是在<strong>栈（stack）</strong>中申请的一段连续的空间。栈的默认大小为1M到2M，如果定义a[1024*1024];运行时就会报”段错误“；</p>
+<p><strong>全局变量：全局数组，静态数组（static）</strong>则是开在<strong>全局区（静态区）（static）</strong>。大小为2G，所以能够开的很大；</p>
+<p><strong>动态分配：malloc、new出的空间</strong>，则是开在<strong>堆（heap）</strong>的一段不连续的空间。理论上则是硬盘大小；</p>
+<p>同一个程序共用栈和静态区，因此要申请一个超大数组或许定义为全局变量，而多个超大数组时<strong>最好是动态申请</strong>。</p>
+<h1 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h1><h2 id="Time-Limit-Exceeded"><a href="#Time-Limit-Exceeded" class="headerlink" title="Time Limit Exceeded"></a><strong>Time Limit Exceeded</strong></h2><p>（1）可能是某种情况没有考虑到或者逻辑bug（很大概率是这个（；´д｀）ゞ）</p>
+<p>（2）算法不优</p>
+<h1 id="think"><a href="#think" class="headerlink" title="think"></a>think</h1><h2 id="数据范围，最好定义成long-long-型"><a href="#数据范围，最好定义成long-long-型" class="headerlink" title="数据范围，最好定义成long long 型"></a>数据范围，最好定义成long long 型</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="comment">//定义长整型</span></span><br><span class="line">    ll n;</span><br></pre></td></tr></table></figure>
+<p><img src="/article/2fdcd6a9/数据范围.jpeg" alt="数据范围"></p>
+<h2 id="慎用递归，易导致超时"><a href="#慎用递归，易导致超时" class="headerlink" title="慎用递归，易导致超时"></a>慎用递归，易导致超时</h2><h2 id="动态规划大概率适合求最优解问题"><a href="#动态规划大概率适合求最优解问题" class="headerlink" title="动态规划大概率适合求最优解问题"></a>动态规划大概率适合求最优解问题</h2><p><a href="https://blog.csdn.net/ailaojie/article/details/83014821" target="_blank" rel="noopener">经典中的经典算法:动态规划(详细解释,从入门到实践,逐步讲解)</a></p>
+<p>这一篇博文讲得比较透彻</p>
+<h2 id="逗号运算符"><a href="#逗号运算符" class="headerlink" title="逗号运算符"></a>逗号运算符</h2><p>逗号运算符是<strong>将一系列运算按顺序执行。</strong></p>
+<p><strong>整个逗号表达式的值</strong>为系列中<strong>最后一个表达式的值</strong>。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var = (<span class="attribute">count</span>=19, <span class="attribute">incr</span>=10, count+1);</span><br></pre></td></tr></table></figure>
+<p>在这里，首先把 count 赋值为 19，把 incr 赋值为 10，然后把 count 加 1，最后，把最右边表达式 count+1 的计算结果 20 赋给 var。上面表达式中的括号是必需的，因为<strong>逗号运算符的优先级低于赋值操作符</strong></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span>*<span class="number">2</span>,<span class="number">2</span>*<span class="number">2</span>,<span class="number">3</span>*<span class="number">3</span>;</span><br><span class="line"><span class="comment">//a = 2;因，优先级低于 =  后面表达式只运行，不保留结果</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://www.runoob.com/cplusplus/cpp-comma-operator.html" target="_blank" rel="noopener">https://www.runoob.com/cplusplus/cpp-comma-operator.html</a></p>
+<h2 id="计算机存储数据"><a href="#计算机存储数据" class="headerlink" title="计算机存储数据"></a>计算机存储数据</h2><p>大佬解析: <a href="https://blog.csdn.net/daiyutage/article/details/8575248" target="_blank" rel="noopener">https://blog.csdn.net/daiyutage/article/details/8575248</a></p>
+<p>乘法容易溢出</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n%<span class="number">2</span> != <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">return</span> (n+<span class="number">1</span>)/<span class="number">2</span>*n;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="keyword">return</span> n/<span class="number">2</span>*(n+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">addSum</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        sum+=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> n;</span><br><span class="line">   <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n)&#123;</span><br><span class="line">     <span class="comment">//cout&lt;&lt;sum(n)&lt;&lt;endl&lt;&lt;endl;</span></span><br><span class="line">     <span class="built_in">cout</span>&lt;&lt;addSum(n)&lt;&lt;<span class="built_in">endl</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="初始化数据的重要性"><a href="#初始化数据的重要性" class="headerlink" title="初始化数据的重要性"></a>初始化数据的重要性</h2><p><img src="/article/2fdcd6a9/循环体内的局部变量内存分配和释放.png" alt="循环体内的局部变量内存分配和释放"></p>
+<p><img src="/article/2fdcd6a9/循环体内的局部变量内存分配和释放2.png" alt="循环体内的局部变量内存分配和释放2"></p>
+<p>在刷题过程中发现了如上bug ,以下面这段代码为例，目的是输出出现次数最多的字符串。 Count[1000] 、p[1000]若没有进行初始化，在多组数据输入后，虽然两者均为循环内部局部变量，但是<strong>未初始化将保留原来的数据，导致影响后续结果</strong>。</p>
+<p>所以以后编程不要依赖于<strong>编译器缺省初始化</strong>，<code>定义与初始化尽量同步</code>~(ง •_•)ง</p>
+<p><a href="https://blog.csdn.net/fyfcauc/article/details/38415385" target="_blank" rel="noopener">大佬解析：<strong>循环体内的局部变量内存分配和释放</strong></a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> n;</span><br><span class="line">   <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">   <span class="comment">//至0结束</span></span><br><span class="line">   <span class="keyword">while</span>(n)&#123;</span><br><span class="line">      <span class="comment">//记录各种颜色出现多少次</span></span><br><span class="line">     <span class="comment">//int *Count = new int[n];</span></span><br><span class="line">     <span class="keyword">int</span> Count[<span class="number">1000</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">     <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">     <span class="comment">//char (*p)[20] = new char[n][20];</span></span><br><span class="line">     <span class="keyword">char</span> p[<span class="number">1000</span>][<span class="number">20</span>] = &#123;&#125;;</span><br><span class="line">     <span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">       <span class="keyword">char</span> str[<span class="number">20</span>];</span><br><span class="line">       <span class="built_in">cin</span>&gt;&gt;str;</span><br><span class="line">       <span class="comment">//计数</span></span><br><span class="line">       <span class="keyword">if</span>(i == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="built_in">strcpy</span>(p[index],str);</span><br><span class="line">            Count[index]++;</span><br><span class="line">            index++;</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         <span class="keyword">int</span> j;</span><br><span class="line">         <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;index; j++)&#123;</span><br><span class="line">           <span class="keyword">if</span>(<span class="built_in">strcmp</span>(str,p[j]) == <span class="number">0</span>)&#123;</span><br><span class="line">                 Count[j]++;</span><br><span class="line">                 flag = <span class="literal">false</span>;</span><br><span class="line">                 <span class="keyword">break</span>;</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;<span class="comment">//end of for</span></span><br><span class="line">         <span class="comment">//没有就添加进去</span></span><br><span class="line">         <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">            <span class="built_in">strcpy</span>(p[index],str);</span><br><span class="line">            Count[index]++;</span><br><span class="line">            index++;</span><br><span class="line">            flag = <span class="literal">true</span>;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">       &#125;<span class="comment">//end of else</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     <span class="comment">//找到最大值</span></span><br><span class="line">     <span class="keyword">int</span> Cmax = Count[<span class="number">0</span>],t=<span class="number">0</span>;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; index; i++ )&#123;</span><br><span class="line">         <span class="keyword">if</span>(Cmax &lt;= Count[i])&#123;</span><br><span class="line">            Cmax = Count[i];</span><br><span class="line">            t = i;</span><br><span class="line"></span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">cout</span>&lt;&lt;p[t]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">     <span class="comment">//释放动态空间</span></span><br><span class="line"> <span class="comment">//    for(int i = 0; i &lt; n; i++)&#123;</span></span><br><span class="line"> <span class="comment">//       delete []p[i];</span></span><br><span class="line"> <span class="comment">//    &#125;</span></span><br><span class="line">   <span class="comment">//  delete []p;</span></span><br><span class="line">     <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="C-的String对象（字符串类）"><a href="#C-的String对象（字符串类）" class="headerlink" title="C++的String对象（字符串类）"></a>C++的String对象（字符串类）</h2><p><a href="https://www.cnblogs.com/lifexy/p/8642163.html" target="_blank" rel="noopener">String详解</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">----------------  本文结束  ----------------</div>
+<br>
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>代码精炼</p>
+  <p><span>文章作者:</span>Pabebe</p>
+  <p><span>发布时间:</span>2019年10月24日 - 10:04:33</p>
+  <p><span>最后更新:</span>2020年06月16日 - 18:24:34</p>
+  <p><span>原始链接:</span><a href="/article/2fdcd6a9/" title="代码精炼">https://pabebezz.github.io/article/2fdcd6a9/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/2fdcd6a9/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+
+    
+</div>
+
+
+    
+
+    
+
+    
+    
+   <!-- 添加版权声明 -->
+    <div>
+    
+        
+     
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/code/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;code</a>
+          
+            <a href="/tags/C/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;C++</a>
+          
+            <a href="/tags/algorithm/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;algorithm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/article/c4704731/" rel="next" title="博文常用样式语句">
+                <i class="fa fa-chevron-left"></i> 博文常用样式语句
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/fe644ae0/" rel="prev" title="刷题记录">
+                刷题记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Pabebe">
+            
+              <p class="site-author-name" itemprop="name">Pabebe</p>
+              <p class="site-description motion-element" itemprop="description">I have the soulful eyes of a cow</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Pabebezz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/Pabebe" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zezuwang@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入输出"><span class="nav-number">2.</span> <span class="nav-text">输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件尾类型"><span class="nav-number">2.1.</span> <span class="nav-text">文件尾类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串类型"><span class="nav-number">2.2.</span> <span class="nav-text">字符串类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态创建数组"><span class="nav-number">3.</span> <span class="nav-text">动态创建数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算数组长度"><span class="nav-number">4.</span> <span class="nav-text">计算数组长度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#STL标准库"><span class="nav-number">5.</span> <span class="nav-text">STL标准库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调试"><span class="nav-number">6.</span> <span class="nav-text">调试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四舍五入"><span class="nav-number">7.</span> <span class="nav-text">四舍五入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组开辟空间"><span class="nav-number">8.</span> <span class="nav-text">数组开辟空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bug"><span class="nav-number">9.</span> <span class="nav-text">bug</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Time-Limit-Exceeded"><span class="nav-number">9.1.</span> <span class="nav-text">Time Limit Exceeded</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#think"><span class="nav-number">10.</span> <span class="nav-text">think</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据范围，最好定义成long-long-型"><span class="nav-number">10.1.</span> <span class="nav-text">数据范围，最好定义成long long 型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#慎用递归，易导致超时"><span class="nav-number">10.2.</span> <span class="nav-text">慎用递归，易导致超时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态规划大概率适合求最优解问题"><span class="nav-number">10.3.</span> <span class="nav-text">动态规划大概率适合求最优解问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逗号运算符"><span class="nav-number">10.4.</span> <span class="nav-text">逗号运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机存储数据"><span class="nav-number">10.5.</span> <span class="nav-text">计算机存储数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化数据的重要性"><span class="nav-number">10.6.</span> <span class="nav-text">初始化数据的重要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-的String对象（字符串类）"><span class="nav-number">10.7.</span> <span class="nav-text">C++的String对象（字符串类）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pabebe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">本站总字数&#58;</span>
+    
+    <span title="本站总字数">86.2k</span> 
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+    总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+    </span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+    <span id="busuanzi_container_site_uv" style="display:none">
+    有<span id="busuanzi_value_site_uv"></span>人到访
+    </span>
+
+  
+</div>
+
+<div>
+
+</div>
+
+<!--  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div> 
+
+
+
+   <span class="post-meta-divider">|</span>
+ 
+
+ 
+ <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div> 
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+
+<!-- 页面点击出现文字 -->
+ <script type="text/javascript" src="/js/src/myLittleWits.js"></script>
+ 
+</html>

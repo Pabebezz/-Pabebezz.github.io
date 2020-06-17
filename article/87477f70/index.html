@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="study notes,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pabebe's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="VS2017 注释：        先CTRL+K，然后CTRL+C 取消注释： 先CTRL+K，然后CTRL+U 图形应用计算机辅助设计(CAD:computer-aided design) 虚拟现实环境(virtual-reality environment) 科学计算可视化（scientific visualization） 未来发展表情与动作的精细化 图形学与深度学习的碰撞">
+<meta name="keywords" content="study notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机图形学-课程笔记">
+<meta property="og:url" content="https://pabebezz.github.io/article/87477f70/index.html">
+<meta property="og:site_name" content="Pabebe&#39;s Blog">
+<meta property="og:description" content="VS2017 注释：        先CTRL+K，然后CTRL+C 取消注释： 先CTRL+K，然后CTRL+U 图形应用计算机辅助设计(CAD:computer-aided design) 虚拟现实环境(virtual-reality environment) 科学计算可视化（scientific visualization） 未来发展表情与动作的精细化 图形学与深度学习的碰撞">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/GPU.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/光点.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/固定管线.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/图形编程.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/GPU渲染管线.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/光栅化.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/扫描转换.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/光栅化.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/转换.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/DDA.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/DDA1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/DDA2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/DDA3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/Bresenham.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/Bresenham1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/Bresenham2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/Bresenham3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/圆.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/圆Bresenham1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/圆Bresenham2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/圆Bresenham3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/椭圆Bresenham1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/椭圆Bresenham2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/椭圆Bresenham3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/椭圆Bresenham4.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/椭圆Bresenham5.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/椭圆Bresenham6.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/椭圆Bresenham7.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/多边形X-扫描线思想.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/多边形X-扫描线思想1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/多边形X-扫描线思想2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/多边形X-扫描线思想3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/Y向连贯性算法1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/Y向连贯性算法2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/Y向连贯性算法3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/Y向连贯性算法.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/边标志算法.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/边标志算法1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/边标志算法2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/区域.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/区域填充算法分类.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/区域填充算法2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/区域填充算法1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/区域填充算法3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/区域填充算法4.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/属性.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/属性1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/属性2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/属性3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/属性4.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/走样2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/走样1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/走样.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/走样4.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/走样5.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/走样6.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/走样7.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/走样8.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/走样9.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/图形的构成.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/环.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/面.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/几何造型.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/实体.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/实体1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/实体2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/实体3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/实体4.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/实体5.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/实体6.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/实体7.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/样条.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/样条1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/样条3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/样条4.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/样条5.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/样条6.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/样条7.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/曲线描述.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/样条的描述方法1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/样条的描述方法2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/样条的描述方法3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/样条的描述方法4.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/样条的描述方法5.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/Bezier曲线公式1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/Bezier曲线公式2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/样条的描述方法-曲面1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/Bezier曲面公式.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/Bezier曲面示例.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/Bezier曲面示例2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/实体模型.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/CSG树.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/光线投射算法.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/光线投射算法2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/空间位置枚举.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/空间位置枚举-八叉树.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/空间位置枚举-松散八叉树.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/空间位置枚举-BSP树.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/空间位置枚举-BSP树类别.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/空间位置枚举-多边形对齐BSP树.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/分形几何.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/分形维数.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/分形几何2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/粒子系统.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/粒子系统1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/几何坐标系.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/几何变换.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/规范化齐次坐标.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标4.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标5.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标6.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标7.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标8.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标9.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标10.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标11.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标12.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标13.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标15.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标16.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标17.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标18.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标19.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标20.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标21.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次22.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标23.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标24.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/齐次坐标25.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/投影1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/投影2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/投影3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/投影4.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/投影5.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/投影6.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/投影7.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/投影8.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/投影9.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/规范化投影.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/规范化投影1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/规范化投影2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/规范化投影3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/规范化投影4.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪1.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪4.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪5.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪6.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪7.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪8.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪9.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪10.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪11.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪12.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪13.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪14.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪16.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪17.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/87477f70/裁剪18.png">
+<meta property="og:updated_time" content="2020-06-16T10:24:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机图形学-课程笔记">
+<meta name="twitter:description" content="VS2017 注释：        先CTRL+K，然后CTRL+C 取消注释： 先CTRL+K，然后CTRL+U 图形应用计算机辅助设计(CAD:computer-aided design) 虚拟现实环境(virtual-reality environment) 科学计算可视化（scientific visualization） 未来发展表情与动作的精细化 图形学与深度学习的碰撞">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/87477f70/GPU.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://pabebezz.github.io/article/87477f70/">
+
+
+<meta name="google-site-verification" content="skUdQN9cQrZuUJydKG0ivzB90q5kyLJMU5i5dt82GH4">
+<meta name="google-site-verification" content="hv7_j7TFqTy83_mHkj5EDOJhzIl0_tusCnHJBxNOfAo">
+
+
+
+
+
+
+  <title>计算机图形学-课程笔记 | Pabebe's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"> 
+       
+    </div>
+ 
+
+      <!-- change "fork me on github" -->
+     <!--  <a href="https://github.com/Pabebezz" target="_blank" ><img style="position: absolute; top: 0; right: 1200; border: 0;"  width="149" height="149" src="/images/forkme_left_green.png" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a> -->
+     <a href="https://github.com/Pabebezz" class="github-corner" target="_blank" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #326755; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+       
+       <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pabebe's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">业精于勤，荒于嬉；行成于思，毁于随。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/87477f70/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pabebe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pabebe's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机图形学-课程笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T15:41:53+08:00">
+                2019-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+           
+           
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+            
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>VS2017</p>
+<p>注释：        先<strong>CTRL+K</strong>，然后<strong>CTRL+C</strong></p>
+<p>取消注释： 先<strong>CTRL+K</strong>，然后<strong>CTRL+U</strong></p>
+<h1 id="图形应用"><a href="#图形应用" class="headerlink" title="图形应用"></a>图形应用</h1><p>计算机辅助设计(CAD:computer-aided design)</p>
+<p>虚拟现实环境(virtual-reality environment)</p>
+<p>科学计算可视化（scientific visualization）</p>
+<h1 id="未来发展"><a href="#未来发展" class="headerlink" title="未来发展"></a>未来发展</h1><p>表情与动作的精细化</p>
+<p><strong>图形学与深度学习的碰撞</strong></p>
+<a id="more"></a>
+<p>阴极射线管（CRT）</p>
+<p>发光二极管显示器（LED：Liquid-emtting diode）</p>
+<p>GPU 擅长于计算</p>
+<p><img src="/article/87477f70/GPU.png" alt="GPU"></p>
+<p>像素：由图像的小方格组成的,这些小方块都有一个明确的位置和被分配的色彩数值,小方格颜色和位置就决定该图像所呈现出来的样子</p>
+<p>显示分辨率：水平像素数*垂直像素数 ，取决于光点与帧缓存（存放一帧的信息）的大小</p>
+<p>帧缓存的容量 = 分辨率 * 颜色位面数</p>
+<p><img src="/article/87477f70/光点.png" alt="光点"></p>
+<h1 id="可编程渲染管线"><a href="#可编程渲染管线" class="headerlink" title="可编程渲染管线"></a>可编程渲染管线</h1><h2 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h2><p>固定管线：程序员控制权减少，不灵活</p>
+<p><img src="/article/87477f70/固定管线.png" alt="固定管线"></p>
+<p>可编程图形库：自由搭建，功能范围广</p>
+<p><img src="/article/87477f70/图形编程.png" alt="图形编程"></p>
+<p>从固定到可编程：hooks()函数（钩函数）突破固定功能流水线的限制，使用可编程着色器修改</p>
+<p>流水线中特定步骤的行为。</p>
+<h2 id="GPU渲染管线"><a href="#GPU渲染管线" class="headerlink" title="GPU渲染管线"></a>GPU渲染管线</h2><p>应用阶段 -》 几何阶段 -》光栅化</p>
+<p><img src="/article/87477f70/GPU渲染管线.png" alt="GPU渲染管线"></p>
+<p><img src="/article/87477f70/光栅化.png" alt="光栅化"></p>
+<h1 id="软光栅"><a href="#软光栅" class="headerlink" title="软光栅"></a>软光栅</h1><p>扫描转换也就是光栅化,点阵单元是像素点阵</p>
+<p>图源经过算法计算（不借助硬件提供的api）转换成像素点</p>
+<p><img src="/article/87477f70/扫描转换.png" alt="扫描转换"></p>
+<p><img src="/article/87477f70/光栅化.png" alt="光栅化"></p>
+<p>逼近的本质相当于 连续量向离散量的转换</p>
+<p><img src="/article/87477f70/转换.png" alt="转换"></p>
+<h2 id="直线扫描转换算法"><a href="#直线扫描转换算法" class="headerlink" title="直线扫描转换算法"></a>直线扫描转换算法</h2><p>逐点比较法、正负法、数值微分算法、Bresenham算法</p>
+<h3 id="数值微分算法（DDA）"><a href="#数值微分算法（DDA）" class="headerlink" title="数值微分算法（DDA）"></a>数值微分算法（DDA）</h3><p><img src="/article/87477f70/DDA.png" alt="DDA"></p>
+<p><img src="/article/87477f70/DDA1.png" alt="DDA1"></p>
+<p><img src="/article/87477f70/DDA2.png" alt="DDA2"></p>
+<p>DDA是增量算法，优点：简单直观易实现，缺点：有浮点数和浮点运算，效率不高</p>
+<p>记得取整（光栅化过程中不可能绘制半个像素点）</p>
+<p>源码实现：</p>
+<p><img src="/article/87477f70/DDA3.png" alt="DDA3"></p>
+<h3 id="Bresenham算法"><a href="#Bresenham算法" class="headerlink" title="Bresenham算法"></a>Bresenham算法</h3><p>（1）中点</p>
+<p><img src="/article/87477f70/Bresenham.png" alt="Bresenham"></p>
+<p><img src="/article/87477f70/Bresenham1.png" alt="Bresenham1"></p>
+<p>算法步骤：</p>
+<p>假定0&lt;k&lt;1,x是最大位移方向；为防止浮点数出现，d（误差项）放大2倍</p>
+<p><img src="/article/87477f70/Bresenham2.png" alt="Bresenham2"></p>
+<p>（2）改进</p>
+<p><img src="/article/87477f70/Bresenham3.png" alt="Bresenham3"></p>
+<h2 id="圆的扫描转换算法"><a href="#圆的扫描转换算法" class="headerlink" title="圆的扫描转换算法"></a>圆的扫描转换算法</h2><p><img src="/article/87477f70/圆.png" alt="圆"></p>
+<p>常规计算太复杂</p>
+<h3 id="Bresenham算法-1"><a href="#Bresenham算法-1" class="headerlink" title="Bresenham算法"></a>Bresenham算法</h3><p><img src="/article/87477f70/圆Bresenham1.png" alt="圆Bresenham1"></p>
+<p><img src="/article/87477f70/圆Bresenham2.png" alt="圆Bresenham2"></p>
+<p><img src="/article/87477f70/圆Bresenham3.png" alt="圆Bresenham3"></p>
+<h2 id="椭圆的扫描转换算法"><a href="#椭圆的扫描转换算法" class="headerlink" title="椭圆的扫描转换算法"></a>椭圆的扫描转换算法</h2><p>在椭圆弧的扫描转换算法中，如果考虑的是中心在原点，第一象限的1/4段椭圆弧，则上下部分的分界点是<strong>椭圆弧上法向量x、y两个分量相等的点</strong></p>
+<p><img src="/article/87477f70/椭圆Bresenham1.png" alt="椭圆Bresenham1"></p>
+<p><img src="/article/87477f70/椭圆Bresenham2.png" alt="椭圆Bresenham2"></p>
+<p><img src="/article/87477f70/椭圆Bresenham3.png" alt="椭圆Bresenham3"></p>
+<p><img src="/article/87477f70/椭圆Bresenham4.png" alt="椭圆Bresenham4"></p>
+<p><img src="/article/87477f70/椭圆Bresenham5.png" alt="椭圆Bresenham5"></p>
+<p><img src="/article/87477f70/椭圆Bresenham6.png" alt="椭圆Bresenham6"></p>
+<p><img src="/article/87477f70/椭圆Bresenham7.png" alt="椭圆Bresenham7"></p>
+<h2 id="多边形的扫描转换算法"><a href="#多边形的扫描转换算法" class="headerlink" title="多边形的扫描转换算法"></a>多边形的扫描转换算法</h2><h3 id="X-扫描线思想"><a href="#X-扫描线思想" class="headerlink" title="X-扫描线思想"></a>X-扫描线思想</h3><p> <img src="/article/87477f70/多边形X-扫描线思想.png" alt="多边形X-扫描线思想"></p>
+<p><img src="/article/87477f70/多边形X-扫描线思想1.png" alt="多边形X-扫描线思想1"></p>
+<p>由于像素点较小，因此中心偏移看不出来</p>
+<p><img src="/article/87477f70/多边形X-扫描线思想2.png" alt="多边形X-扫描线思想"></p>
+<p>算法效率问题</p>
+<p><img src="/article/87477f70/多边形X-扫描线思想3.png" alt="多边形X-扫描线思想3"></p>
+<p>​                                                                                                                                                                    </p>
+<h3 id="Y向连贯性算法"><a href="#Y向连贯性算法" class="headerlink" title="Y向连贯性算法"></a>Y向连贯性算法</h3><p><a href="https://www.icourse163.org/learn/HUST-1003636001?tid=1206895203#/learn/content?type=detail&amp;id=1211820033&amp;cid=1214742058" target="_blank" rel="noopener">具体算法思想查看此处</a></p>
+<p><img src="/article/87477f70/Y向连贯性算法1.png" alt="Y向连贯性算法1"></p>
+<p><img src="/article/87477f70/Y向连贯性算法2.png" alt="Y向连贯性算法2"></p>
+<p><img src="/article/87477f70/Y向连贯性算法3.png" alt="Y向连贯性算法3"></p>
+<p><img src="/article/87477f70/Y向连贯性算法.png" alt="Y向连贯性算法"></p>
+<h3 id="边标志算法"><a href="#边标志算法" class="headerlink" title="边标志算法"></a>边标志算法</h3><p>上闭下开</p>
+<p><img src="/article/87477f70/边标志算法.png" alt="边标志算法"></p>
+<p><img src="/article/87477f70/边标志算法1.png" alt="边标志算法1"></p>
+<p><img src="/article/87477f70/边标志算法2.png" alt="边标志算法2"></p>
+<h2 id="区域填充"><a href="#区域填充" class="headerlink" title="区域填充"></a>区域填充</h2><p><img src="/article/87477f70/区域.png" alt="区域"></p>
+<p><img src="/article/87477f70/区域填充算法分类.png" alt="区域填充算法分类"></p>
+<p>边界填充算法</p>
+<p>8连通边界算法<strong>不可以</strong>填充4连通边界表示区域</p>
+<p><img src="/article/87477f70/区域填充算法2.png" alt="区域填充算法2"></p>
+<p>泛填充算法通常用于给区域重新着色</p>
+<p>8连通泛填充算法<strong>可以</strong>填充4泛填充的内点表示区域</p>
+<p><img src="/article/87477f70/区域填充算法1.png" alt="区域填充算法1"></p>
+<p>重复入栈问题</p>
+<p><img src="/article/87477f70/区域填充算法3.png" alt="区域填充算法3"></p>
+<p><img src="/article/87477f70/区域填充算法4.png" alt="区域填充算法4"></p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>颜色，虚实，宽细，纹理贴图</p>
+<p>根据斜率改变模板</p>
+<p><img src="/article/87477f70/属性.png" alt="属性"></p>
+<p><img src="/article/87477f70/属性1.png" alt="属性"></p>
+<p><img src="/article/87477f70/属性2.png" alt="属性"></p>
+<p><img src="/article/87477f70/属性3.png" alt="属性"></p>
+<p><img src="/article/87477f70/属性4.png" alt="属性"></p>
+<h2 id="走样与反走样"><a href="#走样与反走样" class="headerlink" title="走样与反走样"></a>走样与反走样</h2><p><img src="/article/87477f70/走样2.png" alt="走样2"></p>
+<p><img src="/article/87477f70/走样1.png" alt="走样1"></p>
+<p><img src="/article/87477f70/走样.png" alt="走样"></p>
+<p>为提高图片质量，进行反走样</p>
+<p><img src="/article/87477f70/走样4.png" alt="走样4"></p>
+<p><img src="/article/87477f70/走样5.png" alt="走样5"></p>
+<p><img src="/article/87477f70/走样6.png" alt="走样6"></p>
+<p><img src="/article/87477f70/走样7.png" alt="走样7"></p>
+<p><img src="/article/87477f70/走样8.png" alt="走样8"></p>
+<p><img src="/article/87477f70/走样9.png" alt="走样9"></p>
+<h1 id="造型技术"><a href="#造型技术" class="headerlink" title="造型技术"></a>造型技术</h1><p>研究如何在计算机中建立恰当的模型表示不同图形对象的技术</p>
+<p>对象：规则对象（几何模型）、不规则对象（不能用欧式几何加以描述的对象如山树云烟）</p>
+<p><img src="/article/87477f70/图形的构成.png" alt="图形的构成"></p>
+<p><img src="/article/87477f70/环.png" alt="环"></p>
+<p><img src="/article/87477f70/面.png" alt="面"></p>
+<p><img src="/article/87477f70/几何造型.png" alt="几何造型"></p>
+<h2 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h2><p><img src="/article/87477f70/实体.png" alt="实体"></p>
+<p><img src="/article/87477f70/实体1.png" alt="实体1"></p>
+<p><img src="/article/87477f70/实体2.png" alt="实体2"></p>
+<p><img src="/article/87477f70/实体3.png" alt="实体3"></p>
+<p><img src="/article/87477f70/实体4.png" alt="实体4"></p>
+<p><img src="/article/87477f70/实体5.png" alt="实体5"></p>
+<p><img src="/article/87477f70/实体6.png" alt="实体6"></p>
+<p><img src="/article/87477f70/实体7.png" alt="实体7"></p>
+<h2 id="样条"><a href="#样条" class="headerlink" title="样条"></a>样条</h2><p><img src="/article/87477f70/样条.png" alt="样条"></p>
+<p><img src="/article/87477f70/样条1.png" alt="样条1"></p>
+<p><img src="/article/87477f70/样条3.png" alt="样条3"></p>
+<p><img src="/article/87477f70/样条4.png" alt="样条4"></p>
+<p><img src="/article/87477f70/样条5.png" alt="样条5"></p>
+<p><img src="/article/87477f70/样条6.png" alt="样条6"></p>
+<p><img src="/article/87477f70/样条7.png" alt="样条7"></p>
+<h3 id="样条的描述方法"><a href="#样条的描述方法" class="headerlink" title="样条的描述方法"></a>样条的描述方法</h3><p><img src="/article/87477f70/曲线描述.png" alt="曲线描述"></p>
+<p><img src="/article/87477f70/样条的描述方法1.png" alt="样条的描述方法1"></p>
+<p><img src="/article/87477f70/样条的描述方法2.png" alt="样条的描述方法2"></p>
+<p><img src="/article/87477f70/样条的描述方法3.png" alt="样条的描述方法3"></p>
+<p><img src="/article/87477f70/样条的描述方法4.png" alt="样条的描述方法4"></p>
+<p><img src="/article/87477f70/样条的描述方法5.png" alt="样条的描述方法5"></p>
+<h3 id="Bezier实例"><a href="#Bezier实例" class="headerlink" title="Bezier实例"></a>Bezier实例</h3><p><img src="/article/87477f70/Bezier曲线公式1.png" alt="Bezier曲线公式1"></p>
+<p><img src="/article/87477f70/Bezier曲线公式2.png" alt="Bezier曲线公式2"></p>
+<p>特性：</p>
+<p>（1）曲线总是通过第一个和最后一个控制点</p>
+<p>（2）曲线起始点处的切线落在头两个控制点的连线上，曲线终点处的切线落在后两个控制点的连线上</p>
+<p>（3）曲线落在控制点的凸壳内</p>
+<p>（4）封闭曲线的第一个点和最后一个点重合； 多个控制点位于同一位置需要更多加权</p>
+<p><img src="/article/87477f70/样条的描述方法-曲面1.png" alt="样条的描述方法-曲面1"></p>
+<p><img src="/article/87477f70/Bezier曲面公式.png" alt="Bezier曲面公式"></p>
+<p><img src="/article/87477f70/Bezier曲面示例.png" alt="Bezier曲面示例"></p>
+<p><img src="/article/87477f70/Bezier曲面示例2.png" alt="Bezier曲面示例2"></p>
+<h2 id="实体模型的三类表示"><a href="#实体模型的三类表示" class="headerlink" title="实体模型的三类表示"></a>实体模型的三类表示</h2><p>多边形表示（三角形或四边形）</p>
+<p>扫描表示（旋转扫描、广义扫描）</p>
+<p><img src="/article/87477f70/实体模型.png" alt="实体模型"></p>
+<p>构造实体几何法：由两个实体间的并、交或差操作生成的新的实体（CSG树）</p>
+<p><img src="/article/87477f70/CSG树.png" alt="CSG树"></p>
+<p>光线投射算法</p>
+<p><img src="/article/87477f70/光线投射算法.png" alt="光线投射算法"></p>
+<p><img src="/article/87477f70/光线投射算法2.png" alt="光线投射算法2"></p>
+<p><strong>空间位置枚举</strong></p>
+<p><img src="/article/87477f70/空间位置枚举.png" alt="空间位置枚举"></p>
+<p>（1）八叉树</p>
+<p><img src="/article/87477f70/空间位置枚举-八叉树.png" alt="空间位置枚举-八叉树"></p>
+<p>（2）松散八叉树</p>
+<p><img src="/article/87477f70/空间位置枚举-松散八叉树.png" alt="空间位置枚举-松散八叉树"></p>
+<p>（3）BSP树</p>
+<p><img src="/article/87477f70/空间位置枚举-BSP树.png" alt="空间位置枚举-BSP树"></p>
+<p>与八叉树相比较：自适应分割，有效减少树的深度和搜索时间</p>
+<p>​                               有效识别前向面与后向面</p>
+<p><img src="/article/87477f70/空间位置枚举-BSP树类别.png" alt="空间位置枚举-BSP树类别"></p>
+<p>轴对齐：① xyz轴的顺序进行分割  或者 ②最长边</p>
+<p>多边形对齐 ：  常运用于深度测试、相交测试、碰撞测试</p>
+<p><img src="/article/87477f70/空间位置枚举-多边形对齐BSP树.png" alt="空间位置枚举-多边形对齐BSP树"></p>
+<h2 id="分形几何"><a href="#分形几何" class="headerlink" title="分形几何"></a>分形几何</h2><p>熵：体系混乱程度的度量</p>
+<p>分形： 具有以非整数维形式充填空间的形态特征，fractal</p>
+<p><img src="/article/87477f70/分形几何.png" alt="分形几何"></p>
+<p><img src="/article/87477f70/分形维数.png" alt="分形维数"></p>
+<p><img src="/article/87477f70/分形几何2.png" alt="分形几何2"></p>
+<h2 id="粒子系统"><a href="#粒子系统" class="headerlink" title="粒子系统"></a>粒子系统</h2><p>模拟火、烟、水流…</p>
+<p><img src="/article/87477f70/粒子系统.png" alt="粒子系统"></p>
+<p>模拟多个粒子及其运动（每个粒子都有生命值）</p>
+<p>渲染过程中粒子始终面对着摄像机方向（如NPC：Non-Player Character 的名字）</p>
+<p><img src="/article/87477f70/粒子系统1.png" alt="粒子系统1"></p>
+<h1 id="变换与观察"><a href="#变换与观察" class="headerlink" title="变换与观察"></a>变换与观察</h1><p>图形的<strong>几何变换</strong>是指对图形的几何信息经过平移、比例、旋转（逆时针为正方向）、对称、错切（剪切、错位变换，用于产生弹性物体的变形处理）等变换后产生新的图形</p>
+<p><img src="/article/87477f70/几何坐标系.png" alt="几何坐标系"></p>
+<p>相关公式：</p>
+<p><img src="/article/87477f70/几何变换.png" alt="几何变换"></p>
+<h2 id="齐次坐标"><a href="#齐次坐标" class="headerlink" title="齐次坐标"></a>齐次坐标</h2><p>用n+1维向量表示一个n维向量（但具有不唯一性）</p>
+<p><img src="/article/87477f70/规范化齐次坐标.png" alt="规范化齐次坐标"></p>
+<p><img src="/article/87477f70/齐次坐标2.png" alt="齐次坐标2"></p>
+<p>运用齐次坐标可以同时表示多种变化</p>
+<p><img src="/article/87477f70/齐次坐标3.png" alt="齐次坐标3"></p>
+<p><img src="/article/87477f70/齐次坐标4.png" alt="齐次坐标4"></p>
+<h2 id="齐次坐标三维变换"><a href="#齐次坐标三维变换" class="headerlink" title="齐次坐标三维变换"></a>齐次坐标三维变换</h2><p><img src="/article/87477f70/齐次坐标5.png" alt="齐次坐标5"></p>
+<p><img src="/article/87477f70/齐次坐标6.png" alt="齐次坐标6"></p>
+<p><img src="/article/87477f70/齐次坐标7.png" alt="齐次坐标7"></p>
+<p><img src="/article/87477f70/齐次坐标8.png" alt="齐次坐标8"></p>
+<p><img src="/article/87477f70/齐次坐标9.png" alt="齐次坐标9"></p>
+<p><img src="/article/87477f70/齐次坐标10.png" alt="齐次坐标10"></p>
+<p><img src="/article/87477f70/齐次坐标11.png" alt="齐次坐标11"></p>
+<p><img src="/article/87477f70/齐次坐标12.png" alt="齐次坐标12"></p>
+<p><img src="/article/87477f70/齐次坐标13.png" alt="齐次坐标13"></p>
+<p>关于坐标原点：</p>
+<p><img src="/article/87477f70/齐次坐标15.png" alt="齐次坐标15"></p>
+<p><img src="/article/87477f70/齐次坐标16.png" alt="齐次坐标16"></p>
+<p><img src="/article/87477f70/齐次坐标17.png" alt="齐次坐标17"></p>
+<p><img src="/article/87477f70/齐次坐标18.png" alt="齐次坐标18"></p>
+<h2 id="复合变化"><a href="#复合变化" class="headerlink" title="复合变化"></a>复合变化</h2><p>其中三维复合变化可通过<strong>每次变换矩阵相乘</strong>来得到</p>
+<p>比较难以理解：<a href="https://www.icourse163.org/learn/HUST-1003636001?tid=1206895203#/learn/content?type=detail&amp;id=1211820060&amp;cid=1214742100" target="_blank" rel="noopener">https://www.icourse163.org/learn/HUST-1003636001?tid=1206895203#/learn/content?type=detail&amp;id=1211820060&amp;cid=1214742100</a></p>
+<p>（1）对任意参考点：</p>
+<p><img src="/article/87477f70/齐次坐标19.png" alt="齐次坐标19"></p>
+<p>eg：</p>
+<p><img src="/article/87477f70/齐次坐标20.png" alt="齐次坐标20"></p>
+<p>（2）对任意轴：</p>
+<p><img src="/article/87477f70/齐次坐标21.png" alt="齐次坐标21"></p>
+<h2 id="观察变换"><a href="#观察变换" class="headerlink" title="观察变换"></a>观察变换</h2><p><img src="/article/87477f70/齐次22.png" alt="齐次22"></p>
+<p>世界坐标到观察坐标系的变换 ：实际上是世界坐标系Q（x,y,z）在观察坐标系中的坐标值 ，<strong>最后不需要逆变换回去</strong></p>
+<p><img src="/article/87477f70/齐次坐标23.png" alt="齐次坐标23"></p>
+<p><img src="/article/87477f70/齐次坐标24.png" alt="齐次坐标24"></p>
+<p><img src="/article/87477f70/齐次坐标25.png" alt="齐次坐标25"></p>
+<p><strong>模型变化与观察变化具有对偶性</strong></p>
+<h1 id="投影变换"><a href="#投影变换" class="headerlink" title="投影变换"></a>投影变换</h1><p>观察变换中隐含一个观察平面，即投影平面</p>
+<p>按照投影中心的位置</p>
+<h2 id="投影分类"><a href="#投影分类" class="headerlink" title="投影分类"></a>投影分类</h2><p><img src="/article/87477f70/投影1.png" alt="投影1"></p>
+<h3 id="平行投影"><a href="#平行投影" class="headerlink" title="平行投影"></a>平行投影</h3><p><img src="/article/87477f70/投影2.png" alt="投影2"></p>
+<p><strong>正投影</strong>分为 三视图（主侧俯）与正轴测图</p>
+<p><img src="/article/87477f70/投影3.png" alt="投影3"></p>
+<p>等轴测：投影面与三个坐标面的夹角都相等</p>
+<p>正二测：投影面与二个坐标面的夹角都相等</p>
+<p>正三测：投影面与三个坐标面的夹角都不相等</p>
+<p><img src="/article/87477f70/投影4.png" alt="投影4"></p>
+<p><strong>斜投影</strong></p>
+<p><img src="/article/87477f70/投影5.png" alt="投影5"></p>
+<h3 id="透视投影"><a href="#透视投影" class="headerlink" title="透视投影"></a>透视投影</h3><p><img src="/article/87477f70/投影6.png" alt="投影6"></p>
+<p><img src="/article/87477f70/投影7.png" alt="投影7"></p>
+<p><img src="/article/87477f70/投影8.png" alt="投影8"></p>
+<p><img src="/article/87477f70/投影9.png" alt="投影9"></p>
+<h2 id="规范化投影"><a href="#规范化投影" class="headerlink" title="规范化投影"></a>规范化投影</h2><p><img src="/article/87477f70/规范化投影.png" alt="规范化投影"></p>
+<p>观察窗口的大小、投影方式的不同都影响着观察空间</p>
+<p><img src="/article/87477f70/规范化投影1.png" alt="规范化投影1"></p>
+<p>为后续操作方便，因此规范化</p>
+<p><img src="/article/87477f70/规范化投影2.png" alt="规范化投影2"></p>
+<p><img src="/article/87477f70/规范化投影3.png" alt="规范化投影3"></p>
+<p><img src="/article/87477f70/规范化投影4.png" alt="规范化投影4"></p>
+<p>通过openGL函数调用来完成这一操作</p>
+<h1 id="裁剪与屏幕映射"><a href="#裁剪与屏幕映射" class="headerlink" title="裁剪与屏幕映射"></a>裁剪与屏幕映射</h1><h2 id="CS算法"><a href="#CS算法" class="headerlink" title="CS算法"></a>CS算法</h2><p><img src="/article/87477f70/裁剪1.png" alt="裁剪1"></p>
+<p><img src="/article/87477f70/裁剪2.png" alt="裁剪"></p>
+<p><img src="/article/87477f70/裁剪3.png" alt="裁剪3"></p>
+<p>按左下右上的顺序求出直线段求出直线段与窗口边界的交点</p>
+<h2 id="改进后的CS中点法"><a href="#改进后的CS中点法" class="headerlink" title="改进后的CS中点法"></a>改进后的CS中点法</h2><p><img src="/article/87477f70/裁剪4.png" alt="裁剪4"></p>
+<p><img src="/article/87477f70/裁剪5.png" alt="裁剪5"></p>
+<h2 id="LB算法"><a href="#LB算法" class="headerlink" title="LB算法"></a>LB算法</h2><p>将线段看作“先进后出”的带方向的线，建立参数方程，求出与裁剪窗口的交点，6个点：起终点，与窗口边界及其延长线的交点</p>
+<p><img src="/article/87477f70/裁剪6.png" alt="裁剪6"></p>
+<p><img src="/article/87477f70/裁剪7.png" alt="裁剪6"></p>
+<p><img src="/article/87477f70/裁剪8.png" alt="裁剪6"></p>
+<p><img src="/article/87477f70/裁剪9.png" alt="裁剪6"></p>
+<p><img src="/article/87477f70/裁剪10.png" alt="裁剪6"></p>
+<p><img src="/article/87477f70/裁剪11.png" alt="裁剪11"></p>
+<h2 id="多边形的裁剪"><a href="#多边形的裁剪" class="headerlink" title="多边形的裁剪"></a>多边形的裁剪</h2><p><img src="/article/87477f70/裁剪12.png" alt="裁剪12"></p>
+<p>该算法遇到凹边形时会出现问题：多余边V2、V3</p>
+<p><img src="/article/87477f70/裁剪13.png" alt="裁剪13"></p>
+<p>另一种算法</p>
+<p>窗口定义为pw，多边形定义为ps</p>
+<p>线段按指定方向，在可见侧进入不可见侧时进行相应操作（以BC,CD为例 到V2时同时输出V1、V2，并返回D点）</p>
+<p><img src="/article/87477f70/裁剪14.png" alt="裁剪14"></p>
+<h2 id="三维空间的裁剪"><a href="#三维空间的裁剪" class="headerlink" title="三维空间的裁剪"></a>三维空间的裁剪</h2><p>增加至6个点，与面的交点</p>
+<p><img src="/article/87477f70/裁剪16.png" alt="裁剪16"></p>
+<p>增加至8个点，与面的交点</p>
+<p><img src="/article/87477f70/裁剪17.png" alt="裁剪17"></p>
+<p><img src="/article/87477f70/裁剪18.png" alt="裁剪18"></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">----------------  本文结束  ----------------</div>
+<br>
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>计算机图形学-课程笔记</p>
+  <p><span>文章作者:</span>Pabebe</p>
+  <p><span>发布时间:</span>2019年09月29日 - 15:41:53</p>
+  <p><span>最后更新:</span>2020年06月16日 - 18:24:34</p>
+  <p><span>原始链接:</span><a href="/article/87477f70/" title="计算机图形学-课程笔记">https://pabebezz.github.io/article/87477f70/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/87477f70/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+
+    
+</div>
+
+
+    
+
+    
+
+    
+    
+   <!-- 添加版权声明 -->
+    <div>
+    
+        
+     
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/study-notes/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;study notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/article/6dc244e8/" rel="next" title="深度学习-pytorch框架">
+                <i class="fa fa-chevron-left"></i> 深度学习-pytorch框架
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/9200fd3/" rel="prev" title="计算机图形学-实验">
+                计算机图形学-实验 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Pabebe">
+            
+              <p class="site-author-name" itemprop="name">Pabebe</p>
+              <p class="site-description motion-element" itemprop="description">I have the soulful eyes of a cow</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Pabebezz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/Pabebe" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zezuwang@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图形应用"><span class="nav-number">1.</span> <span class="nav-text">图形应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#未来发展"><span class="nav-number">2.</span> <span class="nav-text">未来发展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可编程渲染管线"><span class="nav-number">3.</span> <span class="nav-text">可编程渲染管线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#发展历程"><span class="nav-number">3.1.</span> <span class="nav-text">发展历程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GPU渲染管线"><span class="nav-number">3.2.</span> <span class="nav-text">GPU渲染管线</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软光栅"><span class="nav-number">4.</span> <span class="nav-text">软光栅</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#直线扫描转换算法"><span class="nav-number">4.1.</span> <span class="nav-text">直线扫描转换算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数值微分算法（DDA）"><span class="nav-number">4.1.1.</span> <span class="nav-text">数值微分算法（DDA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bresenham算法"><span class="nav-number">4.1.2.</span> <span class="nav-text">Bresenham算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆的扫描转换算法"><span class="nav-number">4.2.</span> <span class="nav-text">圆的扫描转换算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bresenham算法-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">Bresenham算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#椭圆的扫描转换算法"><span class="nav-number">4.3.</span> <span class="nav-text">椭圆的扫描转换算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多边形的扫描转换算法"><span class="nav-number">4.4.</span> <span class="nav-text">多边形的扫描转换算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#X-扫描线思想"><span class="nav-number">4.4.1.</span> <span class="nav-text">X-扫描线思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Y向连贯性算法"><span class="nav-number">4.4.2.</span> <span class="nav-text">Y向连贯性算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边标志算法"><span class="nav-number">4.4.3.</span> <span class="nav-text">边标志算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区域填充"><span class="nav-number">4.5.</span> <span class="nav-text">区域填充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">4.6.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#走样与反走样"><span class="nav-number">4.7.</span> <span class="nav-text">走样与反走样</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#造型技术"><span class="nav-number">5.</span> <span class="nav-text">造型技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实体"><span class="nav-number">5.1.</span> <span class="nav-text">实体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样条"><span class="nav-number">5.2.</span> <span class="nav-text">样条</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#样条的描述方法"><span class="nav-number">5.2.1.</span> <span class="nav-text">样条的描述方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bezier实例"><span class="nav-number">5.2.2.</span> <span class="nav-text">Bezier实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实体模型的三类表示"><span class="nav-number">5.3.</span> <span class="nav-text">实体模型的三类表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分形几何"><span class="nav-number">5.4.</span> <span class="nav-text">分形几何</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粒子系统"><span class="nav-number">5.5.</span> <span class="nav-text">粒子系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变换与观察"><span class="nav-number">6.</span> <span class="nav-text">变换与观察</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#齐次坐标"><span class="nav-number">6.1.</span> <span class="nav-text">齐次坐标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#齐次坐标三维变换"><span class="nav-number">6.2.</span> <span class="nav-text">齐次坐标三维变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合变化"><span class="nav-number">6.3.</span> <span class="nav-text">复合变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#观察变换"><span class="nav-number">6.4.</span> <span class="nav-text">观察变换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#投影变换"><span class="nav-number">7.</span> <span class="nav-text">投影变换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#投影分类"><span class="nav-number">7.1.</span> <span class="nav-text">投影分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平行投影"><span class="nav-number">7.1.1.</span> <span class="nav-text">平行投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透视投影"><span class="nav-number">7.1.2.</span> <span class="nav-text">透视投影</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规范化投影"><span class="nav-number">7.2.</span> <span class="nav-text">规范化投影</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#裁剪与屏幕映射"><span class="nav-number">8.</span> <span class="nav-text">裁剪与屏幕映射</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CS算法"><span class="nav-number">8.1.</span> <span class="nav-text">CS算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改进后的CS中点法"><span class="nav-number">8.2.</span> <span class="nav-text">改进后的CS中点法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LB算法"><span class="nav-number">8.3.</span> <span class="nav-text">LB算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多边形的裁剪"><span class="nav-number">8.4.</span> <span class="nav-text">多边形的裁剪</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三维空间的裁剪"><span class="nav-number">8.5.</span> <span class="nav-text">三维空间的裁剪</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pabebe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">本站总字数&#58;</span>
+    
+    <span title="本站总字数">86.2k</span> 
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+    总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+    </span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+    <span id="busuanzi_container_site_uv" style="display:none">
+    有<span id="busuanzi_value_site_uv"></span>人到访
+    </span>
+
+  
+</div>
+
+<div>
+
+</div>
+
+<!--  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div> 
+
+
+
+   <span class="post-meta-divider">|</span>
+ 
+
+ 
+ <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div> 
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+
+<!-- 页面点击出现文字 -->
+ <script type="text/javascript" src="/js/src/myLittleWits.js"></script>
+ 
+</html>

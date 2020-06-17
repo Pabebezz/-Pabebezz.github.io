@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="study notes,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pabebe's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="机器学习最具有理论计算的部分，有点难the Support Vector Machine (SVM)监督学习算法  也称大间距分类器，因其设置了一个安全区域 在某些情况下比逻辑回归更适合构造非线性复杂分类器">
+<meta name="keywords" content="study notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习-支持向量机">
+<meta property="og:url" content="https://pabebezz.github.io/article/36b4f21c/index.html">
+<meta property="og:site_name" content="Pabebe&#39;s Blog">
+<meta property="og:description" content="机器学习最具有理论计算的部分，有点难the Support Vector Machine (SVM)监督学习算法  也称大间距分类器，因其设置了一个安全区域 在某些情况下比逻辑回归更适合构造非线性复杂分类器">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13代价函数.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13代价函数含义.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13支持向量机决策边界的安全区域.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13决策边界.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13向量内积.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13决策边界的计算.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13决策边界最大间距的原因.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13核函数.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13高斯核函数.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13σ的影响.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13计算细节.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13参数选择.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13实现步骤.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13高斯核函数代码.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13其他核函数.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13多类别分类.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/36b4f21c/13算法比较.png">
+<meta property="og:updated_time" content="2020-06-16T10:24:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习-支持向量机">
+<meta name="twitter:description" content="机器学习最具有理论计算的部分，有点难the Support Vector Machine (SVM)监督学习算法  也称大间距分类器，因其设置了一个安全区域 在某些情况下比逻辑回归更适合构造非线性复杂分类器">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/36b4f21c/13代价函数.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://pabebezz.github.io/article/36b4f21c/">
+
+
+<meta name="google-site-verification" content="skUdQN9cQrZuUJydKG0ivzB90q5kyLJMU5i5dt82GH4">
+<meta name="google-site-verification" content="hv7_j7TFqTy83_mHkj5EDOJhzIl0_tusCnHJBxNOfAo">
+
+
+
+
+
+
+  <title>机器学习-支持向量机 | Pabebe's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"> 
+       
+    </div>
+ 
+
+      <!-- change "fork me on github" -->
+     <!--  <a href="https://github.com/Pabebezz" target="_blank" ><img style="position: absolute; top: 0; right: 1200; border: 0;"  width="149" height="149" src="/images/forkme_left_green.png" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a> -->
+     <a href="https://github.com/Pabebezz" class="github-corner" target="_blank" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #326755; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+       
+       <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pabebe's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">业精于勤，荒于嬉；行成于思，毁于随。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/36b4f21c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pabebe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pabebe's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习-支持向量机</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-29T16:19:58+08:00">
+                2019-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+           
+           
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+            
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.7k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="机器学习最具有理论计算的部分，有点难"><a href="#机器学习最具有理论计算的部分，有点难" class="headerlink" title="机器学习最具有理论计算的部分，有点难"></a>机器学习最具有理论计算的部分，有点难</h1><h1 id="the-Support-Vector-Machine-SVM"><a href="#the-Support-Vector-Machine-SVM" class="headerlink" title="the Support Vector Machine (SVM)"></a>the Support Vector Machine (SVM)</h1><p>监督学习算法 </p>
+<p>也称大间距分类器，因其设置了一个安全区域</p>
+<p>在某些情况下比逻辑回归更适合构造非线性复杂分类器</p>
+<p><img src="/article/36b4f21c/13代价函数.png" alt="13代价函数"></p>
+<a id="more"></a>
+<p>优化目标： 最小化假设函数，一样是找到最优的θ</p>
+<p><img src="/article/36b4f21c/13代价函数含义.png" alt="13代价函数含义"></p>
+<p>决策边界以最大的间距与训练集分开</p>
+<p><img src="/article/36b4f21c/13支持向量机决策边界的安全区域.png" alt="13支持向量机决策边界的安全区域"></p>
+<p>C过大 对异常点敏感 会导致训练集与边界线之间的间距变小。</p>
+<p><img src="/article/36b4f21c/13决策边界.png" alt="13决策边界"></p>
+<p>向量内积的性质</p>
+<p>其中 P 是 投影，有符号的实数</p>
+<p>|| u|| 向量u的欧几里长度 就是 我们所说的“向量长度”</p>
+<p><img src="/article/36b4f21c/13向量内积.png" alt="13向量内积"></p>
+<p>运用于代价函数的计算</p>
+<p>θ的方向与决策边界90°正交</p>
+<p>θ_0代表决策边界与Y轴的截距</p>
+<p><img src="/article/36b4f21c/13决策边界的计算.png" alt="13决策边界的计算"></p>
+<p>为什么支持向量机会找到最大间距呢？</p>
+<p>如图它会使得P最大，从而min||θ||，P就是训练集在θ上面的投影，</p>
+<p>在这样的过程中便找到了最大间距~</p>
+<p><img src="/article/36b4f21c/13决策边界最大间距的原因.png" alt="13决策边界最大间距的原因"></p>
+<h1 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h1><p>利用核函数K根据特征 X 和标记点 l 定义新的特征量 f</p>
+<p>本质上 f是X与l的相似度 </p>
+<p><img src="/article/36b4f21c/13核函数.png" alt="13核函数"></p>
+<h2 id="高斯核函数"><a href="#高斯核函数" class="headerlink" title="高斯核函数"></a>高斯核函数</h2><p><img src="/article/36b4f21c/13高斯核函数.png" alt="13高斯核函数"></p>
+<p>核函数与标记点共同定义复杂非线性决策边界</p>
+<p>越大 特征量x从标记点l离开时变化速度越大</p>
+<p><img src="/article/36b4f21c/13σ的影响.png" alt="13σ的影响"></p>
+<p>同样不需要正则化θ_0</p>
+<p>θT M θ 更多的是为了计算效率，稍微改变了正则化的结果</p>
+<p><img src="/article/36b4f21c/13计算细节.png" alt="13计算细节"></p>
+<h1 id="参数的选择"><a href="#参数的选择" class="headerlink" title="参数的选择"></a>参数的选择</h1><p>C过大 相当于逻辑回归中 λ过小，不正则化 ，易出现过拟合；反之易出现欠拟合。</p>
+<p>σ^2 过大 f变化过于平滑，易出现欠拟合；反之f变化剧烈易出现过拟合。</p>
+<p><img src="/article/36b4f21c/13参数选择.png" alt="13参数选择"></p>
+<h1 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h1><p>n表示特征量的数量，m表示训练集的数量</p>
+<p>可以在n X多 ，m少的情况 不要核函数，得到一条线性决策边界</p>
+<p>可以在m X多 ，n少的情况 选择高斯核函数，得到一条复杂非线性决策边界</p>
+<p><img src="/article/36b4f21c/13实现步骤.png" alt="13实现步骤"></p>
+<p><strong>在进行高斯核函数前不用特征归一化</strong></p>
+<p><img src="/article/36b4f21c/13高斯核函数代码.png" alt="13高斯核函数代码"></p>
+<p><img src="/article/36b4f21c/13其他核函数.png" alt="13其他核函数"></p>
+<h1 id="多类别分类"><a href="#多类别分类" class="headerlink" title="多类别分类"></a>多类别分类</h1><p>类似于 逻辑回归中的“一对多” ，选择概率最大的 z</p>
+<p><img src="/article/36b4f21c/13多类别分类.png" alt="13多类别分类"></p>
+<p>tips:</p>
+<p>逻辑回归与不带核函数的支持向量机十分类似，效果略有不同。</p>
+<p>神经网络适合大部分问题，但速度可能被限制</p>
+<p><img src="/article/36b4f21c/13算法比较.png" alt="13算法比较"></p>
+<h1 id="编程作业"><a href="#编程作业" class="headerlink" title="编程作业"></a>编程作业</h1><p><strong>gaussianKernel.m</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function sim = gaussianKernel(x1, x2, sigma)</span><br><span class="line">%RBFKERNEL returns a radial basis function kernel between x1 and x2</span><br><span class="line">%   sim = gaussianKernel(x1, x2) returns a gaussian kernel between x1 and x2</span><br><span class="line">%   and returns the value in sim</span><br><span class="line"></span><br><span class="line">% Ensure that x1 and x2 are column vectors</span><br><span class="line">x1 = x1(:); x2 = x2(:);</span><br><span class="line"></span><br><span class="line">% You need to return the following variables correctly.</span><br><span class="line">sim = 0;</span><br><span class="line"></span><br><span class="line">% ====================== YOUR CODE HERE ======================</span><br><span class="line">% Instructions: Fill in this function to return the similarity between x1</span><br><span class="line">%               and x2 computed using a Gaussian kernel with bandwidth</span><br><span class="line">%               sigma</span><br><span class="line">%</span><br><span class="line">%</span><br><span class="line"></span><br><span class="line">sim = exp(- sum((x1-x2).^2)/2/(sigma^2));</span><br><span class="line"></span><br><span class="line">% =============================================================</span><br><span class="line">    </span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p><strong>dataset3Params.m</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">function [C, sigma] = dataset3Params(X, y, Xval, yval)</span><br><span class="line">%DATASET3PARAMS returns your choice of C and sigma for Part 3 of the exercise</span><br><span class="line">%where you select the optimal (C, sigma) learning parameters to use for SVM</span><br><span class="line">%with RBF kernel</span><br><span class="line">%   [C, sigma] = DATASET3PARAMS(X, y, Xval, yval) returns your choice of C and </span><br><span class="line">%   sigma. You should complete this function to return the optimal C and </span><br><span class="line">%   sigma based on a cross-validation set.</span><br><span class="line">%</span><br><span class="line"></span><br><span class="line">% You need to return the following variables correctly.</span><br><span class="line">C = 1;</span><br><span class="line">sigma = 0.3;</span><br><span class="line"></span><br><span class="line">% ====================== YOUR CODE HERE ======================</span><br><span class="line">% Instructions: Fill in this function to return the optimal C and sigma</span><br><span class="line">%               learning parameters found using the cross validation set.</span><br><span class="line">%               You can use svmPredict to predict the labels on the cross</span><br><span class="line">%               validation set. For example, </span><br><span class="line">%                   predictions = svmPredict(model, Xval);</span><br><span class="line">%               will return the predictions on the cross validation set.</span><br><span class="line">%</span><br><span class="line">%  Note: You can compute the prediction error using </span><br><span class="line">%        mean(double(predictions ~= yval))</span><br><span class="line">%</span><br><span class="line">C_multi = [0.01,0.03,0.1,0.3,1,3,10,30];</span><br><span class="line">sigma_multi = [0.01,0.03,0.1,0.3,1,3,10,30];</span><br><span class="line">min_err =  Inf;</span><br><span class="line"></span><br><span class="line">for i = 1:length(C_multi)</span><br><span class="line"> for j = 1:length(sigma_multi) </span><br><span class="line">  model= svmTrain(X, y, C_multi(i), @(x1, x2) gaussianKernel(x1, x2, sigma_multi(j))); </span><br><span class="line">  predictions = svmPredict(model, Xval);</span><br><span class="line">  err = mean(double(predictions ~= yval)); </span><br><span class="line">  if min_err &gt; err</span><br><span class="line">     C = C_multi(i);</span><br><span class="line">     sigma = sigma_multi(j);</span><br><span class="line">     min_err = err;</span><br><span class="line">   endif</span><br><span class="line">  endfor</span><br><span class="line">endfor</span><br><span class="line"></span><br><span class="line">% =========================================================================</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p><strong>processEmail.m</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line">function word_indices = processEmail(email_contents)</span><br><span class="line">%PROCESSEMAIL preprocesses a the body of an email and</span><br><span class="line">%returns a list of word_indices </span><br><span class="line">%   word_indices = PROCESSEMAIL(email_contents) preprocesses </span><br><span class="line">%   the body of an email and returns a list of indices of the </span><br><span class="line">%   words contained in the email. </span><br><span class="line">%</span><br><span class="line"></span><br><span class="line">% Load Vocabulary</span><br><span class="line">vocabList = getVocabList();</span><br><span class="line"></span><br><span class="line">% Init return value</span><br><span class="line">word_indices = [];</span><br><span class="line"></span><br><span class="line">% ========================== Preprocess Email ===========================</span><br><span class="line"></span><br><span class="line">% Find the Headers ( \n\n and remove )</span><br><span class="line">% Uncomment the following lines if you are working with raw emails with the</span><br><span class="line">% full headers</span><br><span class="line"></span><br><span class="line">% hdrstart = strfind(email_contents, ([char(10) char(10)]));</span><br><span class="line">% email_contents = email_contents(hdrstart(1):end);</span><br><span class="line"></span><br><span class="line">% Lower case</span><br><span class="line">email_contents = lower(email_contents);</span><br><span class="line"></span><br><span class="line">% Strip all HTML</span><br><span class="line">% Looks for any expression that starts with &lt; and ends with &gt; and replace</span><br><span class="line">% and does not have any &lt; or &gt; in the tag it with a space</span><br><span class="line">email_contents = regexprep(email_contents, &apos;&lt;[^&lt;&gt;]+&gt;&apos;, &apos; &apos;);</span><br><span class="line"></span><br><span class="line">% Handle Numbers</span><br><span class="line">% Look for one or more characters between 0-9</span><br><span class="line">email_contents = regexprep(email_contents, &apos;[0-9]+&apos;, &apos;number&apos;);</span><br><span class="line"></span><br><span class="line">% Handle URLS</span><br><span class="line">% Look for strings starting with http:// or https://</span><br><span class="line">email_contents = regexprep(email_contents, ...</span><br><span class="line">                           &apos;(http|https)://[^\s]*&apos;, &apos;httpaddr&apos;);</span><br><span class="line"></span><br><span class="line">% Handle Email Addresses</span><br><span class="line">% Look for strings with @ in the middle</span><br><span class="line">email_contents = regexprep(email_contents, &apos;[^\s]+@[^\s]+&apos;, &apos;emailaddr&apos;);</span><br><span class="line"></span><br><span class="line">% Handle $ sign</span><br><span class="line">email_contents = regexprep(email_contents, &apos;[$]+&apos;, &apos;dollar&apos;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">% ========================== Tokenize Email ===========================</span><br><span class="line"></span><br><span class="line">% Output the email to screen as well</span><br><span class="line">fprintf(&apos;\n==== Processed Email ====\n\n&apos;);</span><br><span class="line"></span><br><span class="line">% Process file</span><br><span class="line">l = 0;</span><br><span class="line"></span><br><span class="line">while ~isempty(email_contents)</span><br><span class="line"></span><br><span class="line">    % Tokenize and also get rid of any punctuation</span><br><span class="line">    [str, email_contents] = ...</span><br><span class="line">       strtok(email_contents, ...</span><br><span class="line">              [&apos; @$/#.-:&amp;*+=[]?!()&#123;&#125;,&apos;&apos;&quot;&gt;_&lt;;%&apos; char(10) char(13)]);</span><br><span class="line">   </span><br><span class="line">    % Remove any non alphanumeric characters</span><br><span class="line">    str = regexprep(str, &apos;[^a-zA-Z0-9]&apos;, &apos;&apos;);</span><br><span class="line"></span><br><span class="line">    % Stem the word </span><br><span class="line">    % (the porterStemmer sometimes has issues, so we use a try catch block)</span><br><span class="line">    try str = porterStemmer(strtrim(str)); </span><br><span class="line">    catch str = &apos;&apos;; continue;</span><br><span class="line">    end;</span><br><span class="line"></span><br><span class="line">    % Skip the word if it is too short</span><br><span class="line">    if length(str) &lt; 1</span><br><span class="line">       continue;</span><br><span class="line">    end</span><br><span class="line"></span><br><span class="line">    % Look up the word in the dictionary and add to word_indices if</span><br><span class="line">    % found</span><br><span class="line">    % ====================== YOUR CODE HERE ======================</span><br><span class="line">    % Instructions: Fill in this function to add the index of str to</span><br><span class="line">    %               word_indices if it is in the vocabulary. At this point</span><br><span class="line">    %               of the code, you have a stemmed word from the email in</span><br><span class="line">    %               the variable str. You should look up str in the</span><br><span class="line">    %               vocabulary list (vocabList). If a match exists, you</span><br><span class="line">    %               should add the index of the word to the word_indices</span><br><span class="line">    %               vector. Concretely, if str = &apos;action&apos;, then you should</span><br><span class="line">    %               look up the vocabulary list to find where in vocabList</span><br><span class="line">    %               &apos;action&apos; appears. For example, if vocabList&#123;18&#125; =</span><br><span class="line">    %               &apos;action&apos;, then, you should add 18 to the word_indices </span><br><span class="line">    %               vector (e.g., word_indices = [word_indices ; 18]; ).</span><br><span class="line">    % </span><br><span class="line">    % Note: vocabList&#123;idx&#125; returns a the word with index idx in the</span><br><span class="line">    %       vocabulary list.</span><br><span class="line">    % </span><br><span class="line">    % Note: You can use strcmp(str1, str2) to compare two strings (str1 and</span><br><span class="line">    %       str2). It will return 1 only if the two strings are equivalent.</span><br><span class="line">    %</span><br><span class="line"></span><br><span class="line">    for i = 1:length(vocabList)</span><br><span class="line">        if strcmp(str,vocabList(i)) == 1</span><br><span class="line">          word_indices = [word_indices ; i];</span><br><span class="line">        endif     </span><br><span class="line">    endfor</span><br><span class="line"></span><br><span class="line">    % =============================================================</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    % Print to screen, ensuring that the output lines are not too long</span><br><span class="line">    if (l + length(str) + 1) &gt; 78</span><br><span class="line">        fprintf(&apos;\n&apos;);</span><br><span class="line">        l = 0;</span><br><span class="line">    end</span><br><span class="line">    fprintf(&apos;%s &apos;, str);</span><br><span class="line">    l = l + length(str) + 1;</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">% Print footer</span><br><span class="line">fprintf(&apos;\n\n=========================\n&apos;);</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p><strong>emailFeatures.m</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">function x = emailFeatures(word_indices)</span><br><span class="line">%EMAILFEATURES takes in a word_indices vector and produces a feature vector</span><br><span class="line">%from the word indices</span><br><span class="line">%   x = EMAILFEATURES(word_indices) takes in a word_indices vector and </span><br><span class="line">%   produces a feature vector from the word indices. </span><br><span class="line"></span><br><span class="line">% Total number of words in the dictionary</span><br><span class="line">n = 1899;</span><br><span class="line"></span><br><span class="line">% You need to return the following variables correctly.</span><br><span class="line">x = zeros(n, 1);</span><br><span class="line"></span><br><span class="line">% ====================== YOUR CODE HERE ======================</span><br><span class="line">% Instructions: Fill in this function to return a feature vector for the</span><br><span class="line">%               given email (word_indices). To help make it easier to </span><br><span class="line">%               process the emails, we have have already pre-processed each</span><br><span class="line">%               email and converted each word in the email into an index in</span><br><span class="line">%               a fixed dictionary (of 1899 words). The variable</span><br><span class="line">%               word_indices contains the list of indices of the words</span><br><span class="line">%               which occur in one email.</span><br><span class="line">% </span><br><span class="line">%               Concretely, if an email has the text:</span><br><span class="line">%</span><br><span class="line">%                  The quick brown fox jumped over the lazy dog.</span><br><span class="line">%</span><br><span class="line">%               Then, the word_indices vector for this text might look </span><br><span class="line">%               like:</span><br><span class="line">%               </span><br><span class="line">%                   60  100   33   44   10     53  60  58   5</span><br><span class="line">%</span><br><span class="line">%               where, we have mapped each word onto a number, for example:</span><br><span class="line">%</span><br><span class="line">%                   the   -- 60</span><br><span class="line">%                   quick -- 100</span><br><span class="line">%                   ...</span><br><span class="line">%</span><br><span class="line">%              (note: the above numbers are just an example and are not the</span><br><span class="line">%               actual mappings).</span><br><span class="line">%</span><br><span class="line">%              Your task is take one such word_indices vector and construct</span><br><span class="line">%              a binary feature vector that indicates whether a particular</span><br><span class="line">%              word occurs in the email. That is, x(i) = 1 when word i</span><br><span class="line">%              is present in the email. Concretely, if the word &apos;the&apos; (say,</span><br><span class="line">%              index 60) appears in the email, then x(60) = 1. The feature</span><br><span class="line">%              vector should look like:</span><br><span class="line">%</span><br><span class="line">%              x = [ 0 0 0 0 1 0 0 0 ... 0 0 0 0 1 ... 0 0 0 1 0 ..];</span><br><span class="line">%</span><br><span class="line">%</span><br><span class="line">for i=1:length(word_indices)</span><br><span class="line">  </span><br><span class="line">    x(word_indices(i)) = 1;</span><br><span class="line"> </span><br><span class="line">endfor</span><br><span class="line"></span><br><span class="line">% =========================================================================</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">----------------  本文结束  ----------------</div>
+<br>
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>机器学习-支持向量机</p>
+  <p><span>文章作者:</span>Pabebe</p>
+  <p><span>发布时间:</span>2019年07月29日 - 16:19:58</p>
+  <p><span>最后更新:</span>2020年06月16日 - 18:24:34</p>
+  <p><span>原始链接:</span><a href="/article/36b4f21c/" title="机器学习-支持向量机">https://pabebezz.github.io/article/36b4f21c/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/36b4f21c/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+
+    
+</div>
+
+
+    
+
+    
+
+    
+    
+   <!-- 添加版权声明 -->
+    <div>
+    
+        
+     
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/study-notes/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;study notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/article/f46160db/" rel="next" title="机器学习-评价方法">
+                <i class="fa fa-chevron-left"></i> 机器学习-评价方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/67d32740/" rel="prev" title="hexoBlog迁移与GitHub源码备份">
+                hexoBlog迁移与GitHub源码备份 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Pabebe">
+            
+              <p class="site-author-name" itemprop="name">Pabebe</p>
+              <p class="site-description motion-element" itemprop="description">I have the soulful eyes of a cow</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Pabebezz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/Pabebe" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zezuwang@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习最具有理论计算的部分，有点难"><span class="nav-number">1.</span> <span class="nav-text">机器学习最具有理论计算的部分，有点难</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#the-Support-Vector-Machine-SVM"><span class="nav-number">2.</span> <span class="nav-text">the Support Vector Machine (SVM)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核函数"><span class="nav-number">3.</span> <span class="nav-text">核函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯核函数"><span class="nav-number">3.1.</span> <span class="nav-text">高斯核函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参数的选择"><span class="nav-number">4.</span> <span class="nav-text">参数的选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现步骤"><span class="nav-number">5.</span> <span class="nav-text">实现步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多类别分类"><span class="nav-number">6.</span> <span class="nav-text">多类别分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编程作业"><span class="nav-number">7.</span> <span class="nav-text">编程作业</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pabebe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">本站总字数&#58;</span>
+    
+    <span title="本站总字数">86.2k</span> 
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+    总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+    </span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+    <span id="busuanzi_container_site_uv" style="display:none">
+    有<span id="busuanzi_value_site_uv"></span>人到访
+    </span>
+
+  
+</div>
+
+<div>
+
+</div>
+
+<!--  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div> 
+
+
+
+   <span class="post-meta-divider">|</span>
+ 
+
+ 
+ <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div> 
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+
+<!-- 页面点击出现文字 -->
+ <script type="text/javascript" src="/js/src/myLittleWits.js"></script>
+ 
+</html>

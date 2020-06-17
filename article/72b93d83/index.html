@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="study notes,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pabebe's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="协议体系OSI，TCP/IP，五层协议的体系结构OSI分层 （7层）：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。 TCP/IP分层（4层）：网络接口层、网际层、运输层、应用层。 五层协议 （5层）：物理层、数据链路层、网络层、运输层、应用层。">
+<meta name="keywords" content="study notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络总结">
+<meta property="og:url" content="https://pabebezz.github.io/article/72b93d83/index.html">
+<meta property="og:site_name" content="Pabebe&#39;s Blog">
+<meta property="og:description" content="协议体系OSI，TCP/IP，五层协议的体系结构OSI分层 （7层）：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。 TCP/IP分层（4层）：网络接口层、网际层、运输层、应用层。 五层协议 （5层）：物理层、数据链路层、网络层、运输层、应用层。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pabebezz.github.io/article/72b93d83/通信过程.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/806469/201803/806469-20180306144836799-364864480.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/72b93d83/TCP建立连接.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/72b93d83/TCP断开连接.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/72b93d83/TCP数据报格式.png">
+<meta property="og:image" content="https://img-blog.csdn.net/20151223100408931?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https:////upload-images.jianshu.io/upload_images/4340772-d77a09fe70d12d11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/876">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/4340772-b185b55f5cdae75d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200">
+<meta property="og:image" content="https://pabebezz.github.io/article/72b93d83/TCP拥塞控制.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/4340772-536ae19d497670e6.png?imageMogr2/auto-orient/strip|imageView2/2/w/542">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/753880/201612/753880-20161226113959492-429704891.jpg">
+<meta property="og:updated_time" content="2020-06-16T10:24:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络总结">
+<meta name="twitter:description" content="协议体系OSI，TCP/IP，五层协议的体系结构OSI分层 （7层）：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。 TCP/IP分层（4层）：网络接口层、网际层、运输层、应用层。 五层协议 （5层）：物理层、数据链路层、网络层、运输层、应用层。">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/72b93d83/通信过程.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://pabebezz.github.io/article/72b93d83/">
+
+
+<meta name="google-site-verification" content="skUdQN9cQrZuUJydKG0ivzB90q5kyLJMU5i5dt82GH4">
+<meta name="google-site-verification" content="hv7_j7TFqTy83_mHkj5EDOJhzIl0_tusCnHJBxNOfAo">
+
+
+
+
+
+
+  <title>计算机网络总结 | Pabebe's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"> 
+       
+    </div>
+ 
+
+      <!-- change "fork me on github" -->
+     <!--  <a href="https://github.com/Pabebezz" target="_blank" ><img style="position: absolute; top: 0; right: 1200; border: 0;"  width="149" height="149" src="/images/forkme_left_green.png" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a> -->
+     <a href="https://github.com/Pabebezz" class="github-corner" target="_blank" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #326755; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+       
+       <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pabebe's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">业精于勤，荒于嬉；行成于思，毁于随。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/72b93d83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pabebe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pabebe's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机网络总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-19T10:42:48+08:00">
+                2019-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Networking/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Networking</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+           
+           
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+            
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  12.5k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  45 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="协议体系"><a href="#协议体系" class="headerlink" title="协议体系"></a>协议体系</h1><h2 id="OSI，TCP-IP，五层协议的体系结构"><a href="#OSI，TCP-IP，五层协议的体系结构" class="headerlink" title="OSI，TCP/IP，五层协议的体系结构"></a>OSI，TCP/IP，五层协议的体系结构</h2><p><strong>OSI分层 （7层）：</strong>物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。<br> <strong>TCP/IP分层（4层）：</strong>网络接口层、网际层、运输层、应用层。<br> <strong>五层协议 （5层）：</strong>物理层、数据链路层、网络层、运输层、应用层。</p>
+<a id="more"></a>
+<h2 id="各层协议及功能"><a href="#各层协议及功能" class="headerlink" title="各层协议及功能"></a>各层协议及功能</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>功能</th>
+<th>协议</th>
+<th>设备</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用层</td>
+<td>允许访问OSI环境的手段，提供各种应用程序接口（应用协议数据单元APDU）</td>
+<td>FTP、DNS、Telnet、SMTP、HTTP、WWW、NFS</td>
+<td></td>
+</tr>
+<tr>
+<td>表示层</td>
+<td>对数据进行翻译、加密和压缩                                 （表示协议数据单元PPDU）</td>
+<td>JPEG、MPEG、ASII</td>
+<td></td>
+</tr>
+<tr>
+<td>会话层</td>
+<td>建立、管理和终止会话                                            （会话协议数据单元SPDU）</td>
+<td>NFS、SQL、NETBIOS、RPC</td>
+<td></td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>提供端到端的可靠报文传递和错误恢复             （段Segment）</td>
+<td>TCP、UDP、SPX</td>
+<td></td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>负责数据包从源到宿的传递和网际互连             （包Packet）   寻址、路由选择</td>
+<td>IP、ICMP、ARP、RARP、OSPF、IPX、RIP、IGRP</td>
+<td>路由器</td>
+</tr>
+<tr>
+<td>数据链路层</td>
+<td>将比特组装成帧和点到点的传递（帧Frame）      差错校验、链路管理、媒介访问控制</td>
+<td>PPP、FR、HDLC、VLAN、MAC</td>
+<td>网桥，交换机</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>通过媒介传输比特,确定机械及电气规范            （比特Bit）</td>
+<td>RJ45、CLOCK、IEEE802.3</td>
+<td>中继器，集线器，网关</td>
+</tr>
+</tbody>
+</table>
+<h2 id="主机间通信过程"><a href="#主机间通信过程" class="headerlink" title="主机间通信过程"></a>主机间通信过程</h2><p><img src="/article/72b93d83/通信过程.png" alt="通信过程"></p>
+<h1 id="交换机、路由器、网关的概念以及用途"><a href="#交换机、路由器、网关的概念以及用途" class="headerlink" title="交换机、路由器、网关的概念以及用途"></a>交换机、路由器、网关的概念以及用途</h1><h2 id="1）交换机"><a href="#1）交换机" class="headerlink" title="1）交换机"></a><strong>1）交换机</strong></h2><p>在计算机网络系统中，交换机是针对<strong>共享工作模式的弱点</strong>而推出的。交换机拥有<strong>一条高带宽的背部总线和内部交换矩阵</strong>。交换机的<strong>所有端口都挂接在这条背部总线上</strong>，当控制电路收到数据包以后，处理端口会查找内存中的地址对照表以确定目的MAC（网卡的硬件地址）的NIC（网卡）挂接在哪个端口上，通过内部 交换矩阵迅速将数据包传送到目的端口。目的MAC若不存在，交换机才广播到所有的端口，接收端口回应后交换机会“学习”新的地址，并把它添加入<strong>内部地址表</strong>中。</p>
+<p>交换机工作于<strong>数据链路层</strong>。交换机内部的CPU会在每个端口<strong>成功连接</strong>时，通过<strong>ARP协议</strong>学习它的<strong>MAC地址</strong>，保存成一张 ARP表。在今后的通讯中，发往该MAC地址的数据包将仅送往其对应的端口，而不是所有的端口。因此，<strong>交换机可用于划分数据链路层广播</strong>，<strong>即冲突域</strong>；但它<strong>不能</strong>划分网络层广播，即<strong>广播域。</strong></p>
+<p>交换机被广泛应用于二层网络交换，俗称“二层交换机”。</p>
+<p>交换机的种类有：二层交换机、三层交换机、四层交换机、七层交换机分别工作在OSI七层模型中的第二层、第三层、第四层和第七层，并因此而得名。</p>
+<h2 id="2）路由器"><a href="#2）路由器" class="headerlink" title="2）路由器"></a><strong>2）路由器</strong></h2><p>路由器（Router）是一种计算机网络设备，提供了<strong>路由与转送</strong>两种重要机制，可以决定数据包从来源端到目的端所经过的路由路径（<strong>host到host之间的传输路径</strong>），这个过程称为<strong>路由</strong>；将<strong>路由器输入端</strong>的数据包移送至适当的<strong>路由器输出端</strong>(<strong>在路由器内部进行</strong>)，这称为<strong>转送</strong>。<strong>路由工作在OSI模型的第三层——即网络层</strong>，例如网际协议。</p>
+<p>路由器的一个作用是<strong>连通不同的网络</strong>，另一个作用是<strong>选择信息传送的线路</strong>。 <strong>路由器与交换器的差别，路由器是属于OSI第三层的产品，交换器是OSI第二层的产品(这里特指二层交换机)。</strong></p>
+<h2 id="3）网关"><a href="#3）网关" class="headerlink" title="3）网关"></a><strong>3）网关</strong></h2><p>网关（Gateway），网关顾名思义就是<strong>连接两个网络的设备</strong>，区别于路由器（由于历史的原因，许多有关TCP/IP  的文献曾经把网络层使用的路由器（Router）称为网关，在今天很多局域网采用都是路由来接入网络，因此现在通常指的网关就是路由器的IP），经常在家庭中或者小型企业网络中使用，用于连接局域网和Internet。 网关也经常指把一种协议转成另一种协议的设备，比如语音网关。</p>
+<p>在传统TCP/IP术语中，网络设备只分成两种，一种为网关（gateway），另一种为主机（host）。网关能在网络间转递数据包，但主机不能 转送数据包。在主机（又称终端系统，end system）中，数据包需经过TCP/IP四层协议处理，但是在网关（又称中介系统，intermediate system）只需要到达网际层（Internet layer），决定路径之后就可以转送。在当时，网关gateway）与路由器（router）还没有区别。</p>
+<p>在现代网络术语中，网关（gateway）与路由器（router）的定义不同。<strong>网关（gateway）能在不同协议间移动数据</strong>，<strong>而路由器（router）是在不同网络间移动数据</strong>，相当于传统所说的IP网关（IP gateway）。</p>
+<p>网关是连接两个网络的设备，对于语音网关来说，他可以连接PSTN网络和以太网，这就相当于VOIP，把不同电话中的模拟信号通过网关而转换成数字信号，而且加入协议再去传输。在到了接收端的时候再通过网关还原成模拟的电话信号，最后才能在电话机上听到。</p>
+<p>对于以太网中的网关只能转发三层以上数据包，这一点和路由是一样的。而不同的是<strong>网关中并没有路由表，他只能按照预先设定的不同网段来进行转发</strong>。网关最重要的一点就是<strong>端口映射</strong>，子网内用户在外网看来只是外网的IP地址对应着不同的端口，这样看来就会保护子网内的用户。</p>
+<h2 id="4）网络接口卡（网卡）的功能"><a href="#4）网络接口卡（网卡）的功能" class="headerlink" title="4）网络接口卡（网卡）的功能"></a><strong>4）网络接口卡（网卡）的功能</strong></h2><p>（1）进行串行/并行转换。</p>
+<p>（2）对数据进行缓存。</p>
+<p>（3）在计算机的操作系统安装设备驱动程序。</p>
+<p>（4）实现以太网协议。 </p>
+<h2 id="5）网桥的作用"><a href="#5）网桥的作用" class="headerlink" title="5）网桥的作用"></a><strong>5）网桥的作用</strong></h2><p>网桥是一个<strong>局域网</strong>与另一个<strong>局域网</strong>之间建立连接的桥梁</p>
+<h1 id="计算机网络性能指标"><a href="#计算机网络性能指标" class="headerlink" title="计算机网络性能指标"></a>计算机网络性能指标</h1><p><strong>速率:</strong> 连接在网络上的主机在数字信道上传送数据位数的速率,  b/s kb/s Mb/s Gb/s </p>
+<p><strong>吞吐量：</strong>是单位时间内通过网络的总数据量b/s Mb/s</p>
+<p><strong>时延：</strong>是数据（一个报文或分组，甚至比特）从网络或链路的一段传送到另一端所需要的时间。</p>
+<p><strong>发送时延：</strong>是从发送数据帧的第一个比特算起，到该帧的最后一个比特发送完毕所需的时间。<br><strong>发送时延=数据帧长度(b) /信道带宽(b/s)      [信道带宽就是数据率]</strong></p>
+<p><strong>传播时延：</strong>电磁波在信道中需要传播一定的距离而花费的时间。<strong>往返时延等于两倍的端到端传播时延</strong><br><strong>传播时延=信道长度(m)/电磁波在信道上的传播速率(m/s)</strong></p>
+<p><strong>处理时延：</strong>主机或路由器处理所收到的分组的时间。<br><strong>排队时延：</strong>分组在输入队列中排队等待处理，在输出队列中等待转发，就形成了排队时延。</p>
+<p><strong>总时延=发送时延+传播时延+处理时延+排队时延</strong></p>
+<p><strong>信道利用率：</strong></p>
+<p><img src="https://images2018.cnblogs.com/blog/806469/201803/806469-20180306144836799-364864480.png" alt="img"></p>
+<p>TCP每发送一个窗口，需要进行等待确认信息回来，所以每发送完一个窗口，最快需要经过一个往返时延才可以发送下一个窗口（确认信息很小不考虑发送时延），所以在<strong>一个传输轮次中，包含一个发送时延和一个往返时延</strong>，而传输的数据量是一个窗口的大小（这里不考虑TCP、IP首部和帧的构成)<br>所以<strong>最大吞吐量为一个窗口的大小除以一个传输轮次的时间</strong></p>
+<h1 id="多种协议"><a href="#多种协议" class="headerlink" title="多种协议"></a>多种协议</h1><h2 id="ARP-地址解析协议"><a href="#ARP-地址解析协议" class="headerlink" title="ARP 地址解析协议"></a>ARP 地址解析协议</h2><p>1：首先，每个主机都会在自己的ARP缓冲区中建立一个ARP列表，以<strong>表示IP地址和MAC地址之间的对应关系</strong>。</p>
+<p>2：当<strong>源主机</strong>要发送数据时，首先<strong>检查ARP列表中是否有对应IP地址的目的主机的MAC地址</strong>，如果有，则直接发送数据，如果没有，就向本网段的所有主机发送ARP数据包，该数据包包括的内容有：源主机IP地址，源主机MAC地址，目的主机的IP地址。</p>
+<p>3：当本网络的所有主机收到该ARP数据包时，首先检查数据包中的IP地址是否是自己的IP地址，如果不是，则忽略该数据包，如果是，则<strong>首先从数据包中取出源主机的IP和MAC地址写入到ARP列表中，如果已经存在，则覆盖，然后将自己的MAC地址写入ARP响应包中，告诉源主机自己是它想要找的MAC地址。</strong></p>
+<p>4：源主机<strong>收到ARP响应包</strong>后。将<strong>目的主机的IP和MAC地址写入ARP列表</strong>，并利用此信息发送数据。如果源主机一直没有收到ARP响应数据包，表示ARP查询失败。<br><strong>广播发送ARP请求，单播发送ARP响应。</strong></p>
+<h2 id="RARP-逆地址解析协议"><a href="#RARP-逆地址解析协议" class="headerlink" title="RARP 逆地址解析协议"></a>RARP 逆地址解析协议</h2><p>作用是<strong>完成硬件地址到IP地址的映射</strong>，主要用于无盘工作站，因为给无盘工作站配置的IP地址不能保存。工作流程：在网络中配置一台RARP服务器，里面保存着IP地址和MAC地址的映射关系，当无盘工作站启动后，就封装一个RARP数据包，里面有其MAC地址，然后广播到网络上去，当服务器收到请求包后，就查找对应的MAC地址的IP地址装入响应报文中发回给请求者。因为需要<strong>广播请求报文</strong>，因此<strong>RARP只能用于具有广播能力的网络</strong></p>
+<h2 id="ICMP协议-因特网控制报文协议"><a href="#ICMP协议-因特网控制报文协议" class="headerlink" title="ICMP协议 因特网控制报文协议"></a>ICMP协议 因特网控制报文协议</h2><p>它是TCP/IP协议族的一个子协议，用于<strong>在IP主机、路由器之间传递控制消息。</strong></p>
+<h2 id="TFTP协议-简单文件传输协议"><a href="#TFTP协议-简单文件传输协议" class="headerlink" title="TFTP协议 简单文件传输协议"></a>TFTP协议 简单文件传输协议</h2><p>TCP/IP协议族中的一个用来<strong>在客户机与服务器之间进行简单文件传输的协议</strong>，提供不复杂、开销不大的文件传输服务。</p>
+<h2 id="HTTP协议-超文本传输协议"><a href="#HTTP协议-超文本传输协议" class="headerlink" title="HTTP协议 超文本传输协议"></a>HTTP协议 超文本传输协议</h2><p>是一个<strong>属于应用层</strong>的<strong>面向对象</strong>的协议，由于其简捷、快速的方式，适用于<strong>分布式超媒体信息系统</strong>。</p>
+<h2 id="DHCP协议-动态主机配置协议"><a href="#DHCP协议-动态主机配置协议" class="headerlink" title="DHCP协议 动态主机配置协议"></a>DHCP协议 <strong>动态主机配置协议</strong></h2><p>是一种让系统得以连接到网络上，并获取所需要的配置参数手段。一个局域网的网络协议，使用UDP协议工作，用途：给内部网络或网络服务供应商自动分配IP地址，给用户或者内部网络管理员作为对所有计算机作中央管理的手段。</p>
+<h2 id="NAT协议"><a href="#NAT协议" class="headerlink" title="NAT协议"></a>NAT协议</h2><p>网络地址转换属接入广域网(WAN)技术，是一种将私有（保留）地址转化为合法IP地址的转换技术，</p>
+<h2 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA/CD协议"></a>CSMA/CD协议</h2><p> 带有冲突检测的载波侦听多路存取 ， 是一个无法进行双全工的协议 。</p>
+<p><strong>先听后发</strong> <strong>边听边发</strong>， </p>
+<p><strong>冲突停发</strong> <strong>随机重发</strong></p>
+<p>CSMA/CD总线网中的计算公式：<br>　　最短数据帧长(bit)/数据传输速率(Mbps)=2*(两站点间的最大距离(m)/传播速度)</p>
+<p>信号传播时延(μs)= 两站点间的距离(m)÷信号传播速度(200m/μs)，并且：数据传输时延 (s)=数据帧长度(bit)÷数据传输速率(bps)</p>
+<h1 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h1><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>A类地址：以0开头，      第一个字节范围：0~127（1.0.0.1 - 126.255.255.254）；     缺省子网掩码：255.0.0.0 </p>
+<p>B类地址：以10开头，    第一个字节范围：128~191（128.0.0.1 - 191.255.255.254）； 缺省子网掩码：255.255.0.0 </p>
+<p>C类地址：以110开头，  第一个字节范围：192~223（192.0.0.1- 223.255.255.254）； 缺省子网掩码：255.255.255.0 </p>
+<p>10.0.0.0—10.255.255.255， 172.16.0.0—172.31.255.255， 192.168.0.0—192.168.255.255。（Internet上保留地址用于内部）</p>
+<p>网络地址：IP地址与子网掩码相与  主机地址：将掩码取反，然后与运算） </p>
+<h2 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h2><p>自定义子网掩码(用于划分子网)</p>
+<p>将一个网络划分为若干子网，希望每个子网拥有不同的网络地址或子网地址。因为IＰ是有限的，实际上我们是将主机地址分为两个部分：子网网络地址、子网主机地址。形式如下：</p>
+<p>未做子网划分的ip地址：网络地址＋主机地址<br>做子网划分后的ip地址：网络地址＋（子网网络地址＋子网主机地址）</p>
+<p> 等分成N个子网，子网掩码往右移动logN位。 </p>
+<h2 id="网络前缀"><a href="#网络前缀" class="headerlink" title="网络前缀"></a>网络前缀</h2><p>  <strong>掩码</strong> 点分十进制的地址化成二进制记法，1的个数就是网络前缀的个数。 </p>
+<h1 id="TCP的三次握手与四次挥手"><a href="#TCP的三次握手与四次挥手" class="headerlink" title="TCP的三次握手与四次挥手"></a>TCP的三次握手与四次挥手</h1><h2 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h2><p>（1）server处于Listen状态，表示服务器端的某个SOCKET处于监听状态，可以接受连接了；<br> （2）当client端socket执行connect连接时，首先发送SVN报文到server，进入SVN_SENT状态，等待server发送ACK；<br> （3）server接受到SVN进入SVN_RCVD状态，（很短暂，一般查询不到），发送SVN+ACK给client端；<br> （4）client端接受到server的ACK，发送ACK给server，server接收到后进入established状态，client也进入established状态。 </p>
+<p><img src="/article/72b93d83/TCP建立连接.png" alt="TCP建立连接"></p>
+<h2 id="四次挥手："><a href="#四次挥手：" class="headerlink" title="四次挥手："></a>四次挥手：</h2><p>（1）client发起断开连接，给server发送FIN，进入FIN_WAIT1状态，表示client想主动断开连接；<br>（2）server接受到FIN字段后，会继续发送数据给client端，并发送ACK给client端，表明自己知道了，但是还没有准备好断开，请等我的消息；<br>（3） 当server确定自己的数据已经发送完成，就发送FIN到client；<br>（4）client接受到来自server的FIN，发送ACK给server端，表示可以断开连接了，再等待2ms，没有收到server端的数据后，表示可以正常断开连接。 </p>
+<p><img src="/article/72b93d83/TCP断开连接.png" alt="TCP断开连接"></p>
+<h1 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h1><p>补充： 最大传输单元 （MTU, IP层下面<strong>数据链路层</strong>所限定的帧格式中数据字段的最大长度，与<strong>IP数据报首部中的总长度字段</strong>有关系  ）限制了数据帧的最大长度。以太网的MTU为1500字节，最小帧为64字节。 以太网规定<em>帧间最小间隔</em>为9.6 微秒 ,相当于96比特时间；以太网取51.2微秒做争用期 ,相当于512比特时间.</p>
+<p>在IP网络中 DNS（域名系统） 是负责<strong>主机IP地址</strong>与<strong>主机名称</strong>之间的转换协议，ARP（地址解析协议） 是负责<strong>IP地址</strong>与<strong>MAC地址</strong>之间的转换协议。</p>
+<h2 id="TCP报文"><a href="#TCP报文" class="headerlink" title="TCP报文"></a>TCP报文</h2><p> 一个TCP报文段分为首部和数据两部分。首部由固定部分和选项部分组成，<strong>固定部分是20字节</strong>。TCP首部的最大长度为60。首部固定部分字段：  </p>
+<p><img src="/article/72b93d83/TCP数据报格式.png" alt="TCP数据报格式"></p>
+<h2 id="IP数据报"><a href="#IP数据报" class="headerlink" title="IP数据报"></a>IP数据报</h2><p>由<strong>首部 和数据</strong> 两部分组成。首部由<strong>固定部分和可选部分</strong> 组成。<strong>首部的固定部分有20字节</strong>。可选部分的长度变化范围为1——40字节。固定部分的字段： </p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>位数（bit）</th>
+<th>字段名</th>
+<th>位数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>版本</td>
+<td>4  Ipv4</td>
+<td>首部长度</td>
+<td>4（表示的最大数为15个单位，一个单位表示4字节）</td>
+</tr>
+<tr>
+<td>服务类型</td>
+<td>8  以前很少用</td>
+<td>总长度</td>
+<td>16 （首部和数据部分的总长度，因此数据报的最大长度为65535字节，即64KB，但是由于链路层的MAC都有一定的最大传输单元，因此IP数据报的长度一般都不会有理论上的那么大，如果超出了MAC的最大单元就会进行分片）</td>
+</tr>
+<tr>
+<td>标识</td>
+<td>16 （相同的标识使得分片后的数据报片能正确的重装成原来的数据报）</td>
+<td>标志</td>
+<td>3 （最低位MF=1表示后面还有分片，MF=0表示这是若干个数据报片的最后一个中间位DF=0才允许分片）</td>
+</tr>
+<tr>
+<td>片偏移</td>
+<td>片偏移指出较长的分组在分片后，某片在原分组中的相对位置，都是8字节的偏移位置</td>
+<td>生存时间</td>
+<td>数据报在网络中的生存时间，指最多经过路由器的跳数</td>
+</tr>
+<tr>
+<td>协议</td>
+<td>8 （指出该数据报携带的数据是何种协议，以使得目的主机的IP层知道应将数据部分上交给哪个处理程序）如ICMP=1 IGMP=2 TCP=6 EGP=8 IGP=9 UDP=17 Ipv6=41 OSPF=89</td>
+<td>首部校验和</td>
+<td>这个部分只校验首部，不包括数据部分，计算方法：将首部划分为多个16位的部分，然后每个16位部分取反，然后计算和，再将和取反放到首部校验和。接收方收到后按同样的方法划分，取反，求和，在取反，如果结果为零，则接收，否则就丢弃</td>
+</tr>
+<tr>
+<td>源地址</td>
+<td>32</td>
+<td>目的地址</td>
+<td>32</td>
+</tr>
+</tbody>
+</table>
+<h2 id="UDP数据报"><a href="#UDP数据报" class="headerlink" title="UDP数据报"></a>UDP数据报</h2><p> 用户数据报UDP由<strong>首部和数据部分</strong>组成。<strong>首部只有8个字节</strong>，由4个字段组成，每个字段都是两个字节。 </p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>字节</th>
+<th>字段名</th>
+<th>字节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>源端口</td>
+<td>2</td>
+<td>目的端口</td>
+<td>2</td>
+</tr>
+<tr>
+<td>长度</td>
+<td>2</td>
+<td>检验和</td>
+<td>2 （检验首部和数据，加12字节的伪首部）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="RTT与RTO"><a href="#RTT与RTO" class="headerlink" title="RTT与RTO"></a>RTT与RTO</h2><p>RTT: 发送一个数据包到收到对应的ACK，所花费的时间</p>
+<p>RTO: 发送数据包，启动重传定时器，重传定时器到期所花费的时间，称为RTO</p>
+<p> 对于segment的重传，重传的时间RTO设定是非常重要的，如果设置太短，可能会导致并没有丢包而重传，如果设置太长了，可能因为等待ACK而浪费掉很多时间，牺牲传输的效率。 </p>
+<p>[RFC6298] <strong>习题内有例题</strong></p>
+<p>第一次RTO计算方法, 假设RTT = R</p>
+<ol>
+<li><p>SRTT = R</p>
+</li>
+<li><p>RTTVAR = R/2</p>
+</li>
+<li><p>RTO = SRTT + max(G, K*RTTVAR) , K = 4</p>
+</li>
+</ol>
+<p>后续的RTO计算,假设当前的RTT为R’</p>
+<p> RTTVAR = (1 - beta)RTTVAR + beta|SRTT - R’|    计算平滑RTT和真实RTT的差距，切记这个地方的SRTT是上一次的SRTT</p>
+<p>SRTT = (1 - alpha)<em>SRTT + alpha</em>R’  <em> 计算平滑RTT</em> </p>
+<p> RTO = SRTT + max(G, K*RTTVAR)</p>
+<p>alpha = 1/8  beta = 1/4</p>
+<h2 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h2><p>利用<strong>滑动窗口</strong>实现流量控制，如果发送方把数据发送得过快，接收方可能会来不及接收，这就会造成数据的丢失。所谓流量控制就是让发送方的发送速率不要太快，要让接收方来得及接收。</p>
+<p>TCP为每一个连接设有一个持续计时器(persistence timer)。只要TCP连接的一方收到对方的零窗口通知，就启动持续计时器。若持续计时器设置的时间到期，就发送一个零窗口控测报文段（携1字节的数据），那么收到这个报文段的一方就重新设置持续计时器。</p>
+<h2 id="拥塞控制及其方法"><a href="#拥塞控制及其方法" class="headerlink" title="拥塞控制及其方法"></a>拥塞控制及其方法</h2><p>防止过多的数据注入到网络中，这样可以使<strong>网络中的路由器或链路不致过载</strong>。拥塞控制所要做的都有一个前提：网络能够承受现有的网络负荷。拥塞控制是一个<strong>全局性</strong>的过程，涉及到所有的主机、路由器，以及与降低网络传输性能有关的所有因素。</p>
+<p>拥塞控制代价：<strong>需要获得网络内部流量分布的信息。</strong>在实施拥塞控制之前，还需要在结点之间交换信息和各种命令，以便选择控制的策略和实施控制。这样就产生了额外的开销。拥塞控制还需要将一些资源分配给各个用户单独使用，使得网络资源不能更好地实现共享。</p>
+<p>几种拥塞控制方法：<strong>慢开始(slow-start )、拥塞避免(congestion avoidance )、快重传( fastretransmit )和快恢复( fastrecovery )。</strong></p>
+<h3 id="慢开始和拥塞避免"><a href="#慢开始和拥塞避免" class="headerlink" title="慢开始和拥塞避免"></a>慢开始和拥塞避免</h3><p>发送方维持一个拥塞窗口cwnd ( congestion window )的状态变量。<strong>拥塞窗口的大小取决于网络的拥塞程度，并且动态地在变化</strong>。发送方让自己的发送窗口等于拥塞窗口。<br>    发送方控制拥塞窗口的原则是：只要网络没有出现拥塞，拥塞窗口就再增大一些，以便把更多的分组发送出去。但只要网络出现拥塞，拥塞窗口就减小一些，以减少注入到网络中的分组数。<br>    <strong>慢开始算法：</strong>当主机开始发送数据时，如果立即把大量数据字节注入到网络，那么就有可能引起网络拥塞，因为现在并不清楚网络的负荷情况。因此，较好的方法是先探测一下，即<strong>由小到大逐渐增大发送窗口</strong>，也就是说，由小到大逐渐增大拥塞窗口数值。通常在刚刚开始发送报文段时，先把拥塞窗口 cwnd  设置为一个<strong>最大报文段</strong>MSS的数值。而在每收到一个对新的报文段的确认后，把拥塞窗口增加至多一个MSS的数值。用这样的方法逐步增大发送方的拥塞窗口  cwnd ，可以使分组注入到网络的速率更加合理。</p>
+<p>每经过一个传输轮次，拥塞窗口 cwnd 就加倍。一个传输轮次所经历的时间其实就是往返时间RTT。不过“传输轮次”更加强调：<strong>把拥塞窗口cwnd所允许发送的报文段都连续发送出去，并收到了对已发送的最后一个字节的确认。</strong><br> 另，<strong>慢开始的“慢”并不是指cwnd的增长速率慢，而是指在TCP开始发送报文段时先设置cwnd=1，使得发送方在开始时只发送一个报文段（目的是试探一下网络的拥塞情况），然后再逐渐增大cwnd。</strong><br>    为了防止拥塞窗口cwnd增长过大引起网络拥塞，还需要设置一个慢开始门限ssthresh状态变量（如何设置ssthresh）。慢开始门限ssthresh的用法如下：<br>    当 cwnd &lt; ssthresh 时，使用上述的慢开始算法。<br>    当 cwnd &gt; ssthresh 时，停止使用慢开始算法而改用拥塞避免算法。<br>    当 cwnd = ssthresh 时，既可使用慢开始算法，也可使用拥塞控制避免算法。 </p>
+<p><strong>拥塞避免算法：</strong>让拥塞窗口cwnd缓慢地增大，即每经过一个往返时间RTT就把发送方的拥塞窗口cwnd加1，而不是加倍。这样拥塞窗口cwnd按线性规律缓慢增长，比慢开始算法的拥塞窗口增长速率缓慢得多。 </p>
+<p>无论在慢开始阶段还是在拥塞避免阶段，<strong>只要发送方判断网络出现拥塞（其根据就是没有收到确认）</strong>，<strong>就要把慢开始门限ssthresh设置为出现拥塞时的发送方窗口值的一半（但不能小于2）</strong>。<strong>然后把拥塞窗口cwnd重新设置为1，执行慢开始算法</strong>。这样做的目的就是要<strong>迅速减少主机发送到网络中的分组数，使得发生拥塞的路由器有足够时间把队列中积压的分组处理完毕</strong>。过程图如下：<br>    <img src="https://img-blog.csdn.net/20151223100408931?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="这里写图片描述"></p>
+<h3 id="快速重传："><a href="#快速重传：" class="headerlink" title="快速重传："></a>快速重传：</h3><p>那就是<strong>收到3个相同的ACK</strong>。TCP在收到<strong>乱序到达包</strong>时就会立即发送ACK，TCP利用3个相同的ACK来判定数据包的丢失，此时进行快速重传，快速重传做的事情有：</p>
+<ol>
+<li>把ssthresh设置为cwnd的一半</li>
+<li>把cwnd再设置为ssthresh的值(具体实现有些为ssthresh+3)</li>
+<li>重新进入<strong>拥塞避免阶段</strong>。</li>
+</ol>
+<h3 id="快速恢复"><a href="#快速恢复" class="headerlink" title="快速恢复"></a>快速恢复</h3><ol>
+<li>当收到3个重复ACK时，<strong>把ssthresh设置为cwnd的一半</strong>，把cwnd设置为ssthresh的值加3，然后重传丢失的报文段，加3的原因是因为收到3</li>
+<li><strong>再收到重复的ACK时，拥塞窗口增加1</strong>。</li>
+<li>收到<strong>新的数据包</strong>的ACK时，把<strong>cwnd设置为第一步中的ssthresh的值</strong>。原因是因为该ACK确认了新的数据，说明从重复ACK时的数据都已收到，该恢复过程已经结束，可以回到恢复之前的状态了，也即再次进入拥塞避免状态。</li>
+</ol>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="TCP和UDP的区别？"><a href="#TCP和UDP的区别？" class="headerlink" title="TCP和UDP的区别？"></a>TCP和UDP的区别？</h2><table>
+<thead>
+<tr>
+<th>区别</th>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.连接</td>
+<td>面向连接</td>
+<td>面向非连接</td>
+</tr>
+<tr>
+<td>2.可靠性</td>
+<td>可靠</td>
+<td>非可靠</td>
+</tr>
+<tr>
+<td>3.有序性</td>
+<td>有序</td>
+<td>不保证有序</td>
+</tr>
+<tr>
+<td>4.速度</td>
+<td>慢</td>
+<td>快</td>
+</tr>
+<tr>
+<td>5.量级</td>
+<td>重量级</td>
+<td>轻量级</td>
+</tr>
+<tr>
+<td>6.拥塞控制或流量控制</td>
+<td>有</td>
+<td>没有</td>
+</tr>
+<tr>
+<td>7 面向对象</td>
+<td>面向字节流，无记录边界</td>
+<td>面向报文，有记录边界</td>
+</tr>
+<tr>
+<td>8 传播方式</td>
+<td>只能单播</td>
+<td>可以广播或组播</td>
+</tr>
+<tr>
+<td>9.应用场景</td>
+<td>效率低，准确性高</td>
+<td>效率高，准确性低</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>对应协议</th>
+<th>方式</th>
+<th>功能</th>
+<th>端口号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FTP</td>
+<td>TCP</td>
+<td>定义了文件传输协议</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Telnet</td>
+<td>TCP</td>
+<td>一种用于远程登陆的端口，用户可以以自己的身份远程连接到计算机上，可提供基于DOS模式下的通信服务。</td>
+<td>23</td>
+</tr>
+<tr>
+<td>SMTP</td>
+<td>TCP</td>
+<td>邮件传送协议，用于发送邮件。</td>
+<td>25</td>
+</tr>
+<tr>
+<td>POP3</td>
+<td>TCP</td>
+<td>它是和SMTP对应，POP3用于接收邮件。</td>
+<td>110</td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td>TCP</td>
+<td>是从Web服务器传输超文本到本地浏览器的传送协议。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>UDP</td>
+<td>用于域名解析服务，将域名地址转换为IP地址</td>
+<td>53</td>
+</tr>
+<tr>
+<td>SNMP</td>
+<td>UDP</td>
+<td>简单网络管理协议，是用来管理网络设备的。由于网络设备很多，无连接的服务就体现出其优势</td>
+<td>161</td>
+</tr>
+<tr>
+<td>TFTP</td>
+<td>UDP</td>
+<td>简单文件传输协议</td>
+<td>69</td>
+</tr>
+</tbody>
+</table>
+<h2 id="为什么TIME-WAIT状态还需要等2-MSL秒之后才能返回到CLOSED状态呢？"><a href="#为什么TIME-WAIT状态还需要等2-MSL秒之后才能返回到CLOSED状态呢？" class="headerlink" title="为什么TIME_WAIT状态还需要等2*MSL秒之后才能返回到CLOSED状态呢？"></a>为什么TIME_WAIT状态还需要等2*MSL秒之后才能返回到CLOSED状态呢？</h2><p>（Max SegmentLifetime，最大分段生存期）</p>
+<p>因为虽然双方都同意关闭连接了，而且握手的4个报文也都发送完毕，按理可以直接回到CLOSED状态（就好比从SYN_SENT状态到ESTABLISH状态那样），但是我们<strong>必须假想网络是不可靠的，你无法保证你最后发送的ACK报文一定会被对方收到</strong>，就是说<strong>对方处于LAST_ACK状态下的SOCKET可能会因为超时未收到ACK报文，而重发FIN报文</strong>，所以这个TIME_WAIT状态的作用就是用来<strong>重发可能丢失的ACK报文</strong>。</p>
+<h2 id="为什么TCP连接要建立三次连接？"><a href="#为什么TCP连接要建立三次连接？" class="headerlink" title="为什么TCP连接要建立三次连接？"></a>为什么TCP连接要建立三次连接？</h2><p>为了<strong>防止失效的连接请求又传送到主机</strong>，因而产生错误。如果使用的是两次握手建立连接，假设有这样一种场景，客户端发送了第一个请求连接并且没有丢失，只是因为在网络结点中滞留的时间太长了，由于TCP的客户端迟迟没有收到确认报文，以为服务器没有收到，此时重新向服务器发送这条报文，此后客户端和服务器经过两次握手完成连接，传输数据，然后关闭连接。此时此前滞留的那一次请求连接，网络通畅了到达了服务器，这个报文本该是失效的，但是，两次握手的机制将会让客户端和服务器再次建立连接，这将导致不必要的错误和资源的浪费。</p>
+<p>如果采用的是三次握手，就算是那一次失效的报文传送过来了，服务端接受到了那条失效报文并且回复了确认报文，但是客户端不会再次发出确认。由于服务器收不到确认，就知道客户端并没有请求连接。</p>
+<h2 id="为什么TCP断开连接要4次挥手？"><a href="#为什么TCP断开连接要4次挥手？" class="headerlink" title="为什么TCP断开连接要4次挥手？"></a>为什么TCP断开连接要4次挥手？</h2><p><strong>TCP协议是一种面向连接的、可靠的、基于字节流的传输层通信协议，是一个全双工模式：</strong><br> 1、当主机A确认发送完数据且知道B已经接受完了，想要关闭发送数据口（当然确认信号还是可以发），就会发FIN给主机B。</p>
+<p>2、主机B收到A发送的FIN，表示收到了，就会发送ACK回复。</p>
+<p>3、但这是B可能还在发送数据，没有想要关闭数据口的意思，所以FIN与ACK不是同时发送的，而是等到B数据发送完了，才会发送FIN给主机A。</p>
+<p>4、A收到B发来的FIN，知道B的数据也发送完了，回复ACK， A等待2MSL以后，没有收到B传来的任何消息，知道B已经收到自己的ACK了，A就关闭链接，B也关闭链接了。<br> <strong>确保数据能够完成传输。</strong></p>
+<h2 id="如果已经建立了连接，但是客户端突然出现故障了怎么办？"><a href="#如果已经建立了连接，但是客户端突然出现故障了怎么办？" class="headerlink" title="如果已经建立了连接，但是客户端突然出现故障了怎么办？"></a>如果已经建立了连接，但是客户端突然出现故障了怎么办？</h2><p>TCP还设有一个<strong>保活计时器</strong>，显然，客户端如果出现故障，服务器不能一直等下去，白白浪费资源。服务器每收到一次客户端的请求后都会重新复位这个计时器，时间通常是设置为2小时，若两小时还没有收到客户端的任何数据，服务器就会发送一个探测报文段，以后每隔75分钟发送一次。若一连发送10个探测报文仍然没反应，服务器就认为客户端出了故障，接着就关闭连接。 </p>
+<h2 id="在浏览器中输入www-baidu-com后执行的全部过程"><a href="#在浏览器中输入www-baidu-com后执行的全部过程" class="headerlink" title="在浏览器中输入www.baidu.com后执行的全部过程"></a>在浏览器中输入<a href="http://www.baidu.com后执行的全部过程" target="_blank" rel="noopener">www.baidu.com后执行的全部过程</a></h2><p> 从网络模型的角度来分析问题的，主要涉及<strong>应用层：DNS,HTTP,传输层：TCP,网络层：IP和路由选择协议：RIP,OSPF(内部网关协议),BGP(外部网关协议）和数据链路层：ARP。</strong> </p>
+<p>1、客户端浏览器通过<a href="https://blog.csdn.net/m0_37812513/article/details/78775629" target="_blank" rel="noopener">DNS解析</a>到<a href="http://www.baidu.com的IP地址220.181.27.48，通过这个IP地址找到客户端到服务器的路径。客户端浏览器发起一个HTTP会话到220.161.27.48，然后通过TCP进行封装数据包，输入到网络层。" target="_blank" rel="noopener">www.baidu.com的IP地址220.181.27.48，通过这个IP地址找到客户端到服务器的路径。客户端浏览器发起一个HTTP会话到220.161.27.48，然后通过TCP进行封装数据包，输入到网络层。</a></p>
+<p>2、在客户端的传输层，把HTTP会话请求分成报文段，添加源和目的端口，如服务器使用80端口监听客户端的请求，客户端由系统随机选择一个端口如5000，与服务器进行交换，服务器把相应的请求返回给客户端的5000端口。然后使用IP层的IP地址查找目的端。</p>
+<p>3、客户端的网络层主要做的是通过查找路由表确定如何到达服务器，期间可能经过多个路由器，这些都是由路由器来完成的工作，我不作过多的描述，无非就是通过查找路由表决定通过那个路径到达服务器。</p>
+<p>4、客户端的链路层，包通过链路层发送到路由器，通过邻居协议查找给定IP地址的MAC地址，然后发送ARP请求查找目的地址，如果得到回应后就可以使用ARP的请求应答交换的IP数据包现在就可以传输了，然后发送IP数据包到达服务器的地址。</p>
+<h2 id="HTTP的长连接和短连接"><a href="#HTTP的长连接和短连接" class="headerlink" title="HTTP的长连接和短连接"></a>HTTP的长连接和短连接</h2><p>HTTP的长连接和短连接本质上是<strong>TCP长连接和短连接</strong>。HTTP属于应用层协议.</p>
+<p><em>短连接:浏览器和服务器每进行一次HTTP操作，就建立一次连接，但任务结束就中断连接。</em></p>
+<p><strong>长连接:</strong>当一个网页打开完成后，客户端和服务器之间用于传输HTTP数据的  TCP连接不会关闭，如果客户端再次访问这个服务器上的网页，会继续使用这一条已经建立的连接。Keep-Alive不会永久保持连接，它有一个保持时间，可以在不同的服务器软件（如Apache）中设定这个时间。实现长连接要客户端和服务端都支持长连接。</p>
+<p>TCP短连接:  client向server发起连接请求，server接到请求，然后双方建立连接。client向server发送消息，server回应client，然后一次读写就完成了，这时候双方任何一个都可以发起close操作，不过一般都是client先发起 close操作.短连接一般只会在 client/server间传递一次读写操作</p>
+<p>TCP长连接: client向server发起连接，server接受client连接，双方建立连接。Client与server完成一次读写之后，它们之间的连接并不会主动关闭，后续的读写操作会继续使用这个连接。</p>
+<h2 id="RIP使用UDP，OSPF使用IP，而BGP使用TCP。这样做有何优点？为什么RIP周期性地和临站交换路由器由信息而BGP却不这样做？"><a href="#RIP使用UDP，OSPF使用IP，而BGP使用TCP。这样做有何优点？为什么RIP周期性地和临站交换路由器由信息而BGP却不这样做？" class="headerlink" title="RIP使用UDP，OSPF使用IP，而BGP使用TCP。这样做有何优点？为什么RIP周期性地和临站交换路由器由信息而BGP却不这样做？"></a>RIP使用UDP，OSPF使用IP，而BGP使用TCP。这样做有何优点？为什么RIP周期性地和临站交换路由器由信息而BGP却不这样做？</h2><p>答：RIP只和邻站交换信息，使用UDP无可靠保障，但开销小，可以满足RIP要求；</p>
+<p>OSPF使用可靠的洪泛法，直接使用IP，灵活、开销小；</p>
+<p>BGP需要交换整个路由表和更新信息，TCP提供可靠交付以减少带宽消耗；</p>
+<p>RIP使用不保证可靠交付的UDP，因此必须不断地（周期性地）和邻站交换信息才能使路由信息及时得到更新。但BGP使用保证可靠交付的TCP因此不需要这样做。</p>
+<h2 id="运输层协议与网络层协议的区别？"><a href="#运输层协议与网络层协议的区别？" class="headerlink" title="运输层协议与网络层协议的区别？"></a>运输层协议与网络层协议的区别？</h2><p>网络层协议负责的是提供<strong>主机间</strong>的逻辑通信<br> 运输层协议负责的是提供<strong>进程间</strong>的逻辑通信</p>
+<h2 id="数据链路层协议可能提供的服务？"><a href="#数据链路层协议可能提供的服务？" class="headerlink" title="数据链路层协议可能提供的服务？"></a>数据链路层协议可能提供的服务？</h2><p>成帧、链路访问、透明传输、可靠交付、流量控制、差错检测、差错纠正、半双工和全双工。最重要的是帧定界（成帧）、透明传输以及差错检测。</p>
+<h2 id="静态路由和动态路由有什么区别？"><a href="#静态路由和动态路由有什么区别？" class="headerlink" title="静态路由和动态路由有什么区别？"></a>静态路由和动态路由有什么区别？</h2><p>静态路由是由<strong>管理员手工配置</strong>的，适合<strong>比较简单的网络或需要做路由特殊控制</strong>。而动态路由则是由<strong>动态路由协议</strong>自动维护的，不需人工干预，<strong>适合比较复杂大型的网络。</strong><br>  路由器能够自动地建立自己的路由表，并且能够根据实际实际情况的变化适时地进行调整。动态路由机制的运作依赖路由器的两个基本功能：对路由表的维护；路由器之间适时的路由信息交换。</p>
+<h2 id="在Linux环境中怎么配置一条默认路由？"><a href="#在Linux环境中怎么配置一条默认路由？" class="headerlink" title="在Linux环境中怎么配置一条默认路由？"></a>在Linux环境中怎么配置一条默认路由？</h2><p>在linux上可以用“route add default gw&lt;默认路由器 IP&gt;”命令配置一条默认路由。</p>
+<h1 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h1><h2 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h2><p>TCP的拥塞窗口cwnd大小与传输轮次n的关系如下所示：</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/4340772-d77a09fe70d12d11.png?imageMogr2/auto-orient/strip|imageView2/2/w/876" alt="img"></p>
+<p>（1）试画出如图5-25所示的拥塞窗口与传输轮次的关系曲线。<br> （2）指明TCP工作在慢开始阶段的时间间隔。<br> （3）指明TCP工作在拥塞避免阶段的时间间隔。<br> （4）在第16轮次和第22轮次之后发送方是通过收到三个重复的确认还是通过超市检测到丢失了报文段？<br> （5）在第1轮次，第18轮次和第24轮次发送时，门限ssthresh分别被设置为多大？<br> （6）在第几轮次发送出第70个报文段？<br> （7）假定在第26轮次之后收到了三个重复的确认，因而检测出了报文段的丢失，那么拥塞窗口cwnd和门限ssthresh应设置为多大？</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/4340772-b185b55f5cdae75d.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200" alt="img"> </p>
+<p><img src="/article/72b93d83/TCP拥塞控制.png" alt="TCP拥塞控制"></p>
+<p> （4）在第16轮次和第22轮次之后发送方是通过收到三个重复的确认还是通过超时检测到丢失了报文段？</p>
+<p>   在第16轮次是通过收到三个重复的确认（因为cwnd减少到原来的一半，继续进行拥塞避免操作）而检测到丢失了报文段，第22轮次是通过超时检测（因为cwnd重新赋值为1，继续进行慢开始操作）而检测到丢失了报文段。</p>
+<p>（5）在第1轮次，第18轮次和第24轮次发送时，门限ssthresh分别被设置为  32 、21、13<br> （6）在第几轮次发送出第70个报文段？第7，因为（1+2+4+8+16+32+33）&gt; 70<br> （7）假定在第26轮次之后收到了三个重复的确认，因而检测出了报文段的丢失，那么拥塞窗口cwnd和门限ssthresh应设置为 8/2=4</p>
+<h2 id="TCP报文-1"><a href="#TCP报文-1" class="headerlink" title="TCP报文"></a>TCP报文</h2><p>主机A向主机B连续发送了两个TCP报文段，其序号分别为70和100。试问：<br> （1）      第一个报文段携带了多少个字节的数据？<br> （2）      主机B收到第一个报文段后发回的确认中的确认号应当是多少？<br> （3）      如果主机B收到第二个报文段后发回的确认中的确认号是180，试问A发送的第二个报文段中的数据有多少字节？<br> （4）      如果A发送的第一个报文段丢失了，但第二个报文段到达了B。B在第二个报文段到达后向A发送确认。试问这个确认号应为多少？</p>
+<p><strong>解</strong>：（1）第一个报文段的数据序号是70到99，共30字节的数据。<br>       （2）确认号应为100.<br>       （3）80字节。<br>       （4）70</p>
+<h2 id="TCP超时重传"><a href="#TCP超时重传" class="headerlink" title="TCP超时重传"></a>TCP超时重传</h2><p>假定TCP在开始建立连接时，发送方设定超时重传时间是RTO=6s。<br> （1）当发送方接到对方的连接确认报文段时，测量出RTT样本值为1.5s。试计算现在的RTO值。<br> （2）当发送方发送数据报文段并接收到确认时，测量出RTT样本值为2.5s。试计算现在的RTO值。</p>
+<p><strong>解</strong>：根据RFC6298</p>
+<p>RTT(1) = 1.5s</p>
+<p>SRTT(1) = RTT(1) = 1.5s</p>
+<p>RTTVAR(1) = 1.5/2 = 0.75</p>
+<p>RTO = 1.5 + 4*0.75 = 4.5s    所以现在RTO的值为4.5s</p>
+<p>接着计算第二步 RTT (2) = 2.5</p>
+<p>RTTVAR(2) = 3/4 <em> 0.75 + 1/4 </em> |1.5 - 2.5|  = 13/16</p>
+<p>SRTT(2) = 7/8 <em>1.5 + 1/8</em>2.5 = 1.625</p>
+<p>RTO = 1.625 + 4 * 13/16 = 4.875 </p>
+<h2 id="IP分片"><a href="#IP分片" class="headerlink" title="IP分片"></a>IP分片</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个UDP用户数据的数据字段为<span class="number">8192</span>季节。在数据链路层要使用以太网来传送。试问应当划分为几个<span class="built_in">IP</span>数据报片？说明每一个<span class="built_in">IP</span>数据报字段长度和片偏移字段的值。</span><br></pre></td></tr></table></figure>
+<p>答：6个<br> 数据字段的长度：前5个是1480字节，最后一个是800字节。<br> 片偏移字段<strong>（ 片偏移就是某片在原分组的相对位置，以8个字节为偏移单位）</strong>的值分别是：0，185（1480/8），370 （2960/8），555 （4440/8），740 （5920/8）和925 （7400/8）.<br> <strong>因为UDP用户数据报的数据字段为8192字节，所以数据报文的长度是8192+upd首部8字节=8200。</strong><br> 所以第6个数据报片使8200-1480*5=800</p>
+<p><strong>注意</strong>：链路层具有最大传输单元<a href="https://www.baidu.com/s?wd=MTU&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1dbPhN9ujT3uhczuhn1Py7W0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPj6knW0dn1bz" target="_blank" rel="noopener">MTU</a>这个特性，它限制了数据帧的最大长度<br> <strong>以太网的MTU为1500字节，一般IP首部为20字节，UDP首部为8字节，数据的净荷（payload）部分预留是1500-20-8=1472字节。如果数据部分大于1472字节，就会出现分片现象。</strong></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个数据报长度为<span class="number">4000</span>字节（固定首部长度）。现在经过一个网络传送，但此网络能够传送的最大数据长度为<span class="number">1500</span>字节。试问应当划分为几个短些的数据报片？各数据报片的数据字段长度、片偏移字段和MF标志应为何数值？</span><br></pre></td></tr></table></figure>
+<p> 答：IP数据报固定首部长度为20字节 </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>总长度(字节)</th>
+<th>数据长度(字节)</th>
+<th>MF</th>
+<th>片偏移</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原始数据报</td>
+<td>4000</td>
+<td>3980</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>数据报片1</td>
+<td>1500</td>
+<td>1480</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>数据报片2</td>
+<td>1500</td>
+<td>1480</td>
+<td>1</td>
+<td>185</td>
+</tr>
+<tr>
+<td>数据报片3</td>
+<td>1040</td>
+<td>1020</td>
+<td>0</td>
+<td>370</td>
+</tr>
+</tbody>
+</table>
+<h2 id="IP数据报-1"><a href="#IP数据报-1" class="headerlink" title="IP数据报"></a>IP数据报</h2><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">主机A发送<span class="built_in">IP</span>数据报给主机B，途中经过了<span class="number">5</span>个路由器。试问在<span class="built_in">IP</span>数据报的发送过程中总共使用了几次ARP？</span><br></pre></td></tr></table></figure>
+<p> 答：6次，主机用一次，每个路由器各使用一次。 </p>
+<h2 id="ARQ协议"><a href="#ARQ协议" class="headerlink" title="ARQ协议"></a>ARQ协议</h2><pre><code>  假定使用连续ARQ协议中，发送窗口大小事3，而序列范围[0,15],而传输媒体保证在接收方能够按序收到分组。在某时刻，接收方，下一个期望收到序号是5.
+   试问：
+（1）在发送方的发送窗口中可能有出现的序号组合有哪几种？
+（2）接收方已经发送出去的、但在网络中（即还未到达发送方）的确认分组可能有哪些？说明这些确认分组是用来确认哪些序号的分组。
+</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/4340772-536ae19d497670e6.png?imageMogr2/auto-orient/strip|imageView2/2/w/542" alt="img"></p>
+<h2 id="路由选择"><a href="#路由选择" class="headerlink" title="路由选择"></a>路由选择</h2><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">假定网络中的路由器B的路由表有如下的项目（这三列分别表示“目的网络”、“距离”和“下一跳路由器”）</span><br><span class="line"></span><br><span class="line"><span class="symbol">N1</span>　　　<span class="number">7</span>　　A</span><br><span class="line"><span class="symbol">N2</span>　　　<span class="number">2</span>　　C</span><br><span class="line"><span class="symbol">N6</span>　　　<span class="number">8</span>　　F</span><br><span class="line"><span class="symbol">N8</span>　　　<span class="number">4</span>　　E</span><br><span class="line"><span class="symbol">N9</span>　　　<span class="number">4</span>　　F</span><br><span class="line"></span><br><span class="line">现在B收到从C发来的路由信息（这两列分别表示“目的网络”和“距离”　）：</span><br><span class="line"></span><br><span class="line"><span class="symbol">N2</span>　　　<span class="number">4</span></span><br><span class="line"><span class="symbol">N3</span>　　　<span class="number">8</span></span><br><span class="line"><span class="symbol">N6</span>　　　<span class="number">4</span></span><br><span class="line"><span class="symbol">N8</span>　　　<span class="number">3</span></span><br><span class="line"><span class="symbol">N9</span>　　　<span class="number">5</span></span><br><span class="line"></span><br><span class="line">试求出路由器B更新后的路由表（详细说明每一个步骤）。</span><br></pre></td></tr></table></figure>
+<p>解：路由器B更新后的路由表如下：</p>
+<p>N1　　　7　　A　　　　无新信息，不改变</p>
+<p>N2　　　<strong>5</strong>　　C　　　　相同的下一跳，更新</p>
+<p>N3　　　<strong>9</strong>　　C　　　　新的项目，添加进来</p>
+<p>N6　　　<strong>5</strong>　　C　　　　不同的下一跳，距离更短，更新</p>
+<p>N8　　　4　　E　　　　不同的下一跳，距离一样，不改变</p>
+<p>N9　　　4　　F　　　　不同的下一跳，距离更大，不改变</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">设某路由器建立了如下路由表：</span><br><span class="line"></span><br><span class="line">目的网络                 子网掩码                下一跳</span><br><span class="line"></span><br><span class="line">------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"><span class="number">128.96</span><span class="number">.39</span><span class="number">.0</span>              <span class="number">255.255</span><span class="number">.255</span><span class="number">.128</span>             接口<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">128.96</span><span class="number">.39</span><span class="number">.128</span>            <span class="number">255.255</span><span class="number">.255</span><span class="number">.128</span>             接口<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="number">128.96</span><span class="number">.40</span><span class="number">.0</span>              <span class="number">255.255</span><span class="number">.255</span><span class="number">.128</span>             R2</span><br><span class="line"></span><br><span class="line"><span class="number">192.4</span><span class="number">.153</span><span class="number">.0</span>              <span class="number">255.255</span><span class="number">.255</span><span class="number">.192</span>             R3</span><br><span class="line"></span><br><span class="line">*（默认）                           -                R4</span><br><span class="line"></span><br><span class="line">现共收到<span class="number">5</span>个分组，其目的站IP地址分别为：</span><br><span class="line"></span><br><span class="line">（<span class="number">1</span>）<span class="number">128.96</span><span class="number">.39</span><span class="number">.10</span></span><br><span class="line"></span><br><span class="line">（<span class="number">2</span>）<span class="number">128.96</span><span class="number">.40</span><span class="number">.12</span></span><br><span class="line"></span><br><span class="line">（<span class="number">3</span>）<span class="number">128.96</span><span class="number">.40</span><span class="number">.151</span></span><br><span class="line"></span><br><span class="line">（<span class="number">4</span>）<span class="number">192.4</span><span class="number">.153</span><span class="number">.17</span></span><br><span class="line"></span><br><span class="line">（<span class="number">5</span>）<span class="number">192.4</span><span class="number">.153</span><span class="number">.90</span></span><br><span class="line"></span><br><span class="line">试分别计算其下一跳。</span><br></pre></td></tr></table></figure>
+<p>解：（1）分组的目的站IP地址为：128.96.39.10。先与子网掩码255.255.255.128相与，得128.96.39.0，可见该分组经接口0转发。</p>
+<p>（2）分组的目的IP地址为：128.96.40.12。</p>
+<p>① 与子网掩码255.255.255.128相与得128.96.40.0，不等于128.96.39.0。</p>
+<p>② 与子网掩码255.255.255.128相与得128.96.40.0，经查路由表可知，该项分组经R2转发。</p>
+<p>（3）分组的目的IP地址为：128.96.40.151，与子网掩码255.255.255.128相与后得128.96.40.128，与子网掩码255.255.255.192相与后得128.96.40.128，经查路由表知，该分组转发选择默认路由，经R4转发。</p>
+<p>（4）分组的目的IP地址为：192.4.153.17。与子网掩码255.255.255.128相与后得192.4.153.0。与子网掩码255.255.255.192相与后得192.4.153.0，经查路由表知，该分组经R3转发。</p>
+<p>（5）分组的目的IP地址为：192.4.153.90，与子网掩码255.255.255.128相与后得192.4.153.0。与子网掩码255.255.255.192相与后得192.4.153.64，经查路由表知，该分组转发选择默认路由，经R4转发。</p>
+<h2 id="网络前缀-1"><a href="#网络前缀-1" class="headerlink" title="网络前缀"></a>网络前缀</h2><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">以下的地址前缀中哪一个地址和<span class="number">2.52</span><span class="number">.90</span><span class="number">.140</span>匹配？请说明理由。</span><br><span class="line">（<span class="number">1</span>）<span class="number">0</span>/<span class="number">4</span>；（<span class="number">2</span>）<span class="number">32</span>/<span class="number">4</span>；（<span class="number">3</span>）<span class="number">4</span>/<span class="number">6</span>；（<span class="number">4</span>）<span class="number">80</span>/<span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>答：（1）2.52.90.140与11110000 00000000 00000000 00000000逐比特相“与”和0/4匹配</p>
+<p>（2）2.52.90.140与11110000 00000000 00000000 00000000逐比特相“与”和32/4不匹配</p>
+<p>（3）2.52.90.140与11110000 00000000 00000000 00000000逐比特相“与”和4/6不匹配</p>
+<p>（4）2.52.90.140与11110000 00000000 00000000 00000000逐比特相“与”和80/4不匹配</p>
+<h2 id="CRC校验"><a href="#CRC校验" class="headerlink" title="CRC校验"></a>CRC校验</h2><figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">生成多项式:G(<span class="keyword">X</span>)=<span class="keyword">X</span><span class="number">4</span>+<span class="keyword">X</span><span class="number">3</span>+<span class="number">1</span>，要求出二进制序列<span class="number">10110011</span>的CRC校验码。</span><br></pre></td></tr></table></figure>
+<p>（1）G(X)=X4+X3+1,二进制比特串为11001;(有X的几次方，对应的2的几次方的位就是1)</p>
+<p>（2）因为校验码4位，所以10110011后面再加4个0，得到101100110000，用“模2除法”(其实就是异或)即可得出结果；</p>
+<p>  余数就是 FCS（帧校验序列 ，俗称帧尾 ） </p>
+<p><img src="https://images2015.cnblogs.com/blog/753880/201612/753880-20161226113959492-429704891.jpg" alt="img"></p>
+<p>（3）CRC^101100110000得到10110011<strong>0100</strong>。发送到接收端；</p>
+<p>（4）接收端收到101100110100后除以11001(以“模2除法”方式去除),余数为0则无差错；</p>
+<h2 id="码分多址CDMA通信"><a href="#码分多址CDMA通信" class="headerlink" title="码分多址CDMA通信"></a>码分多址CDMA通信</h2><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">共有<span class="number">4</span>个站进行码分多址CDMA通信。<span class="number">4</span>个站的码片序列为：</span><br><span class="line"></span><br><span class="line">A：（<span class="number">-1</span> –<span class="number">1</span> –<span class="number">1</span> +<span class="number">1</span> +<span class="number">1</span> –<span class="number">1</span> +<span class="number">1</span> +<span class="number">1</span>）    B：（<span class="number">-1</span> –<span class="number">1</span> +<span class="number">1</span> <span class="number">-1</span> +<span class="number">1</span> +<span class="number">1</span> +<span class="number">1</span> <span class="number">-1</span>）</span><br><span class="line"></span><br><span class="line">C：（<span class="number">-1</span> +<span class="number">1</span> –<span class="number">1</span> +<span class="number">1</span> +<span class="number">1</span> +<span class="number">1</span> <span class="number">-1</span> <span class="number">-1</span>）     D：（<span class="number">-1</span> +<span class="number">1</span> –<span class="number">1</span> –<span class="number">1</span> <span class="number">-1</span> –<span class="number">1</span> +<span class="number">1</span> <span class="number">-1</span>）</span><br><span class="line"></span><br><span class="line">现收到这样的码片序列：（<span class="number">-1</span> +<span class="number">1</span> –<span class="number">3</span> +<span class="number">1</span> <span class="number">-1</span> –<span class="number">3</span> +<span class="number">1</span> +<span class="number">1</span>）。问哪个站发送数据了？发送数据的站发送的<span class="number">1</span>还是<span class="number">0</span>？</span><br></pre></td></tr></table></figure>
+<p>答：S·A=（＋1－1＋3＋1－1＋3＋1＋1）／8=1，  A发送1</p>
+<p>S·B=（＋1－1－3－1－1－3＋1－1）／8=－1， B发送0</p>
+<p>S·C=（＋1＋1＋3＋1－1－3－1－1）／8=0，  C无发送</p>
+<p>S·D=（＋1＋1＋3－1＋1＋3＋1－1）／8=1，  D发送1</p>
+<h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、假定站点<span class="keyword">A</span>和B在同一个<span class="number">10</span>Mb/s以太网网段上。这两个站点之间的传播时延为<span class="number">225</span>比特时间。现假定<span class="keyword">A</span>开始发送一帧，并且在<span class="keyword">A</span>发送结束之前B也发送一帧。如果<span class="keyword">A</span>发送的是以太网所容许的最短的帧，那么<span class="keyword">A</span>在检测到和B发生碰撞之前能否把自己的数据发送完毕？换言之，如果<span class="keyword">A</span>在发送完毕之前并没有检测到碰撞，那么能否肯定<span class="keyword">A</span>所发送的帧不会和B发送的帧发生碰撞？（提示：在计算时应当考虑到每一个以太网帧在发送到信道上时，在MAC帧前面还要增加若干字节的前同步码和帧定界符）</span><br></pre></td></tr></table></figure>
+<p>  答： 设在t=0时A开始发送，在t=（64+8(MAC帧要加8个字节同步码和帧开始定界符)）*8=576比特时间，A应当发送完毕。t=225比特时间，B就检测出A的信号。只要B在t=224比特时间之前发送数据，A在发送完毕之前就一定检测到碰撞，就能够肯定以后也不会再发送碰撞了。如果A在发送完毕之前并没有检测到碰撞，那么就能够肯定A所发送的帧不会和B发送的帧发生碰撞（当然也不会和其他站点发生碰撞）。 </p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>、在上题中的站点<span class="keyword">A</span>和B在t=<span class="number">0</span>时同时发送了数据帧。当t=<span class="number">255</span>比特时间，<span class="keyword">A</span>和B同时检测到发生了碰撞，并且在t=<span class="number">255+48=273</span>比特时间完成了干扰信号的传输。<span class="keyword">A</span>和B在CSMA/CD算法中选择不同的r值退避。假定<span class="keyword">A</span>和B选择的随机数分别是rA=<span class="number">0</span>和rB=<span class="number">1</span>。试问<span class="keyword">A</span>和B各在什么时间开始重传其数据帧？<span class="keyword">A</span>重传的数据帧在什么时间到达B？<span class="keyword">A</span>重传的数据会不会和B重传的数据再次发生碰撞？B会不会在预定的重传时间停止发送数据？</span><br></pre></td></tr></table></figure>
+<p>答：t=0时，A，B开始传输数据；</p>
+<p>​       t=225比特时间，A和B同时检测到发生碰撞；</p>
+<p>　　t=225+48=273比特时间，完成了干扰信号的传输；</p>
+<p>　　开始各自进行退避算法：</p>
+<p>　　A：</p>
+<p>　　因为rA=0，则A在干扰信号传输完之后立即开始侦听</p>
+<p>　　t=273+225（传播时延）=498比特时间，A检测到信道开始空闲</p>
+<p>　　t=498+96（帧间最小间隔）=594比特时间，A开始重传数据 —–第一问A的重传时间</p>
+<p>　　t=594+225 （传播时延）=819比特时间，A重传完毕 —-第二问A重传的数据帧到达B的时间</p>
+<p>　　B：</p>
+<p>　　因为rB=1，则B在干扰信号传输完之后1倍的争用期，即512比特时间才开始侦听</p>
+<p>　　t=273+512=785比特时间，B开始侦听</p>
+<p>　　若侦听空闲，则</p>
+<p>　　t=785+96（帧间最小间隔）=881比特时间，B开始重传数据</p>
+<p>　　若侦听费空闲，则继续退避算法</p>
+<p>　　又因为t=819比特时间的时候，A才重传数据完毕，所以B在785比特时间侦听的时候，肯定会侦听信道非空闲，即B在预定的881比特时间之前侦听到信道忙，</p>
+<p>　　所以，第四问的答案：B在预定的881比特时间是停止发送数据的。</p>
+<p>　　即第三问A重传的数据不会和B重传的数据再次发生碰撞。</p>
+<h2 id="计算机网络性能计算"><a href="#计算机网络性能计算" class="headerlink" title="计算机网络性能计算"></a>计算机网络性能计算</h2><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">通信信道带宽为1Gb／s，端到端时延为10ms。TCP的发送窗口为65535字节。试问:可能达到的最大吞吐量是多少? 信道的利用率是多少?</span></span><br></pre></td></tr></table></figure>
+<p>往返时延等于两倍的端到端传播时延，即20ms=0.02s<br>发送时延等于窗口数据量除以带宽，即65535<em>8/10^9秒<br>TCP每发送一个窗口，需要进行等待确认信息回来，所以每发送完一个窗口，最快需要经过一个往返时延才可以发送下一个窗口（确认信息很小不考虑发送时延），所以在<strong>一个传输轮次中，包含一个发送时延和一个往返时延</strong>，而传输的数据量是一个窗口的大小（这里不考虑TCP、IP首部和帧的构成)<br>所以<strong>最大吞吐量为一个窗口的大小除以一个传输轮次的时间</strong>，即65535</em>8/(65535*8/10^9+0.02)=25.54Mbit/s<br>信道利用率为25.54Mbit/s/1000Mbit/s=2.55%</p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://blog.csdn.net/u010843421/article/details/82026427" target="_blank" rel="noopener">计算机网络——计算机网络常见面试题总结</a></p>
+<p><a href="https://www.nowcoder.com/discuss/3853" target="_blank" rel="noopener">在浏览器中输入URL后执行的全部过程的个人总结</a></p>
+<p><a href="https://www.jianshu.com/p/6898e5c86815" target="_blank" rel="noopener">计算机网络考试 复习时你应该要看的几道题！</a></p>
+<p><a href="https://blog.csdn.net/wdscq1234/article/details/52505191" target="_blank" rel="noopener">TCP-IP详解: RTT和RTO的计算方法</a></p>
+<p><a href="https://blog.csdn.net/angelniu1024/article/details/23793373" target="_blank" rel="noopener">计算机网络学习笔记——第三章课后题答案详解</a></p>
+<p><a href="https://www.cnblogs.com/kangxinxin/p/9917961.html" target="_blank" rel="noopener">子网划分及子网掩码计算方法</a></p>
+<p><a href="https://blog.csdn.net/qq_26442553/article/details/82761882" target="_blank" rel="noopener">子网划分详解</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">----------------  本文结束  ----------------</div>
+<br>
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>计算机网络总结</p>
+  <p><span>文章作者:</span>Pabebe</p>
+  <p><span>发布时间:</span>2019年11月19日 - 10:42:48</p>
+  <p><span>最后更新:</span>2020年06月16日 - 18:24:34</p>
+  <p><span>原始链接:</span><a href="/article/72b93d83/" title="计算机网络总结">https://pabebezz.github.io/article/72b93d83/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/72b93d83/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+
+    
+</div>
+
+
+    
+
+    
+
+    
+    
+   <!-- 添加版权声明 -->
+    <div>
+    
+        
+     
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/study-notes/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;study notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/article/37c8b7ce/" rel="next" title="国际交流实用英文写作">
+                <i class="fa fa-chevron-left"></i> 国际交流实用英文写作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/851220dd/" rel="prev" title="英语口语考试笔记">
+                英语口语考试笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Pabebe">
+            
+              <p class="site-author-name" itemprop="name">Pabebe</p>
+              <p class="site-description motion-element" itemprop="description">I have the soulful eyes of a cow</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Pabebezz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/Pabebe" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zezuwang@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#协议体系"><span class="nav-number">1.</span> <span class="nav-text">协议体系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI，TCP-IP，五层协议的体系结构"><span class="nav-number">1.1.</span> <span class="nav-text">OSI，TCP/IP，五层协议的体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各层协议及功能"><span class="nav-number">1.2.</span> <span class="nav-text">各层协议及功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主机间通信过程"><span class="nav-number">1.3.</span> <span class="nav-text">主机间通信过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#交换机、路由器、网关的概念以及用途"><span class="nav-number">2.</span> <span class="nav-text">交换机、路由器、网关的概念以及用途</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1）交换机"><span class="nav-number">2.1.</span> <span class="nav-text">1）交换机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2）路由器"><span class="nav-number">2.2.</span> <span class="nav-text">2）路由器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3）网关"><span class="nav-number">2.3.</span> <span class="nav-text">3）网关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4）网络接口卡（网卡）的功能"><span class="nav-number">2.4.</span> <span class="nav-text">4）网络接口卡（网卡）的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5）网桥的作用"><span class="nav-number">2.5.</span> <span class="nav-text">5）网桥的作用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络性能指标"><span class="nav-number">3.</span> <span class="nav-text">计算机网络性能指标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多种协议"><span class="nav-number">4.</span> <span class="nav-text">多种协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ARP-地址解析协议"><span class="nav-number">4.1.</span> <span class="nav-text">ARP 地址解析协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RARP-逆地址解析协议"><span class="nav-number">4.2.</span> <span class="nav-text">RARP 逆地址解析协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICMP协议-因特网控制报文协议"><span class="nav-number">4.3.</span> <span class="nav-text">ICMP协议 因特网控制报文协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TFTP协议-简单文件传输协议"><span class="nav-number">4.4.</span> <span class="nav-text">TFTP协议 简单文件传输协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP协议-超文本传输协议"><span class="nav-number">4.5.</span> <span class="nav-text">HTTP协议 超文本传输协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DHCP协议-动态主机配置协议"><span class="nav-number">4.6.</span> <span class="nav-text">DHCP协议 动态主机配置协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NAT协议"><span class="nav-number">4.7.</span> <span class="nav-text">NAT协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSMA-CD协议"><span class="nav-number">4.8.</span> <span class="nav-text">CSMA/CD协议</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IP地址"><span class="nav-number">5.</span> <span class="nav-text">IP地址</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">5.1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子网划分"><span class="nav-number">5.2.</span> <span class="nav-text">子网划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络前缀"><span class="nav-number">5.3.</span> <span class="nav-text">网络前缀</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP的三次握手与四次挥手"><span class="nav-number">6.</span> <span class="nav-text">TCP的三次握手与四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手"><span class="nav-number">6.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四次挥手："><span class="nav-number">6.2.</span> <span class="nav-text">四次挥手：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP"><span class="nav-number">7.</span> <span class="nav-text">TCP/IP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP报文"><span class="nav-number">7.1.</span> <span class="nav-text">TCP报文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP数据报"><span class="nav-number">7.2.</span> <span class="nav-text">IP数据报</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP数据报"><span class="nav-number">7.3.</span> <span class="nav-text">UDP数据报</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RTT与RTO"><span class="nav-number">7.4.</span> <span class="nav-text">RTT与RTO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流量控制"><span class="nav-number">7.5.</span> <span class="nav-text">流量控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拥塞控制及其方法"><span class="nav-number">7.6.</span> <span class="nav-text">拥塞控制及其方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#慢开始和拥塞避免"><span class="nav-number">7.6.1.</span> <span class="nav-text">慢开始和拥塞避免</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速重传："><span class="nav-number">7.6.2.</span> <span class="nav-text">快速重传：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速恢复"><span class="nav-number">7.6.3.</span> <span class="nav-text">快速恢复</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见问题"><span class="nav-number">8.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP和UDP的区别？"><span class="nav-number">8.1.</span> <span class="nav-text">TCP和UDP的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么TIME-WAIT状态还需要等2-MSL秒之后才能返回到CLOSED状态呢？"><span class="nav-number">8.2.</span> <span class="nav-text">为什么TIME_WAIT状态还需要等2*MSL秒之后才能返回到CLOSED状态呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么TCP连接要建立三次连接？"><span class="nav-number">8.3.</span> <span class="nav-text">为什么TCP连接要建立三次连接？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么TCP断开连接要4次挥手？"><span class="nav-number">8.4.</span> <span class="nav-text">为什么TCP断开连接要4次挥手？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果已经建立了连接，但是客户端突然出现故障了怎么办？"><span class="nav-number">8.5.</span> <span class="nav-text">如果已经建立了连接，但是客户端突然出现故障了怎么办？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在浏览器中输入www-baidu-com后执行的全部过程"><span class="nav-number">8.6.</span> <span class="nav-text">在浏览器中输入www.baidu.com后执行的全部过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP的长连接和短连接"><span class="nav-number">8.7.</span> <span class="nav-text">HTTP的长连接和短连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RIP使用UDP，OSPF使用IP，而BGP使用TCP。这样做有何优点？为什么RIP周期性地和临站交换路由器由信息而BGP却不这样做？"><span class="nav-number">8.8.</span> <span class="nav-text">RIP使用UDP，OSPF使用IP，而BGP使用TCP。这样做有何优点？为什么RIP周期性地和临站交换路由器由信息而BGP却不这样做？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运输层协议与网络层协议的区别？"><span class="nav-number">8.9.</span> <span class="nav-text">运输层协议与网络层协议的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据链路层协议可能提供的服务？"><span class="nav-number">8.10.</span> <span class="nav-text">数据链路层协议可能提供的服务？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态路由和动态路由有什么区别？"><span class="nav-number">8.11.</span> <span class="nav-text">静态路由和动态路由有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在Linux环境中怎么配置一条默认路由？"><span class="nav-number">8.12.</span> <span class="nav-text">在Linux环境中怎么配置一条默认路由？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#习题"><span class="nav-number">9.</span> <span class="nav-text">习题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP拥塞控制"><span class="nav-number">9.1.</span> <span class="nav-text">TCP拥塞控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP报文-1"><span class="nav-number">9.2.</span> <span class="nav-text">TCP报文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP超时重传"><span class="nav-number">9.3.</span> <span class="nav-text">TCP超时重传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP分片"><span class="nav-number">9.4.</span> <span class="nav-text">IP分片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP数据报-1"><span class="nav-number">9.5.</span> <span class="nav-text">IP数据报</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARQ协议"><span class="nav-number">9.6.</span> <span class="nav-text">ARQ协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由选择"><span class="nav-number">9.7.</span> <span class="nav-text">路由选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络前缀-1"><span class="nav-number">9.8.</span> <span class="nav-text">网络前缀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CRC校验"><span class="nav-number">9.9.</span> <span class="nav-text">CRC校验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#码分多址CDMA通信"><span class="nav-number">9.10.</span> <span class="nav-text">码分多址CDMA通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据链路层"><span class="nav-number">9.11.</span> <span class="nav-text">数据链路层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机网络性能计算"><span class="nav-number">9.12.</span> <span class="nav-text">计算机网络性能计算</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">10.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pabebe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">本站总字数&#58;</span>
+    
+    <span title="本站总字数">86.2k</span> 
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+    总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+    </span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+    <span id="busuanzi_container_site_uv" style="display:none">
+    有<span id="busuanzi_value_site_uv"></span>人到访
+    </span>
+
+  
+</div>
+
+<div>
+
+</div>
+
+<!--  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div> 
+
+
+
+   <span class="post-meta-divider">|</span>
+ 
+
+ 
+ <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div> 
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+
+<!-- 页面点击出现文字 -->
+ <script type="text/javascript" src="/js/src/myLittleWits.js"></script>
+ 
+</html>

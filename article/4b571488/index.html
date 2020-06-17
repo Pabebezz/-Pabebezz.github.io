@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="paper,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pabebe's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="计算机视觉与摄影测量">
+<meta name="keywords" content="paper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="paperMemo-3dShapeMeasurement">
+<meta property="og:url" content="https://pabebezz.github.io/article/4b571488/index.html">
+<meta property="og:site_name" content="Pabebe&#39;s Blog">
+<meta property="og:description" content="计算机视觉与摄影测量">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pabebezz.github.io/article/4b571488/1三维形状测量模型.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/4b571488/1结果.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/4b571488/1结果b.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/4b571488/2三维形状测量模型.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/4b571488/2结果.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/4b571488/2结果b.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/4b571488/3模型.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/4b571488/3结果.png">
+<meta property="og:updated_time" content="2020-06-16T10:24:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="paperMemo-3dShapeMeasurement">
+<meta name="twitter:description" content="计算机视觉与摄影测量">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/4b571488/1三维形状测量模型.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://pabebezz.github.io/article/4b571488/">
+
+
+<meta name="google-site-verification" content="skUdQN9cQrZuUJydKG0ivzB90q5kyLJMU5i5dt82GH4">
+<meta name="google-site-verification" content="hv7_j7TFqTy83_mHkj5EDOJhzIl0_tusCnHJBxNOfAo">
+
+
+
+
+
+
+  <title>paperMemo-3dShapeMeasurement | Pabebe's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"> 
+       
+    </div>
+ 
+
+      <!-- change "fork me on github" -->
+     <!--  <a href="https://github.com/Pabebezz" target="_blank" ><img style="position: absolute; top: 0; right: 1200; border: 0;"  width="149" height="149" src="/images/forkme_left_green.png" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a> -->
+     <a href="https://github.com/Pabebezz" class="github-corner" target="_blank" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #326755; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+       
+       <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pabebe's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">业精于勤，荒于嬉；行成于思，毁于随。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/4b571488/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pabebe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pabebe's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">paperMemo-3dShapeMeasurement</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-19T15:58:56+08:00">
+                2020-05-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Scientific-Research/" itemprop="url" rel="index">
+                    <span itemprop="name">Scientific Research</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+           
+           
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+            
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.7k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9 分钟
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  计算机视觉与摄影测量
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>本次调研主题是 <strong>“3D形状测量”</strong></p>
+<h1 id="学科融合"><a href="#学科融合" class="headerlink" title="学科融合"></a>学科融合</h1><h2 id="一、摄影测量"><a href="#一、摄影测量" class="headerlink" title="一、摄影测量"></a>一、摄影测量</h2><p>　　摄影测量是指运用摄影机和胶片组合<strong>测量方针物的形状、大小和空间位置</strong>的技术，它使用光学摄影机获取的像片，经过处理以获取被摄物体的形状、大小、位置、特性及其相互关系。</p>
+<p>​       重视的是几何量的量测信息（物体的位置、大小和形状等），首要任务是用于测绘各种比例尺的地形图、树立数字地面模型，为各种地理信息体系和土地信息体系供给基础数据。摄影测量学要解决的两大问题是几何定位和影像解译。<strong>几何定位就是断定被摄物体的大小、形状和空间位置</strong>。<strong>几何定位的根本原理源于测量学的前方交会办法，它是根据两个已知的摄影站点和两条已知的摄影方向线，交会出构成这两条摄影光线的待定地面点的三维坐标。</strong>影像解译就是断定影像对应地物的性质。<br>　　<strong>当被测物体的尺寸或摄影间隔小于100米时的摄影测量称之为近景摄影测量。</strong>随着数字传感器技术的发展，尤其是CCD器件和CMOS器件的迅速发展，使用CCD(或CMOS)像机不需要胶片就可直接获得被测物的数字影像，这种直接基于数字影像的近景摄影测量称为数字近景摄影测量。</p>
+<h2 id="二、计算机视觉测量"><a href="#二、计算机视觉测量" class="headerlink" title="二、计算机视觉测量"></a>二、计算机视觉测量</h2><p>　　计算机视觉是<strong>使用计算机及相关设备对生物视觉的一种模仿</strong>。</p>
+<p>​        首要重视的是对物体进行描绘、识别和理解，<strong>它的首要任务就是经过对采集的图片或视频进行处理以获得相应场景的三维信息，</strong>就像人类和许多其他类生物每天所做的那样。是一门关于怎么运用照相机和计算机来获取咱们所需的，被摄影对象的数据与信息的学识。形象地说，就是给计算机设备上眼睛（照相机）和大脑（算法），让计算机能够感知环境。<br>　　机器视觉体系是计算机学科的一个分支，是指经过机器视觉产品（即图画吸取设备，分CMOS和CCD两种）将被吸取方针转换成图画信号，传送给专用的图画处理体系，根据像素分布和亮度、颜色等信息，改变成数字化信号；图画体系对这些信号进行各种运算来抽取方针的特征，进而根据判别的成果来操控现场的设备动作。</p>
+<h2 id="三、摄影测量和视觉测量的差异"><a href="#三、摄影测量和视觉测量的差异" class="headerlink" title="三、摄影测量和视觉测量的差异"></a>三、摄影测量和视觉测量的差异</h2><p>　　1、起点不同导致根本参数物理含义的差异：摄影测量中的外部定向是断定影像在空间相对于物体的位置与位置（将物体先平移再旋转），而计算机视觉则是物体相对于影像的位置与位置来描绘问题（将摄像机先旋转再平移）。<br>　　2、因为两者不同的起点导致根本公式的差异：摄影测量中最为根本的是共线方程，而视觉测量中最为根本的公式是用齐次坐标表明的投影方程。<br>　　3、数学处理算法的不同：摄影测量渊源于测绘学科，基于非线性迭代的最小二乘法平差求解贯穿于数字近景摄影测量的全过程，而计算机视觉着重矩阵分解，总是设法将非线性问题转换为线性问题，尽可能避免求解非线性方程。</p>
+<h2 id="四-现有商业化测量产品"><a href="#四-现有商业化测量产品" class="headerlink" title="四 现有商业化测量产品"></a>四 现有商业化测量产品</h2><p><a href="https://www.xtop3d.com/product_dic_const_sd.html" target="_blank" rel="noopener">新拓三维</a></p>
+<p><a href="https://lp.smartray.cn/ecco-catalog/?renqun_youhua=2155500" target="_blank" rel="noopener">SmartRay</a></p>
+<h2 id="五-研究趋势"><a href="#五-研究趋势" class="headerlink" title="五 研究趋势"></a>五 研究趋势</h2><p>　　虽然数字近景摄影测量与计算机视觉有各种各样的差异，但在重视点方面，和理论基础方面是共同的，并且随着最近20年的发展，人工智能，智能城市，大数据等在各个范畴的应用，让一切都有了不同的改变。</p>
+<p>​        学术会议和出版论文集等交流方式让学科间的交流逐渐增加，两个学科的交叉也越来越多。比方，数字近景摄影测量中的许多根本概念与办法来自影像处理与计算机视觉（如数字图画处理的某些算法、编码标志的自动识别）；反过来，摄影测量中的一些特征理论和办法又为视觉测量所采用（如全体光束法平差算法、像机自标定原理和办法等），而两者的结合也给学科及人类科技发展带来了协助。所以，视觉系统和摄影测量这两种学科逐渐相互融合并优势互补是发展的必然趋势。</p>
+<h1 id="文献"><a href="#文献" class="headerlink" title="文献"></a>文献</h1><p><strong>2010</strong></p>
+<h2 id="Fast-Phase-based-Stereo-Matching-Method-for-3D-Shape-Measurement"><a href="#Fast-Phase-based-Stereo-Matching-Method-for-3D-Shape-Measurement" class="headerlink" title="Fast Phase-based Stereo Matching Method for 3D Shape Measurement"></a>Fast Phase-based Stereo Matching Method for 3D Shape Measurement</h2><p><strong>作者：</strong>Dong Li ; Huijie Zhao ; Hongzhi Jiang </p>
+<p><strong>来源：</strong> 2010 International Symposium on Optomechatronic Technologies<br><strong>文章链接：</strong><a href="https://ieeexplore.ieee.org/document/5687348" target="_blank" rel="noopener">https://ieeexplore.ieee.org/document/5687348</a><br><strong>源码链接：</strong>无</p>
+<p><strong>方法：</strong></p>
+<p>三维形状测量模型，连同校准板，如图所示。DLP投影机的分辨率是1024x768。两台黑白CCD相机的分辨率都是2048x2048。校准板由铝合金制成。由于标定板具有较高的平整度表面，因此可以利用标定板的三维重建来评价三维形状测量精度。</p>
+<p><img src="/article/4b571488/1三维形状测量模型.png" alt="1三维形状测量模型"></p>
+<p>提出了一种基于相位的立体匹配方法，该方法利用极线校正，将双立体几何变换为极标准几何。利用相移技术计算相位，通过沿水平极线搜索最近的相位，简化了立体匹配。（类似于双目测距）</p>
+<ol>
+<li>利用DLP投影仪将正弦条纹图形投影到物体表面，利用两台CCD相机捕捉变形的条纹图形图像。</li>
+<li>实施极线矫正。极线校正是基于线性针孔模型,根据公式构造极线矫正前后像平面坐标对应关系</li>
+<li>采用双线性插值方法计算经过校正的绝对相位图</li>
+<li>进行立体匹配。对于左侧图像上的一个点，利用所描述的外极标准几何特征，沿水平外极线搜索最近的相位，即右侧图像上具有相同垂直坐标的一条直线。</li>
+</ol>
+<p><strong>结果：</strong></p>
+<p><img src="/article/4b571488/1结果.png" alt="1结果"></p>
+<p><img src="/article/4b571488/1结果b.png" alt="1结果b"></p>
+<p><strong>贡献：</strong></p>
+<p>提出了一种利用极线校正的快速相位立体方法。与之前的方法相比，该方法将立体匹配时间缩短了20%。在高平整度平面的三维重建中，三维形状测量精度可达0.0178mm。因此，该方法适用于速度快、精度高的应用场合。</p>
+<p><strong>缺点：</strong></p>
+<p>重建效果较差，丢失了较多的细节</p>
+<p><strong>2019</strong></p>
+<h2 id="A-Calibration-Method-of-3D-Shape-Measurement-System-Using-3D-Scanner-Turn-table-and-Arm-robot"><a href="#A-Calibration-Method-of-3D-Shape-Measurement-System-Using-3D-Scanner-Turn-table-and-Arm-robot" class="headerlink" title="A Calibration Method of 3D Shape Measurement System Using 3D Scanner, Turn-table and Arm-robot"></a>A Calibration Method of 3D Shape Measurement System Using 3D Scanner, Turn-table and Arm-robot</h2><p><strong>作者：</strong>  Hiroyuki Ukida ; Tomoyo Sasao ; Kenji Terada    </p>
+<p><strong>来源：</strong> 2019 58th Annual Conference of the Society of Instrument and Control Engineers of Japan (SICE)<br><strong>文章链接：</strong><a href="https://ieeexplore.ieee.org/document/8860071" target="_blank" rel="noopener">https://ieeexplore.ieee.org/document/8860071</a><br><strong>源码链接：</strong>暂无</p>
+<p><strong>方法：</strong></p>
+<p>所提出的系统是由一个三维扫描仪，一个手臂机器人和一个转台。</p>
+<p><img src="/article/4b571488/2三维形状测量模型.png" alt="2三维形状测量模型"></p>
+<p>为了准确地测量三维形状，提出了一种测量系统设备位移的方法来校准。</p>
+<ol>
+<li>固定机械手臂与转台中心的距离</li>
+<li>对于臂-机器人坐标系的每个轴，臂-机器人与已知位移的轴平行移动。这个动作在给定的时间内迭代。</li>
+<li>以已知角度旋转转台，每次移动时用3D扫描仪估计球体标记的中心前沿的坐标。</li>
+<li>得到“球中心轨迹坐标”。从球面标记的测量中心坐标分布出发，用最小二乘法估计一个由中心坐标支持的平面。该平面为转台的参考平面，其表面法向量为转台的旋转轴。</li>
+<li>将所有球面标记中心坐标投影到估计的参考平面，并从投影坐标估计该平面上的圆。估算出投影轨迹坐标的直线，然后根据直线的倾斜度估算出每个轴的旋转角度。将三维扫描仪坐标系中的一个坐标转换为arm-robot坐标系中的坐标</li>
+<li>坐标映射，然后将各个面结合到同一个坐标中。</li>
+</ol>
+<p><strong>结果：</strong></p>
+<p><img src="/article/4b571488/2结果.png" alt="2结果"></p>
+<p><img src="/article/4b571488/2结果b.png" alt="2结果b"></p>
+<p><strong>贡献：</strong></p>
+<p>针对传统木偶形状三维测量系统</p>
+<p>提出了一种三维形状测量系统的标定方法。</p>
+<p><strong>缺点：</strong></p>
+<p>由于操作人员和操作环境的影响，手动操作可能会产生较大的误差</p>
+<p>所估计的深度图中也会影响位置估计</p>
+<p><strong>2020</strong></p>
+<h2 id="TOWARDS-UNDERSTANDING-SPECIATION-BY-AUTOMATED-EXTRACTION-AND-DESCRIPTION-OF-3D-FORAMINIFERA（有孔虫类）-STACKS"><a href="#TOWARDS-UNDERSTANDING-SPECIATION-BY-AUTOMATED-EXTRACTION-AND-DESCRIPTION-OF-3D-FORAMINIFERA（有孔虫类）-STACKS" class="headerlink" title="TOWARDS UNDERSTANDING SPECIATION BY AUTOMATED EXTRACTION AND DESCRIPTION OF 3D FORAMINIFERA（有孔虫类） STACKS"></a>TOWARDS UNDERSTANDING SPECIATION BY AUTOMATED EXTRACTION AND DESCRIPTION OF 3D FORAMINIFERA（有孔虫类） STACKS</h2><p><strong>作者：</strong> Wenshu Zhang ; Thomas Ezard ; Alex Searle-Barnes ;</p>
+<p><strong>来源：</strong>2020 IEEE Southwest Symposium on Image Analysis and Interpretation (SSIAI)<br><strong>文章链接：</strong> <a href="https://ieeexplore.ieee.org/document/9094611" target="_blank" rel="noopener">https://ieeexplore.ieee.org/document/9094611</a><br><strong>源码链接：</strong>暂无</p>
+<p><strong>方法：</strong></p>
+<p>在分析浮游有孔虫标本时，巨大的三维数据量限制了对遗传物种形成的理解，提出了一种端到端的神经网络架构来解决这一问题。观察到的化石是浮游有孔虫，这是一种单细胞生物，大量生活在世界海洋中。每个孔的大小和形状在其生命旅程的每个阶段都有完整的记录。在本研究中，我们分析了各种个体有孔虫来研究它们之间的差异，并与人工标记的ground truth进行比较。从图像序列中自动重建每个样本的独立腔室，(ii)使用形状特征来描述不同类型的物种。通过处理包含9GB点的3D样本的数据集，表明物种形成现在确实可以被分析，从形态学特征的自动分析导致了对生命起源的新见解。</p>
+<p><img src="/article/4b571488/3模型.png" alt="3模型"></p>
+<p><strong>结果：</strong></p>
+<p><img src="/article/4b571488/3结果.png" alt="3结果"></p>
+<p><strong>贡献：</strong></p>
+<p>利用计算机视觉演算法来重建有孔虫形状，可视化断层扫描的内部特征，分析形状意味着理解空间排列，以了解影响物种形成的重要因素。</p>
+<p>提出了一个端到端自动测量有孔虫形状的框架。</p>
+<p><strong>缺点：</strong></p>
+<p>标本的数量和形态的多样性不够，导致易出现预估错误。</p>
+<p><strong>待看</strong></p>
+<p>3D Shape Measurement of Translucent Objects Using Laser Rangefinder （半透明形状）</p>
+<p>Improving 3D reconstruction accuracy in wavelet transform profilometry by reducing<br>shadow effects （提高精度）</p>
+<p>3D Environment Measurement and Reconstruction Based on LiDAR （利用激光雷达测量环境）</p>
+<p>Reconstruction of Realistic 3D Surface Model and 3D Animation from Range Images Obtained by Real Time 3D Measurement System</p>
+<p>ECG: Edge-aware Point Cloud Completion with Graph Convolution（2020，图神经网络生成点云边缘）</p>
+<p>PointGrow: Autoregressively Learned Point Cloud Generation with Self-Attention（2020，点云自我生成）</p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">----------------  本文结束  ----------------</div>
+<br>
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>paperMemo-3dShapeMeasurement</p>
+  <p><span>文章作者:</span>Pabebe</p>
+  <p><span>发布时间:</span>2020年05月19日 - 15:58:56</p>
+  <p><span>最后更新:</span>2020年06月16日 - 18:24:34</p>
+  <p><span>原始链接:</span><a href="/article/4b571488/" title="paperMemo-3dShapeMeasurement">https://pabebezz.github.io/article/4b571488/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/4b571488/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+
+    
+</div>
+
+
+    
+
+    
+
+    
+    
+   <!-- 添加版权声明 -->
+    <div>
+    
+        
+     
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/paper/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;paper</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/article/f3e3799/" rel="next" title="深度学习-GAN">
+                <i class="fa fa-chevron-left"></i> 深度学习-GAN
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/e3c77110/" rel="prev" title="paperMemo-图片质量评价指标">
+                paperMemo-图片质量评价指标 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Pabebe">
+            
+              <p class="site-author-name" itemprop="name">Pabebe</p>
+              <p class="site-description motion-element" itemprop="description">I have the soulful eyes of a cow</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Pabebezz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/Pabebe" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zezuwang@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主题"><span class="nav-number">1.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#学科融合"><span class="nav-number">2.</span> <span class="nav-text">学科融合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、摄影测量"><span class="nav-number">2.1.</span> <span class="nav-text">一、摄影测量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、计算机视觉测量"><span class="nav-number">2.2.</span> <span class="nav-text">二、计算机视觉测量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、摄影测量和视觉测量的差异"><span class="nav-number">2.3.</span> <span class="nav-text">三、摄影测量和视觉测量的差异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-现有商业化测量产品"><span class="nav-number">2.4.</span> <span class="nav-text">四 现有商业化测量产品</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-研究趋势"><span class="nav-number">2.5.</span> <span class="nav-text">五 研究趋势</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文献"><span class="nav-number">3.</span> <span class="nav-text">文献</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fast-Phase-based-Stereo-Matching-Method-for-3D-Shape-Measurement"><span class="nav-number">3.1.</span> <span class="nav-text">Fast Phase-based Stereo Matching Method for 3D Shape Measurement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Calibration-Method-of-3D-Shape-Measurement-System-Using-3D-Scanner-Turn-table-and-Arm-robot"><span class="nav-number">3.2.</span> <span class="nav-text">A Calibration Method of 3D Shape Measurement System Using 3D Scanner, Turn-table and Arm-robot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TOWARDS-UNDERSTANDING-SPECIATION-BY-AUTOMATED-EXTRACTION-AND-DESCRIPTION-OF-3D-FORAMINIFERA（有孔虫类）-STACKS"><span class="nav-number">3.3.</span> <span class="nav-text">TOWARDS UNDERSTANDING SPECIATION BY AUTOMATED EXTRACTION AND DESCRIPTION OF 3D FORAMINIFERA（有孔虫类） STACKS</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pabebe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">本站总字数&#58;</span>
+    
+    <span title="本站总字数">86.2k</span> 
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+    总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+    </span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+    <span id="busuanzi_container_site_uv" style="display:none">
+    有<span id="busuanzi_value_site_uv"></span>人到访
+    </span>
+
+  
+</div>
+
+<div>
+
+</div>
+
+<!--  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div> 
+
+
+
+   <span class="post-meta-divider">|</span>
+ 
+
+ 
+ <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div> 
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+
+<!-- 页面点击出现文字 -->
+ <script type="text/javascript" src="/js/src/myLittleWits.js"></script>
+ 
+</html>

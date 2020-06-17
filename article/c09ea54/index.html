@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="paper,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pabebe's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="三维重建定义根据单视图或者多视图的图像重建三维信息的过程 研究意义 港科大教授权龙认为：真正意义上的计算机视觉要超越识别，感知三维环境。  三维重建将作为计算机视觉的核心。将识别与重建融为一体，实现实时、精确的场景模型重构以及环境感知。作为环境感知的关键技术之一，可用于自动驾驶、虚拟现实、运动目标监测、行为分析、安防监控和重点人群监护等。">
+<meta name="keywords" content="paper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="paperMemo - 3D Reconstruction">
+<meta property="og:url" content="https://pabebezz.github.io/article/c09ea54/index.html">
+<meta property="og:site_name" content="Pabebe&#39;s Blog">
+<meta property="og:description" content="三维重建定义根据单视图或者多视图的图像重建三维信息的过程 研究意义 港科大教授权龙认为：真正意义上的计算机视觉要超越识别，感知三维环境。  三维重建将作为计算机视觉的核心。将识别与重建融为一体，实现实时、精确的场景模型重构以及环境感知。作为环境感知的关键技术之一，可用于自动驾驶、虚拟现实、运动目标监测、行为分析、安防监控和重点人群监护等。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pabebezz.github.io/article/c09ea54/point%20set%20structure.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/c09ea54/倒角距离.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/c09ea54/EMD损失函数.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/c09ea54/point%20set成功的点.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/c09ea54/point%20set失败的点.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/c09ea54/A%20Skeleton%20structure.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/c09ea54/A%20Skeleton%20结果.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/c09ea54/Mesh%20R-CNN%20structure.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/c09ea54/Mesh%20R-CNN结果.png">
+<meta property="og:updated_time" content="2020-06-16T10:24:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="paperMemo - 3D Reconstruction">
+<meta name="twitter:description" content="三维重建定义根据单视图或者多视图的图像重建三维信息的过程 研究意义 港科大教授权龙认为：真正意义上的计算机视觉要超越识别，感知三维环境。  三维重建将作为计算机视觉的核心。将识别与重建融为一体，实现实时、精确的场景模型重构以及环境感知。作为环境感知的关键技术之一，可用于自动驾驶、虚拟现实、运动目标监测、行为分析、安防监控和重点人群监护等。">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/c09ea54/point%20set%20structure.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://pabebezz.github.io/article/c09ea54/">
+
+
+<meta name="google-site-verification" content="skUdQN9cQrZuUJydKG0ivzB90q5kyLJMU5i5dt82GH4">
+<meta name="google-site-verification" content="hv7_j7TFqTy83_mHkj5EDOJhzIl0_tusCnHJBxNOfAo">
+
+
+
+
+
+
+  <title>paperMemo - 3D Reconstruction | Pabebe's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"> 
+       
+    </div>
+ 
+
+      <!-- change "fork me on github" -->
+     <!--  <a href="https://github.com/Pabebezz" target="_blank" ><img style="position: absolute; top: 0; right: 1200; border: 0;"  width="149" height="149" src="/images/forkme_left_green.png" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a> -->
+     <a href="https://github.com/Pabebezz" class="github-corner" target="_blank" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #326755; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+       
+       <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pabebe's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">业精于勤，荒于嬉；行成于思，毁于随。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/c09ea54/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pabebe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pabebe's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">paperMemo - 3D Reconstruction</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-23T19:03:51+08:00">
+                2019-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Scientific-Research/" itemprop="url" rel="index">
+                    <span itemprop="name">Scientific Research</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+           
+           
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+            
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.5k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="三维重建"><a href="#三维重建" class="headerlink" title="三维重建"></a>三维重建</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>根据单视图或者多视图的图像重建三维信息的过程</p>
+<h2 id="研究意义"><a href="#研究意义" class="headerlink" title="研究意义"></a>研究意义</h2><blockquote>
+<h2 id="港科大教授权龙认为："><a href="#港科大教授权龙认为：" class="headerlink" title="港科大教授权龙认为："></a>港科大教授权龙认为：</h2><p>真正意义上的计算机视觉要超越识别，感知三维环境。</p>
+</blockquote>
+<p>三维重建将作为计算机视觉的核心。将识别与重建融为一体，实现实时、精确的场景模型重构以及环境感知。作为环境感知的关键技术之一，可用于自动驾驶、虚拟现实、运动目标监测、行为分析、安防监控和重点人群监护等。</p>
+<a id="more"></a>
+<h2 id="实现手段"><a href="#实现手段" class="headerlink" title="实现手段"></a>实现手段</h2><p><strong>根据<label style="color:blue"> 采集设备是否主动发射测量信号 </label>，分为两类：</strong>基于主动视觉理论和基于被动视觉的三维重建方法。</p>
+<p><strong>主动视觉三维重建方法：</strong>主要包括结构光法和激光扫描法。</p>
+<p><strong>被动视觉三维重建方法：</strong>被动视觉只使用摄像机采集三维场景得到其投影的二维图像，根据图像的纹理分布等信息恢复深度信息，进而实现三维重建。</p>
+<p><strong>根据<label style="color:blue"> 模型重构类型 </label>，分为四种：</strong>深度图（depth）、点云（point cloud）、体素（voxel）、网格（mesh）</p>
+<p><strong>深度图（depth）:</strong> 图中每个像素值代表的是物体到<strong>相机xy平面</strong>的距离，单位为 mm。</p>
+<p><strong>点云（point cloud）：</strong>某个坐标系下的点的数据集。点包含了丰富的信息，包括三维坐标X，Y，Z、颜色、分类值、强度值、时间等等。在我看来点云可以将现实世界原子化，通过高精度的点云数据可以还原现实世界。万物皆点云，获取方式可通过三维激光扫描等。</p>
+<p><strong>体素（voxel）：</strong>三维空间中的一个有大小的点，一个小方块，相当于是三维空间种的像素。</p>
+<p><strong>网格（mesh）：</strong>由三角形组成的多边形网格。多边形和三角网格在图形学和建模中广泛使用，用来模拟复杂物体的表面，如建筑、车辆、人体，当然还有茶壶等。任意多边形网格都能转换成三角网格。</p>
+<p>缺点：</p>
+<p>从单张图片恢复出三维物体形状这一研究课题在许多应用中扮演着重要的角色，例如增加现实，图像编辑。但是由于物体的拓扑结构复杂多变，这一课题也颇具挑战性。目前，<strong>基于体素表达的方法受限于三维卷积网络计算和内存的限制而难以得到高分辨率的输出。基于点云表达的方法又很难生成平滑而又干净的表面。</strong></p>
+<p><strong>三角网格表达对物体形状提供了一种更有效，更自然的离散化逼近方式，但是计算复杂。</strong></p>
+<p>（ volume受到分辨率和表达能力的限制，会缺乏很多细节；point cloud 的点之间没有连接关系，会缺乏物体的表面信息。相比较而言mesh的表示方法具有轻量、形状细节丰富的特点。 ）</p>
+<p>这些方法本质上是在对一个给定拓扑连接关系的初始网格变形，比较有代表性的初始网格有单位平面，球。尽管它们有一定的效果，但是仍然难以恢复具有复杂拓扑结构的物体表面，</p>
+<h2 id="未来趋势"><a href="#未来趋势" class="headerlink" title="未来趋势"></a>未来趋势</h2><p>将三者方式结合起来，从单张RGB图片中识别多个物体，并重建三维模型。</p>
+<h1 id="文献"><a href="#文献" class="headerlink" title="文献"></a>文献</h1><p><strong>2017</strong></p>
+<h2 id="A-Point-Set-Generation-Network-for3D-Object-Reconstruction-from-a-Single-Image"><a href="#A-Point-Set-Generation-Network-for3D-Object-Reconstruction-from-a-Single-Image" class="headerlink" title="A Point Set Generation Network for3D Object Reconstruction from a Single Image"></a>A Point Set Generation Network for3D Object Reconstruction from a Single Image</h2><p><strong>作者：</strong>Haoqiang Fan（Tsinghua University）, </p>
+<p>​          Hao Su, Leonidas Guibas（Stanford University）<br><strong>来源：</strong>CVPR 2017 (oral)<br><strong>文章链接：</strong><a href="https://arxiv.org/abs/1612.00603" target="_blank" rel="noopener">https://arxiv.org/abs/1612.00603</a><br><strong>源码链接：</strong><a href="https://github.com/fanhqme/PointSetGeneration" target="_blank" rel="noopener">https://github.com/fanhqme/PointSetGeneration</a></p>
+<p><strong>方法：</strong></p>
+<p><img src="/article/c09ea54/point set structure.png" alt="point set structure"></p>
+<p>网络分为3个版本，输入都为二维图像I和一个用来使系统产生分布式输出的随机向量r，输出为N * 3的矩阵M。</p>
+<ul>
+<li>vanilla version<br>vanilla version分为Encoder（编码器）和Predictor（预测器），Encoder由卷积层和ReLU层组成，随机向量r干扰了图像I的预测，Predictor由全连接网络生成N个点的坐标。</li>
+<li>two prediction branch version<br>该网络由vanilla改进而来，在vanilla的基础上在预测器中加入了deconv（反卷积），由于全连接网络对复杂结构表现出良好的性能，但对于简单光滑的结构便显得有些繁重，故引入deconv结构来优化网络，使得参数变少，并且这种结构对光滑表面效果很好。<br>tips：其中添加了多个编码器和预测器之间的链接，以促进编码和预测之间的信息流。</li>
+<li>hourglass version<br>沙漏版本在前一个版本的基础上增加了递归循环，能更好的进行编解码操作，具有较强的表示能力，能较好的融合全局和局部信息。</li>
+</ul>
+<p><strong>损失函数：</strong></p>
+<p> Chamfer distance （<a href="https://www.jianshu.com/p/8573abaeca94" target="_blank" rel="noopener">倒角距离</a> ） 在另一个集合中找到最近的点，并将其距离的平方求和。（并不是距离公式，因为它不满足三角形不等式）其特点是能更好的保存物体的详细形状 </p>
+<p><img src="/article/c09ea54/倒角距离.png" alt="倒角距离"></p>
+<p> Earth Mover`s distance （<a href="https://www.jianshu.com/p/2b171e1b43d4" target="_blank" rel="noopener">EMD距离</a>） 测量两个分布之间的距离，能产生相较于CD算法更紧凑的结果，但有时会过度收缩局部结构 </p>
+<p><img src="/article/c09ea54/EMD损失函数.png" alt="EMD损失函数"></p>
+<p><strong>结果：</strong></p>
+<p>成功的重建</p>
+<p><img src="/article/c09ea54/point set成功的点.png" alt="point set成功的点"></p>
+<p>失败的重建</p>
+<p><img src="/article/c09ea54/point set失败的点.png" alt="point set失败的点"></p>
+<p><strong>贡献：</strong></p>
+<p>（1）开创了<strong>单个2D视角用点云重构3D物体</strong>的先例（单图像3D重建）</p>
+<p>（2）系统地探讨了体系结构中的问题点生成网络的损失函数设计</p>
+<p>（3）提出了一种基于单图像任务的三维重建的原理及公式和解决方案</p>
+<p>（4）将输入改为RGBD图像，能够更加弥补原先模型缺失的部分</p>
+<p><strong>缺点：</strong></p>
+<p>（1） 对于一部分与训练数据存在一定偏差的输入，该网络会用类似的东西来解释输入。 </p>
+<p>（2） 对于多个对象的组合，因没有实现检测或注意机制，导致输出失真。 </p>
+<p><strong>2019</strong></p>
+<h2 id="（重点看）A-Skeleton-bridged-Deep-Learning-Approach-for-Generating-Meshes-of-Complex-Topologies-from-Single-RGB-Images"><a href="#（重点看）A-Skeleton-bridged-Deep-Learning-Approach-for-Generating-Meshes-of-Complex-Topologies-from-Single-RGB-Images" class="headerlink" title="（重点看）A Skeleton-bridged Deep Learning Approach for Generating Meshes of Complex Topologies from Single RGB Images"></a>（重点看）A Skeleton-bridged Deep Learning Approach for Generating Meshes of Complex Topologies from Single RGB Images</h2><p><strong>作者：</strong>  Jiapeng Tang, Xiaoguang Han , Junyi Pan, Kui Jia y, Xin Tong  </p>
+<p>School of Electronic and Information Engineering, South China University of Technology Shenzhen Research Institute of Big Data, the Chinese University of Hong Kong (Shenzhen) Microsoft Research Asia</p>
+<p><strong>来源：</strong>CVPR 2019(oral)<br><strong>文章链接：</strong><a href="https://arxiv.org/abs/1903.04704?context=cs.CV" target="_blank" rel="noopener">https://arxiv.org/abs/1903.04704?context=cs.CV</a><br><strong>源码链接：</strong>暂无</p>
+<p><strong>方法：</strong></p>
+<p><img src="/article/c09ea54/A Skeleton structure.png" alt="A Skeleton structure"></p>
+<p>第一阶段是从输入图像中学习生成骨架点云。为此他们设计了平行的双分支网络架构，被命名为 CurSkeNet 和 SurSkeNet，分别用于曲线状和曲面状骨架点云的合成。为了 CurSkeNet 和 SurSkeNet 的训练，他们针对 ShapeNet 的物体模型处理了骨架数据集来当做 ground truth 用于训练。 他们采用编码器-解码器的网络结构从输入图片 I 学习出对应的骨架 K，它本质上是<strong>一个更简洁紧凑的点云表达</strong>。 </p>
+<p>在第二个阶段，他们通过将合成的骨架点云<strong>体素化</strong>，然后用三维卷积网络对粗糙的骨架体素进行修复提取出一个初始网格。此处为了减小高清体素输出时的网络复杂度，采取了用全局结构引导分块体素修复的方式，得到一个更精细化的体素 V。 </p>
+<p>最后一个阶段先从体素 M 中提取出一个粗糙的初始网格 Mb，然后再用图神经网络对网格的顶点位置进一步优化，得到最后的输出网格 M。</p>
+<p>每个阶段都有一个图像编码器-解码器来提取所各自需要的信息<br><strong>结果：</strong></p>
+<p><img src="/article/c09ea54/A Skeleton 结果.png" alt="A Skeleton 结果"></p>
+<p><strong>贡献：</strong></p>
+<ol>
+<li>提出了阶段性学习的方法，利用了点云，体积和网格各自的优点，而且对有孔洞的物体又能够很好地重建</li>
+<li><strong>骨架桥接</strong>的方法</li>
+<li>腐蚀学习方法来验证算法功效</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li>在多次训练后，仍然会在连接处、角落等缺失，或许添加深度图信息会有所改善</li>
+<li>模型过于复杂</li>
+<li>所展示的模型只是简单场景中的<strong>单个</strong>物体，而且最终轮廓比较圆润，没有线条感</li>
+</ol>
+<h2 id="Mesh-R-CNN"><a href="#Mesh-R-CNN" class="headerlink" title="Mesh R-CNN"></a>Mesh R-CNN</h2><p><strong>作者：</strong>  Georgia Gkioxari、 Jitendra Malik、 Justin Johnson  </p>
+<p>  Facebook AI Research (FAIR)  </p>
+<p><strong>来源：</strong>CVPR 2019(oral)<br><strong>文章链接：</strong><a href="https://www.researchgate.net/publication/333650113_Mesh_R-CNN" target="_blank" rel="noopener">https://www.researchgate.net/publication/333650113_Mesh_R-CNN</a><br><strong>源码链接：</strong>暂无</p>
+<p><strong>方法：</strong></p>
+<p><img src="/article/c09ea54/Mesh R-CNN structure.png" alt="Mesh R-CNN structure"></p>
+<p>基于<strong>Mask R-CNN</strong>（<a href="https://arxiv.org/abs/1703.06870" target="_blank" rel="noopener">论文链接</a>、<a href="https://github.com/multimodallearning/pytorch-mask-rcnn/blob/master/model.py" target="_blank" rel="noopener">源码链接</a>， 在进行目标检测的同时进行实例分割 ）改进而来，增加了网格预测分支来输出高分辨的目标三角网格。  通过先预测转化为物体的粗体素分布并转化为三角形网格表示，然后通过一系列的图卷积神经网络改进网格的边角输出具有不同拓扑结构的网格。 </p>
+<p><strong>结果：</strong></p>
+<p><img src="/article/c09ea54/Mesh R-CNN结果.png" alt="Mesh R-CNN结果"></p>
+<p><strong>贡献：</strong></p>
+<ol>
+<li>开发了从2D感知到3D形状预测的方法（ 图卷积神经网络 ）</li>
+<li>由粗到细调整的思想 </li>
+<li>目标3D三角网格预测，有效地预测<strong>带有孔洞的物体</strong> ，同时对于<strong>复杂环境中的三维物体</strong>也有良好的预测效果。</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li>细节缺失较为严重，如上图的凳腿，椅背</li>
+<li>重构的模型看起来比较粗糙，没有线条感（作者解释说缺乏大量的真实场景数据-监督）</li>
+</ol>
+<h2 id="Robust-Point-Cloud-Based-Reconstruction-of-Large-Scale-Outdoor-Scenes"><a href="#Robust-Point-Cloud-Based-Reconstruction-of-Large-Scale-Outdoor-Scenes" class="headerlink" title="Robust Point Cloud Based Reconstruction of Large-Scale Outdoor Scenes"></a>Robust Point Cloud Based Reconstruction of Large-Scale Outdoor Scenes</h2><h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="http://baijiahao.baidu.com/s?id=1604859530067115369&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">港科大教授权龙：计算机视觉下一步将走向三维重建 | CCF-GAIR 2018</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/79628068" target="_blank" rel="noopener">基于深度学习的视觉三维重建研究总结</a></p>
+<p><a href="https://www.jianshu.com/p/f33b3d440f7d" target="_blank" rel="noopener">三维重建初探</a></p>
+<p><a href="https://blog.csdn.net/c9Yv2cf9I06K2A9E/article/details/89324972" target="_blank" rel="noopener">CVPR 2019 | 基于骨架表达的单张图片三维物体重建方法</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">----------------  本文结束  ----------------</div>
+<br>
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>paperMemo - 3D Reconstruction</p>
+  <p><span>文章作者:</span>Pabebe</p>
+  <p><span>发布时间:</span>2019年10月23日 - 19:03:51</p>
+  <p><span>最后更新:</span>2020年06月16日 - 18:24:34</p>
+  <p><span>原始链接:</span><a href="/article/c09ea54/" title="paperMemo - 3D Reconstruction">https://pabebezz.github.io/article/c09ea54/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/c09ea54/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+
+    
+</div>
+
+
+    
+
+    
+
+    
+    
+   <!-- 添加版权声明 -->
+    <div>
+    
+        
+     
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/paper/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;paper</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/article/eeee6404/" rel="next" title="论文小知识">
+                <i class="fa fa-chevron-left"></i> 论文小知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/c4704731/" rel="prev" title="博文常用样式语句">
+                博文常用样式语句 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Pabebe">
+            
+              <p class="site-author-name" itemprop="name">Pabebe</p>
+              <p class="site-description motion-element" itemprop="description">I have the soulful eyes of a cow</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Pabebezz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/Pabebe" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zezuwang@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#三维重建"><span class="nav-number">1.</span> <span class="nav-text">三维重建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#研究意义"><span class="nav-number">1.2.</span> <span class="nav-text">研究意义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#港科大教授权龙认为："><span class="nav-number">1.3.</span> <span class="nav-text">港科大教授权龙认为：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现手段"><span class="nav-number">1.4.</span> <span class="nav-text">实现手段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未来趋势"><span class="nav-number">1.5.</span> <span class="nav-text">未来趋势</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文献"><span class="nav-number">2.</span> <span class="nav-text">文献</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Point-Set-Generation-Network-for3D-Object-Reconstruction-from-a-Single-Image"><span class="nav-number">2.1.</span> <span class="nav-text">A Point Set Generation Network for3D Object Reconstruction from a Single Image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（重点看）A-Skeleton-bridged-Deep-Learning-Approach-for-Generating-Meshes-of-Complex-Topologies-from-Single-RGB-Images"><span class="nav-number">2.2.</span> <span class="nav-text">（重点看）A Skeleton-bridged Deep Learning Approach for Generating Meshes of Complex Topologies from Single RGB Images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mesh-R-CNN"><span class="nav-number">2.3.</span> <span class="nav-text">Mesh R-CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Robust-Point-Cloud-Based-Reconstruction-of-Large-Scale-Outdoor-Scenes"><span class="nav-number">2.4.</span> <span class="nav-text">Robust Point Cloud Based Reconstruction of Large-Scale Outdoor Scenes</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pabebe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">本站总字数&#58;</span>
+    
+    <span title="本站总字数">86.2k</span> 
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+    总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+    </span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+    <span id="busuanzi_container_site_uv" style="display:none">
+    有<span id="busuanzi_value_site_uv"></span>人到访
+    </span>
+
+  
+</div>
+
+<div>
+
+</div>
+
+<!--  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div> 
+
+
+
+   <span class="post-meta-divider">|</span>
+ 
+
+ 
+ <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div> 
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+
+<!-- 页面点击出现文字 -->
+ <script type="text/javascript" src="/js/src/myLittleWits.js"></script>
+ 
+</html>
