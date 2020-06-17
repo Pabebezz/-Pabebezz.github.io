@@ -81,22 +81,21 @@
 
 
 
-<meta name="description" content="深度学习环境搭建">
+<meta name="description" content="深度学习环境搭建ubuntu16.04+1080ti+cuda10.0+cudnn环境配置 Pycharm没有菜单栏 本文英伟达显卡驱动版本：430.64 cuda 10.0.130 cudann 7.6.4">
 <meta name="keywords" content="tutorial">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu下深度学习环境与blog搭建">
+<meta property="og:title" content="Ubuntu16.04下深度学习环境搭建">
 <meta property="og:url" content="https://pabebezz.github.io/article/46397481/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="深度学习环境搭建">
+<meta property="og:description" content="深度学习环境搭建ubuntu16.04+1080ti+cuda10.0+cudnn环境配置 Pycharm没有菜单栏 本文英伟达显卡驱动版本：430.64 cuda 10.0.130 cudann 7.6.4">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://pabebezz.github.io/article/46397481/GPU驱动.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/46397481/深度学习环境.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/46397481/更新node版本.png">
-<meta property="og:updated_time" content="2020-06-16T10:24:34.000Z">
+<meta property="og:updated_time" content="2019-12-18T10:13:02.506Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu下深度学习环境与blog搭建">
-<meta name="twitter:description" content="深度学习环境搭建">
-<meta name="twitter:image" content="https://pabebezz.github.io/article/46397481/GPU驱动.png">
+<meta name="twitter:title" content="Ubuntu16.04下深度学习环境搭建">
+<meta name="twitter:description" content="深度学习环境搭建ubuntu16.04+1080ti+cuda10.0+cudnn环境配置 Pycharm没有菜单栏 本文英伟达显卡驱动版本：430.64 cuda 10.0.130 cudann 7.6.4">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/46397481/深度学习环境.png">
 
 
 
@@ -137,7 +136,7 @@
 
 
 
-  <title>Ubuntu下深度学习环境与blog搭建 | Pabebe's Blog</title>
+  <title>Ubuntu16.04下深度学习环境搭建 | Pabebe's Blog</title>
   
 
 
@@ -324,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu下深度学习环境与blog搭建</h1>
+          <h1 class="post-title" itemprop="name headline">Ubuntu16.04下深度学习环境搭建</h1>
         
 
         <div class="post-meta">
@@ -395,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.4k 字
+                  69 字
                 </span>
               
 
@@ -411,16 +410,12 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10 分钟
+                  1 分钟
                 </span>
               
             </div>
           
 
-          
-              <div class="post-description">
-                  深度学习环境搭建
-              </div>
           
 
         </div>
@@ -436,147 +431,17 @@
       
 
       
-        <p>本机系统：Ubuntu18.04</p>
-<p>本机显卡型号查询</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lspci <span class="string">| grep -i nvidia</span></span><br></pre></td></tr></table></figure>
-<p>查看该显卡是否支持cuda</p>
-<p><a href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-gpus</a></p>
-<h1 id="更新NVIDIA驱动"><a href="#更新NVIDIA驱动" class="headerlink" title="更新NVIDIA驱动"></a>更新NVIDIA驱动</h1><p>添加 Graphic Drivers PPA</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">add</span>-apt-repository ppa:xorg-edgers/ppa <span class="meta">#添加ppa源</span></span><br><span class="line">sudo <span class="keyword">add</span>-apt-repository ppa:graphics-drivers/ppa <span class="meta">#添加ppa源</span></span><br><span class="line">sudo apt-<span class="keyword">get</span> update</span><br></pre></td></tr></table></figure>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ubuntu-drivers devices</span><br><span class="line">sudo apt <span class="keyword">install</span>  nvidia-driver-<span class="number">440</span>(所推荐的驱动包)</span><br></pre></td></tr></table></figure>
-<p>or</p>
-<p>打开 Software &amp; Updates，选择 Additional Drivers，一般需要加载一定时间，会出现多个驱动，选择最新的也就是版本号最大的 NVIDIA-Driver，点击应用，需要等待一点时间生成应用，完成便成功安装了驱动</p>
-<p><img src="/article/46397481/GPU驱动.png" alt="image-20200523233440188"></p>
-<p>查看NVIDIA驱动版本</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi </span><br><span class="line"># 显示驱动版本<span class="number">440</span>和驱动的CUDA版本<span class="number">10.2</span>（和运行CUDA不同）</span><br></pre></td></tr></table></figure>
-<p>or</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg --<span class="keyword">list</span> | <span class="keyword">grep</span> nvidia-*</span><br></pre></td></tr></table></figure>
-<p>or</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/driver/nvidia/version</span><br></pre></td></tr></table></figure>
-<h1 id="CUDA与cuDNN"><a href="#CUDA与cuDNN" class="headerlink" title="CUDA与cuDNN"></a>CUDA与cuDNN</h1><p><strong>只是深度学习环境，装了conda就没必要单独装cuda什么的了，虚拟环境有指令可以包含进去。</strong></p>
-<p>但是CUDA的其他文件可能没有, 比如nvcc.因此我想安装完整的CUDA,。另外, 如果驱动满足, 这里的cudatoolkit版本&lt;=系统, 也能正常使用.</p>
-<h2 id="完整的CUDA安装"><a href="#完整的CUDA安装" class="headerlink" title="完整的CUDA安装"></a>完整的CUDA安装</h2><p><a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank" rel="noopener">CUDA Toolkit Archive</a> （Ubuntu18.04 下载runfile版本）</p>
-<p>cuda10.1(选择这个版本的原因，是因为cudnn在2020.5.26都没有对应的版本)</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://developer.download.nvidia.com/compute/cuda/<span class="number">10.1</span>/Prod/local_installers/cuda_10<span class="meta">.1</span><span class="meta">.243_418</span><span class="meta">.87</span>.00_linux.run</span><br><span class="line"></span><br><span class="line">sudo sh cuda_10<span class="meta">.1</span><span class="meta">.243_418</span><span class="meta">.87</span>.00_linux.run</span><br></pre></td></tr></table></figure>
-<p>安装完后，在.bashrc文件末尾添加环境变量</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~/.bashrc</span><br><span class="line"></span><br><span class="line">export PATH=$PATH:/usr/local/cuda-10.1/bin  </span><br><span class="line">export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.1/lib64  </span><br><span class="line">export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/cuda-10.1/lib64  </span><br><span class="line"></span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
-<p>测试</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nvcc --version  </span><br><span class="line"><span class="meta">#</span><span class="bash">出现Cuda compilation tools, release 10.1, V10.1.243</span></span><br><span class="line">cd /usr/local/cuda/samples/1_Utilities/deviceQuery </span><br><span class="line">sudo make</span><br><span class="line">./deviceQuery</span><br><span class="line"><span class="meta">#</span><span class="bash">出现deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 10.2, CUDA Runtime Version = 10.1, NumDevs = 1</span></span><br><span class="line">Result = PASS</span><br></pre></td></tr></table></figure>
-<p><a href="https://share.weiyun.com/zMGMSFEE" target="_blank" rel="noopener">https://share.weiyun.com/zMGMSFEE</a></p>
-<p>##　cuDNN</p>
-<p>cuDNN是用于神经网络的GPU库, 有些python包依赖cuDNN才能运行. <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.nvidia.com%2Fdeeplearning%2Fsdk%2Fcudnn-install%2F%23installlinux-deb" target="_blank" rel="noopener">官网说明</a></p>
-<p>官网下载<strong>runtime/dev/doc</strong>三个版本的deb文件，依次安装。</p>
-<p><a href="https://developer.nvidia.com/rdp/cudnn-archive" target="_blank" rel="noopener">cuDNN Archive</a>（目前还没有10.2的对应版本）</p>
-<ul>
-<li>安装后查看版本：</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /usr/<span class="keyword">include</span>/cudnn.h | grep CUDNN_MAJOR -A <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>用sample验证CUDNN（需要之前安装dev和doc两个deb）</li>
-</ul>
-<blockquote>
-<p>修改cudnn.h的include “…”为include &lt;…&gt;，否则下面编译会报错</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span>  /usr/src/cudnn_samples_v7/mnistCUDNN <span class="comment"># 如果没有操作权限就cp到可操作的位置</span></span><br><span class="line">make clean &amp;&amp; make</span><br><span class="line">./minstCUDNN</span><br></pre></td></tr></table></figure>
-<h1 id="安装Miniconda"><a href="#安装Miniconda" class="headerlink" title="安装Miniconda"></a>安装Miniconda</h1><p>点击<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/" target="_blank" rel="noopener">Anaconda 镜像使用帮助</a>，下载Miniconda （Miniconda3-py37_4.8.2-Linux-x86_64.sh）就可以了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入下载目录</span></span><br><span class="line"><span class="comment"># cd Downloads/</span></span><br><span class="line"><span class="built_in">cd</span> 下载</span><br><span class="line"><span class="comment"># 执行安装</span></span><br><span class="line"> bash Miniconda3-py37_4.8.2-Linux-x86_64.sh </span><br><span class="line"> </span><br><span class="line"> 遇到Do you accept the license terms? [yes|no]</span><br><span class="line">回车</span><br><span class="line">q键退出阅读license</span><br><span class="line">yes</span><br><span class="line">Miniconda3 will now be installed into this location:</span><br><span class="line">/home/用户名/miniconda3</span><br><span class="line">回车默认</span><br><span class="line">Do you wish the installer to initialize Miniconda3</span><br><span class="line">by running conda init? [yes|no]</span><br><span class="line">yes</span><br></pre></td></tr></table></figure>
-<p>完成后关闭该终端，再一次打开终端</p>
-<p>测试是否安装成功</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">conda --<span class="keyword">version</span></span><br><span class="line"></span><br><span class="line">#添加国内镜像，进入清华镜像源anaconda页面</span><br><span class="line">conda config --<span class="built_in">add</span> channels http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/anaconda/pkgs/free</span><br><span class="line">conda config --<span class="built_in">add</span> channels http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/anaconda/pkgs/main</span><br><span class="line">conda config --<span class="built_in">add</span> channels http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/anaconda/cloud/conda-forge</span><br><span class="line">conda config --<span class="built_in">add</span> channels http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/anaconda/cloud/bioconda </span><br><span class="line">conda config --<span class="keyword">set</span> show_channel_urls yes</span><br></pre></td></tr></table></figure>
-<h1 id="conda常用命令"><a href="#conda常用命令" class="headerlink" title="conda常用命令"></a>conda常用命令</h1><p>pytorchGPU为所创建的虚拟环境名字</p>
-<p>创建虚拟环境</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n pytorchGPU python=<span class="number">3.7</span><span class="number">.6</span></span><br></pre></td></tr></table></figure>
-<p>激活虚拟环境</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda <span class="built_in">activate</span> pytorchGPU</span><br></pre></td></tr></table></figure>
-<p>退出当前虚拟环境</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">conda deactivate</span></span><br></pre></td></tr></table></figure>
-<h3 id="删除虚拟环境操作"><a href="#删除虚拟环境操作" class="headerlink" title="删除虚拟环境操作"></a>删除虚拟环境操作</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n pytorchGPU --all</span><br></pre></td></tr></table></figure>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">conda</span> <span class="literal">info</span>　＃查看conda的信息（是否有镜像库）</span><br><span class="line"></span><br><span class="line">conda clean -i　＃清除缓存索引</span><br><span class="line"></span><br><span class="line">conda list <span class="comment">#查看安装了哪些包。</span></span><br><span class="line"></span><br><span class="line">conda env list 或 conda <span class="literal">info</span> -e <span class="comment">#查看当前存在哪些虚拟环境</span></span><br><span class="line"></span><br><span class="line">conda update conda <span class="comment">#检查更新当前conda</span></span><br><span class="line"></span><br><span class="line">python --version <span class="comment">#查看python版本</span></span><br></pre></td></tr></table></figure>
-<h3 id="对虚拟环境中安装额外的包"><a href="#对虚拟环境中安装额外的包" class="headerlink" title="对虚拟环境中安装额外的包"></a>对虚拟环境中安装额外的包</h3><p>使用命令<code>conda install -n your_env_name [package]</code>即可安装package到your_env_name中</p>
-<h3 id="删除环境中的某个包"><a href="#删除环境中的某个包" class="headerlink" title="删除环境中的某个包"></a>删除环境中的某个包</h3><p>使用命令<code>conda remove --name your_env_name package_name</code> 即可</p>
-<h1 id="配置深度学习环境"><a href="#配置深度学习环境" class="headerlink" title="配置深度学习环境"></a>配置深度学习环境</h1><p> <a href="https://anaconda.org/" target="_blank" rel="noopener">Anaconda Cloud</a>官网提供了各种包的安装命令，可以搜索并安装到我们创建的虚拟环境中，例如搜索<code>pytorch</code>，执行便可安装</p>
-<p>再一次检查镜像源：</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~<span class="string">/.condarc</span></span><br></pre></td></tr></table></figure>
-<p>配置文件修改如下：</p>
-<pre><code>channels:
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/simpleitk/
-  - defaults
-show_channel_urls: true
-</code></pre><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda <span class="built_in">info</span>　＃查看conda的信息（是否有镜像库）</span><br><span class="line">conda <span class="built_in">clean</span> -i　＃清除缓存索引</span><br></pre></td></tr></table></figure>
-<p>安装GPU版pytorch，在官网<a href="http://pytorch.org/选一个你的当前的配置" target="_blank" rel="noopener">http://pytorch.org/选一个你的当前的配置</a></p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision <span class="attribute">cudatoolkit</span>=10.1   </span><br><span class="line"><span class="comment">#去掉-c pytorch安装的时候才会默认从清华源下载相应的包</span></span><br></pre></td></tr></table></figure>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在VScode里面测试</span></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"><span class="keyword">from</span> torch.backends <span class="keyword">import</span> cudnn</span><br><span class="line"></span><br><span class="line"><span class="comment"># TEST　出现tensor([1.], device='cuda:0')</span></span><br><span class="line">x = torch.Tensor([<span class="number">1.0</span>])</span><br><span class="line">xx = x.cuda()</span><br><span class="line">print(xx)</span><br><span class="line"><span class="comment"># CUDA cuDNN test  ,出现２个true</span></span><br><span class="line">print(torch.cuda.is_available())</span><br><span class="line">print(cudnn.is_acceptable(xx))</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出当前GPU型号</span></span><br><span class="line">gnlook = torch.cuda.current_device()</span><br><span class="line">print(torch.cuda.get_device_name(gnlook))</span><br></pre></td></tr></table></figure>
-<p>##　出现错误</p>
-<p> <strong>Torch not compiled with CUDA enabled</strong></p>
-<p>不知道是什么原因，清华源下载的是cpu版pytorch</p>
-<p>我认为是没有检测到安装好的英伟达驱动程序，所以检查好驱动版本后重启电脑，重新安装pytorch（删掉这个虚拟环境，再来）。</p>
+        <h1 id="深度学习环境搭建"><a href="#深度学习环境搭建" class="headerlink" title="深度学习环境搭建"></a>深度学习环境搭建</h1><p><a href="https://blog.csdn.net/Ding19950107/article/details/89538228" target="_blank" rel="noopener">ubuntu16.04+1080ti+cuda10.0+cudnn环境配置</a></p>
+<p><a href="https://blog.csdn.net/meiLin_Ya/article/details/103126921" target="_blank" rel="noopener">Pycharm没有菜单栏</a></p>
+<p>本文英伟达显卡驱动版本：430.64</p>
+<p>cuda 10.0.130</p>
+<p>cudann 7.6.4</p>
+<a id="more"></a>
 <p><img src="/article/46397481/深度学习环境.png" alt="深度学习环境"></p>
-<h1 id="IDE-VScode"><a href="#IDE-VScode" class="headerlink" title="IDE-VScode"></a>IDE-VScode</h1><p>推荐Visual Studio Code，轻量快速，在终端激活环境，便可直接运行程序</p>
-<p>##安装</p>
-<p>1.进入官网，直接下载压缩包。（我的是64位）<br> <a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener">https://code.visualstudio.com/Download</a></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">cd</span> 下载</span><br><span class="line"><span class="selector-tag">sudo</span> <span class="selector-tag">dpkg</span> <span class="selector-tag">-i</span> <span class="selector-tag">code_1</span><span class="selector-class">.35</span><span class="selector-class">.0-1559611369_amd64</span><span class="selector-class">.deb</span></span><br></pre></td></tr></table></figure>
-<p>解压完成，在全部应用的区域就可以看到VS Code的图标了，直接点击打开</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><a href="https://blog.csdn.net/aggie4628/article/details/105672730" target="_blank" rel="noopener">ubuntu18.04+VSCode+Python安装</a></p>
-<p><a href="https://blog.csdn.net/aggie4628/article/details/104762471" target="_blank" rel="noopener">ubuntu18.04- +vscode c++使用时的三个配置文件</a></p>
-<h2 id="pylint路径设置"><a href="#pylint路径设置" class="headerlink" title="pylint路径设置"></a>pylint路径设置</h2><p><a href="https://blog.csdn.net/qq_34403736/article/details/84726504" target="_blank" rel="noopener">VSCode中pytorch出现’torch’ has no member ‘xxx’的错误</a></p>
-<p>setting中</p>
-<p>python.linting.pylintPath : /home/pabebe/miniconda3/envs/pytorchGPU/bin/pylint</p>
-<p>保存后便无报错。</p>
-<h2 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h2><p><a href="https://www.jianshu.com/p/1a57337007ca" target="_blank" rel="noopener">VSCode配置FiraCode字体</a></p>
-<p>下载字体</p>
-<pre><code>到FiraCode字体的GitHub页面
-找到下面的Download链接下载最新字体
-解压缩下载文件，并进入ttf文件夹
-选中所有字体文件，右键选择安装
-</code></pre><p>配置字体</p>
-<pre><code>打开vscode的配置页面，并搜索font
-修改editor.fontFamily配置项的内容为：&apos;Fira Code Retina&apos;, &apos;Microsoft Yahei UI&apos;。由于Fira Code字体不支持中文，这里配置微软雅黑为第二字体
-</code></pre><p>配置后重启vscode</p>
-<h1 id="开机自动挂载windows磁盘"><a href="#开机自动挂载windows磁盘" class="headerlink" title="开机自动挂载windows磁盘"></a>开机自动挂载windows磁盘</h1><p>挂载磁盘的信息是保存在 /etc /fstab  这个文件里面,我们注意到其中又这么一行注释 <file system> <mount point>   <type>  <options>       <dump>  <pass></pass></dump></options></type></mount></file></p>
-<p>这个就是对下面没有注释的信息的解释 ：分别表示:原来在文件系统的位置，加载点位置，类型，参数等，其中以#是注释符号，相当于C语言中的 // 注释</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">先备份</span></span><br><span class="line">sudo cp /etc/fstab /etc/fstab_backup</span><br><span class="line"> df</span><br></pre></td></tr></table></figure>
-<p>先用 df命令查看要自动挂载磁盘信息（查看之前先手动挂载想要开机自动挂载的磁盘，要不然显示不出来）</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit <span class="meta-keyword">/etc/</span>fstab</span><br><span class="line"><span class="meta">#修改如下</span></span><br><span class="line"><span class="meta"># window D disk</span></span><br><span class="line"><span class="meta-keyword">/dev/</span>sdb2 <span class="meta-keyword">/media/</span>pabebe/D ntfs defaults,locale=zh_CN.UTF<span class="number">-8</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line"><span class="meta"># window E disk</span></span><br><span class="line"><span class="meta-keyword">/dev/</span>sdb3 <span class="meta-keyword">/media/</span>pabebe/E ntfs defaults,locale=zh_CN.UTF<span class="number">-8</span> <span class="number">0</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>保存，退出，重启系统</p>
-<h1 id="Ubuntu18-04开机自启动脚本"><a href="#Ubuntu18-04开机自启动脚本" class="headerlink" title="Ubuntu18.04开机自启动脚本"></a>Ubuntu18.04开机自启动脚本</h1><h2 id="准备好你的sh脚本文件"><a href="#准备好你的sh脚本文件" class="headerlink" title="准备好你的sh脚本文件"></a>准备好你的sh脚本文件</h2><p>路径:~/VScodeWorkspace/mountDisk.sh </p>
-<p>给予权限 </p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod  <span class="number">777</span> ~<span class="regexp">/VScodeWorkspace/m</span>ountDisk.sh</span><br></pre></td></tr></table></figure>
-<p>挂载磁盘脚本-mountDisk.sh </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 挂载硬盘到指定目录（放在 /【根目录】/media/用户名/下）</span></span><br><span class="line">mymount()</span><br><span class="line">&#123;</span><br><span class="line">    echo "check and create mount directory!"</span><br><span class="line">    if [ ! -d "/media/pabebe/d" ]</span><br><span class="line">    then</span><br><span class="line">        mkdir /media/pabebe/D</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">    echo "start mount win disk!!"</span><br><span class="line">    sudo mount /dev/sdb2 /media/pabebe/D</span><br><span class="line">    echo "mount over!Have fun"</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">myumount()</span><br><span class="line">&#123;</span><br><span class="line">    echo "start umounting win disk!!"</span><br><span class="line">     sudo umount /media/pabebe/D</span><br><span class="line">    echo "all down bye!"</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cd /</span><br><span class="line"><span class="meta">#</span><span class="bash">mymount </span></span><br><span class="line"><span class="meta">#</span><span class="bash">创建博客桌面快捷键</span></span><br><span class="line">if [ -e "/home/pabebe/桌面/blog" ]</span><br><span class="line">then</span><br><span class="line">    sudo rm /home/pabebe/桌面/blog</span><br><span class="line">fi</span><br><span class="line">ln  -s  /media/pabebe/D/Pabebezz.github.io/source/_posts   /home/pabebe/桌面/blog</span><br><span class="line">echo "blog 可以快捷访问啦"</span><br><span class="line">exit 0</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">echo</span> <span class="string">"mount or umount win disk?please type m/u"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">read</span> M_U</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="keyword">if</span> [ <span class="string">"<span class="variable">$M_U</span>"</span> = <span class="string">"m"</span> ]; <span class="keyword">then</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">     mymount</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">     myumount</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="keyword">fi</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">shel l脚本需要注意的地方就是<span class="keyword">if</span>这个条件这里[]和<span class="keyword">then</span>要是在同一行那么就得加上;，</span></span><br><span class="line"><span class="meta">#</span><span class="bash">还有就是 中间的判断要和中括号有空格，比如[ 判断条件 ]</span></span><br></pre></td></tr></table></figure>
-<h2 id="创建一个service文件"><a href="#创建一个service文件" class="headerlink" title="创建一个service文件"></a>创建一个service文件</h2><p>进入<code>/etc/systemd/system/</code>，创建一个<code>autoMountDisk.service</code>文件，内容如下：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=for quickly access blog source      <span class="comment">#这里填简介</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">ExecStart</span>=/home/pabebe/VScodeWorkspace/mountDisk.sh          <span class="comment">#  这里填sh文件路径 </span></span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重新加载配置文件</span></span><br><span class="line">sudo systemctl daemon-reload             <span class="comment"># service文件改动后重新转载</span></span><br><span class="line">sudo systemctl enable autoMountDisk.service          <span class="comment">#设置开机启动</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  不重启，立即启动服务</span></span><br><span class="line">sudo systemctl <span class="keyword">start</span> autoMountDisk.service</span><br><span class="line">＃查看运行状态</span><br><span class="line">sudo systemctl <span class="keyword">status</span> autoMountDisk.service</span><br></pre></td></tr></table></figure>
-<p>关于service文件里的一些选项，在<a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-part-two.html" target="_blank" rel="noopener">这里</a>有详细的说明。</p>
-<p>##　问题</p>
-<p><strong>autoMountDisk.service: Failed to execute command: Exec format error</strong></p>
-<p><strong>autoMountDisk.service: Failed at step EXEC spawning /home/pabebe/VScodeWorkspace</strong></p>
-<p><strong>code=exited, status=203/EXEC</strong></p>
-<p><strong>解决方案:</strong></p>
-<p>systemctl执行脚本时需要知道<strong>脚本的解释器</strong></p>
-<p>在脚本的开头加上</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br></pre></td></tr></table></figure>
 <h1 id="Bolg"><a href="#Bolg" class="headerlink" title="Bolg"></a>Bolg</h1><p><a href="https://www.jianshu.com/p/9b2f2de68838" target="_blank" rel="noopener">ubuntu下搭建Hexo+GitHub博客</a> </p>
 <p><a href="https://blog.csdn.net/u010277553/article/details/80938829" target="_blank" rel="noopener">Ubuntu16 升级nodejs版本</a></p>
 <p><img src="/article/46397481/更新node版本.png" alt="更新node版本"></p>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="https://www.jianshu.com/p/552bb5b5c03b" target="_blank" rel="noopener">Ubuntu 搭建深度学习环境</a>（直接安装anaconda，就不需要再繁琐安装cuda、cudann了）</p>
-<p><a href="https://blog.csdn.net/meiLin_Ya/article/details/103126921" target="_blank" rel="noopener">Pycharm没有菜单栏</a></p>
-<p><a href="https://blog.csdn.net/watermelon1123/article/details/88122020" target="_blank" rel="noopener">conda安装Pytorch下载过慢解决办法(11月26日更新ubuntu下pytorch1.3安装方法)</a></p>
 <p><a href="https://blog.csdn.net/qq_38880380/article/details/78233687" target="_blank" rel="noopener">ubuntu自带截图工具–方便好用</a></p>
-<p><a href="https://blog.csdn.net/qq570437459/article/details/87094870" target="_blank" rel="noopener">ubuntu18.04 使用systemd方式添加开机运行sh脚本</a></p>
-<p><a href="https://blog.csdn.net/unixanb/article/details/94126803?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">ubuntu 18.04开机自启动脚本</a></p>
-<p><a href="https://blog.csdn.net/qq_34067821/article/details/90710192" target="_blank" rel="noopener">Ubuntu 18.10 下安装CUDA10/CUDA10.1</a></p>
-<p><a href="https://blog.csdn.net/shangyexin/article/details/80968202" target="_blank" rel="noopener">systemctl自定义service执行shell脚本时报错code exited status 203 EXEC</a></p>
-<p><a href="https://blog.csdn.net/huangyuan_xuan/article/details/39118723" target="_blank" rel="noopener">ubuntu14.04开机自动挂载windows磁盘的配置方法</a></p>
 
       
     </div>
@@ -597,11 +462,11 @@ show_channel_urls: true
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>Ubuntu下深度学习环境与blog搭建</p>
+  <p><span>本文标题:</span>Ubuntu16.04下深度学习环境搭建</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2019年12月18日 - 12:49:46</p>
-  <p><span>最后更新:</span>2020年06月16日 - 18:24:34</p>
-  <p><span>原始链接:</span><a href="/article/46397481/" title="Ubuntu下深度学习环境与blog搭建">https://pabebezz.github.io/article/46397481/</a>
+  <p><span>最后更新:</span>2019年12月18日 - 18:13:02</p>
+  <p><span>原始链接:</span><a href="/article/46397481/" title="Ubuntu16.04下深度学习环境搭建">https://pabebezz.github.io/article/46397481/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/46397481/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -666,8 +531,8 @@ show_channel_urls: true
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/article/46397481/" rel="prev" title="Ubuntu16.04下深度学习环境搭建">
-                Ubuntu16.04下深度学习环境搭建 <i class="fa fa-chevron-right"></i>
+              <a href="/article/46397481/" rel="prev" title="Ubuntu下深度学习环境与blog搭建">
+                Ubuntu下深度学习环境与blog搭建 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -845,7 +710,7 @@ show_channel_urls: true
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#更新NVIDIA驱动"><span class="nav-number">1.</span> <span class="nav-text">更新NVIDIA驱动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CUDA与cuDNN"><span class="nav-number">2.</span> <span class="nav-text">CUDA与cuDNN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#完整的CUDA安装"><span class="nav-number">2.1.</span> <span class="nav-text">完整的CUDA安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Miniconda"><span class="nav-number">3.</span> <span class="nav-text">安装Miniconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conda常用命令"><span class="nav-number">4.</span> <span class="nav-text">conda常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除虚拟环境操作"><span class="nav-number">4.0.1.</span> <span class="nav-text">删除虚拟环境操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对虚拟环境中安装额外的包"><span class="nav-number">4.0.2.</span> <span class="nav-text">对虚拟环境中安装额外的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除环境中的某个包"><span class="nav-number">4.0.3.</span> <span class="nav-text">删除环境中的某个包</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#配置深度学习环境"><span class="nav-number">5.</span> <span class="nav-text">配置深度学习环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">5.1.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDE-VScode"><span class="nav-number">6.</span> <span class="nav-text">IDE-VScode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">6.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pylint路径设置"><span class="nav-number">6.2.</span> <span class="nav-text">pylint路径设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#美化"><span class="nav-number">6.3.</span> <span class="nav-text">美化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开机自动挂载windows磁盘"><span class="nav-number">7.</span> <span class="nav-text">开机自动挂载windows磁盘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu18-04开机自启动脚本"><span class="nav-number">8.</span> <span class="nav-text">Ubuntu18.04开机自启动脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备好你的sh脚本文件"><span class="nav-number">8.1.</span> <span class="nav-text">准备好你的sh脚本文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个service文件"><span class="nav-number">8.2.</span> <span class="nav-text">创建一个service文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">8.3.</span> <span class="nav-text">启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bolg"><span class="nav-number">9.</span> <span class="nav-text">Bolg</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">10.</span> <span class="nav-text">参考链接</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深度学习环境搭建"><span class="nav-number">1.</span> <span class="nav-text">深度学习环境搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bolg"><span class="nav-number">2.</span> <span class="nav-text">Bolg</span></a></li></ol></div>
             
 
           </div>
