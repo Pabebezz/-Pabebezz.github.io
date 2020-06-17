@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2020-06-17T02:25:22.037Z</updated>
+  <updated>2020-06-17T02:41:49.458Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://pabebezz.github.io/article/e3c77110/"/>
     <id>https://pabebezz.github.io/article/e3c77110/</id>
     <published>2020-06-17T02:24:41.000Z</published>
-    <updated>2020-06-17T02:25:22.037Z</updated>
+    <updated>2020-06-17T02:41:49.458Z</updated>
     
     <summary type="html">
     
@@ -318,26 +318,6 @@
   </entry>
   
   <entry>
-    <title>Ubuntu下深度学习环境与blog搭建</title>
-    <link href="https://pabebezz.github.io/article/46397481/"/>
-    <id>https://pabebezz.github.io/article/46397481/</id>
-    <published>2019-12-18T04:49:46.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      深度学习环境搭建
-    
-    </summary>
-    
-      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
-    
-    
-      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Ubuntu16.04下深度学习环境搭建</title>
     <link href="https://pabebezz.github.io/article/46397481/"/>
     <id>https://pabebezz.github.io/article/46397481/</id>
@@ -351,6 +331,26 @@
 &lt;p&gt;本文英伟达显卡驱动版本：430.64&lt;/p&gt;
 &lt;p&gt;cuda 10.0.130&lt;/p&gt;
 &lt;p&gt;cudann 7.6.4&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu下深度学习环境与blog搭建</title>
+    <link href="https://pabebezz.github.io/article/46397481/"/>
+    <id>https://pabebezz.github.io/article/46397481/</id>
+    <published>2019-12-18T04:49:46.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      深度学习环境搭建
     
     </summary>
     
