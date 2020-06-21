@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
 <meta property="og:description" content="Ubuntu使用Visual Profiler配置java环境123456789101112131415161718//卸载OpenJDKsudo apt-get purge openjdk/openjdk*sudo apt-get clean/autoclean//安装jre、jdksudo apt install openjdk-8-jre-headlesssudo apt install o">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-21T04:20:57.970Z">
+<meta property="og:updated_time" content="2020-06-21T12:24:04.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu使用Visual Profiler">
 <meta name="twitter:description" content="Ubuntu使用Visual Profiler配置java环境123456789101112131415161718//卸载OpenJDKsudo apt-get purge openjdk/openjdk*sudo apt-get clean/autoclean//安装jre、jdksudo apt install openjdk-8-jre-headlesssudo apt install o">
@@ -431,6 +431,7 @@
         <h1 id="Ubuntu使用Visual-Profiler"><a href="#Ubuntu使用Visual-Profiler" class="headerlink" title="Ubuntu使用Visual Profiler"></a>Ubuntu使用Visual Profiler</h1><h2 id="配置java环境"><a href="#配置java环境" class="headerlink" title="配置java环境"></a>配置java环境</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//卸载OpenJDK</span><br><span class="line">sudo apt-get purge openjdk/openjdk*</span><br><span class="line">sudo apt-get clean/autoclean</span><br><span class="line">//安装jre、jdk</span><br><span class="line">sudo apt install openjdk-8-jre-headless</span><br><span class="line">sudo apt install openjdk-8-jdk-headless</span><br><span class="line">//添加环境变量</span><br><span class="line">sudo vim ~/.bashrc</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">set</span> oracle jdk environment</span></span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_191  ## 这里要注意目录要换成自己解压的jdk 目录</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre  </span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib  </span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH  </span><br><span class="line">source ~/.bashrc</span><br><span class="line">//验证</span><br><span class="line">java -version</span><br><span class="line">//如果你安装了多个版本的jdk，你可以通过以下命令在这些版本之间切换</span><br><span class="line">sudo update-alternatives –config java</span><br></pre></td></tr></table></figure>
 <h1 id="使用nvvp"><a href="#使用nvvp" class="headerlink" title="使用nvvp"></a>使用nvvp</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvvp</span><br></pre></td></tr></table></figure>
 <p>出现Visual Profiler图形化界面</p>
+<a id="more"></a>
 <h2 id="nvprof命令使用"><a href="#nvprof命令使用" class="headerlink" title="nvprof命令使用"></a>nvprof命令使用</h2><h2 id="常用度量标准"><a href="#常用度量标准" class="headerlink" title="常用度量标准"></a>常用度量标准</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">nvprof <span class="comment">--query-metrics　# 查看所有能用的参数命令</span></span><br><span class="line">nvprof 计时统计工具</span><br><span class="line">    <span class="comment">--metrics achiveed_ocupancy  内核占用率</span></span><br><span class="line">    <span class="comment">--metrics gld_throughput  全局加载吞吐量</span></span><br><span class="line">    <span class="comment">--metrics gld_efficiency      全局内存读取效率</span></span><br><span class="line">     <span class="comment">--metrics gst_efficiency   全局内存载入效率</span></span><br><span class="line">    <span class="comment">--metrics gld_transactions  全局内存加载事务效率</span></span><br><span class="line">    ...</span><br><span class="line">最常用的有:</span><br><span class="line">achieved_occupancy　占用率（每个SM在每个cycle能够达到的最大active warp数目占总warp的比例）</span><br><span class="line">gld_throughput　全局加载吞吐量（较高的<span class="keyword">load</span> throughput也不一定就有较高的性能）</span><br><span class="line">gld_efficiency　全局内存读取效率（我们确切需要的<span class="keyword">global</span> <span class="keyword">load</span> throughput与实际得到<span class="keyword">global</span> <span class="keyword">load</span> <span class="keyword">memory</span>的比值）</span><br></pre></td></tr></table></figure>
 <h2 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h2><p>nvprof –metrics gld_throughput ./multiply ./test/a_15360_15360.mtx ./test/b_15360_2.mtx ./outnvprof</p>
 <p>nvprof –metrics achieved_occupancy ./multiply ./test/a_15360_15360.mtx ./test/b_15360_2.mtx ./out</p>
@@ -479,7 +480,7 @@
   <p><span>本文标题:</span>Ubuntu使用Visual Profiler</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年06月21日 - 12:15:58</p>
-  <p><span>最后更新:</span>2020年06月21日 - 12:20:57</p>
+  <p><span>最后更新:</span>2020年06月21日 - 20:24:04</p>
   <p><span>原始链接:</span><a href="/article/ed84546b/" title="Ubuntu使用Visual Profiler">https://pabebezz.github.io/article/ed84546b/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/ed84546b/" aria-label="复制成功！"></i></span>
   </p>
@@ -622,7 +623,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -754,7 +755,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">88.6k</span> 
+    <span title="本站总字数">90.8k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>

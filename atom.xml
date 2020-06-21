@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2020-06-21T04:20:57.970Z</updated>
+  <updated>2020-06-21T12:24:04.027Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -21,17 +21,13 @@
     <link href="https://pabebezz.github.io/article/ed84546b/"/>
     <id>https://pabebezz.github.io/article/ed84546b/</id>
     <published>2020-06-21T04:15:58.000Z</published>
-    <updated>2020-06-21T04:20:57.970Z</updated>
+    <updated>2020-06-21T12:24:04.027Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;Ubuntu使用Visual-Profiler&quot;&gt;&lt;a href=&quot;#Ubuntu使用Visual-Profiler&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu使用Visual Profiler&quot;&gt;&lt;/a&gt;Ubuntu使用Visual
-        
-      
+      &lt;h1 id=&quot;Ubuntu使用Visual-Profiler&quot;&gt;&lt;a href=&quot;#Ubuntu使用Visual-Profiler&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu使用Visual Profiler&quot;&gt;&lt;/a&gt;Ubuntu使用Visual Profiler&lt;/h1&gt;&lt;h2 id=&quot;配置java环境&quot;&gt;&lt;a href=&quot;#配置java环境&quot; class=&quot;headerlink&quot; title=&quot;配置java环境&quot;&gt;&lt;/a&gt;配置java环境&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;//卸载OpenJDK&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get purge openjdk/openjdk*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get clean/autoclean&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//安装jre、jdk&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install openjdk-8-jre-headless&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install openjdk-8-jdk-headless&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//添加环境变量&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo vim ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; oracle jdk environment&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_191  ## 这里要注意目录要换成自己解压的jdk 目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export JRE_HOME=$&amp;#123;JAVA_HOME&amp;#125;/jre  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export CLASSPATH=.:$&amp;#123;JAVA_HOME&amp;#125;/lib:$&amp;#123;JRE_HOME&amp;#125;/lib  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PATH=$&amp;#123;JAVA_HOME&amp;#125;/bin:$PATH  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;source ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//验证&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;java -version&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//如果你安装了多个版本的jdk，你可以通过以下命令在这些版本之间切换&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo update-alternatives –config java&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;使用nvvp&quot;&gt;&lt;a href=&quot;#使用nvvp&quot; class=&quot;headerlink&quot; title=&quot;使用nvvp&quot;&gt;&lt;/a&gt;使用nvvp&lt;/h1&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;nvvp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;出现Visual Profiler图形化界面&lt;/p&gt;
     
     </summary>
     
@@ -47,17 +43,11 @@
     <link href="https://pabebezz.github.io/article/e3c77110/"/>
     <id>https://pabebezz.github.io/article/e3c77110/</id>
     <published>2020-06-17T02:24:41.000Z</published>
-    <updated>2020-06-21T04:10:32.247Z</updated>
+    <updated>2020-06-21T12:23:41.920Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;SSIM&quot;&gt;&lt;a href=&quot;#SSIM&quot; class=&quot;headerlink&quot; title=&quot;SSIM&quot;&gt;&lt;/a&gt;SSIM&lt;/h1&gt;&lt;p&gt;结构相似性指数（structural similarity
-        
-      
+      &lt;h1 id=&quot;SSIM&quot;&gt;&lt;a href=&quot;#SSIM&quot; class=&quot;headerlink&quot; title=&quot;SSIM&quot;&gt;&lt;/a&gt;SSIM&lt;/h1&gt;&lt;p&gt;结构相似性指数（structural similarity index，SSIM）是一种用于量化两幅图像间的结构相似性的指标。与L2损失函数不同，SSIM仿照人类的视觉系统（Human Visual System,HVS）实现了结构相似性的有关理论，对图像的局部结构变化的感知敏感。SSIM从亮度、对比度以及结构量化图像的属性，用均值估计亮度，方差估计对比度，协方差估计结构相似程度。SSIM值的范围为0至1，越大代表图像越相似。如果两张图片完全一样时，SSIM值为1。&lt;/p&gt;
     
     </summary>
     
@@ -85,6 +75,26 @@
     
     
       <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>paperUnderstanding&amp;Reconstruction-3D Photography using Context-aware Layered Depth Inpainting</title>
+    <link href="https://pabebezz.github.io/article/ce73fd06/"/>
+    <id>https://pabebezz.github.io/article/ce73fd06/</id>
+    <published>2020-05-30T10:04:30.000Z</published>
+    <updated>2020-06-21T12:37:20.184Z</updated>
+    
+    <summary type="html">
+    
+      该论文理解与复现
+    
+    </summary>
+    
+      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
+    
+    
+      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
     
   </entry>
   
@@ -416,26 +426,6 @@
     </summary>
     
       <category term="English" scheme="https://pabebezz.github.io/categories/English/"/>
-    
-    
-      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络总结</title>
-    <link href="https://pabebezz.github.io/article/72b93d83/"/>
-    <id>https://pabebezz.github.io/article/72b93d83/</id>
-    <published>2019-11-19T02:42:48.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;协议体系&quot;&gt;&lt;a href=&quot;#协议体系&quot; class=&quot;headerlink&quot; title=&quot;协议体系&quot;&gt;&lt;/a&gt;协议体系&lt;/h1&gt;&lt;h2 id=&quot;OSI，TCP-IP，五层协议的体系结构&quot;&gt;&lt;a href=&quot;#OSI，TCP-IP，五层协议的体系结构&quot; class=&quot;headerlink&quot; title=&quot;OSI，TCP/IP，五层协议的体系结构&quot;&gt;&lt;/a&gt;OSI，TCP/IP，五层协议的体系结构&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;OSI分层 （7层）：&lt;/strong&gt;物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。&lt;br&gt; &lt;strong&gt;TCP/IP分层（4层）：&lt;/strong&gt;网络接口层、网际层、运输层、应用层。&lt;br&gt; &lt;strong&gt;五层协议 （5层）：&lt;/strong&gt;物理层、数据链路层、网络层、运输层、应用层。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Computer Networking" scheme="https://pabebezz.github.io/categories/Computer-Networking/"/>
     
     
       <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
