@@ -81,18 +81,26 @@
 
 
 
-<meta name="description" content="SSIM">
+<meta name="description" content="SSIM结构相似性指数（structural similarity index，SSIM）是一种用于量化两幅图像间的结构相似性的指标。与L2损失函数不同，SSIM仿照人类的视觉系统（Human Visual System,HVS）实现了结构相似性的有关理论，对图像的局部结构变化的感知敏感。SSIM从亮度、对比度以及结构量化图像的属性，用均值估计亮度，方差估计对比度，协方差估计结构相似程度。SSIM">
 <meta name="keywords" content="paper">
 <meta property="og:type" content="article">
 <meta property="og:title" content="paperMemo-图片质量评价指标">
 <meta property="og:url" content="https://pabebezz.github.io/article/e3c77110/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="SSIM">
+<meta property="og:description" content="SSIM结构相似性指数（structural similarity index，SSIM）是一种用于量化两幅图像间的结构相似性的指标。与L2损失函数不同，SSIM仿照人类的视觉系统（Human Visual System,HVS）实现了结构相似性的有关理论，对图像的局部结构变化的感知敏感。SSIM从亮度、对比度以及结构量化图像的属性，用均值估计亮度，方差估计对比度，协方差估计结构相似程度。SSIM">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-17T02:41:49.458Z">
+<meta property="og:image" content="https://pabebezz.github.io/article/e3c77110/SSIM.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/e3c77110/SSIM2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/e3c77110/SSIM3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/e3c77110/PSNR.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/e3c77110/PSNR2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/e3c77110/LPIPS.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/e3c77110/LPIPS2.png">
+<meta property="og:updated_time" content="2020-06-21T04:10:32.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="paperMemo-图片质量评价指标">
-<meta name="twitter:description" content="SSIM">
+<meta name="twitter:description" content="SSIM结构相似性指数（structural similarity index，SSIM）是一种用于量化两幅图像间的结构相似性的指标。与L2损失函数不同，SSIM仿照人类的视觉系统（Human Visual System,HVS）实现了结构相似性的有关理论，对图像的局部结构变化的感知敏感。SSIM从亮度、对比度以及结构量化图像的属性，用均值估计亮度，方差估计对比度，协方差估计结构相似程度。SSIM">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/e3c77110/SSIM.png">
 
 
 
@@ -391,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1 字
+                  942 字
                 </span>
               
 
@@ -407,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -428,7 +436,28 @@
       
 
       
-        <h1 id="SSIM"><a href="#SSIM" class="headerlink" title="SSIM"></a>SSIM</h1>
+        <h1 id="SSIM"><a href="#SSIM" class="headerlink" title="SSIM"></a>SSIM</h1><p>结构相似性指数（structural similarity index，SSIM）是一种用于量化两幅图像间的结构相似性的指标。与L2损失函数不同，SSIM仿照人类的视觉系统（Human Visual System,HVS）实现了结构相似性的有关理论，对图像的局部结构变化的感知敏感。SSIM从亮度、对比度以及结构量化图像的属性，用均值估计亮度，方差估计对比度，协方差估计结构相似程度。SSIM值的范围为0至1，越大代表图像越相似。如果两张图片完全一样时，SSIM值为1。</p>
+<p>给定x,y两张图片，两者之间的照明度(luminance)、对比度 (contrast) 和结构 (structure)分别如下公式所示：</p>
+<p>   <img src="/article/e3c77110/SSIM.png" alt="SSIM"></p>
+<p>定义：</p>
+<p>  <img src="/article/e3c77110/SSIM2.png" alt="SSIM2"></p>
+<p>令α,β,γ均为1因此，SSIM的表达式为：</p>
+<p>  <img src="/article/e3c77110/SSIM3.png" alt="SSIM3"></p>
+<p>其中，μx是x的平均值，σ2x是x的方差，μy是y的平均值，σ2y是y的方差，σxy是x 和 y 的协方差，c1=(k1L)2，c2=(k2L)2是两个用于维持稳定的常数，避免出现除零的情况，L 为像素值的范围，表示B-bit的图像的L值为2B-1。一般情况下，k1=0.01,k2=0.03 </p>
+<h1 id="PSNR"><a href="#PSNR" class="headerlink" title="PSNR"></a>PSNR</h1><p>峰值信噪比(Peak Signal to Noise Ratio, PSNR)是一种评价图像质量的度量标准。因为PSNR值具有局限性，所以它只是衡量最大值信号和背景噪音之间的图像质量参考值。PSNR的单位为dB，其值越大，图像失真越少。一般来说，PSNR高于40dB说明图像质量几乎与原图一样好；在30-40dB之间通常表示图像质量的失真损失在可接受范围内；在20-30dB之间说明图像质量比较差；PSNR低于20dB说明图像失真严重。</p>
+<p>给定一个大小为m×n的灰度图 I 和噪声图 K，均方误差(MSE, Mean Square Error)公式如下：</p>
+<p>  <img src="/article/e3c77110/PSNR.png" alt="PSNR"></p>
+<p>定义：</p>
+<p>  <img src="/article/e3c77110/PSNR2.png" alt="PSNR2"></p>
+<p>其中，MAX2I 为图片可能的最大像素值，即B-bit的图像的MAX2I值为2B-1。一般地，针对 uint8 数据，最大像素值为255,；针对浮点型数据，最大像素值为1。</p>
+<p>有三种方法来计算彩色RGB图像的PSNR：分别计算 RGB 三个通道的 PSNR，然后取平均值；或者计算RGB各个通道的均方差的均值，然后统一求PSNR；或者把RGB转化为 YCbCr，然后只计算 Y(亮度)分量的PSNR。</p>
+<h1 id="LPIPS"><a href="#LPIPS" class="headerlink" title="LPIPS"></a>LPIPS</h1><p>学习感知图像块相似度(Learned Perceptual Image Patch Similarity, LPIPS)也称为“感知损失”(perceptual loss)，用于度量两张图像之间的差别。来源于CVPR2018的一篇论文《The Unreasonable Effectiveness of Deep Features as a Perceptual Metric》，该度量标准学习生成图像到Ground Truth的反向映射强制生成器学习从假图像中重构真实图像的反向映射，并优先处理它们之间的感知相似度。LPIPS 比传统方法（比如L2/PSNR, SSIM, FSIM）更符合人类的感知情况。LPIPS的值越低表示两张图像越相似，反之，则差异越大。</p>
+<p>给定Ground Truth图像参照块x和含噪声图像失真块x0，感知相似度度量公式如下：</p>
+<p>  <img src="/article/e3c77110/LPIPS.png" alt="LPIPS"></p>
+<p>其中，d为x0与x之间的距离。从L层提取特征堆(feature stack)并在通道维度中进行单位规格化(unit-normalize)。利用向量wl来放缩激活通道数并计算L2距离。最后在空间上平均，在通道上求和。</p>
+<p>基于学习的相似度得分函数公式如下：  <img src="/article/e3c77110/LPIPS2.png" alt="LPIPS2"></p>
+<p>给定Ground Truth图像参照块x和含噪声图像失真块x0的距离d0、Ground Truth图像参照块x和含噪声图像失真块x1的距离d1，在顶部训练一个网络G（包含2个32通道FC-ReLU层、1通道FC层和sigmoid层）映射到得分h。</p>
+
       
     </div>
     
@@ -451,7 +480,7 @@
   <p><span>本文标题:</span>paperMemo-图片质量评价指标</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年06月17日 - 10:24:41</p>
-  <p><span>最后更新:</span>2020年06月17日 - 10:41:49</p>
+  <p><span>最后更新:</span>2020年06月21日 - 12:10:32</p>
   <p><span>原始链接:</span><a href="/article/e3c77110/" title="paperMemo-图片质量评价指标">https://pabebezz.github.io/article/e3c77110/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/e3c77110/" aria-label="复制成功！"></i></span>
   </p>
@@ -516,6 +545,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/ed84546b/" rel="prev" title="Ubuntu使用Visual Profiler">
+                Ubuntu使用Visual Profiler <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -594,7 +627,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -605,7 +638,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -692,7 +725,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SSIM"><span class="nav-number">1.</span> <span class="nav-text">SSIM</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SSIM"><span class="nav-number">1.</span> <span class="nav-text">SSIM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PSNR"><span class="nav-number">2.</span> <span class="nav-text">PSNR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LPIPS"><span class="nav-number">3.</span> <span class="nav-text">LPIPS</span></a></li></ol></div>
             
 
           </div>
@@ -726,7 +759,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">86.9k</span> 
+    <span title="本站总字数">88.6k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>

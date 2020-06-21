@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2020-06-17T02:41:49.458Z</updated>
+  <updated>2020-06-21T04:20:57.970Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>paperMemo-图片质量评价指标</title>
-    <link href="https://pabebezz.github.io/article/e3c77110/"/>
-    <id>https://pabebezz.github.io/article/e3c77110/</id>
-    <published>2020-06-17T02:24:41.000Z</published>
-    <updated>2020-06-17T02:41:49.458Z</updated>
+    <title>Ubuntu使用Visual Profiler</title>
+    <link href="https://pabebezz.github.io/article/ed84546b/"/>
+    <id>https://pabebezz.github.io/article/ed84546b/</id>
+    <published>2020-06-21T04:15:58.000Z</published>
+    <updated>2020-06-21T04:20:57.970Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,33 @@
       
         
         
-          &lt;h1 id=&quot;SSIM&quot;&gt;&lt;a href=&quot;#SSIM&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;Ubuntu使用Visual-Profiler&quot;&gt;&lt;a href=&quot;#Ubuntu使用Visual-Profiler&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu使用Visual Profiler&quot;&gt;&lt;/a&gt;Ubuntu使用Visual
+        
+      
+    
+    </summary>
+    
+      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>paperMemo-图片质量评价指标</title>
+    <link href="https://pabebezz.github.io/article/e3c77110/"/>
+    <id>https://pabebezz.github.io/article/e3c77110/</id>
+    <published>2020-06-17T02:24:41.000Z</published>
+    <updated>2020-06-21T04:10:32.247Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SSIM&quot;&gt;&lt;a href=&quot;#SSIM&quot; class=&quot;headerlink&quot; title=&quot;SSIM&quot;&gt;&lt;/a&gt;SSIM&lt;/h1&gt;&lt;p&gt;结构相似性指数（structural similarity
         
       
     
@@ -410,27 +436,6 @@
     </summary>
     
       <category term="Computer Networking" scheme="https://pabebezz.github.io/categories/Computer-Networking/"/>
-    
-    
-      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>国际交流实用英文写作</title>
-    <link href="https://pabebezz.github.io/article/37c8b7ce/"/>
-    <id>https://pabebezz.github.io/article/37c8b7ce/</id>
-    <published>2019-11-12T02:17:42.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;书信&quot;&gt;&lt;a href=&quot;#书信&quot; class=&quot;headerlink&quot; title=&quot;书信&quot;&gt;&lt;/a&gt;书信&lt;/h1&gt;&lt;p&gt;齐头式、改良齐头式、半齐头式或缩进式&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/article/37c8b7ce/书信写作格式.png&quot; alt=&quot;邮件写作格式&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="English" scheme="https://pabebezz.github.io/categories/English/"/>
     
     
       <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
