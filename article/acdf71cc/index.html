@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/GPU驱动.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/深度学习环境.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/更新node版本.png">
-<meta property="og:updated_time" content="2020-06-17T01:50:10.045Z">
+<meta property="og:updated_time" content="2020-06-22T07:09:53.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu18.04下深度学习环境与blog搭建">
 <meta name="twitter:description" content="深度学习环境与hexoBlog搭建">
@@ -543,7 +543,7 @@ show_channel_urls: true
 修改editor.fontFamily配置项的内容为：&apos;Fira Code Retina&apos;, &apos;Microsoft Yahei UI&apos;。由于Fira Code字体不支持中文，这里配置微软雅黑为第二字体
 </code></pre><p>配置后重启vscode</p>
 <h1 id="开机自动挂载windows磁盘"><a href="#开机自动挂载windows磁盘" class="headerlink" title="开机自动挂载windows磁盘"></a>开机自动挂载windows磁盘</h1><p>挂载磁盘的信息是保存在 /etc /fstab  这个文件里面,我们注意到其中又这么一行注释 <file system> <mount point>   <type>  <options>       <dump>  <pass></pass></dump></options></type></mount></file></p>
-<p>这个就是对下面没有注释的信息的解释 ：分别表示:原来在文件系统的位置，加载点位置，类型，参数等，其中以#是注释符号，相当于C语言中的 // 注释</p>
+<p>这个就是对下面没有注释的信息的解释 ：分别表示:原来在文件系统的位置，加载点位置，类型，参数等，其中以#是注释符号，相当于C语言中的 // 注释,可以使用man fstab来查看各个参数的定义</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">先备份</span></span><br><span class="line">sudo cp /etc/fstab /etc/fstab_backup</span><br><span class="line"> df</span><br></pre></td></tr></table></figure>
 <p>先用 df命令查看要自动挂载磁盘信息（查看之前先手动挂载想要开机自动挂载的磁盘，要不然显示不出来）</p>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit <span class="meta-keyword">/etc/</span>fstab</span><br><span class="line"><span class="meta">#修改如下</span></span><br><span class="line"><span class="meta"># window D disk</span></span><br><span class="line"><span class="meta-keyword">/dev/</span>sdb2 <span class="meta-keyword">/media/</span>pabebe/D ntfs defaults,locale=zh_CN.UTF<span class="number">-8</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line"><span class="meta"># window E disk</span></span><br><span class="line"><span class="meta-keyword">/dev/</span>sdb3 <span class="meta-keyword">/media/</span>pabebe/E ntfs defaults,locale=zh_CN.UTF<span class="number">-8</span> <span class="number">0</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
@@ -600,7 +600,7 @@ show_channel_urls: true
   <p><span>本文标题:</span>Ubuntu18.04下深度学习环境与blog搭建</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年06月17日 - 09:45:23</p>
-  <p><span>最后更新:</span>2020年06月17日 - 09:50:10</p>
+  <p><span>最后更新:</span>2020年06月22日 - 15:09:53</p>
   <p><span>原始链接:</span><a href="/article/acdf71cc/" title="Ubuntu18.04下深度学习环境与blog搭建">https://pabebezz.github.io/article/acdf71cc/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/acdf71cc/" aria-label="复制成功！"></i></span>
   </p>
@@ -747,7 +747,7 @@ show_channel_urls: true
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -879,7 +879,7 @@ show_channel_urls: true
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">90.8k</span> 
+    <span title="本站总字数">91.1k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
