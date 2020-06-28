@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="study notes,">
+  <meta name="keywords" content="paper,">
 
 
 
@@ -81,21 +81,30 @@
 
 
 
-<meta name="description" content="原因适应于非线性假设 sigmoid（logistic）activation function : 激活函数 指代 g(z) X_0 偏置单元，值永远是1 θ  代表 参数或权重 架构输入层-》隐藏层（不止一个）-》输出层 符号： a(i)_j表示 第i层，第j个神经元或单元的激活项(由具体的神经元计算并输出的值) θ(i) 表示 从第i层到第i+1层之间映射的权重矩阵 偏置单元省略没有写。">
-<meta name="keywords" content="study notes">
+<meta name="description" content="该论文理解与复现">
+<meta name="keywords" content="paper">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习-神经网络（前向传播）">
-<meta property="og:url" content="https://pabebezz.github.io/article/4640c193/index.html">
+<meta property="og:title" content="paperUnderstanding-ClearGrasp">
+<meta property="og:url" content="https://pabebezz.github.io/article/2d17733a/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="原因适应于非线性假设 sigmoid（logistic）activation function : 激活函数 指代 g(z) X_0 偏置单元，值永远是1 θ  代表 参数或权重 架构输入层-》隐藏层（不止一个）-》输出层 符号： a(i)_j表示 第i层，第j个神经元或单元的激活项(由具体的神经元计算并输出的值) θ(i) 表示 从第i层到第i+1层之间映射的权重矩阵 偏置单元省略没有写。">
+<meta property="og:description" content="该论文理解与复现">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://pabebezz.github.io/article/4640c193/9神经网络架构.png">
-<meta property="og:image" content="https://pabebezz.github.io/article/4640c193/9神经网络向前传播.png">
-<meta property="og:updated_time" content="2020-06-16T10:24:34.000Z">
+<meta property="og:image" content="https://1.bp.blogspot.com/-VNB-xPguois/XkQ7sqF3VWI/AAAAAAAAFRc/ek6wUpjOGNw0u9vALnnW9zXCZ8VsWTjcACLcBGAsYHQ/s640/image3.png">
+<meta property="og:image" content="https://1.bp.blogspot.com/-mcdDuutDw5Q/XkQ7ssTGUvI/AAAAAAAAFRg/OIyqAa7Qbgs1yGWB7vFKL2E90hCPXiuYACEwYBhgL/s640/image2.gif">
+<meta property="og:image" content="https://1.bp.blogspot.com/-y-DPUgVcfSk/XkQ7seO_nII/AAAAAAAAFR4/W2yq1dWQ2YkglMA5IguxyG1vJRRPg235gCEwYBhgL/s640/image4.jpg">
+<meta property="og:image" content="https://1.bp.blogspot.com/-r9_NUznjObE/XkQ7teoA4BI/AAAAAAAAFSA/xNDlyrAzI-0Ys7iT2iF40AkaeaSjvbuFQCEwYBhgL/s640/image5.gif">
+<meta property="og:image" content="https://1.bp.blogspot.com/-oncutBVkLQU/XkQ7rQz4zLI/AAAAAAAAFSI/Y1dSYj38GkgDTtw-P-UaP1e7pRzmC6izgCEwYBhgL/s640/image11.png">
+<meta property="og:image" content="https://1.bp.blogspot.com/-Ds5KPDwGazc/XkQ7t4atuLI/AAAAAAAAFSA/bnqbcZpPeO8BK8Ewr0if2oTOtJmM2WoiwCEwYBhgL/s640/image6.gif">
+<meta property="og:image" content="https://1.bp.blogspot.com/-QcyTESfw4AM/XkQ7rJaGdVI/AAAAAAAAFR8/CUPvkzCJuygr6xw9S36vYIQ1r0wfi3rogCEwYBhgL/s400/image10.jpg">
+<meta property="og:image" content="https://1.bp.blogspot.com/-xbiK9-km_BE/XkQ7rJmME0I/AAAAAAAAFSA/2kRSqd3DvlcOpv6ql4qILwn3HdmmryfBACEwYBhgL/s640/image1.png">
+<meta property="og:image" content="https://1.bp.blogspot.com/-QBobUQ2ssow/XkQ7txFy4gI/AAAAAAAAFSI/wIR43QtxSd48ghg9bEOAyN617pqIfvsPwCEwYBhgL/s640/image7.png">
+<meta property="og:image" content="https://1.bp.blogspot.com/-iaTKEeKdlTA/XkQ7u6Mv6gI/AAAAAAAAFSE/_59HIFZptyoP9tDllG_0WVy2HKD4edPcwCEwYBhgL/s640/image9.png">
+<meta property="og:image" content="https://1.bp.blogspot.com/-fHSXEBQAp_8/XkQ7uzz9jzI/AAAAAAAAFSI/FKoaYnuntS8vA9IhQCUduBrRyrEnjtVhQCEwYBhgL/s640/image8.gif">
+<meta property="og:updated_time" content="2020-06-28T05:34:48.796Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习-神经网络（前向传播）">
-<meta name="twitter:description" content="原因适应于非线性假设 sigmoid（logistic）activation function : 激活函数 指代 g(z) X_0 偏置单元，值永远是1 θ  代表 参数或权重 架构输入层-》隐藏层（不止一个）-》输出层 符号： a(i)_j表示 第i层，第j个神经元或单元的激活项(由具体的神经元计算并输出的值) θ(i) 表示 从第i层到第i+1层之间映射的权重矩阵 偏置单元省略没有写。">
-<meta name="twitter:image" content="https://pabebezz.github.io/article/4640c193/9神经网络架构.png">
+<meta name="twitter:title" content="paperUnderstanding-ClearGrasp">
+<meta name="twitter:description" content="该论文理解与复现">
+<meta name="twitter:image" content="https://1.bp.blogspot.com/-VNB-xPguois/XkQ7sqF3VWI/AAAAAAAAFRc/ek6wUpjOGNw0u9vALnnW9zXCZ8VsWTjcACLcBGAsYHQ/s640/image3.png">
 
 
 
@@ -125,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="https://pabebezz.github.io/article/4640c193/">
+  <link rel="canonical" href="https://pabebezz.github.io/article/2d17733a/">
 
 
 <meta name="google-site-verification" content="skUdQN9cQrZuUJydKG0ivzB90q5kyLJMU5i5dt82GH4">
@@ -136,7 +145,7 @@
 
 
 
-  <title>机器学习-神经网络（前向传播） | Pabebe's Blog</title>
+  <title>paperUnderstanding-ClearGrasp | Pabebe's Blog</title>
   
 
 
@@ -305,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/4640c193/">
+    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/2d17733a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pabebe">
@@ -323,7 +332,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习-神经网络（前向传播）</h1>
+          <h1 class="post-title" itemprop="name headline">paperUnderstanding-ClearGrasp</h1>
         
 
         <div class="post-meta">
@@ -335,8 +344,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-29T12:33:41+08:00">
-                2019-07-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T13:32:16+08:00">
+                2020-06-28
               </time>
             
 
@@ -358,8 +367,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">machine learning</span>
+                  <a href="/categories/Scientific-Research/" itemprop="url" rel="index">
+                    <span itemprop="name">Scientific Research</span>
                   </a>
                 </span>
 
@@ -394,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.5k 字
+                  1.8k 字
                 </span>
               
 
@@ -410,12 +419,16 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8 分钟
+                  10 分钟
                 </span>
               
             </div>
           
 
+          
+              <div class="post-description">
+                  该论文理解与复现
+              </div>
           
 
         </div>
@@ -431,35 +444,152 @@
       
 
       
-        <h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>适应于非线性假设</p>
-<p>sigmoid（logistic）activation function : 激活函数 指代 g(z)</p>
-<p>X_0 偏置单元，值永远是1</p>
-<p>θ  代表 参数或权重</p>
-<h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><p>输入层-》隐藏层（不止一个）-》输出层</p>
-<p>符号：</p>
-<p>a(i)_j表示 第i层，第j个神经元或单元的激活项(由具体的神经元计算并输出的值)</p>
-<p>θ(i) 表示 从第i层到第i+1层之间映射的权重矩阵</p>
-<p>偏置单元省略没有写。</p>
-<a id="more"></a>
-<p><img src="/article/4640c193/9神经网络架构.png" alt="9神经网络架构"></p>
-<p>如果第 j 层中有 S_j 个单元，第 j+1 层中有 S_j+1 个单元，则θ(j)的维数： S_j+1*（ S_j + 1）</p>
-<h1 id="前向传播（向量化）"><a href="#前向传播（向量化）" class="headerlink" title="前向传播（向量化）"></a>前向传播（向量化）</h1><p>依次计算激活项，从输入项到输出项的过程。</p>
-<p>下面是它的向量化实现</p>
-<p><img src="/article/4640c193/9神经网络向前传播.png" alt="9神经网络向前传播"></p>
-<p>最后一层隐藏层到输出层 类似于 逻辑回归</p>
-<p>多类别分类（一对多分类的扩展）</p>
-<h1 id="编程作业"><a href="#编程作业" class="headerlink" title="编程作业"></a>编程作业</h1><p><strong>displayData.m</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">function [h, display_array] = displayData(X, example_width)</span><br><span class="line">%DISPLAYDATA Display 2D data in a nice grid</span><br><span class="line">%   [h, display_array] = DISPLAYDATA(X, example_width) displays 2D data</span><br><span class="line">%   stored in X in a nice grid. It returns the figure handle h and the </span><br><span class="line">%   displayed array if requested.</span><br><span class="line"></span><br><span class="line">% Set example_width automatically if not passed in</span><br><span class="line">if ~exist(&apos;example_width&apos;, &apos;var&apos;) || isempty(example_width) </span><br><span class="line">	example_width = round(sqrt(size(X, 2)));</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">% Gray Image</span><br><span class="line">colormap(gray);</span><br><span class="line"></span><br><span class="line">% Compute rows, cols</span><br><span class="line">[m n] = size(X);</span><br><span class="line">example_height = (n / example_width);</span><br><span class="line"></span><br><span class="line">% Compute number of items to display</span><br><span class="line">display_rows = floor(sqrt(m));</span><br><span class="line">display_cols = ceil(m / display_rows);</span><br><span class="line"></span><br><span class="line">% Between images padding</span><br><span class="line">pad = 1;</span><br><span class="line"></span><br><span class="line">% Setup blank display</span><br><span class="line">display_array = - ones(pad + display_rows * (example_height + pad), ...</span><br><span class="line">                       pad + display_cols * (example_width + pad));</span><br><span class="line"></span><br><span class="line">% Copy each example into a patch on the display array</span><br><span class="line">curr_ex = 1;</span><br><span class="line">for j = 1:display_rows</span><br><span class="line">	for i = 1:display_cols</span><br><span class="line">		if curr_ex &gt; m, </span><br><span class="line">			break; </span><br><span class="line">		end</span><br><span class="line">		% Copy the patch</span><br><span class="line">		</span><br><span class="line">		% Get the max value of the patch</span><br><span class="line">		max_val = max(abs(X(curr_ex, :)));</span><br><span class="line">		display_array(pad + (j - 1) * (example_height + pad) + (1:example_height), ...</span><br><span class="line">		              pad + (i - 1) * (example_width + pad) + (1:example_width)) = ...</span><br><span class="line">						reshape(X(curr_ex, :), example_height, example_width) / max_val;</span><br><span class="line">		curr_ex = curr_ex + 1;</span><br><span class="line">	end</span><br><span class="line">	if curr_ex &gt; m, </span><br><span class="line">		break; </span><br><span class="line">	end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">% Display Image</span><br><span class="line">h = imagesc(display_array, [-1 1]);</span><br><span class="line"></span><br><span class="line">% Do not show axis</span><br><span class="line">axis image off</span><br><span class="line"></span><br><span class="line">drawnow;</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p><strong>lrCostFunction.m</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">function [J, grad] = lrCostFunction(theta, X, y, lambda)</span><br><span class="line">%LRCOSTFUNCTION Compute cost and gradient for logistic regression with </span><br><span class="line">%regularization</span><br><span class="line">%   J = LRCOSTFUNCTION(theta, X, y, lambda) computes the cost of using</span><br><span class="line">%   theta as the parameter for regularized logistic regression and the</span><br><span class="line">%   gradient of the cost w.r.t. to the parameters. </span><br><span class="line"></span><br><span class="line">% Initialize some useful values</span><br><span class="line">m = length(y); % number of training examples</span><br><span class="line"></span><br><span class="line">% You need to return the following variables correctly </span><br><span class="line">J = 0;</span><br><span class="line">grad = zeros(size(theta));</span><br><span class="line"></span><br><span class="line">% ====================== YOUR CODE HERE ======================</span><br><span class="line">% Instructions: Compute the cost of a particular choice of theta.</span><br><span class="line">%               You should set J to the cost.</span><br><span class="line">%               Compute the partial derivatives and set grad to the partial</span><br><span class="line">%               derivatives of the cost w.r.t. each parameter in theta</span><br><span class="line">%</span><br><span class="line">% Hint: The computation of the cost function and gradients can be</span><br><span class="line">%       efficiently vectorized. For example, consider the computation</span><br><span class="line">%</span><br><span class="line">%           sigmoid(X * theta)</span><br><span class="line">%</span><br><span class="line">%       Each row of the resulting matrix will contain the value of the</span><br><span class="line">%       prediction for that example. You can make use of this to vectorize</span><br><span class="line">%       the cost function and gradient computations. </span><br><span class="line">%</span><br><span class="line">% Hint: When computing the gradient of the regularized cost function, </span><br><span class="line">%       there&apos;re many possible vectorized solutions, but one solution</span><br><span class="line">%       looks like:</span><br><span class="line">%           grad = (unregularized gradient for logistic regression)</span><br><span class="line">%           temp = theta; </span><br><span class="line">%           temp(1) = 0;   % because we don&apos;t add anything for j = 0  </span><br><span class="line">%           grad = grad + YOUR_CODE_HERE (using the temp variable)</span><br><span class="line">%</span><br><span class="line"></span><br><span class="line">h = sigmoid(X * theta);</span><br><span class="line">J =  sum((y-1)&apos; *log(1-h) - y&apos; *log(h))/m + lambda/2/m * (sum(theta.^2) - theta(1)^2);</span><br><span class="line">grad = (X&apos;*(h-y) + theta*lambda) / m;</span><br><span class="line">grad(1) = grad(1) - lambda/m*theta(1);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">% =============================================================</span><br><span class="line"></span><br><span class="line">grad = grad(:);</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p><strong>oneVsAll.m</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">function [all_theta] = oneVsAll(X, y, num_labels, lambda)</span><br><span class="line">%ONEVSALL trains multiple logistic regression classifiers and returns all</span><br><span class="line">%the classifiers in a matrix all_theta, where the i-th row of all_theta </span><br><span class="line">%corresponds to the classifier for label i</span><br><span class="line">%   [all_theta] = ONEVSALL(X, y, num_labels, lambda) trains num_labels</span><br><span class="line">%   logistic regression classifiers and returns each of these classifiers</span><br><span class="line">%   in a matrix all_theta, where the i-th row of all_theta corresponds </span><br><span class="line">%   to the classifier for label i</span><br><span class="line"></span><br><span class="line">% Some useful variables</span><br><span class="line">m = size(X, 1);</span><br><span class="line">n = size(X, 2);</span><br><span class="line"></span><br><span class="line">% You need to return the following variables correctly </span><br><span class="line">all_theta = zeros(num_labels, n + 1);</span><br><span class="line"></span><br><span class="line">% Add ones to the X data matrix</span><br><span class="line">X = [ones(m, 1) X];</span><br><span class="line"></span><br><span class="line">% ====================== YOUR CODE HERE ======================</span><br><span class="line">% Instructions: You should complete the following code to train num_labels</span><br><span class="line">%               logistic regression classifiers with regularization</span><br><span class="line">%               parameter lambda. </span><br><span class="line">%</span><br><span class="line">% Hint: theta(:) will return a column vector.</span><br><span class="line">%</span><br><span class="line">% Hint: You can use y == c to obtain a vector of 1&apos;s and 0&apos;s that tell you</span><br><span class="line">%       whether the ground truth is true/false for this class.</span><br><span class="line">%</span><br><span class="line">% Note: For this assignment, we recommend using fmincg to optimize the cost</span><br><span class="line">%       function. It is okay to use a for-loop (for c = 1:num_labels) to</span><br><span class="line">%       loop over the different classes.</span><br><span class="line">%</span><br><span class="line">%       fmincg works similarly to fminunc, but is more efficient when we</span><br><span class="line">%       are dealing with large number of parameters.</span><br><span class="line">%</span><br><span class="line">% Example Code for fmincg:</span><br><span class="line">%</span><br><span class="line">%     % Set Initial theta</span><br><span class="line">%     initial_theta = zeros(n + 1, 1);</span><br><span class="line">%     </span><br><span class="line">%     % Set options for fminunc</span><br><span class="line">%     options = optimset(&apos;GradObj&apos;, &apos;on&apos;, &apos;MaxIter&apos;, 50);</span><br><span class="line">% </span><br><span class="line">%     % Run fmincg to obtain the optimal theta</span><br><span class="line">%     % This function will return theta and the cost </span><br><span class="line">%     [theta] = ...</span><br><span class="line">%         fmincg (@(t)(lrCostFunction(t, X, (y == c), lambda)), ...</span><br><span class="line">%                 initial_theta, options);</span><br><span class="line">%</span><br><span class="line"></span><br><span class="line">for c = 1:num_labels</span><br><span class="line">  </span><br><span class="line">  initial_theta = zeros(n+1 , 1);</span><br><span class="line">  options = optimset(&apos;GradObj&apos;, &apos;on&apos;, &apos;MaxIter&apos;, 50);</span><br><span class="line">  initial_theta = fmincg(@(t)(lrCostFunction(t, X, (y==c), lambda)),initial_theta,options);</span><br><span class="line">  all_theta(c,:) = initial_theta&apos;;</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">% =========================================================================</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p><strong>predict.m</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">function p = predict(Theta1, Theta2, X)</span><br><span class="line">%PREDICT Predict the label of an input given a trained neural network</span><br><span class="line">%   p = PREDICT(Theta1, Theta2, X) outputs the predicted label of X given the</span><br><span class="line">%   trained weights of a neural network (Theta1, Theta2)</span><br><span class="line"></span><br><span class="line">% Useful values</span><br><span class="line">m = size(X, 1);</span><br><span class="line">num_labels = size(Theta2, 1);</span><br><span class="line"></span><br><span class="line">% You need to return the following variables correctly </span><br><span class="line">p = zeros(size(X, 1), 1);</span><br><span class="line"></span><br><span class="line">% ====================== YOUR CODE HERE ======================</span><br><span class="line">% Instructions: Complete the following code to make predictions using</span><br><span class="line">%               your learned neural network. You should set p to a </span><br><span class="line">%               vector containing labels between 1 to num_labels.</span><br><span class="line">%</span><br><span class="line">% Hint: The max function might come in useful. In particular, the max</span><br><span class="line">%       function can also return the index of the max element, for more</span><br><span class="line">%       information see &apos;help max&apos;. If your examples are in rows, then, you</span><br><span class="line">%       can use max(A, [], 2) to obtain the max for each row.</span><br><span class="line">%</span><br><span class="line"></span><br><span class="line">one = ones(size(X,1),1);</span><br><span class="line"></span><br><span class="line">addX = [one,X];</span><br><span class="line">z = addX * Theta1&apos;;</span><br><span class="line">a = sigmoid(z);</span><br><span class="line">addA = [one,a];</span><br><span class="line">h = addA * Theta2&apos;;</span><br><span class="line"></span><br><span class="line">maxRow = zeros(size(X,1) ,1);</span><br><span class="line">for i =1:m</span><br><span class="line">  [maxRow(i), p(i)] = max(h(i,:));</span><br><span class="line">endfor</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">% =========================================================================</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p><strong>predictOneVsAll.m</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">function p = predictOneVsAll(all_theta, X)</span><br><span class="line">%PREDICT Predict the label for a trained one-vs-all classifier. The labels </span><br><span class="line">%are in the range 1..K, where K = size(all_theta, 1). </span><br><span class="line">%  p = PREDICTONEVSALL(all_theta, X) will return a vector of predictions</span><br><span class="line">%  for each example in the matrix X. Note that X contains the examples in</span><br><span class="line">%  rows. all_theta is a matrix where the i-th row is a trained logistic</span><br><span class="line">%  regression theta vector for the i-th class. You should set p to a vector</span><br><span class="line">%  of values from 1..K (e.g., p = [1; 3; 1; 2] predicts classes 1, 3, 1, 2</span><br><span class="line">%  for 4 examples) </span><br><span class="line"></span><br><span class="line">m = size(X, 1);</span><br><span class="line">num_labels = size(all_theta, 1);</span><br><span class="line"></span><br><span class="line">% You need to return the following variables correctly </span><br><span class="line">p = zeros(size(X, 1), 1);</span><br><span class="line"></span><br><span class="line">% Add ones to the X data matrix</span><br><span class="line">X = [ones(m, 1) X];</span><br><span class="line"></span><br><span class="line">% ====================== YOUR CODE HERE ======================</span><br><span class="line">% Instructions: Complete the following code to make predictions using</span><br><span class="line">%               your learned logistic regression parameters (one-vs-all).</span><br><span class="line">%               You should set p to a vector of predictions (from 1 to</span><br><span class="line">%               num_labels).</span><br><span class="line">%</span><br><span class="line">% Hint: This code can be done all vectorized using the max function.</span><br><span class="line">%       In particular, the max function can also return the index of the </span><br><span class="line">%       max element, for more information see &apos;help max&apos;. If your examples </span><br><span class="line">%       are in rows, then, you can use max(A, [], 2) to obtain the max </span><br><span class="line">%       for each row.</span><br><span class="line">%  </span><br><span class="line"></span><br><span class="line">% size(h) = 50000*10   h保存的是预测5000个数据所属label的概率情况  </span><br><span class="line">h = sigmoid(X * all_theta&apos;);</span><br><span class="line"></span><br><span class="line">rowMax = zeros(size(X,1),1);</span><br><span class="line">%这是取每行(最后一个参数：2)最大值 ps:取每列(最后一个参数：1)最大值</span><br><span class="line">%rowMax = max(h,[],2);</span><br><span class="line"></span><br><span class="line">%取每行最大值的索引值</span><br><span class="line">for i = 1:m</span><br><span class="line"> [rowMax(i), p(i)] = max(h(i,:));</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">% =========================================================================</span><br></pre></td></tr></table></figure>
-<p><strong>sigmoid.m</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function g = sigmoid(z)</span><br><span class="line">%SIGMOID Compute sigmoid functoon</span><br><span class="line">%   J = SIGMOID(z) computes the sigmoid of z.</span><br><span class="line"></span><br><span class="line">g = 1.0 ./ (1.0 + exp(-z));</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+        <h1 id="Learning-to-See-Transparent-Objects"><a href="#Learning-to-See-Transparent-Objects" class="headerlink" title="Learning to See Transparent Objects"></a><a href="http://ai.googleblog.com/2020/02/learning-to-see-transparent-objects.html" target="_blank" rel="noopener">Learning to See Transparent Objects</a></h1><p>Wednesday, February 12, 2020</p>
+<p>Posted by Shreeyak Sajjan, Research Engineer, Synthesis AI and Andy Zeng, Research Scientist, Robotics at Google</p>
+<p>Optical 3D range sensors, like <a href="https://rosindustrial.org/3d-camera-survey" target="_blank" rel="noopener">RGB-D cameras</a> and <a href="https://en.wikipedia.org/wiki/Lidar" target="_blank" rel="noopener">LIDAR</a>, have found widespread use in robotics to generate rich and accurate 3D maps of the environment, from self-driving cars to <a href="https://ai.googleblog.com/2019/03/unifying-physics-and-deep-learning-with.html" target="_blank" rel="noopener">autonomous manipulators</a>. However, despite the ubiquity of these complex robotic systems, transparent objects (like a glass container) can confound even a suite of expensive sensors that are commonly used. This is because optical 3D sensors are driven by algorithms that assume all surfaces are <a href="https://en.wikipedia.org/wiki/Lambertian_reflectance" target="_blank" rel="noopener">Lambertian</a>, i.e., they reflect light evenly in all directions, resulting in a uniform surface brightness from all viewing angles. However, transparent objects violate this assumption, since their surfaces both refract and reflect light. Hence, most of the depth data from transparent objects are invalid or contain unpredictable noise.</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://1.bp.blogspot.com/-VNB-xPguois/XkQ7sqF3VWI/AAAAAAAAFRc/ek6wUpjOGNw0u9vALnnW9zXCZ8VsWTjcACLcBGAsYHQ/s1600/image3.png" target="_blank" rel="noopener"><img src="https://1.bp.blogspot.com/-VNB-xPguois/XkQ7sqF3VWI/AAAAAAAAFRc/ek6wUpjOGNw0u9vALnnW9zXCZ8VsWTjcACLcBGAsYHQ/s640/image3.png" alt="img"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://1.bp.blogspot.com/-mcdDuutDw5Q/XkQ7ssTGUvI/AAAAAAAAFRg/OIyqAa7Qbgs1yGWB7vFKL2E90hCPXiuYACEwYBhgL/s1600/image2.gif" target="_blank" rel="noopener"><img src="https://1.bp.blogspot.com/-mcdDuutDw5Q/XkQ7ssTGUvI/AAAAAAAAFRg/OIyqAa7Qbgs1yGWB7vFKL2E90hCPXiuYACEwYBhgL/s640/image2.gif" alt="img"></a></td>
+</tr>
+<tr>
+<td>Transparent objects often fail to be detected by optical 3D sensors. <strong>Top, Right:</strong> For instance, glass bottles do not show up in the <a href="https://en.wikipedia.org/wiki/Range_imaging" target="_blank" rel="noopener">3D depth imagery</a> captured from an Intel® RealSense™ D415 RGB-D camera. <strong>Bottom:</strong> A 3D visualization via <a href="https://en.wikipedia.org/wiki/Point_cloud" target="_blank" rel="noopener">point clouds</a> constructed from the depth image.</td>
+</tr>
+</tbody>
+</table>
+<p>Enabling machines to better sense transparent surfaces would not only improve safety, but could also open up a range of new interactions in unstructured applications — from robots handling kitchenware or sorting plastics for recycling, to navigating indoor environments or generating AR visualizations on glass tabletops.</p>
+<p>To address this problem, we teamed up with researchers from <a href="http://synthesis.ai/" target="_blank" rel="noopener">Synthesis AI</a> and <a href="https://shurans.github.io/group.html" target="_blank" rel="noopener">Columbia University</a> to develop <a href="https://sites.google.com/view/cleargrasp" target="_blank" rel="noopener">ClearGrasp</a>, a machine learning algorithm that is capable of estimating accurate 3D data of transparent objects from RGB-D images. This is made possible by a <a href="https://sites.google.com/view/transparent-objects" target="_blank" rel="noopener">large-scale synthetic dataset</a> that we are also releasing publicly today. ClearGrasp can work with inputs from any standard RGB-D camera, using deep learning to accurately reconstruct the depth of transparent objects and generalize to completely new objects unseen during training. This in contrast to <a href="http://openaccess.thecvf.com/content_cvpr_2016/papers/Qian_3D_Reconstruction_of_CVPR_2016_paper.pdf" target="_blank" rel="noopener">previous methods</a>, which required prior knowledge of the transparent objects (e.g., their 3D models), often combined with maps of background lighting and camera positions. In this work, we also demonstrate that ClearGrasp can benefit robotic manipulation by incorporating it into our <a href="https://ai.googleblog.com/2019/10/learning-to-assemble-and-to-generalize.html" target="_blank" rel="noopener">pick and place robot</a>’s control system, where we observe significant improvements in the grasping success rate of transparent plastic objects.</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://1.bp.blogspot.com/-y-DPUgVcfSk/XkQ7seO_nII/AAAAAAAAFR4/W2yq1dWQ2YkglMA5IguxyG1vJRRPg235gCEwYBhgL/s1600/image4.jpg" target="_blank" rel="noopener"><img src="https://1.bp.blogspot.com/-y-DPUgVcfSk/XkQ7seO_nII/AAAAAAAAFR4/W2yq1dWQ2YkglMA5IguxyG1vJRRPg235gCEwYBhgL/s640/image4.jpg" alt="img"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://1.bp.blogspot.com/-r9_NUznjObE/XkQ7teoA4BI/AAAAAAAAFSA/xNDlyrAzI-0Ys7iT2iF40AkaeaSjvbuFQCEwYBhgL/s1600/image5.gif" target="_blank" rel="noopener"><img src="https://1.bp.blogspot.com/-r9_NUznjObE/XkQ7teoA4BI/AAAAAAAAFSA/xNDlyrAzI-0Ys7iT2iF40AkaeaSjvbuFQCEwYBhgL/s640/image5.gif" alt="img"></a></td>
+</tr>
+<tr>
+<td>ClearGrasp uses deep learning to recover accurate 3D depth data of transparent surfaces.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="A-Visual-Dataset-of-Transparent-Objects"><a href="#A-Visual-Dataset-of-Transparent-Objects" class="headerlink" title="A Visual Dataset of Transparent Objects"></a><strong>A Visual Dataset of Transparent Objects</strong></h2><p>Massive quantities of data are required to train any effective deep learning model (e.g., <a href="http://www.image-net.org/" target="_blank" rel="noopener">ImageNet</a> for vision or <a href="https://www.wikipedia.org/" target="_blank" rel="noopener">Wikipedia</a> for <a href="https://ai.googleblog.com/2018/11/open-sourcing-bert-state-of-art-pre.html" target="_blank" rel="noopener">BERT</a>), and ClearGrasp is no exception. Unfortunately, no datasets are available with 3D data of transparent objects. Existing 3D datasets like <a href="https://niessner.github.io/Matterport/" target="_blank" rel="noopener">Matterport3D</a> or <a href="http://www.scan-net.org/" target="_blank" rel="noopener">ScanNet</a> overlook transparent surfaces, because they require expensive and time-consuming labeling processes.</p>
+<p>To overcome this issue, we created our own <a href="https://sites.google.com/view/transparent-objects" target="_blank" rel="noopener">large-scale dataset of transparent objects</a> that contains more than 50,000 photorealistic renders with corresponding <a href="https://en.wikipedia.org/wiki/Normal_(geometry" target="_blank" rel="noopener">surface normals</a>) (representing the surface curvature), segmentation masks, edges, and depth, useful for training a variety of 2D and 3D detection tasks. Each image contains up to five transparent objects, either on a flat ground plane or inside a tote, with various backgrounds and lighting.</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://1.bp.blogspot.com/-oncutBVkLQU/XkQ7rQz4zLI/AAAAAAAAFSI/Y1dSYj38GkgDTtw-P-UaP1e7pRzmC6izgCEwYBhgL/s1600/image11.png" target="_blank" rel="noopener"><img src="https://1.bp.blogspot.com/-oncutBVkLQU/XkQ7rQz4zLI/AAAAAAAAFSI/Y1dSYj38GkgDTtw-P-UaP1e7pRzmC6izgCEwYBhgL/s640/image11.png" alt="img"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Some example data of transparent objects from the <a href="https://sites.google.com/view/cleargrasp/synthetic-dataset" target="_blank" rel="noopener">ClearGrasp synthetic dataset</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>We also include a test set of 286 real-world images with corresponding ground truth depth. The real-world images were taken by a painstaking process of replacing each transparent object in the scene with a painted one in the same pose. The images are captured under a number of different indoor lighting conditions, using various cloth and veneer backgrounds and containing random opaque objects scattered around the scene. They contain both known objects, present in the synthetic training set, and novel objects.</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://1.bp.blogspot.com/-Ds5KPDwGazc/XkQ7t4atuLI/AAAAAAAAFSA/bnqbcZpPeO8BK8Ewr0if2oTOtJmM2WoiwCEwYBhgL/s1600/image6.gif" target="_blank" rel="noopener"><img src="https://1.bp.blogspot.com/-Ds5KPDwGazc/XkQ7t4atuLI/AAAAAAAAFSA/bnqbcZpPeO8BK8Ewr0if2oTOtJmM2WoiwCEwYBhgL/s640/image6.gif" alt="img"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Left:</strong> The real-world image capturing setup, <strong>Middle:</strong> Custom user interface enables precisely replacing each transparent object with a spray-painted duplicate, <strong>Right:</strong> Example of captured data.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="The-Challenge"><a href="#The-Challenge" class="headerlink" title="The Challenge"></a><strong>The Challenge</strong></h2><p>While the distorted view of the background seen through transparent objects confounds typical depth estimation approaches, there are clues that hint at the objects’ shape. Transparent surfaces exhibit specular reflections, which are mirror-like reflections that show up as bright spots in a well-lit environment. Since these visual cues are prominent in RGB images and are influenced primarily by the shape of the objects, convolutional neural networks can use these reflections to infer accurate surface normals, which then can be used for depth estimation.</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://1.bp.blogspot.com/-QcyTESfw4AM/XkQ7rJaGdVI/AAAAAAAAFR8/CUPvkzCJuygr6xw9S36vYIQ1r0wfi3rogCEwYBhgL/s1600/image10.jpg" target="_blank" rel="noopener"><img src="https://1.bp.blogspot.com/-QcyTESfw4AM/XkQ7rJaGdVI/AAAAAAAAFR8/CUPvkzCJuygr6xw9S36vYIQ1r0wfi3rogCEwYBhgL/s400/image10.jpg" alt="img"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Specular reflections on transparent objects create distinct features that vary based on the object shape and provide strong visual cues for estimating surface normals.</td>
+</tr>
+</tbody>
+</table>
+<p>Most machine learning algorithms try to directly estimate depth from a monocular RGB image. However, monocular depth estimation is an ill-posed task, even for humans. We observed large errors in estimating the depth of flat background surfaces, which compounds the error in depth estimates for the transparent objects resting atop them. Therefore, rather than directly estimating the depth of all geometry, we conjectured that correcting the initial depth estimates from an <a href="https://rosindustrial.org/3d-camera-survey" target="_blank" rel="noopener">RGB-D 3D camera</a> is more practical — it would enable us to use the depth from the non-transparent surfaces to inform the depth of transparent surfaces.</p>
+<h2 id="The-ClearGrasp-Algorithm"><a href="#The-ClearGrasp-Algorithm" class="headerlink" title="The ClearGrasp Algorithm"></a><strong>The ClearGrasp Algorithm</strong></h2><p>ClearGrasp uses 3 neural networks: a network to estimate surface normals, one for occlusion boundaries (depth discontinuities), and one that masks transparent objects. The mask is used to remove all pixels belonging to transparent objects, so that the correct depths can be filled in. We then use a global optimization module that starts extending the depth from known surfaces, using the predicted surface normals to guide the shape of the reconstruction, and the predicted occlusion boundaries to maintain the separation between distinct objects.</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://1.bp.blogspot.com/-xbiK9-km_BE/XkQ7rJmME0I/AAAAAAAAFSA/2kRSqd3DvlcOpv6ql4qILwn3HdmmryfBACEwYBhgL/s1600/image1.png" target="_blank" rel="noopener"><img src="https://1.bp.blogspot.com/-xbiK9-km_BE/XkQ7rJmME0I/AAAAAAAAFSA/2kRSqd3DvlcOpv6ql4qILwn3HdmmryfBACEwYBhgL/s640/image1.png" alt="img"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overview of our method. The point cloud was generated using the output depth and is colored with its surface normals.</td>
+</tr>
+</tbody>
+</table>
+<p>Each of the neural networks was trained on our synthetic dataset and they performed well on real-world transparent objects. However, the surface normal estimations for other surfaces, like walls or fruits, were poor. This is because of the limitations of our synthetic dataset, which contains only transparent objects on a ground plane. To alleviate this issue, we included some real indoor scenes from the <a href="https://niessner.github.io/Matterport/" target="_blank" rel="noopener">Matterport3D</a> and <a href="http://www.scan-net.org/" target="_blank" rel="noopener">ScanNet</a> datasets in the surface normals training loop. By training on both the in-domain synthetic dataset and out-of-domain real word dataset, the model performed well on all surfaces in our test set.</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://1.bp.blogspot.com/-QBobUQ2ssow/XkQ7txFy4gI/AAAAAAAAFSI/wIR43QtxSd48ghg9bEOAyN617pqIfvsPwCEwYBhgL/s1600/image7.png" target="_blank" rel="noopener"><img src="https://1.bp.blogspot.com/-QBobUQ2ssow/XkQ7txFy4gI/AAAAAAAAFSI/wIR43QtxSd48ghg9bEOAyN617pqIfvsPwCEwYBhgL/s640/image7.png" alt="img"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Surface Normal estimation on real images when trained on a) <a href="https://niessner.github.io/Matterport/" target="_blank" rel="noopener">Matterport3D</a> and <a href="http://www.scan-net.org/" target="_blank" rel="noopener">ScanNet</a> only (MP+SN), b) our synthetic dataset only, and c) MP+SN as well as our synthetic dataset. Note how the model trained on MP+SN fails to detect the transparent objects. The model trained on only synthetic data picks up the real plastic bottles remarkably well, but fails for other objects and surfaces. When trained on both, our model gets the best of both worlds.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a><strong>Results</strong></h2><p>Overall, our <a href="https://arxiv.org/pdf/1910.02550.pdf" target="_blank" rel="noopener">quantitative experiments</a> show that ClearGrasp is able to reconstruct depth for transparent objects with much higher fidelity than <a href="https://arxiv.org/abs/1812.11941" target="_blank" rel="noopener">alternative</a> <a href="https://arxiv.org/abs/1803.09326" target="_blank" rel="noopener">methods</a>. Despite being trained on only synthetic transparent objects, we find our models are able to adapt well to the real-world domain — achieving very similar quantitative reconstruction performance on known objects across domains. Our models also generalize well to novel objects with complex shapes never seen before.</p>
+<p>To check the qualitative performance of ClearGrasp, we construct 3D point clouds from the input and output depth images, as shown below (additional examples available on the <a href="https://sites.google.com/view/cleargrasp/results" target="_blank" rel="noopener">project webpage</a>). The resulting estimated 3D surfaces have clean and coherent reconstructed shapes — important for applications, such as 3D mapping and 3D object detection — without the jagged noise seen in monocular depth estimation methods. Our models are robust and perform well in challenging conditions, such as identifying transparent objects situated in a patterned background or differentiating between transparent objects partially occluding one another.</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://1.bp.blogspot.com/-iaTKEeKdlTA/XkQ7u6Mv6gI/AAAAAAAAFSE/_59HIFZptyoP9tDllG_0WVy2HKD4edPcwCEwYBhgL/s1600/image9.png" target="_blank" rel="noopener"><img src="https://1.bp.blogspot.com/-iaTKEeKdlTA/XkQ7u6Mv6gI/AAAAAAAAFSE/_59HIFZptyoP9tDllG_0WVy2HKD4edPcwCEwYBhgL/s640/image9.png" alt="img"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qualitative results on real images. <strong>Top two rows:</strong> results on known objects. <strong>Bottom two rows:</strong> results on novel objects. The point clouds, colored with their surface normals, are generated from the corresponding depth images.</td>
+</tr>
+</tbody>
+</table>
+<p>Most importantly, the output depth from ClearGrasp can be directly used as input to state-of-the-art manipulation algorithms that use RGB-D images. By using ClearGrasp’s output depth estimates instead of the raw sensor data, our <a href="https://ai.googleblog.com/2019/10/learning-to-assemble-and-to-generalize.html" target="_blank" rel="noopener">grasping algorithm</a> on a <a href="https://www.universal-robots.com/products/ur5-robot/" target="_blank" rel="noopener">UR5 robot arm</a> saw significant improvements in the grasping success rates of transparent objects. When using the parallel-jaw gripper, the success rate improved from a baseline of 12% to 74%, and from 64% to 86% with suction.</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://1.bp.blogspot.com/-fHSXEBQAp_8/XkQ7uzz9jzI/AAAAAAAAFSI/FKoaYnuntS8vA9IhQCUduBrRyrEnjtVhQCEwYBhgL/s1600/image8.gif" target="_blank" rel="noopener"><img src="https://1.bp.blogspot.com/-fHSXEBQAp_8/XkQ7uzz9jzI/AAAAAAAAFSI/FKoaYnuntS8vA9IhQCUduBrRyrEnjtVhQCEwYBhgL/s640/image8.gif" alt="img"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manipulation of novel transparent objects using ClearGrasp. Note the challenging conditions: textureless background, complex object shapes and the directional light causing confusing shadows and <a href="https://en.wikipedia.org/wiki/Caustic_(optics" target="_blank" rel="noopener">caustics</a>) (the patterns of light that occur when light rays are reflected or refracted from a surface).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Limitations-amp-Future-Work"><a href="#Limitations-amp-Future-Work" class="headerlink" title="Limitations &amp; Future Work"></a><strong>Limitations &amp; Future Work</strong></h2><p>A limitation of our synthetic dataset is that it does not represent accurate <a href="https://en.wikipedia.org/wiki/Caustic_(optics" target="_blank" rel="noopener">caustics</a>), due to the limitations of rendering with traditional path-tracing algorithms. As a result, our models confuse bright caustics coupled with shadows to be independent transparent objects. Despite these drawbacks, our work with ClearGrasp shows that synthetic data remains a viable approach to achieve competent results for learning-based depth reconstruction methods. A promising direction for future work is improving the domain transfer to real-world images by generating renders with physically-correct caustics and surface imperfections such as fingerprints.</p>
+<h1 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h1><h1 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h1><p><strong>无法定位软件包 libhdf5-10</strong></p>
+<p><strong>无法定位软件包 libhdf5-cpp-11</strong></p>
+<p>因为Ubuntu18.04源没有对应包，只有Ubuntu16.04有，所以在</p>
+<p>/etc/apt/sources.list 文件中像下面这样添加一行:</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb <span class="string">http:</span><span class="comment">//security.ubuntu.com/ubuntu xenial-security main universe</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://packages.ubuntu.com/xenial/amd64/libhdf5-10/download" target="_blank" rel="noopener">用在 AMD64 上 libhdf5-10_1.8.16+docs-4ubuntu1.1_amd64.deb 的下载页面</a></p>
+<p><strong>fatal error: GL/glu.h: 没有那个文件或目录</strong></p>
+<p><strong>include &lt;GL/glu.h&gt;</strong></p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span>  install libglu-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure>
+<p><strong>g++: warning: /usr/include/hdf5/serial/ linker input file unused because linking notdone</strong></p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">make</span> clean</span><br><span class="line">sudo <span class="built_in">make</span></span><br></pre></td></tr></table></figure>
+<p><strong>depth2depth.cpp:11:10: fatal error: hdf5.h: 没有那个文件或目录#include “hdf5.h”</strong></p>
+<p>确认环境配置好。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd api/depth2depth/gaps</span><br><span class="line">export CPATH="/usr/include/hdf5/serial/"  # Ensure this path is same as read from output of `find /usr -iname "*hdf5.h*"`</span><br><span class="line">echo $CPATH</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/lefend/article/details/105155450" target="_blank" rel="noopener">双系统，Ubuntu18.04下win10磁盘只读的解决办法</a></p>
+<p><a href="https://blog.csdn.net/cruise_h/article/details/12894135" target="_blank" rel="noopener">Windows系统读写ext2/3/4文件系统的工具「ext2fsd」</a></p>
 
       
     </div>
@@ -480,12 +610,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>机器学习-神经网络（前向传播）</p>
+  <p><span>本文标题:</span>paperUnderstanding-ClearGrasp</p>
   <p><span>文章作者:</span>Pabebe</p>
-  <p><span>发布时间:</span>2019年07月29日 - 12:33:41</p>
-  <p><span>最后更新:</span>2020年06月16日 - 18:24:34</p>
-  <p><span>原始链接:</span><a href="/article/4640c193/" title="机器学习-神经网络（前向传播）">https://pabebezz.github.io/article/4640c193/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/4640c193/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2020年06月28日 - 13:32:16</p>
+  <p><span>最后更新:</span>2020年06月28日 - 13:34:48</p>
+  <p><span>原始链接:</span><a href="/article/2d17733a/" title="paperUnderstanding-ClearGrasp">https://pabebezz.github.io/article/2d17733a/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/2d17733a/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -526,7 +656,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/study-notes/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;study notes</a>
+            <a href="/tags/paper/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;paper</a>
           
         </div>
       
@@ -539,8 +669,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/article/a0a1582a/" rel="next" title="机器学习-逻辑回归">
-                <i class="fa fa-chevron-left"></i> 机器学习-逻辑回归
+              <a href="/article/79acc1fa/" rel="next" title="Ubuntu各种命令详解">
+                <i class="fa fa-chevron-left"></i> Ubuntu各种命令详解
               </a>
             
           </div>
@@ -548,10 +678,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/article/336e6e71/" rel="prev" title="机器学习-神经网络（后向传播）">
-                机器学习-神经网络（后向传播） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -728,7 +854,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原因"><span class="nav-number">1.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#架构"><span class="nav-number">2.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前向传播（向量化）"><span class="nav-number">3.</span> <span class="nav-text">前向传播（向量化）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编程作业"><span class="nav-number">4.</span> <span class="nav-text">编程作业</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Learning-to-See-Transparent-Objects"><span class="nav-number">1.</span> <span class="nav-text">Learning to See Transparent Objects</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Visual-Dataset-of-Transparent-Objects"><span class="nav-number">1.1.</span> <span class="nav-text">A Visual Dataset of Transparent Objects</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Challenge"><span class="nav-number">1.2.</span> <span class="nav-text">The Challenge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-ClearGrasp-Algorithm"><span class="nav-number">1.3.</span> <span class="nav-text">The ClearGrasp Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">1.4.</span> <span class="nav-text">Results</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Limitations-amp-Future-Work"><span class="nav-number">1.5.</span> <span class="nav-text">Limitations &amp; Future Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行项目"><span class="nav-number">2.</span> <span class="nav-text">运行项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bug"><span class="nav-number">3.</span> <span class="nav-text">bug</span></a></li></ol></div>
             
 
           </div>

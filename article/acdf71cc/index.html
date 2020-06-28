@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/GPU驱动.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/深度学习环境.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/更新node版本.png">
-<meta property="og:updated_time" content="2020-06-22T07:09:53.523Z">
+<meta property="og:updated_time" content="2020-06-25T05:09:52.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu18.04下深度学习环境与blog搭建">
 <meta name="twitter:description" content="深度学习环境与hexoBlog搭建">
@@ -395,7 +395,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.4k 字
+                  2.5k 字
                 </span>
               
 
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10 分钟
+                  11 分钟
                 </span>
               
             </div>
@@ -529,9 +529,9 @@ show_channel_urls: true
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><a href="https://blog.csdn.net/aggie4628/article/details/105672730" target="_blank" rel="noopener">ubuntu18.04+VSCode+Python安装</a></p>
 <p><a href="https://blog.csdn.net/aggie4628/article/details/104762471" target="_blank" rel="noopener">ubuntu18.04- +vscode c++使用时的三个配置文件</a></p>
 <h2 id="pylint路径设置"><a href="#pylint路径设置" class="headerlink" title="pylint路径设置"></a>pylint路径设置</h2><p><a href="https://blog.csdn.net/qq_34403736/article/details/84726504" target="_blank" rel="noopener">VSCode中pytorch出现’torch’ has no member ‘xxx’的错误</a></p>
-<p>setting中</p>
-<p>python.linting.pylintPath : /home/pabebe/miniconda3/envs/pytorchGPU/bin/pylint</p>
+<p>setting中python.linting.pylintPath : <code>/home/用户名/miniconda3/pkgs/pylint-2.5.3-py37hc8dfbb8_0/bin/pylint</code></p>
 <p>保存后便无报错。</p>
+<p><strong>注意：该方法必须是用conda安装pylint,而不是pip安装的。可以通过<code>pip uninstall pylint</code> 卸载，再conda重装pylint</strong></p>
 <h2 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h2><p><a href="https://www.jianshu.com/p/1a57337007ca" target="_blank" rel="noopener">VSCode配置FiraCode字体</a></p>
 <p>下载字体</p>
 <pre><code>到FiraCode字体的GitHub页面
@@ -542,6 +542,10 @@ show_channel_urls: true
 <pre><code>打开vscode的配置页面，并搜索font
 修改editor.fontFamily配置项的内容为：&apos;Fira Code Retina&apos;, &apos;Microsoft Yahei UI&apos;。由于Fira Code字体不支持中文，这里配置微软雅黑为第二字体
 </code></pre><p>配置后重启vscode</p>
+<h1 id="LINUX下查看点云图"><a href="#LINUX下查看点云图" class="headerlink" title="LINUX下查看点云图"></a>LINUX下查看点云图</h1><p>Ubuntu18版本缺失？</p>
+<p><a href="https://blog.csdn.net/lyx_323/article/details/79813986" target="_blank" rel="noopener">LINUX下查看点云图————point cloud（.ply .vtk .pcd）</a></p>
+<p>所以还是安装<a href="https://blog.csdn.net/qq_15262755/article/details/91722501?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">cloudcompare</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 科学上网，这条命令自动安装latest stable版本</span></span><br><span class="line">sudo snap install cloudcompare</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">open pointcloud viewer</span></span><br><span class="line">cloudcompare.ccViewer</span><br><span class="line"><span class="meta">#</span><span class="bash">open the main software </span></span><br><span class="line">cloudcompare.CloudCompare</span><br></pre></td></tr></table></figure>
 <h1 id="开机自动挂载windows磁盘"><a href="#开机自动挂载windows磁盘" class="headerlink" title="开机自动挂载windows磁盘"></a>开机自动挂载windows磁盘</h1><p>挂载磁盘的信息是保存在 /etc /fstab  这个文件里面,我们注意到其中又这么一行注释 <file system> <mount point>   <type>  <options>       <dump>  <pass></pass></dump></options></type></mount></file></p>
 <p>这个就是对下面没有注释的信息的解释 ：分别表示:原来在文件系统的位置，加载点位置，类型，参数等，其中以#是注释符号，相当于C语言中的 // 注释,可以使用man fstab来查看各个参数的定义</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">先备份</span></span><br><span class="line">sudo cp /etc/fstab /etc/fstab_backup</span><br><span class="line"> df</span><br></pre></td></tr></table></figure>
@@ -600,7 +604,7 @@ show_channel_urls: true
   <p><span>本文标题:</span>Ubuntu18.04下深度学习环境与blog搭建</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年06月17日 - 09:45:23</p>
-  <p><span>最后更新:</span>2020年06月22日 - 15:09:53</p>
+  <p><span>最后更新:</span>2020年06月25日 - 13:09:52</p>
   <p><span>原始链接:</span><a href="/article/acdf71cc/" title="Ubuntu18.04下深度学习环境与blog搭建">https://pabebezz.github.io/article/acdf71cc/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/acdf71cc/" aria-label="复制成功！"></i></span>
   </p>
@@ -747,7 +751,7 @@ show_channel_urls: true
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -845,7 +849,7 @@ show_channel_urls: true
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#更新NVIDIA驱动"><span class="nav-number">1.</span> <span class="nav-text">更新NVIDIA驱动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CUDA与cuDNN"><span class="nav-number">2.</span> <span class="nav-text">CUDA与cuDNN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#完整的CUDA安装"><span class="nav-number">2.1.</span> <span class="nav-text">完整的CUDA安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Miniconda"><span class="nav-number">3.</span> <span class="nav-text">安装Miniconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conda常用命令"><span class="nav-number">4.</span> <span class="nav-text">conda常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除虚拟环境操作"><span class="nav-number">4.0.1.</span> <span class="nav-text">删除虚拟环境操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对虚拟环境中安装额外的包"><span class="nav-number">4.0.2.</span> <span class="nav-text">对虚拟环境中安装额外的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除环境中的某个包"><span class="nav-number">4.0.3.</span> <span class="nav-text">删除环境中的某个包</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#配置深度学习环境"><span class="nav-number">5.</span> <span class="nav-text">配置深度学习环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">5.1.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDE-VScode"><span class="nav-number">6.</span> <span class="nav-text">IDE-VScode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">6.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pylint路径设置"><span class="nav-number">6.2.</span> <span class="nav-text">pylint路径设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#美化"><span class="nav-number">6.3.</span> <span class="nav-text">美化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开机自动挂载windows磁盘"><span class="nav-number">7.</span> <span class="nav-text">开机自动挂载windows磁盘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu18-04开机自启动脚本"><span class="nav-number">8.</span> <span class="nav-text">Ubuntu18.04开机自启动脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备好你的sh脚本文件"><span class="nav-number">8.1.</span> <span class="nav-text">准备好你的sh脚本文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个service文件"><span class="nav-number">8.2.</span> <span class="nav-text">创建一个service文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">8.3.</span> <span class="nav-text">启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bolg"><span class="nav-number">9.</span> <span class="nav-text">Bolg</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">10.</span> <span class="nav-text">参考链接</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#更新NVIDIA驱动"><span class="nav-number">1.</span> <span class="nav-text">更新NVIDIA驱动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CUDA与cuDNN"><span class="nav-number">2.</span> <span class="nav-text">CUDA与cuDNN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#完整的CUDA安装"><span class="nav-number">2.1.</span> <span class="nav-text">完整的CUDA安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Miniconda"><span class="nav-number">3.</span> <span class="nav-text">安装Miniconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conda常用命令"><span class="nav-number">4.</span> <span class="nav-text">conda常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除虚拟环境操作"><span class="nav-number">4.0.1.</span> <span class="nav-text">删除虚拟环境操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对虚拟环境中安装额外的包"><span class="nav-number">4.0.2.</span> <span class="nav-text">对虚拟环境中安装额外的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除环境中的某个包"><span class="nav-number">4.0.3.</span> <span class="nav-text">删除环境中的某个包</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#配置深度学习环境"><span class="nav-number">5.</span> <span class="nav-text">配置深度学习环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">5.1.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDE-VScode"><span class="nav-number">6.</span> <span class="nav-text">IDE-VScode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">6.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pylint路径设置"><span class="nav-number">6.2.</span> <span class="nav-text">pylint路径设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#美化"><span class="nav-number">6.3.</span> <span class="nav-text">美化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LINUX下查看点云图"><span class="nav-number">7.</span> <span class="nav-text">LINUX下查看点云图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开机自动挂载windows磁盘"><span class="nav-number">8.</span> <span class="nav-text">开机自动挂载windows磁盘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu18-04开机自启动脚本"><span class="nav-number">9.</span> <span class="nav-text">Ubuntu18.04开机自启动脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备好你的sh脚本文件"><span class="nav-number">9.1.</span> <span class="nav-text">准备好你的sh脚本文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个service文件"><span class="nav-number">9.2.</span> <span class="nav-text">创建一个service文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">9.3.</span> <span class="nav-text">启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bolg"><span class="nav-number">10.</span> <span class="nav-text">Bolg</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">11.</span> <span class="nav-text">参考链接</span></a></li></div>
             
 
           </div>
@@ -879,7 +883,7 @@ show_channel_urls: true
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">91.1k</span> 
+    <span title="本站总字数">93.4k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
