@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2020-06-28T09:33:44.210Z</updated>
+  <updated>2020-07-05T02:02:30.646Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装Ubuntu18.04后的优化</title>
+    <link href="https://pabebezz.github.io/article/e0fdde43/"/>
+    <id>https://pabebezz.github.io/article/e0fdde43/</id>
+    <published>2020-07-05T02:00:51.000Z</published>
+    <updated>2020-07-05T02:02:30.646Z</updated>
+    
+    <summary type="html">
+    
+      让乌邦图更美好
+    
+    </summary>
+    
+      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
   
   <entry>
     <title>paperUnderstanding-ClearGrasp</title>
@@ -41,7 +61,7 @@
     <link href="https://pabebezz.github.io/article/79acc1fa/"/>
     <id>https://pabebezz.github.io/article/79acc1fa/</id>
     <published>2020-06-22T07:15:58.000Z</published>
-    <updated>2020-06-25T08:23:43.954Z</updated>
+    <updated>2020-07-04T02:58:52.644Z</updated>
     
     <summary type="html">
     
@@ -407,29 +427,6 @@
     </summary>
     
       <category term="Computer Operating" scheme="https://pabebezz.github.io/categories/Computer-Operating/"/>
-    
-    
-      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语笔试笔记</title>
-    <link href="https://pabebezz.github.io/article/2a1314f5/"/>
-    <id>https://pabebezz.github.io/article/2a1314f5/</id>
-    <published>2019-12-12T13:03:56.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;时间分配&quot;&gt;&lt;a href=&quot;#时间分配&quot; class=&quot;headerlink&quot; title=&quot;时间分配&quot;&gt;&lt;/a&gt;时间分配&lt;/h1&gt;&lt;p&gt;写作（25分钟写完，5分钟看听力文章）&lt;/p&gt;
-&lt;p&gt;听力（30分钟）&lt;/p&gt;
-&lt;p&gt;阅读理解：先&lt;strong&gt;仔细阅读&lt;/strong&gt;，再&lt;strong&gt;长篇阅读&lt;/strong&gt;，最后&lt;strong&gt;段落翻译&lt;/strong&gt;。选词填空能做就做。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/article/2a1314f5/时间分配.png&quot; alt=&quot;时间分配&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="English" scheme="https://pabebezz.github.io/categories/English/"/>
     
     
       <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>

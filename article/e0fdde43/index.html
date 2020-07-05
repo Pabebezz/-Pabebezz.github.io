@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="tutorial,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pabebe's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="让乌邦图更美好">
+<meta name="keywords" content="tutorial">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装Ubuntu18.04后的优化">
+<meta property="og:url" content="https://pabebezz.github.io/article/e0fdde43/index.html">
+<meta property="og:site_name" content="Pabebe&#39;s Blog">
+<meta property="og:description" content="让乌邦图更美好">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pabebezz.github.io/article/e0fdde43/flameshot.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/e0fdde43/小飞机4.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/e0fdde43/小飞机2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/e0fdde43/小飞机.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/e0fdde43/小飞机3.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/e0fdde43/Mac主题安装指令.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/e0fdde43/Mac主题样式.png">
+<meta property="og:updated_time" content="2020-07-05T02:02:30.646Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安装Ubuntu18.04后的优化">
+<meta name="twitter:description" content="让乌邦图更美好">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/e0fdde43/flameshot.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://pabebezz.github.io/article/e0fdde43/">
+
+
+<meta name="google-site-verification" content="skUdQN9cQrZuUJydKG0ivzB90q5kyLJMU5i5dt82GH4">
+<meta name="google-site-verification" content="hv7_j7TFqTy83_mHkj5EDOJhzIl0_tusCnHJBxNOfAo">
+
+
+
+
+
+
+  <title>安装Ubuntu18.04后的优化 | Pabebe's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"> 
+       
+    </div>
+ 
+
+      <!-- change "fork me on github" -->
+     <!--  <a href="https://github.com/Pabebezz" target="_blank" ><img style="position: absolute; top: 0; right: 1200; border: 0;"  width="149" height="149" src="/images/forkme_left_green.png" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a> -->
+     <a href="https://github.com/Pabebezz" class="github-corner" target="_blank" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #326755; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+       
+       <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pabebe's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">业精于勤，荒于嬉；行成于思，毁于随。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/e0fdde43/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pabebe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pabebe's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">安装Ubuntu18.04后的优化</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-05T10:00:51+08:00">
+                2020-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+           
+           
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+            
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.9k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13 分钟
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  让乌邦图更美好
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="安装Ubuntu18-04后的优化"><a href="#安装Ubuntu18-04后的优化" class="headerlink" title="安装Ubuntu18.04后的优化"></a>安装Ubuntu18.04后的优化</h1><p><a href="https://launchpad.net/~rikmills" target="_blank" rel="noopener">https://launchpad.net/~rikmills</a></p>
+<h2 id="设置-root密码"><a href="#设置-root密码" class="headerlink" title="设置 root密码"></a>设置 root密码</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root </span><br><span class="line"><span class="meta">#</span><span class="bash">输入密码并确认</span></span><br></pre></td></tr></table></figure>
+<h2 id="锁屏不熄屏"><a href="#锁屏不熄屏" class="headerlink" title="锁屏不熄屏"></a>锁屏不熄屏</h2><p>长按window键 + L 即可常亮锁屏。短按就是取消常亮锁屏。</p>
+<h2 id="取消自动挂起与锁屏"><a href="#取消自动挂起与锁屏" class="headerlink" title="取消自动挂起与锁屏"></a>取消自动挂起与锁屏</h2><p>setting-&gt;电源 <strong>关闭</strong>“无操作时屏幕变暗,自动挂起” -&gt;息屏”从不”</p>
+<p>etting-&gt;隐私 关闭”锁屏”</p>
+<h2 id="文件夹创建桌面快捷方式"><a href="#文件夹创建桌面快捷方式" class="headerlink" title="文件夹创建桌面快捷方式"></a>文件夹创建桌面快捷方式</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># ln -s [绝对路径] ~<span class="regexp">/桌面/</span>快捷方式名称</span><br><span class="line">ln -s <span class="regexp">/data/</span><span class="keyword">long</span>.com<span class="regexp">/   ~/</span>桌面<span class="regexp">/long</span></span><br></pre></td></tr></table></figure>
+<h2 id="修改grub配置"><a href="#修改grub配置" class="headerlink" title="修改grub配置"></a>修改grub配置</h2><p>win10直接从bios读时间，ubuntu是biso+8个小时。win10用的rtc ，ubuntu用的utc，我的ubuntu时间是准的。</p>
+<p>是用同一个时间计算方式，以window为准。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">timedatectl set-local-rtc true </span><br><span class="line">sudo gedit /etc/default/grub </span><br><span class="line"><span class="meta">#</span><span class="bash">选择grub启动等待时间，默认是10秒</span></span><br><span class="line">GRUB_TIMEOUT=5  #(任何数值）</span><br><span class="line"><span class="meta">#</span><span class="bash">修改win10和ubuntu18.04双系统启动顺序并统一时间</span></span><br><span class="line">GRUB_DEFAULT=2</span><br><span class="line"><span class="meta">#</span><span class="bash">保存并退出</span></span><br><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure>
+<p>重启电脑</p>
+<h2 id="更新源"><a href="#更新源" class="headerlink" title="更新源"></a>更新源</h2><p>ubuntu下安装软件，一般都是通过命令sudo apt-get install package来安装想要的软件，这个命令一般都是从一个叫做/etc/apt/source.list文件里找下载地址，而默认的ubuntu也就是新安装的ubuntu，下载软件包都是从ubuntu官网下载,也就是这个source.list包含的是ubuntu官网配置的地址。但这个ubuntu官网不在国内，而在国外，也就是要下载个包，还要从国外网站下，所以这样下载速度自然就慢了。<br>还好国内也有自己的镜像源，比如清华镜像源，阿里镜像源，这些镜像源包含了咱们想要下的软件包。这样下载软件就不必在国外网下，而直接从国内网站下载，这样下载速度就快了很多。</p>
+<h3 id="寻找国内镜像源"><a href="#寻找国内镜像源" class="headerlink" title="寻找国内镜像源"></a>寻找国内镜像源</h3><p><a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener">清华的镜像源</a> </p>
+<p>然后下滑找到ubuntu，点击旁边的问号.然后选择相应的ubuntu版本，我用的是18.04版本的，并复制下面字段。</p>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><p>首先拷贝一份/etc/apt/sources.list文件</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -v /etc/apt/sources<span class="selector-class">.list</span> /etc/apt/sources<span class="selector-class">.list</span><span class="selector-class">.backup</span></span><br><span class="line">sudo gedit /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<p>然后全选并删除里面的内容，添加镜像源。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># 清华源</span><br><span class="line"># 默认注释了源码镜像以提高 apt <span class="keyword">update</span> 速度，如有需要可自行取消注释</span><br><span class="line"></span><br><span class="line"><span class="keyword">deb</span> http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># <span class="keyword">deb</span>-src http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"><span class="keyword">deb</span> http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># <span class="keyword">deb</span>-src http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"><span class="keyword">deb</span> http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># <span class="keyword">deb</span>-src http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"><span class="keyword">deb</span> http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># <span class="keyword">deb</span>-src http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># 预发布软件源，不建议启用</span><br><span class="line"></span><br><span class="line"># <span class="keyword">deb</span> http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># <span class="keyword">deb</span>-src http<span class="variable">s:</span>//mirrors.tuna.tsinghua.edu.<span class="keyword">cn</span>/ubuntu/ bionic-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 阿里源</span></span><br><span class="line"></span><br><span class="line">deb http:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/ubuntu/</span> bionic main restricted universe multiverse</span><br><span class="line">deb http:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/ubuntu/</span> bionic-security main restricted universe multiverse</span><br><span class="line">deb http:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/ubuntu/</span> bionic-updates main restricted universe multiverse</span><br><span class="line">deb http:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/ubuntu/</span> bionic-proposed main restricted universe multiverse</span><br><span class="line">deb http:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/ubuntu/</span> bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/ubuntu/</span> bionic main restricted universe multiverse</span><br><span class="line">deb-src http:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/ubuntu/</span> bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/ubuntu/</span> bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/ubuntu/</span> bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/ubuntu/</span> bionic-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 中科大源</span><br><span class="line"></span><br><span class="line"><span class="keyword">deb</span> http<span class="variable">s:</span>//mirrors.ustc.edu.<span class="keyword">cn</span>/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line"><span class="keyword">deb</span>-src http<span class="variable">s:</span>//mirrors.ustc.edu.<span class="keyword">cn</span>/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line"><span class="keyword">deb</span> http<span class="variable">s:</span>//mirrors.ustc.edu.<span class="keyword">cn</span>/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line"><span class="keyword">deb</span>-src http<span class="variable">s:</span>//mirrors.ustc.edu.<span class="keyword">cn</span>/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line"><span class="keyword">deb</span> http<span class="variable">s:</span>//mirrors.ustc.edu.<span class="keyword">cn</span>/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line"><span class="keyword">deb</span>-src http<span class="variable">s:</span>//mirrors.ustc.edu.<span class="keyword">cn</span>/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line"><span class="keyword">deb</span> http<span class="variable">s:</span>//mirrors.ustc.edu.<span class="keyword">cn</span>/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line"><span class="keyword">deb</span>-src http<span class="variable">s:</span>//mirrors.ustc.edu.<span class="keyword">cn</span>/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line"><span class="keyword">deb</span> http<span class="variable">s:</span>//mirrors.ustc.edu.<span class="keyword">cn</span>/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line"><span class="keyword">deb</span>-src http<span class="variable">s:</span>//mirrors.ustc.edu.<span class="keyword">cn</span>/ubuntu/ bionic-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt <span class="keyword">update</span> </span><br><span class="line">sudo apt <span class="keyword">upgrade</span></span><br></pre></td></tr></table></figure>
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><p><strong>sudo apt upgrade E: 无法获得锁 /var/lib/dpkg/lock-frontend - open (11: 资源暂时不可用) E: 无法获取 dpkg 前端锁 (/var/lib/dpkg/lock-frontend)，是否有其他进程正占用它？</strong></p>
+<p>强制解锁</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /var/<span class="class"><span class="keyword">lib</span>/<span class="title">dpkg</span>/<span class="title">lock</span>-<span class="title">frontend</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="指定用户sudo免密码操作"><a href="#指定用户sudo免密码操作" class="headerlink" title="指定用户sudo免密码操作"></a>指定用户sudo免密码操作</h2><p>终端</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano <span class="regexp">/etc/</span>sudoers</span><br></pre></td></tr></table></figure>
+<p>在%sudo   ALL=(ALL:ALL) ALL 的下一行添加<br><strong>你的用户名 ALL=(ALL:ALL) NOPASSWD:ALL</strong><br>然后按 ctrl+x 保存离开</p>
+<h2 id="截图软件-flameshot"><a href="#截图软件-flameshot" class="headerlink" title="截图软件-flameshot"></a>截图软件-<strong>flameshot</strong></h2><p>Ubuntu 18.04默认带的版本是0.51 无法标注文字,要0.6+才可以添加文字标注</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="built_in"> add-apt-repository </span>ppa:rikmills/bionic</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt install flameshot</span><br><span class="line">flameshot -v       <span class="comment">#显示为0.6.0</span></span><br></pre></td></tr></table></figure>
+<p>设置&gt;设备&gt;键盘，设置一个自定义快捷键<strong>（拉到最下面）</strong>命令填写：<strong>flameshot gui</strong></p>
+<p>截完图后保存Ctrl+S，复制到剪贴板 Ctrl+C</p>
+<p><img src="/article/e0fdde43/flameshot.png" alt="flameshot"></p>
+<h2 id="deepin-wine环境"><a href="#deepin-wine环境" class="headerlink" title="deepin-wine环境"></a>deepin-wine环境</h2><p><a href="https://mirrors.tuna.tsinghua.edu.cn/deepin/pool/non-free/d/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/deepin/pool/non-free/d/</a></p>
+<p><a href="http://mirrors.aliyun.com/deepin/pool/non-free/d/" target="_blank" rel="noopener">http://mirrors.aliyun.com/deepin/pool/non-free/d/</a></p>
+<p><a href="https://github.com/zq1997/deepin-wine" target="_blank" rel="noopener">https://github.com/zq1997/deepin-wine</a></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">wget -O- https:<span class="comment">//deepin-wine.i-m.dev/setup.sh | sh</span></span><br><span class="line">#超简单安装微信QQ等Wine软件</span><br><span class="line">#例如安装微信，替换对应的包名就行</span><br><span class="line">sudo apt-get install deepin<span class="selector-class">.com</span><span class="selector-class">.wechat</span></span><br><span class="line"></span><br><span class="line">应用 	包名</span><br><span class="line">TIM 	deepin<span class="selector-class">.com</span><span class="selector-class">.qq</span><span class="selector-class">.office</span></span><br><span class="line">QQ 	deepin<span class="selector-class">.com</span><span class="selector-class">.qq</span><span class="selector-class">.im</span></span><br><span class="line">QQ轻聊版 	deepin<span class="selector-class">.com</span><span class="selector-class">.qq</span><span class="selector-class">.im</span><span class="selector-class">.light</span></span><br><span class="line">微信 	deepin<span class="selector-class">.com</span><span class="selector-class">.wechat</span></span><br><span class="line">百度网盘 	deepin<span class="selector-class">.com</span><span class="selector-class">.baidu</span><span class="selector-class">.pan</span></span><br><span class="line">迅雷极速版 	deepin<span class="selector-class">.com</span><span class="selector-class">.thunderspeed</span></span><br><span class="line">WinRAR 	deepin<span class="selector-class">.cn</span><span class="selector-class">.com</span><span class="selector-class">.winrar</span></span><br></pre></td></tr></table></figure>
+<p>##　安装网易云音乐</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http:<span class="comment">//d1.music.126.net/dmusic/netease-cloud-music_1.2.1_amd64_ubuntu_20190428.deb</span></span><br><span class="line">sudo dpkg -<span class="selector-tag">i</span> netease-cloud-music_1.<span class="number">2.1</span>_amd64_ubuntu_20190428.deb</span><br></pre></td></tr></table></figure>
+<h2 id="固定图标到任务栏（双图标问题）"><a href="#固定图标到任务栏（双图标问题）" class="headerlink" title="固定图标到任务栏（双图标问题）"></a>固定图标到任务栏（双图标问题）</h2><p><a href="https://blog.csdn.net/u014160286/article/details/81631863?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase#commentBox" target="_blank" rel="noopener">Ubuntu 18.04 如何固定图标到任务栏</a></p>
+<h2 id="安装搜狗输入法"><a href="#安装搜狗输入法" class="headerlink" title="安装搜狗输入法"></a>安装搜狗输入法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt <span class="keyword">install</span> fcitx-<span class="keyword">bin</span>      <span class="comment">#安装fcitx-bin</span></span><br><span class="line"></span><br><span class="line">sudo apt <span class="keyword">update</span> <span class="comment">--fix-missing   #修复fcitx-bin安装失败的情况</span></span><br><span class="line"></span><br><span class="line">sudo apt <span class="keyword">install</span> fcitx-<span class="keyword">bin</span>      <span class="comment">#重新安装fcitx-bin</span></span><br><span class="line"></span><br><span class="line">sudo apt <span class="keyword">install</span> fcitx-<span class="keyword">table</span>    <span class="comment">#安装fcitx-table</span></span><br></pre></td></tr></table></figure>
+<p>然后去搜狗官网下载好给予linux的搜狗输入法deb安装包</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd 下载 #若在根目录</span><br><span class="line">sudo dpkg -<span class="selector-tag">i</span> sogoupinyin*<span class="selector-class">.deb</span>       #安装搜狗拼音</span><br><span class="line"></span><br><span class="line">sudo apt install -f             #修复搜狗拼音安装的错误</span><br><span class="line"></span><br><span class="line">sudo dpkg -<span class="selector-tag">i</span> sogoupinyin*<span class="selector-class">.deb</span>       #重新安装搜狗拼音</span><br><span class="line"></span><br><span class="line">dpkg命令：dpkg 是Debian package的简写，为”Debian“ 操作系统 专门开发的套件管理系统，用于软件的安装，更新和移除。所有源自<span class="string">"Debian"</span>的Linux的发行版都使用 dpkg, 例如<span class="string">"Ubuntu"</span>.</span><br></pre></td></tr></table></figure>
+<p>输入法安装成功后要重新进入系统生效，重新登录或重启。</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在ubuntu系统下，安装好sogou拼音之后，用了一段时间之后，输入拼音之后，老是出现繁体字，很烦。</p>
+<p>解决办法</p>
+<p>按住shift 不放，同时，按下ctrl 和F键，会出现“繁简转换”-已启用简体中文 即可</p>
+<h2 id="安装stardict-屏幕取词神器"><a href="#安装stardict-屏幕取词神器" class="headerlink" title="安装stardict 屏幕取词神器"></a>安装stardict 屏幕取词神器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install stardict</span><br><span class="line"><span class="meta">#</span><span class="bash"> 到　http://download.huzheng.org/zh_CN/　牛津英汉词典</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 文件名：stardict-oxford-gb-2.4.2.tar.bz2</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压文件</span></span><br><span class="line">sudo tar -xjvf stardict-oxford-gb-2.4.2.tar.bz2  # 假设已cd到文件所在目录</span><br><span class="line"><span class="meta">#</span><span class="bash"> 移动文件到 /usr/share/stardict/dic/</span></span><br><span class="line">sudo mv stardict-oxford-gb-2.4.2 /usr/share/stardict/dic/</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启stardict即可使用</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装Typora"><a href="#安装Typora" class="headerlink" title="安装Typora"></a>安装Typora</h2><p>（不推荐）方法一：直接在应用商店里下载并安装</p>
+<p><strong>创建图标</strong></p>
+<p>Ubuntu中的DashBoard中软件启动器均存贮在<code>/usr/share/applications</code>这个目录，</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/usr/share/applications</span></span><br><span class="line">sudo gedit typora.desktop</span><br></pre></td></tr></table></figure>
+<p>打开需要编辑的文本内容为：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Desktop Entry]</span></span><br><span class="line"><span class="attr">Encoding</span>=UTF-<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Name</span>=Typora</span><br><span class="line"></span><br><span class="line"><span class="comment">#Exec=/home/innovation/typora/Typora</span></span><br><span class="line"><span class="comment">#Icon=/home/innovation/typora/resources/app/asserts/icon/icon_256x256@2x.png</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Exec</span>=/snap/typora-alanzanattadev/<span class="number">2</span>/usr/share/typora/Typora</span><br><span class="line"></span><br><span class="line"><span class="attr">Icon</span>=/snap/typora-alanzanattadev/<span class="number">2</span>/usr/share/typora/resources/app/asserts/icon/icon_256x256@<span class="number">2</span>x.png</span><br><span class="line"></span><br><span class="line"><span class="attr">Categories</span>=Application<span class="comment">;Development;Java;IDE</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Type</span>=Application</span><br><span class="line"></span><br><span class="line"><span class="comment">#Terminal=1</span></span><br></pre></td></tr></table></figure>
+<p>最后右上角保存退出就OK</p>
+<p>（推荐）方法二如下：</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE</span><br><span class="line"></span><br><span class="line">wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key<span class="built_in"> add </span>-</span><br><span class="line"></span><br><span class="line"><span class="comment">#add Typora's repository</span></span><br><span class="line"></span><br><span class="line">sudo<span class="built_in"> add-apt-repository </span>'deb https://typora.io/linux ./'</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line"><span class="comment">#install typora</span></span><br><span class="line"></span><br><span class="line">sudo apt-get install typora</span><br></pre></td></tr></table></figure>
+<p>通过搜索行搜索typora，然后点击 typora 图标</p>
+<h3 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h3><p><strong>Typora 在 Ubuntu18.04 上面不显示 Markdown 加粗语法</strong></p>
+<p>在 Typora’s github.css 里面，将 body 修改为如下内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    font-family: <span class="string">"Open Sans Regular"</span>,<span class="string">"Open Sans"</span>,<span class="string">"Clear Sans"</span>,<span class="string">"Helvetica Neue"</span>,Helvetica,Arial,sans-serif;</span><br><span class="line">    color: rgb(51, 51, 51);</span><br><span class="line">    line-height: 1.6;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>github.css 是这个主题的css文件<br>打开方式：文件-&gt;偏好设置-&gt;外观-&gt;打开主题文件夹</p>
+</blockquote>
+<h2 id="安装小飞机"><a href="#安装小飞机" class="headerlink" title="安装小飞机"></a>安装小飞机</h2><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="built_in"> add-apt-repository </span>ppa:hzwhuang/ss-qt5</span><br></pre></td></tr></table></figure>
+<h3 id="浏览器代理"><a href="#浏览器代理" class="headerlink" title="浏览器代理"></a>浏览器代理</h3><p>修改发行版本</p>
+<p>Ubuntu 18(bionic)的包在它的<a href="https://launchpad.net/~hzwhuang/+archive/ubuntu/ss-qt5" target="_blank" rel="noopener">官网</a>里还没有，因此要改成17(artful)或其他的版本，详见其官网中Technical details about this PPA的介绍 </p>
+<p><img src="/article/e0fdde43/小飞机4.png" alt="小飞机4"></p>
+<p>打开”软件和更新”–&gt;”其他软件”,找到”<a href="http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu" target="_blank" rel="noopener">http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu</a> bionic Release”,编辑，将发行版 bionic-&gt;artful，如图 </p>
+<p><img src="/article/e0fdde43/小飞机2.png" alt="小飞机2"></p>
+<p><img src="/article/e0fdde43/小飞机.png" alt="小飞机"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update　#命中成功</span><br><span class="line">sudo apt-get install shadowsocks-qt5</span><br></pre></td></tr></table></figure>
+<p><img src="/article/e0fdde43/小飞机3.png" alt="小飞机3"></p>
+<p>有些文章是修改list文件，但是有点小错误。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list.d/hzwhuang-ubuntu-ss-qt5-bionic.list</span><br><span class="line">  deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main</span><br><span class="line"><span class="meta">  #</span><span class="bash"> deb-src http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial </span></span><br><span class="line"><span class="meta">  #</span><span class="bash">但是　xenial 的Ｘ要大写。。</span></span><br><span class="line"><span class="meta">  #</span><span class="bash"> 即</span></span><br><span class="line">   deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu Xenial main</span><br><span class="line"><span class="meta">  #</span><span class="bash"> deb-src http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu Xenial</span></span><br></pre></td></tr></table></figure>
+<p>跟着这位大佬配置下去</p>
+<p><a href="https://www.cnblogs.com/wangyueping/p/10693739.html" target="_blank" rel="noopener">Ubuntu使用Shadow socks-qt5</a></p>
+<p>其中系统网络代理那里可以选择“自动”,可能没手动的快</p>
+<h3 id="全局代理"><a href="#全局代理" class="headerlink" title="全局代理"></a>全局代理</h3><p>若需要全局代理则需要更多的步骤，参考链接：</p>
+<p><a href="https://www.wx-smile.com/128" target="_blank" rel="noopener">https://www.wx-smile.com/128</a></p>
+<p><a href="https://www.xiaobaibk.com/xiao-bai-395.html" target="_blank" rel="noopener">https://www.xiaobaibk.com/xiao-bai-395.html</a></p>
+<p><a href="https://www.xiaobaibk.com/xiao-bai-396.html" target="_blank" rel="noopener">https://www.xiaobaibk.com/xiao-bai-396.html</a></p>
+<p><a href="https://blog.csdn.net/jackyzhousales/article/details/88552900" target="_blank" rel="noopener">https://blog.csdn.net/jackyzhousales/article/details/88552900</a></p>
+<p><strong>利用Privoxy实现终端下全局代理,建议用以下方法</strong></p>
+<p>ps: PAC模式国内网站不代理，国外代理</p>
+<p><a href="https://huangweitong.com/229.html" target="_blank" rel="noopener">https://huangweitong.com/229.html</a></p>
+<p><a href="http://blog.hehos.top/centos-7-an-zhuang-shadowsocks-ke-hu-duan/" target="_blank" rel="noopener">http://blog.hehos.top/centos-7-an-zhuang-shadowsocks-ke-hu-duan/</a></p>
+<p><a href="https://www.cnblogs.com/sonictl/p/11714513.html" target="_blank" rel="noopener">https://www.cnblogs.com/sonictl/p/11714513.html</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install privoxy</span><br><span class="line"></span><br><span class="line">sudo gedit /etc/privoxy/config</span><br><span class="line"><span class="meta">#</span><span class="bash"> 搜索forward-socks5添加转发代理ip (第1365行)</span></span><br><span class="line">forward-socks5t   /               127.0.0.1:1080 . #自选这条</span><br><span class="line"><span class="meta">#</span><span class="bash"> or</span></span><br><span class="line">forward-socks5   /               127.0.0.1:1080 .</span><br><span class="line"><span class="meta">#</span><span class="bash"> 搜索listen-address，确认有这一行（去注释，第783行）</span></span><br><span class="line">listen-address  127.0.0.1:8118</span><br></pre></td></tr></table></figure>
+<p>配置环境变量，让终端也能走代理</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">gedit ~/.bashrc</span><br><span class="line"><span class="meta">#</span><span class="bash">添加以下内容</span></span><br><span class="line">global_proxy()&#123;</span><br><span class="line">  proxy_adress="http://127.0.0.1:8118"</span><br><span class="line">  export https_proxy=$proxy_adress</span><br><span class="line">  export http_proxy=$proxy_adress</span><br><span class="line">  export ftp_proxy=$proxy_adress</span><br><span class="line">  echo "https_proxy is "$https_proxy</span><br><span class="line">  echo "config success"</span><br><span class="line">  curl "http://pv.sohu.com/cityjson?ie=utf-8"</span><br><span class="line">  echo -e '\n'</span><br><span class="line">&#125;</span><br><span class="line">global_unproxy()&#123;</span><br><span class="line">  unset https_proxy</span><br><span class="line">  unset http_proxy</span><br><span class="line">  unset ftp_proxy</span><br><span class="line">  echo "https_proxy is "$https_proxy</span><br><span class="line">  echo "delete config success"</span><br><span class="line">  curl "http://pv.sohu.com/cityjson?ie=utf-8"</span><br><span class="line">  echo -e '\n'</span><br><span class="line"><span class="meta">#</span><span class="bash"> curl ip.gs</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">source ~/.bashrc</span><br><span class="line"><span class="meta">#</span><span class="bash">sudo systemctl restart privoxy</span></span><br><span class="line">sudo service privoxy start</span><br><span class="line">sudo service privoxy status</span><br><span class="line"><span class="meta">#</span><span class="bash">启动全局代理</span></span><br><span class="line">global_proxy</span><br><span class="line"><span class="meta">#</span><span class="bash">关闭全局代理</span></span><br><span class="line">global_unproxy</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 验证</span></span><br><span class="line">curl "http://pv.sohu.com/cityjson?ie=utf-8"</span><br><span class="line">curl www.google.com</span><br><span class="line">curl ip.gs</span><br></pre></td></tr></table></figure>
+<p>至此，在终端任何HTTP连接都走代理。</p>
+<h3 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h3><p> privoxy[1051]:Wrong number of parameters for forward-socks5t in configuration file.</p>
+<p><strong>forward-socks5t / 127.0.0.1:1080 . 后面的那个点一定要有</strong></p>
+<h2 id="更换Ubuntu主题（Gnome）"><a href="#更换Ubuntu主题（Gnome）" class="headerlink" title="更换Ubuntu主题（Gnome）"></a>更换Ubuntu主题（<strong>Gnome</strong>）</h2><p><strong>配置Mac OS主题</strong></p>
+<p><strong>下载插件</strong></p>
+<p>gnome插件地址<a href="https://extensions.gnome.org" target="_blank" rel="noopener">https://extensions.gnome.org</a> 点进去，在网页的顶端有以下文字：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">To</span> control GNOME Shell extensions using this site you must install GNOME Shell integration that consists of two parts: browser extension <span class="keyword">and</span> native host messaging application.</span><br><span class="line">Click here <span class="keyword">to</span> install browser extension（点它在火狐上安装）. See wiki<span class="built_in"> page </span><span class="keyword">for</span> native host connector installation instructions.</span><br></pre></td></tr></table></figure>
+<p>插件页的左上角会出现 on/off，<strong>若使用该插件则点on</strong></p>
+<p><a href="https://extensions.gnome.org/extension/19/user-themes/" target="_blank" rel="noopener">User Themes ：改变Gnome主题必要插件</a></p>
+<p><a href="https://extensions.gnome.org/extension/307/dash-to-dock/" target="_blank" rel="noopener">Dash to Dock ：类似与mac底部dash的插件</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 若安装system-monitor</span></span><br><span class="line">sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0</span><br></pre></td></tr></table></figure>
+<p><a href="https://extensions.gnome.org/extension/120/system-monitor/" target="_blank" rel="noopener">system-monitor：系统资源显示</a></p>
+<p><a href="https://extensions.gnome.org/extension/7/removable-drive-menu/" target="_blank" rel="noopener">Removable Drive Menu：U盘快速操作。插入U盘或移动硬盘，可以执行打开、弹出等操作</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">设置gnome插件</span></span><br><span class="line">sudo apt install gnome-tweak-tool gnome-shell-extensions chrome-gnome-shell</span><br><span class="line">sudo apt-get install gtk2-engines-murrine gtk2-engines-pixbuf</span><br><span class="line">sudo add-apt-repository ppa:dyatlov-igor/sierra-theme</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install sierra-gtk-theme       # point releases</span><br><span class="line"><span class="meta">#</span><span class="bash"> git master branc</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt install sierra-gtk-theme-git </span></span><br><span class="line"><span class="meta">#</span><span class="bash">./install.sh</span></span><br></pre></td></tr></table></figure>
+<p><img src="/article/e0fdde43/Mac主题安装指令.png" alt="Mac主题安装指令"></p>
+<p><a href="https://github.com/USBA/Cupertino-iCons" target="_blank" rel="noopener">Mac OS图标</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">cd</span>到下载路径</span></span><br><span class="line">sudo unzip -o Cupertino-iCons-master.zip -d /usr/share/icons</span><br></pre></td></tr></table></figure>
+<p><strong>应用内搜索“优化”或Tweak</strong></p>
+<p><strong>窗口</strong>-》放置-调为左，也就是x - + 放在每个窗口的左边</p>
+<p><strong>扩展</strong>-》User themes -open</p>
+<p><strong>扩展</strong>-》Dash to dock -&gt;维修的标识-》按需调整</p>
+<p>shell的主题是指启动器和顶栏的样式</p>
+<p><img src="/article/e0fdde43/Mac主题样式.png" alt="Mac主题样式"></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">----------------  本文结束  ----------------</div>
+<br>
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>安装Ubuntu18.04后的优化</p>
+  <p><span>文章作者:</span>Pabebe</p>
+  <p><span>发布时间:</span>2020年07月05日 - 10:00:51</p>
+  <p><span>最后更新:</span>2020年07月05日 - 10:02:30</p>
+  <p><span>原始链接:</span><a href="/article/e0fdde43/" title="安装Ubuntu18.04后的优化">https://pabebezz.github.io/article/e0fdde43/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/e0fdde43/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+
+    
+</div>
+
+
+    
+
+    
+
+    
+    
+   <!-- 添加版权声明 -->
+    <div>
+    
+        
+     
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/tutorial/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;tutorial</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/article/2d17733a/" rel="next" title="paperUnderstanding-ClearGrasp">
+                <i class="fa fa-chevron-left"></i> paperUnderstanding-ClearGrasp
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Pabebe">
+            
+              <p class="site-author-name" itemprop="name">Pabebe</p>
+              <p class="site-description motion-element" itemprop="description">I have the soulful eyes of a cow</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Pabebezz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/Pabebe" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zezuwang@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Ubuntu18-04后的优化"><span class="nav-number">1.</span> <span class="nav-text">安装Ubuntu18.04后的优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-root密码"><span class="nav-number">1.1.</span> <span class="nav-text">设置 root密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锁屏不熄屏"><span class="nav-number">1.2.</span> <span class="nav-text">锁屏不熄屏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取消自动挂起与锁屏"><span class="nav-number">1.3.</span> <span class="nav-text">取消自动挂起与锁屏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件夹创建桌面快捷方式"><span class="nav-number">1.4.</span> <span class="nav-text">文件夹创建桌面快捷方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改grub配置"><span class="nav-number">1.5.</span> <span class="nav-text">修改grub配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新源"><span class="nav-number">1.6.</span> <span class="nav-text">更新源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#寻找国内镜像源"><span class="nav-number">1.6.1.</span> <span class="nav-text">寻找国内镜像源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改"><span class="nav-number">1.6.2.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遇到的问题"><span class="nav-number">1.6.3.</span> <span class="nav-text">遇到的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定用户sudo免密码操作"><span class="nav-number">1.7.</span> <span class="nav-text">指定用户sudo免密码操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#截图软件-flameshot"><span class="nav-number">1.8.</span> <span class="nav-text">截图软件-flameshot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deepin-wine环境"><span class="nav-number">1.9.</span> <span class="nav-text">deepin-wine环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#固定图标到任务栏（双图标问题）"><span class="nav-number">1.10.</span> <span class="nav-text">固定图标到任务栏（双图标问题）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装搜狗输入法"><span class="nav-number">1.11.</span> <span class="nav-text">安装搜狗输入法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.11.1.</span> <span class="nav-text">问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装stardict-屏幕取词神器"><span class="nav-number">1.12.</span> <span class="nav-text">安装stardict 屏幕取词神器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Typora"><span class="nav-number">1.13.</span> <span class="nav-text">安装Typora</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题-1"><span class="nav-number">1.13.1.</span> <span class="nav-text">问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装小飞机"><span class="nav-number">1.14.</span> <span class="nav-text">安装小飞机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器代理"><span class="nav-number">1.14.1.</span> <span class="nav-text">浏览器代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局代理"><span class="nav-number">1.14.2.</span> <span class="nav-text">全局代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bug"><span class="nav-number">1.14.3.</span> <span class="nav-text">bug</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更换Ubuntu主题（Gnome）"><span class="nav-number">1.15.</span> <span class="nav-text">更换Ubuntu主题（Gnome）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pabebe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">本站总字数&#58;</span>
+    
+    <span title="本站总字数">93.9k</span> 
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+    总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+    </span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+    <span id="busuanzi_container_site_uv" style="display:none">
+    有<span id="busuanzi_value_site_uv"></span>人到访
+    </span>
+
+  
+</div>
+
+<div>
+
+</div>
+
+<!--  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div> 
+
+
+
+   <span class="post-meta-divider">|</span>
+ 
+
+ 
+ <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div> 
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+
+<!-- 页面点击出现文字 -->
+ <script type="text/javascript" src="/js/src/myLittleWits.js"></script>
+ 
+</html>
