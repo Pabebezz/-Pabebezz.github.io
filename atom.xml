@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2020-07-06T13:08:17.359Z</updated>
+  <updated>2020-07-05T02:24:46.351Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -15,26 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>paperMemo-prepare</title>
-    <link href="https://pabebezz.github.io/article/5dace05d/"/>
-    <id>https://pabebezz.github.io/article/5dace05d/</id>
-    <published>2020-07-06T09:31:26.000Z</published>
-    <updated>2020-07-06T13:08:17.359Z</updated>
-    
-    <summary type="html">
-    
-      准备工作
-    
-    </summary>
-    
-      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
-    
-    
-      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
-    
-  </entry>
   
   <entry>
     <title>安装Ubuntu18.04后的优化</title>
@@ -425,6 +405,28 @@
     </summary>
     
       <category term="English" scheme="https://pabebezz.github.io/categories/English/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>操作系统总结</title>
+    <link href="https://pabebezz.github.io/article/8ce3e425/"/>
+    <id>https://pabebezz.github.io/article/8ce3e425/</id>
+    <published>2019-12-25T04:46:41.000Z</published>
+    <updated>2020-06-16T10:24:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;《计算机操作系统》复习大纲&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第一章 绪论 
+&lt;/strong&gt; 1.掌握操作系统的基本概念、主要功能、基本特征、主要类型；&lt;br&gt; 2.理解分时、实时系统的原理； &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Computer Operating" scheme="https://pabebezz.github.io/categories/Computer-Operating/"/>
     
     
       <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
