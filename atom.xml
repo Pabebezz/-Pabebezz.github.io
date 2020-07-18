@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2020-07-05T02:24:46.351Z</updated>
+  <updated>2020-07-15T13:07:03.188Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python语法奇奇怪怪小合集</title>
+    <link href="https://pabebezz.github.io/article/e58acc82/"/>
+    <id>https://pabebezz.github.io/article/e58acc82/</id>
+    <published>2020-07-15T09:41:54.000Z</published>
+    <updated>2020-07-15T13:07:03.188Z</updated>
+    
+    <summary type="html">
+    
+      记录一下python tip
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="Python" scheme="https://pabebezz.github.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>安装Ubuntu18.04后的优化</title>
@@ -400,27 +420,6 @@
     </summary>
     
       <category term="Parallel Computing" scheme="https://pabebezz.github.io/categories/Parallel-Computing/"/>
-    
-    
-      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英文摘要写作</title>
-    <link href="https://pabebezz.github.io/article/cb8609cd/"/>
-    <id>https://pabebezz.github.io/article/cb8609cd/</id>
-    <published>2020-01-10T11:25:20.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;   摘要( abstract) 也称为&lt;strong&gt;内容提要&lt;/strong&gt;，通常在学术论文中都必须附有摘要，其位子应放在论文的正文之前，对整个论文内容的概述。无论对专业读者还是对非专业读者而言，摘要都是一个非常重要的文件。&lt;/p&gt;
-&lt;p&gt;   摘要如果和论文一起发表，则被称为&lt;strong&gt;一次性出版物摘要&lt;/strong&gt;，主要用于帮助读者评价文章内容及其潜在作用，使读者不必阅读全文就可以了解论文的内容。除此之外，摘要也可以被单独收入文摘机构出版的摘要期刊如：生物学文摘(Biological Abstract)、化学文摘（Chemical Abstract）等，称为&lt;strong&gt;二次性出版物摘要&lt;/strong&gt;。此类脱离论文独立成篇的摘要主要用于方便读者检索文摘、收集信息，帮助研究者寻找新的研究领域。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="English" scheme="https://pabebezz.github.io/categories/English/"/>
     
     
       <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
