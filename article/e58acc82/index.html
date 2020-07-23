@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
 <meta property="og:description" content="记录一下python tip">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-18T05:00:48.996Z">
+<meta property="og:updated_time" content="2020-07-22T09:38:01.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python语法奇奇怪怪小合集">
 <meta name="twitter:description" content="记录一下python tip">
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  185 字
+                  362 字
                 </span>
               
 
@@ -440,6 +440,16 @@
 <p>成功得有点莫名。。</p>
 <h2 id="At-least-one-sheet-must-be-visible"><a href="#At-least-one-sheet-must-be-visible" class="headerlink" title="At least one sheet must be visible"></a>At least one sheet must be visible</h2><p>maybe是写入的数据有问题</p>
 <h2 id="TypeError-sequence-item-0-expected-str-instance-numpy-int64-found"><a href="#TypeError-sequence-item-0-expected-str-instance-numpy-int64-found" class="headerlink" title="TypeError: sequence item 0: expected str instance, numpy.int64 found"></a>TypeError: sequence item 0: expected str instance, numpy.int64 found</h2><p>“ “.jion(str), jion<strong>分割的必须是字符串</strong>!!,如果传入的列表内都是str则没问题,但我们传的列表内是含有int的!所以会报类型错误<a href="https://www.jianshu.com/p/300aba6d5d2b" target="_blank" rel="noopener">参考</a></p>
+<h1 id="、-和-xx-的区别"><a href="#、-和-xx-的区别" class="headerlink" title="_、--和__xx__的区别"></a>_、<code>--</code>和<code>__xx__</code>的区别</h1><ol>
+<li><p>_ 在类的方法或属性前面添加，意味着该方法或属性不该被调用，不属于API。<strong>类似于C++中类的私有方法</strong></p>
+</li>
+<li><p><code>--</code>真正作用是用来<strong>避免子类覆盖其内容</strong>，防止子类重写，<del>若子类重写后，只能在该子类的内部中使用。</del>这个方法不能被重写，它只允许在该类的内部中使用。</p>
+</li>
+<li><p><code>__xx__</code>经常是<strong>操作符或本地函数调用的magic methods。</strong></p>
+<p>在特殊的情况下，它只是<strong>python调用的hook</strong>。例如，<strong>init</strong>()函数是当对象被创建初始化时调用的;<strong>new</strong>()是用来创建实例。</p>
+</li>
+</ol>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://www.cnblogs.com/coder2012/p/4423356.html" target="_blank" rel="noopener">python<code>—</code> <em>、<code>--</code>和<code>__xx__</code></em>的区别</a></p>
 
       
     </div>
@@ -463,7 +473,7 @@
   <p><span>本文标题:</span>python语法奇奇怪怪小合集</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年07月15日 - 17:41:54</p>
-  <p><span>最后更新:</span>2020年07月18日 - 13:00:48</p>
+  <p><span>最后更新:</span>2020年07月22日 - 17:38:01</p>
   <p><span>原始链接:</span><a href="/article/e58acc82/" title="python语法奇奇怪怪小合集">https://pabebezz.github.io/article/e58acc82/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/e58acc82/" aria-label="复制成功！"></i></span>
   </p>
@@ -704,7 +714,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas"><span class="nav-number">1.</span> <span class="nav-text">pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-用excelwriter生成表格，运行正常但是没有生成文件？"><span class="nav-number">1.1.</span> <span class="nav-text">pandas 用excelwriter生成表格，运行正常但是没有生成文件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#At-least-one-sheet-must-be-visible"><span class="nav-number">1.2.</span> <span class="nav-text">At least one sheet must be visible</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeError-sequence-item-0-expected-str-instance-numpy-int64-found"><span class="nav-number">1.3.</span> <span class="nav-text">TypeError: sequence item 0: expected str instance, numpy.int64 found</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas"><span class="nav-number">1.</span> <span class="nav-text">pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-用excelwriter生成表格，运行正常但是没有生成文件？"><span class="nav-number">1.1.</span> <span class="nav-text">pandas 用excelwriter生成表格，运行正常但是没有生成文件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#At-least-one-sheet-must-be-visible"><span class="nav-number">1.2.</span> <span class="nav-text">At least one sheet must be visible</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeError-sequence-item-0-expected-str-instance-numpy-int64-found"><span class="nav-number">1.3.</span> <span class="nav-text">TypeError: sequence item 0: expected str instance, numpy.int64 found</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#、-和-xx-的区别"><span class="nav-number">2.</span> <span class="nav-text">_、--和__xx__的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
             
 
           </div>
@@ -738,7 +748,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">106k</span> 
+    <span title="本站总字数">106.4k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
