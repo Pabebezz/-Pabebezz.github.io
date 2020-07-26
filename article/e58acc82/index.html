@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
 <meta property="og:description" content="记录一下python tip">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-22T09:38:01.746Z">
+<meta property="og:updated_time" content="2020-07-24T11:46:40.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python语法奇奇怪怪小合集">
 <meta name="twitter:description" content="记录一下python tip">
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  362 字
+                  644 字
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -437,7 +437,7 @@
 <figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">writer</span> = pd.ExcelWriter(filepath)</span><br><span class="line"><span class="attr">df1</span> = pd.DataFrame(random_wolk_parameters, <span class="attr">index=[0])</span></span><br><span class="line">df1.to_excel(<span class="attr">excel_writer=writer,</span> <span class="attr">startrow=0)</span></span><br><span class="line"><span class="attr">df2</span> = pd.DataFrame(pso_parameters, <span class="attr">index=[0])</span></span><br><span class="line">df2.to_excel(<span class="attr">excel_writer=writer,</span> <span class="attr">startrow=3)</span></span><br></pre></td></tr></table></figure>
 <p>修改后成功代码</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">with pd.ExcelWriter(filepath) as writer:</span><br><span class="line">    df1 = pd.DataFrame(random_wolk_parameters, index=[0])</span><br><span class="line">    df1.to_excel(<span class="attribute">excel_writer</span>=writer, <span class="attribute">startrow</span>=0, <span class="attribute">index</span>=<span class="literal">False</span>)</span><br><span class="line">    df2 = pd.DataFrame(pso_parameters, index=[0])</span><br><span class="line">    df2.to_excel(<span class="attribute">excel_writer</span>=writer, <span class="attribute">startrow</span>=2, <span class="attribute">index</span>=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-<p>成功得有点莫名。。</p>
+<p>成功得有点莫名。。(看with的用法,大概能理解了.)</p>
 <h2 id="At-least-one-sheet-must-be-visible"><a href="#At-least-one-sheet-must-be-visible" class="headerlink" title="At least one sheet must be visible"></a>At least one sheet must be visible</h2><p>maybe是写入的数据有问题</p>
 <h2 id="TypeError-sequence-item-0-expected-str-instance-numpy-int64-found"><a href="#TypeError-sequence-item-0-expected-str-instance-numpy-int64-found" class="headerlink" title="TypeError: sequence item 0: expected str instance, numpy.int64 found"></a>TypeError: sequence item 0: expected str instance, numpy.int64 found</h2><p>“ “.jion(str), jion<strong>分割的必须是字符串</strong>!!,如果传入的列表内都是str则没问题,但我们传的列表内是含有int的!所以会报类型错误<a href="https://www.jianshu.com/p/300aba6d5d2b" target="_blank" rel="noopener">参考</a></p>
 <h1 id="、-和-xx-的区别"><a href="#、-和-xx-的区别" class="headerlink" title="_、--和__xx__的区别"></a>_、<code>--</code>和<code>__xx__</code>的区别</h1><ol>
@@ -449,7 +449,16 @@
 <p>在特殊的情况下，它只是<strong>python调用的hook</strong>。例如，<strong>init</strong>()函数是当对象被创建初始化时调用的;<strong>new</strong>()是用来创建实例。</p>
 </li>
 </ol>
+<h1 id="字典与匿名函数的巧妙组合"><a href="#字典与匿名函数的巧妙组合" class="headerlink" title="字典与匿名函数的巧妙组合"></a>字典与匿名函数的巧妙组合</h1><p>python中没有switch/case以及三目运算符</p>
+<p>优雅实现switch/case</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 情况1: 范围判断</span></span><br><span class="line">conditions = <span class="keyword">lambda</span> x: &#123;</span><br><span class="line">    x &lt; <span class="number">-1</span>: <span class="number">0</span>, <span class="number">-1</span> &lt;= x &lt;= <span class="number">1</span>: <span class="number">0.5</span>, x &gt; <span class="number">1</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 返回第一个满足条件的值 0.5</span></span><br><span class="line">num = conditions(<span class="number">0.25</span>)[<span class="literal">True</span>]</span><br><span class="line">print(num)</span><br><span class="line"><span class="comment"># 返回最后一个不满足条件的值 1</span></span><br><span class="line">num = conditions(<span class="number">0.25</span>)[<span class="literal">False</span>]</span><br><span class="line">print(num)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 情况2: 映射对应程序段</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">select_train</span><span class="params">()</span>:</span></span><br><span class="line">    t = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">select_test</span><span class="params">()</span>:</span></span><br><span class="line">    t = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">select_eval</span><span class="params">()</span>:</span></span><br><span class="line">    t = <span class="number">2</span></span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">select_result</span><span class="params">(goal)</span>:</span></span><br><span class="line">    condition_list = &#123;</span><br><span class="line">        <span class="string">'train'</span>: select_train,</span><br><span class="line">        <span class="string">'test'</span>: select_test,</span><br><span class="line">        <span class="string">'eval'</span>: select_eval,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment"># 搜寻不到输出后面字符串</span></span><br><span class="line">    print(condition_list.get(goal, <span class="string">'必须是 train / test / eval 这三种类型'</span>))</span><br><span class="line"></span><br><span class="line">select_result(<span class="string">'train'</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="with语句"><a href="#with语句" class="headerlink" title="with语句"></a>with语句</h1><p>需要事先做一些设置，事后做一些清理．（类似于try/excption/finally）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">r'c:\test.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">	data = f.read()</span><br></pre></td></tr></table></figure>
+<p>with后面接的对象返回的结果赋值给f。此例当中open函数返回的文件对象赋值给了f；<strong>with会自已获取上下文件的异常信息</strong>。</p>
 <h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://www.cnblogs.com/coder2012/p/4423356.html" target="_blank" rel="noopener">python<code>—</code> <em>、<code>--</code>和<code>__xx__</code></em>的区别</a></p>
+<p><a href="https://www.cnblogs.com/gengyufei/p/11341853.html" target="_blank" rel="noopener">Python3 之 with语句（高效、便捷）</a></p>
+<p><a href="https://blog.csdn.net/theonegis/article/details/88326536" target="_blank" rel="noopener">Python中如何优雅地使用switch语句</a></p>
+<p><a href="https://blog.csdn.net/l460133921/article/details/74892476?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param" target="_blank" rel="noopener">Python switch/case语句实现方法</a></p>
 
       
     </div>
@@ -473,7 +482,7 @@
   <p><span>本文标题:</span>python语法奇奇怪怪小合集</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年07月15日 - 17:41:54</p>
-  <p><span>最后更新:</span>2020年07月22日 - 17:38:01</p>
+  <p><span>最后更新:</span>2020年07月24日 - 19:46:40</p>
   <p><span>原始链接:</span><a href="/article/e58acc82/" title="python语法奇奇怪怪小合集">https://pabebezz.github.io/article/e58acc82/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/e58acc82/" aria-label="复制成功！"></i></span>
   </p>
@@ -538,6 +547,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/a8446d42/" rel="prev" title="Ubuntu18.04下python安装并使用Oracle">
+                Ubuntu18.04下python安装并使用Oracle <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -616,7 +629,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -714,7 +727,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas"><span class="nav-number">1.</span> <span class="nav-text">pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-用excelwriter生成表格，运行正常但是没有生成文件？"><span class="nav-number">1.1.</span> <span class="nav-text">pandas 用excelwriter生成表格，运行正常但是没有生成文件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#At-least-one-sheet-must-be-visible"><span class="nav-number">1.2.</span> <span class="nav-text">At least one sheet must be visible</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeError-sequence-item-0-expected-str-instance-numpy-int64-found"><span class="nav-number">1.3.</span> <span class="nav-text">TypeError: sequence item 0: expected str instance, numpy.int64 found</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#、-和-xx-的区别"><span class="nav-number">2.</span> <span class="nav-text">_、--和__xx__的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas"><span class="nav-number">1.</span> <span class="nav-text">pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-用excelwriter生成表格，运行正常但是没有生成文件？"><span class="nav-number">1.1.</span> <span class="nav-text">pandas 用excelwriter生成表格，运行正常但是没有生成文件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#At-least-one-sheet-must-be-visible"><span class="nav-number">1.2.</span> <span class="nav-text">At least one sheet must be visible</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeError-sequence-item-0-expected-str-instance-numpy-int64-found"><span class="nav-number">1.3.</span> <span class="nav-text">TypeError: sequence item 0: expected str instance, numpy.int64 found</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#、-和-xx-的区别"><span class="nav-number">2.</span> <span class="nav-text">_、--和__xx__的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字典与匿名函数的巧妙组合"><span class="nav-number">3.</span> <span class="nav-text">字典与匿名函数的巧妙组合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#with语句"><span class="nav-number">4.</span> <span class="nav-text">with语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">5.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
             
 
           </div>
@@ -748,7 +761,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">106.4k</span> 
+    <span title="本站总字数">107k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>

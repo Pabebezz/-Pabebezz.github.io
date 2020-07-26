@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/GPU驱动.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/深度学习环境.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/更新node版本.png">
-<meta property="og:updated_time" content="2020-07-22T03:07:14.001Z">
+<meta property="og:updated_time" content="2020-07-25T12:12:00.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu18.04下深度学习环境与blog搭建">
 <meta name="twitter:description" content="深度学习环境与hexoBlog搭建">
@@ -395,7 +395,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.9k 字
+                  3.2k 字
                 </span>
               
 
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  12 分钟
+                  14 分钟
                 </span>
               
             </div>
@@ -548,6 +548,26 @@ show_channel_urls: true
 <p>在学生授权有效期间可以下载安装任何 JetBrains Toolbox 下任何新版本开发工具，并使用 JetBrains 帐号激活。<strong>理论上只要邮箱不回收，就可以一直用。</strong>每次申请都是一年，一年后继续申请就好了</p>
 <p><a href="https://blog.csdn.net/kanchaishaonian/article/details/81214904" target="_blank" rel="noopener">IDEA 学生授权申请方式（免费）</a></p>
 <p><a href="https://blog.csdn.net/Trail2009/article/details/106747598" target="_blank" rel="noopener">Ubuntu上安装PyCharm及设置</a></p>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><h3 id="代码模板"><a href="#代码模板" class="headerlink" title="代码模板"></a>代码模板</h3><p>PyCharm –&gt; 选择File –&gt; Settings –&gt; Editor –&gt; Code Style –&gt; File and Code Templates –&gt; Python Script</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="string">'''=================================================</span></span><br><span class="line"><span class="string">@Author ：Pabebe</span></span><br><span class="line"><span class="string">@Date   ：$&#123;DATE&#125; $&#123;TIME&#125;</span></span><br><span class="line"><span class="string">@Description   ：</span></span><br><span class="line"><span class="string">=================================================='''</span></span><br></pre></td></tr></table></figure>
+<h3 id="连接github"><a href="#连接github" class="headerlink" title="连接github"></a>连接github</h3><p><strong>配置路径</strong></p>
+<p>File | Settings | Version Control | GitHub 配置github账号密码</p>
+<p>git ubuntu默认配置好了，window自己配置git路径。</p>
+<p><strong>推送项目至版本库/github</strong></p>
+<p>VCS–&gt;Import into Version Control–&gt;Share Project on GitHub/create git repository</p>
+<p><strong>克隆项目</strong></p>
+<p>VCS -&gt; Get from Version Control -&gt; Git</p>
+<p><strong>.gitignore</strong></p>
+<p><a href="https://www.jianshu.com/p/699ed86028c2" target="_blank" rel="noopener">相应规则</a></p>
+<p>###　生成requirements.txt</p>
+<p>(1)会将环境中的依赖包全都加入，如果使用的全局环境，则下载的所有包都会在里面，不管是不时当前项目依赖的，如下图</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+<p>(2)<strong>推荐</strong>，只加入项目所依赖的包</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">pip install pipreqs</span><br><span class="line"><span class="comment"># 在当前目录生成</span></span><br><span class="line">pipreqs  ./  --encoding=utf8 --force</span><br></pre></td></tr></table></figure>
+<p><code>--encoding=utf8</code> 为使用utf8编码，不然可能会报UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xae in position 406: illegal multibyte sequence 的错误。</p>
+<p><code>--force</code> 强制执行，当 生成目录下的requirements.txt存在时覆盖。</p>
+<p><strong>使用 requirements.txt</strong></p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span>  -r requirements.txt</span><br></pre></td></tr></table></figure>
 <h1 id="pytorch-网络结构可视化"><a href="#pytorch-网络结构可视化" class="headerlink" title="pytorch 网络结构可视化"></a>pytorch 网络结构可视化</h1><p>pytorch 的模型结构可视化方法：</p>
 <p>（1）使用 tensorboardX（不太直观）</p>
 <p>（2）使用 graphviz 加上 torchviz （依赖于 graphviz 和 GitHub 第三方库 torchviz，线条比较死板）</p>
@@ -599,9 +619,12 @@ show_channel_urls: true
 <p><a href="https://blog.csdn.net/qq_34067821/article/details/90710192" target="_blank" rel="noopener">Ubuntu 18.10 下安装CUDA10/CUDA10.1</a></p>
 <p><a href="https://blog.csdn.net/shangyexin/article/details/80968202" target="_blank" rel="noopener">systemctl自定义service执行shell脚本时报错code exited status 203 EXEC</a></p>
 <p><a href="https://blog.csdn.net/huangyuan_xuan/article/details/39118723" target="_blank" rel="noopener">ubuntu14.04开机自动挂载windows磁盘的配置方法</a></p>
+<p><a href="https://blog.csdn.net/Bee_AI/article/details/90454323" target="_blank" rel="noopener">PyCharm设置代码模板：自动生成文件名、作者、创建日期等信息</a></p>
 <p><a href="https://www.cnblogs.com/cx2016/p/13102879.html" target="_blank" rel="noopener">pytorch 网络结构可视化方法汇总（三种实现方法详解）</a></p>
 <p><a href="https://blog.csdn.net/qq_40726937/article/details/106122082" target="_blank" rel="noopener">Pytorch神经网络结构图可视化（Ubuntu+torchviz+graphviz）</a></p>
 <p><a href="https://blog.csdn.net/qq_35878757/article/details/103561923" target="_blank" rel="noopener">Pytorch神经网络结构可视化模块–Tensorwatch</a></p>
+<p><a href="https://www.cnblogs.com/yinshaojie/p/13121394.html" target="_blank" rel="noopener">通过pycharm使用git和github的步骤（图文详解）</a></p>
+<p><a href="https://www.jb51.net/article/170248.htm" target="_blank" rel="noopener">python生成requirements.txt的两种方法</a></p>
 
       
     </div>
@@ -625,7 +648,7 @@ show_channel_urls: true
   <p><span>本文标题:</span>Ubuntu18.04下深度学习环境与blog搭建</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年06月17日 - 09:45:23</p>
-  <p><span>最后更新:</span>2020年07月22日 - 11:07:14</p>
+  <p><span>最后更新:</span>2020年07月25日 - 20:12:00</p>
   <p><span>原始链接:</span><a href="/article/acdf71cc/" title="Ubuntu18.04下深度学习环境与blog搭建">https://pabebezz.github.io/article/acdf71cc/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/acdf71cc/" aria-label="复制成功！"></i></span>
   </p>
@@ -772,7 +795,7 @@ show_channel_urls: true
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -870,7 +893,7 @@ show_channel_urls: true
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#更新NVIDIA驱动"><span class="nav-number">1.</span> <span class="nav-text">更新NVIDIA驱动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CUDA与cuDNN"><span class="nav-number">2.</span> <span class="nav-text">CUDA与cuDNN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#完整的CUDA安装"><span class="nav-number">2.1.</span> <span class="nav-text">完整的CUDA安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Miniconda"><span class="nav-number">3.</span> <span class="nav-text">安装Miniconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conda常用命令"><span class="nav-number">4.</span> <span class="nav-text">conda常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除虚拟环境操作"><span class="nav-number">4.0.1.</span> <span class="nav-text">删除虚拟环境操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对虚拟环境中安装额外的包"><span class="nav-number">4.0.2.</span> <span class="nav-text">对虚拟环境中安装额外的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除环境中的某个包"><span class="nav-number">4.0.3.</span> <span class="nav-text">删除环境中的某个包</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#配置深度学习环境"><span class="nav-number">5.</span> <span class="nav-text">配置深度学习环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">5.1.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDE-VScode"><span class="nav-number">6.</span> <span class="nav-text">IDE-VScode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">6.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pylint路径设置"><span class="nav-number">6.2.</span> <span class="nav-text">pylint路径设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#美化"><span class="nav-number">6.3.</span> <span class="nav-text">美化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDE-PyCharm"><span class="nav-number">7.</span> <span class="nav-text">IDE-PyCharm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch-网络结构可视化"><span class="nav-number">8.</span> <span class="nav-text">pytorch 网络结构可视化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用第三种"><span class="nav-number">8.1.</span> <span class="nav-text">使用第三种</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LINUX下查看点云图"><span class="nav-number">9.</span> <span class="nav-text">LINUX下查看点云图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开机自动挂载windows磁盘"><span class="nav-number">10.</span> <span class="nav-text">开机自动挂载windows磁盘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu18-04开机自启动脚本"><span class="nav-number">11.</span> <span class="nav-text">Ubuntu18.04开机自启动脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备好你的sh脚本文件"><span class="nav-number">11.1.</span> <span class="nav-text">准备好你的sh脚本文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个service文件"><span class="nav-number">11.2.</span> <span class="nav-text">创建一个service文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">11.3.</span> <span class="nav-text">启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bolg"><span class="nav-number">12.</span> <span class="nav-text">Bolg</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">13.</span> <span class="nav-text">参考链接</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#更新NVIDIA驱动"><span class="nav-number">1.</span> <span class="nav-text">更新NVIDIA驱动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CUDA与cuDNN"><span class="nav-number">2.</span> <span class="nav-text">CUDA与cuDNN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#完整的CUDA安装"><span class="nav-number">2.1.</span> <span class="nav-text">完整的CUDA安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Miniconda"><span class="nav-number">3.</span> <span class="nav-text">安装Miniconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conda常用命令"><span class="nav-number">4.</span> <span class="nav-text">conda常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除虚拟环境操作"><span class="nav-number">4.0.1.</span> <span class="nav-text">删除虚拟环境操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对虚拟环境中安装额外的包"><span class="nav-number">4.0.2.</span> <span class="nav-text">对虚拟环境中安装额外的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除环境中的某个包"><span class="nav-number">4.0.3.</span> <span class="nav-text">删除环境中的某个包</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#配置深度学习环境"><span class="nav-number">5.</span> <span class="nav-text">配置深度学习环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">5.1.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDE-VScode"><span class="nav-number">6.</span> <span class="nav-text">IDE-VScode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">6.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pylint路径设置"><span class="nav-number">6.2.</span> <span class="nav-text">pylint路径设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#美化"><span class="nav-number">6.3.</span> <span class="nav-text">美化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDE-PyCharm"><span class="nav-number">7.</span> <span class="nav-text">IDE-PyCharm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优化"><span class="nav-number">7.1.</span> <span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码模板"><span class="nav-number">7.1.1.</span> <span class="nav-text">代码模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接github"><span class="nav-number">7.1.2.</span> <span class="nav-text">连接github</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pytorch-网络结构可视化"><span class="nav-number">8.</span> <span class="nav-text">pytorch 网络结构可视化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用第三种"><span class="nav-number">8.1.</span> <span class="nav-text">使用第三种</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LINUX下查看点云图"><span class="nav-number">9.</span> <span class="nav-text">LINUX下查看点云图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开机自动挂载windows磁盘"><span class="nav-number">10.</span> <span class="nav-text">开机自动挂载windows磁盘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu18-04开机自启动脚本"><span class="nav-number">11.</span> <span class="nav-text">Ubuntu18.04开机自启动脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备好你的sh脚本文件"><span class="nav-number">11.1.</span> <span class="nav-text">准备好你的sh脚本文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个service文件"><span class="nav-number">11.2.</span> <span class="nav-text">创建一个service文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">11.3.</span> <span class="nav-text">启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bolg"><span class="nav-number">12.</span> <span class="nav-text">Bolg</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">13.</span> <span class="nav-text">参考链接</span></a></li></div>
             
 
           </div>
@@ -904,7 +927,7 @@ show_channel_urls: true
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">106.4k</span> 
+    <span title="本站总字数">107k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2020-07-22T09:38:01.746Z</updated>
+  <updated>2020-07-26T05:27:19.146Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Ubuntu18.04下python安装并使用Oracle</title>
+    <link href="https://pabebezz.github.io/article/a8446d42/"/>
+    <id>https://pabebezz.github.io/article/a8446d42/</id>
+    <published>2020-07-26T05:12:12.000Z</published>
+    <updated>2020-07-26T05:27:19.146Z</updated>
+    
+    <summary type="html">
+    
+      目前貌似木有比较完整最新版的安装指导，有些步骤都不需要啦，记录一下，免得走弯路。
+    
+    </summary>
+    
+      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python语法奇奇怪怪小合集</title>
     <link href="https://pabebezz.github.io/article/e58acc82/"/>
     <id>https://pabebezz.github.io/article/e58acc82/</id>
     <published>2020-07-15T09:41:54.000Z</published>
-    <updated>2020-07-22T09:38:01.746Z</updated>
+    <updated>2020-07-24T11:46:40.035Z</updated>
     
     <summary type="html">
     
@@ -143,7 +163,7 @@
     <link href="https://pabebezz.github.io/article/acdf71cc/"/>
     <id>https://pabebezz.github.io/article/acdf71cc/</id>
     <published>2020-06-17T01:45:23.000Z</published>
-    <updated>2020-07-22T03:07:14.001Z</updated>
+    <updated>2020-07-25T12:12:00.305Z</updated>
     
     <summary type="html">
     
@@ -400,26 +420,6 @@
     </summary>
     
       <category term="Computer Vision" scheme="https://pabebezz.github.io/categories/Computer-Vision/"/>
-    
-    
-      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>并行计算机组成</title>
-    <link href="https://pabebezz.github.io/article/517840f3/"/>
-    <id>https://pabebezz.github.io/article/517840f3/</id>
-    <published>2020-02-18T00:53:29.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h1&gt;&lt;p&gt;并行计算机就是由多个处理单元组成的计算机系统，这些处理单元相互通信和协作，能快速，高效地求解大型复杂问题。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Parallel Computing" scheme="https://pabebezz.github.io/categories/Parallel-Computing/"/>
     
     
       <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
