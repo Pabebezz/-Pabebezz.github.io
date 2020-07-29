@@ -84,14 +84,14 @@
 <meta name="description" content="目前貌似木有比较完整最新版的安装指导，有些步骤都不需要啦，记录一下，免得走弯路。">
 <meta name="keywords" content="tutorial">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu18.04下python安装并使用Oracle">
+<meta property="og:title" content="Ubuntu18.04下python安装并使用Oracle19.8">
 <meta property="og:url" content="https://pabebezz.github.io/article/a8446d42/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
 <meta property="og:description" content="目前貌似木有比较完整最新版的安装指导，有些步骤都不需要啦，记录一下，免得走弯路。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-26T05:27:19.146Z">
+<meta property="og:updated_time" content="2020-07-26T09:45:05.964Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu18.04下python安装并使用Oracle">
+<meta name="twitter:title" content="Ubuntu18.04下python安装并使用Oracle19.8">
 <meta name="twitter:description" content="目前貌似木有比较完整最新版的安装指导，有些步骤都不需要啦，记录一下，免得走弯路。">
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <title>Ubuntu18.04下python安装并使用Oracle | Pabebe's Blog</title>
+  <title>Ubuntu18.04下python安装并使用Oracle19.8 | Pabebe's Blog</title>
   
 
 
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu18.04下python安装并使用Oracle</h1>
+          <h1 class="post-title" itemprop="name headline">Ubuntu18.04下python安装并使用Oracle19.8</h1>
         
 
         <div class="post-meta">
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  666 字
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -432,7 +432,33 @@
       
 
       
-        
+        <h1 id="下载oracle-Client"><a href="#下载oracle-Client" class="headerlink" title="下载oracle Client"></a>下载oracle Client</h1><p><a href="https://www.oracle.com/database/technologies/instant-client/downloads.html" target="_blank" rel="noopener">所有的系统下载oracle Instant Client</a></p>
+<p>下载</p>
+<p><a href="https://download.oracle.com/otn_software/linux/instantclient/19800/oracle-instantclient19.8-basic-19.8.0.0.0-1.x86_64.rpm" target="_blank" rel="noopener">oracle-instantclient19.8-basic-19.8.0.0.0-1.x86_64.rpm</a></p>
+<p><a href="https://download.oracle.com/otn_software/linux/instantclient/19800/oracle-instantclient19.8-sqlplus-19.8.0.0.0-1.x86_64.rpm" target="_blank" rel="noopener">oracle-instantclient19.8-sqlplus-19.8.0.0.0-1.x86_64.rpm</a></p>
+<p><a href="https://download.oracle.com/otn_software/linux/instantclient/195000/oracle-instantclient19.5-devel-19.5.0.0.0-1.x86_64.rpm" target="_blank" rel="noopener"> oracle-instantclient19.5-devel-19.5.0.0.0-1.x86_64.rpm  </a></p>
+<p>18.3版本以后不用建软链接，已经存在。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> sudo apt-get install alien</span><br><span class="line"><span class="meta">#</span><span class="bash"> rpm 转 deb</span></span><br><span class="line"> sudo alien oracle-instantclient19.8-basic-19.8.0.0.0-1.x86_64.rpm</span><br><span class="line">sudo alien oracle-instantclient19.8-sqlplus-19.8.0.0.0-1.x86_64.rpm</span><br><span class="line">sudo alien oracle-instantclient19.5-devel-19.5.0.0.0-1.x86_64.rpm</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">sudo dpkg  -i oracle-instantclient19.8-basic_19.8.0.0.0-2_amd64.deb </span><br><span class="line">sudo dpkg -i oracle-instantclient19.8-sqlplus_19.8.0.0.0-2_amd64.deb</span><br><span class="line"> sudo dpkg -i oracle-instantclient19.5-devel_19.5.0.0.0-2_amd64.deb</span><br></pre></td></tr></table></figure>
+<h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~/.bashrc</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> oracle path</span></span><br><span class="line">export ORACLE_HOME=/usr/lib/oracle/19.8/client64</span><br><span class="line">export PATH=$PATH:$ORACLE_HOME/bin</span><br><span class="line">export LIBRARY_PATH=$LIBRARY_PATH:$ORACLE_HOME/lib</span><br><span class="line">export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME/lib</span><br><span class="line">export ORACLE_SID=orcl</span><br><span class="line"><span class="meta">#</span><span class="bash"> 下面两行是解决编码问题，如果不设置下面两行，从oracle导出中文数据会出现乱码</span></span><br><span class="line">export LANG="zh_CN.UTF-8"</span><br><span class="line">export NLS_LANG=AMERICAN_AMERICA.UTF8</span><br><span class="line"></span><br><span class="line">source  ~/.bashrc</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 存在就不用建立</span></span><br><span class="line">sudo mkdir -p /usr/lib/oracle/19.8/client64/lib/network/admin</span><br></pre></td></tr></table></figure>
+<p><strong>bug — libaio.so.1: cannot open shared object file</strong></p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> install libaio-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure>
+<h1 id="填写tnsnames-ora文件"><a href="#填写tnsnames-ora文件" class="headerlink" title="填写tnsnames.ora文件"></a>填写tnsnames.ora文件</h1><p>oracle数据库网络配置文件，通过这个配置文件才能建立对数据库的连接。</p>
+<p><code>/usr/lib/oracle/19.8/client64/lib/network/admin</code>(该路径默认放 tnsnames.ora, sqlnet.ora and oraaccess.xml)下新建<code>tnsnames.ora</code>文件，内容如下：</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#该文件用于配置数据库连接地址</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#数据库访问地址别名,直接用该名字来指定连接</span></span><br><span class="line">ORCL=</span><br><span class="line">(DESCRIPTION =</span><br><span class="line">    (ADDRESS_LIST =</span><br><span class="line"><span class="meta">#通讯协议，主机(在本机则为127.0.0.1或localhost)，端口(oracle数据库服务端口号)</span></span><br><span class="line">      (ADDRESS = (PROTOCOL = TCP)(HOST = <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>)(PORT = <span class="number">1521</span>))</span><br><span class="line">    )</span><br><span class="line">    (CONNECT_DATA =</span><br><span class="line"><span class="meta">#数据库实例名称</span></span><br><span class="line">      (SERVICE_NAME = orcl)</span><br><span class="line">    )</span><br><span class="line">)</span><br><span class="line"><span class="meta">#可以配置多个数据库地址</span></span><br><span class="line"><span class="meta">#platform-test=</span></span><br><span class="line"><span class="meta">#(DESCRIPTION =</span></span><br><span class="line"><span class="meta">#    (ADDRESS_LIST =</span></span><br><span class="line"><span class="meta">#      (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.19)(PORT = 1521))</span></span><br><span class="line"><span class="meta">#    )</span></span><br><span class="line"><span class="meta">#    (CONNECT_DATA =</span></span><br><span class="line"><span class="meta">#      (SERVICE_NAME = orcl)</span></span><br><span class="line"><span class="meta">#    )</span></span><br><span class="line"><span class="meta">#)</span></span><br></pre></td></tr></table></figure>
+<p>并修改权限:<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> chmod a+w <span class="regexp">*.ora</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>进人sqlplus不能使用上下键查看历史命令，安装rlwrap解决</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install rlwrap</span></span><br><span class="line"><span class="meta">#</span><span class="bash">在~/.bashrc中添加别名</span></span><br><span class="line">alias sqlplus='rlwrap sqlplus'</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 不以任何用户登录，启动sqlplus, 但不连接数据库</span></span><br><span class="line">sqlplus /nolog</span><br><span class="line"><span class="meta">#</span><span class="bash"> 然后输入账号密码</span></span><br><span class="line">conn / as sysdba</span><br><span class="line"><span class="meta">#</span><span class="bash"> sqlplus sys/password as sysdba</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> or(本机使用oracale,默认账号密码)</span></span><br><span class="line">sqlplus scott/tiger@ORCL</span><br><span class="line"><span class="meta">#</span><span class="bash"> or</span></span><br><span class="line">sqlplus scott/tiger@127.0.0.1:1521/orcl</span><br></pre></td></tr></table></figure>
+<p><strong>bug —  ORA-12162: TNS:net service name is incorrectly specified</strong></p>
+<p>ORACLE_SID没有指定！将.bash中添加具体的ORACLE_SID</p>
+<p><strong>bug — Connect failed because target host or object does not exist</strong></p>
+<p>上面的环境没有配置好，在检查一遍。</p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://blog.csdn.net/qq_29153321/article/details/89217326" target="_blank" rel="noopener">通过python连接Oracle</a></p>
+<p><a href="https://blog.csdn.net/m0_38072683/article/details/83104243" target="_blank" rel="noopener">error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or d</a></p>
+<p><a href="https://blog.csdn.net/xqhrs232/article/details/107089712" target="_blank" rel="noopener">ORA-12162: TNS:net service name is incorrectly specified 错误解决</a></p>
+<p><a href="https://www.cnblogs.com/rangle/p/8926414.html" target="_blank" rel="noopener">Oracle案例05——ORA-12162: TNS:net service name is incorrectly specified</a></p>
+<p><a href="https://blog.csdn.net/czh500/article/details/89632905" target="_blank" rel="noopener">在oracle中，sqlplus / nolog是做什么用的</a></p>
+
       
     </div>
     
@@ -452,11 +478,11 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>Ubuntu18.04下python安装并使用Oracle</p>
+  <p><span>本文标题:</span>Ubuntu18.04下python安装并使用Oracle19.8</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年07月26日 - 13:12:12</p>
-  <p><span>最后更新:</span>2020年07月26日 - 13:27:19</p>
-  <p><span>原始链接:</span><a href="/article/a8446d42/" title="Ubuntu18.04下python安装并使用Oracle">https://pabebezz.github.io/article/a8446d42/</a>
+  <p><span>最后更新:</span>2020年07月26日 - 17:45:05</p>
+  <p><span>原始链接:</span><a href="/article/a8446d42/" title="Ubuntu18.04下python安装并使用Oracle19.8">https://pabebezz.github.io/article/a8446d42/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/a8446d42/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -571,8 +597,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -678,6 +713,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载oracle-Client"><span class="nav-number">1.</span> <span class="nav-text">下载oracle Client</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置环境"><span class="nav-number">2.</span> <span class="nav-text">配置环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#填写tnsnames-ora文件"><span class="nav-number">3.</span> <span class="nav-text">填写tnsnames.ora文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">5.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -705,7 +756,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">107k</span> 
+    <span title="本站总字数">107.8k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>

@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
 <meta property="og:description" content="记录一下python tip">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-24T11:46:40.035Z">
+<meta property="og:updated_time" content="2020-07-27T09:06:51.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python语法奇奇怪怪小合集">
 <meta name="twitter:description" content="记录一下python tip">
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  644 字
+                  748 字
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -455,10 +455,13 @@
 <h1 id="with语句"><a href="#with语句" class="headerlink" title="with语句"></a>with语句</h1><p>需要事先做一些设置，事后做一些清理．（类似于try/excption/finally）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">r'c:\test.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">	data = f.read()</span><br></pre></td></tr></table></figure>
 <p>with后面接的对象返回的结果赋值给f。此例当中open函数返回的文件对象赋值给了f；<strong>with会自已获取上下文件的异常信息</strong>。</p>
+<h1 id="模块调用"><a href="#模块调用" class="headerlink" title="模块调用"></a>模块调用</h1><p>python只用另一模块中的类， 为什么不包含在类中的代码也会被执行？</p>
+<p>因为引用了其他模块的函数，但是该模块里面有<strong>不是包含在函数中的代码</strong>，你在引用该模块中dao的函数时候会先执行被引用模块的代码。</p>
 <h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://www.cnblogs.com/coder2012/p/4423356.html" target="_blank" rel="noopener">python<code>—</code> <em>、<code>--</code>和<code>__xx__</code></em>的区别</a></p>
 <p><a href="https://www.cnblogs.com/gengyufei/p/11341853.html" target="_blank" rel="noopener">Python3 之 with语句（高效、便捷）</a></p>
 <p><a href="https://blog.csdn.net/theonegis/article/details/88326536" target="_blank" rel="noopener">Python中如何优雅地使用switch语句</a></p>
 <p><a href="https://blog.csdn.net/l460133921/article/details/74892476?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param" target="_blank" rel="noopener">Python switch/case语句实现方法</a></p>
+<p><a href="https://zhidao.baidu.com/question/694722686699117204.html" target="_blank" rel="noopener">为什么python的函数没被调用就被执行了？</a></p>
 
       
     </div>
@@ -482,7 +485,7 @@
   <p><span>本文标题:</span>python语法奇奇怪怪小合集</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年07月15日 - 17:41:54</p>
-  <p><span>最后更新:</span>2020年07月24日 - 19:46:40</p>
+  <p><span>最后更新:</span>2020年07月27日 - 17:06:51</p>
   <p><span>原始链接:</span><a href="/article/e58acc82/" title="python语法奇奇怪怪小合集">https://pabebezz.github.io/article/e58acc82/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/e58acc82/" aria-label="复制成功！"></i></span>
   </p>
@@ -548,8 +551,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/article/a8446d42/" rel="prev" title="Ubuntu18.04下python安装并使用Oracle">
-                Ubuntu18.04下python安装并使用Oracle <i class="fa fa-chevron-right"></i>
+              <a href="/article/a8446d42/" rel="prev" title="Ubuntu18.04下python安装并使用Oracle19.8">
+                Ubuntu18.04下python安装并使用Oracle19.8 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -727,7 +730,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas"><span class="nav-number">1.</span> <span class="nav-text">pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-用excelwriter生成表格，运行正常但是没有生成文件？"><span class="nav-number">1.1.</span> <span class="nav-text">pandas 用excelwriter生成表格，运行正常但是没有生成文件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#At-least-one-sheet-must-be-visible"><span class="nav-number">1.2.</span> <span class="nav-text">At least one sheet must be visible</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeError-sequence-item-0-expected-str-instance-numpy-int64-found"><span class="nav-number">1.3.</span> <span class="nav-text">TypeError: sequence item 0: expected str instance, numpy.int64 found</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#、-和-xx-的区别"><span class="nav-number">2.</span> <span class="nav-text">_、--和__xx__的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字典与匿名函数的巧妙组合"><span class="nav-number">3.</span> <span class="nav-text">字典与匿名函数的巧妙组合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#with语句"><span class="nav-number">4.</span> <span class="nav-text">with语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">5.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas"><span class="nav-number">1.</span> <span class="nav-text">pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-用excelwriter生成表格，运行正常但是没有生成文件？"><span class="nav-number">1.1.</span> <span class="nav-text">pandas 用excelwriter生成表格，运行正常但是没有生成文件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#At-least-one-sheet-must-be-visible"><span class="nav-number">1.2.</span> <span class="nav-text">At least one sheet must be visible</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeError-sequence-item-0-expected-str-instance-numpy-int64-found"><span class="nav-number">1.3.</span> <span class="nav-text">TypeError: sequence item 0: expected str instance, numpy.int64 found</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#、-和-xx-的区别"><span class="nav-number">2.</span> <span class="nav-text">_、--和__xx__的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字典与匿名函数的巧妙组合"><span class="nav-number">3.</span> <span class="nav-text">字典与匿名函数的巧妙组合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#with语句"><span class="nav-number">4.</span> <span class="nav-text">with语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块调用"><span class="nav-number">5.</span> <span class="nav-text">模块调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">6.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
             
 
           </div>
@@ -761,7 +764,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">107k</span> 
+    <span title="本站总字数">107.8k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
