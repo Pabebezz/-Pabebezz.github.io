@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="记录一下python tip">
+<meta name="description" content="说是奇奇怪怪，只是自己没学通，记录一下python tip">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python语法奇奇怪怪小合集">
 <meta property="og:url" content="https://pabebezz.github.io/article/e58acc82/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="记录一下python tip">
+<meta property="og:description" content="说是奇奇怪怪，只是自己没学通，记录一下python tip">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-27T09:06:51.445Z">
+<meta property="og:updated_time" content="2020-07-30T10:09:40.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python语法奇奇怪怪小合集">
-<meta name="twitter:description" content="记录一下python tip">
+<meta name="twitter:description" content="说是奇奇怪怪，只是自己没学通，记录一下python tip">
 
 
 
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  748 字
+                  1.1k 字
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -415,7 +415,7 @@
 
           
               <div class="post-description">
-                  记录一下python tip
+                  说是奇奇怪怪，只是自己没学通，记录一下python tip
               </div>
           
 
@@ -440,7 +440,9 @@
 <p>成功得有点莫名。。(看with的用法,大概能理解了.)</p>
 <h2 id="At-least-one-sheet-must-be-visible"><a href="#At-least-one-sheet-must-be-visible" class="headerlink" title="At least one sheet must be visible"></a>At least one sheet must be visible</h2><p>maybe是写入的数据有问题</p>
 <h2 id="TypeError-sequence-item-0-expected-str-instance-numpy-int64-found"><a href="#TypeError-sequence-item-0-expected-str-instance-numpy-int64-found" class="headerlink" title="TypeError: sequence item 0: expected str instance, numpy.int64 found"></a>TypeError: sequence item 0: expected str instance, numpy.int64 found</h2><p>“ “.jion(str), jion<strong>分割的必须是字符串</strong>!!,如果传入的列表内都是str则没问题,但我们传的列表内是含有int的!所以会报类型错误<a href="https://www.jianshu.com/p/300aba6d5d2b" target="_blank" rel="noopener">参考</a></p>
-<h1 id="、-和-xx-的区别"><a href="#、-和-xx-的区别" class="headerlink" title="_、--和__xx__的区别"></a>_、<code>--</code>和<code>__xx__</code>的区别</h1><ol>
+<h2 id="DataFrame类型修改指定单元格的值"><a href="#DataFrame类型修改指定单元格的值" class="headerlink" title="DataFrame类型修改指定单元格的值"></a>DataFrame类型修改指定单元格的值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#整数索引</span></span><br><span class="line">df..iloc[i][j] = x</span><br><span class="line"></span><br><span class="line"><span class="comment">#对于混合位置和索引，请使用.ix。但是你需要确保你的索引不是整数，否则会引起混淆。</span></span><br><span class="line">df.ix[<span class="number">0</span>, <span class="string">'COL_NAME'</span>] = x</span><br></pre></td></tr></table></figure>
+<h1 id="、-和-xx-的区别"><a href="#、-和-xx-的区别" class="headerlink" title="_、--和__xx__的区别"></a>_、<code>--</code>和<code>__xx__</code>的区别</h1><p>来源：<a href="https://www.cnblogs.com/coder2012/p/4423356.html" target="_blank" rel="noopener">python<code>—</code> <em>、<code>--</code>和<code>__xx__</code></em>的区别</a></p>
+<ol>
 <li><p>_ 在类的方法或属性前面添加，意味着该方法或属性不该被调用，不属于API。<strong>类似于C++中类的私有方法</strong></p>
 </li>
 <li><p><code>--</code>真正作用是用来<strong>避免子类覆盖其内容</strong>，防止子类重写，<del>若子类重写后，只能在该子类的内部中使用。</del>这个方法不能被重写，它只允许在该类的内部中使用。</p>
@@ -457,11 +459,17 @@
 <p>with后面接的对象返回的结果赋值给f。此例当中open函数返回的文件对象赋值给了f；<strong>with会自已获取上下文件的异常信息</strong>。</p>
 <h1 id="模块调用"><a href="#模块调用" class="headerlink" title="模块调用"></a>模块调用</h1><p>python只用另一模块中的类， 为什么不包含在类中的代码也会被执行？</p>
 <p>因为引用了其他模块的函数，但是该模块里面有<strong>不是包含在函数中的代码</strong>，你在引用该模块中dao的函数时候会先执行被引用模块的代码。</p>
+<h1 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="headerlink" title="深拷贝与浅拷贝"></a>深拷贝与浅拷贝</h1><p>大佬写的很清楚：<a href="https://blog.csdn.net/lovelyaiq/article/details/55102518?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~first_rank_v2~rank_v25-1-55102518.nonecase" target="_blank" rel="noopener">Python List的赋值方法</a></p>
+<p>  Python中关于对象复制有三种类型的使用方式，赋值、浅拷贝与深拷贝。</p>
+<p>赋值：对象的赋值就是简单的对象引用，他们指向同一片内存，<strong>b是a的别名</strong>，是引用（同一个内存地址）。</p>
+<p>浅拷贝<code>.copy()</code>： 浅拷贝会创建新对象，<strong>其内容是原对象的引用</strong>。二者包含的元素的地址是相同的。<strong>是它仅仅只拷贝了一层</strong>，在a中有一个嵌套的list，如果我们修改了它，情况就不一样了。</p>
+<p>深拷贝<code>.deepcopy()</code>：深拷贝拷贝了对象的所有元素，包括多层嵌套的元素。因而，它的时间和空间开销要高。因为深拷贝出来的对象根本就是一个全新的对象，不再与原来的对象有任何关联。</p>
 <h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://www.cnblogs.com/coder2012/p/4423356.html" target="_blank" rel="noopener">python<code>—</code> <em>、<code>--</code>和<code>__xx__</code></em>的区别</a></p>
 <p><a href="https://www.cnblogs.com/gengyufei/p/11341853.html" target="_blank" rel="noopener">Python3 之 with语句（高效、便捷）</a></p>
 <p><a href="https://blog.csdn.net/theonegis/article/details/88326536" target="_blank" rel="noopener">Python中如何优雅地使用switch语句</a></p>
 <p><a href="https://blog.csdn.net/l460133921/article/details/74892476?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param" target="_blank" rel="noopener">Python switch/case语句实现方法</a></p>
 <p><a href="https://zhidao.baidu.com/question/694722686699117204.html" target="_blank" rel="noopener">为什么python的函数没被调用就被执行了？</a></p>
+<p><a href="https://blog.csdn.net/lovelyaiq/article/details/55102518?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~first_rank_v2~rank_v25-1-55102518.nonecase" target="_blank" rel="noopener">Python List的赋值方法</a></p>
 
       
     </div>
@@ -485,7 +493,7 @@
   <p><span>本文标题:</span>python语法奇奇怪怪小合集</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年07月15日 - 17:41:54</p>
-  <p><span>最后更新:</span>2020年07月27日 - 17:06:51</p>
+  <p><span>最后更新:</span>2020年07月30日 - 18:09:40</p>
   <p><span>原始链接:</span><a href="/article/e58acc82/" title="python语法奇奇怪怪小合集">https://pabebezz.github.io/article/e58acc82/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/e58acc82/" aria-label="复制成功！"></i></span>
   </p>
@@ -730,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas"><span class="nav-number">1.</span> <span class="nav-text">pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-用excelwriter生成表格，运行正常但是没有生成文件？"><span class="nav-number">1.1.</span> <span class="nav-text">pandas 用excelwriter生成表格，运行正常但是没有生成文件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#At-least-one-sheet-must-be-visible"><span class="nav-number">1.2.</span> <span class="nav-text">At least one sheet must be visible</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeError-sequence-item-0-expected-str-instance-numpy-int64-found"><span class="nav-number">1.3.</span> <span class="nav-text">TypeError: sequence item 0: expected str instance, numpy.int64 found</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#、-和-xx-的区别"><span class="nav-number">2.</span> <span class="nav-text">_、--和__xx__的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字典与匿名函数的巧妙组合"><span class="nav-number">3.</span> <span class="nav-text">字典与匿名函数的巧妙组合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#with语句"><span class="nav-number">4.</span> <span class="nav-text">with语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块调用"><span class="nav-number">5.</span> <span class="nav-text">模块调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">6.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas"><span class="nav-number">1.</span> <span class="nav-text">pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-用excelwriter生成表格，运行正常但是没有生成文件？"><span class="nav-number">1.1.</span> <span class="nav-text">pandas 用excelwriter生成表格，运行正常但是没有生成文件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#At-least-one-sheet-must-be-visible"><span class="nav-number">1.2.</span> <span class="nav-text">At least one sheet must be visible</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeError-sequence-item-0-expected-str-instance-numpy-int64-found"><span class="nav-number">1.3.</span> <span class="nav-text">TypeError: sequence item 0: expected str instance, numpy.int64 found</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataFrame类型修改指定单元格的值"><span class="nav-number">1.4.</span> <span class="nav-text">DataFrame类型修改指定单元格的值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#、-和-xx-的区别"><span class="nav-number">2.</span> <span class="nav-text">_、--和__xx__的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字典与匿名函数的巧妙组合"><span class="nav-number">3.</span> <span class="nav-text">字典与匿名函数的巧妙组合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#with语句"><span class="nav-number">4.</span> <span class="nav-text">with语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块调用"><span class="nav-number">5.</span> <span class="nav-text">模块调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深拷贝与浅拷贝"><span class="nav-number">6.</span> <span class="nav-text">深拷贝与浅拷贝</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">7.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
             
 
           </div>
@@ -764,7 +772,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">107.8k</span> 
+    <span title="本站总字数">108.1k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
