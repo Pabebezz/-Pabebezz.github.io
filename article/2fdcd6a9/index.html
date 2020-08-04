@@ -81,23 +81,23 @@
 
 
 
-<meta name="description" content="前言主要以 C++字体为主。 输入输出文件尾类型C 版 1234567#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    int a,b;    while (scanf(&quot;%d %d&quot;,&amp;amp;a, &amp;amp;b) != EOF)        printf(&quot;%d\n&quot;,a+b);&amp;#125; C++ 版 123456#include&amp;lt;iostrea">
+<meta name="description" content="前言主要以 C++为主。 输入输出文件尾类型C 版 1234567#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    int a,b;    while (scanf(&quot;%d %d&quot;,&amp;amp;a, &amp;amp;b) != EOF)        printf(&quot;%d\n&quot;,a+b);&amp;#125; C++ 版 123456#include&amp;lt;iostream&amp;">
 <meta name="keywords" content="code,C++,algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码精炼">
+<meta property="og:title" content="C++代码精炼">
 <meta property="og:url" content="https://pabebezz.github.io/article/2fdcd6a9/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="前言主要以 C++字体为主。 输入输出文件尾类型C 版 1234567#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    int a,b;    while (scanf(&quot;%d %d&quot;,&amp;amp;a, &amp;amp;b) != EOF)        printf(&quot;%d\n&quot;,a+b);&amp;#125; C++ 版 123456#include&amp;lt;iostrea">
+<meta property="og:description" content="前言主要以 C++为主。 输入输出文件尾类型C 版 1234567#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    int a,b;    while (scanf(&quot;%d %d&quot;,&amp;amp;a, &amp;amp;b) != EOF)        printf(&quot;%d\n&quot;,a+b);&amp;#125; C++ 版 123456#include&amp;lt;iostream&amp;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://pabebezz.github.io/article/2fdcd6a9/dev调试.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/2fdcd6a9/dev调试2.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/2fdcd6a9/数据范围.jpeg">
 <meta property="og:image" content="https://pabebezz.github.io/article/2fdcd6a9/循环体内的局部变量内存分配和释放.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/2fdcd6a9/循环体内的局部变量内存分配和释放2.png">
-<meta property="og:updated_time" content="2020-06-16T10:24:34.000Z">
+<meta property="og:updated_time" content="2020-08-04T06:32:33.816Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码精炼">
-<meta name="twitter:description" content="前言主要以 C++字体为主。 输入输出文件尾类型C 版 1234567#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    int a,b;    while (scanf(&quot;%d %d&quot;,&amp;amp;a, &amp;amp;b) != EOF)        printf(&quot;%d\n&quot;,a+b);&amp;#125; C++ 版 123456#include&amp;lt;iostrea">
+<meta name="twitter:title" content="C++代码精炼">
+<meta name="twitter:description" content="前言主要以 C++为主。 输入输出文件尾类型C 版 1234567#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    int a,b;    while (scanf(&quot;%d %d&quot;,&amp;amp;a, &amp;amp;b) != EOF)        printf(&quot;%d\n&quot;,a+b);&amp;#125; C++ 版 123456#include&amp;lt;iostream&amp;">
 <meta name="twitter:image" content="https://pabebezz.github.io/article/2fdcd6a9/dev调试.png">
 
 
@@ -139,7 +139,7 @@
 
 
 
-  <title>代码精炼 | Pabebe's Blog</title>
+  <title>C++代码精炼 | Pabebe's Blog</title>
   
 
 
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">代码精炼</h1>
+          <h1 class="post-title" itemprop="name headline">C++代码精炼</h1>
         
 
         <div class="post-meta">
@@ -434,7 +434,7 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>主要以<label style="color:blue"> C++</label>字体为主。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>主要以<label style="color:blue"> C++</label>为主。</p>
 <h1 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h1><h2 id="文件尾类型"><a href="#文件尾类型" class="headerlink" title="文件尾类型"></a>文件尾类型</h2><p>C 版</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;a, &amp;b) != EOF)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a+b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>C++ 版</p>
@@ -556,11 +556,11 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>代码精炼</p>
+  <p><span>本文标题:</span>C++代码精炼</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2019年10月24日 - 10:04:33</p>
-  <p><span>最后更新:</span>2020年06月16日 - 18:24:34</p>
-  <p><span>原始链接:</span><a href="/article/2fdcd6a9/" title="代码精炼">https://pabebezz.github.io/article/2fdcd6a9/</a>
+  <p><span>最后更新:</span>2020年08月04日 - 14:32:33</p>
+  <p><span>原始链接:</span><a href="/article/2fdcd6a9/" title="C++代码精炼">https://pabebezz.github.io/article/2fdcd6a9/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/2fdcd6a9/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -842,7 +842,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">108.1k</span> 
+    <span title="本站总字数">109.8k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
