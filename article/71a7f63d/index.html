@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="tutorial,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pabebe's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="TOY2DAC有关文档以及使用">
+<meta name="keywords" content="tutorial">
+<meta property="og:type" content="article">
+<meta property="og:title" content="window编译并运行TOY2DAC">
+<meta property="og:url" content="https://pabebezz.github.io/article/71a7f63d/index.html">
+<meta property="og:site_name" content="Pabebe&#39;s Blog">
+<meta property="og:description" content="TOY2DAC有关文档以及使用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://gitee.com/gjchen/images/raw/master/images/1.png">
+<meta property="og:image" content="https://gitee.com/gjchen/images/raw/master/images/2.jpg">
+<meta property="og:image" content="https://gitee.com/gjchen/images/raw/master/images/3.jpg">
+<meta property="og:image" content="https://gitee.com/gjchen/images/raw/master/images/4.jpg">
+<meta property="og:image" content="https://gitee.com/gjchen/images/raw/master/images/5.jpg">
+<meta property="og:image" content="https://gitee.com/gjchen/images/raw/master/images/6.png">
+<meta property="og:image" content="https://gitee.com/gjchen/images/raw/master/images/7.png">
+<meta property="og:image" content="https://gitee.com/gjchen/images/raw/master/images/8.png">
+<meta property="og:image" content="https://gitee.com/gjchen/images/raw/master/images/9.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0427/104755_f9407e69_6511114.png">
+<meta property="og:image" content="https://images.gitee.com/uploads/images/2020/0427/104821_394b5d3b_6511114.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/71a7f63d/Users/并行计算/依赖库/新建文件夹/image/MUMPS.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/71a7f63d/Users/并行计算/依赖库/新建文件夹/image/MUMPS2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/71a7f63d/MUMPS.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/71a7f63d/MUMPS2.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/71a7f63d/toy2dac.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/71a7f63d/runerror.png">
+<meta property="og:updated_time" content="2020-08-10T04:52:02.944Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="window编译并运行TOY2DAC">
+<meta name="twitter:description" content="TOY2DAC有关文档以及使用">
+<meta name="twitter:image" content="https://gitee.com/gjchen/images/raw/master/images/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://pabebezz.github.io/article/71a7f63d/">
+
+
+<meta name="google-site-verification" content="skUdQN9cQrZuUJydKG0ivzB90q5kyLJMU5i5dt82GH4">
+<meta name="google-site-verification" content="hv7_j7TFqTy83_mHkj5EDOJhzIl0_tusCnHJBxNOfAo">
+
+
+
+
+
+
+  <title>window编译并运行TOY2DAC | Pabebe's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"> 
+       
+    </div>
+ 
+
+      <!-- change "fork me on github" -->
+     <!--  <a href="https://github.com/Pabebezz" target="_blank" ><img style="position: absolute; top: 0; right: 1200; border: 0;"  width="149" height="149" src="/images/forkme_left_green.png" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a> -->
+     <a href="https://github.com/Pabebezz" class="github-corner" target="_blank" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #326755; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+       
+       <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pabebe's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">业精于勤，荒于嬉；行成于思，毁于随。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/71a7f63d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pabebe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pabebe's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">window编译并运行TOY2DAC</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-26T13:19:03+08:00">
+                2020-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/window/" itemprop="url" rel="index">
+                    <span itemprop="name">window</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+           
+           
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+            
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  25 分钟
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  TOY2DAC有关文档以及使用
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="二维全波形建模和反演（TOY2DAC）"><a href="#二维全波形建模和反演（TOY2DAC）" class="headerlink" title="二维全波形建模和反演（TOY2DAC）"></a>二维全波形建模和反演（TOY2DAC）</h1><hr>
+<h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a>1. 背景</h2><blockquote>
+<p>全波形反演指利用非线性寻优方法反演给定时窗内的波形记录以获取影响地震波传播的相关物性参数(如弹性参数、粘弹性参数、各向异性参数、密度等)的方法。<br>就是利用波场模拟和实际地震资料对比，通过多次迭代使预测波场和实际地震资料匹配一致，求取地下地质参数的一种地震反演方法。<br>从数学上来看，是要建立模型与现有地震数据的非线性关系，一般运用动力学知识。<br>TOY2DAC只包括各向同性的频域建模和反演</p>
+</blockquote>
+<h2 id="2-Package-include"><a href="#2-Package-include" class="headerlink" title="2. Package include"></a>2. Package include</h2><ul>
+<li>bin 编译后的二进制文件</li>
+<li>doc 说明文档</li>
+<li>include 编译期间包含的文件</li>
+<li>src 所有的源代码，用Fortran语言和并行MPI指令编写</li>
+<li>0README 包含说明如何运行代码的内容</li>
+</ul>
+<h2 id="3-环境"><a href="#3-环境" class="headerlink" title="3. 环境"></a>3. 环境</h2><blockquote>
+<p>Fortran语言和C语言编译器<br>MUMPS库：大型稀疏LU矩阵分解，同时该库需要安装METIS库<br>MKL库：计算标准顺序和并行线性代数问题<br>ATLAS库：矩阵线性代数运算库</p>
+</blockquote>
+<h2 id="4-编译"><a href="#4-编译" class="headerlink" title="4. 编译"></a>4. 编译</h2><ul>
+<li>Makefile.inc文件包含的变量：CC,FC,FL分别是C语言编译器，Fortran语言编译器和链接调用；OPTF,OPTC,OPTL,OPTFF分别是调用Fortran编译，C编译，链接和Fortran90编译；OPT_PRE是预处理标志，只有设置标志才能实现双精度编译；INC是代码所有路径；LIB定义了库，ETX定义了二进制名称末尾扩展名。</li>
+<li>Makefile文件里面的变量全部定义完成后，只需make命令就可以完成编译工作</li>
+</ul>
+<h2 id="5-理论"><a href="#5-理论" class="headerlink" title="5. 理论"></a>5. 理论</h2><blockquote>
+<p>TOY2DAC从一个从猜测的m0初值开始，为了解决下式最小值的问题<br><img src="https://gitee.com/gjchen/images/raw/master/images/1.png" alt="公式"> 公式（1）</p>
+<pre><code>- m表示待恢复的地下参数
+- S表示数据集的总数
+- ds表示第s个数据集
+- us(m)是频域波传播问题的解
+- R是将波场us(m)映射到接收机位置的约束算子  
+</code></pre></blockquote>
+<blockquote>
+<p><img src="https://gitee.com/gjchen/images/raw/master/images/2.jpg" alt="公式"> 公式（2）</p>
+<pre><code>- A(m)表示二维频域声学(an)各向同性波传播算子  
+</code></pre><p>在各向同性的情况下，上式被写作：<br><img src="https://gitee.com/gjchen/images/raw/master/images/3.jpg" alt="公式"> 公式（3）</p>
+<pre><code>w是角频率
+vp(x)是压力波速度
+p(x)是密度
+</code></pre><p>在这种情况下，地下参数m可取以下的值：</p>
+<pre><code>1. vp(x):压力波速度的单参数反演
+2. ρ(x): 密度的单参数反演
+3. [vP (x)，ρ(x)]集合：压力波和密度的多参数反演
+</code></pre></blockquote>
+<h3 id="5-1-正演问题"><a href="#5-1-正演问题" class="headerlink" title="5.1 正演问题"></a>5.1 正演问题</h3><ul>
+<li>正演问题包含在公式2中</li>
+<li>TOY2DAC实现了一种四阶离散化方案</li>
+<li>公式2相当于一个稀疏的大规模线性系统的解</li>
+<li>当数据集变大时，只需要一个LU分解，S线性方程组可以通过正代和反代来求解</li>
+</ul>
+<h3 id="5-2-反演问题"><a href="#5-2-反演问题" class="headerlink" title="5.2 反演问题"></a>5.2 反演问题</h3><blockquote>
+<p>反演问题基于一个局部下降函数<br><img src="https://gitee.com/gjchen/images/raw/master/images/4.jpg" alt="公式"> 公式（4）</p>
+<p>αk是一个通过线性搜索的比例参数<br>∆mk为下降方向<br>这个下降方向取决于优化算法的选择，最基础的选择如下所示：<br><img src="https://gitee.com/gjchen/images/raw/master/images/5.jpg" alt="公式"> 公式（5）<br>TOY2DAC实现的是截断式牛顿迭代法</p>
+</blockquote>
+<h3 id="5-3-频域选择问题"><a href="#5-3-频域选择问题" class="headerlink" title="5.3 频域选择问题"></a>5.3 频域选择问题</h3><ul>
+<li>高效cpu频率域FWI通常是通过单个频率的连续反转来实现的，即从低频率到高频率</li>
+<li>这定义了一个多分辨率框架，减轻了与高频跳周期人工制品相关的反问题的非线性。</li>
+<li>高效cpu算法可以通过选择少量的粗采样频率来设计，这样可以减少频率和孔径角密集采样产生的波数冗余。</li>
+<li>TOY2DAC包含一个简单的框架，它只运行一组频率。如果需要多个组，TOY2DAC必须启动几次。</li>
+</ul>
+<h2 id="6-频域有限差分建模引擎的输入文件"><a href="#6-频域有限差分建模引擎的输入文件" class="headerlink" title="6.频域有限差分建模引擎的输入文件"></a>6.频域有限差分建模引擎的输入文件</h2><h3 id="6-1-介质参数文件"><a href="#6-1-介质参数文件" class="headerlink" title="6.1 介质参数文件"></a>6.1 介质参数文件</h3><blockquote>
+<p>介质参数文件是包含介质物理属性的二进制文件(直接访问简单精度实数)。它是建模模式下的仿真介质或反演的起始模型。文件的名称应该放在输入文件中。包含的参数有：</p>
+</blockquote>
+<pre><code>各向同性粘声模拟的纵波速度、纵波质量因子、密度
+这些文件应该包含nz×nx的值
+</code></pre><h3 id="6-2-acquisition文件"><a href="#6-2-acquisition文件" class="headerlink" title="6.2 acquisition文件"></a>6.2 acquisition文件</h3><ul>
+<li>它是一个ASCII码文件，文件的格式如下：</li>
+<li><img src="https://gitee.com/gjchen/images/raw/master/images/6.png" alt></li>
+<li>第一列和第二列是z轴和x轴坐标，三四列用不到，第五列表示来自源还是接收器</li>
+<li><img src="https://gitee.com/gjchen/images/raw/master/images/7.png" alt></li>
+</ul>
+<h3 id="6-3-mumps-input-文件"><a href="#6-3-mumps-input-文件" class="headerlink" title="6.3 mumps input 文件"></a>6.3 mumps input 文件</h3><blockquote>
+<p>这个文件是允许管理一些MUMPS处理器的优化选项，一共四个参数：</p>
+</blockquote>
+<pre><code>icntl 7：选择MUMPS中的排序算法，一般默认7
+icntl 14：优化松弛因子，在4.9以后的版本就不用了
+icntl 23：确定每个MPI进程上允许存储LU因子的表的大小
+keep 84：一般取最大值16
+</code></pre><h3 id="6-4-toy2dac-input文件"><a href="#6-4-toy2dac-input文件" class="headerlink" title="6.4 toy2dac_input文件"></a>6.4 toy2dac_input文件</h3><ul>
+<li>优化该项目的主要文件</li>
+</ul>
+<blockquote>
+</blockquote>
+<pre><code>mode of the code：选择模式，一般就是1，FWI
+forward modeling tool： 模式1提供各向同性介质的频域有限差分，模式2在TTI各向异性介质中提供了一个频域有限差分
+acquisition：接收文件的名称
+</code></pre><h3 id="6-5-fdfd-input文件"><a href="#6-5-fdfd-input文件" class="headerlink" title="6.5 fdfd input文件"></a>6.5 fdfd input文件</h3><blockquote>
+<p>优化频域有限差分建模引擎的文件<br><img src="https://gitee.com/gjchen/images/raw/master/images/8.png" alt></p>
+</blockquote>
+<pre><code>nz,nx 是坐标
+h 是步长
+file name是各向同性输入模型文件的名称
+pml tunning： pml振幅的值。取90一般
+free surface是在介质顶部附加一个自由表面边界条件的附加参数
+itypes为震源类型:爆炸(0)或垂直力(1)。ityper为接收机类型:水听器(0)(或垂直检波器(1)，但尚未实现)。这个选项只有在使用Hicks插值时才有可能
+slaplace是拉普拉斯常数，即。，用于随时间指数衰减地震波场的频率虚部
+</code></pre><h3 id="6-6-freq-management文件"><a href="#6-6-freq-management文件" class="headerlink" title="6.6 freq management文件"></a>6.6 freq management文件</h3><ul>
+<li>管理频率</li>
+<li><img src="https://gitee.com/gjchen/images/raw/master/images/9.png" alt></li>
+<li>第一行表示仿真或FWI频率组中涉及的频率数</li>
+<li>第二行表示频率列表</li>
+</ul>
+<h2 id="7运行TOY2DAC"><a href="#7运行TOY2DAC" class="headerlink" title="7运行TOY2DAC"></a>7运行TOY2DAC</h2><p> <strong>7.1输出文件在建模模式下</strong> </p>
+<p>主要输出文件为接收端数据(复值频域)。接收机位置频域内的数据文件通常称为:data_modeling。这是一个直接访问二进制文件。这些文件的顺序如下:<br>data_bloc_frequency_1 data_bloc_frequency_2 … data_bloc_frequency_N<br>其中N号是由用户在文件freq management中的，<br><img src="https://images.gitee.com/uploads/images/2020/0427/104755_f9407e69_6511114.png" alt="输入图片说明" title="屏幕截图.png"><br><img src="https://images.gitee.com/uploads/images/2020/0427/104821_394b5d3b_6511114.png" alt="输入图片说明" title="屏幕截图.png"></p>
+<p>对于每个频段组数据块data_bloc_frequency_i，数据排序如下:</p>
+<p>data_bloc_source_1 data_bloc_source_2 … data_bloc_source_L</p>
+<p>最后，对于每个源块，数据排序如下:</p>
+<p>data_receiver_1 data_receiver_2 … data_receiver_K</p>
+<p>如果每个源有相同数量的接收方，可以使用<br>ximage &lt; data_modeling n1=2*nrec  查看</p>
+<p>其中nrec = 接收机数量。</p>
+<p> <strong>7.2输出文件在FWI模式下</strong> </p>
+<p>输出文件如下:</p>
+<ol>
+<li><p>这里是列表文本输出日志的标准输出，其中包含几个信息，特别是在问题的情况下…；</p>
+</li>
+<li><p>invparinter : 包含反演过程中的所有中间模型。注意，注意，在用于反演的参数化过程中，模型是按顺序存储的；</p>
+</li>
+<li><p>invparfinal ：包含用于反演的参数化的最终模型；</p>
+</li>
+<li><p>param XX inter ： 包含所有按顺序存储的中间模型，用于参数XX。在各向同性中，XX代表vp、rho和qp；在各向异性中，XX是vp、rho、qp、epsilon、delta和 theta；</p>
+</li>
+<li><p>param XX final ： 包含参数XX的最终模型。在各向同性中，XX代表vp、rho和qp；在各向异性中，XX是vp、rho、qp、epsilon、delta和 theta；</p>
+</li>
+<li><p>iterate *.dat : 包含收敛信息的优化例程输出日志。</p>
+</li>
+</ol>
+<p>文件invparinter, invparfinal, param XX inter和param XX final可以用一个ximage命令来查看:<br>ximage &lt; param_vp_final n1=101</p>
+<p>其中101是 nz 的大小。</p>
+<h2 id="8-示例"><a href="#8-示例" class="headerlink" title="8.示例"></a>8.示例</h2><p>本部分介绍了TOY2DAC包中两个可用的模型。这些模板同时考虑了<strong>FWI</strong>（全波形反演）和建模问题。</p>
+<h3 id="高斯扰动模型"><a href="#高斯扰动模型" class="headerlink" title="高斯扰动模型"></a>高斯扰动模型</h3><p>这个迷你模型非常适合是在用户平台上测试代码，因为它可以在几分钟内运行，并且只需要较小内存。它还可以让用户理解：为其预期结果，FWI在一个简单的类似于boxcard的配置是怎样工作的。此模型由1个目录组成：”run ball template”. </p>
+<p>该目录包括了run ball模板包含在模式0下运行TOY2DAC所需的文件，以便计算同质背景下的频域数据和在V_P中有1个周期异常。一旦TOY2DAC编译完成，模型可以通过以下不同的操作来运行：</p>
+<ol>
+<li><p>创建一个本地副本(以保持模板目录干净…)</p>
+</li>
+<li><p>介质的描述在”vp_ball,qp 和 rho“中。用户可以以ximage的形式绘制他们。例如：<strong>（这条指令官方给的不全）</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ximage &lt; vp_ball <span class="attribute">n1</span>=101 <span class="attribute">d1</span>=20 <span class="attribute">d2</span>=20 <span class="attribute">label1</span>=’depth <span class="keyword">in</span> m’ <span class="attribute">label2</span>=’distance <span class="keyword">in</span> m’ &amp;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>查看输入文件后，检查文件”fdfd_input”的“vp_ball qp rho”和在”toy2dac_input”文件中的“mode=0”，然后用户可以运行模型。例如：</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">mpirun</span></span> -n <span class="number">4</span> ../bin/toy2dac</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>程序结束后(在4个处理器上所用时间为几秒钟)，“观察到的数据“存储在文件”data_modeling “中，可以用于反演。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>然后用户可以运行FWI程序：</p>
+<ol>
+<li>介质的笛卡尔描述在文件”vp_homogeneous,qp and rho. “中。用户可以使用ximage来绘制它们。例如:<strong>（这条指令官方给的不全）</strong></li>
+</ol>
+   <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ximage &lt; vp\_homogeneous <span class="attribute">n1</span>=101 <span class="attribute">d1</span>=20 <span class="attribute">d2</span>=20 <span class="attribute">label1</span>=’depth <span class="keyword">in</span> m’ <span class="attribute">label2</span>=’distance <span class="keyword">in</span> m</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>查看输入文件后，检查文件”fdfd_input”的“vp homogeneous qp rho” ,观察到的数据文件在”fwi_input” 的第一行被设置为“data modeling”, “toy2dac_input”文件的“mode=1”,，然后用户可以运行模型。例如：</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">mpirun</span></span> -n <span class="number">4</span> ../bin/toy2dac</span><br></pre></td></tr></table></figure>
+<p> 程序结束后(在4个处理器上所用时间为几分钟)，用户可以查看最终的模型。例如：<strong>（这条指令官方给的不全）</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ximage &lt; param_vp_final <span class="attribute">n1</span>=101 <span class="attribute">d1</span>=20 <span class="attribute">d2</span>=20 <span class="attribute">label1</span>=’depth <span class="keyword">in</span> m’ \\</span><br><span class="line"><span class="attribute">label2</span>=’distance <span class="keyword">in</span> m’ &amp;</span><br></pre></td></tr></table></figure>
+<p>其他二进制文件(中间文件等)也可以在文件terateXXX.dat中查看，其中XXX取决于所选择的优化方法。</p>
+</li>
+</ol>
+<h3 id="Marmousi-模型"><a href="#Marmousi-模型" class="headerlink" title="Marmousi 模型"></a>Marmousi 模型</h3><p>   这个模型是一个简单的地球物理配置，并且在几分钟内就可以运行。此模板由1个目录组成”run marmousi template “</p>
+<p>   该目录包含在模式0中运行TOY2DAC所需的文件，以便在真正的marmousi模型中计算频域数据。一旦TOY2DAC编译完成，模型可以通过以下不同的操作来运行：</p>
+<ol>
+<li><p>创建一个本地副本(以保持模板目录干净…)</p>
+</li>
+<li><p>介质的描述在”vp_Marmousi_exact,qp 和 rho“中。用户可以以ximage的形式绘制他们。例如：<strong>（这条指令官方给的不全）</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ximage &lt; vp_Marmousi_exact <span class="attribute">n1</span>=141 <span class="attribute">d1</span>=25 <span class="attribute">d2</span>=25 <span class="attribute">label1</span>=’depth <span class="keyword">in</span> m’ <span class="attribute">label2</span>=’distance <span class="keyword">in</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看输入文件后，检查文件”fdfd_input”的“vp_Marmousi_exact l qp rho”和在”toy2dac_input”文件中的“mode=0”，然后用户可以运行模型。例如：</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">mpirun</span></span> -n <span class="number">4</span> ../bin/toy2dac</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>程序结束后(在4个处理器)，“观察到的数据“存储在文件”data_modeling “中，可以用于反演。</p>
+<p>然后用户可以运行FWI程序：</p>
+</li>
+<li><p>介质的笛卡尔描述在文件”vp_Marmousi_init ,qp and rho. “中。用户可以使用ximage来绘制它们。例如:<strong>（这条指令官方给的不全）</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ximage &lt; vp_Marmousi_init <span class="attribute">n1</span>=141 <span class="attribute">d1</span>=25 <span class="attribute">d2</span>=25 <span class="attribute">label1</span>=’depth <span class="keyword">in</span> m’ <span class="attribute">label2</span>=’distance <span class="keyword">in</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看输入文件后，检查文件”fdfd_input”的“vp_Marmousi_init qp rho” ,观察到的数据文件在”fwi_input” 的第一行被设置为“data modeling”, “toy2dac_input”文件的“mode=1”,，然后用户可以运行模型。例如：</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">mpirun</span></span> -n <span class="number">4</span> ../bin/toy2dac</span><br></pre></td></tr></table></figure>
+<p> 程序结束后(在4个处理器上所用时间为几分钟)，用户可以查看最终的模型。例如：<strong>（这条指令官方给的不全）</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ximage &lt; param_vp_final <span class="attribute">n1</span>=141 <span class="attribute">d1</span>=25 <span class="attribute">d2</span>=25 <span class="attribute">label1</span>=’depth <span class="keyword">in</span> m’ \\</span><br><span class="line"><span class="attribute">label2</span>=’distance <span class="keyword">in</span> m’ &amp;</span><br></pre></td></tr></table></figure>
+<p>其他二进制文件(中间文件等)也可以在文件terateXXX.dat中查看，其中XXX取决于所选择的优化方法。</p>
+</li>
+</ol>
+<h1 id="Ubuntu设置和查看环境变量"><a href="#Ubuntu设置和查看环境变量" class="headerlink" title="Ubuntu设置和查看环境变量"></a>Ubuntu设置和查看环境变量</h1><p>查看环境变量有三个命令</p>
+<ol>
+<li><p>env</p>
+<p><code>env</code>命令是<code>environment</code>的缩写，用于列出所有的环境变量</p>
+</li>
+<li><p>export</p>
+<p>单独使用<code>export</code>命令也可以像<code>env</code>列出所有的环境变量，不过<code>export</code>命令还有其他额外的功能</p>
+</li>
+<li><p>echo $PATH</p>
+<p><code>echo $PATH</code>用于列出变量<code>PATH</code>的值，里面包含了已添加的目录</p>
+</li>
+</ol>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;basedir&gt; = /<span class="keyword">public</span>/<span class="built_in">home</span>/daizy_   <span class="keyword">or</span>   /<span class="keyword">public</span>/<span class="built_in">home</span>/pabebe/software/</span><br></pre></td></tr></table></figure>
+<h1 id="安装intel编译器"><a href="#安装intel编译器" class="headerlink" title="安装intel编译器"></a>安装intel编译器</h1><p><strong>下载网址：</strong><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fsoftware.intel.com%2Fen-us%2Fqualify-for-free-software%2Fstudent" target="_blank" rel="noopener">https://software.intel.com/en-us/qualify-for-free-software/student</a></p>
+<p><strong>安装包名：</strong>parallel_studio_xe_2020_update1_cluster_edition.tgz</p>
+<p><strong>参考：</strong><a href="https://www.jianshu.com/p/d5895e1f836f" target="_blank" rel="noopener">https://www.jianshu.com/p/d5895e1f836f</a></p>
+<p><strong>安装方法：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf parallel_studio_xe_2020_update1_cluster_edition.tgz</span><br><span class="line">cd parallel_studio_xe_2020_update1_cluster_edition_online</span><br><span class="line">./install.sh</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">在bashrc文件中添加以下三行,vim插入模式 按8再按i</span></span><br><span class="line">vim ~/.bashrc</span><br><span class="line">export PATH=&lt;basedir&gt;/intel/bin:$PATH</span><br><span class="line">export LD_LIBRARY_PATH =                  &lt;basedir&gt;/intel/compilers_and_libraries_2020.1.217/linux/compiler/lib/intel64:&lt;basedir&gt;/intel/mkl/lib/intel64:$LD_LIBRARY_PATH</span><br><span class="line">source /public/home/andaoer/intel/impi/2019.7.217/intel64/bin/mpivars.sh</span><br><span class="line"></span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd ~/software/parallel_studio_xe_2020_update1_cluster_edition_online</span><br><span class="line">./install.sh</span><br><span class="line">vim ~/.bashrc</span><br><span class="line"><span class="meta">#</span><span class="bash">我的</span></span><br><span class="line">export PATH=/public/home/pabebe/intel/bin:$PATH</span><br><span class="line">export LD_LIBRARY_PATH=            /public/home/pabebe/intel/compilers_and_libraries_2020.1.217/linux/compiler/lib/intel64:/public/home/pabebe/intel/mkl/lib/intel64:$LD_LIBRARY_PATH</span><br><span class="line">source /public/home/pabebe/intel/impi/2019.7.217/intel64/bin/mpivars.sh</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p><strong>注意事项：</strong>1.该安装包中包含了Intel MKL，icc，impi的安装，无需进行这些库的另外安装</p>
+<p>​                   2.学生可用学校邮箱申请免费安装包，申请后1~2天会收到含有激活码的邮件。</p>
+<p>​                   3.无学校邮箱也可直接下载付费安装包，可以免费试用30天</p>
+<h1 id="安装parmetis"><a href="#安装parmetis" class="headerlink" title="安装parmetis"></a>安装parmetis</h1><p><a href="httpz://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/parmetis-4.0.3.tar.gz" target="_blank" rel="noopener"><strong>下载</strong></a></p>
+<p><strong>安装包名：</strong>parmetis-4.0.3.tar.gz</p>
+<p><strong>安装方法：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf  parmetis-4.0.3.tar.gz</span><br><span class="line"></span><br><span class="line">把 &lt;basedir&gt;/parmetis-4.0.3/metis/include/metis.h 中的 IDXTYPEWIDTH 改为64（针对64位系统）</span><br><span class="line">新建文件夹parmetis403，把 &lt;basedir&gt;/parmetis-4.0.3/makefile 中</span><br><span class="line">修改-prefix=/public/home/daizy_/parmetis403（路径默认/usr/local，在超算平台会报错）</span><br><span class="line"></span><br><span class="line">make config</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">将/public/home/daizy_/parmetis403/bin添加到PATH中</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#我的</span></span><br><span class="line">cd ~<span class="regexp">/software/</span>parmetis-<span class="number">4.0</span>.<span class="number">3</span></span><br><span class="line">export PATH=<span class="regexp">/public/</span>home<span class="regexp">/pabebe/</span>software<span class="regexp">/parmetis403/</span>bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<h1 id="安装scotch"><a href="#安装scotch" class="headerlink" title="安装scotch"></a>安装scotch</h1><p><strong>下载网址：</strong><a href="https://gforge.inria.fr/projects/scotch" target="_blank" rel="noopener">https://gforge.inria.fr/projects/scotch</a></p>
+<p><strong>安装包名：</strong>scotch_6.0.9.tar.gz</p>
+<p><strong>参考：</strong><a href="https://blog.nickwhyy.top/scotch/" target="_blank" rel="noopener">https://blog.nickwhyy.top/scotch/</a></p>
+<p><strong>安装方法：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">确认编译环境</span></span><br><span class="line">make --version</span><br><span class="line">which lex</span><br><span class="line">which yacc</span><br><span class="line"></span><br><span class="line">新建文件夹scotch609,把 makefile 中修改-prefix=/public/home/daizy_/scotch609 </span><br><span class="line"><span class="meta">#</span><span class="bash"> /public/home/pabebe/software/scotch609</span></span><br><span class="line"></span><br><span class="line">cd ~/scotch_6.0.9/src</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">cd</span> ~/software/scotch_6.0.9/src</span></span><br><span class="line"><span class="meta">#</span><span class="bash">先看下Makefile.inc.x86-64_pc_linux2.icc有没有被污染</span></span><br><span class="line">ln -s Make.inc/Makefile.inc.x86-64_pc_linux2.icc Makefile.inc</span><br><span class="line"></span><br><span class="line">make scotch </span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">cd  esmumps </span><br><span class="line"></span><br><span class="line">make scotch </span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">修改Makefile.inc文件，</span><br><span class="line">添加INC=&lt;impi/include&gt;路径， /public/home/daizy_/intel/impi/2019.7.217/intel64/include</span><br><span class="line">删除CFLAGS中的-restrict，LDFLAGS中添加 -lirc   </span><br><span class="line"><span class="meta">#</span><span class="bash"> /public/home/pabebe/intel/impi/2019.7.217/intel64/include</span></span><br><span class="line"></span><br><span class="line">cd ../</span><br><span class="line">make ptscotch</span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">cd  esmumps </span><br><span class="line"></span><br><span class="line">make ptscotch</span><br><span class="line">make ptinstall</span><br></pre></td></tr></table></figure>
+<h2 id="编译scotch时的makefile-inc文件"><a href="#编译scotch时的makefile-inc文件" class="headerlink" title="编译scotch时的makefile.inc文件"></a>编译scotch时的makefile.inc文件</h2><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">EXE</span>		=</span><br><span class="line"><span class="attr">LIB</span>		= .a</span><br><span class="line"><span class="attr">OBJ</span>		= .o</span><br><span class="line"></span><br><span class="line"><span class="attr">MAKE</span>		= make</span><br><span class="line"><span class="attr">AR</span>		= ar</span><br><span class="line"><span class="attr">ARFLAGS</span>		= -ruv</span><br><span class="line"><span class="attr">CAT</span>		= cat</span><br><span class="line"><span class="attr">CCS</span>		= icc</span><br><span class="line"><span class="attr">CCP</span>		= mpicc</span><br><span class="line"><span class="attr">CCD</span>		= icc</span><br><span class="line"><span class="attr">CFLAGS</span>		= -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_PTHREAD -restrict -DIDXSIZE64</span><br><span class="line"><span class="attr">CLIBFLAGS</span>	=</span><br><span class="line"><span class="attr">LDFLAGS</span>		= -lz -lm -lrt -pthread</span><br><span class="line"><span class="attr">CP</span>		= cp</span><br><span class="line"><span class="attr">LEX</span>		= flex -Pscotchyy -olex.yy.c</span><br><span class="line"><span class="attr">LN</span>		= ln</span><br><span class="line"><span class="attr">MKDIR</span>		= mkdir -p</span><br><span class="line"><span class="attr">MV</span>		= mv</span><br><span class="line"><span class="attr">RANLIB</span>		= ranlib</span><br><span class="line"><span class="attr">YACC</span>		= bison -pscotchyy -y -b y</span><br></pre></td></tr></table></figure>
+<h2 id="编译ptscotch时的makefile-inc文件"><a href="#编译ptscotch时的makefile-inc文件" class="headerlink" title="编译ptscotch时的makefile.inc文件"></a>编译ptscotch时的makefile.inc文件</h2><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">EXE		=</span><br><span class="line">LIB		= .a</span><br><span class="line">OBJ		= .o</span><br><span class="line">INC = /public/home/pabebe/intel/impi/2019.7.217/intel164/<span class="keyword">include</span></span><br><span class="line">MAKE		= make</span><br><span class="line">AR		= ar</span><br><span class="line">ARFLAGS		= -ruv</span><br><span class="line">CAT		= cat</span><br><span class="line">CCS		= icc</span><br><span class="line">CCP		= mpicc</span><br><span class="line">CCD		= icc</span><br><span class="line">CFLAGS		= -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_PTHREAD -DIDXSIZE64</span><br><span class="line">CLIBFLAGS	=</span><br><span class="line">LDFLAGS		= -lz -lm -lrt -pthread -lirc</span><br><span class="line">CP		= cp</span><br><span class="line">LEX		= flex -Pscotchyy -olex.yy.c</span><br><span class="line">LN		= ln</span><br><span class="line">MKDIR		= mkdir -p</span><br><span class="line">MV		= mv</span><br><span class="line">RANLIB		= ranlib</span><br><span class="line">YACC		= bison -pscotchyy -y -b y</span><br></pre></td></tr></table></figure>
+<h2 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h2><p> <strong>can’t  find -lirc</strong></p>
+<p>导入他们自带的intel环境(先导杯曙光超算平台提供) <strong>最好每次都检查一下</strong></p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">load</span>  <span class="title">compiler</span>/<span class="title">intel</span>/2017.5.239 </span></span><br><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">list</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="安装MUMPS"><a href="#安装MUMPS" class="headerlink" title="安装MUMPS"></a>安装MUMPS</h1><p><strong>下载网址：</strong><a href="http://mumps.enseeiht.fr/" target="_blank" rel="noopener">http://mumps.enseeiht.fr/</a></p>
+<p><strong>安装包名：</strong>MUMPS_5.3.1.tar.gz</p>
+<p><strong>参考:</strong><a href="https://blog.csdn.net/jiangjjp2812/article/details/49632697" target="_blank" rel="noopener">https://blog.csdn.net/jiangjjp2812/article/details/49632697</a></p>
+<p>​         <a href="https://blog.csdn.net/weixin_30721899/article/details/96455694" target="_blank" rel="noopener">https://blog.csdn.net/weixin_30721899/article/details/96455694</a></p>
+<p>​         <a href="https://www.cnblogs.com/Orien/p/5920285.html" target="_blank" rel="noopener">https://www.cnblogs.com/Orien/p/5920285.html</a></p>
+<p>​         <a href="https://zhuanlan.zhihu.com/p/136580603" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/136580603</a>    </p>
+<p><strong>安装方法：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd MUMPS_5.3.1   </span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">cd</span> ~/software/MUMPS_5.3.1 </span></span><br><span class="line"><span class="meta">#</span><span class="bash">将Make.inc/Makefile.INTEL.PAR复制在MUMP_5.3.1根目录下</span></span><br><span class="line"><span class="meta">#</span><span class="bash">需要说明的是，为防止用户在不经意的情况下用cp命令破坏另一个文件，如用户指定的目标文件名已存在，用cp命令拷贝文件后，这个文件就会被新源文件覆盖，因此，建议用户在使用cp命令拷贝文件时，最好使用i选项。</span></span><br><span class="line">cp -i Make.inc/Makefile.INTEL.PAR  ./Makefile.inc</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">修改Makefile.inc中的路径</span></span><br><span class="line"></span><br><span class="line">make all lib</span><br><span class="line"><span class="meta">#</span><span class="bash">编译成功的标识-会在lib目录下生成6个库文件</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意事项：</strong>Makefile.inc中路径的修改不仅仅是网上教程的几行，所有库的路径都需要根据自己的环境进行修改，可以根据报错来检查路径是否错误。MUMPS在make过程中基本所有的错误都源于库路径不正确。如果-openmp报错，将Makefile.inc的openmp改为qopenmp</p>
+<h2 id="编译MUMPS时的makefile-inc文件"><a href="#编译MUMPS时的makefile-inc文件" class="headerlink" title="编译MUMPS时的makefile.inc文件"></a>编译MUMPS时的makefile.inc文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">  This file is part of MUMPS 5.3.1, released</span></span><br><span class="line"><span class="meta">#</span><span class="bash">  on Fri Apr 10 13:52:30 UTC 2020</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">Begin orderings</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> NOTE that PORD is distributed within MUMPS by default. It is recommended to</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> install other orderings. For that, you need to obtain the corresponding package</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> and modify the variables below accordingly.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> For example, to have Metis available within MUMPS:</span></span><br><span class="line"><span class="meta">#</span><span class="bash">          1/ download Metis and compile it</span></span><br><span class="line"><span class="meta">#</span><span class="bash">          2/ uncomment (suppress <span class="comment"># in first column) lines</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">             starting with LMETISDIR,  LMETIS</span></span><br><span class="line"><span class="meta">#</span><span class="bash">          3/ add -Dmetis <span class="keyword">in</span> line ORDERINGSF</span></span><br><span class="line"><span class="meta">#</span><span class="bash">             ORDERINGSF  = -Dpord -Dmetis</span></span><br><span class="line"><span class="meta">#</span><span class="bash">          4/ Compile and install MUMPS</span></span><br><span class="line"><span class="meta">#</span><span class="bash">             make clean; make   (to clean up previous installation)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">          Metis/ParMetis and SCOTCH/PT-SCOTCH (ver 6.0 and later) orderings are recommended.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加根路径</span></span><br><span class="line">LADIR = /public/home/pabebe/software</span><br><span class="line">topdir = $(LADIR)/MUMPS_5.3.1</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加scotch</span></span><br><span class="line">SCOTCHDIR  = $&#123;LADIR&#125;/scotch_6.0.9</span><br><span class="line">ISCOTCH    = -I$(SCOTCHDIR)/include</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> You have to choose one among the following two lines depending on</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> the <span class="built_in">type</span> of analysis you want to perform. If you want to perform only</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sequential analysis choose the first (remember to add -Dscotch <span class="keyword">in</span> the ORDERINGSF</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> variable below); <span class="keyword">for</span> both parallel and sequential analysis choose the second </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> line (remember to add -Dptscotch <span class="keyword">in</span> the ORDERINGSF variable below)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">LSCOTCH    = -L$(SCOTCHDIR)/lib -lesmumps -lscotch -lscotcherr</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加ptscotch库</span></span><br><span class="line">LSCOTCH    = -L$(SCOTCHDIR)/lib -lptesmumps -lptscotch -lptscotcherr  -lesmumps -lscotch -lscotcherr</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">LPORDDIR = $(topdir)/PORD/lib/</span><br><span class="line">IPORD    = -I$(topdir)/PORD/include/</span><br><span class="line">LPORD    = -L$(LPORDDIR) -lpord</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">LMETISDIR = /opt/metis-5.1.0/build/Linux-x86_64/libmetis</span></span><br><span class="line"><span class="meta">#</span><span class="bash">IMETIS    = /opt/metis-5.1.0/include</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> You have to choose one among the following two lines depending on</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> the <span class="built_in">type</span> of analysis you want to perform. If you want to perform only</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sequential analysis choose the first (remember to add -Dmetis <span class="keyword">in</span> the ORDERINGSF</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> variable below); <span class="keyword">for</span> both parallel and sequential analysis choose the second </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> line (remember to add -Dparmetis <span class="keyword">in</span> the ORDERINGSF variable below)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">LMETIS    = -L$(LMETISDIR) -lmetis</span></span><br><span class="line"><span class="meta">#</span><span class="bash">LMETIS    = -L$(LMETISDIR) -lparmetis -lmetis</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加parmetis库</span></span><br><span class="line">LMETIS    = -L$(LADIR)/parmetis-4.0.3/build/Linux-x86_64/libmetis -L$(LADIR)/parmetis-4.0.3/build/Linux-x86_64/libparmetis  -lparmetis -lmetis</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> The following variables will be used <span class="keyword">in</span> the compilation process.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Please note that -Dptscotch and -Dparmetis imply -Dscotch and -Dmetis respectively.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> If you want to use Metis 4.X or an older version, you should use -Dmetis4 instead of -Dmetis</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> or <span class="keyword">in</span> addition with -Dparmetis (<span class="keyword">if</span> you are using parmetis 3.X or older).</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 并行-Dptscotch and -Dparmetis </span></span><br><span class="line">ORDERINGSF = -Dscotch -Dmetis -Dpord -Dptscotch -Dparmetis</span><br><span class="line"><span class="meta">#</span><span class="bash">ORDERINGSF  = -Dpord</span></span><br><span class="line">ORDERINGSC  = $(ORDERINGSF)</span><br><span class="line"></span><br><span class="line">LORDERINGS = $(LMETIS) $(LPORD) $(LSCOTCH)</span><br><span class="line">IORDERINGSF = $(ISCOTCH)</span><br><span class="line">IORDERINGSC = $(IMETIS) $(IPORD) $(ISCOTCH)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">End orderings</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#######################################################################</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">###############################################################################</span></span></span><br><span class="line"></span><br><span class="line">PLAT    =</span><br><span class="line">LIBEXT  = .a</span><br><span class="line">OUTC    = -o </span><br><span class="line">OUTF    = -o </span><br><span class="line">RM = /bin/rm -f</span><br><span class="line">CC = mpiicc</span><br><span class="line">FC = mpiifort</span><br><span class="line">FL = mpiifort</span><br><span class="line">AR = ar vr </span><br><span class="line"><span class="meta">#</span><span class="bash">RANLIB = ranlib</span></span><br><span class="line">RANLIB  = echo</span><br><span class="line"><span class="meta">#</span><span class="bash"> Make this variable point to the path <span class="built_in">where</span> the Intel MKL library is</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> installed. It is <span class="built_in">set</span> to the default install directory <span class="keyword">for</span> Intel MKL.</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加Intel MKL</span></span><br><span class="line">MKLROOT=/public/home/pabebe/intel/mkl/lib/intel64 </span><br><span class="line">SCALAP = -L$(MKLROOT) -lmkl_scalapack_lp64 -lmkl_blacs_intelmpi_lp64</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">LAPACK = -L$(MKLROOT) -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core</span></span><br><span class="line"><span class="meta">#</span><span class="bash">LIBPAR = $(SCALAP) $(LAPACK)</span></span><br><span class="line"></span><br><span class="line">SEFTDEF= -L/public/home/pabebe/intel/compilers_and_libraries_2020.1.217/linux/mpi/intel64/lib/</span><br><span class="line">LIBPAR = $(SCALAP) $(SEFTDEF)$(LPORD) $(LMETIS) $(LSCOTCH) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">INCSEQ = -I$(topdir)/libseq</span><br><span class="line">LIBSEQ  = $(LAPACK) -L$(topdir)/libseq -lmpiseq</span><br><span class="line"></span><br><span class="line">LIBBLAS = -L$(MKLROOT) -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core </span><br><span class="line">LIBOTHERS = -lpthread</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">Preprocessor defs <span class="keyword">for</span> calling Fortran from C (-DAdd_ or -DAdd__ or -DUPPER)</span></span><br><span class="line">CDEFS   = -DAdd_</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">Begin Optimized options</span></span><br><span class="line">OPTF    = -O -nofor_main -DBLR_MT -qopenmp -DGEMMT_AVAILABLE</span><br><span class="line">OPTL    = -O -nofor_main -qopenmp</span><br><span class="line">OPTC    = -O -qopenmp</span><br><span class="line"><span class="meta">#</span><span class="bash">End Optimized options</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加INCPAR </span></span><br><span class="line">INCPAR = -I$(topdir)/include -I $(LADIR)/parmetis-4.0.3/include -I $(LADIR)/parmetis-4.0.3/metis/include</span><br><span class="line"></span><br><span class="line">INCS = $(INCPAR)</span><br><span class="line">LIBS = $(LIBPAR)</span><br><span class="line">LIBSEQNEEDED =</span><br></pre></td></tr></table></figure>
+<h2 id="bug-1"><a href="#bug-1" class="headerlink" title="bug"></a>bug</h2><p><strong>error: “METIS_ERROR” has already been declared in the current scope</strong></p>
+<p>将scotch_6.0.9/include/parmetis.h 里 第94-101注释掉，不然编译出错s</p>
+<p><strong>scotch_6.0.9/include/metis.h(90): error: identifier “SCOTCH_Num” is undefined</strong></p>
+<p>将第90行 typedef SCOTCH_Num       idx_t;修改为typedef int          idx_t;</p>
+<p><strong>/public/home/pabebe/software/scotch_6.0.9/lib/libptscotch.a(dgraph_band.o): In function <code>_SCOTCHdgraphBand2Coll&#39;:
+dgraph_band.c:(.text+0xf5): undefined reference to</code>_SCOTCHmemAllocGroup’<br>/public/home/pabebe/software/scotch_6.0.9/lib/libptscotch.a(dgraph_band.o): In function <code>_SCOTCHdgraphBand2Ptop&#39;:
+dgraph_band.c:(.text+0x7b8): undefined reference to</code>_SCOTCHmemAllocGroup’<br>/public/home/pabebe/software/scotch_6.0.9/lib/libptscotch.a(dgraph_band.o): In function `_SCOTCHdgraphBand’:</strong></p>
+<p><strong>一大堆关于scotch未定义的错</strong></p>
+<p>Make.inc 在<strong>LSCOTCH    = -L$(SCOTCHDIR)/lib -lptesmumps -lptscotch -lptscotcherr</strong> 后面添加这几个库  -lesmumps -lscotch -lscotcherr</p>
+<p><strong>ar: two different operation options specified，</strong>这个是因为多个库文件要链接时，一定要每个库文件前都有一个 -l 选项</p>
+<p><img src="/article/71a7f63d/Users/并行计算/依赖库/新建文件夹/image/MUMPS.png" alt="MUMPS"></p>
+<p><strong>提示缺少metis.h，将metis/include里的同名文件复制到MUMPS/PORD/include中</strong></p>
+<p><img src="/article/71a7f63d/Users/并行计算/依赖库/新建文件夹/image/MUMPS2.png" alt="MUMPS2"></p>
+<p><img src="/article/71a7f63d/MUMPS.png" alt="MUMPS"></p>
+<p><img src="/article/71a7f63d/MUMPS2.png" alt="MUMPS2"></p>
+<h1 id="安装TOOLBOX-OPTIMIZATION"><a href="#安装TOOLBOX-OPTIMIZATION" class="headerlink" title="安装TOOLBOX_OPTIMIZATION"></a>安装TOOLBOX_OPTIMIZATION</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd TOOLBOX_OPTIMIZATION</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">cd</span> ~/software/TOOLBOX_OPTIMIZATION</span></span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<h1 id="安装-toy2dac"><a href="#安装-toy2dac" class="headerlink" title="安装 toy2dac"></a>安装 toy2dac</h1><p><strong>下载：</strong><a href="https://seiscope2.osug.fr/TOY2DAC,82?lang=fr" target="_blank" rel="noopener">https://seiscope2.osug.fr/TOY2DAC,82?lang=fr</a></p>
+<p><strong>参考：</strong><a href="https://zhuanlan.zhihu.com/p/136580603" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/136580603</a></p>
+<p>​            <a href="http://bbs.fcode.cn/thread-1562-1-1.html" target="_blank" rel="noopener">http://bbs.fcode.cn/thread-1562-1-1.html</a></p>
+<p><strong>安装步骤：</strong></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">将<span class="params">&lt;basedir&gt;</span><span class="meta-keyword">/toy2dac/</span>src/MAKE.INC/Makefile.inc_THERA 复制到 src目录下，重命名问Makefile.inc</span><br><span class="line"></span><br><span class="line">修改Makefile,inc的所有路径：LADIR，OPTIM，SCOTCHDIR，LMUMPS，LMKL等等；将-assume -byterecl删除，否则会报错</span><br><span class="line"></span><br><span class="line">在src目录中make，可在<span class="params">&lt;basedir&gt;</span><span class="meta-keyword">/toy2dac/</span>bin目录下生成目标文件toy2dacsp</span><br></pre></td></tr></table></figure>
+<p><strong>注意事项：</strong></p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span>过程中会频繁报错，基本都是路径不正确导致，请检查路径是否正确并手动添加库文件路径。</span><br></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#我的</span></span><br><span class="line"><span class="keyword">cd</span> ~<span class="string">/software/TOY2DAC_V2.6_2019_05_24/src</span></span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<h2 id="编译toy2dac时的makefile-inc文件"><a href="#编译toy2dac时的makefile-inc文件" class="headerlink" title="编译toy2dac时的makefile.inc文件"></a>编译toy2dac时的makefile.inc文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">LADIR =  /public/home/pabebe/software</span><br><span class="line"></span><br><span class="line">OPTIM = $(LADIR)/TOOLBOX_OPTIMIZATION</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##########################################</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">   SETUP THE ARCHITECTURE </span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##########################################</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##########################################</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> structure 32 bits    nothing to <span class="keyword">do</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> structure LP64    with 32 bits <span class="built_in">integer</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> the most used environment openmpi is <span class="built_in">set</span> <span class="keyword">for</span> that</span></span><br><span class="line"></span><br><span class="line">IA=_lp64</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> structure ILP64    with 64 bits <span class="built_in">integer</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> require specific openmpi</span></span><br><span class="line"><span class="meta">#</span><span class="bash">IA=_ilp64</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##########################################</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">   SET SINGLE PRECISION(sp) VERSUS DOUBLE PRECISION(dp) CODE</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##########################################</span></span></span><br><span class="line">EXT=sp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">RM = /bin/rm -f</span><br><span class="line"></span><br><span class="line">CC = mpiicc</span><br><span class="line">FC = mpiifort</span><br><span class="line">FL = mpiifort</span><br><span class="line"></span><br><span class="line">AR = ar vr</span><br><span class="line">RANLIB  = echo</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">DOUBLE VERSUS SINGLE PRECISION LU FACTORIZATION:</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   -D_sp                   (single precision) </span></span><br><span class="line"><span class="meta">#</span><span class="bash">   -D_dp                   (double precision) </span></span><br><span class="line"></span><br><span class="line">OPT_PRE = -cpp -D_$(EXT)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">OPTIONS COMPILE</span></span><br><span class="line">OPTF =  -O3   $(OPT_PRE) # -assume byterecl  </span><br><span class="line">OPTC =  -O3  $(OPT_PRE)</span><br><span class="line">OPTL =  -O3   $(OPT_PRE) # -assume byterecl</span><br><span class="line"><span class="meta">#</span><span class="bash">OPTF =  -O3  </span></span><br><span class="line"><span class="meta">#</span><span class="bash">OPTC =  -O3  </span></span><br><span class="line"><span class="meta">#</span><span class="bash">OPTL =  -O3 </span></span><br><span class="line"><span class="meta">#</span><span class="bash">OPTF = -assume byterecl -check all -debug -g -O0 -fp-stack-check -traceback -ftrapuv -implicitnone -warn truncated_source -warn argument_checking \</span></span><br><span class="line"><span class="meta">#</span><span class="bash">-warn declarations -warn alignments -warn ignore_loc -warn usage -mcmodel=medium -shared-intel $(OPT_PRE)</span></span><br><span class="line"><span class="meta">#</span><span class="bash">OPTC = -I/usr/openwin/include  -debug all -CB -traceback</span></span><br><span class="line"><span class="meta">#</span><span class="bash">OPTL = -assume byterecl -check all -debug -g -O0 -fp-stack-check -traceback -ftrapuv -implicitnone -warn truncated_source -warn argument_checking \</span></span><br><span class="line"><span class="meta">#</span><span class="bash">-warn declarations -warn alignments -warn ignore_loc -warn usage -mcmodel=medium -shared-intel $(OPT_PRE)</span></span><br><span class="line">OPTFF = $&#123;OPTF&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">Begin orderings</span></span><br><span class="line"></span><br><span class="line">SCOTCHDIR  =  $(LADIR)/scotch_6.0.9</span><br><span class="line">ISCOTCH    = -I$(SCOTCHDIR)/include </span><br><span class="line">LSCOTCH    = -L$(SCOTCHDIR)/lib -lptesmumps -lptscotch -lptscotcherr -lesmumps -lscotch -lscotcherr</span><br><span class="line"></span><br><span class="line">topdir = $(LADIR)/MUMPS_5.3.1</span><br><span class="line">IPORD    = -I$(topdir)/PORD/include/</span><br><span class="line">LPORD    = -L$(topdir)/PORD/lib/ -lpord</span><br><span class="line"></span><br><span class="line">LMETIS    = -L$(LADIR)/parmetis-4.0.3/build/Linux-x86_64/libmetis -L$(LADIR)/parmetis-4.0.3/build/Linux-x86_64/libparmetis  -lparmetis -lmetis</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> The following variables will be used <span class="keyword">in</span> the compilation process.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Please note that -Dptscotch and -Dparmetis imply -Dscotch and -Dmetis respectively.</span></span><br><span class="line">ORDERINGSF = -Dscotch -Dmetis -Dpord -Dptscotch -Dparmetis</span><br><span class="line"><span class="meta">#</span><span class="bash">ORDERINGSF  = -Dmetis -Dpord -Dparmetis</span></span><br><span class="line">ORDERINGSC  = $(ORDERINGSF)</span><br><span class="line"></span><br><span class="line">LORDERINGS = $(LMETIS) $(LPORD) $(LSCOTCH)</span><br><span class="line">IORDERINGSF = $(ISCOTCH)</span><br><span class="line">IORDERINGSC = $(IMETIS) $(IPORD) $(ISCOTCH)</span><br><span class="line"></span><br><span class="line">LMUMPS = -L$(topdir)/lib -lcmumps  -lmumps_common</span><br><span class="line">IMUMPS = -I$(topdir)/include</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> MKL LIBRARY ... </span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">############################################################################</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">LMKL=-L $(LIBRARY_PATH) -lmkl_intel$(IA) -lmkl_intel_thread -lmkl_core -lmkl_blas95$(IA) -lmkl_scalapack$(IA) -lmkl_blacs_openmpi$(IA) -lmkl_lapack95$(IA) -lifcore -lm -openmp -lpthread</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">LMKL = -L/public/home/pabebe/intel/mkl/lib/intel64  -L/public/home/pabebe/intel/compilers_and_libraries_2020.1.217/linux/compiler/lib/intel64 -liomp5  -lmkl_intel$(IA) -lmkl_intel_thread -lmkl_core -lmkl_blas95$(IA) -lmkl_scalapack$(IA) -lmkl_blacs_intelmpi$(IA) -lmkl_lapack95$(IA) -lifcore  -qopenmp -lpthread -lm</span><br><span class="line">                  </span><br><span class="line">LOPTIM=-L $(OPTIM)/lib -lSEISCOPE_OPTIM</span><br><span class="line">IOPTIM = -I $(OPTIM)/COMMON/include</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加INCPAR </span></span><br><span class="line">INCPAR = $(IMUMPS) $(IPORD)  -I ../include  $(IOPTIM) -I $(LADIR)/parmetis-4.0.3/include -I $(LADIR)/parmetis-4.0.3/metis/include </span><br><span class="line"></span><br><span class="line">LIBPAR=$(LMUMPS) $(LPORD) $(LMETIS) $(LSCOTCH) $(LMKL) $(LOPTIM) </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">Parallel:</span></span><br><span class="line">INC = $(INCPAR)</span><br><span class="line">LIB = $(LIBPAR)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># FOR LIBRARIES BUILD-UP</span></span></span><br><span class="line">INCL = $(IMUMPS) $(IPORD)  -I ../include  $(IOPTIM) -I $(LADIR)/parmetis-4.0.3/include -I $(LADIR)/parmetis-4.0.3/metis/include</span><br></pre></td></tr></table></figure>
+<h2 id="bug-2"><a href="#bug-2" class="headerlink" title="bug"></a>bug</h2><p><img src="/article/71a7f63d/toy2dac.png" alt="toy2dac"></p>
+<p>​       gfortran 严格一些，默认情况下，不允许每行超过132列的长度。在Fortran中当程序代码中的一行超过132个字符时，至多可以有39个续行。<strong>续行标志固定为“&amp;”。</strong>当一行代码的最后一个字符为“&amp;”时，则表道示下一行与本行接续；当一行代码的第一个字符为“&amp;”时，则表示本行与上一行接续。</p>
+<p> <strong>/public/home/pabebe/software//MUMPS_5.3.1/lib/libcmumps.a(csol_aux.o): undefined reference to symbol ‘__svml_roundf4’</strong></p>
+<p>在makefile最后一行修改为</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(</span>FL)  <span class="variable">$(</span>OPTL) <span class="variable">$(</span>SUBINV) toy2dac.o <span class="variable">$(</span>LIB) -lsvml -lintlc -o <span class="variable">$(</span>BIN)/toy2dac<span class="variable">$(</span>EXT)</span><br></pre></td></tr></table></figure>
+<h1 id="安装Ximage"><a href="#安装Ximage" class="headerlink" title="安装Ximage"></a>安装Ximage</h1><p><strong>下载：</strong><a href="https://pypi.org/project/ximage/#files" target="_blank" rel="noopener">https://pypi.org/project/ximage/#files</a></p>
+<h1 id="运行toy2dac"><a href="#运行toy2dac" class="headerlink" title="运行toy2dac"></a>运行toy2dac</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 以高斯扰动模型为例</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> run_ball是对 run_ball_template的拷贝</span></span><br><span class="line">cd ~/software/TOY2DAC_V2.6_2019_05_24/run_ball</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">cd</span> ~/software/TOY2DAC_V2.6_2019_05_24/run_marmousi</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 建模</span></span><br><span class="line"></span><br><span class="line">mpirun -n 4 ../bin/toy2dacsp</span><br><span class="line"><span class="meta">#</span><span class="bash"> 反演</span></span><br></pre></td></tr></table></figure>
+<p>vp_homogeneous qp rho epsilon delta theta</p>
+<h2 id="bug-3"><a href="#bug-3" class="headerlink" title="bug"></a>bug</h2><p><img src="/article/71a7f63d/runerror.png" alt="runerror"></p>
+<p><strong>出现无法连接到intel指定库的情况。</strong></p>
+<p>intel环境没有设置好</p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">----------------  本文结束  ----------------</div>
+<br>
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>window编译并运行TOY2DAC</p>
+  <p><span>文章作者:</span>Pabebe</p>
+  <p><span>发布时间:</span>2020年07月26日 - 13:19:03</p>
+  <p><span>最后更新:</span>2020年08月10日 - 12:52:02</p>
+  <p><span>原始链接:</span><a href="/article/71a7f63d/" title="window编译并运行TOY2DAC">https://pabebezz.github.io/article/71a7f63d/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/71a7f63d/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+
+    
+</div>
+
+
+    
+
+    
+
+    
+    
+   <!-- 添加版权声明 -->
+    <div>
+    
+        
+     
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/tutorial/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;tutorial</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/article/a8446d42/" rel="next" title="Ubuntu18.04下python安装并使用Oracle19.8">
+                <i class="fa fa-chevron-left"></i> Ubuntu18.04下python安装并使用Oracle19.8
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/8a41b866/" rel="prev" title="Arachne：Core-Aware Thread Management">
+                Arachne：Core-Aware Thread Management <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Pabebe">
+            
+              <p class="site-author-name" itemprop="name">Pabebe</p>
+              <p class="site-description motion-element" itemprop="description">I have the soulful eyes of a cow</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Pabebezz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/Pabebe" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zezuwang@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二维全波形建模和反演（TOY2DAC）"><span class="nav-number">1.</span> <span class="nav-text">二维全波形建模和反演（TOY2DAC）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-背景"><span class="nav-number">1.1.</span> <span class="nav-text">1. 背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Package-include"><span class="nav-number">1.2.</span> <span class="nav-text">2. Package include</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-环境"><span class="nav-number">1.3.</span> <span class="nav-text">3. 环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-编译"><span class="nav-number">1.4.</span> <span class="nav-text">4. 编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-理论"><span class="nav-number">1.5.</span> <span class="nav-text">5. 理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-正演问题"><span class="nav-number">1.5.1.</span> <span class="nav-text">5.1 正演问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-反演问题"><span class="nav-number">1.5.2.</span> <span class="nav-text">5.2 反演问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-频域选择问题"><span class="nav-number">1.5.3.</span> <span class="nav-text">5.3 频域选择问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-频域有限差分建模引擎的输入文件"><span class="nav-number">1.6.</span> <span class="nav-text">6.频域有限差分建模引擎的输入文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-介质参数文件"><span class="nav-number">1.6.1.</span> <span class="nav-text">6.1 介质参数文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-acquisition文件"><span class="nav-number">1.6.2.</span> <span class="nav-text">6.2 acquisition文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-mumps-input-文件"><span class="nav-number">1.6.3.</span> <span class="nav-text">6.3 mumps input 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4-toy2dac-input文件"><span class="nav-number">1.6.4.</span> <span class="nav-text">6.4 toy2dac_input文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5-fdfd-input文件"><span class="nav-number">1.6.5.</span> <span class="nav-text">6.5 fdfd input文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-6-freq-management文件"><span class="nav-number">1.6.6.</span> <span class="nav-text">6.6 freq management文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7运行TOY2DAC"><span class="nav-number">1.7.</span> <span class="nav-text">7运行TOY2DAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-示例"><span class="nav-number">1.8.</span> <span class="nav-text">8.示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯扰动模型"><span class="nav-number">1.8.1.</span> <span class="nav-text">高斯扰动模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Marmousi-模型"><span class="nav-number">1.8.2.</span> <span class="nav-text">Marmousi 模型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu设置和查看环境变量"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu设置和查看环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装intel编译器"><span class="nav-number">3.</span> <span class="nav-text">安装intel编译器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装parmetis"><span class="nav-number">4.</span> <span class="nav-text">安装parmetis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装scotch"><span class="nav-number">5.</span> <span class="nav-text">安装scotch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译scotch时的makefile-inc文件"><span class="nav-number">5.1.</span> <span class="nav-text">编译scotch时的makefile.inc文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译ptscotch时的makefile-inc文件"><span class="nav-number">5.2.</span> <span class="nav-text">编译ptscotch时的makefile.inc文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bug"><span class="nav-number">5.3.</span> <span class="nav-text">bug</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装MUMPS"><span class="nav-number">6.</span> <span class="nav-text">安装MUMPS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译MUMPS时的makefile-inc文件"><span class="nav-number">6.1.</span> <span class="nav-text">编译MUMPS时的makefile.inc文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bug-1"><span class="nav-number">6.2.</span> <span class="nav-text">bug</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装TOOLBOX-OPTIMIZATION"><span class="nav-number">7.</span> <span class="nav-text">安装TOOLBOX_OPTIMIZATION</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-toy2dac"><span class="nav-number">8.</span> <span class="nav-text">安装 toy2dac</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译toy2dac时的makefile-inc文件"><span class="nav-number">8.1.</span> <span class="nav-text">编译toy2dac时的makefile.inc文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bug-2"><span class="nav-number">8.2.</span> <span class="nav-text">bug</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Ximage"><span class="nav-number">9.</span> <span class="nav-text">安装Ximage</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行toy2dac"><span class="nav-number">10.</span> <span class="nav-text">运行toy2dac</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bug-3"><span class="nav-number">10.1.</span> <span class="nav-text">bug</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pabebe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">本站总字数&#58;</span>
+    
+    <span title="本站总字数">135.2k</span> 
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+    总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+    </span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+    <span id="busuanzi_container_site_uv" style="display:none">
+    有<span id="busuanzi_value_site_uv"></span>人到访
+    </span>
+
+  
+</div>
+
+<div>
+
+</div>
+
+<!--  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div> 
+
+
+
+   <span class="post-meta-divider">|</span>
+ 
+
+ 
+ <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div> 
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+
+<!-- 页面点击出现文字 -->
+ <script type="text/javascript" src="/js/src/myLittleWits.js"></script>
+ 
+</html>

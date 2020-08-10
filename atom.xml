@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2020-07-26T09:45:05.964Z</updated>
+  <updated>2020-08-10T05:04:26.476Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Arachne：Core-Aware Thread Management</title>
+    <link href="https://pabebezz.github.io/article/8a41b866/"/>
+    <id>https://pabebezz.github.io/article/8a41b866/</id>
+    <published>2020-08-10T04:54:45.000Z</published>
+    <updated>2020-08-10T05:04:26.476Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Arachne：核心感知线程管理&quot;&gt;&lt;a href=&quot;#Arachne：核心感知线程管理&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
+    
+    
+      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>window编译并运行TOY2DAC</title>
+    <link href="https://pabebezz.github.io/article/71a7f63d/"/>
+    <id>https://pabebezz.github.io/article/71a7f63d/</id>
+    <published>2020-07-26T05:19:03.000Z</published>
+    <updated>2020-08-10T04:52:02.944Z</updated>
+    
+    <summary type="html">
+    
+      TOY2DAC有关文档以及使用
+    
+    </summary>
+    
+      <category term="window" scheme="https://pabebezz.github.io/categories/window/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu18.04下python安装并使用Oracle19.8</title>
@@ -61,7 +107,7 @@
     <link href="https://pabebezz.github.io/article/e0fdde43/"/>
     <id>https://pabebezz.github.io/article/e0fdde43/</id>
     <published>2020-07-05T02:00:51.000Z</published>
-    <updated>2020-07-05T02:24:46.351Z</updated>
+    <updated>2020-08-07T03:24:54.646Z</updated>
     
     <summary type="html">
     
@@ -203,7 +249,7 @@
     <link href="https://pabebezz.github.io/article/503fa364/"/>
     <id>https://pabebezz.github.io/article/503fa364/</id>
     <published>2020-05-19T08:02:43.000Z</published>
-    <updated>2020-07-12T11:35:44.051Z</updated>
+    <updated>2020-08-10T05:04:27.281Z</updated>
     
     <summary type="html">
     
@@ -211,6 +257,10 @@
     
     </summary>
     
+      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
+    
+    
+      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
     
   </entry>
   
@@ -375,51 +425,6 @@
     </summary>
     
       <category term="machine learning" scheme="https://pabebezz.github.io/categories/machine-learning/"/>
-    
-    
-      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>并行算法分析</title>
-    <link href="https://pabebezz.github.io/article/515eae05/"/>
-    <id>https://pabebezz.github.io/article/515eae05/</id>
-    <published>2020-02-20T12:33:43.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;并行与并发的区别&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;并行是指多个事件在同一时刻发生;&lt;/p&gt;
-&lt;p&gt;而并发是指多个事件在同一时间间隔内发生。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;分布式计算与并行计算的区别&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/article/515eae05/分布式计算与并行计算的区别.png&quot; alt=&quot;分布式计算与并行计算的区别&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Parallel Algorithm" scheme="https://pabebezz.github.io/categories/Parallel-Algorithm/"/>
-    
-    
-      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机视觉</title>
-    <link href="https://pabebezz.github.io/article/746b0d51/"/>
-    <id>https://pabebezz.github.io/article/746b0d51/</id>
-    <published>2020-02-18T11:10:06.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h1&gt;&lt;p&gt;计算机利用相机和计算能力来感知现实世界&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/article/746b0d51/相关学科.png&quot; alt=&quot;相关学科&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Computer Vision" scheme="https://pabebezz.github.io/categories/Computer-Vision/"/>
     
     
       <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
