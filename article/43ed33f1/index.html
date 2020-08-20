@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="study notes,">
+  <meta name="keywords" content="Python,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="《计算机操作系统》复习大纲 第一章 绪论   1.掌握操作系统的基本概念、主要功能、基本特征、主要类型； 2.理解分时、实时系统的原理；">
-<meta name="keywords" content="study notes">
+<meta name="description" content="类型特征one_hot编码来源:Pytorch中，将label变成one hot编码的两种方式 ​        解释TORCH.SPARSE 总结: 方法一: 先转张量,再编码 但是有个小问题,若取出一列变成张量之后怎么和原来的数据合并呢? 123456789101112import torch(1)label = np.random.randint(0,class_num,size=(batc">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="操作系统总结">
-<meta property="og:url" content="https://pabebezz.github.io/article/8ce3e425/index.html">
+<meta property="og:title" content="深度学习踩坑实录">
+<meta property="og:url" content="https://pabebezz.github.io/article/43ed33f1/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="《计算机操作系统》复习大纲 第一章 绪论   1.掌握操作系统的基本概念、主要功能、基本特征、主要类型； 2.理解分时、实时系统的原理；">
+<meta property="og:description" content="类型特征one_hot编码来源:Pytorch中，将label变成one hot编码的两种方式 ​        解释TORCH.SPARSE 总结: 方法一: 先转张量,再编码 但是有个小问题,若取出一列变成张量之后怎么和原来的数据合并呢? 123456789101112import torch(1)label = np.random.randint(0,class_num,size=(batc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-16T10:24:34.000Z">
+<meta property="og:updated_time" content="2020-08-20T07:39:45.729Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="操作系统总结">
-<meta name="twitter:description" content="《计算机操作系统》复习大纲 第一章 绪论   1.掌握操作系统的基本概念、主要功能、基本特征、主要类型； 2.理解分时、实时系统的原理；">
+<meta name="twitter:title" content="深度学习踩坑实录">
+<meta name="twitter:description" content="类型特征one_hot编码来源:Pytorch中，将label变成one hot编码的两种方式 ​        解释TORCH.SPARSE 总结: 方法一: 先转张量,再编码 但是有个小问题,若取出一列变成张量之后怎么和原来的数据合并呢? 123456789101112import torch(1)label = np.random.randint(0,class_num,size=(batc">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://pabebezz.github.io/article/8ce3e425/">
+  <link rel="canonical" href="https://pabebezz.github.io/article/43ed33f1/">
 
 
 <meta name="google-site-verification" content="skUdQN9cQrZuUJydKG0ivzB90q5kyLJMU5i5dt82GH4">
@@ -133,7 +133,7 @@
 
 
 
-  <title>操作系统总结 | Pabebe's Blog</title>
+  <title>深度学习踩坑实录 | Pabebe's Blog</title>
   
 
 
@@ -302,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/8ce3e425/">
+    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/43ed33f1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pabebe">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">操作系统总结</h1>
+          <h1 class="post-title" itemprop="name headline">深度学习踩坑实录</h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-25T12:46:41+08:00">
-                2019-12-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-20T15:34:58+08:00">
+                2020-08-20
               </time>
             
 
@@ -355,8 +355,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Computer-Operating/" itemprop="url" rel="index">
-                    <span itemprop="name">Computer Operating</span>
+                  <a href="/categories/deep-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">deep learning</span>
                   </a>
                 </span>
 
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6.4k 字
+                  533 字
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  22 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -428,106 +428,17 @@
       
 
       
-        <p><strong>《计算机操作系统》复习大纲</strong></p>
-<p><strong>第一章 绪论 
-</strong> 1.掌握操作系统的基本概念、主要功能、基本特征、主要类型；<br> 2.理解分时、实时系统的原理； </p>
-<a id="more"></a>
-<p> <strong>第二章 进程管理</strong><br> 1.掌握进程与程序的区别和关系；</p>
-<p>2.掌握进程的基本状态及其变化； </p>
-<p>3.掌握进程控制块的作用； </p>
-<p>4.掌握进程的同步与互斥； </p>
-<p>5.掌握多道程序设计概念； </p>
-<p>6.掌握临界资源、临界区、掌握信号量，PV操作的动作； </p>
-<p><strong>第三章 处理机调度</strong><br> 1.掌握作业调度和进程调度的功能； </p>
-<p>2.掌握简单的调度算法：先来先服务法、时间片轮转法、优先级法；<br> 3.掌握评价调度算法的指标：吞吐量、周转时间、平均周转时间、带权周转时间和平均带权周转时间；<br> 4.掌握死锁；产生死锁的必要条件；死锁预防的基本思想和可行的解决办法； 5.掌握进程的安全序列，死锁与安全序列的关系； </p>
-<p> <strong>第四章 存储器管理</strong></p>
-<p>1.掌握用户程序的主要处理阶段； </p>
-<p>2.掌握存储器管理的功能；有关地址、重定位、虚拟存储器、分页、分段等概念； </p>
-<p>3.掌握分页存储管理技术的实现思想； </p>
-<p>4.掌握分段存储管理技术的实现思想； </p>
-<p>5.掌握页面置换算法。 </p>
-<p> <strong>第五章 设备管理</strong><br> 1.掌握设备管理功能； </p>
-<p>2.掌握常用设备分配技术； </p>
-<p>3.掌握使用缓冲技术的目的； </p>
-<p> <strong>第六章 文件管理</strong><br> 1.掌握文件、文件系统的概念、文件的逻辑组织和物理组织的概念；<br> 2.掌握目录和目录结构；路径名和文件链接；<br> 3.掌握文件的存取控制；对文件和目录的主要操作 </p>
-<p> <strong>第七章 操作系统接口</strong> </p>
-<p>1.掌握操作系统接口的种类；<br> 2.掌握系统调用的概念、类型和实施过程。 </p>
-<p> <strong>计算机操作系统复习知识点汇总</strong></p>
-<p><strong>第一章</strong><br> <strong>1</strong>、操作系统的定义、目标、作用<br> 操作系统是配置在计算机硬件上的第一层软件，是对硬件系统的首次扩充。 设计现代OS的主要目标是：方便性，有效性，可扩充性和开放性. OS的作用可表现为：<br> a. OS作为用户与计算机硬件系统之间的接口；（一般用户的观点）</p>
-<p>b. OS作为计算机系统资源的管理者；（资源管理的观点） </p>
-<p>c. OS实现了对计算机资源的抽象.<br> <strong>2</strong>、脱机输入输出方式和SPOOLing系统（假脱机或联机输入输出方式）的联系和区别<strong><br> 脱机输入输出技术Off-Line I/O是为了解决人机矛盾及CPU的高速性和I/O设备低速性间的矛盾而提出的.它减少了CPU的空闲等待时间，提高了I/O速度. 由于程序和数据的输入和输出都是在外围机的控制下完成的，或者说，它们是在脱离主机的情况下进行的，故称为脱机输入输出方式；反之，在主机的直接控制下进行输入输出的方式称为联机（SPOOLing）输入输出方式 假脱机输入输出技术也提高了I/O的速度，同时还将独占设备改造为共享设备，实现了虚拟设备功能。 
- </strong>3<strong>、多道批处理系统需要解决的问题<br> 处理机管理问题、内存管理问题、I/O设备管理问题、文件管理问题、作业管理问题 
- </strong>4**、OS具有哪几个基本特征?它的最基本特征是什么?<br> a. 并发性Concurrence,共享性Sharing,虚拟性Virtual,异步性Asynchronism. </p>
-<p>b. 其中最基本特征是并发和共享.<br> c. 并发特征是操作系统最重要的特征，其它三个特征都是以并发特征为前提的。 </p>
-<p><strong>5、并行和并发</strong><br> 并行性和并发性是既相似又有区别的两个概念，</p>
-<p>并行性是指两个或多个事件在同一时刻发生；</p>
-<p>而并发性是指两个或多少个事件在同一时间间隔内发生。 </p>
-<p><strong>6、操作系统的主要功能，各主要功能下的扩充功能</strong> </p>
-<p>a. 处理机管理功能： 进程控制，进程同步，进程通信和调度. </p>
-<p>b. 存储管理功能： 内存分配，内存保护，地址映像和内存扩充等</p>
-<p>c. 设备管理功能：缓冲管理，设备分配和设备处理，以及虚拟设备等 </p>
-<p>d. 文件管理功能：对文件存储空间的管理，目录管理，文件的读，写管理以及共享和保护<br> <strong>7、操作系统与用户之间的接口 </strong> </p>
-<p>a. 用户接口：它是提供给用户使用的接口，用户可通过该接口取得操作系统的服务<br> b. 程序接口：它是提供给程序员在编程时使用的接口，是用户程序取得操作系统服务的唯一途径。 </p>
-<p><strong>第二章<br> 1、进程的定义、特征，进程实体的组成</strong><br> 进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位。 进程具有结构特征、动态性、并发性、独立性和异步性。 进程实体由程序段、相关的数据段和PCB三部分构成。 </p>
-<p><strong>2、进程的三种基本状态及其转换</strong><br> 运行中的进程可能具有就绪状态、执行状态、阻塞状态三个基本状态。 进程三个基本状态转换图— P38<br> <strong>3**</strong>、引入挂起状态的原因，具有挂起状态的进程转换**</p>
-<p> a. 终端用户的请求 b. 父进程请求 c. 负荷调节的需要 d. 操作系统的需要<br> 具有挂起状态的进程转换图— P39 </p>
-<p><strong>4、创建进程的主要步骤</strong><br> a. 为一个新进程创建PCB，并填写必要的管理信息。 b. 把该进程转入就绪状态并插入就绪队列之中。 </p>
-<p><strong>5、进程控制块（PCB）的作用 
-</strong> PCB是进程实体的一部分，是操作系统中最重要的记录型数据结构。PCB中记录了操作系统所需的用于描述进程情况及控制进程运行所需的全部信息。因而它的作用是使一个在多道程序环境下不能独立运行的程序含数据，成为一个能独立运行的基本单位，一个能和其它进程并发执行的进程。 为什么说PCB是进程存在的唯一标志?<br> 在进程的整个生命周期中，系统总是通过其PCB对进程进行控制，系统是根据进程的PCB而不是任何别的什么而感知到该进程的存在的，所以说，PCB是进程存在的唯一标志。</p>
-<p><strong>6、进程控制块的组织方式</strong></p>
-<p>链接方式、索引方式<br> <strong>7</strong>、原语的定义、组成、作用<br> 原语是由若干条指令组成的，用于完成一定功能的一个过程，与一般过程的区别在于：它们是“原子操作”，它是一个不可分割的基本单位，在执行过程中不允许中断。原子操作在管态下执行，常驻内存。<br> 原语的作用是为了实现进程的通信和控制，系统对进程的控制如不使用原语，就会造成其状态的不稳定性，从而达不到进程控制的目的。 </p>
-<p><strong>8、引起创建进程的事件</strong><br> 用户登录、作业调度、提供服务、应用请求 </p>
-<p><strong>9、引起进程终止的事件</strong><br> 正常结束、异常结束、外界干预 </p>
-<p><strong>10、引起进程阻塞和唤醒的事件</strong><br> 请求系统服务、启动某些操作、新数据尚未到达、无新工作可做<br> <strong>11</strong>、临界资源和临界区<br> 临界资源是指每次仅允许一个进程访问的资源。<br> 属于临界资源的硬件有打印机、磁带机等,软件有消息缓冲队列、变量、数组、缓冲区等。 诸进程间应采取互斥方式，实现对这种资源的共享。<br> 每个进程中访问临界资源的那段程序称为临界区（Critical Section）不论是硬件临界资源，还是软件临界资源，多个进程必须互斥地对它进行访问。 </p>
-<p><strong>12、同步机制应遵循的规则 
-</strong> 空闲让进、忙则等待、有限等待、让权等待 </p>
-<p><strong>13、进程通信的类型</strong><br> 高级通信机制可归结为三类：共享内存系统、消息传递系统以及管道通信系统。<br> <strong>14</strong>、线程的定义、属性<br>在多线程OS中，通常是在一个进程中包含多个线程，每个线程都是作为利用CPU的基本单位，是花费最小开销的实体。 线程具有下述属性：（1）轻型实体—线程中的实体基本上不拥有系统资源，只是有一点必不可少的、能保证其独立运行的资源。 （2）独立调度和分派的基本单位 （3）可并发执行。（4）共享进程资源。 </p>
-<p><strong>15、进程和线程的比较</strong><br> a. 调度性。在传统的操作系统中，拥有资源的基本单位和独立调度、分派的基本单位都是进程，在引入线程的OS中，则把线程作为调度和分派的基本单位，而把进程作为资源拥有的基本单位；<br> b. 并发性。在引入线程的OS中，不仅进程之间可以并发执行，而且在一个进程中的多个线程之间，亦可并发执行，因而使OS具有更好的并发性；<br> c. 拥有资源。无论是传统的操作系统，还是引入了线程的操作系统，进程始终是拥有资源的一个基本单位，而线程除了拥有一点在运行时必不可少的资源外，本身基本不拥有系统资源，但它可以访问其隶属进程的资源；<br> d. 系统开销。由于创建或撤销进程时，系统都要为之分配和回收资源，如内存空间等，进程切换时所要保存和设置的现场信息也要明显地多于线程，因此，操作系统在创建、撤销和切换进程时所付出的开销将显著地大于线程。 </p>
-<p> <strong>第三章</strong><br> <strong>1</strong>、高级调度与低级调度的区别<br> 高级调度又称为作业调度或长程调度，调度对象是作业，作业调度往往发生于一个（批）作业运行完毕，退出系统，而需要重新调入一个（批）作业进入内存时，故作业调度的周期长；低级调度又称为进程调度和短程调度，调度物件为进程（或内核级线程），进程调度的运行频率最高，是最基本的一种调度，多道批处理、分时、实时三类OS中必须配置这种调度。<br> 引入中级调度的主要目的：是为了提高系统资源的利用率和系统吞吐量 </p>
-<p><strong>2、低级调度的功能 
-</strong> 保存处理机的现场信息、按某种算法选取进程、把处理器分配给进程 </p>
-<p><strong>3、进程调度方式 
-</strong> （1）非抢占方式—实现简单、系统开销小、适用于大多数的批处理系统环境 （2）抢占方式——原则：优先权原则、短作业（进程）优先原则、时间片原则<br> <strong>4</strong>、同时具有三级调度的调度队列模型<br>当在OS中引入中级调度后，人们可把进程的就绪状态分为内存就绪和外存就绪，类似的阻塞状态也可以同样划分。</p>
-<p> <strong>5、三大调度算法 
-</strong> 在ＯＳ中调度实质是一种资源的分配。<br> 先来先服务和短作业（进程）优先调度算法、高优先权优先调度算法、基于时间片的轮转调度算法。</p>
-<p> <strong>6**</strong>、高响应比优先调度算法<strong><br> 优先权＝等待时间＋要求服务时间＼要求服务时间<br> 响应比＝等待时间＋要求服务时间＼要求服务时间＝响应时间＼要求服务时间 
- </strong>7<strong>**、最低松弛度优先调度算法即LLF算法</strong><br> 该算法是根据任务紧急（或松弛）的程度，来确定任务的优先级。涉及到计算题，参照课本Ｐ１０２仔细研究。<br> <strong>8**</strong>、何谓死锁？产生死锁的原因和必要条件是什么？<br><strong> a.死锁是指多个进程因竞争资源而造成的一种僵局，若无外力作用，这些进程都将永远不能再向前推进；<br> b.产生死锁的原因有二，一是竞争资源，二是进程推进顺序非法；<br> c.必要条件是: 互斥条件，请求和保持条件，不剥夺条件和环路等待条件。 </strong>9、处理死锁的基本方法<br>** （１）预防死锁—破坏产生死锁的四个必要条件中的一个或几个条件 </p>
-<p>（２）避免死锁—破坏产生死锁的四个必要条件<br> （３）检测死锁—通过系统设置的检测机构，及时检测出死锁的发生 </p>
-<p>（４）解除死锁—撤销或挂起一些进程 </p>
-<p><strong>10、预防死锁的方法 
-</strong> a.摒弃”请求和保持”条件 b.摒弃”不剥夺”条件 c.摒弃”环路等待”条件<br> <strong>11 解除死锁</strong><br> a资源剥夺法，b撤销进程 </p>
-<p> <strong>第四章<br> 1、存储器按存储量、速度怎么划分？ 
-</strong> 对于通用计算机而言，存储层次至少应具有三级：最高层为CPU寄存器、中间为主存、最底层为辅存，较高档点的根据具体功能还可细分为：寄存器；高速缓存、主存储器、磁盘缓存；固定硬盘、可移动存储介质等6层。 主存储器（简称内存或主存）：容量一般为数十MB到数GB，其访问速度远低于CPU执行指令的速度。为此引入寄存器和高速缓存，寄存器访问速度最快，价格昂贵，容量不大；高速缓存容量大于或远大于寄存器，从几十KB到几十MB，访问速度快于主存储器。 </p>
-<p><strong>2、程序的装入方式</strong><br> 绝对装入方式、可重定位装入方式、动态运行时装入方式 </p>
-<p><strong>3、程序的链接方式分类 
-</strong> 静态链接、装入时动态链接、运行时动态链接<br> <strong>4**</strong>、对换的定义、分类、实现<br>** 对换是把内存中暂时不能运行的进程或者暂时不用的程序和数据调到外存上，以便腾出足够的内存空间，再把已具备运行条件的进程或进程所需要的程序和数据调入内存。<br> 以整个进程为单位，称为“整体对换”或“进程对换”；以“页”或“段”为单位，分别称为“页面对换”和“分段对换”，又称为“部分对换”<br> 为了实现进程对换，系统必须能实现三方面的功能：对换空间的管理、进程的换出，以及进程的换入。 </p>
-<p><strong>5、页面与页表</strong><br> 分页存储管理是将一个进程的逻辑地址空间分成若干个大小相等的片，称为页面或页<br> 由于进程的最后一页经常装不满一块而形成不可利用的碎片，称为“页内碎片”。<br> 系统为每个进程建立一张页面映像表，简称页表。页表的作用是实现从页号到物理块号的地址映射。<br> <strong>6**</strong>、分页系统的地址变换机构<br>** 涉及到图形，分别是P132和P133 </p>
-<p><strong>7、分段存储管理方式的引入原因</strong><br> 引入分段存储管理方式，主要是为了满足用户和程序员的一些需要： 方便编程、信息共享、信息保护、动态增长、动态链接 </p>
-<p><strong>8、分段系统的基本原理</strong><br> 在分段存储管理方式中，作业的地址空间被划分为若干个（二维）段，每个段定义了一组逻辑信息，逻辑地址由段号和段内地址组成。每个段在表中占有一个表项，其中记录了该段在内存中的起始地址（又称为“基址”）。段表是用于实现从逻辑段到物理内存区的映射。 </p>
-<p><strong>9、分段和分页的主要区别</strong><br> a. 分页和分段都采用离散分配的方式，且都要通过地址映射机构来实现地址变换，这是它们的共同点；<br> b. 对于它们的不同点有三，第一，从功能上看，页是信息的物理单位，分页是为实现离散分配方式，以消减内存的外零头，提高内存的利用率，即满足系统管理的需要，而不是用户的需要；而段是信息的逻辑单位，它含有一组其意义相对完整的信息，目的是为了能更好地满足用户的需要；<br> c. 页的大小固定且由系统确定，而段的长度却不固定，决定于用户所编写的程序；<br> d. 分页的作业地址空间是一维的，而分段的作业地址空间是二维的. </p>
-<p><strong>10、虚拟存储器的特征及其内部关联 
-</strong> a. 虚拟存储器具有多次性，对换性和虚拟性三大主要特征；<br> b. 其中所表现出来的最重要的特征是虚拟性，它是以多次性和对换性为基础的，而多次性和对换性又必须建立在离散分配的基础上。 </p>
-<p><strong>11、最佳置换算法和先进先出置换算法 
-</strong> 涉及到关键的作图和计算答题，参照课本P150 </p>
-<p><strong>12、最近最久未使用（ＬＲＵ）置换算法</strong></p>
-<p><strong>13、请求分段系统的地址变换过程 </strong> 涉及到关键的考试内容，请参考课本P156 图4-33仔细研究<br> <strong>14、分段保护 </strong> </p>
-<p>采取以下措施保证信息安全：越界检查、存取控制检查、环保护机构 </p>
-<p><strong>第五章<br> １、I/O设备按使用特性、传输速率、信息变换、共享属性如何分类 
-</strong> 按设备的使用特性分类：存储设备（又称外存、后备存储器、辅助存储器）；输入输出设备（又可具体划分：输入设备（键盘、鼠标、扫描仪、视频摄像、各类传感器）、输出设备（打印机、绘图仪、显示器、数字视频显示设备、音响输出设备）、交互式设备）<br> 按传输速率分类：低速设备（键盘、鼠标、语音的输入输出设备）；中速设备（行式打印机、激光打印机）；高速设备（磁带机、磁盘机、光盘机）。<br> 按信息交换的单位分类：块设备（磁盘）；字符设备（交互式终端、打印机） 按设备的共享属性分类：独占设备；共享设备（磁盘）；虚拟设备 </p>
-<p><strong>2、设备控制器的组成 
-</strong> 设备控制器由以下三部分组成：（1）设备控制器与处理机的接口，该接口用于实现CPU与设备控制器之间的通信，提供有三类信号线：数据线、地址线和控制线。（2）设备控制器与设备的接口，可以有一个或多个接口，且每个接口连接一台设备。每个接口都存在数据、控制和状态三种类型的信号。（3）I/O逻辑，用于实现对设备的控制。其通过一组控制线与处理机交互，处理机利用该逻辑向控制器发送I/O命令，I/O逻辑对收到的命令进行译码。 </p>
-<p><strong>3、I/O通道设备如何引入 
-</strong> 虽然在ＣＰＵ和I/O设备之间增加了设备控制器后，已能大大减少CPU对I/O的干预，但当主机配置的外设很多时，CPU的负担仍然很重，为此，在ＣＰＵ和设备控制器之间又增设了通道。<br> I/O通道是一种特殊的处理机，它具有执行I/O指令的能力，并通过执行通道（I/O）程序来控制I/O操作。<br> <strong>4**</strong>、有哪几种I/O控制方式？各适用于何种场合？**<br> I/O控制方式：程序I/O方式、中断驱动I/O控制方式、DMAI/O控制方式、I/O通道控制方式。程序I/O方式适用于早期的计算机系统中，并且是无中断的计算机系统；中断驱动I/O控制方式是普遍用于现代的计算机系统中；DMA I/O控制方式适用于I/O设备为块设备时在和主机进行数据交换的一种I/O控制方式；当I/O设备和主机进行数据交换是一组数据块时通常采用I/O通道控制方式，但此时要求系统必须配置相应的通道及通道控制器。 </p>
-<p><strong>5、DMA控制器的组成 
-</strong> DMA控制器由三部分组成：主机与DMA控制器的接口、DMA控制器与块设备的接口、I/O控制逻辑。<br> <strong>6**</strong>、为了实现主机与控制器之间成块数据的直接交换，需设置ＤＭＡ控制器中四类寄存器<strong><br> DR：数据寄存器，暂存从设备到内存或从内存到设备的数据 MAR：内存地址寄存器<br> DC：数据计数器，存放本次CPU要读或写的字（节）数<br> CR：命令\状态寄存器，接收从CPU发来的I/O命令，或相关控制信息，或设备状态 
- </strong>7<strong>**、缓冲的引入原因</strong><br> 操作系统引入缓冲机制的主要原因可归结为以下几点：（1）缓和CPU与I/O设备间速度不匹配的矛盾；（2）减少对CPU的中断频率，放宽对中断响应时间的限制；（3）提高CPU与I/O设备之间的并行性。 </p>
-<p><strong>8、缓冲池的组成、工作方式</strong><br> 三个队列：空缓冲队列、输入队列、输出队列 四种工作缓冲区：（1）用于收容输入数据的工作缓冲区；（2）用于提取输入数据的工作缓冲区；（3）用于收容输出数据的工作缓冲区；（2）用于提取输出数据的工作缓冲区；<br> 缓冲区工作方式参照图P176 图5—15<br> <strong>9**</strong>、SPOLLing系统的定义、组成、特点<br>** SPOOLing系统是对脱机I/O工作的模拟，其必须有高速随机外存（通常采用磁盘）的支持。SPOOLing系统主要有以下四个部分：<br> （1）输入井和输出井，为磁盘上开辟的两大存储空间，分别模拟脱机输入/出时的磁盘，并用于收容I/O设备输入的数据和用户程序的输出数据；<br> （2）输入缓冲区和输出缓冲区，在内存中开辟，分别用于暂存由输入设备和输出井送来的数据；<br> （3）输入进程SPi和输出进程SPo，分别模拟脱机输入/出时的外围控制机，用于控制I/O过程；<br> （4）I/O请求队列，由系统为各个I/O请求进程建立的I/O请求表构成的队列。 SPOLLing系统的特点：提高了I/O的速度；将独占设备改造为共享设备；实现了虚拟设备功能。 </p>
-<p> <strong>第六章<br> 1、文件的定义、属性</strong><br> 文件是指由创建者所定义的、具有文件名的一组相关信息的集合，可分为有机构文件和无结构文件。<br> 文件的属性包括：文件类型、文件长度、文件的物理位置、文件的建立时间 <strong>2、文件类型按用途、文件中数据的形式、存取控制属性、组织形式和处理方式如何划分？</strong><br> 按用途分类：系统文件、用户文件、库文件<br> 按文件中数据的形式分类：源文件、目标文件、可执行文件 </p>
-<p>按存取控制属性分类：只执行文件、只读文件、读写文件<br> 按组织形式和处理方式划分：普通文件、目录文件、特殊文件 </p>
-<p><strong>3、有结构文件按不同方式组织形成哪几种文件？</strong></p>
-<p> 顺序文件、索引文件、索引顺序文件 </p>
-<p><strong>4、顺序文件的适用场合、优缺点 
-</strong> 最佳适用场合是在对诸记录进行批量存取时。<br> 批量存取时对顺序文件的存取速率是所有逻辑文件中最高的；只有顺序文件能存储在磁带上，并能有效地工作。<br> 在交互应用场合，顺序文件表现出来的性能很差；如果想增加或删除一个记录都比较困难。<br> <strong>5</strong>、<strong>对目录管理的要求有哪些？</strong><br> 对文件目录的管理有以下要求：<br> a 实现“按名存取” b 提高对目录的检索速度 c 文件共享 d 允许文件重名 </p>
+        <h1 id="类型特征one-hot编码"><a href="#类型特征one-hot编码" class="headerlink" title="类型特征one_hot编码"></a>类型特征one_hot编码</h1><p>来源:<a href="https://blog.csdn.net/qq_34914551/article/details/88700334#commentBox" target="_blank" rel="noopener">Pytorch中，将label变成one hot编码的两种方式</a></p>
+<p>​        <a href="https://zhuanlan.zhihu.com/p/76890808" target="_blank" rel="noopener">解释TORCH.SPARSE</a></p>
+<p>总结:</p>
+<p>方法一: 先转张量,再编码</p>
+<p><strong>但是有个小问题,若取出一列变成张量之后怎么和原来的数据合并呢?</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">(<span class="number">1</span>)</span><br><span class="line">label = np.random.randint(<span class="number">0</span>,class_num,size=(batch_size,<span class="number">1</span>))</span><br><span class="line">label = torch.LongTensor(label)</span><br><span class="line">y_one_hot =torch.zeros(batch_size,class_num).scatter_(<span class="number">1</span>,label,<span class="number">1</span>)</span><br><span class="line">print(y_one_hot)</span><br><span class="line"></span><br><span class="line">(<span class="number">2</span>)</span><br><span class="line"> ones = torch.sparse.torch.eye(class_num)</span><br><span class="line"> <span class="keyword">return</span> ones.index_select(<span class="number">0</span>,label)</span><br><span class="line"></span><br><span class="line">二维标签先转成向量形式,再one-hot编码,最后转回二维</span><br></pre></td></tr></table></figure>
+<p>方法一: 先编码,再转张量</p>
+<p>利用<code>np.hstack</code>合并</p>
+<p><code>data = data.reindex(columns=new_col, fill_value=onehot_encoded)</code>不知道fill_value到底需要什么类型…反正ndarrary不行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 完整示例</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line"><span class="comment"># 类别</span></span><br><span class="line">data = [<span class="string">'cold'</span>, <span class="string">'cold'</span>, <span class="string">'warm'</span>, <span class="string">'cold'</span>, <span class="string">'hot'</span>, <span class="string">'hot'</span>, <span class="string">'warm'</span>, <span class="string">'cold'</span>, <span class="string">'warm'</span>, <span class="string">'hot'</span>]</span><br><span class="line">values = array(data)</span><br><span class="line">print(values)</span><br><span class="line"><span class="comment"># integer encode</span></span><br><span class="line">label_encoder = preprocessing.LabelEncoder()</span><br><span class="line">integer_encoded = label_encoder.fit_transform(values)</span><br><span class="line">print(integer_encoded)</span><br><span class="line"><span class="comment"># binary encode</span></span><br><span class="line">onehot_encoder = preprocessing.OneHotEncoder(sparse=<span class="literal">False</span>)</span><br><span class="line">integer_encoded = integer_encoded.reshape(len(integer_encoded), <span class="number">1</span>)</span><br><span class="line">onehot_encoded = onehot_encoder.fit_transform(integer_encoded)</span><br><span class="line">print(onehot_encoded)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 个人运用</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dataPre</span><span class="params">()</span>:</span></span><br><span class="line">    data = pd.read_csv(<span class="string">'18_19_各类销量.csv'</span>)</span><br><span class="line">    <span class="comment"># print(data)</span></span><br><span class="line">    data = data[[<span class="string">'类型'</span>, <span class="string">'标价'</span>, <span class="string">'折扣'</span>, <span class="string">'库存'</span>, <span class="string">'销量'</span>]]</span><br><span class="line">    class_data = data[<span class="string">'类型'</span>]</span><br><span class="line">    values = np.array(class_data)</span><br><span class="line">    <span class="comment"># print(values)</span></span><br><span class="line">    <span class="comment"># integer encode</span></span><br><span class="line">    label_encoder = preprocessing.LabelEncoder()</span><br><span class="line">    integer_encoded = label_encoder.fit_transform(values)</span><br><span class="line">    <span class="comment"># print(integer_encoded)</span></span><br><span class="line">    <span class="comment"># binary encode</span></span><br><span class="line">    onehot_encoder = preprocessing.OneHotEncoder(sparse=<span class="literal">False</span>)</span><br><span class="line">    integer_encoded = integer_encoded.reshape(len(integer_encoded), <span class="number">1</span>)</span><br><span class="line">    onehot_encoded = onehot_encoder.fit_transform(integer_encoded)</span><br><span class="line">    <span class="comment"># print(onehot_encoded)</span></span><br><span class="line">    <span class="comment"># onehot_dataframe = pd.DataFrame(onehot_encoded, index=None)</span></span><br><span class="line">    <span class="comment"># print(onehot_dataframe)</span></span><br><span class="line">    <span class="comment"># onehot_dataframe.rename(columns=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'])</span></span><br><span class="line">    data = data.drop(columns=<span class="string">'类型'</span>, axis=<span class="number">1</span>)</span><br><span class="line">    <span class="comment"># print('f', data)</span></span><br><span class="line">    <span class="comment"># new_col = ['类型', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '标价', '折扣', '库存', '销量']</span></span><br><span class="line">    <span class="comment"># print(new_col)</span></span><br><span class="line">    <span class="comment"># data = data.reindex(columns=new_col, fill_value=0)</span></span><br><span class="line">    <span class="comment"># data = data.reindex(columns=new_col, fill_value=onehot_encoded)</span></span><br><span class="line">    <span class="comment"># print(data)</span></span><br><span class="line">    <span class="comment"># 转成narrary合并编码与原数据集</span></span><br><span class="line">    data = np.hstack((integer_encoded, data))</span><br><span class="line">    <span class="comment"># data = np.hstack((onehot_encoded, data))</span></span><br><span class="line">    <span class="comment"># data = pd.merge(data, onehot_dataframe, on='9')</span></span><br><span class="line">    print(data)</span><br><span class="line">    dataFrame = pd.DataFrame(data)</span><br><span class="line">    dataFrame.to_csv(<span class="string">'here.csv'</span>)</span><br><span class="line"></span><br><span class="line">    X = []</span><br><span class="line">    Y = []</span><br><span class="line">    <span class="comment">#     for i in range(data.shape[0] - sequence):</span></span><br><span class="line">    <span class="comment">#         X.append(np.array(data.iloc[i:(i + sequence), 0:4], dtype=np.float32))</span></span><br><span class="line">    <span class="comment">#         Y.append(np.array(data.iloc[(i + sequence), 4], dtype=np.float32))</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(data.shape[<span class="number">0</span>] - sequence):</span><br><span class="line">        <span class="comment"># print(data[i:(i + sequence), 0:12])</span></span><br><span class="line">        X.append(np.array(data[i:(i + sequence), :<span class="number">4</span>], dtype=np.float32))</span><br><span class="line">        Y.append(np.array(data[(i + sequence), <span class="number">4</span>], dtype=np.float32))</span><br><span class="line">    <span class="comment"># print(X[0])</span></span><br><span class="line">    <span class="comment"># print(Y[0])</span></span><br><span class="line"></span><br><span class="line">    total_len = len(X)</span><br><span class="line">    train_x, train_y = X[:int(<span class="number">0.7</span> * total_len)], Y[:int(<span class="number">0.7</span> * total_len)]</span><br><span class="line">    test_x, test_y = X[int(<span class="number">0.7</span> * total_len):], Y[int(<span class="number">0.7</span> * total_len):]</span><br><span class="line">    train_loader = DataLoader(dataset=Mydataset(train_x, train_y, transform=transforms.ToTensor()),</span><br><span class="line">                              batch_size=batch_size,</span><br><span class="line">                              )</span><br><span class="line">    test_loader = DataLoader(dataset=Mydataset(test_x, test_y), batch_size=batch_size, )</span><br><span class="line">    <span class="keyword">return</span> train_loader, test_loader</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -548,12 +459,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>操作系统总结</p>
+  <p><span>本文标题:</span>深度学习踩坑实录</p>
   <p><span>文章作者:</span>Pabebe</p>
-  <p><span>发布时间:</span>2019年12月25日 - 12:46:41</p>
-  <p><span>最后更新:</span>2020年06月16日 - 18:24:34</p>
-  <p><span>原始链接:</span><a href="/article/8ce3e425/" title="操作系统总结">https://pabebezz.github.io/article/8ce3e425/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/8ce3e425/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2020年08月20日 - 15:34:58</p>
+  <p><span>最后更新:</span>2020年08月20日 - 15:39:45</p>
+  <p><span>原始链接:</span><a href="/article/43ed33f1/" title="深度学习踩坑实录">https://pabebezz.github.io/article/43ed33f1/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/43ed33f1/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -594,7 +505,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/study-notes/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;study notes</a>
+            <a href="/tags/Python/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;Python</a>
           
         </div>
       
@@ -607,8 +518,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/article/2a1314f5/" rel="next" title="英语笔试笔记">
-                <i class="fa fa-chevron-left"></i> 英语笔试笔记
+              <a href="/article/8a41b866/" rel="next" title="Arachne：Core-Aware Thread Management">
+                <i class="fa fa-chevron-left"></i> Arachne：Core-Aware Thread Management
               </a>
             
           </div>
@@ -616,10 +527,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/article/cb8609cd/" rel="prev" title="英文摘要写作">
-                英文摘要写作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -671,8 +578,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -777,6 +693,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类型特征one-hot编码"><span class="nav-number">1.</span> <span class="nav-text">类型特征one_hot编码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

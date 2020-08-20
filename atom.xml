@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2020-08-10T05:05:00.935Z</updated>
+  <updated>2020-08-20T07:39:45.729Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深度学习踩坑实录</title>
+    <link href="https://pabebezz.github.io/article/43ed33f1/"/>
+    <id>https://pabebezz.github.io/article/43ed33f1/</id>
+    <published>2020-08-20T07:34:58.000Z</published>
+    <updated>2020-08-20T07:39:45.729Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;类型特征one-hot编码&quot;&gt;&lt;a href=&quot;#类型特征one-hot编码&quot; class=&quot;headerlink&quot; title=&quot;类型特征one_hot编码&quot;&gt;&lt;/a&gt;类型特征one_hot编码&lt;/h1&gt;&lt;p&gt;来源:&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
+    
+    
+      <category term="Python" scheme="https://pabebezz.github.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Arachne：Core-Aware Thread Management</title>
@@ -87,7 +113,7 @@
     <link href="https://pabebezz.github.io/article/e58acc82/"/>
     <id>https://pabebezz.github.io/article/e58acc82/</id>
     <published>2020-07-15T09:41:54.000Z</published>
-    <updated>2020-08-15T04:00:19.322Z</updated>
+    <updated>2020-08-16T11:53:12.347Z</updated>
     
     <summary type="html">
     
@@ -209,7 +235,7 @@
     <link href="https://pabebezz.github.io/article/acdf71cc/"/>
     <id>https://pabebezz.github.io/article/acdf71cc/</id>
     <published>2020-06-17T01:45:23.000Z</published>
-    <updated>2020-07-25T12:12:00.305Z</updated>
+    <updated>2020-08-20T06:22:37.674Z</updated>
     
     <summary type="html">
     
@@ -406,28 +432,6 @@
     
     
       <category term="tips" scheme="https://pabebezz.github.io/tags/tips/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习-决策树</title>
-    <link href="https://pabebezz.github.io/article/ae9520f1/"/>
-    <id>https://pabebezz.github.io/article/ae9520f1/</id>
-    <published>2020-03-30T08:11:37.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;剪枝分类器&quot;&gt;&lt;a href=&quot;#剪枝分类器&quot; class=&quot;headerlink&quot; title=&quot;剪枝分类器&quot;&gt;&lt;/a&gt;剪枝分类器&lt;/h1&gt;&lt;p&gt;剪枝分类器是指，对于d次维的输入变量x，任意选定其中一维，通过将其与给定阈值相比较来进行分类的线性分类器&lt;/p&gt;
-&lt;p&gt;剪枝分类器的要素：&lt;br&gt;• 一个输入维度&lt;br&gt;• 一个阈值 &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/article/ae9520f1/剪枝分类器.png&quot; alt=&quot;剪枝分类器&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="machine learning" scheme="https://pabebezz.github.io/categories/machine-learning/"/>
-    
-    
-      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
     
   </entry>
   
