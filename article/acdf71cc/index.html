@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/GPU驱动.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/深度学习环境.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/acdf71cc/更新node版本.png">
-<meta property="og:updated_time" content="2020-08-20T06:22:37.674Z">
+<meta property="og:updated_time" content="2020-08-20T10:10:34.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu18.04下深度学习环境与blog搭建">
 <meta name="twitter:description" content="深度学习环境与hexoBlog搭建">
@@ -514,7 +514,7 @@
 show_channel_urls: true
 </code></pre><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda <span class="built_in">info</span>　＃查看conda的信息（是否有镜像库）</span><br><span class="line">conda <span class="built_in">clean</span> -i　＃清除缓存索引</span><br></pre></td></tr></table></figure>
 <p>安装GPU版pytorch，在官网<a href="http://pytorch.org/选一个你的当前的配置" target="_blank" rel="noopener">http://pytorch.org/选一个你的当前的配置</a></p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision <span class="attribute">cudatoolkit</span>=10.1   </span><br><span class="line"><span class="comment">#去掉-c pytorch安装的时候才会默认从清华源下载相应的包</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda create -n pytorchGPU <span class="attribute">python</span>=3.7.6</span><br><span class="line">conda activate pytorchGPU</span><br><span class="line">conda install pytorch torchvision <span class="attribute">cudatoolkit</span>=10.1   </span><br><span class="line"><span class="comment">#去掉-c pytorch安装的时候才会默认从清华源下载相应的包</span></span><br></pre></td></tr></table></figure>
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在VScode里面测试</span></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"><span class="keyword">from</span> torch.backends <span class="keyword">import</span> cudnn</span><br><span class="line"></span><br><span class="line"><span class="comment"># TEST　出现tensor([1.], device='cuda:0')</span></span><br><span class="line">x = torch.Tensor([<span class="number">1.0</span>])</span><br><span class="line">xx = x.cuda()</span><br><span class="line">print(xx)</span><br><span class="line"><span class="comment"># CUDA cuDNN test  ,出现２个true</span></span><br><span class="line">print(torch.cuda.is_available())</span><br><span class="line">print(cudnn.is_acceptable(xx))</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出当前GPU型号</span></span><br><span class="line">gnlook = torch.cuda.current_device()</span><br><span class="line">print(torch.cuda.get_device_name(gnlook))</span><br></pre></td></tr></table></figure>
 <p>##　出现错误</p>
 <p> <strong>Torch not compiled with CUDA enabled</strong></p>
@@ -648,7 +648,7 @@ show_channel_urls: true
   <p><span>本文标题:</span>Ubuntu18.04下深度学习环境与blog搭建</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年06月17日 - 09:45:23</p>
-  <p><span>最后更新:</span>2020年08月20日 - 14:22:37</p>
+  <p><span>最后更新:</span>2020年08月20日 - 18:10:34</p>
   <p><span>原始链接:</span><a href="/article/acdf71cc/" title="Ubuntu18.04下深度学习环境与blog搭建">https://pabebezz.github.io/article/acdf71cc/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/acdf71cc/" aria-label="复制成功！"></i></span>
   </p>
@@ -927,7 +927,7 @@ show_channel_urls: true
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">136.5k</span> 
+    <span title="本站总字数">136.9k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
