@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
 <meta property="og:description" content="类型特征one_hot编码来源:Pytorch中，将label变成one hot编码的两种方式 ​        解释TORCH.SPARSE 总结: 方法一: 先转张量,再编码 但是有个小问题,若取出一列变成张量之后怎么和原来的数据合并呢? 123456789101112import torch(1)label = np.random.randint(0,class_num,size=(batc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-23T03:02:39.101Z">
+<meta property="og:updated_time" content="2020-08-25T07:38:51.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习踩坑实录">
 <meta name="twitter:description" content="类型特征one_hot编码来源:Pytorch中，将label变成one hot编码的两种方式 ​        解释TORCH.SPARSE 总结: 方法一: 先转张量,再编码 但是有个小问题,若取出一列变成张量之后怎么和原来的数据合并呢? 123456789101112import torch(1)label = np.random.randint(0,class_num,size=(batc">
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  855 字
+                  870 字
                 </span>
               
 
@@ -451,10 +451,11 @@
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> six</span><br></pre></td></tr></table></figure>
 <h2 id="Microsoft-Visual-C-Redistributable-is-not-installed-this-may-lead-to-the-DLL-load-failure"><a href="#Microsoft-Visual-C-Redistributable-is-not-installed-this-may-lead-to-the-DLL-load-failure" class="headerlink" title="Microsoft Visual C++ Redistributable is not installed, this may lead to the DLL load failure."></a>Microsoft Visual C++ Redistributable is not installed, this may lead to the DLL load failure.</h2><p>It can be downloaded at <a href="http://jump.bdimg.com/safecheck/index?url=rN3wPs8te/rgoMUR9xxzKrHNd73Fdd8OuKQLKRK4vbQxv1boVVXMJ9BEv7J0j9IGGRypEqHq/tUDQAkJ1sI6RDFU+K460vwwtSOFSeQMtN2dECH9810msmbEVS52sMUfojdH+CGryFhcSNKMuuxeEMhopWwY+EEaXrW/TeIRjQgwPGbuJnYGNA==" target="_blank" rel="noopener">https://aka.ms/vs/16/release/vc_redist.x64.exe</a></p>
 <p>给了方法，下载安装vc_redist.x64.exe即可</p>
-<h2 id="调通了一个虚拟环境，另一个就崩了"><a href="#调通了一个虚拟环境，另一个就崩了" class="headerlink" title="调通了一个虚拟环境，另一个就崩了"></a>调通了一个虚拟环境，另一个就崩了</h2><p>所以重新卸载anconda,再安吧。。</p>
+<h2 id="调通了一个虚拟环境，另一个就崩了"><a href="#调通了一个虚拟环境，另一个就崩了" class="headerlink" title="调通了一个虚拟环境，另一个就崩了"></a>调通了一个虚拟环境，另一个就崩了</h2><p>所以重安anconda.</p>
 <h2 id="RuntimeError-Input-type-torch-cuda-FloatTensor-and-weight-type-torch-FloatTensor-should-be-the-same"><a href="#RuntimeError-Input-type-torch-cuda-FloatTensor-and-weight-type-torch-FloatTensor-should-be-the-same" class="headerlink" title="RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same"></a>RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same</h2><p><a href="https://www.lizenghai.com/archives/41780.html" target="_blank" rel="noopener">主要原因是输入的数据类型与网络参数的类型不符。</a></p>
 <h2 id="RuntimeError-CUDA-out-of-memory-Tried-to-allocate-82-00-MiB-GPU-0-7-93-GiB-total-capacity-6-88-GiB-already-allocated-49-31-MiB-free-6-92-GiB-reserved-in-total-by-PyTorch"><a href="#RuntimeError-CUDA-out-of-memory-Tried-to-allocate-82-00-MiB-GPU-0-7-93-GiB-total-capacity-6-88-GiB-already-allocated-49-31-MiB-free-6-92-GiB-reserved-in-total-by-PyTorch" class="headerlink" title="RuntimeError: CUDA out of memory. Tried to allocate 82.00 MiB (GPU 0; 7.93 GiB total capacity; 6.88 GiB already allocated; 49.31 MiB free; 6.92 GiB reserved in total by PyTorch)"></a>RuntimeError: CUDA out of memory. Tried to allocate 82.00 MiB (GPU 0; 7.93 GiB total capacity; 6.88 GiB already allocated; 49.31 MiB free; 6.92 GiB reserved in total by PyTorch)</h2><p><code>nvidia-smi</code>查看显存情况</p>
 <p><a href="https://blog.csdn.net/eefresher/article/details/99979056" target="_blank" rel="noopener">RunTime Error : cuda out of memory</a></p>
+<p>放入的图片尺寸过大,导致内存溢出,调整至256*256.</p>
 
       
     </div>
@@ -478,7 +479,7 @@
   <p><span>本文标题:</span>深度学习踩坑实录</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年08月20日 - 15:34:58</p>
-  <p><span>最后更新:</span>2020年08月23日 - 11:02:39</p>
+  <p><span>最后更新:</span>2020年08月25日 - 15:38:51</p>
   <p><span>原始链接:</span><a href="/article/43ed33f1/" title="深度学习踩坑实录">https://pabebezz.github.io/article/43ed33f1/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/43ed33f1/" aria-label="复制成功！"></i></span>
   </p>
@@ -753,7 +754,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">136.9k</span> 
+    <span title="本站总字数">137k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
