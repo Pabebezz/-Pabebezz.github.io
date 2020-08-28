@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2020-08-25T07:38:51.220Z</updated>
+  <updated>2020-08-28T03:59:14.380Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>日期提醒python程序</title>
+    <link href="https://pabebezz.github.io/article/61f6d1ab/"/>
+    <id>https://pabebezz.github.io/article/61f6d1ab/</id>
+    <published>2020-08-28T03:49:43.000Z</published>
+    <updated>2020-08-28T03:59:14.380Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;why&quot;&gt;&lt;a href=&quot;#why&quot; class=&quot;headerlink&quot; title=&quot;why&quot;&gt;&lt;/a&gt;why&lt;/h1&gt;&lt;p&gt;因为英文版ipone没有农历日期提醒（挺不方便的），&lt;/p&gt;
+&lt;p&gt;所以实现了个日期提醒python程序。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="Python" scheme="https://pabebezz.github.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>深度学习踩坑实录</title>
@@ -412,26 +433,6 @@
     
     
       <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>环境配置版本备忘录</title>
-    <link href="https://pabebezz.github.io/article/724e4936/"/>
-    <id>https://pabebezz.github.io/article/724e4936/</id>
-    <published>2020-04-01T07:52:01.000Z</published>
-    <updated>2020-07-31T06:21:31.394Z</updated>
-    
-    <summary type="html">
-    
-      多台电脑配置环境记录
-    
-    </summary>
-    
-      <category term="tiny knowledge" scheme="https://pabebezz.github.io/categories/tiny-knowledge/"/>
-    
-    
-      <category term="tips" scheme="https://pabebezz.github.io/tags/tips/"/>
     
   </entry>
   
