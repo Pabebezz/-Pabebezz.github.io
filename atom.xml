@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2020-08-28T03:59:14.380Z</updated>
+  <updated>2020-08-28T04:00:02.155Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://pabebezz.github.io/article/61f6d1ab/"/>
     <id>https://pabebezz.github.io/article/61f6d1ab/</id>
     <published>2020-08-28T03:49:43.000Z</published>
-    <updated>2020-08-28T03:59:14.380Z</updated>
+    <updated>2020-08-28T04:00:02.155Z</updated>
     
     <summary type="html">
     
@@ -42,17 +42,11 @@
     <link href="https://pabebezz.github.io/article/43ed33f1/"/>
     <id>https://pabebezz.github.io/article/43ed33f1/</id>
     <published>2020-08-20T07:34:58.000Z</published>
-    <updated>2020-08-25T07:38:51.220Z</updated>
+    <updated>2020-08-29T04:26:19.252Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;类型特征one-hot编码&quot;&gt;&lt;a href=&quot;#类型特征one-hot编码&quot; class=&quot;headerlink&quot; title=&quot;类型特征one_hot编码&quot;&gt;&lt;/a&gt;类型特征one_hot编码&lt;/h1&gt;&lt;p&gt;来源:&lt;a
-        
-      
+      在踩坑中。
     
     </summary>
     
@@ -68,17 +62,14 @@
     <link href="https://pabebezz.github.io/article/8a41b866/"/>
     <id>https://pabebezz.github.io/article/8a41b866/</id>
     <published>2020-08-10T04:54:45.000Z</published>
-    <updated>2020-08-10T05:05:00.935Z</updated>
+    <updated>2020-08-29T04:26:42.152Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;Arachne：核心感知线程管理&quot;&gt;&lt;a href=&quot;#Arachne：核心感知线程管理&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h1 id=&quot;Arachne：核心感知线程管理&quot;&gt;&lt;a href=&quot;#Arachne：核心感知线程管理&quot; class=&quot;headerlink&quot; title=&quot;Arachne：核心感知线程管理&quot;&gt;&lt;/a&gt;Arachne：核心感知线程管理&lt;/h1&gt;&lt;p&gt;本文包含在第13届USENIX操作系统设计和实现研讨会(OSDI’18)的会议记录中。&lt;/p&gt;
+&lt;p&gt; 主要分为三个模块：&lt;/p&gt;
+&lt;h3 id=&quot;1-Arachne的设计与评估&quot;&gt;&lt;a href=&quot;#1-Arachne的设计与评估&quot; class=&quot;headerlink&quot; title=&quot;1.  Arachne的设计与评估&quot;&gt;&lt;/a&gt;1.  Arachne的设计与评估&lt;/h3&gt;&lt;h3 id=&quot;2-Arachne应用于memcache的优点&quot;&gt;&lt;a href=&quot;#2-Arachne应用于memcache的优点&quot; class=&quot;headerlink&quot; title=&quot;2.  Arachne应用于memcache的优点&quot;&gt;&lt;/a&gt;2.  Arachne应用于memcache的优点&lt;/h3&gt;&lt;h3 id=&quot;3-Arachne应用于RAMcloud的优点&quot;&gt;&lt;a href=&quot;#3-Arachne应用于RAMcloud的优点&quot; class=&quot;headerlink&quot; title=&quot;3.  Arachne应用于RAMcloud的优点&quot;&gt;&lt;/a&gt;3.  Arachne应用于RAMcloud的优点&lt;/h3&gt;&lt;h3 id=&quot;（理解第一部分就较容易理解第二、三部分）&quot;&gt;&lt;a href=&quot;#（理解第一部分就较容易理解第二、三部分）&quot; class=&quot;headerlink&quot; title=&quot;（理解第一部分就较容易理解第二、三部分）&quot;&gt;&lt;/a&gt;（理解第一部分就较容易理解第二、三部分）&lt;/h3&gt;&lt;p&gt;温馨提示：&lt;/p&gt;
+&lt;p&gt;注意：我们使用术语核心core来表示可以支持独立计算线程的任何硬件机制。在具有超线程的处理器中，我们将每个超线程视为单独的逻辑核心，即使其中一些共享单个物理核心。&lt;/p&gt;
     
     </summary>
     

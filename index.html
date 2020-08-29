@@ -812,17 +812,10 @@
 
       
         
-          
-          类型特征one_hot编码来源:Pytorch中，将label变成one hot编码的两种方式
-​        解释TORCH.SPARSE
-总结:
-方法一: 先转张量,再编码
-但是有个小问题,若取出一列变成张量之后怎么和原来的数据合并呢?
-123456789101112import torch(
-          ...
+          在踩坑中。
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/article/43ed33f1/#more" rel="contents">
+            <a class="btn" href="/article/43ed33f1/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1009,11 +1002,10 @@
 
       
         
-          
-          Arachne：核心感知线程管理本文包含在第13届USENIX操作系统设计和实现研讨会(OSDI’18)的会议记录中。
- 主要分为三个模块：
-1.  Arachne的设计与评估2.  Arachne应用于memcache的优点3.  Arachne应用于RAMcloud的优点（理解第一部分就较容易理
-          ...
+          <h1 id="Arachne：核心感知线程管理"><a href="#Arachne：核心感知线程管理" class="headerlink" title="Arachne：核心感知线程管理"></a>Arachne：核心感知线程管理</h1><p>本文包含在第13届USENIX操作系统设计和实现研讨会(OSDI’18)的会议记录中。</p>
+<p> 主要分为三个模块：</p>
+<h3 id="1-Arachne的设计与评估"><a href="#1-Arachne的设计与评估" class="headerlink" title="1.  Arachne的设计与评估"></a>1.  Arachne的设计与评估</h3><h3 id="2-Arachne应用于memcache的优点"><a href="#2-Arachne应用于memcache的优点" class="headerlink" title="2.  Arachne应用于memcache的优点"></a>2.  Arachne应用于memcache的优点</h3><h3 id="3-Arachne应用于RAMcloud的优点"><a href="#3-Arachne应用于RAMcloud的优点" class="headerlink" title="3.  Arachne应用于RAMcloud的优点"></a>3.  Arachne应用于RAMcloud的优点</h3><h3 id="（理解第一部分就较容易理解第二、三部分）"><a href="#（理解第一部分就较容易理解第二、三部分）" class="headerlink" title="（理解第一部分就较容易理解第二、三部分）"></a>（理解第一部分就较容易理解第二、三部分）</h3><p>温馨提示：</p>
+<p>注意：我们使用术语核心core来表示可以支持独立计算线程的任何硬件机制。在具有超线程的处理器中，我们将每个超线程视为单独的逻辑核心，即使其中一些共享单个物理核心。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/8a41b866/#more" rel="contents">

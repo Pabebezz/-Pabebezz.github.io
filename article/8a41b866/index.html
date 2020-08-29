@@ -105,7 +105,7 @@
 <meta property="og:image" content="https://pabebezz.github.io/article/8a41b866/image-20200810130257049.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/8a41b866/image-20200810130311106.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/8a41b866/image-20200810130316257.png">
-<meta property="og:updated_time" content="2020-08-10T05:05:00.935Z">
+<meta property="og:updated_time" content="2020-08-29T04:26:42.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Arachne：Core-Aware Thread Management">
 <meta name="twitter:description" content="Arachne：核心感知线程管理本文包含在第13届USENIX操作系统设计和实现研讨会(OSDI’18)的会议记录中。  主要分为三个模块： 1.  Arachne的设计与评估2.  Arachne应用于memcache的优点3.  Arachne应用于RAMcloud的优点（理解第一部分就较容易理解第二、三部分）温馨提示： 注意：我们使用术语核心core来表示可以支持独立计算线程的任何硬件机制。">
@@ -449,6 +449,7 @@
 <p> 主要分为三个模块：</p>
 <h3 id="1-Arachne的设计与评估"><a href="#1-Arachne的设计与评估" class="headerlink" title="1.  Arachne的设计与评估"></a>1.  Arachne的设计与评估</h3><h3 id="2-Arachne应用于memcache的优点"><a href="#2-Arachne应用于memcache的优点" class="headerlink" title="2.  Arachne应用于memcache的优点"></a>2.  Arachne应用于memcache的优点</h3><h3 id="3-Arachne应用于RAMcloud的优点"><a href="#3-Arachne应用于RAMcloud的优点" class="headerlink" title="3.  Arachne应用于RAMcloud的优点"></a>3.  Arachne应用于RAMcloud的优点</h3><h3 id="（理解第一部分就较容易理解第二、三部分）"><a href="#（理解第一部分就较容易理解第二、三部分）" class="headerlink" title="（理解第一部分就较容易理解第二、三部分）"></a>（理解第一部分就较容易理解第二、三部分）</h3><p>温馨提示：</p>
 <p>注意：我们使用术语核心core来表示可以支持独立计算线程的任何硬件机制。在具有超线程的处理器中，我们将每个超线程视为单独的逻辑核心，即使其中一些共享单个物理核心。</p>
+<a id="more"></a>
 <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>Arachne是一个新的用户级线程实现，它为具有极短生命周期(仅几微秒)的应用程序提供低延迟和高吞吐量。Arachne是核心感知的：每个应用程序根据其负载确定它需要多少核心；它总是确切地知道它已经分配了哪些核心，并且它控制它的线程在这些核心上的位置。中央核心仲裁器在应用程序之间分配核心。将Arachne添加到分布式缓存memcached，将符合SLO（服务级别目标）的吞吐量提高了37%，将尾延迟减少了10倍以上，并允许分布式缓存与后台应用程序共存，而几乎没有性能影响。将Arachne添加到RAMCloud存储系统后，其写操作吞吐量提高了2.5倍以上。Arachne线程库经过优化，可将缓存未命中降至最低；它可以在320 ns内在不同的核心上启动新的用户线程(具有负载平衡)。Arachne完全在Linux上的用户级别实现；不需要修改内核。</p>
 <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.  简介"></a>1.  简介</h2><p>网络和存储技术的进步使数据中心服务能够以极低的延迟运行[5]。因此，近年来开发了各种低延迟服务，包括FaRM[11]、Memcached[23]、MICA[20]、RAMCloud[30]和Redis[34]。它们为同一数据中心内的客户端提供低至5µs的端到端响应时间，以及低至1-2µs的内部请求服务时间。这些系统采用各种新技术来实现低延迟，包括轮询而不是中断、内核旁路和运行至完成[6，31]。</p>
 <p> <strong>论文的引出：    1.背景及问题的引出，2.该问题的现有解决办法及缺陷见第8节</strong>        </p>
@@ -637,7 +638,7 @@
   <p><span>本文标题:</span>Arachne：Core-Aware Thread Management</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年08月10日 - 12:54:45</p>
-  <p><span>最后更新:</span>2020年08月10日 - 13:05:00</p>
+  <p><span>最后更新:</span>2020年08月29日 - 12:26:42</p>
   <p><span>原始链接:</span><a href="/article/8a41b866/" title="Arachne：Core-Aware Thread Management">https://pabebezz.github.io/article/8a41b866/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/8a41b866/" aria-label="复制成功！"></i></span>
   </p>
