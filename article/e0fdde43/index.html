@@ -96,7 +96,7 @@
 <meta property="og:image" content="https://pabebezz.github.io/article/e0fdde43/小飞机3.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/e0fdde43/Mac主题安装指令.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/e0fdde43/Mac主题样式.png">
-<meta property="og:updated_time" content="2020-09-07T08:32:08.031Z">
+<meta property="og:updated_time" content="2020-09-09T13:29:47.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安装Ubuntu18.04后的优化">
 <meta name="twitter:description" content="让乌邦图更美好">
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.7k 字
+                  4.8k 字
                 </span>
               
 
@@ -494,11 +494,15 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br></pre></td></tr></table></figure>
 <p> <strong>Message: invalid argument: can’t kill an exited process</strong></p>
 <p><a href="https://q.cnblogs.com/q/126839/" target="_blank" rel="noopener">解决方案</a>:crontab的运行环境变量和终端手动执行的环境变量不一致导致的，然后我在/usr/bin/路径下又放置了一个浏览器驱动</p>
-<h2 id="ubuntu指定时间运行脚本"><a href="#ubuntu指定时间运行脚本" class="headerlink" title="ubuntu指定时间运行脚本"></a>ubuntu指定时间运行脚本</h2><p><a href="https://blog.csdn.net/z919167107/article/details/90582073" target="_blank" rel="noopener">使用Ubuntu的Cron固定时间执行Python脚本</a></p>
+<h2 id="ubuntu指定时间运行脚本"><a href="#ubuntu指定时间运行脚本" class="headerlink" title="ubuntu指定时间运行脚本"></a>ubuntu指定时间运行脚本</h2><p><strong>crontab命令行方法</strong></p>
+<p><a href="https://blog.csdn.net/z919167107/article/details/90582073" target="_blank" rel="noopener">使用Ubuntu的Cron固定时间执行Python脚本</a></p>
 <p><a href="https://blog.csdn.net/yang9315/article/details/81606661?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param" target="_blank" rel="noopener">Linux使用crontab定时任务执行python文件小记</a></p>
 <p><a href="https://crontab-generator.org/" target="_blank" rel="noopener">自动生成cron命令</a></p>
 <p><a href="https://www.jianshu.com/p/f49e44042079" target="_blank" rel="noopener">Crontab使用记录</a></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cron</span><br><span class="line">sudo service cron start</span><br><span class="line">crontab -e </span><br><span class="line"><span class="meta">#</span><span class="bash"> 在打开的文件中添加 生成的cron命令</span></span><br><span class="line"></span><br><span class="line">* * * * * /bin/bash /home/pabebe/workspace/clockIN.sh &gt;/workspace/crontab_result.log 2&gt;&amp;1</span><br><span class="line"><span class="meta">#</span><span class="bash"> *****表示每年每月每天每时每分 , 中间是执行指令, 将输出记录在/workspace/crontab_result.log 中.</span></span><br><span class="line"><span class="meta">#</span><span class="bash">2&gt;&amp;1的意思是把错误的输出也输出到标准输出（2表示错误，2&gt;表示错误输出，&amp;表示等同于，1表示正确）</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 之后 Ctrl+O保存,回车确认,Ctrl+X退出</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 成功便输出</span></span><br><span class="line"><span class="meta">#</span><span class="bash">crontab: installing new crontab</span></span><br><span class="line"></span><br><span class="line">sudo service cron restart</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看</span></span><br><span class="line">service cron status</span><br></pre></td></tr></table></figure>
+<p><strong>python库方法</strong></p>
+<p><a href="https://blog.csdn.net/wuyongpeng0912/article/details/88895659?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param" target="_blank" rel="noopener">APSchedule</a></p>
+<p><a href="https://www.jb51.net/article/159328.htm" target="_blank" rel="noopener">crontab模块</a></p>
 <h2 id="截图软件-flameshot"><a href="#截图软件-flameshot" class="headerlink" title="截图软件-flameshot"></a>截图软件-<strong>flameshot</strong></h2><p>Ubuntu 18.04默认带的版本是0.51 无法标注文字,要0.6+才可以添加文字标注</p>
 <figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="built_in"> add-apt-repository </span>ppa:rikmills/bionic</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt install flameshot</span><br><span class="line">flameshot -v       <span class="comment">#显示为0.6.0</span></span><br></pre></td></tr></table></figure>
 <p>设置&gt;设备&gt;键盘，设置一个自定义快捷键<strong>（拉到最下面）</strong>命令填写：<strong>flameshot gui</strong></p>
@@ -648,7 +652,7 @@
   <p><span>本文标题:</span>安装Ubuntu18.04后的优化</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年07月05日 - 10:00:51</p>
-  <p><span>最后更新:</span>2020年09月07日 - 16:32:08</p>
+  <p><span>最后更新:</span>2020年09月09日 - 21:29:47</p>
   <p><span>原始链接:</span><a href="/article/e0fdde43/" title="安装Ubuntu18.04后的优化">https://pabebezz.github.io/article/e0fdde43/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/e0fdde43/" aria-label="复制成功！"></i></span>
   </p>
