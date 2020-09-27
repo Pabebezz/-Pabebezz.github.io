@@ -223,7 +223,7 @@
   <entry>
     <title><![CDATA[环境配置版本备忘录]]></title>
     <url>%2Farticle%2F724e4936%2F</url>
-    <content type="text"><![CDATA[Labtop深度学习环境 NVIDIA Driver Version: 430.39 cuda 10.1 cudann 7.6.4 python 3.7.5 参考文章：Pytorch在win10下搭建cuda版本的环境 ​ Pytorch在Windows下的环境搭建以及模型训练 Desktop(in laboratory)]]></content>
+    <content type="text"><![CDATA[Labtop深度学习环境 NVIDIA Driver Version: 430.39 cuda 10.1 cudann 7.6.4 python 3.7.5 参考文章：Pytorch在win10下搭建cuda版本的环境 ​ Pytorch在Windows下的环境搭建以及模型训练 Desktop(in laboratory)window cuda 10.2 python 3.7.6]]></content>
       <categories>
         <category>tiny knowledge</category>
       </categories>
