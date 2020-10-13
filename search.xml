@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[迁移Ubuntu18.04至新硬盘]]></title>
+    <url>%2Farticle%2F2f7fc36c%2F</url>
+    <content type="text"><![CDATA[https://zhuanlan.zhihu.com/p/126228018 https://www.jianshu.com/p/20b0fdbc2d68 https://blog.csdn.net/u014670893/article/details/94331736 https://www.jianshu.com/p/478567d8b14a]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[日期提醒python程序]]></title>
     <url>%2Farticle%2F61f6d1ab%2F</url>
     <content type="text"><![CDATA[why因为英文版ipone没有农历日期提醒（挺不方便的）， 所以实现了个日期提醒python程序。 How to do电脑作为数据库与服务器，每天查询一次“今天是否有需要提醒的事件”，然后推送到ipone上。 ipone作为客户端 -最简单的推送提醒服务-Bark]]></content>
