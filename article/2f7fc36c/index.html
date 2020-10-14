@@ -81,13 +81,13 @@
 
 
 
-<meta name="description" content="查看分区情况1sudo apt-get install gparted 打开gparted,总共3个硬盘 a是1T机械盘(安装Ubuntu18),b是256G固态盘(安装window),c是1T固态盘 目标:把a中的Ubuntu18移动到c  创建分区 选中/dev/sdc2 , 编辑-&amp;gt;清除所有操作-&amp;gt;’gpt’ ,此时sdc变成未分配的情况.  efi分区   swap分区">
+<meta name="description" content="在U盘启动盘-ubuntu下进行 查看分区情况1sudo apt-get install gparted 打开gparted,总共3个硬盘 a是1T机械盘(安装Ubuntu18),b是256G固态盘(安装window),c是1T固态盘 目标:把a中的Ubuntu18移动到c  创建分区 选中/dev/sdc2 , 编辑-&amp;gt;清除所有操作-&amp;gt;’gpt’ ,此时sdc变成未分配的情况.">
 <meta name="keywords" content="Pabebe&#39;s Blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="迁移Ubuntu18.04至新硬盘">
 <meta property="og:url" content="https://pabebezz.github.io/article/2f7fc36c/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="查看分区情况1sudo apt-get install gparted 打开gparted,总共3个硬盘 a是1T机械盘(安装Ubuntu18),b是256G固态盘(安装window),c是1T固态盘 目标:把a中的Ubuntu18移动到c  创建分区 选中/dev/sdc2 , 编辑-&amp;gt;清除所有操作-&amp;gt;’gpt’ ,此时sdc变成未分配的情况.  efi分区   swap分区">
+<meta property="og:description" content="在U盘启动盘-ubuntu下进行 查看分区情况1sudo apt-get install gparted 打开gparted,总共3个硬盘 a是1T机械盘(安装Ubuntu18),b是256G固态盘(安装window),c是1T固态盘 目标:把a中的Ubuntu18移动到c  创建分区 选中/dev/sdc2 , 编辑-&amp;gt;清除所有操作-&amp;gt;’gpt’ ,此时sdc变成未分配的情况.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://pabebezz.github.io/article/2f7fc36c/image-20201013185814230.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/2f7fc36c/image-20201013172728996.png">
@@ -95,10 +95,12 @@
 <meta property="og:image" content="https://pabebezz.github.io/article/2f7fc36c/image-20201013194114632.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/2f7fc36c/image-20201013195238861.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/2f7fc36c/image-20201013195451641.png">
-<meta property="og:updated_time" content="2020-10-13T12:52:31.199Z">
+<meta property="og:image" content="https://pabebezz.github.io/article/2f7fc36c/Screenshot%20from%202020-10-15%2003-59-26.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/2f7fc36c/Screenshot%20from%202020-10-15%2004-01-36.png">
+<meta property="og:updated_time" content="2020-10-14T21:17:45.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="迁移Ubuntu18.04至新硬盘">
-<meta name="twitter:description" content="查看分区情况1sudo apt-get install gparted 打开gparted,总共3个硬盘 a是1T机械盘(安装Ubuntu18),b是256G固态盘(安装window),c是1T固态盘 目标:把a中的Ubuntu18移动到c  创建分区 选中/dev/sdc2 , 编辑-&amp;gt;清除所有操作-&amp;gt;’gpt’ ,此时sdc变成未分配的情况.  efi分区   swap分区">
+<meta name="twitter:description" content="在U盘启动盘-ubuntu下进行 查看分区情况1sudo apt-get install gparted 打开gparted,总共3个硬盘 a是1T机械盘(安装Ubuntu18),b是256G固态盘(安装window),c是1T固态盘 目标:把a中的Ubuntu18移动到c  创建分区 选中/dev/sdc2 , 编辑-&amp;gt;清除所有操作-&amp;gt;’gpt’ ,此时sdc变成未分配的情况.">
 <meta name="twitter:image" content="https://pabebezz.github.io/article/2f7fc36c/image-20201013185814230.png">
 
 
@@ -376,7 +378,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  218 字
+                  488 字
                 </span>
               
 
@@ -392,7 +394,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -414,6 +416,7 @@
 
       
         <p><img src="/article/2f7fc36c/image-20201013185814230.png" alt="image-20201013185814230"></p>
+<p><strong>在U盘启动盘-ubuntu下进行</strong></p>
 <h1 id="查看分区情况"><a href="#查看分区情况" class="headerlink" title="查看分区情况"></a>查看分区情况</h1><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> install gparted</span><br></pre></td></tr></table></figure>
 <p>打开gparted,总共3个硬盘</p>
 <p>a是1T机械盘(安装Ubuntu18),b是256G固态盘(安装window),c是1T固态盘</p>
@@ -434,10 +437,51 @@
 </ul>
 <p>点击 √-&gt;’应用所有操作’,结果如下:</p>
 <p><img src="/article/2f7fc36c/image-20201013195451641.png" alt="image-20201013195451641"></p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo blkid</span></span><br></pre></td></tr></table></figure>
-<p>记录ubuntu各分区的UUID</p>
-<p>/dev/sda5: UUID=”b289a466-5778-4506-b541-50581e90e693” TYPE=<strong>“swap”</strong> PARTUUID=”b365930d-acb5-4c6f-9826-556da09d0d71”<br>/dev/sda6: UUID=”E363-0A42” TYPE=”vfat” PARTUUID=”365a22a5-b2b4-4088-b8a1-60c3f7f325b3”<br>/dev/sda7: UUID=”38c27326-c630-4f96-a8fb-dc8a7831cc9b” TYPE=<strong>“ext4”</strong> PARTUUID=”9e27b1ec-1dfa-4dfe-88a3-0dd8c70a776b”<br>/dev/sdb1: UUID=”DABA-7060” TYPE=”vfat” PARTLABEL=”<strong>EFI </strong>system partition” PARTUUID=”8df87468-8873-4861-ad60-72198dd920df”<br>/dev/sdb3: UUID=”B21CB90D1CB8CD9B” TYPE=”ntfs” PARTLABEL=”Basic data partition” PARTUUID=”146e867f-f838-4fe4-9eb0-91214fe22cb2”</p>
-<h1 id="复制数据"><a href="#复制数据" class="headerlink" title="复制数据"></a>复制数据</h1><p><a href="https://zhuanlan.zhihu.com/p/126228018" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/126228018</a></p>
+<h1 id="复制数据"><a href="#复制数据" class="headerlink" title="复制数据"></a>复制数据</h1><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line"><span class="comment"># efi</span></span><br><span class="line">dd <span class="keyword">if</span>=<span class="regexp">/dev/sda</span>6 <span class="keyword">of</span>=<span class="regexp">/dev/sdc</span>1</span><br><span class="line"></span><br><span class="line"><span class="comment"># /</span></span><br><span class="line">dd <span class="keyword">if</span>=<span class="regexp">/dev/sda</span>7 <span class="keyword">of</span>=<span class="regexp">/dev/sdc</span>3</span><br></pre></td></tr></table></figure>
+<p><img src="/article/2f7fc36c/Screenshot from 2020-10-15 03-59-26.png" alt="Screenshot from 2020-10-15 03-59-26"></p>
+<h1 id="磁盘检查与创建新uuid"><a href="#磁盘检查与创建新uuid" class="headerlink" title="磁盘检查与创建新uuid"></a>磁盘检查与创建新uuid</h1><p><strong>三个分区均需要</strong><br>GParted软件-》选中对应分区-》check<br>GParted软件-》选中对应分区-》new uuid</p>
+<p><img src="/article/2f7fc36c/Screenshot from 2020-10-15 04-01-36.png" alt="Screenshot from 2020-10-15 04-01-36"></p>
+<p>记录ubuntu各分区的信息</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Old disk</th>
+<th>old uuid</th>
+<th>new disk</th>
+<th>new uuid</th>
+<th>type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>efi</td>
+<td>/dev/sda6</td>
+<td>E363-0A42</td>
+<td>/dev/sdc1</td>
+<td>3CA3-7D72</td>
+<td>FAT32</td>
+</tr>
+<tr>
+<td>swap</td>
+<td>/dev/sda5</td>
+<td>b289a466-5778-4506-b541-50581e90e693</td>
+<td>/dev/sdc2</td>
+<td>a2ab8de2-49a7-48e2-983c-e3d4b8996b84</td>
+<td>Linux Swap</td>
+</tr>
+<tr>
+<td>/</td>
+<td>/dev/sda7</td>
+<td>38c27326-c630-4f96-a8fb-dc8a7831cc9b</td>
+<td>/dev/sdc3</td>
+<td>4e11cead-f119-494e-b08c-0909caa6bd32</td>
+<td>Ext4</td>
+</tr>
+</tbody>
+</table>
+<h1 id="更新-grub引导"><a href="#更新-grub引导" class="headerlink" title="更新 grub引导"></a>更新 grub引导</h1><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo su</span><br><span class="line"><span class="comment"># 挂载新分区的efi /</span></span><br><span class="line">mount /dev/sdc3 /mnt</span><br><span class="line">mount /dev/sdc1 /mnt/boot/efi</span><br><span class="line"><span class="comment"># 挂在虚拟文件系统</span></span><br><span class="line">mount --o bind /dev   /mnt/dev</span><br><span class="line">mount --o bind /<span class="keyword">proc</span>   /mnt/<span class="keyword">proc</span></span><br><span class="line">mount --o<span class="title"> bind</span> /sys   /mnt/sys</span><br><span class="line"># 切换根目录为新分区的/</span><br><span class="line">chroot /mnt</span><br><span class="line"># 修改对应uuid</span><br><span class="line">nano /etc/fstab</span><br><span class="line">nano /boot/grub/grub.cfg</span><br><span class="line">在grub.cfg中只会出现根分区的uuid，所以直接用“ctrl+\”找出所有表中原根目录uuid的地方替换为新根目录uuid。</span><br><span class="line">替换全部A，ctrl+x,回车</span><br><span class="line">#<span class="title"> grub安装到efi分区</span></span><br><span class="line"><span class="title">grub-install</span> /dev/sdc1</span><br><span class="line">Installing<span class="title"> for</span> x86_64-efi<span class="title"> platform.</span></span><br><span class="line"><span class="title">Installation</span> finished.<span class="title"> No</span> error<span class="title"> reported.</span></span><br><span class="line"><span class="title">#更新grub</span></span><br><span class="line"><span class="title">update-grub</span></span><br><span class="line"><span class="title">Sourcing</span> file `/etc/default/grub'</span><br><span class="line">Generating<span class="title"> grub</span> configuration<span class="title"> file</span> ...</span><br><span class="line">Found<span class="title"> linux</span> image: /boot/vmlinuz-5.4.0-49-generic</span><br><span class="line">Found<span class="title"> initrd</span> image: /boot/initrd.img-5.4.0-49-generic</span><br><span class="line">Found<span class="title"> linux</span> image: /boot/vmlinuz-5.4.0-48-generic</span><br><span class="line">Found<span class="title"> initrd</span> image: /boot/initrd.img-5.4.0-48-generic</span><br><span class="line">Found<span class="title"> Ubuntu</span> 18.04.5<span class="title"> LTS</span> (18.04)<span class="title"> on</span> /dev/sda7</span><br><span class="line">Adding<span class="title"> boot</span> menu<span class="title"> entry</span> for<span class="title"> EFI</span> firmware<span class="title"> configuration</span></span><br><span class="line"><span class="title">done</span></span><br><span class="line"><span class="title">#</span> 同步</span><br><span class="line">sync</span><br><span class="line"># 退出根目录</span><br><span class="line">exit</span><br><span class="line"># 取消挂载</span><br><span class="line">umount /mnt/dev</span><br><span class="line">umount /mnt/sys</span><br><span class="line">umount /mnt/<span class="keyword">proc</span></span><br><span class="line">umount /media/ubuntu/*</span><br><span class="line">umount /mnt/boot/efi</span><br><span class="line"># 退出root</span><br><span class="line">exit</span><br><span class="line"># 重启</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zhuanlan.zhihu.com/p/126228018" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/126228018</a></p>
 <p><a href="https://www.jianshu.com/p/20b0fdbc2d68" target="_blank" rel="noopener">https://www.jianshu.com/p/20b0fdbc2d68</a></p>
 <p><a href="https://blog.csdn.net/u014670893/article/details/94331736" target="_blank" rel="noopener">https://blog.csdn.net/u014670893/article/details/94331736</a></p>
 <p><a href="https://www.jianshu.com/p/478567d8b14a" target="_blank" rel="noopener">https://www.jianshu.com/p/478567d8b14a</a></p>
@@ -464,7 +508,7 @@
   <p><span>本文标题:</span>迁移Ubuntu18.04至新硬盘</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年10月13日 - 13:15:22</p>
-  <p><span>最后更新:</span>2020年10月13日 - 20:52:31</p>
+  <p><span>最后更新:</span>2020年10月15日 - 05:17:45</p>
   <p><span>原始链接:</span><a href="/article/2f7fc36c/" title="迁移Ubuntu18.04至新硬盘">https://pabebezz.github.io/article/2f7fc36c/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/2f7fc36c/" aria-label="复制成功！"></i></span>
   </p>
@@ -699,7 +743,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查看分区情况"><span class="nav-number">1.</span> <span class="nav-text">查看分区情况</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建分区"><span class="nav-number">2.</span> <span class="nav-text">创建分区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复制数据"><span class="nav-number">3.</span> <span class="nav-text">复制数据</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查看分区情况"><span class="nav-number">1.</span> <span class="nav-text">查看分区情况</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建分区"><span class="nav-number">2.</span> <span class="nav-text">创建分区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复制数据"><span class="nav-number">3.</span> <span class="nav-text">复制数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#磁盘检查与创建新uuid"><span class="nav-number">4.</span> <span class="nav-text">磁盘检查与创建新uuid</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更新-grub引导"><span class="nav-number">5.</span> <span class="nav-text">更新 grub引导</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -733,7 +777,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">137.8k</span> 
+    <span title="本站总字数">138.1k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
