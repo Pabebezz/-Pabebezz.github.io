@@ -81,18 +81,25 @@
 
 
 
-<meta name="description" content="https://zhuanlan.zhihu.com/p/126228018 https://www.jianshu.com/p/20b0fdbc2d68 https://blog.csdn.net/u014670893/article/details/94331736 https://www.jianshu.com/p/478567d8b14a">
+<meta name="description" content="查看分区情况1sudo apt-get install gparted 打开gparted,总共3个硬盘 a是1T机械盘(安装Ubuntu18),b是256G固态盘(安装window),c是1T固态盘 目标:把a中的Ubuntu18移动到c  创建分区 选中/dev/sdc2 , 编辑-&amp;gt;清除所有操作-&amp;gt;’gpt’ ,此时sdc变成未分配的情况.  efi分区   swap分区">
 <meta name="keywords" content="Pabebe&#39;s Blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="迁移Ubuntu18.04至新硬盘">
 <meta property="og:url" content="https://pabebezz.github.io/article/2f7fc36c/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="https://zhuanlan.zhihu.com/p/126228018 https://www.jianshu.com/p/20b0fdbc2d68 https://blog.csdn.net/u014670893/article/details/94331736 https://www.jianshu.com/p/478567d8b14a">
+<meta property="og:description" content="查看分区情况1sudo apt-get install gparted 打开gparted,总共3个硬盘 a是1T机械盘(安装Ubuntu18),b是256G固态盘(安装window),c是1T固态盘 目标:把a中的Ubuntu18移动到c  创建分区 选中/dev/sdc2 , 编辑-&amp;gt;清除所有操作-&amp;gt;’gpt’ ,此时sdc变成未分配的情况.  efi分区   swap分区">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-10-13T05:25:19.911Z">
+<meta property="og:image" content="https://pabebezz.github.io/article/2f7fc36c/image-20201013185814230.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/2f7fc36c/image-20201013172728996.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/2f7fc36c/image-20201013194611907.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/2f7fc36c/image-20201013194114632.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/2f7fc36c/image-20201013195238861.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/2f7fc36c/image-20201013195451641.png">
+<meta property="og:updated_time" content="2020-10-13T12:52:31.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="迁移Ubuntu18.04至新硬盘">
-<meta name="twitter:description" content="https://zhuanlan.zhihu.com/p/126228018 https://www.jianshu.com/p/20b0fdbc2d68 https://blog.csdn.net/u014670893/article/details/94331736 https://www.jianshu.com/p/478567d8b14a">
+<meta name="twitter:description" content="查看分区情况1sudo apt-get install gparted 打开gparted,总共3个硬盘 a是1T机械盘(安装Ubuntu18),b是256G固态盘(安装window),c是1T固态盘 目标:把a中的Ubuntu18移动到c  创建分区 选中/dev/sdc2 , 编辑-&amp;gt;清除所有操作-&amp;gt;’gpt’ ,此时sdc变成未分配的情况.  efi分区   swap分区">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/2f7fc36c/image-20201013185814230.png">
 
 
 
@@ -369,7 +376,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  26 字
+                  218 字
                 </span>
               
 
@@ -406,7 +413,31 @@
       
 
       
-        <p><a href="https://zhuanlan.zhihu.com/p/126228018" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/126228018</a></p>
+        <p><img src="/article/2f7fc36c/image-20201013185814230.png" alt="image-20201013185814230"></p>
+<h1 id="查看分区情况"><a href="#查看分区情况" class="headerlink" title="查看分区情况"></a>查看分区情况</h1><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> install gparted</span><br></pre></td></tr></table></figure>
+<p>打开gparted,总共3个硬盘</p>
+<p>a是1T机械盘(安装Ubuntu18),b是256G固态盘(安装window),c是1T固态盘</p>
+<p><strong>目标:把a中的Ubuntu18移动到c</strong></p>
+<p><img src="/article/2f7fc36c/image-20201013172728996.png" alt="image-20201013172728996"></p>
+<h1 id="创建分区"><a href="#创建分区" class="headerlink" title="创建分区"></a>创建分区</h1><ul>
+<li><p>选中<code>/dev/sdc2</code> , 编辑-&gt;清除所有操作-&gt;’gpt’ ,此时sdc变成未分配的情况.</p>
+</li>
+<li><p>efi分区</p>
+<p><img src="/article/2f7fc36c/image-20201013194611907.png" alt="image-20201013194611907"></p>
+</li>
+<li><p>swap分区</p>
+<p><img src="/article/2f7fc36c/image-20201013194114632.png" alt="image-20201013194114632"></p>
+</li>
+<li><p>/分区</p>
+<p><img src="/article/2f7fc36c/image-20201013195238861.png" alt="image-20201013195238861"></p>
+</li>
+</ul>
+<p>点击 √-&gt;’应用所有操作’,结果如下:</p>
+<p><img src="/article/2f7fc36c/image-20201013195451641.png" alt="image-20201013195451641"></p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo blkid</span></span><br></pre></td></tr></table></figure>
+<p>记录ubuntu各分区的UUID</p>
+<p>/dev/sda5: UUID=”b289a466-5778-4506-b541-50581e90e693” TYPE=<strong>“swap”</strong> PARTUUID=”b365930d-acb5-4c6f-9826-556da09d0d71”<br>/dev/sda6: UUID=”E363-0A42” TYPE=”vfat” PARTUUID=”365a22a5-b2b4-4088-b8a1-60c3f7f325b3”<br>/dev/sda7: UUID=”38c27326-c630-4f96-a8fb-dc8a7831cc9b” TYPE=<strong>“ext4”</strong> PARTUUID=”9e27b1ec-1dfa-4dfe-88a3-0dd8c70a776b”<br>/dev/sdb1: UUID=”DABA-7060” TYPE=”vfat” PARTLABEL=”<strong>EFI </strong>system partition” PARTUUID=”8df87468-8873-4861-ad60-72198dd920df”<br>/dev/sdb3: UUID=”B21CB90D1CB8CD9B” TYPE=”ntfs” PARTLABEL=”Basic data partition” PARTUUID=”146e867f-f838-4fe4-9eb0-91214fe22cb2”</p>
+<h1 id="复制数据"><a href="#复制数据" class="headerlink" title="复制数据"></a>复制数据</h1><p><a href="https://zhuanlan.zhihu.com/p/126228018" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/126228018</a></p>
 <p><a href="https://www.jianshu.com/p/20b0fdbc2d68" target="_blank" rel="noopener">https://www.jianshu.com/p/20b0fdbc2d68</a></p>
 <p><a href="https://blog.csdn.net/u014670893/article/details/94331736" target="_blank" rel="noopener">https://blog.csdn.net/u014670893/article/details/94331736</a></p>
 <p><a href="https://www.jianshu.com/p/478567d8b14a" target="_blank" rel="noopener">https://www.jianshu.com/p/478567d8b14a</a></p>
@@ -433,7 +464,7 @@
   <p><span>本文标题:</span>迁移Ubuntu18.04至新硬盘</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2020年10月13日 - 13:15:22</p>
-  <p><span>最后更新:</span>2020年10月13日 - 13:25:19</p>
+  <p><span>最后更新:</span>2020年10月13日 - 20:52:31</p>
   <p><span>原始链接:</span><a href="/article/2f7fc36c/" title="迁移Ubuntu18.04至新硬盘">https://pabebezz.github.io/article/2f7fc36c/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/2f7fc36c/" aria-label="复制成功！"></i></span>
   </p>
@@ -543,8 +574,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -650,6 +690,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查看分区情况"><span class="nav-number">1.</span> <span class="nav-text">查看分区情况</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建分区"><span class="nav-number">2.</span> <span class="nav-text">创建分区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复制数据"><span class="nav-number">3.</span> <span class="nav-text">复制数据</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -677,7 +733,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">137.4k</span> 
+    <span title="本站总字数">137.8k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
