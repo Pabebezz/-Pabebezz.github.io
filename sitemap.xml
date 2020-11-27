@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://pabebezz.github.io/article/0/</loc>
+    
+    <lastmod>2020-11-22T08:27:11.685Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://pabebezz.github.io/article/fe644ae0/</loc>
     
     <lastmod>2020-11-03T09:28:44.039Z</lastmod>
@@ -478,14 +485,14 @@
   </url>
   
   <url>
-    <loc>https://pabebezz.github.io/categories/index.html</loc>
+    <loc>https://pabebezz.github.io/tags/index.html</loc>
     
     <lastmod>2020-06-16T10:24:34.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://pabebezz.github.io/tags/index.html</loc>
+    <loc>https://pabebezz.github.io/categories/index.html</loc>
     
     <lastmod>2020-06-16T10:24:34.000Z</lastmod>
     

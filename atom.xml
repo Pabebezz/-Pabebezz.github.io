@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2020-10-14T23:27:14.803Z</updated>
+  <updated>2020-11-22T08:27:11.685Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://pabebezz.github.io/article/0/"/>
+    <id>https://pabebezz.github.io/article/0/</id>
+    <published>2020-11-22T08:27:01.518Z</published>
+    <updated>2020-11-22T08:27:11.685Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;建议选择稳健型基金，收益率比余额宝高些，风险比黄金低，（战乱买黄金，牢记）&lt;/p&gt;
+&lt;p&gt;还有一些常识性理财！黄金260多一克的时候，二话不说，纸黄金买买买！拿到多少自己看心情。这个是3月份发的，6月底黄金涨到320一克。三个月时间
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>迁移Ubuntu18.04至新硬盘</title>
@@ -397,27 +420,6 @@
     </summary>
     
       <category term="machine learning" scheme="https://pabebezz.github.io/categories/machine-learning/"/>
-    
-    
-      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习-领域自适应</title>
-    <link href="https://pabebezz.github.io/article/2d45afe4/"/>
-    <id>https://pabebezz.github.io/article/2d45afe4/</id>
-    <published>2020-04-20T08:51:54.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;迁移学习-transfer-learning&quot;&gt;&lt;a href=&quot;#迁移学习-transfer-learning&quot; class=&quot;headerlink&quot; title=&quot;迁移学习(transfer learning)&quot;&gt;&lt;/a&gt;迁移学习(transfer learning)&lt;/h1&gt;&lt;p&gt;给定源域的数据和任务，提高目标域的任务性能&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/article/2d45afe4/迁移学习任务分类表.png&quot; alt=&quot;迁移学习任务分类表&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
     
     
       <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
