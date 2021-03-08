@@ -121,6 +121,22 @@
   </entry>
   
   <entry>
+    <title>2020华为杯数学建模研赛</title>
+    <link href="https://pabebezz.github.io/article/421938b8/"/>
+    <id>https://pabebezz.github.io/article/421938b8/</id>
+    <published>2020-08-08T03:45:55.000Z</published>
+    <updated>2021-03-08T05:11:23.196Z</updated>
+    
+    <summary type="html">
+    
+      记录
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>window编译并运行TOY2DAC</title>
     <link href="https://pabebezz.github.io/article/71a7f63d/"/>
     <id>https://pabebezz.github.io/article/71a7f63d/</id>
@@ -396,27 +412,6 @@
     </summary>
     
       <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
-    
-    
-      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习-聚类</title>
-    <link href="https://pabebezz.github.io/article/be746f28/"/>
-    <id>https://pabebezz.github.io/article/be746f28/</id>
-    <published>2020-04-25T12:41:43.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;p&gt;在“无监督学习” 任务中研究最多、 应用最广。&lt;br&gt; 聚类目标：将数据集中的样本划分为若干个通常不相交的子集（“簇” ， cluster）&lt;br&gt; 聚类既可以作为一个单独过程（用于找寻数据内在的分布结构） ， 也可作为分类等其他学习任务的前驱过程。&lt;/p&gt;
-&lt;p&gt;应用：1，分析数据内在结构；2，作为有监督学习的预处理部分，发掘数据的隐藏模式 &lt;/p&gt;
-    
-    </summary>
-    
-      <category term="machine learning" scheme="https://pabebezz.github.io/categories/machine-learning/"/>
     
     
       <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
