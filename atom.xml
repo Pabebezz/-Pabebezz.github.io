@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2020-11-27T03:03:35.771Z</updated>
+  <updated>2021-03-17T13:12:47.891Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -15,6 +15,146 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>打怪之旅-C++基础</title>
+    <link href="https://pabebezz.github.io/article/23d2b7d5/"/>
+    <id>https://pabebezz.github.io/article/23d2b7d5/</id>
+    <published>2021-03-01T09:53:37.000Z</published>
+    <updated>2021-03-17T13:12:47.891Z</updated>
+    
+    <summary type="html">
+    
+      过一遍语法知识
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="code" scheme="https://pabebezz.github.io/tags/code/"/>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打怪之旅-计算机网络</title>
+    <link href="https://pabebezz.github.io/article/6cc0fe42/"/>
+    <id>https://pabebezz.github.io/article/6cc0fe42/</id>
+    <published>2021-02-20T01:53:37.000Z</published>
+    <updated>2021-03-17T05:59:50.181Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Computer Networking" scheme="https://pabebezz.github.io/categories/Computer-Networking/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打怪之旅-操作系统</title>
+    <link href="https://pabebezz.github.io/article/e0627a3a/"/>
+    <id>https://pabebezz.github.io/article/e0627a3a/</id>
+    <published>2021-01-30T00:53:37.000Z</published>
+    <updated>2021-03-17T05:59:55.461Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Computer Operating" scheme="https://pabebezz.github.io/categories/Computer-Operating/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打怪之旅-数据结构与算法</title>
+    <link href="https://pabebezz.github.io/article/737c8fe7/"/>
+    <id>https://pabebezz.github.io/article/737c8fe7/</id>
+    <published>2021-01-24T09:53:37.000Z</published>
+    <updated>2021-03-17T06:03:10.322Z</updated>
+    
+    <summary type="html">
+    
+      leetcode刷题记录以及总结
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="code" scheme="https://pabebezz.github.io/tags/code/"/>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/tags/C/"/>
+    
+      <category term="algorithm" scheme="https://pabebezz.github.io/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打怪之旅-准备工作</title>
+    <link href="https://pabebezz.github.io/article/a5fe7d01/"/>
+    <id>https://pabebezz.github.io/article/a5fe7d01/</id>
+    <published>2021-01-20T10:53:37.000Z</published>
+    <updated>2021-03-17T09:01:48.555Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;简历&quot;&gt;&lt;a href=&quot;#简历&quot; class=&quot;headerlink&quot; title=&quot;简历&quot;&gt;&lt;/a&gt;简历&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&amp;amp;mid=2247485960&amp;amp;idx=1&amp;amp;sn=37cbdb8fc7d5ce102d20f75982a9e404&amp;amp;scene=21#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&amp;amp;mid=2247485960&amp;amp;idx=1&amp;amp;sn=37cbdb8fc7d5ce102d20f75982a9e404&amp;amp;scene=21#wechat_redirect&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;准备项目的重难点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;准备C++，【熟悉C++、了解Python】 ？？&lt;/p&gt;
+&lt;p&gt;计算机语言            Python, C/C++&lt;br&gt;深度学习框架          PyTorch&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;#　C++开发&lt;/p&gt;
+&lt;p&gt;１， &lt;a href=&quot;https://github.com/youngyangyang04/leetcode-master&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LeetCode 刷题攻略：配思维导图，各个类型的经典题目刷题顺序、经典算法模板，以及详细题解。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;２，梳理&lt;a href=&quot;https://github.com/youngyangyang04/TechCPP&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;C++后台研发的知识体系&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;《C++_primer5》入门&lt;/p&gt;
+&lt;p&gt;《effective C++》进阶&lt;/p&gt;
+&lt;p&gt;《effectiveSTL》进阶（掌握）&lt;/p&gt;
+&lt;p&gt;《STL源码剖析》（掌握＋＋　－＞熟悉）&lt;/p&gt;
+&lt;p&gt;《深度探索C++对象模型》（熟悉）&lt;/p&gt;
+&lt;p&gt;3, &lt;a href=&quot;https://www.nowcoder.com/tutorial/93/a34ed23d58b84da3a707c70371f59c21&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;牛客网面试宝典&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;面经与反思&quot;&gt;&lt;a href=&quot;#面经与反思&quot; class=&quot;headerlink&quot; title=&quot;面经与反思&quot;&gt;&lt;/a&gt;面经与反思&lt;/h1&gt;&lt;p&gt;记录面试过程,反思薄弱项&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="code" scheme="https://pabebezz.github.io/tags/code/"/>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/tags/C/"/>
+    
+      <category term="algorithm" scheme="https://pabebezz.github.io/tags/algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>理财小知识</title>
@@ -315,106 +455,6 @@
     
     
       <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>paperUnderstanding&amp;Reconstruction-3D Photography using Context-aware Layered Depth Inpainting</title>
-    <link href="https://pabebezz.github.io/article/ce73fd06/"/>
-    <id>https://pabebezz.github.io/article/ce73fd06/</id>
-    <published>2020-05-30T10:04:30.000Z</published>
-    <updated>2020-06-21T12:37:20.184Z</updated>
-    
-    <summary type="html">
-    
-      该论文理解与复现
-    
-    </summary>
-    
-      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
-    
-    
-      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>paperTranslate-TSM2: Optimizing Tall-and-Skinny Matrix-Matrix Multiplication on GPUs</title>
-    <link href="https://pabebezz.github.io/article/503fa364/"/>
-    <id>https://pabebezz.github.io/article/503fa364/</id>
-    <published>2020-05-19T08:02:43.000Z</published>
-    <updated>2020-08-10T05:04:27.281Z</updated>
-    
-    <summary type="html">
-    
-      该论文翻译
-    
-    </summary>
-    
-      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
-    
-    
-      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>paperMemo-3dShapeMeasurement</title>
-    <link href="https://pabebezz.github.io/article/4b571488/"/>
-    <id>https://pabebezz.github.io/article/4b571488/</id>
-    <published>2020-05-19T07:58:56.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      计算机视觉与摄影测量
-    
-    </summary>
-    
-      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
-    
-    
-      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习-GAN</title>
-    <link href="https://pabebezz.github.io/article/f3e3799/"/>
-    <id>https://pabebezz.github.io/article/f3e3799/</id>
-    <published>2020-05-01T06:32:24.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;理解&quot;&gt;&lt;a href=&quot;#理解&quot; class=&quot;headerlink&quot; title=&quot;理解&quot;&gt;&lt;/a&gt;理解&lt;/h1&gt;&lt;p&gt;生成器与判别器相互博弈的过程。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
-    
-    
-      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习-强化学习</title>
-    <link href="https://pabebezz.github.io/article/da29b4e7/"/>
-    <id>https://pabebezz.github.io/article/da29b4e7/</id>
-    <published>2020-04-27T08:15:15.000Z</published>
-    <updated>2020-06-16T10:24:34.000Z</updated>
-    
-    <summary type="html">
-    
-      人工智能的序列决策
-    
-    </summary>
-    
-      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
-    
-    
-      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
     
   </entry>
   
