@@ -137,7 +137,25 @@
 <meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210323210652014.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210323211333856.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324111629341.png">
-<meta property="og:updated_time" content="2021-03-24T03:30:29.004Z">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324155542443.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324161138471.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324163454501.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324165203304.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324173546232.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324181447922.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324181525565.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324182741149.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324183907452.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324192046402.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324191954474.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324191839400.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324194837490.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324201048507.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324202203317.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324202540522.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324202632072.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324202738915.png">
+<meta property="og:updated_time" content="2021-03-24T12:28:10.263Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打怪之旅-计算机网络">
 <meta name="twitter:description" content="术语ISP (Internet Service Provider) RFC (Request For Comments)因特网标准 ISOC因特网协会 实体：任何可发送或接受信息的硬件或软件进程 对等实体:收发双方相同层次中的实体 协议: 控制两个对等实体进行逻辑通信的规则集合（三要素：语法－定义所交换信息的格式；语义－定义收发双方所要完成的操作；同步－定义收发双方的时许关系） 服务：在协议的控制">
@@ -440,7 +458,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.5k 字
+                  5.8k 字
                 </span>
               
 
@@ -456,7 +474,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  15 分钟
+                  20 分钟
                 </span>
               
             </div>
@@ -791,6 +809,93 @@
 <p><strong>与无连接的数据包服务</strong></p>
 <p>不需要在网络层建立连接，分组可走不同路径，所传送的分组可能误码、丢失、重复、失序。将复杂的<strong>网络处理功能</strong>置于因特网的边缘（<strong>用户主机及其内部的运输层</strong>），将相对简单、尽最大努力的<strong>分组交付功能</strong>置于<strong>因特网核心。</strong></p>
 <p><img src="/article/6cc0fe42/image-20210324111629341.png" alt="image-20210324111629341"></p>
+<h2 id="IPv4地址"><a href="#IPv4地址" class="headerlink" title="IPv4地址"></a>IPv4地址</h2><p>IPv4地址是Internet 上的每一台主机（路由器）的<strong>每个接口</strong>分配一个在全世界范围内唯一的32位比特标识符。</p>
+<p>点分十进制表示。<strong>除2取余，逆序输出（十进制转二进制）</strong></p>
+<h3 id="分类编址的IPv4地址"><a href="#分类编址的IPv4地址" class="headerlink" title="分类编址的IPv4地址"></a>分类编址的IPv4地址</h3><p>左起第一个十进制数值，可以判断网络类别（小于127的为A类（1个字节），128~191的为B类（2个字节），192~223的为C类（3个字节）。</p>
+<p><strong>不可以指派给主机或路由器接口：</strong></p>
+<p>（1）A类网络号0和127</p>
+<p>（2）主机号为”全0“， <strong>网络地址</strong></p>
+<p>（3）主机号为”全1“ ，<strong>广播地址</strong></p>
+<p><img src="/article/6cc0fe42/image-20210324155542443.png" alt="image-20210324155542443"></p>
+<p>一般不使用的IP地址</p>
+<p><img src="/article/6cc0fe42/image-20210324161138471.png" alt="image-20210324161138471"></p>
+<h3 id="划分子网的IPv4地址"><a href="#划分子网的IPv4地址" class="headerlink" title="划分子网的IPv4地址"></a>划分子网的IPv4地址</h3><p>子网也要给网络地址与广播地址 </p>
+<p> 默认子网掩码：在未划分子网的情况下使用的子网掩码，网络号所在的位数全‘1’；</p>
+<p><img src="/article/6cc0fe42/image-20210324163454501.png" alt="image-20210324163454501"></p>
+<h3 id="无分类编址的IPv4地址"><a href="#无分类编址的IPv4地址" class="headerlink" title="无分类编址的IPv4地址"></a>无分类编址的IPv4地址</h3><p>无分类域间路由选择CIDR（Classless Inter-Domain Rounting）</p>
+<ul>
+<li>消除了ABC类地址、划分子网的概念</li>
+<li>不需要区分网络地址、广播地址</li>
+</ul>
+<p><img src="/article/6cc0fe42/image-20210324165203304.png" alt="image-20210324165203304"></p>
+<p>变长的子网掩码（子网掩码长度根据子网所需地址[主机接口、路由接口、网络地址、广播地址]的数量而变化）</p>
+<p>分配原则是：每个子块的起点位置不能随意选取，只能选取<strong>块大小的整数倍地址</strong>作为起点。大的子块先分配</p>
+<h2 id="IP数据报的发送和转发过程"><a href="#IP数据报的发送和转发过程" class="headerlink" title="IP数据报的发送和转发过程"></a>IP数据报的发送和转发过程</h2><p>路由器在网络层（VLAN在交换机上实现，数据链路层），隔离冲突域，又隔离广播域</p>
+<p>网桥、交换机(多接口网桥) 在数据链路层，隔离冲突域，<strong>不隔离广播域</strong></p>
+<p>中继器和集线器(多接口中继器) 在物理层，<strong>不隔离冲突域，不隔离广播域</strong></p>
+<p><img src="/article/6cc0fe42/image-20210324173546232.png" alt="image-20210324173546232"></p>
+<h2 id="路由选择协议"><a href="#路由选择协议" class="headerlink" title="路由选择协议"></a>路由选择协议</h2><p>”网关“便是”路由“</p>
+<p><strong>路由器</strong>是一种具有多个输入端口，和输出端口的专用计算机，其任务是转发分组。结构如下：</p>
+<p><img src="/article/6cc0fe42/image-20210324181447922.png" alt="image-20210324181447922"></p>
+<p><strong>路由条目</strong>（路由表的表项）有直连网络、静态路由、动态路由（路由选择协议）</p>
+<p>静态路由配置（人工配置）因配置错误、接口不存在或故障可能会产生路由环路</p>
+<p>特殊的静态路由：</p>
+<ul>
+<li>默认路由（目的网络为0.0.0.0， 地址掩码为0.0.0.0）</li>
+<li>特定主机路由（目的网络为特定主机的IP地址，地址掩码为255.255.255.255）</li>
+<li>黑洞路由（下一跳为null0）</li>
+</ul>
+<p><strong>常见的路由选择协议</strong></p>
+<p><img src="/article/6cc0fe42/image-20210324181525565.png" alt="image-20210324181525565"></p>
+<h3 id="RIP（内部网关协议）"><a href="#RIP（内部网关协议）" class="headerlink" title="RIP（内部网关协议）"></a>RIP（内部网关协议）</h3><p><strong>只与相邻的路由器交换信息</strong></p>
+<p><img src="/article/6cc0fe42/image-20210324182741149.png" alt="image-20210324182741149"></p>
+<h3 id="OSPF（内部网关协议）"><a href="#OSPF（内部网关协议）" class="headerlink" title="OSPF（内部网关协议）"></a>OSPF（内部网关协议）</h3><p><img src="/article/6cc0fe42/image-20210324183907452.png" alt="image-20210324183907452"></p>
+<h3 id="BGP（外部网关协议）"><a href="#BGP（外部网关协议）" class="headerlink" title="BGP（外部网关协议）"></a>BGP（外部网关协议）</h3><p><img src="/article/6cc0fe42/image-20210324192046402.png" alt="image-20210324192046402"></p>
+<p><img src="/article/6cc0fe42/image-20210324191954474.png" alt="image-20210324191954474"></p>
+<p>直接封装的报文所属协议：</p>
+<p><img src="/article/6cc0fe42/image-20210324191839400.png" alt="image-20210324191839400"></p>
+<h2 id="IPv4数据报格式"><a href="#IPv4数据报格式" class="headerlink" title="IPv4数据报格式"></a>IPv4数据报格式</h2><ul>
+<li>一个 IP 数据报由<strong>首部</strong>和<strong>数据</strong>两部分组成。</li>
+<li><strong>首部的前一部分是固定长度，共 20 字节，是所有 IP 数据报必须具有的。</strong></li>
+</ul>
+<p><strong>注意首部长度、片偏移的单位量</strong></p>
+<p><img src="/article/6cc0fe42/image-20210324194837490.png" alt="image-20210324194837490"></p>
+<h2 id="ICMP（网际控制报文协议）"><a href="#ICMP（网际控制报文协议）" class="headerlink" title="ICMP（网际控制报文协议）"></a>ICMP（网际控制报文协议）</h2><p>架构IP网络时需要特别注意两点：</p>
+<ul>
+<li>确认网络是否正常工作</li>
+<li>遇到异常时进行问题诊断</li>
+</ul>
+<p>ICMP的主要功能包括：</p>
+<ul>
+<li><p>确认IP包是否成功送达目标地址</p>
+</li>
+<li><p>通知在发送过程当中IP包被废弃的具体原因</p>
+</li>
+<li><p>改善网络设置等</p>
+<p><strong>ICMP 不是高层协议（看起来好像是高层协议，因为 ICMP 报文是装在 IP 数据报中，作为其中的数据部分），而是 IP 层的协议</strong></p>
+<p><img src="/article/6cc0fe42/image-20210324201048507.png" alt="image-20210324201048507"></p>
+</li>
+</ul>
+<h2 id="VPN-虚拟专用网-与-NAT（网络地址转换）"><a href="#VPN-虚拟专用网-与-NAT（网络地址转换）" class="headerlink" title="VPN(虚拟专用网)与 NAT（网络地址转换）"></a>VPN(虚拟专用网)与 NAT（网络地址转换）</h2><p>VPN aka. IP隧道技术</p>
+<p>专用地址（私有地址）只能用于本地地址，不能用于全球地址（私有地址只能用于一个机构的内部通信，而不能用于和因特网上的主机通信）</p>
+<p>因特网中所有路由器对目的地址是私有地址的IP数据报一律不进行转发</p>
+<p><strong>本地地址与全球地址</strong></p>
+<ul>
+<li><p><strong>本地地址</strong>——仅在机构内部使用的 IP 地址，可以由本机构自行分配，而不需要向互联网的管理机构申请。</p>
+</li>
+<li><p><strong>全球地址</strong>——全球唯一的 IP 地址，必须向互联网的管理机构申请。</p>
+</li>
+<li><p><strong>问题</strong>：在内部使用的本地地址就有可能和互联网中某个 IP 地址重合，这样就会出现地址的二义性问题。</p>
+</li>
+</ul>
+<p><img src="/article/6cc0fe42/image-20210324202203317.png" alt="image-20210324202203317"></p>
+<p>使用私有地址的主机，如何才能与因特网上使用全球IP地址的主机进行通信？</p>
+<p>这需要在专用网络连接到因特网的路由器上安装<strong>NAT软件</strong>,<strong>专有NAT软件的路由器叫做NAT路由器</strong>.它至少有一个有效的外部全球IP地址,这样，所有使用私有地址的主机在和外界通信时，都要在NAT路由器上将其私有地址转换为全球IP地址</p>
+<p><img src="/article/6cc0fe42/image-20210324202540522.png" alt="image-20210324202540522"></p>
+<p>利用<strong>端口（运输层）</strong>解决一对多映射</p>
+<p><img src="/article/6cc0fe42/image-20210324202632072.png" alt="image-20210324202632072"></p>
+<p>总结：</p>
+<p><img src="/article/6cc0fe42/image-20210324202738915.png" alt="image-20210324202738915"></p>
 <h1 id="运输层"><a href="#运输层" class="headerlink" title="运输层"></a>运输层</h1><h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><h1 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h1><p><a href="https://www.bilibili.com/video/BV1c4411d7jb?p=7&amp;spm_id_from=pageDriver" target="_blank" rel="noopener">视频课</a></p>
 <p><a href="https://www.jianshu.com/c/f627e74e6ff3" target="_blank" rel="noopener">笔记</a></p>
 
@@ -816,7 +921,7 @@
   <p><span>本文标题:</span>打怪之旅-计算机网络</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2021年02月03日 - 08:53:37</p>
-  <p><span>最后更新:</span>2021年03月24日 - 11:30:29</p>
+  <p><span>最后更新:</span>2021年03月24日 - 20:28:10</p>
   <p><span>原始链接:</span><a href="/article/6cc0fe42/" title="打怪之旅-计算机网络">https://pabebezz.github.io/article/6cc0fe42/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/6cc0fe42/" aria-label="复制成功！"></i></span>
   </p>
@@ -1061,7 +1166,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#术语"><span class="nav-number">1.</span> <span class="nav-text">术语</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三种交换方式"><span class="nav-number">2.</span> <span class="nav-text">三种交换方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络的定义和分类"><span class="nav-number">3.</span> <span class="nav-text">计算机网络的定义和分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能指标"><span class="nav-number">3.2.</span> <span class="nav-text">性能指标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络体系结构"><span class="nav-number">4.</span> <span class="nav-text">计算机网络体系结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物理层"><span class="nav-number">5.</span> <span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#传输方式"><span class="nav-number">5.1.</span> <span class="nav-text">传输方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码与调制"><span class="nav-number">5.2.</span> <span class="nav-text">编码与调制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据链路层"><span class="nav-number">6.</span> <span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#封装成帧"><span class="nav-number">6.1.</span> <span class="nav-text">封装成帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#差错检测"><span class="nav-number">6.2.</span> <span class="nav-text">差错检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可靠传输"><span class="nav-number">6.3.</span> <span class="nav-text">可靠传输</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点对点协议-ppp-point-to-point-protocol"><span class="nav-number">6.4.</span> <span class="nav-text">点对点协议 ppp( point-to-point protocol)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#媒体接入控制（介质访问控制）MAC"><span class="nav-number">6.5.</span> <span class="nav-text">媒体接入控制（介质访问控制）MAC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA-CD-协议的重要特性"><span class="nav-number">6.5.1.</span> <span class="nav-text">CSMA/CD 协议的重要特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA-CA协议的信道预约和虚拟载波监听"><span class="nav-number">6.5.2.</span> <span class="nav-text">CSMA/CA协议的信道预约和虚拟载波监听</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MAC地址-IP地址-ARP协议"><span class="nav-number">6.6.</span> <span class="nav-text">MAC地址\IP地址\ARP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC地址-物理地址"><span class="nav-number">6.6.1.</span> <span class="nav-text">MAC地址(物理地址)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP地址"><span class="nav-number">6.6.2.</span> <span class="nav-text">IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP协议"><span class="nav-number">6.6.3.</span> <span class="nav-text">ARP协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集线器与交换机的区别"><span class="nav-number">6.7.</span> <span class="nav-text">集线器与交换机的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟局域网VLAN"><span class="nav-number">6.8.</span> <span class="nav-text">虚拟局域网VLAN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络层"><span class="nav-number">7.</span> <span class="nav-text">网络层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运输层"><span class="nav-number">8.</span> <span class="nav-text">运输层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用层"><span class="nav-number">9.</span> <span class="nav-text">应用层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资源"><span class="nav-number">10.</span> <span class="nav-text">参考资源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#术语"><span class="nav-number">1.</span> <span class="nav-text">术语</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三种交换方式"><span class="nav-number">2.</span> <span class="nav-text">三种交换方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络的定义和分类"><span class="nav-number">3.</span> <span class="nav-text">计算机网络的定义和分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能指标"><span class="nav-number">3.2.</span> <span class="nav-text">性能指标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络体系结构"><span class="nav-number">4.</span> <span class="nav-text">计算机网络体系结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物理层"><span class="nav-number">5.</span> <span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#传输方式"><span class="nav-number">5.1.</span> <span class="nav-text">传输方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码与调制"><span class="nav-number">5.2.</span> <span class="nav-text">编码与调制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据链路层"><span class="nav-number">6.</span> <span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#封装成帧"><span class="nav-number">6.1.</span> <span class="nav-text">封装成帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#差错检测"><span class="nav-number">6.2.</span> <span class="nav-text">差错检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可靠传输"><span class="nav-number">6.3.</span> <span class="nav-text">可靠传输</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点对点协议-ppp-point-to-point-protocol"><span class="nav-number">6.4.</span> <span class="nav-text">点对点协议 ppp( point-to-point protocol)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#媒体接入控制（介质访问控制）MAC"><span class="nav-number">6.5.</span> <span class="nav-text">媒体接入控制（介质访问控制）MAC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA-CD-协议的重要特性"><span class="nav-number">6.5.1.</span> <span class="nav-text">CSMA/CD 协议的重要特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA-CA协议的信道预约和虚拟载波监听"><span class="nav-number">6.5.2.</span> <span class="nav-text">CSMA/CA协议的信道预约和虚拟载波监听</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MAC地址-IP地址-ARP协议"><span class="nav-number">6.6.</span> <span class="nav-text">MAC地址\IP地址\ARP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC地址-物理地址"><span class="nav-number">6.6.1.</span> <span class="nav-text">MAC地址(物理地址)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP地址"><span class="nav-number">6.6.2.</span> <span class="nav-text">IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP协议"><span class="nav-number">6.6.3.</span> <span class="nav-text">ARP协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集线器与交换机的区别"><span class="nav-number">6.7.</span> <span class="nav-text">集线器与交换机的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟局域网VLAN"><span class="nav-number">6.8.</span> <span class="nav-text">虚拟局域网VLAN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络层"><span class="nav-number">7.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IPv4地址"><span class="nav-number">7.1.</span> <span class="nav-text">IPv4地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类编址的IPv4地址"><span class="nav-number">7.1.1.</span> <span class="nav-text">分类编址的IPv4地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#划分子网的IPv4地址"><span class="nav-number">7.1.2.</span> <span class="nav-text">划分子网的IPv4地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无分类编址的IPv4地址"><span class="nav-number">7.1.3.</span> <span class="nav-text">无分类编址的IPv4地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP数据报的发送和转发过程"><span class="nav-number">7.2.</span> <span class="nav-text">IP数据报的发送和转发过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由选择协议"><span class="nav-number">7.3.</span> <span class="nav-text">路由选择协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RIP（内部网关协议）"><span class="nav-number">7.3.1.</span> <span class="nav-text">RIP（内部网关协议）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSPF（内部网关协议）"><span class="nav-number">7.3.2.</span> <span class="nav-text">OSPF（内部网关协议）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BGP（外部网关协议）"><span class="nav-number">7.3.3.</span> <span class="nav-text">BGP（外部网关协议）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IPv4数据报格式"><span class="nav-number">7.4.</span> <span class="nav-text">IPv4数据报格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICMP（网际控制报文协议）"><span class="nav-number">7.5.</span> <span class="nav-text">ICMP（网际控制报文协议）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VPN-虚拟专用网-与-NAT（网络地址转换）"><span class="nav-number">7.6.</span> <span class="nav-text">VPN(虚拟专用网)与 NAT（网络地址转换）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运输层"><span class="nav-number">8.</span> <span class="nav-text">运输层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用层"><span class="nav-number">9.</span> <span class="nav-text">应用层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资源"><span class="nav-number">10.</span> <span class="nav-text">参考资源</span></a></li></ol></div>
             
 
           </div>
@@ -1095,7 +1200,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">180.5k</span> 
+    <span title="本站总字数">181.8k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
