@@ -99,7 +99,7 @@
 <meta property="og:image" content="https://pabebezz.github.io/article/23d2b7d5/image-20210319115428239.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/23d2b7d5/image-20210319115652532.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/23d2b7d5/image-20210319115836252.png">
-<meta property="og:updated_time" content="2021-03-20T09:05:43.001Z">
+<meta property="og:updated_time" content="2021-03-24T13:15:47.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打怪之旅-C++基础">
 <meta name="twitter:description" content="过一遍语法知识">
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  10k 字
+                  11.4k 字
                 </span>
               
 
@@ -418,7 +418,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  39 分钟
+                  44 分钟
                 </span>
               
             </div>
@@ -951,6 +951,149 @@
 </ul>
 <h3 id="类模板与友元"><a href="#类模板与友元" class="headerlink" title="类模板与友元"></a>类模板与友元</h3><p>全局函数类内实现 - 直接在类内声明友元即可</p>
 <p>全局函数类外实现 - 需要提前让编译器知道全局函数的存在</p>
+<h1 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h1><h3 id="函数对象"><a href="#函数对象" class="headerlink" title="函数对象"></a>函数对象</h3><p>函数对象概念</p>
+<p><strong>概念：</strong></p>
+<ul>
+<li>重载<strong>函数调用操作符</strong>的类，其对象常称为<strong>函数对象</strong></li>
+<li><strong>函数对象</strong>使用重载的()时，行为类似函数调用，也叫<strong>仿函数</strong></li>
+</ul>
+<p><strong>本质：</strong></p>
+<p>函数对象(仿函数)是一个<strong>类</strong>，不是一个函数</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>函数对象在使用时，可以像普通函数那样调用, 可以有参数，可以有返回值</li>
+<li>函数对象超出普通函数的概念，函数对象可以有自己的状态</li>
+<li>函数对象可以作为参数传递</li>
+</ul>
+<h3 id="谓词"><a href="#谓词" class="headerlink" title="谓词"></a>谓词</h3><p><strong>概念：</strong></p>
+<ul>
+<li>返回bool类型的仿函数称为<strong>谓词</strong></li>
+<li>如果operator()接受一个参数，那么叫做一元谓词</li>
+<li>如果operator()接受两个参数，那么叫做二元谓词</li>
+</ul>
+<h3 id="内建函数对象"><a href="#内建函数对象" class="headerlink" title="内建函数对象"></a>内建函数对象</h3><h4 id="内建函数对象意义"><a href="#内建函数对象意义" class="headerlink" title="内建函数对象意义"></a>内建函数对象意义</h4><p><strong>概念：</strong></p>
+<ul>
+<li>STL内建了一些函数对象</li>
+</ul>
+<p><strong>分类:</strong></p>
+<ul>
+<li><p>算术仿函数</p>
+</li>
+<li><p>关系仿函数</p>
+</li>
+<li><p>逻辑仿函数</p>
+</li>
+</ul>
+<p><strong>用法：</strong></p>
+<ul>
+<li>这些仿函数所产生的对象，用法和一般函数完全相同</li>
+<li><strong>使用内建函数对象，需要引入头文件 <code>#include&lt;functional&gt;</code></strong></li>
+</ul>
+<h4 id="算术仿函数"><a href="#算术仿函数" class="headerlink" title="算术仿函数"></a>算术仿函数</h4><p><strong>功能描述：</strong></p>
+<ul>
+<li>实现四则运算</li>
+<li>其中negate是一元运算，其他都是二元运算</li>
+</ul>
+<p><strong>仿函数原型：</strong></p>
+<ul>
+<li><code>template&lt;class T&gt; T plus&lt;T&gt;</code>                //加法仿函数</li>
+<li><code>template&lt;class T&gt; T minus&lt;T&gt;</code>              //减法仿函数</li>
+<li><code>template&lt;class T&gt; T multiplies&lt;T&gt;</code>    //乘法仿函数</li>
+<li><code>template&lt;class T&gt; T divides&lt;T&gt;</code>         //除法仿函数</li>
+<li><code>template&lt;class T&gt; T modulus&lt;T&gt;</code>         //取模仿函数</li>
+<li><code>template&lt;class T&gt; T negate&lt;T&gt;</code>           //取反仿函数</li>
+</ul>
+<h4 id="关系仿函数"><a href="#关系仿函数" class="headerlink" title="关系仿函数"></a>关系仿函数</h4><p><strong>功能描述：</strong></p>
+<ul>
+<li>实现关系对比</li>
+</ul>
+<p><strong>仿函数原型：</strong></p>
+<ul>
+<li><code>template&lt;class T&gt; bool equal_to&lt;T&gt;</code>                    //等于</li>
+<li><code>template&lt;class T&gt; bool not_equal_to&lt;T&gt;</code>            //不等于</li>
+<li><code>template&lt;class T&gt; bool greater&lt;T&gt;</code>                      //大于</li>
+<li><code>template&lt;class T&gt; bool greater_equal&lt;T&gt;</code>          //大于等于</li>
+<li><code>template&lt;class T&gt; bool less&lt;T&gt;</code>                           //小于</li>
+<li><code>template&lt;class T&gt; bool less_equal&lt;T&gt;</code>               //小于等于</li>
+</ul>
+<h4 id="逻辑仿函数"><a href="#逻辑仿函数" class="headerlink" title="逻辑仿函数"></a>逻辑仿函数</h4><p><strong>功能描述：</strong></p>
+<ul>
+<li>实现逻辑运算</li>
+</ul>
+<p><strong>函数原型：</strong></p>
+<ul>
+<li><code>template&lt;class T&gt; bool logical_and&lt;T&gt;</code>              //逻辑与</li>
+<li><code>template&lt;class T&gt; bool logical_or&lt;T&gt;</code>                //逻辑或</li>
+<li><code>template&lt;class T&gt; bool logical_not&lt;T&gt;</code>              //逻辑非</li>
+</ul>
+<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><h3 id="STL基本概念"><a href="#STL基本概念" class="headerlink" title="STL基本概念"></a>STL基本概念</h3><p>C++的<strong>面向对象</strong>和<strong>泛型编程</strong>思想，目的就是<strong>复用性的提升</strong></p>
+<ul>
+<li>STL(Standard Template Library,<strong>标准模板库</strong>)</li>
+<li>STL 从广义上分为: <strong>容器(container) 算法(algorithm) 迭代器(iterator)</strong></li>
+<li><strong>容器</strong>和<strong>算法</strong>之间通过<strong>迭代器</strong>进行无缝连接。</li>
+<li>STL 几乎所有的代码都采用了模板类或者模板函数</li>
+</ul>
+<h3 id="STL六大组件"><a href="#STL六大组件" class="headerlink" title="STL六大组件"></a>STL六大组件</h3><p>STL大体分为六大组件，分别是:<strong>容器、算法、迭代器、仿函数、适配器（配接器）、空间配置器</strong></p>
+<ol>
+<li>容器：各种数据结构，如vector、list、deque、set、map等,用来存放数据。</li>
+<li>算法：各种常用的算法，如sort、find、copy、for_each等</li>
+<li>迭代器：扮演了容器与算法之间的胶合剂。</li>
+<li>仿函数：行为类似函数，可作为算法的某种策略。</li>
+<li>适配器：一种用来修饰容器或者仿函数或迭代器接口的东西。</li>
+<li>空间配置器：负责空间的配置与管理。</li>
+</ol>
+<h3 id="STL中容器、算法、迭代器"><a href="#STL中容器、算法、迭代器" class="headerlink" title="STL中容器、算法、迭代器"></a>STL中容器、算法、迭代器</h3><p><strong>容器：</strong>置物之所也</p>
+<p>STL<strong>容器</strong>就是将运用<strong>最广泛的一些数据结构</strong>实现出来</p>
+<p>常用的数据结构：数组, 链表,树, 栈, 队列, 集合, 映射表 等</p>
+<p>这些容器分为<strong>序列式容器</strong>和<strong>关联式容器</strong>两种:</p>
+<p>​    <strong>序列式容器</strong>:强调值的排序，序列式容器中的每个元素均有固定的位置。<br>​    <strong>关联式容器</strong>:二叉树结构，各元素之间没有严格的物理上的顺序关系</p>
+<p><strong>算法：</strong>问题之解法也</p>
+<p>有限的步骤，解决逻辑或数学上的问题，这一门学科我们叫做算法(Algorithms)</p>
+<p>算法分为:<strong>质变算法</strong>和<strong>非质变算法</strong>。</p>
+<p>质变算法：是指运算过程中会更改区间内的元素的内容。例如拷贝，替换，删除等等</p>
+<p>非质变算法：是指运算过程中不会更改区间内的元素内容，例如查找、计数、遍历、寻找极值等等</p>
+<p><strong>迭代器：</strong>容器和算法之间粘合剂</p>
+<p>提供一种方法，使之能够依序寻访某个容器所含的各个元素，而又无需暴露该容器的内部表示方式。</p>
+<p>每个容器都有自己专属的迭代器</p>
+<p>迭代器使用非常类似于指针，初学阶段我们可以先理解迭代器为指针</p>
+<p>迭代器种类：</p>
+<table>
+<thead>
+<tr>
+<th>种类</th>
+<th>功能</th>
+<th>支持运算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入迭代器</td>
+<td>对数据的只读访问</td>
+<td>只读，支持++、==、！=</td>
+</tr>
+<tr>
+<td>输出迭代器</td>
+<td>对数据的只写访问</td>
+<td>只写，支持++</td>
+</tr>
+<tr>
+<td>前向迭代器</td>
+<td>读写操作，并能向前推进迭代器</td>
+<td>读写，支持++、==、！=</td>
+</tr>
+<tr>
+<td>双向迭代器</td>
+<td>读写操作，并能向前和向后操作</td>
+<td>读写，支持++、–，</td>
+</tr>
+<tr>
+<td>随机访问迭代器</td>
+<td>读写操作，可以以跳跃的方式访问任意数据，功能最强的迭代器</td>
+<td>读写，支持++、–、[n]、-n、&lt;、&lt;=、&gt;、&gt;=</td>
+</tr>
+</tbody>
+</table>
+<p>常用的容器中迭代器种类为双向迭代器，和随机访问迭代器</p>
 <h1 id="手册"><a href="#手册" class="headerlink" title="手册"></a>手册</h1><p>cppreference[C++参考手册(已更新到20)]：<a href="https://en.cppreference.com/w/" target="_blank" rel="noopener">https://en.cppreference.com/w/</a></p>
 <p>LearnCpp[c++入门]:<a href="https://www.learncpp.com/" target="_blank" rel="noopener">https://www.learncpp.com/</a></p>
 <p>Cplusplus[论坛]:<a href="http://www.cplusplus.com/" target="_blank" rel="noopener">http://www.cplusplus.com/</a></p>
@@ -979,7 +1122,7 @@
   <p><span>本文标题:</span>打怪之旅-C++基础</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2021年03月01日 - 17:53:37</p>
-  <p><span>最后更新:</span>2021年03月20日 - 17:05:43</p>
+  <p><span>最后更新:</span>2021年03月24日 - 21:15:47</p>
   <p><span>原始链接:</span><a href="/article/23d2b7d5/" title="打怪之旅-C++基础">https://pabebezz.github.io/article/23d2b7d5/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/23d2b7d5/" aria-label="复制成功！"></i></span>
   </p>
@@ -1222,7 +1365,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#小tips"><span class="nav-number">1.</span> <span class="nav-text">小tips</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性同余方法"><span class="nav-number">1.1.</span> <span class="nav-text">线性同余方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存分区模型"><span class="nav-number">2.</span> <span class="nav-text">内存分区模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#程序运行前"><span class="nav-number">2.1.</span> <span class="nav-text">程序运行前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序运行后"><span class="nav-number">2.2.</span> <span class="nav-text">程序运行后</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引用"><span class="nav-number">3.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数参数"><span class="nav-number">4.</span> <span class="nav-text">函数参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类和对象"><span class="nav-number">5.</span> <span class="nav-text">类和对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#封装"><span class="nav-number">5.1.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的初始化和清理"><span class="nav-number">5.2.</span> <span class="nav-text">对象的初始化和清理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数和析构函数"><span class="nav-number">5.2.1.</span> <span class="nav-text">构造函数和析构函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数分类"><span class="nav-number">5.2.2.</span> <span class="nav-text">构造函数分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-中拷贝构造函数调用时机通常有三种情况"><span class="nav-number">5.2.3.</span> <span class="nav-text">C++中拷贝构造函数调用时机通常有三种情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数调用规则"><span class="nav-number">5.2.4.</span> <span class="nav-text">构造函数调用规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深拷贝与浅拷贝"><span class="nav-number">5.2.5.</span> <span class="nav-text">深拷贝与浅拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态成员"><span class="nav-number">5.2.6.</span> <span class="nav-text">静态成员</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-对象模型和this指针"><span class="nav-number">5.3.</span> <span class="nav-text">C++对象模型和this指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#空对象"><span class="nav-number">5.3.1.</span> <span class="nav-text">空对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this指针"><span class="nav-number">5.3.2.</span> <span class="nav-text">this指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空指针访问成员函数"><span class="nav-number">5.3.3.</span> <span class="nav-text">空指针访问成员函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const修饰成员函数"><span class="nav-number">5.3.4.</span> <span class="nav-text">const修饰成员函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#友元"><span class="nav-number">6.</span> <span class="nav-text">友元</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符重载"><span class="nav-number">7.</span> <span class="nav-text">运算符重载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加号运算符"><span class="nav-number">7.1.</span> <span class="nav-text">加号运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#左移运算符"><span class="nav-number">7.2.</span> <span class="nav-text">左移运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递增运算符"><span class="nav-number">7.3.</span> <span class="nav-text">递增运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值运算符"><span class="nav-number">7.4.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系运算符重载"><span class="nav-number">7.5.</span> <span class="nav-text">关系运算符重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数调用运算符重载"><span class="nav-number">7.6.</span> <span class="nav-text">函数调用运算符重载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">8.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造和析构顺序and同名成员处理方式"><span class="nav-number">8.1.</span> <span class="nav-text">构造和析构顺序and同名成员处理方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多继承语法"><span class="nav-number">8.2.</span> <span class="nav-text">多继承语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#菱形继承"><span class="nav-number">8.3.</span> <span class="nav-text">菱形继承</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">9.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类别"><span class="nav-number">9.1.</span> <span class="nav-text">类别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态多态"><span class="nav-number">9.2.</span> <span class="nav-text">动态多态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理分析"><span class="nav-number">9.2.1.</span> <span class="nav-text">原理分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#纯虚函数和抽象类"><span class="nav-number">9.3.</span> <span class="nav-text">纯虚函数和抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚析构和纯虚析构"><span class="nav-number">9.4.</span> <span class="nav-text">虚析构和纯虚析构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件"><span class="nav-number">10.</span> <span class="nav-text">文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#写文件"><span class="nav-number">10.1.</span> <span class="nav-text">写文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读文件"><span class="nav-number">10.2.</span> <span class="nav-text">读文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二进制文件"><span class="nav-number">10.3.</span> <span class="nav-text">二进制文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板"><span class="nav-number">11.</span> <span class="nav-text">模板</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数模板"><span class="nav-number">11.1.</span> <span class="nav-text">函数模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通函数与函数模板区别"><span class="nav-number">11.1.1.</span> <span class="nav-text">普通函数与函数模板区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用规则"><span class="nav-number">11.1.2.</span> <span class="nav-text">调用规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局限性"><span class="nav-number">11.1.3.</span> <span class="nav-text">局限性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类模板"><span class="nav-number">11.2.</span> <span class="nav-text">类模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板与函数模板区别"><span class="nav-number">11.2.1.</span> <span class="nav-text">类模板与函数模板区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板中成员函数创建时机"><span class="nav-number">11.2.2.</span> <span class="nav-text">类模板中成员函数创建时机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板对象做函数参数"><span class="nav-number">11.2.3.</span> <span class="nav-text">类模板对象做函数参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板与继承"><span class="nav-number">11.2.4.</span> <span class="nav-text">类模板与继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板成员函数类外实现"><span class="nav-number">11.2.5.</span> <span class="nav-text">类模板成员函数类外实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板分文件编写"><span class="nav-number">11.2.6.</span> <span class="nav-text">类模板分文件编写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板与友元"><span class="nav-number">11.2.7.</span> <span class="nav-text">类模板与友元</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#手册"><span class="nav-number">12.</span> <span class="nav-text">手册</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#小tips"><span class="nav-number">1.</span> <span class="nav-text">小tips</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性同余方法"><span class="nav-number">1.1.</span> <span class="nav-text">线性同余方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存分区模型"><span class="nav-number">2.</span> <span class="nav-text">内存分区模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#程序运行前"><span class="nav-number">2.1.</span> <span class="nav-text">程序运行前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序运行后"><span class="nav-number">2.2.</span> <span class="nav-text">程序运行后</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引用"><span class="nav-number">3.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数参数"><span class="nav-number">4.</span> <span class="nav-text">函数参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类和对象"><span class="nav-number">5.</span> <span class="nav-text">类和对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#封装"><span class="nav-number">5.1.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的初始化和清理"><span class="nav-number">5.2.</span> <span class="nav-text">对象的初始化和清理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数和析构函数"><span class="nav-number">5.2.1.</span> <span class="nav-text">构造函数和析构函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数分类"><span class="nav-number">5.2.2.</span> <span class="nav-text">构造函数分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-中拷贝构造函数调用时机通常有三种情况"><span class="nav-number">5.2.3.</span> <span class="nav-text">C++中拷贝构造函数调用时机通常有三种情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数调用规则"><span class="nav-number">5.2.4.</span> <span class="nav-text">构造函数调用规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深拷贝与浅拷贝"><span class="nav-number">5.2.5.</span> <span class="nav-text">深拷贝与浅拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态成员"><span class="nav-number">5.2.6.</span> <span class="nav-text">静态成员</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-对象模型和this指针"><span class="nav-number">5.3.</span> <span class="nav-text">C++对象模型和this指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#空对象"><span class="nav-number">5.3.1.</span> <span class="nav-text">空对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this指针"><span class="nav-number">5.3.2.</span> <span class="nav-text">this指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空指针访问成员函数"><span class="nav-number">5.3.3.</span> <span class="nav-text">空指针访问成员函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const修饰成员函数"><span class="nav-number">5.3.4.</span> <span class="nav-text">const修饰成员函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#友元"><span class="nav-number">6.</span> <span class="nav-text">友元</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符重载"><span class="nav-number">7.</span> <span class="nav-text">运算符重载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加号运算符"><span class="nav-number">7.1.</span> <span class="nav-text">加号运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#左移运算符"><span class="nav-number">7.2.</span> <span class="nav-text">左移运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递增运算符"><span class="nav-number">7.3.</span> <span class="nav-text">递增运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值运算符"><span class="nav-number">7.4.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系运算符重载"><span class="nav-number">7.5.</span> <span class="nav-text">关系运算符重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数调用运算符重载"><span class="nav-number">7.6.</span> <span class="nav-text">函数调用运算符重载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">8.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造和析构顺序and同名成员处理方式"><span class="nav-number">8.1.</span> <span class="nav-text">构造和析构顺序and同名成员处理方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多继承语法"><span class="nav-number">8.2.</span> <span class="nav-text">多继承语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#菱形继承"><span class="nav-number">8.3.</span> <span class="nav-text">菱形继承</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">9.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类别"><span class="nav-number">9.1.</span> <span class="nav-text">类别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态多态"><span class="nav-number">9.2.</span> <span class="nav-text">动态多态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理分析"><span class="nav-number">9.2.1.</span> <span class="nav-text">原理分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#纯虚函数和抽象类"><span class="nav-number">9.3.</span> <span class="nav-text">纯虚函数和抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚析构和纯虚析构"><span class="nav-number">9.4.</span> <span class="nav-text">虚析构和纯虚析构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件"><span class="nav-number">10.</span> <span class="nav-text">文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#写文件"><span class="nav-number">10.1.</span> <span class="nav-text">写文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读文件"><span class="nav-number">10.2.</span> <span class="nav-text">读文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二进制文件"><span class="nav-number">10.3.</span> <span class="nav-text">二进制文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板"><span class="nav-number">11.</span> <span class="nav-text">模板</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数模板"><span class="nav-number">11.1.</span> <span class="nav-text">函数模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通函数与函数模板区别"><span class="nav-number">11.1.1.</span> <span class="nav-text">普通函数与函数模板区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用规则"><span class="nav-number">11.1.2.</span> <span class="nav-text">调用规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局限性"><span class="nav-number">11.1.3.</span> <span class="nav-text">局限性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类模板"><span class="nav-number">11.2.</span> <span class="nav-text">类模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板与函数模板区别"><span class="nav-number">11.2.1.</span> <span class="nav-text">类模板与函数模板区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板中成员函数创建时机"><span class="nav-number">11.2.2.</span> <span class="nav-text">类模板中成员函数创建时机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板对象做函数参数"><span class="nav-number">11.2.3.</span> <span class="nav-text">类模板对象做函数参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板与继承"><span class="nav-number">11.2.4.</span> <span class="nav-text">类模板与继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板成员函数类外实现"><span class="nav-number">11.2.5.</span> <span class="nav-text">类模板成员函数类外实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板分文件编写"><span class="nav-number">11.2.6.</span> <span class="nav-text">类模板分文件编写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板与友元"><span class="nav-number">11.2.7.</span> <span class="nav-text">类模板与友元</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#STL"><span class="nav-number">12.</span> <span class="nav-text">STL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数对象"><span class="nav-number">12.0.1.</span> <span class="nav-text">函数对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谓词"><span class="nav-number">12.0.2.</span> <span class="nav-text">谓词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内建函数对象"><span class="nav-number">12.0.3.</span> <span class="nav-text">内建函数对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内建函数对象意义"><span class="nav-number">12.0.3.1.</span> <span class="nav-text">内建函数对象意义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算术仿函数"><span class="nav-number">12.0.3.2.</span> <span class="nav-text">算术仿函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系仿函数"><span class="nav-number">12.0.3.3.</span> <span class="nav-text">关系仿函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑仿函数"><span class="nav-number">12.0.3.4.</span> <span class="nav-text">逻辑仿函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器"><span class="nav-number">12.0.4.</span> <span class="nav-text">容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STL基本概念"><span class="nav-number">12.0.5.</span> <span class="nav-text">STL基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STL六大组件"><span class="nav-number">12.0.6.</span> <span class="nav-text">STL六大组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STL中容器、算法、迭代器"><span class="nav-number">12.0.7.</span> <span class="nav-text">STL中容器、算法、迭代器</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#手册"><span class="nav-number">13.</span> <span class="nav-text">手册</span></a></li></div>
             
 
           </div>
@@ -1256,7 +1399,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">181.8k</span> 
+    <span title="本站总字数">183.8k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
