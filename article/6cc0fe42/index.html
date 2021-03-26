@@ -160,7 +160,27 @@
 <meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324212957612.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210324213723851.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326130338191.png">
-<meta property="og:updated_time" content="2021-03-26T05:03:40.389Z">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326172048388.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326180648140.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326182645362.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326205139076.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326205222236.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326205301497.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326205346006.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326205405395.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326191500464.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326200614835.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326200729017.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326203511387.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326202101320.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326202000569.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326210213338.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326211343503.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326211509373.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326213358957.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326213244458.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210326214350016.png">
+<meta property="og:updated_time" content="2021-03-26T13:43:50.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打怪之旅-计算机网络">
 <meta name="twitter:description" content="术语ISP (Internet Service Provider) RFC (Request For Comments)因特网标准 ISOC因特网协会 实体：任何可发送或接受信息的硬件或软件进程 对等实体:收发双方相同层次中的实体 协议: 控制两个对等实体进行逻辑通信的规则集合（三要素：语法－定义所交换信息的格式；语义－定义收发双方所要完成的操作；同步－定义收发双方的时许关系） 服务：在协议的控制">
@@ -463,7 +483,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6.5k 字
+                  9.9k 字
                 </span>
               
 
@@ -479,7 +499,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  22 分钟
+                  34 分钟
                 </span>
               
             </div>
@@ -921,7 +941,200 @@
 <p>ack  TCP报文首部中的确认号字段， eg：取值201，表示序号201之前的数据已全部正确接收</p>
 <p>rwnd TCP报文首部中的窗口字段， eg：取值300，表示接收窗口大小为300</p>
 <p><img src="/article/6cc0fe42/image-20210326130338191.png" alt="image-20210326130338191"></p>
-<h2 id="TCP的拥塞控制"><a href="#TCP的拥塞控制" class="headerlink" title="TCP的拥塞控制"></a>TCP的拥塞控制</h2><h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><h1 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h1><p><a href="https://www.bilibili.com/video/BV1c4411d7jb?p=7&amp;spm_id_from=pageDriver" target="_blank" rel="noopener">视频课</a></p>
+<h2 id="TCP的拥塞控制"><a href="#TCP的拥塞控制" class="headerlink" title="TCP的拥塞控制"></a>TCP的拥塞控制</h2><p>拥塞：在某段时间内，若对网络中某一资源的需求超过了该资源所能提供的可用部分，网络性能就要变坏。</p>
+<p>网络资源：链路容量（带宽）、交换结点中的缓存和处理机等</p>
+<p><img src="/article/6cc0fe42/image-20210326172048388.png" alt="image-20210326172048388"></p>
+<p><strong>网络拥塞往往是由许多因素引起的。例如：</strong></p>
+<ol>
+<li>点缓存的容量太小；</li>
+<li>链路的容量不足；</li>
+<li>处理机处理的速率太慢；</li>
+<li>拥塞本身会进一步加剧拥塞；</li>
+</ol>
+<p><strong>拥塞控制的一般原理</strong></p>
+<ul>
+<li>拥塞控制的前提：网络能够承受现有的网络负荷。</li>
+<li>实践证明，拥塞控制是很难设计的，因为它是一个<strong>动态问题</strong>。</li>
+<li>分组的丢失是网络发生拥塞的<strong>征兆</strong>而不是原因。</li>
+<li>在许多情况下，甚至正是<strong>拥塞控制本身</strong>成为引起网络性能恶化、甚至发生死锁的原因。</li>
+</ul>
+<p><strong>开环控制</strong>：事先考虑周全，力争避免拥塞</p>
+<p><strong>闭环控制</strong>：在发生拥塞后，采取措施控制，消除拥塞</p>
+<p><strong>监测网络的拥塞</strong></p>
+<p>主要指标有：</p>
+<ol>
+<li>由于缺少缓存空间而被丢弃的分组的百分数；</li>
+<li>平均队列长度；</li>
+<li>超时重传的分组数；</li>
+<li>平均分组时延；</li>
+<li>分组时延的标准差，等等。</li>
+</ol>
+<p>上述这些指标的上升都标志着拥塞的增长。</p>
+<p><strong>下面4种算法假定以下条件：</strong></p>
+<ul>
+<li><p>数据是单方向传送，而另一个方向只传送确认</p>
+</li>
+<li><p>接收方总是有足够大的缓存空间，而<strong>发送方发送窗口的大小由网络的拥塞程度所决定。</strong> </p>
+</li>
+<li><p>以最大报文段MSS的个数为讨论问题的单位，而不是以字节为单位</p>
+</li>
+</ul>
+<p>  <strong>真正的发送窗口值 = Min (接收方窗口值，拥塞窗口值)</strong></p>
+<p>传输轮次：</p>
+<ul>
+<li>发送方给接收方发送数据报文段后，<strong>接收方给发送方发发回相应的确认报文段</strong></li>
+<li>一个传输轮次所经历的时间其实就是往返时间，往返时间并非是恒定的数值</li>
+<li>使用传输轮次是为了强调把拥塞窗口所允许发送的报文段都连续发送出去，并受到了对已发送的最后一个报文段的确认</li>
+</ul>
+<p><strong>拥塞窗口（cwnd）</strong>：它会随网络拥塞程度，以及所使用的拥塞控制算法动态变化</p>
+<p><strong>慢开始门限（ssthresh）</strong>：防止拥塞窗口增长过大引起网络拥塞。</p>
+<h3 id="慢开始-cwnd-2-n-1-n-1-n"><a href="#慢开始-cwnd-2-n-1-n-1-n" class="headerlink" title="慢开始 cwnd = 2^(n-1)(n=1,n++)"></a>慢开始 cwnd = 2^(n-1)(n=1,n++)</h3><p>慢开始是指一开始向网络注入的报文段少，并不是指cwnd的增长速度慢。</p>
+<p><code>cwnd &gt; ssthresh</code>时转为拥塞控制算法</p>
+<h3 id="拥塞避免-cwnd"><a href="#拥塞避免-cwnd" class="headerlink" title="拥塞避免 cwnd ++"></a>拥塞避免 cwnd ++</h3><p>如果在发送过程中出现部分报文段丢失，这必然会造成发送方对这些丢失报文段的超时重传.</p>
+<p>判断网络可能出现拥塞，进行以下工作：</p>
+<p>（1）慢开始门限更新为发生拥塞时cwnd的一半</p>
+<p>（2）cwnd更新为1，并重新开始执行慢开始算法</p>
+<h3 id="快重传"><a href="#快重传" class="headerlink" title="快重传"></a>快重传</h3><p>个别报文段的丢失，实际上并未发生拥塞，而拥塞避免算法误以为出现了拥塞，并进行之后一系列工作。这样降低了传输效率。</p>
+<p>让发送方尽快进行重传，而不是等超时重传计时器超时再重传。</p>
+<p>发送方一旦<strong>收到3个连续的重复确认</strong>，就将相应的报文段立即重传。</p>
+<h3 id="快恢复-ssthresh-cwnd-2；cwnd-ssthresh；cwnd"><a href="#快恢复-ssthresh-cwnd-2；cwnd-ssthresh；cwnd" class="headerlink" title="快恢复 ssthresh=cwnd/2；cwnd= ssthresh；cwnd++"></a>快恢复 ssthresh=cwnd/2；cwnd= ssthresh；cwnd++</h3><p>快重传后，执行快恢复算法：</p>
+<p>方案一（用的比较多） — 慢开始门限、cwnd更新为发生拥塞时cwnd的一半，并开始执行拥塞避免算法。</p>
+<p>方案二 —  ssthresh为发生拥塞时cwnd的一半， cwnd = ssthresh+3（网络种不是堆积了报文段而是减少了3个报文段）</p>
+<p>eg:</p>
+<p><img src="/article/6cc0fe42/image-20210326180648140.png" alt="image-20210326180648140"></p>
+<h2 id="TCP超时重传的选择"><a href="#TCP超时重传的选择" class="headerlink" title="TCP超时重传的选择"></a>TCP超时重传的选择</h2><p><img src="/article/6cc0fe42/image-20210326182645362.png" alt="image-20210326182645362"></p>
+<h2 id="TCP报文的首部格式"><a href="#TCP报文的首部格式" class="headerlink" title="TCP报文的首部格式"></a>TCP报文的首部格式</h2><p><img src="/article/6cc0fe42/image-20210326205139076.png" alt="image-20210326205139076"></p>
+<p><img src="/article/6cc0fe42/image-20210326205222236.png" alt="image-20210326205222236"></p>
+<p><img src="/article/6cc0fe42/image-20210326205301497.png" alt="image-20210326205301497"></p>
+<p><img src="/article/6cc0fe42/image-20210326205346006.png" alt="image-20210326205346006"></p>
+<p><img src="/article/6cc0fe42/image-20210326205405395.png" alt="image-20210326205405395"></p>
+<h2 id="TCP的可靠传输"><a href="#TCP的可靠传输" class="headerlink" title="TCP的可靠传输"></a>TCP的可靠传输</h2><p><img src="/article/6cc0fe42/image-20210326191500464.png" alt="image-20210326191500464"></p>
+<h2 id="TCP的连接"><a href="#TCP的连接" class="headerlink" title="TCP的连接"></a>TCP的连接</h2><p><strong>“三报文”握手</strong></p>
+<p><img src="/article/6cc0fe42/image-20210326200614835.png" alt="image-20210326200614835"></p>
+<p>采用<strong>三报文握手</strong>，而不是<strong>二报文握手</strong>：主要是为了防止已失效的连接请求报文段突然又传送到了，因而产生错误。</p>
+<p>一端(client)A发出去的第一个连接请求报文并没有丢失，而是<strong>因为某些未知的原因在某个网络节点上发生滞留</strong>，导致延迟到连接释放以后的某个时间才到达另一端(server)B。本来这是一个&gt; 早已失效的报文段，但是B收到此失效的报文之后，<strong>会误认为是A再次发出的一个新的连接请求</strong>，于是B端就向A又发出确认报文，表示同&gt; 意建立连接。如果不采用“三次握手”，<strong>那么只要B端发出确认报文就会认为新的连接已经建立了</strong>，但是A端并没有发出建立连接的请求，因此不会去向B端发送数据，<strong>B端没有收到数据就会一直等待，这样B端就会白白浪费掉很多资源。</strong><br> 所以并不<strong>多余</strong>，这是为了防止已失效的连接请求报文段突然又传送到了TCP服务器，因而导致错误</p>
+<p><img src="/article/6cc0fe42/image-20210326200729017.png" alt="image-20210326200729017"></p>
+<p><strong>“四报文”挥手</strong></p>
+<p><strong>TCP连接释放报文段</strong>首部中</p>
+<ul>
+<li><p>终止位FIN和确认为ACK的值都被设置为1，表明这是一个TCP连接释放报文段，同时也对之前收到的报文段进行确认</p>
+</li>
+<li><p>序号seq字段的值设置为u，它等于<strong>TCP客户进程之前已传送过</strong>的数据的最后一个字节的序号加1</p>
+</li>
+<li><p>确认号ack字段的值设置为v，它等于<strong>TCP客户进程之前已收到的</strong>、数据的最后一个字节的序号加1</p>
+</li>
+</ul>
+<p><strong>请注意：TCP规定终止位FIN等于1的报文段即使不携带数据，也要消耗掉一个序号</strong></p>
+<p>TCP服务器进程收到TCP连接释放报文段后，会发送一个普通的TCP确认报文段并进入关闭等待状态</p>
+<p>普通的TCP确认报文段首部中</p>
+<ul>
+<li><p>确认位ACK的值被设置为1，表明这是一个普通的TCP确认报文段</p>
+</li>
+<li><p>序号seq字段的值设置为v，它等于<strong>TCP服务器进程之前已传送过</strong>的数据的最后一个字节的序号加1，这也与之前收到的TCP连接释放报文段中的确认号匹配</p>
+</li>
+<li><p>确认号ack字段的值设置为u+1，这是对TCP连接释放报文段的确认</p>
+</li>
+</ul>
+<p>TCP服务器进程应该通知高层应用进程，TCP客户进程要断开与自己的TCP连接</p>
+<p>此时，从TCP客户进程到TCP服务器进程这个方向的连接就释放了</p>
+<p>这时的TCP连接属于半关闭状态，也就是TCP客户进程已经没有数据要发送了</p>
+<p>但如果TCP服务器进程还有数据要发送，TCP客户进程仍要接收，也就是说从TCP服务器进程到TCP客户进程这个方向的连接并未关闭</p>
+<p>TCP客户进程收到TCP确认报文段后就进入终止等待2状态，等待TCP服务器进程发出的TCP连接释放报文段</p>
+<p>若使用TCP服务器进程的应用进程已经没有数据要发送了，应用进程就通知其TCP服务器进程释放连接</p>
+<p><strong>由于TCP连接释放是由TCP客户进程主动发起的，因此TCP服务器进程对TCP连接的释放称为被动关闭连接</strong></p>
+<p>TCP服务器进程发送TCP连接释放报文段并进入最后确认状态</p>
+<p>该报文段首部中</p>
+<ul>
+<li><p>终止位FIN和确认位ACK的值都被设置为1，表明这是一个TCP连接释放报文段，同时也对之前收到的报文段进行确认</p>
+</li>
+<li><p>序号seq字段的值为w，这是因为在半关闭状态下，TCP服务器进程可能又发送</p>
+</li>
+<li><p>确认号ack字段的值为u+1，这是<strong>对之前收到的TCP连接释放报文段的重复确认</strong></p>
+</li>
+</ul>
+<p>TCP客户进程收到TCP连接释放报文段后，必须针对该报文段发送普通的TCP确认报文段，之后进入时间等待状态</p>
+<p>该报文段首部中</p>
+<ul>
+<li><p>确认为ACK的值被设置为1，表明这是一个普通的TCP确认报文段</p>
+</li>
+<li><p>序号seq字段的值设置为u+1，这是因为TCP客户进程之前发送的TCP连接释放报文段虽然不携带数据，但要消耗掉一个序号</p>
+</li>
+<li><p>确认号ack字段的值设置为w+1，这是对所收到的TCP连接释放报文段的确认</p>
+</li>
+</ul>
+<p><img src="/article/6cc0fe42/image-20210326203511387.png" alt="image-20210326203511387"></p>
+<p><strong>TCP服务器进程收到该报文段后就进入关闭状态，而TCP客户进程还要进过2MSL后才能进入关闭状态</strong></p>
+<p>TCP客户进程在发送完最后一个确认报文后，为什么不直接进入关闭状态？而是要进入时间等待状态？</p>
+<p>因为时间等待状态以及处于该状态2MSL时长，可以确保TCP服务器进程可以收到最后一个TCP确认报文段而进入关闭状态另外，TCP客户进程在发送完最后一个TCP确认报文段后，在经过2MSL时长，就可以使本次连接持续时间内所产生的所有报文段都从网络中消失，这样就可以使下一个新的TCP连接中，不会出现旧连接中的报文段。</p>
+<p><img src="/article/6cc0fe42/image-20210326202101320.png" alt="image-20210326202101320"></p>
+<p><strong>TCP保活计时器的作用</strong></p>
+<p>TCP双方已经建立了连接，后来，TCP客户进程所在的主机突然出现了故障。</p>
+<p>TCP服务器进程以后就不能再收到TCP客户进程发来的数据。因此，应当有措施使TCP服务器进程不要再白白等待下去。</p>
+<p><img src="/article/6cc0fe42/image-20210326202000569.png" alt="image-20210326202000569"></p>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>解决通过<strong>应用进程的交互</strong>来实现特定网络应用的问题</p>
+<p><strong>C/S （客户/服务器方式-服务集中型）与 P2P（对等方式-服务分散型）</strong></p>
+<p><img src="/article/6cc0fe42/image-20210326210213338.png" alt="image-20210326210213338"></p>
+<h2 id="DHCP（动态主机配置协议）"><a href="#DHCP（动态主机配置协议）" class="headerlink" title="DHCP（动态主机配置协议）"></a>DHCP（动态主机配置协议）</h2><p>DHCP 使用客户-服务器方式，采用请求/应答方式工作。</p>
+<p>DHCP 基于 UDP 工作（DHCP报文在运输层会被封装成为<strong>UDP用户数据报</strong>），DHCP 服务器运行在 67 号端口， DHCP客户运行在 68 号端口。</p>
+<p>互联网广泛使用的<strong>动态主机配置协议 DHCP</strong> (Dynamic Host Configuration Protocol) 提供了<strong>即插即用连网</strong> (plug-and-play networking) 的机制。</p>
+<p>这种机制允许一台计算机加入新的网络和获取 IP 地址，而不用手工配置。</p>
+<p><img src="/article/6cc0fe42/image-20210326211343503.png" alt="image-20210326211343503"></p>
+<p><strong>DHCP客户端将广播发送DHCP发现报文（DHCP DISCOVER）</strong></p>
+<ul>
+<li><p>事务ID</p>
+</li>
+<li><p>DHCP客户端的MAC地址</p>
+</li>
+</ul>
+<p><strong>封装该报文的IP数据报的源IP地址为0.0.0.0，这是因为主机目前还未分配到IP地址</strong>，因此使用该地址代替</p>
+<p><strong>目的IP地址为广播地址255.255.255.255，之所以广播发送，是因为主机现在并不知道网络中有哪几个DHCP服务器</strong>。它们的IP地址各是什么</p>
+<p><strong>DHCP服务器收到DHCP发现报文后，根据其中封装的DHCP客户端的MAC地址来查找自己的数据库</strong>，如果查到匹配信息，则使用这些配置信息来构建并发送DHCP提供报文，如果没有则采用默认配置信息来构建报文并发送</p>
+<p><strong>DHCP服务端将广播发送DHCP提供报文（DHCP OFFER）</strong></p>
+<ul>
+<li><p>事务ID：DHCP客户端会与之前DHCP发现报文的事务ID做对比，来判断该DHCP提供报文是否是自己的</p>
+</li>
+<li><p>配置信息： </p>
+<ul>
+<li>IP地址：DHCP服务器从自己的IP地址池中挑选待租用给主机的IP地址（使用ARP来确保所选IP地址未被网络中其他主机占用）</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>子网掩码</p>
+</li>
+<li><p>地址租期</p>
+</li>
+<li><p>默认网关</p>
+</li>
+<li><p>DNS服务器</p>
+</li>
+</ul>
+<p>源IP地址：发送DHCP提供报文的DHCP服务器的IP<br>目的地址：因为目的主机还没分配到IP，所以使用广播地址</p>
+<p>DHCP客户从中选择一个，<strong>一般选择先到的</strong>，并向所选择的DHCP服务器发送DHCP请求报文</p>
+<p><strong>DHCP客户端将广播发送DHCP请求报文（DHCP REQUEST）</strong></p>
+<ul>
+<li><p>事务ID</p>
+</li>
+<li><p>DHCP客户端的MAC地址</p>
+</li>
+<li><p>接收的租约中的IP地址</p>
+</li>
+<li><p>提供此租约的DHCP服务器端的IP地址</p>
+</li>
+</ul>
+<p>源地址：0.0.0.0，因为此时DHCP客户才从多个DHCP服务器中挑选一个作为自己的DHCP服务器。它首先要征得该服务器的同意，之后才能正式使用向该DHCP服务器租用的IP地址</p>
+<p>目的地址：广播地址，这样可以一次性向所有DHCP服务器发送DHCP请求报文，来告知它们是否请求它们作为自己的DHCP服务器。</p>
+<p><strong>DHCP确认报文</strong></p>
+<p>源地址：DHCP服务器1的IP地址</p>
+<p>目的地址：广播地址</p>
+<p><strong>DHCP客户收到该报文后就可以使用租用的IP地址</strong>，<strong>在使用前还会进行ARP检测</strong></p>
+<p><img src="/article/6cc0fe42/image-20210326211509373.png" alt="image-20210326211509373"></p>
+<h2 id="DNS（域名系统）"><a href="#DNS（域名系统）" class="headerlink" title="DNS（域名系统）"></a>DNS（域名系统）</h2><p>域名只是一个逻辑概念，不代表计算机所在的物理位置</p>
+<p><img src="/article/6cc0fe42/image-20210326213358957.png" alt="image-20210326213358957"></p>
+<p><img src="/article/6cc0fe42/image-20210326213244458.png" alt="image-20210326213244458"></p>
+<h2 id="FTP（文件传输协议）"><a href="#FTP（文件传输协议）" class="headerlink" title="FTP（文件传输协议）"></a>FTP（文件传输协议）</h2><p>FTP服务器与客户端需要建立：控制连接与数据连接，均需要TCP连接。控制连接在整个会话期间保持打开状态，数据连接传输完毕后就关闭。</p>
+<p><img src="/article/6cc0fe42/image-20210326214350016.png" alt="image-20210326214350016"></p>
+<h1 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h1><p><a href="https://www.bilibili.com/video/BV1c4411d7jb?p=7&amp;spm_id_from=pageDriver" target="_blank" rel="noopener">视频课</a></p>
 <p><a href="https://www.jianshu.com/c/f627e74e6ff3" target="_blank" rel="noopener">笔记</a></p>
 
       
@@ -946,7 +1159,7 @@
   <p><span>本文标题:</span>打怪之旅-计算机网络</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2021年02月03日 - 08:53:37</p>
-  <p><span>最后更新:</span>2021年03月26日 - 13:03:40</p>
+  <p><span>最后更新:</span>2021年03月26日 - 21:43:50</p>
   <p><span>原始链接:</span><a href="/article/6cc0fe42/" title="打怪之旅-计算机网络">https://pabebezz.github.io/article/6cc0fe42/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/6cc0fe42/" aria-label="复制成功！"></i></span>
   </p>
@@ -1191,7 +1404,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#术语"><span class="nav-number">1.</span> <span class="nav-text">术语</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三种交换方式"><span class="nav-number">2.</span> <span class="nav-text">三种交换方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络的定义和分类"><span class="nav-number">3.</span> <span class="nav-text">计算机网络的定义和分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能指标"><span class="nav-number">3.2.</span> <span class="nav-text">性能指标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络体系结构"><span class="nav-number">4.</span> <span class="nav-text">计算机网络体系结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物理层"><span class="nav-number">5.</span> <span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#传输方式"><span class="nav-number">5.1.</span> <span class="nav-text">传输方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码与调制"><span class="nav-number">5.2.</span> <span class="nav-text">编码与调制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据链路层"><span class="nav-number">6.</span> <span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#封装成帧"><span class="nav-number">6.1.</span> <span class="nav-text">封装成帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#差错检测"><span class="nav-number">6.2.</span> <span class="nav-text">差错检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可靠传输"><span class="nav-number">6.3.</span> <span class="nav-text">可靠传输</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点对点协议-ppp-point-to-point-protocol"><span class="nav-number">6.4.</span> <span class="nav-text">点对点协议 ppp( point-to-point protocol)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#媒体接入控制（介质访问控制）MAC"><span class="nav-number">6.5.</span> <span class="nav-text">媒体接入控制（介质访问控制）MAC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA-CD-协议的重要特性"><span class="nav-number">6.5.1.</span> <span class="nav-text">CSMA/CD 协议的重要特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA-CA协议的信道预约和虚拟载波监听"><span class="nav-number">6.5.2.</span> <span class="nav-text">CSMA/CA协议的信道预约和虚拟载波监听</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MAC地址-IP地址-ARP协议"><span class="nav-number">6.6.</span> <span class="nav-text">MAC地址\IP地址\ARP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC地址-物理地址"><span class="nav-number">6.6.1.</span> <span class="nav-text">MAC地址(物理地址)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP地址"><span class="nav-number">6.6.2.</span> <span class="nav-text">IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP协议"><span class="nav-number">6.6.3.</span> <span class="nav-text">ARP协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集线器与交换机的区别"><span class="nav-number">6.7.</span> <span class="nav-text">集线器与交换机的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟局域网VLAN"><span class="nav-number">6.8.</span> <span class="nav-text">虚拟局域网VLAN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络层"><span class="nav-number">7.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IPv4地址"><span class="nav-number">7.1.</span> <span class="nav-text">IPv4地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类编址的IPv4地址"><span class="nav-number">7.1.1.</span> <span class="nav-text">分类编址的IPv4地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#划分子网的IPv4地址"><span class="nav-number">7.1.2.</span> <span class="nav-text">划分子网的IPv4地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无分类编址的IPv4地址"><span class="nav-number">7.1.3.</span> <span class="nav-text">无分类编址的IPv4地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP数据报的发送和转发过程"><span class="nav-number">7.2.</span> <span class="nav-text">IP数据报的发送和转发过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由选择协议"><span class="nav-number">7.3.</span> <span class="nav-text">路由选择协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RIP（内部网关协议）"><span class="nav-number">7.3.1.</span> <span class="nav-text">RIP（内部网关协议）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSPF（内部网关协议）"><span class="nav-number">7.3.2.</span> <span class="nav-text">OSPF（内部网关协议）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BGP（外部网关协议）"><span class="nav-number">7.3.3.</span> <span class="nav-text">BGP（外部网关协议）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IPv4数据报格式"><span class="nav-number">7.4.</span> <span class="nav-text">IPv4数据报格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICMP（网际控制报文协议）"><span class="nav-number">7.5.</span> <span class="nav-text">ICMP（网际控制报文协议）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VPN-虚拟专用网-与-NAT（网络地址转换）"><span class="nav-number">7.6.</span> <span class="nav-text">VPN(虚拟专用网)与 NAT（网络地址转换）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运输层"><span class="nav-number">8.</span> <span class="nav-text">运输层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#发送方的复用和接收方的分用"><span class="nav-number">8.1.</span> <span class="nav-text">发送方的复用和接收方的分用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用层常用协议所使用的运输层熟知端口号"><span class="nav-number">8.2.</span> <span class="nav-text">应用层常用协议所使用的运输层熟知端口号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问网页的过程-06-01"><span class="nav-number">8.3.</span> <span class="nav-text">访问网页的过程 06:01</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP和TCP的对比"><span class="nav-number">8.4.</span> <span class="nav-text">UDP和TCP的对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP的流量控制"><span class="nav-number">8.5.</span> <span class="nav-text">TCP的流量控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP的拥塞控制"><span class="nav-number">8.6.</span> <span class="nav-text">TCP的拥塞控制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用层"><span class="nav-number">9.</span> <span class="nav-text">应用层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资源"><span class="nav-number">10.</span> <span class="nav-text">参考资源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#术语"><span class="nav-number">1.</span> <span class="nav-text">术语</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三种交换方式"><span class="nav-number">2.</span> <span class="nav-text">三种交换方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络的定义和分类"><span class="nav-number">3.</span> <span class="nav-text">计算机网络的定义和分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能指标"><span class="nav-number">3.2.</span> <span class="nav-text">性能指标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络体系结构"><span class="nav-number">4.</span> <span class="nav-text">计算机网络体系结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物理层"><span class="nav-number">5.</span> <span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#传输方式"><span class="nav-number">5.1.</span> <span class="nav-text">传输方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码与调制"><span class="nav-number">5.2.</span> <span class="nav-text">编码与调制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据链路层"><span class="nav-number">6.</span> <span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#封装成帧"><span class="nav-number">6.1.</span> <span class="nav-text">封装成帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#差错检测"><span class="nav-number">6.2.</span> <span class="nav-text">差错检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可靠传输"><span class="nav-number">6.3.</span> <span class="nav-text">可靠传输</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点对点协议-ppp-point-to-point-protocol"><span class="nav-number">6.4.</span> <span class="nav-text">点对点协议 ppp( point-to-point protocol)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#媒体接入控制（介质访问控制）MAC"><span class="nav-number">6.5.</span> <span class="nav-text">媒体接入控制（介质访问控制）MAC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA-CD-协议的重要特性"><span class="nav-number">6.5.1.</span> <span class="nav-text">CSMA/CD 协议的重要特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA-CA协议的信道预约和虚拟载波监听"><span class="nav-number">6.5.2.</span> <span class="nav-text">CSMA/CA协议的信道预约和虚拟载波监听</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MAC地址-IP地址-ARP协议"><span class="nav-number">6.6.</span> <span class="nav-text">MAC地址\IP地址\ARP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC地址-物理地址"><span class="nav-number">6.6.1.</span> <span class="nav-text">MAC地址(物理地址)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP地址"><span class="nav-number">6.6.2.</span> <span class="nav-text">IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP协议"><span class="nav-number">6.6.3.</span> <span class="nav-text">ARP协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集线器与交换机的区别"><span class="nav-number">6.7.</span> <span class="nav-text">集线器与交换机的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟局域网VLAN"><span class="nav-number">6.8.</span> <span class="nav-text">虚拟局域网VLAN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络层"><span class="nav-number">7.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IPv4地址"><span class="nav-number">7.1.</span> <span class="nav-text">IPv4地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类编址的IPv4地址"><span class="nav-number">7.1.1.</span> <span class="nav-text">分类编址的IPv4地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#划分子网的IPv4地址"><span class="nav-number">7.1.2.</span> <span class="nav-text">划分子网的IPv4地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无分类编址的IPv4地址"><span class="nav-number">7.1.3.</span> <span class="nav-text">无分类编址的IPv4地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP数据报的发送和转发过程"><span class="nav-number">7.2.</span> <span class="nav-text">IP数据报的发送和转发过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由选择协议"><span class="nav-number">7.3.</span> <span class="nav-text">路由选择协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RIP（内部网关协议）"><span class="nav-number">7.3.1.</span> <span class="nav-text">RIP（内部网关协议）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSPF（内部网关协议）"><span class="nav-number">7.3.2.</span> <span class="nav-text">OSPF（内部网关协议）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BGP（外部网关协议）"><span class="nav-number">7.3.3.</span> <span class="nav-text">BGP（外部网关协议）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IPv4数据报格式"><span class="nav-number">7.4.</span> <span class="nav-text">IPv4数据报格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICMP（网际控制报文协议）"><span class="nav-number">7.5.</span> <span class="nav-text">ICMP（网际控制报文协议）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VPN-虚拟专用网-与-NAT（网络地址转换）"><span class="nav-number">7.6.</span> <span class="nav-text">VPN(虚拟专用网)与 NAT（网络地址转换）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运输层"><span class="nav-number">8.</span> <span class="nav-text">运输层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#发送方的复用和接收方的分用"><span class="nav-number">8.1.</span> <span class="nav-text">发送方的复用和接收方的分用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用层常用协议所使用的运输层熟知端口号"><span class="nav-number">8.2.</span> <span class="nav-text">应用层常用协议所使用的运输层熟知端口号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问网页的过程-06-01"><span class="nav-number">8.3.</span> <span class="nav-text">访问网页的过程 06:01</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP和TCP的对比"><span class="nav-number">8.4.</span> <span class="nav-text">UDP和TCP的对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP的流量控制"><span class="nav-number">8.5.</span> <span class="nav-text">TCP的流量控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP的拥塞控制"><span class="nav-number">8.6.</span> <span class="nav-text">TCP的拥塞控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#慢开始-cwnd-2-n-1-n-1-n"><span class="nav-number">8.6.1.</span> <span class="nav-text">慢开始 cwnd = 2^(n-1)(n=1,n++)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拥塞避免-cwnd"><span class="nav-number">8.6.2.</span> <span class="nav-text">拥塞避免 cwnd ++</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快重传"><span class="nav-number">8.6.3.</span> <span class="nav-text">快重传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快恢复-ssthresh-cwnd-2；cwnd-ssthresh；cwnd"><span class="nav-number">8.6.4.</span> <span class="nav-text">快恢复 ssthresh=cwnd/2；cwnd= ssthresh；cwnd++</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP超时重传的选择"><span class="nav-number">8.7.</span> <span class="nav-text">TCP超时重传的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP报文的首部格式"><span class="nav-number">8.8.</span> <span class="nav-text">TCP报文的首部格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP的可靠传输"><span class="nav-number">8.9.</span> <span class="nav-text">TCP的可靠传输</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP的连接"><span class="nav-number">8.10.</span> <span class="nav-text">TCP的连接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用层"><span class="nav-number">9.</span> <span class="nav-text">应用层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DHCP（动态主机配置协议）"><span class="nav-number">9.1.</span> <span class="nav-text">DHCP（动态主机配置协议）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS（域名系统）"><span class="nav-number">9.2.</span> <span class="nav-text">DNS（域名系统）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP（文件传输协议）"><span class="nav-number">9.3.</span> <span class="nav-text">FTP（文件传输协议）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资源"><span class="nav-number">10.</span> <span class="nav-text">参考资源</span></a></li></ol></div>
             
 
           </div>
@@ -1225,7 +1438,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">183.8k</span> 
+    <span title="本站总字数">187.2k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
