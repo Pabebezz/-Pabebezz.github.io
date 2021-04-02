@@ -1,0 +1,19 @@
+# hexo robots.txt
+User-agent: *
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /images/
+
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /article/
+
+Sitemap: https://pabebezz.github.io/sitemap.xml
+Sitemap: https://pabebezz.gitee.io/baidusitemap.xml
+Sitemap: https://pabebezz.gitee.io/sitemap.xml
+Sitemap: https://pabebezz.github.io/baidusitemap.xml
+

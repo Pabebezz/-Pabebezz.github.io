@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Pabebe&#39;s Blog</title>
+  
+  <subtitle>业精于勤，荒于嬉；行成于思，毁于随。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://pabebezz.github.io/"/>
+  <updated>2021-03-31T03:24:21.437Z</updated>
+  <id>https://pabebezz.github.io/</id>
+  
+  <author>
+    <name>Pabebe</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>打怪之旅-C++基础</title>
+    <link href="https://pabebezz.github.io/article/23d2b7d5/"/>
+    <id>https://pabebezz.github.io/article/23d2b7d5/</id>
+    <published>2021-03-01T09:53:37.000Z</published>
+    <updated>2021-03-31T03:24:21.437Z</updated>
+    
+    <summary type="html">
+    
+      过一遍语法知识
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="code" scheme="https://pabebezz.github.io/tags/code/"/>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打怪之旅-计算机网络</title>
+    <link href="https://pabebezz.github.io/article/6cc0fe42/"/>
+    <id>https://pabebezz.github.io/article/6cc0fe42/</id>
+    <published>2021-02-03T00:53:37.000Z</published>
+    <updated>2021-03-31T03:24:21.463Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;术语&quot;&gt;&lt;a href=&quot;#术语&quot; class=&quot;headerlink&quot; title=&quot;术语&quot;&gt;&lt;/a&gt;术语&lt;/h1&gt;&lt;p&gt;ISP (Internet Service Provider)&lt;/p&gt;
+&lt;p&gt;RFC (Request For Comments)因特网标准&lt;/p&gt;
+&lt;p&gt;ISOC因特网协会&lt;/p&gt;
+&lt;p&gt;实体：任何可发送或接受信息的硬件或软件进程&lt;/p&gt;
+&lt;p&gt;对等实体:收发双方相同层次中的实体&lt;/p&gt;
+&lt;p&gt;协议: 控制两个对等实体进行逻辑通信的规则集合（三要素：语法－定义所交换信息的格式；语义－定义收发双方所要完成的操作；同步－定义收发双方的时许关系）&lt;/p&gt;
+&lt;p&gt;服务：在协议的控制下，两个对等实体间的逻辑通信使得本层能够向上一层提供服务．&lt;/p&gt;
+&lt;p&gt;服务访问点：同一系统中相邻两层的实体交换信息的逻辑接口，用于区分不同的服务类型．（eg:数据链路层的点为帧的＂类型＂字段，网络层的点为IP数据报首部中的＂协议字段＂，运输层的点为＂端口号＂）&lt;/p&gt;
+&lt;p&gt;服务原语：上层使用下层所提供的服务，必须与下层交换的命令．&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PDU－协议数据单元：对等层次之间传送的数据包&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;SDU－服务数据单元：同一系统内，层与层之间交换的数据报&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/article/6cc0fe42/image-20210322170050493.png&quot; alt=&quot;image-20210322170050493&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Computer Operating" scheme="https://pabebezz.github.io/categories/Computer-Operating/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打怪之旅-操作系统</title>
+    <link href="https://pabebezz.github.io/article/e0627a3a/"/>
+    <id>https://pabebezz.github.io/article/e0627a3a/</id>
+    <published>2021-01-30T00:53:37.000Z</published>
+    <updated>2021-03-31T03:24:21.461Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Computer Operating" scheme="https://pabebezz.github.io/categories/Computer-Operating/"/>
+    
+    
+      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打怪之旅-数据结构与算法</title>
+    <link href="https://pabebezz.github.io/article/737c8fe7/"/>
+    <id>https://pabebezz.github.io/article/737c8fe7/</id>
+    <published>2021-01-24T09:53:37.000Z</published>
+    <updated>2021-04-02T10:35:08.494Z</updated>
+    
+    <summary type="html">
+    
+      leetcode刷题记录以及总结
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="code" scheme="https://pabebezz.github.io/tags/code/"/>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/tags/C/"/>
+    
+      <category term="algorithm" scheme="https://pabebezz.github.io/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打怪之旅-准备工作</title>
+    <link href="https://pabebezz.github.io/article/a5fe7d01/"/>
+    <id>https://pabebezz.github.io/article/a5fe7d01/</id>
+    <published>2021-01-20T10:53:37.000Z</published>
+    <updated>2021-03-31T03:24:21.461Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;简历&quot;&gt;&lt;a href=&quot;#简历&quot; class=&quot;headerlink&quot; title=&quot;简历&quot;&gt;&lt;/a&gt;简历&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&amp;amp;mid=2247485960&amp;amp;idx=1&amp;amp;sn=37cbdb8fc7d5ce102d20f75982a9e404&amp;amp;scene=21#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&amp;amp;mid=2247485960&amp;amp;idx=1&amp;amp;sn=37cbdb8fc7d5ce102d20f75982a9e404&amp;amp;scene=21#wechat_redirect&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;准备项目的重难点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;准备C++，【熟悉C++、了解Python】 ？？&lt;/p&gt;
+&lt;p&gt;计算机语言            Python, C/C++&lt;br&gt;深度学习框架          PyTorch&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;#　C++开发&lt;/p&gt;
+&lt;p&gt;１， &lt;a href=&quot;https://github.com/youngyangyang04/leetcode-master&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LeetCode 刷题攻略：配思维导图，各个类型的经典题目刷题顺序、经典算法模板，以及详细题解。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;２，梳理&lt;a href=&quot;https://github.com/youngyangyang04/TechCPP&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;C++后台研发的知识体系&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;《C++_primer5》入门&lt;/p&gt;
+&lt;p&gt;《effective C++》进阶&lt;/p&gt;
+&lt;p&gt;《effectiveSTL》进阶（掌握）&lt;/p&gt;
+&lt;p&gt;《STL源码剖析》（掌握＋＋　－＞熟悉）&lt;/p&gt;
+&lt;p&gt;《深度探索C++对象模型》（熟悉）&lt;/p&gt;
+&lt;p&gt;3, &lt;a href=&quot;https://www.nowcoder.com/tutorial/93/a34ed23d58b84da3a707c70371f59c21&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;牛客网面试宝典&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;面经与反思&quot;&gt;&lt;a href=&quot;#面经与反思&quot; class=&quot;headerlink&quot; title=&quot;面经与反思&quot;&gt;&lt;/a&gt;面经与反思&lt;/h1&gt;&lt;p&gt;记录面试过程,反思薄弱项&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="code" scheme="https://pabebezz.github.io/tags/code/"/>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/tags/C/"/>
+    
+      <category term="algorithm" scheme="https://pabebezz.github.io/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>理财小知识</title>
+    <link href="https://pabebezz.github.io/article/d95dcfe5/"/>
+    <id>https://pabebezz.github.io/article/d95dcfe5/</id>
+    <published>2020-11-27T02:46:45.000Z</published>
+    <updated>2021-03-31T03:24:22.341Z</updated>
+    
+    <summary type="html">
+    
+      涉猎
+    
+    </summary>
+    
+      <category term="Finance" scheme="https://pabebezz.github.io/categories/Finance/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>迁移Ubuntu18.04至新硬盘</title>
+    <link href="https://pabebezz.github.io/article/2f7fc36c/"/>
+    <id>https://pabebezz.github.io/article/2f7fc36c/</id>
+    <published>2020-10-13T05:15:22.000Z</published>
+    <updated>2021-03-31T03:24:22.343Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/article/2f7fc36c/image-20201013185814230.png&quot; alt=&quot;image-20201013185814230&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>日期提醒python程序</title>
+    <link href="https://pabebezz.github.io/article/61f6d1ab/"/>
+    <id>https://pabebezz.github.io/article/61f6d1ab/</id>
+    <published>2020-08-28T03:49:43.000Z</published>
+    <updated>2020-09-01T01:22:53.418Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;why&quot;&gt;&lt;a href=&quot;#why&quot; class=&quot;headerlink&quot; title=&quot;why&quot;&gt;&lt;/a&gt;why&lt;/h1&gt;&lt;p&gt;因为英文版ipone没有农历日期提醒（挺不方便的），&lt;/p&gt;
+&lt;p&gt;所以实现了个日期提醒python程序。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="Python" scheme="https://pabebezz.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习踩坑实录</title>
+    <link href="https://pabebezz.github.io/article/43ed33f1/"/>
+    <id>https://pabebezz.github.io/article/43ed33f1/</id>
+    <published>2020-08-20T07:34:58.000Z</published>
+    <updated>2020-09-01T01:22:53.418Z</updated>
+    
+    <summary type="html">
+    
+      在踩坑中。
+    
+    </summary>
+    
+      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
+    
+    
+      <category term="Python" scheme="https://pabebezz.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Arachne：Core-Aware Thread Management</title>
+    <link href="https://pabebezz.github.io/article/8a41b866/"/>
+    <id>https://pabebezz.github.io/article/8a41b866/</id>
+    <published>2020-08-10T04:54:45.000Z</published>
+    <updated>2020-09-01T01:22:52.958Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Arachne：核心感知线程管理&quot;&gt;&lt;a href=&quot;#Arachne：核心感知线程管理&quot; class=&quot;headerlink&quot; title=&quot;Arachne：核心感知线程管理&quot;&gt;&lt;/a&gt;Arachne：核心感知线程管理&lt;/h1&gt;&lt;p&gt;本文包含在第13届USENIX操作系统设计和实现研讨会(OSDI’18)的会议记录中。&lt;/p&gt;
+&lt;p&gt; 主要分为三个模块：&lt;/p&gt;
+&lt;h3 id=&quot;1-Arachne的设计与评估&quot;&gt;&lt;a href=&quot;#1-Arachne的设计与评估&quot; class=&quot;headerlink&quot; title=&quot;1.  Arachne的设计与评估&quot;&gt;&lt;/a&gt;1.  Arachne的设计与评估&lt;/h3&gt;&lt;h3 id=&quot;2-Arachne应用于memcache的优点&quot;&gt;&lt;a href=&quot;#2-Arachne应用于memcache的优点&quot; class=&quot;headerlink&quot; title=&quot;2.  Arachne应用于memcache的优点&quot;&gt;&lt;/a&gt;2.  Arachne应用于memcache的优点&lt;/h3&gt;&lt;h3 id=&quot;3-Arachne应用于RAMcloud的优点&quot;&gt;&lt;a href=&quot;#3-Arachne应用于RAMcloud的优点&quot; class=&quot;headerlink&quot; title=&quot;3.  Arachne应用于RAMcloud的优点&quot;&gt;&lt;/a&gt;3.  Arachne应用于RAMcloud的优点&lt;/h3&gt;&lt;h3 id=&quot;（理解第一部分就较容易理解第二、三部分）&quot;&gt;&lt;a href=&quot;#（理解第一部分就较容易理解第二、三部分）&quot; class=&quot;headerlink&quot; title=&quot;（理解第一部分就较容易理解第二、三部分）&quot;&gt;&lt;/a&gt;（理解第一部分就较容易理解第二、三部分）&lt;/h3&gt;&lt;p&gt;温馨提示：&lt;/p&gt;
+&lt;p&gt;注意：我们使用术语核心core来表示可以支持独立计算线程的任何硬件机制。在具有超线程的处理器中，我们将每个超线程视为单独的逻辑核心，即使其中一些共享单个物理核心。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
+    
+    
+      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020华为杯数学建模研赛</title>
+    <link href="https://pabebezz.github.io/article/421938b8/"/>
+    <id>https://pabebezz.github.io/article/421938b8/</id>
+    <published>2020-08-08T03:45:55.000Z</published>
+    <updated>2021-03-31T03:24:21.341Z</updated>
+    
+    <summary type="html">
+    
+      记录
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>window编译并运行TOY2DAC</title>
+    <link href="https://pabebezz.github.io/article/71a7f63d/"/>
+    <id>https://pabebezz.github.io/article/71a7f63d/</id>
+    <published>2020-07-26T05:19:03.000Z</published>
+    <updated>2020-09-01T01:22:53.103Z</updated>
+    
+    <summary type="html">
+    
+      TOY2DAC有关文档以及使用
+    
+    </summary>
+    
+      <category term="window" scheme="https://pabebezz.github.io/categories/window/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu18.04下python安装并使用Oracle19.8</title>
+    <link href="https://pabebezz.github.io/article/a8446d42/"/>
+    <id>https://pabebezz.github.io/article/a8446d42/</id>
+    <published>2020-07-26T05:12:12.000Z</published>
+    <updated>2020-09-01T01:22:53.053Z</updated>
+    
+    <summary type="html">
+    
+      目前貌似木有比较完整最新版的安装指导，有些步骤都不需要啦，记录一下，免得走弯路。
+    
+    </summary>
+    
+      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python语法奇奇怪怪小合集</title>
+    <link href="https://pabebezz.github.io/article/e58acc82/"/>
+    <id>https://pabebezz.github.io/article/e58acc82/</id>
+    <published>2020-07-15T09:41:54.000Z</published>
+    <updated>2021-03-31T03:24:21.423Z</updated>
+    
+    <summary type="html">
+    
+      说是奇奇怪怪，只是自己没学通，记录一下python tip
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="Python" scheme="https://pabebezz.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安装Ubuntu18.04后的优化</title>
+    <link href="https://pabebezz.github.io/article/e0fdde43/"/>
+    <id>https://pabebezz.github.io/article/e0fdde43/</id>
+    <published>2020-07-05T02:00:51.000Z</published>
+    <updated>2021-03-31T03:24:21.436Z</updated>
+    
+    <summary type="html">
+    
+      让乌邦图更美好
+    
+    </summary>
+    
+      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>paperUnderstanding-ClearGrasp</title>
+    <link href="https://pabebezz.github.io/article/2d17733a/"/>
+    <id>https://pabebezz.github.io/article/2d17733a/</id>
+    <published>2020-06-28T05:32:16.000Z</published>
+    <updated>2021-03-31T03:24:21.421Z</updated>
+    
+    <summary type="html">
+    
+      该论文理解与复现
+    
+    </summary>
+    
+      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
+    
+    
+      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu各种命令详解</title>
+    <link href="https://pabebezz.github.io/article/79acc1fa/"/>
+    <id>https://pabebezz.github.io/article/79acc1fa/</id>
+    <published>2020-06-22T07:15:58.000Z</published>
+    <updated>2020-09-01T01:22:53.069Z</updated>
+    
+    <summary type="html">
+    
+      shell命令集合
+    
+    </summary>
+    
+      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu使用Visual Profiler</title>
+    <link href="https://pabebezz.github.io/article/ed84546b/"/>
+    <id>https://pabebezz.github.io/article/ed84546b/</id>
+    <published>2020-06-21T04:15:58.000Z</published>
+    <updated>2020-06-23T01:36:21.015Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Ubuntu使用Visual-Profiler&quot;&gt;&lt;a href=&quot;#Ubuntu使用Visual-Profiler&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu使用Visual Profiler&quot;&gt;&lt;/a&gt;Ubuntu使用Visual Profiler&lt;/h1&gt;&lt;h2 id=&quot;配置java环境&quot;&gt;&lt;a href=&quot;#配置java环境&quot; class=&quot;headerlink&quot; title=&quot;配置java环境&quot;&gt;&lt;/a&gt;配置java环境&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;//卸载OpenJDK&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get purge openjdk/openjdk*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get clean/autoclean&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//安装jre、jdk&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install openjdk-8-jre-headless&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install openjdk-8-jdk-headless&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//添加环境变量&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo vim ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; oracle jdk environment&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_191  ## 这里要注意目录要换成自己解压的jdk 目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export JRE_HOME=$&amp;#123;JAVA_HOME&amp;#125;/jre  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export CLASSPATH=.:$&amp;#123;JAVA_HOME&amp;#125;/lib:$&amp;#123;JRE_HOME&amp;#125;/lib  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PATH=$&amp;#123;JAVA_HOME&amp;#125;/bin:$PATH  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;source ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//验证&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;java -version&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//如果你安装了多个版本的jdk，你可以通过以下命令在这些版本之间切换&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo update-alternatives –config java&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;使用nvvp&quot;&gt;&lt;a href=&quot;#使用nvvp&quot; class=&quot;headerlink&quot; title=&quot;使用nvvp&quot;&gt;&lt;/a&gt;使用nvvp&lt;/h1&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;nvvp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;出现Visual Profiler图形化界面&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>paperMemo-图片质量评价指标</title>
+    <link href="https://pabebezz.github.io/article/e3c77110/"/>
+    <id>https://pabebezz.github.io/article/e3c77110/</id>
+    <published>2020-06-17T02:24:41.000Z</published>
+    <updated>2020-06-23T01:36:21.037Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;SSIM&quot;&gt;&lt;a href=&quot;#SSIM&quot; class=&quot;headerlink&quot; title=&quot;SSIM&quot;&gt;&lt;/a&gt;SSIM&lt;/h1&gt;&lt;p&gt;结构相似性指数（structural similarity index，SSIM）是一种用于量化两幅图像间的结构相似性的指标。与L2损失函数不同，SSIM仿照人类的视觉系统（Human Visual System,HVS）实现了结构相似性的有关理论，对图像的局部结构变化的感知敏感。SSIM从亮度、对比度以及结构量化图像的属性，用均值估计亮度，方差估计对比度，协方差估计结构相似程度。SSIM值的范围为0至1，越大代表图像越相似。如果两张图片完全一样时，SSIM值为1。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
+    
+    
+      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu18.04下深度学习环境与blog搭建</title>
+    <link href="https://pabebezz.github.io/article/acdf71cc/"/>
+    <id>https://pabebezz.github.io/article/acdf71cc/</id>
+    <published>2020-06-17T01:45:23.000Z</published>
+    <updated>2021-03-31T03:24:21.343Z</updated>
+    
+    <summary type="html">
+    
+      深度学习环境与hexoBlog搭建
+    
+    </summary>
+    
+      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+</feed>
