@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2021-03-31T03:24:21.437Z</updated>
+  <updated>2021-04-08T11:23:48.942Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://pabebezz.github.io/article/23d2b7d5/"/>
     <id>https://pabebezz.github.io/article/23d2b7d5/</id>
     <published>2021-03-01T09:53:37.000Z</published>
-    <updated>2021-03-31T03:24:21.437Z</updated>
+    <updated>2021-04-08T11:23:48.942Z</updated>
     
     <summary type="html">
     
@@ -74,17 +74,11 @@
     <link href="https://pabebezz.github.io/article/e0627a3a/"/>
     <id>https://pabebezz.github.io/article/e0627a3a/</id>
     <published>2021-01-30T00:53:37.000Z</published>
-    <updated>2021-03-31T03:24:21.461Z</updated>
+    <updated>2021-04-08T11:23:48.973Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;a
-        
-      
+      &lt;p&gt;&lt;strong&gt;所有网络协议也都是采用大端字节序的方式来传输数据的。所以有时我们把大端字节序方式称之为网络字节序&lt;/strong&gt;。&lt;/p&gt;
     
     </summary>
     
@@ -100,7 +94,7 @@
     <link href="https://pabebezz.github.io/article/737c8fe7/"/>
     <id>https://pabebezz.github.io/article/737c8fe7/</id>
     <published>2021-01-24T09:53:37.000Z</published>
-    <updated>2021-04-04T09:07:43.034Z</updated>
+    <updated>2021-04-08T11:23:49.002Z</updated>
     
     <summary type="html">
     
@@ -124,18 +118,17 @@
     <link href="https://pabebezz.github.io/article/a5fe7d01/"/>
     <id>https://pabebezz.github.io/article/a5fe7d01/</id>
     <published>2021-01-20T10:53:37.000Z</published>
-    <updated>2021-04-04T14:23:55.200Z</updated>
+    <updated>2021-04-08T14:32:02.662Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;简历&quot;&gt;&lt;a href=&quot;#简历&quot; class=&quot;headerlink&quot; title=&quot;简历&quot;&gt;&lt;/a&gt;简历&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&amp;amp;mid=2247485960&amp;amp;idx=1&amp;amp;sn=37cbdb8fc7d5ce102d20f75982a9e404&amp;amp;scene=21#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&amp;amp;mid=2247485960&amp;amp;idx=1&amp;amp;sn=37cbdb8fc7d5ce102d20f75982a9e404&amp;amp;scene=21#wechat_redirect&lt;/a&gt;&lt;/p&gt;
+      &lt;h1 id=&quot;简历&quot;&gt;&lt;a href=&quot;#简历&quot; class=&quot;headerlink&quot; title=&quot;简历&quot;&gt;&lt;/a&gt;简历&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&amp;amp;mid=2247485960&amp;amp;idx=1&amp;amp;sn=37cbdb8fc7d5ce102d20f75982a9e404&amp;amp;scene=21#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简历模板&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;准备项目的重难点&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;准备C++，【熟悉C++、了解Python】 ？？&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;准备C++，【熟悉C++、了解Python】&lt;/p&gt;
 &lt;p&gt;计算机语言            Python, C/C++&lt;br&gt;深度学习框架          PyTorch&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;#　C++开发&lt;/p&gt;
 &lt;p&gt;１， &lt;a href=&quot;https://github.com/youngyangyang04/leetcode-master&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LeetCode 刷题攻略：配思维导图，各个类型的经典题目刷题顺序、经典算法模板，以及详细题解。&lt;/a&gt;&lt;/p&gt;
@@ -146,21 +139,6 @@
 &lt;p&gt;《STL源码剖析》（掌握＋＋　－＞熟悉）&lt;/p&gt;
 &lt;p&gt;《深度探索C++对象模型》（熟悉）&lt;/p&gt;
 &lt;p&gt;3, &lt;a href=&quot;https://www.nowcoder.com/tutorial/93/a34ed23d58b84da3a707c70371f59c21&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;牛客网面试宝典&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;知识点汇总&quot;&gt;&lt;a href=&quot;#知识点汇总&quot; class=&quot;headerlink&quot; title=&quot;知识点汇总&quot;&gt;&lt;/a&gt;知识点汇总&lt;/h2&gt;&lt;p&gt;前人笔记&lt;/p&gt;
-&lt;p&gt;计算机、C++ 相关基础知识：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://interview.huihut.com/#/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://interview.huihut.com/#/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://github.com/MrTrans/RegularNotes&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/MrTrans/RegularNotes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;计算机、Java 相关基础知识：&lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://hadyang.github.io/interview/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://hadyang.github.io/interview/&lt;/a&gt; &lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/CyC2018/CS-Notes&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/CyC2018/CS-Notes&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;反问&quot;&gt;&lt;a href=&quot;#反问&quot; class=&quot;headerlink&quot; title=&quot;反问&quot;&gt;&lt;/a&gt;反问&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;团队内 / 团队间的交流通常是怎样的？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;团队内开发、产品、运营哪一方是需求的主要提出方？哪一方更强势？&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/yifeikong/reverse-interview-zh&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;问题汇集&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;面经与反思&quot;&gt;&lt;a href=&quot;#面经与反思&quot; class=&quot;headerlink&quot; title=&quot;面经与反思&quot;&gt;&lt;/a&gt;面经与反思&lt;/h1&gt;&lt;p&gt;记录面试过程,反思薄弱项&lt;/p&gt;
     
     </summary>
     
@@ -172,6 +150,26 @@
       <category term="C++" scheme="https://pabebezz.github.io/tags/C/"/>
     
       <category term="algorithm" scheme="https://pabebezz.github.io/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>paperMemo-prepare</title>
+    <link href="https://pabebezz.github.io/article/5dace05d/"/>
+    <id>https://pabebezz.github.io/article/5dace05d/</id>
+    <published>2020-12-06T09:31:26.000Z</published>
+    <updated>2021-04-08T11:23:48.934Z</updated>
+    
+    <summary type="html">
+    
+      论文准备工作，不上传
+    
+    </summary>
+    
+      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
+    
+    
+      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
     
   </entry>
   
@@ -424,7 +422,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Ubuntu使用Visual-Profiler&quot;&gt;&lt;a href=&quot;#Ubuntu使用Visual-Profiler&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu使用Visual Profiler&quot;&gt;&lt;/a&gt;Ubuntu使用Visual Profiler&lt;/h1&gt;&lt;h2 id=&quot;配置java环境&quot;&gt;&lt;a href=&quot;#配置java环境&quot; class=&quot;headerlink&quot; title=&quot;配置java环境&quot;&gt;&lt;/a&gt;配置java环境&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;//卸载OpenJDK&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get purge openjdk/openjdk*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get clean/autoclean&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//安装jre、jdk&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install openjdk-8-jre-headless&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install openjdk-8-jdk-headless&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//添加环境变量&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo vim ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;set oracle jdk environment&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_191  ## 这里要注意目录要换成自己解压的jdk 目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export JRE_HOME=$&amp;#123;JAVA_HOME&amp;#125;/jre  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export CLASSPATH=.:$&amp;#123;JAVA_HOME&amp;#125;/lib:$&amp;#123;JRE_HOME&amp;#125;/lib  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PATH=$&amp;#123;JAVA_HOME&amp;#125;/bin:$PATH  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;source ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//验证&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;java -version&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//如果你安装了多个版本的jdk，你可以通过以下命令在这些版本之间切换&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo update-alternatives –config java&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h1 id=&quot;Ubuntu使用Visual-Profiler&quot;&gt;&lt;a href=&quot;#Ubuntu使用Visual-Profiler&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu使用Visual Profiler&quot;&gt;&lt;/a&gt;Ubuntu使用Visual Profiler&lt;/h1&gt;&lt;h2 id=&quot;配置java环境&quot;&gt;&lt;a href=&quot;#配置java环境&quot; class=&quot;headerlink&quot; title=&quot;配置java环境&quot;&gt;&lt;/a&gt;配置java环境&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;//卸载OpenJDK&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get purge openjdk/openjdk*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get clean/autoclean&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//安装jre、jdk&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install openjdk-8-jre-headless&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install openjdk-8-jdk-headless&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//添加环境变量&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo vim ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; oracle jdk environment&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_191  ## 这里要注意目录要换成自己解压的jdk 目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export JRE_HOME=$&amp;#123;JAVA_HOME&amp;#125;/jre  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export CLASSPATH=.:$&amp;#123;JAVA_HOME&amp;#125;/lib:$&amp;#123;JRE_HOME&amp;#125;/lib  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PATH=$&amp;#123;JAVA_HOME&amp;#125;/bin:$PATH  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;source ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//验证&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;java -version&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//如果你安装了多个版本的jdk，你可以通过以下命令在这些版本之间切换&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo update-alternatives –config java&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h1 id=&quot;使用nvvp&quot;&gt;&lt;a href=&quot;#使用nvvp&quot; class=&quot;headerlink&quot; title=&quot;使用nvvp&quot;&gt;&lt;/a&gt;使用nvvp&lt;/h1&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;nvvp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;出现Visual Profiler图形化界面&lt;/p&gt;
     
@@ -454,26 +452,6 @@
     
     
       <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu18.04下深度学习环境与blog搭建</title>
-    <link href="https://pabebezz.github.io/article/acdf71cc/"/>
-    <id>https://pabebezz.github.io/article/acdf71cc/</id>
-    <published>2020-06-17T01:45:23.000Z</published>
-    <updated>2021-03-31T03:24:21.343Z</updated>
-    
-    <summary type="html">
-    
-      深度学习环境与hexoBlog搭建
-    
-    </summary>
-    
-      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
-    
-    
-      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
     
   </entry>
   
