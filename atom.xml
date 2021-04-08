@@ -154,6 +154,26 @@
   </entry>
   
   <entry>
+    <title>paperMemo-prepare</title>
+    <link href="https://pabebezz.github.io/article/5dace05d/"/>
+    <id>https://pabebezz.github.io/article/5dace05d/</id>
+    <published>2020-12-06T09:31:26.000Z</published>
+    <updated>2021-04-08T09:19:41.699Z</updated>
+    
+    <summary type="html">
+    
+      论文准备工作，不上传
+    
+    </summary>
+    
+      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
+    
+    
+      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
+    
+  </entry>
+  
+  <entry>
     <title>理财小知识</title>
     <link href="https://pabebezz.github.io/article/d95dcfe5/"/>
     <id>https://pabebezz.github.io/article/d95dcfe5/</id>
@@ -432,26 +452,6 @@
     
     
       <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu18.04下深度学习环境与blog搭建</title>
-    <link href="https://pabebezz.github.io/article/acdf71cc/"/>
-    <id>https://pabebezz.github.io/article/acdf71cc/</id>
-    <published>2020-06-17T01:45:23.000Z</published>
-    <updated>2021-03-11T09:43:25.220Z</updated>
-    
-    <summary type="html">
-    
-      深度学习环境与hexoBlog搭建
-    
-    </summary>
-    
-      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
-    
-    
-      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
     
   </entry>
   

@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="paper,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pabebe's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="论文准备工作，不上传">
+<meta name="keywords" content="paper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="paperMemo-prepare">
+<meta property="og:url" content="https://pabebezz.github.io/article/5dace05d/index.html">
+<meta property="og:site_name" content="Pabebe&#39;s Blog">
+<meta property="og:description" content="论文准备工作，不上传">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/RealEstate10K参数性质.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/内参性质.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/RealEstate10K数据集预处理.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/成像的过程.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/针孔相机模型2.jpg">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/相似三角形.jpg">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200830121024538.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200830115546415.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200827202134723.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200830115559394.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/模型框架.jpg">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200908123700702.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20201022211621834.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200916212349051.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200916212411629.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200916212429656.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200916212447357.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200916212509988.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200916213811558.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200916213827073.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200916213839791.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200916213901235.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200916214000157.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200916213921431.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200916213940405.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20200929211451022.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/编译%20OptixRenderer.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191025114448765.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FpWmlfWnBs,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="http://wiki.povray.org/uploaded/f/fd/RefImgPerspcam.gif">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/20201004153838189.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/20201007214718398.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/5dace05d/image-20210111163718046.png">
+<meta property="og:updated_time" content="2021-04-08T09:19:41.699Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="paperMemo-prepare">
+<meta name="twitter:description" content="论文准备工作，不上传">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/5dace05d/RealEstate10K参数性质.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://pabebezz.github.io/article/5dace05d/">
+
+
+<meta name="google-site-verification" content="skUdQN9cQrZuUJydKG0ivzB90q5kyLJMU5i5dt82GH4">
+<meta name="google-site-verification" content="hv7_j7TFqTy83_mHkj5EDOJhzIl0_tusCnHJBxNOfAo">
+
+
+
+
+
+
+  <title>paperMemo-prepare | Pabebe's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"> 
+       
+    </div>
+ 
+
+      <!-- change "fork me on github" -->
+     <!--  <a href="https://github.com/Pabebezz" target="_blank" ><img style="position: absolute; top: 0; right: 1200; border: 0;"  width="149" height="149" src="/images/forkme_left_green.png" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a> -->
+     <a href="https://github.com/Pabebezz" class="github-corner" target="_blank" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #326755; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+       
+       <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pabebe's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">业精于勤，荒于嬉；行成于思，毁于随。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://pabebezz.github.io/article/5dace05d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pabebe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pabebe's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">paperMemo-prepare</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-06T17:31:26+08:00">
+                2020-12-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Scientific-Research/" itemprop="url" rel="index">
+                    <span itemprop="name">Scientific Research</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+           
+           
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+            
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.2k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  23 分钟
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  论文准备工作，不上传
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="寻找数据集的网站"><a href="#寻找数据集的网站" class="headerlink" title="寻找数据集的网站"></a>寻找数据集的网站</h1><p><a href="https://www.visualdata.io/discovery" target="_blank" rel="noopener">https://www.visualdata.io/discovery</a></p>
+<h1 id="预处理RealEstate10K"><a href="#预处理RealEstate10K" class="headerlink" title="预处理RealEstate10K"></a>预处理RealEstate10K</h1><p><a href="https://google.github.io/realestate10k/download.html" target="_blank" rel="noopener">下载</a></p>
+<p>RealEstate10K 数据集介绍-【大规模摄像机轨迹视频剪辑数据集】</p>
+<p>PS:大小大约<strong>7TB</strong></p>
+<p>抓取 YouTube 上的视频，并以指定时间戳、帧姿态来剪辑。应用类似于视图合成的模型中，例如，在Google的SIGGRAPH 2018年SIGGRAPH论文《立体放大：使用多平面图像学习视图合成》中，在训练过程中从每个剪辑中采样了三帧帧，两个用于预测模型，第三个作为计算视图合成损失的ground truth 训练网络。</p>
+<p>数据集由一组.txt文件组成，格式如下：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;Video URL&gt;</span></span><br><span class="line">  <span class="section">&lt;frame1&gt;</span></span><br><span class="line">  <span class="section">&lt;frame2&gt;</span></span><br><span class="line">  <span class="section">&lt;...&gt;</span></span><br></pre></td></tr></table></figure>
+<p>同一个视频的剪辑帧大约90%在训练集、10%在测试集。</p>
+<p>每个frame包括3个参数</p>
+<p>第1列：时间戳（int，视频开始的微秒数）</p>
+<p>第2-6列：相机内在参数（float: focal_length_x, focal_length_y,principal_point_x, principal_point_y），即3*3矩阵K</p>
+<p>第7-19列：相机姿态（floats ，以行优先顺序的3x4矩阵，即3*4矩阵P = [R|t]</p>
+<p><img src="/article/5dace05d/RealEstate10K参数性质.png" alt="image-20200706174219677"></p>
+<p>因此，<strong>KP将世界坐标系的(homogeneous) 3D坐标点映射到图片中(homogeneous) 2D点</strong></p>
+<p>相机内部特性以与分辨率无关（resolution-independent）的归一化图像坐标表示，其中图像的左上角为（0,0），图像的右下角为（1,1）。 通过像素大小对图像进行缩放，可以调整内在参数得到存储在磁盘上的任何分辨率帧（或在训练之前调整大小）。 对于分辨率为<strong><em>width</em> x <em>height</em></strong> 像素的图像，图像真实比例的K矩阵为</p>
+<p><img src="/article/5dace05d/内参性质.png" alt="内参性质"></p>
+<p>pytube是用于爬虫下载youtube上的视频库</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> pytube3</span><br></pre></td></tr></table></figure>
+<p>处理代码：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> preprocess_RealEstate10K.<span class="keyword">py</span></span><br></pre></td></tr></table></figure>
+<p><img src="/article/5dace05d/RealEstate10K数据集预处理.png" alt="image-20200706175046167"></p>
+<h1 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h1><h2 id="相机模型"><a href="#相机模型" class="headerlink" title="相机模型"></a>相机模型</h2><p> （<strong>像素坐标，图像坐标，相机坐标，世界坐标</strong>）的变换关系 </p>
+<p> 成像的过程实质上是几个坐标系的转换， 也可以被称为<strong>射影变换</strong>（更多关于射影变换的内容可参考《计算机视觉中的多视图几何》） 。首先空间中的一点由 <strong>世界坐标系</strong> 转换到 <strong>摄像机坐标系</strong> ，然后再将其投影到<strong>成像平面</strong> <strong>( 图像物理坐标系 )</strong> ，最后再将成像平面上的数据转换到图像平面 <strong>( 图像像素坐标系 )</strong>  </p>
+<p><img src="/article/5dace05d/成像的过程.png" alt="成像的过程"></p>
+<p><strong>针孔相机模型</strong>（最简单）：</p>
+<p><img src="/article/5dace05d/针孔相机模型2.jpg" alt="针孔相机模型2"></p>
+<ul>
+<li><p>相机坐标系（三维坐标系）<br>相机的中心被称为焦点或者光心<strong>（principal point）</strong>，以焦点<em>Oc</em>为原点和坐标轴<em>Xc</em>,<em>Yc</em>,<em>Zc</em>组成了<strong>相机坐标系</strong> </p>
+</li>
+<li><p>图像坐标系（二维坐标系）<br>成像平面中，以成像平面的中心<em>O</em>′为原点和坐标轴<em>x</em>′,<em>y</em>′组成了<strong>图像坐标系</strong>。 </p>
+<p><img src="/article/5dace05d/相似三角形.jpg" alt="相似三角形"></p>
+<p>由相似三角形得出： </p>
+</li>
+</ul>
+<p>$$<br>\left{<br>\begin{array}{l}<br>x = f\frac{X}{Z} \<br>y = f\frac{Y}{Z} \<br>z = f<br>\end{array}<br>\right.<br>$$</p>
+<p> 通过扩展坐标维度构建齐次坐标 ，将<strong>z</strong>线性化<br>$$<br>\left[\begin{array}{c}x\y\end{array}\right] \Leftrightarrow<br>\left[\begin{array}{c}\hat{x}\\hat{y}\\hat{z}\end{array}\right] =<br>\left[\begin{array}{ccc}f&amp;0&amp;0&amp;0\0&amp;f&amp;0&amp;0\0&amp;0&amp;1&amp;0\end{array}\right]<br>\left[\begin{array}{c}X\Y\Z\1\end{array}\right]<br>$$<br> 具体步骤就是将x和y同时除以一个不为0的z，并且将z作为其添加维度的坐标，通常可以选择<strong><em>z</em>=1</strong>。  </p>
+<h2 id="内参数"><a href="#内参数" class="headerlink" title="内参数"></a>内参数</h2><p> 与相机自身特性相关的参数，比如相机的焦距、像素大小等； </p>
+<p> 从<strong>成像平面坐标系</strong>到<strong>像素坐标系</strong>的变换。</p>
+<p>上面推导中使用的像点坐标<em>p</em>=(<em>x</em>,<em>y</em>)是成像平面坐标系下，以成像平面的中心为原点。而实际像素点的表示方法是以像素来描述，坐标原点通常是图像的左上角，X轴沿着水平方向向左，Y轴竖直向下。</p>
+<p>像素是一个矩形块，这里假设其在水平和竖直方向的长度分别为：<em>α</em>和<em>β</em>。所以像素坐标和成像平面坐标之间，相差了一个<strong>缩放</strong>和<strong>原点的平移</strong>。<br> 假设像素坐标的水平方向的轴为<em>μ</em>，竖直方向的轴为<em>ν</em>，那么将一个<strong>成像平面的坐标(<em>x</em>,<em>y</em>)</strong>在水平方向上缩放<em>α</em>倍，在竖直方向上缩放<em>β</em>倍，同时平移((c_x,c_y)，就可以得到<strong>像素坐标系的坐标(<em>μ</em>,<em>ν</em>)</strong>，其公式如下：<br>$$<br>\begin{array}{c}<br>u = \alpha\cdot x+ c_x \<br>v = \beta \cdot y + c_y<br>\end{array}<br>$$<br>带入<br>$$<br>\left{\begin{array}{c}<br>u = \alpha\cdot f\frac{X}{Z}+ c_x \<br>v = \beta \cdot f\frac{Y}{Z} + c_y<br>\end{array}\right. \Rightarrow \left{\begin{array}{c}<br>u = f_x\frac{X}{Z}+ c_x \<br>v = f_y\frac{Y}{Z} + c_y<br>\end{array}\right. 其中，f_x = \alpha \cdot f,f_y = \beta \cdot f<br>$$<br> 齐次坐标的形式：<br>$$<br>\left[\begin{array}{c}\mu\\nu\1\end{array}\right] = \frac{1}{Z}\left[<br>\begin{array}{ccc}f_x&amp;0&amp;c_x\0&amp;f_y&amp;c_y\0&amp;0&amp;1\end{array}\right]\left[\begin{array}{c}X\Y\Z\end{array}\right]<br>$$<br>齐次坐标性质：缩放一个常量因子仍然是相等的：<br>$$<br>s(a,b,c)^T=(sa,sb,sc)^T<br>$$</p>
+<p> 将<em>Z</em>挪到左边：<br>$$<br>\left[\begin{array}{c}\mu\\nu\1\end{array}\right]=Z\left[\begin{array}{c}\mu\\nu\1\end{array}\right] =\left[<br>\begin{array}{ccc}f_x&amp;0&amp;c_x\0&amp;f_y&amp;c_y\0&amp;0&amp;1\end{array}\right]\left[\begin{array}{c}X\Y\Z\end{array}\right]<br>$$<br> 相机的<strong>内参数矩阵（Camera Intrinsics）K</strong> ：<br>$$<br>K=\left[<br>\begin{array}{ccc}f_x&amp;0&amp;c_x\0&amp;f_y&amp;c_y\0&amp;0&amp;1\end{array}\right]<br>$$<br> K有4个未知数和相机的构造相关，<em>fx</em>,<em>fy</em>和相机的焦距，像素的大小有关；<em>cx</em>,<em>cy</em>是平移的距离，和相机成像平面的大小有关。</p>
+<p><strong>相机成像的公式：</strong><br>$$<br>p = KP<br>$$<br>其中，<strong><em>p</em></strong>是图像中像点的像素坐标， <strong><em>K</em></strong>是相机的内参数矩阵， <strong><em>P</em></strong>是下的三维点坐标。</p>
+<pre><code>求解相机内参数的过程被称为**标定**，在**SLAM（ simultaneous localization and mapping， 即时定位与地图构建 ）**中可以假定相机的内参是已知的，**而在三维重建中内参数则是未知的**，需要手动的标定（比如使用标定板），也有自标定的方法，不过精度较低 。
+</code></pre><h2 id="外参数"><a href="#外参数" class="headerlink" title="外参数"></a>外参数</h2><p> 在世界坐标系中的参数，比如相机的位置、旋转方向等。</p>
+<p> 上式三维点坐标是在相机坐标系下的，相机坐标系会随着相机的移动而改变坐标的原点和各个坐标轴的方向。引入一个稳定不变坐标系：<strong>世界坐标系</strong>，该坐标系是绝对不变，SLAM中的视觉<strong>里程计</strong>就是求解相机在世界坐标系下的运动轨迹。 </p>
+<p> 设<em>Pc</em>是<em>P</em>在相机坐标系坐标，<em>Pw</em>是其在世界坐标系下的坐标，可以使用一个 3×3 旋转矩阵<em>R</em>和一个 3×1平移向量<em>t</em>，将<em>Pc</em>变换为<em>Pw</em> ：<br>$$<br>P_c = RP_w + t<br>$$</p>
+<p>其齐次坐标：<br>$$<br>\left[\begin{array}{c}X_c\Y_c\Z_c\1\end{array}\right] = \left[\begin{array}{ccc}R_{11}&amp;R_{12}&amp;R_{13}&amp;t_1\R_{21}&amp;R_{22}&amp;R_{23}&amp;t_2\R_{31}&amp;R_{32}&amp;R_{33}&amp;t_3\0&amp;0&amp;0&amp;1\end{array}\right]\left[\begin{array}{c}X_w\Y_w\Z_w\1\end{array}\right]<br>$$</p>
+<p>化简得：<br>$$<br>\left[\begin{array}{c}X_c\Y_c\Z_c\1\end{array}\right] = \left[\begin{array}{cc}R&amp;t\0^T&amp;1\end{array}\right]\left[\begin{array}{c}X_w\Y_w\Z_w\1\end{array}\right]<br>$$<br> 相机的<strong>外参数（Camera Extrinsics）T</strong> ：<br>$$<br>T = \left[\begin{array}{cc}R&amp;t\0^T&amp;1\end{array}\right]<br>$$<br><strong>结合内外参数得出 相机最终的成像矩阵矩阵 ：</strong></p>
+<p>从 将真实场景中的三维点投影<strong>（ 世界坐标系 ）</strong>到二维的成像平面 <strong>( 图像像素坐标系 )</strong><br>$$<br>\left[\begin{array}{c}\mu\\nu\1\end{array}\right] = \left[<br>\begin{array}{ccc}f_x&amp;0&amp;c_x&amp;0\0&amp;f_y&amp;c_y&amp;0\0&amp;0&amp;1&amp;0\end{array}\right]\left[\begin{array}{cc}R&amp;t\0^T&amp;1\end{array}\right]\left[\begin{array}{c}X_W\Y_W\Z_W\1\end{array}\right]<br>$$<br> <em>p</em>=(<em>μ</em>,<em>ν</em>)是像素坐标系中的像素点；</p>
+<p><em>Pc</em>=(<em>Xc</em>,<em>Yc</em>,<em>Zc</em>)是相机坐标系场景中的三维点； </p>
+<p>带入外参数，将该坐标变换为世界坐标系<em>Pw</em>=(<em>Xw</em>,<em>Yw</em>,<em>Zw</em>) 。</p>
+<p>之后还有一系列畸变矫正、数字化处理等操作暂时不必了解太细。</p>
+<h1 id="相机坐标系参数转换"><a href="#相机坐标系参数转换" class="headerlink" title="相机坐标系参数转换"></a>相机坐标系参数转换</h1><ul>
+<li><strong>fx, fy</strong>: The focal length used to take image in pixels</li>
+<li><strong>cx, cy</strong>: The centre of the image. <strong>Ideally it is equal to (height/2, width/2)</strong></li>
+<li>The focal len in pixels is calculated from the Field of View and Sensor Size of camera, as derived from <a href="https://photo.stackexchange.com/questions/97213/finding-focal-length-from-image-size-and-fov" target="_blank" rel="noopener">here</a>:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">F = A / tan(a)</span><br><span class="line">  Where,</span><br><span class="line">    F = Focal len <span class="keyword">in</span> pixels</span><br><span class="line">    A = image_size/2</span><br><span class="line">    a = FOV/2</span><br></pre></td></tr></table></figure>
+<p>Here are the calculation for our synthetic images, with angles in degrees for image output at 288x512p:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Fx = (512 / 2) / tan( 69.40 / 2 ) = 369.71 = 370 pixels</span><br><span class="line">Fy = (288 / 2) / tan( 42.56 / 2 ) = 369.72 = 370 pixels</span><br></pre></td></tr></table></figure>
+<p>旋转矩阵</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">zAxis</span> = origin - lookat</span><br><span class="line"><span class="attr">yAxis</span> = up</span><br><span class="line"><span class="attr">xAxis</span> = torch.cross(yAxis, zAxis, dim=<span class="number">1</span>)</span><br><span class="line"><span class="attr">xAxis</span> = xAxis / torch.sqrt(torch.clamp(torch.sum(xAxis * xAxis, dim=<span class="number">1</span>).unsqueeze(<span class="number">1</span>), min=<span class="number">1</span>e-<span class="number">10</span>))</span><br><span class="line"><span class="attr">yAxis</span> = yAxis / torch.sqrt(torch.clamp(torch.sum(yAxis * yAxis, dim=<span class="number">1</span>).unsqueeze(<span class="number">1</span>), min=<span class="number">1</span>e-<span class="number">10</span>))</span><br><span class="line"><span class="attr">zAxis</span> = zAxis / torch.sqrt(torch.clamp(torch.sum(zAxis * zAxis, dim=<span class="number">1</span>).unsqueeze(<span class="number">1</span>), min=<span class="number">1</span>e-<span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># print("xAxis: ", xAxis.shape)</span></span><br><span class="line"><span class="attr">xAxis</span> = xAxis.view([batchSize, <span class="number">3</span>, <span class="number">1</span>])</span><br><span class="line"><span class="attr">yAxis</span> = yAxis.view([batchSize, <span class="number">3</span>, <span class="number">1</span>])</span><br><span class="line"><span class="attr">zAxis</span> = zAxis.view([batchSize, <span class="number">3</span>, <span class="number">1</span>])</span><br><span class="line"><span class="attr">rotMat</span> = torch.cat([xAxis, yAxis, zAxis], dim=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h1><h2 id="‘No-module-named-‘quaternion’’"><a href="#‘No-module-named-‘quaternion’’" class="headerlink" title="‘No module named ‘quaternion’’"></a><strong>‘No module named ‘quaternion’’</strong></h2><p><code>conda install -c conda-forge quaternion</code></p>
+<h2 id="No-module-named-‘skimage’"><a href="#No-module-named-‘skimage’" class="headerlink" title="No module named ‘skimage’"></a><strong>No module named ‘skimage’</strong></h2><p><code>conda install scikit-image</code></p>
+<h2 id="No-module-named-‘open3d’"><a href="#No-module-named-‘open3d’" class="headerlink" title="No module named ‘open3d’"></a>No module named ‘open3d’</h2><p><code>conda install -c open3d-admin open3d</code></p>
+<h2 id="No-module-named-‘pytorch3d’"><a href="#No-module-named-‘pytorch3d’" class="headerlink" title="No module named ‘pytorch3d’"></a><strong>No module named ‘pytorch3d’</strong></h2><p>项目链接：<a href="https://github.com/facebookresearch/pytorch3d" target="_blank" rel="noopener">https://github.com/facebookresearch/pytorch3d</a></p>
+<p><strong>ubuntu</strong> </p>
+<p><code>conda install pytorch3d -c pytorch3d</code></p>
+<p><strong>window</strong></p>
+<p><a href="https://www.cnblogs.com/VVingerfly/p/13502376.html" target="_blank" rel="noopener">https://www.cnblogs.com/VVingerfly/p/13502376.html</a></p>
+<p><img src="/article/5dace05d/image-20200830121024538.png" alt="image-20200830121024538"></p>
+<h2 id="No-module-named-‘openEXR’"><a href="#No-module-named-‘openEXR’" class="headerlink" title="No module named ‘openEXR’"></a><strong>No module named ‘openEXR’</strong></h2><p>主要是window报这个错，因为直接<code>pip install openEXR</code>会出现编译问题。</p>
+<p>参考<a href="https://blog.csdn.net/u012572354/article/details/105201094?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~first_rank_v2~rank_v25-2-105201094.nonecase&amp;utm_term=openexr%20python%20%E5%AE%89%E8%A3%85" target="_blank" rel="noopener">在windows上安装python库–pyexr</a></p>
+<p><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank" rel="noopener">先下载对应python版本的OpenEXR库文件</a></p>
+<p><code>pip install 下载位置\OpenEXR-1.3.2-cp37-cp37m-win_amd64.whl</code></p>
+<p>就可以了。</p>
+<p><img src="/article/5dace05d/image-20200830115546415.png" alt="image-20200830115546415"></p>
+<p>发生了一个小意外，当时运用openEXR库中的Imath moudle 误导入了imath库，</p>
+<p>哈哈哈哈，发现有人用韩文做函数名也是可以的。</p>
+<p><img src="/article/5dace05d/image-20200827202134723.png" alt="image-20200827202134723"></p>
+<h2 id="AttributeError-Can’t-pickle-local-object-‘Sharpen-create-matrices’"><a href="#AttributeError-Can’t-pickle-local-object-‘Sharpen-create-matrices’" class="headerlink" title="AttributeError: Can’t pickle local object ‘Sharpen..create_matrices’"></a>AttributeError: Can’t pickle local object ‘Sharpen..create_matrices’</h2><p>参考：<a href="https://blog.csdn.net/weixin_43866860/article/details/93890551" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43866860/article/details/93890551</a></p>
+<p>把Pytorch的DataLoader模块，当 num_workers设置为0.</p>
+<p>因为window没有Ubuntu的fork()调用。</p>
+<h2 id="AttributeError-module-‘numpy’-has-no-attribute-‘float128’"><a href="#AttributeError-module-‘numpy’-has-no-attribute-‘float128’" class="headerlink" title="AttributeError: module ‘numpy’ has no attribute ‘float128’"></a>AttributeError: module ‘numpy’ has no attribute ‘float128’</h2><p>参考：<a href="https://blog.csdn.net/tianxifeng/article/details/103523076" target="_blank" rel="noopener">https://blog.csdn.net/tianxifeng/article/details/103523076</a></p>
+<p>首先去<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/网站下载编译好的二进制安装包PyOpenGL，在pip安装（但还是没有解决，因此去Ubuntu吧。）" target="_blank" rel="noopener">https://www.lfd.uci.edu/~gohlke/pythonlibs/网站下载编译好的二进制安装包PyOpenGL，在pip安装（但还是没有解决，因此去Ubuntu吧。）</a></p>
+<p><img src="/article/5dace05d/image-20200830115559394.png" alt="image-20200830115559394"></p>
+<h2 id="Missing-key-s-in-state-dict-“module-backbone-layers-0-stage-1-layers-0-weight”"><a href="#Missing-key-s-in-state-dict-“module-backbone-layers-0-stage-1-layers-0-weight”" class="headerlink" title="Missing key(s) in state_dict: “module.backbone.layers.0.stage_1.layers.0.weight”,"></a>Missing key(s) in state_dict: “module.backbone.layers.0.stage_1.layers.0.weight”,</h2><p>去掉字典里的‘module.’</p>
+<h1 id="当前模型框架"><a href="#当前模型框架" class="headerlink" title="当前模型框架"></a>当前模型框架</h1><p><img src="/article/5dace05d/模型框架.jpg" alt="模型框架"></p>
+<p>数据集由 realsense（现实场景）与cleargrasp（透明物体）两部分组合，其中cleargrasp（透明物体）需要自己生成ground truth</p>
+<p><strong>疑问：</strong></p>
+<p>单个数据集所给参数不一致，所以单独训练网络？ 担心泛化能力。</p>
+<p>每次训练接着上一次训练，运行12个小时的结果（<strong>训练时长太长</strong>，一个物品5000张图片，训练集有5种物品2.5W张图片）并且运行时间稍长电脑就会卡。</p>
+<p><img src="/article/5dace05d/image-20200908123700702.png" alt="image-20200908123700702"></p>
+<h2 id="训练Normal时内存不够"><a href="#训练Normal时内存不够" class="headerlink" title="训练Normal时内存不够"></a>训练Normal时内存不够</h2><p>RuntimeError: CUDA out of memory. Tried to allocate 480.00 MiB (GPU 0; 7.79 GiB total capacity; 4.55 GiB already allocated; 362.38 MiB free; 6.21 GiB reserved in total by PyTorch) (malloc at /opt/conda/conda-bld/pytorch_1587428398394/work/c10/cuda/CUDACachingAllocator.cpp:289)</p>
+<p><img src="/article/5dace05d/image-20201022211621834.png" alt="image-20201022211621834"></p>
+<p><strong>能否用生成的数据做groud truth?</strong></p>
+<p>ClearGrasp没有多视角结果图,但是包含大量的透明物体(<strong>能够做透明物体的视觉合成</strong>)</p>
+<p>RealEstate10K没有对应的法线轮廓图,迁移过去(细节丢失较为严重,但是对于有孔洞的场景能够表示出来)</p>
+<p><img src="/article/5dace05d/image-20200916212349051.png" alt="image-20200916212349051"></p>
+<p><img src="/article/5dace05d/image-20200916212411629.png" alt="image-20200916212411629"></p>
+<p><img src="/article/5dace05d/image-20200916212429656.png" alt="image-20200916212429656"></p>
+<p><img src="/article/5dace05d/image-20200916212447357.png" alt="image-20200916212447357"></p>
+<p><img src="/article/5dace05d/image-20200916212509988.png" alt="image-20200916212509988"></p>
+<p><img src="/article/5dace05d/image-20200916213811558.png" alt="image-20200916213811558"></p>
+<p><img src="/article/5dace05d/image-20200916213827073.png" alt="image-20200916213827073"></p>
+<p><img src="/article/5dace05d/image-20200916213839791.png" alt="image-20200916213839791"></p>
+<p><img src="/article/5dace05d/image-20200916213901235.png" alt="image-20200916213901235"><img src="/article/5dace05d/image-20200916214000157.png" alt="image-20200916214000157"></p>
+<p><img src="/article/5dace05d/image-20200916213921431.png" alt="image-20200916213921431"></p>
+<p><img src="/article/5dace05d/image-20200916213940405.png" alt="image-20200916213940405"></p>
+<h1 id="透明多视角数据集的构建"><a href="#透明多视角数据集的构建" class="headerlink" title="透明多视角数据集的构建"></a>透明多视角数据集的构建</h1><h2 id="所需"><a href="#所需" class="headerlink" title="所需"></a>所需</h2><p>其中Laval数据集(或许可用HDR+ Burst Photography Dataset代替)需要翻墙.</p>
+<p><a href="http://indoor.hdrdb.com/" target="_blank" rel="noopener">http://indoor.hdrdb.com/</a></p>
+<p>需要和<a href="http://vision.gel.ulaval.ca/~jflalonde/" target="_blank" rel="noopener">http://vision.gel.ulaval.ca/~jflalonde/</a> 这位研究员索要,邮箱:<a href="mailto:jflalonde@gel.ulaval.ca" target="_blank" rel="noopener">jflalonde@gel.ulaval.ca</a></p>
+<p>索要内容如下:</p>
+<p>title: Academic research application for The Laval Indoor HDR Dataset</p>
+<p>Dear Prof. <strong>Jean-François</strong> Lalonde,</p>
+<p>Thank you for reading!<br>This is from College of Computer Science and Electronic Engineering, Hunan University, China. I am now a master student and is studying and doing research on Computer Vision. </p>
+<p>I am currently  constructing my dataset according to this paper that applies to The Laval Indoor HDR Dataset. This paper is “ Through the Looking Glass: Neural 3D Reconstruction of Transparent Shapes” :<a href="https://arxiv.org/abs/2004.10904" target="_blank" rel="noopener">https://arxiv.org/abs/2004.10904</a><br>I am wondering if you could kindly send me the Laval Indoor HDR Dataset and the necessary information about it. I am willing to fill in and sign the terms of use agreement to download the dataset  and promise they will be used only for research purposed.</p>
+<p>Thank you very much for your kind consideration and I am looking forward to your early reply.</p>
+<p>All the best,<br>Zezu Wang</p>
+<hr>
+<p>Zezu Wang（王泽祖）<br>a graduate student in computer technology,<br>Hunan University, Changsha, China</p>
+<p>Emial:<br><a href="mailto:zezuwang@hnu.edu.cn" target="_blank" rel="noopener">zezuwang@hnu.edu.cn</a></p>
+<p><a href="mailto:zezuwang@gmail.com" target="_blank" rel="noopener">zezuwang@gmail.com</a></p>
+<ul>
+<li><p>Laval Indoor scene dataset: Please download the dataset from this <a href="http://indoor.hdrdb.com/" target="_blank" rel="noopener">link</a>. We use 1499 environment map for training and 645 environment map for testing. Please turn the <code>.exr</code> files into <code>.hdr</code> files, since our renderer does not support loading <code>.exr</code> files yet. Please save the training set and testing set in <code>Envmap/train</code> and <code>Envmap/test</code> separately.</p>
+<p>来源：<a href="https://blog.csdn.net/zzzGoogle/article/details/1615691" target="_blank" rel="noopener">HDR文件格式简介</a></p>
+<p> <code>.hdr</code></p>
+<p> HDR的全称是High-Dynamic Range(高动态范围)。在此，我们先解释一下什么是Dynamic  Range（动态范围），动态范围是指图像中所包含的从“最亮”至“最暗”的比值，也就是图像从“最亮”到“最暗”之间灰度划分的等级数；动态范围越大，所能表示的层次越丰富，所包含的色彩空间也越广。那高动态范围(HDR)顾名思义就是从“最亮”到“最暗”可以达到非常高的比值。    </p>
+<p>以HDRsoft的高动态范围（HDR）图像格式保存的光栅图像或数码照片； 用于增强数字图像的色彩和亮度范围； 可以进行处理以修正暗影或洗掉图像的某些区域。</p>
+<p> <code>.exr</code> </p>
+<p>OpenEXR是由工业光魔（Industrial Light &amp;  Magic）开发的一种HDR标准。OpenEXR文件的扩展名为.exr，常见的OpenEXR文件是FP16（16bit Float  Point，也被称为half Float  Point）数据图像文件，每个通道的数据类型是FP16，一共四个通道64bpp，每个通道1个bit位用来标志“指数”，5个bit用来存放指数的值，10个bit存放色度坐标（u，v）的尾数，其动态范围从6.14 × 10 ^ -5到6.41 × 10 ^ 4。</p>
+<p>以OpenEXR格式存储的光栅图像，这是由Industrial Light＆Magic开发的一种高动态范围（HDR）图像文件格式； 支持多层图像，有损和无损压缩以及16位和32位像素； 用于存储深光栅图像以获得高质量图形； 由光栅图形编辑程序和成像应用程序使用.</p>
+</li>
+<li><p>Optix Renderer: Please download our Optix-based renderer from this <a href="https://github.com/lzqsd/OptixRenderer" target="_blank" rel="noopener">link</a>. There is an Optix renderer included in this repository. But it is the renderer specifically modified to render the two-bounce normal. Please use the renderer from the <a href="https://github.com/lzqsd/OptixRenderer" target="_blank" rel="noopener">link</a> to render images. We will refer to the renderer in this repository as renderer-twobounce and the renderer from the <a href="https://github.com/lzqsd/OptixRenderer" target="_blank" rel="noopener">link</a> as renderer-general in the following to avoid confusion. </p>
+</li>
+<li><p>Colmap: Please install Colmap from this <a href="https://colmap.github.io/" target="_blank" rel="noopener">link</a>. We use Colmap to reconstruct mesh from point cloud. </p>
+</li>
+<li><p>Meshlab: Please install Meshlab from this <a href="https://www.meshlab.net/" target="_blank" rel="noopener">link</a>. We use the subdivision algorithm in Meshlab to smooth the surface so that there is no artifacts when rendering transparent shape. This is important when the BRDF is a delta function. </p>
+</li>
+</ul>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h2 id="window（一直出错）"><a href="#window（一直出错）" class="headerlink" title="window（一直出错）"></a>window（一直出错）</h2><p>编译OptiX SDK 6.5.0</p>
+<p>VS2015</p>
+<p>参考<a href="https://blog.csdn.net/FreeSouthS/article/details/89703252?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param" target="_blank" rel="noopener">【OptiX】OptiX介绍与示例编译</a></p>
+<p><a href="https://blog.csdn.net/lsxht95/article/details/86290860" target="_blank" rel="noopener">Optix SDK sample编译</a></p>
+<p><img src="/article/5dace05d/image-20200929211451022.png" alt="image-20200929211451022"></p>
+<p>##　ubuntu</p>
+<p><strong>cmake</strong></p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt  <span class="keyword">install</span> cmake-qt-gui</span><br><span class="line"><span class="comment"># 打开图形化cmake界面</span></span><br><span class="line">cmake-gui</span><br></pre></td></tr></table></figure>
+<p><strong>CUDA &amp; OptiX</strong></p>
+<p><a href="https://ingowald.blog/installing-the-latest-nvidia-driver-cuda-and-optix-on-linux-ubuntu-18-04/" target="_blank" rel="noopener">Installing the latest NVidia Driver, CUDA, and OptiX on Linux/Ubuntu 18.04</a></p>
+<p>编译OptiX SDK7.1.0</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">到.../NVIDIA-OptiX-SDK-7.1.0-linux64-x86_64/SDK/下</span></span><br><span class="line"></span><br><span class="line">mkdir build</span><br><span class="line">cd build/</span><br><span class="line"><span class="meta">#</span><span class="bash">gcc对应版本</span></span><br><span class="line">cmake .. -DCMAKE_C_COMPILER=/usr/bin/gcc-7</span><br><span class="line">make -j4</span><br><span class="line"></span><br><span class="line">显示</span><br><span class="line"><span class="meta">[100%</span><span class="bash">] Linking CXX executable ../bin/optixHair</span></span><br><span class="line"><span class="meta">[100%</span><span class="bash">] Built target optixHair</span></span><br><span class="line">则成功</span><br></pre></td></tr></table></figure>
+<p>编译OptiX SDK6.5.0</p>
+<p>出现”Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so<br>CMake Error at /usr/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake:137 (message):Could NOT find GLUT (missing: GLUT_glut_LIBRARY GLUT_INCLUDE_DIR)”</p>
+<p>参考:    <a href="https://www.cnblogs.com/joyeecheung/p/4310487.html" target="_blank" rel="noopener">在Windows/Ubuntu下安装OpenGL环境（GLUT/freeglut)与跨平台编译（mingw/g++）</a> </p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">sudo</span> apt-<span class="meta">get</span> install <span class="keyword">build-essential </span>freeglut3 freeglut3-dev <span class="keyword">binutils-gold</span></span><br></pre></td></tr></table></figure>
+<p>搞定</p>
+<p><strong>opencv</strong></p>
+<p><a href="https://www.bzblog.online/wordpress/index.php/2020/03/09/opencvdownload/" target="_blank" rel="noopener">下载镜像</a></p>
+<p><a href="https://blog.csdn.net/xiaolong1126626497/article/details/105278882/" target="_blank" rel="noopener">ubuntu18.04下编译OpenCV3.4.9</a></p>
+<p>注意一下python的版本,切换成自己常用的,删掉python2</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">测试</span><br><span class="line">~<span class="regexp">/opencv-3.4.9/samples</span><span class="regexp">/cpp/example</span>_cmake$g++ example.cpp -L /home/pabebe/opencv-<span class="number">3.4</span>.<span class="number">9</span>/build/<span class="class"><span class="keyword">lib</span> -<span class="title">I</span> /<span class="title">home</span>/<span class="title">pabebe</span>/<span class="title">opencv</span>-3.4.9/<span class="title">build</span>/<span class="title">include</span>/ -<span class="title">lopencv_calib3d</span> -<span class="title">lopencv_objdetect</span> -<span class="title">lopencv_core</span> -<span class="title">lopencv_photo</span> -<span class="title">lopencv_dnn</span> -<span class="title">lopencv_shape</span> -<span class="title">lopencv_features2d</span>  -<span class="title">lopencv_stitching</span> -<span class="title">lopencv_flann</span> -<span class="title">lopencv_superres</span> -<span class="title">lopencv_highgui</span> -<span class="title">lopencv_videoio</span> -<span class="title">lopencv_imgcodecs</span>  -<span class="title">lopencv_video</span> -<span class="title">lopencv_imgproc</span> -<span class="title">lopencv_videostab</span> -<span class="title">lopencv_ml</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>the DevIL image library</strong></p>
+<p>来源:<a href="https://zoomadmin.com/HowToInstall/UbuntuPackage/libdevil-dev" target="_blank" rel="noopener">https://zoomadmin.com/HowToInstall/UbuntuPackage/libdevil-dev</a></p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span> -y</span><br><span class="line">sudo apt-<span class="built_in">get</span> install -y libdevil-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure>
+<p><strong>以下均用的OptiX SDK6.5.0,  因7.1.0会报错</strong></p>
+<h3 id="编译-OptixRenderer-renderer-twobounce-论文已经包含的两次折射反射"><a href="#编译-OptixRenderer-renderer-twobounce-论文已经包含的两次折射反射" class="headerlink" title="编译 OptixRenderer(renderer-twobounce,论文已经包含的两次折射反射)"></a>编译 OptixRenderer(renderer-twobounce,论文已经包含的两次折射反射)</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cmake-<span class="keyword">gui</span></span><br><span class="line">如图配置</span><br></pre></td></tr></table></figure>
+<p><img src="/article/5dace05d/编译 OptixRenderer.png" alt="编译 OptixRenderer"></p>
+<p>最后,在build目录下打开终端</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span></span><br><span class="line"><span class="keyword">or</span></span><br><span class="line"><span class="built_in">make</span> -j4</span><br></pre></td></tr></table></figure>
+<p>出现’’[100%] Linking CXX executable ../../bin/optixRenderer’完成</p>
+<p>###　编译 OptixRenderer(renderer-general)</p>
+<p><a href="https://github.com/lzqsd/OptixRenderer" target="_blank" rel="noopener">下载链接</a></p>
+<p>步骤同上.</p>
+<h3 id="Meshlab"><a href="#Meshlab" class="headerlink" title="Meshlab"></a>Meshlab</h3><p>参考<a href="https://blog.csdn.net/weixin_45137708/article/details/106698883" target="_blank" rel="noopener">Ubuntu下安装MeshLab教程</a></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">add</span>-apt-repository <span class="keyword">pp</span><span class="variable">a:zarquon42</span>/meshlab</span><br><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> install meshlab</span><br><span class="line"></span><br><span class="line">卸载</span><br><span class="line">sudo apt-<span class="built_in">get</span> <span class="built_in">remove</span> meshlab</span><br><span class="line"></span><br><span class="line">移除PPA，输入以下命令：</span><br><span class="line">sudo apt-<span class="built_in">get</span> install ppa-purge</span><br><span class="line">sudu ppa-purge <span class="keyword">pp</span><span class="variable">a:zarquon42</span>/meshlab</span><br></pre></td></tr></table></figure>
+<h3 id="Colmap"><a href="#Colmap" class="headerlink" title="Colmap"></a>Colmap</h3><p>参考</p>
+<p><a href="https://blog.csdn.net/Carry_all/article/details/103224043" target="_blank" rel="noopener">COLMAP在Ubuntu18.04下安装</a></p>
+<p><a href="https://blog.csdn.net/X_kh_2001/article/details/82591978" target="_blank" rel="noopener">三维重建_COLMAP安装、使用和参数说明（翻译自官方文档）</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">依赖</span></span><br><span class="line">sudo apt-get install</span><br><span class="line"> </span><br><span class="line">                         git</span><br><span class="line"> </span><br><span class="line">                         cmake</span><br><span class="line"> </span><br><span class="line">                         build-essential</span><br><span class="line"> </span><br><span class="line">                         libboost-program-options-dev</span><br><span class="line"> </span><br><span class="line">                         libboost-filesystem-dev</span><br><span class="line"> </span><br><span class="line">                         libboost-graph-dev</span><br><span class="line"> </span><br><span class="line">                         libboost-regex-dev</span><br><span class="line"> </span><br><span class="line">                         libboost-system-dev</span><br><span class="line"> </span><br><span class="line">                         libboost-test-dev</span><br><span class="line"> </span><br><span class="line">                         libeigen3-dev</span><br><span class="line"> </span><br><span class="line">                         libsuitesparse-dev</span><br><span class="line"> </span><br><span class="line">                         libfreeimage-dev</span><br><span class="line"> </span><br><span class="line">                         libgoogle-glog-dev</span><br><span class="line"> </span><br><span class="line">                         libgflags-dev</span><br><span class="line"> </span><br><span class="line">                         libglew-dev</span><br><span class="line"> </span><br><span class="line">                         qtbase5-dev</span><br><span class="line"> </span><br><span class="line">                         libqt5opengl5-dev</span><br><span class="line"> </span><br><span class="line">                         libcgal-dev</span><br><span class="line">                       </span><br><span class="line">sudo apt-get install libcgal-qt5-dev</span><br><span class="line">sudo apt-get install libatlas-base-dev libsuitesparse-dev</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">Ceres Solver优化库安装</span></span><br><span class="line">git clone https://ceres-solver.googlesource.com/ceres-solver</span><br><span class="line">cd ceres-solver</span><br><span class="line">git checkout $(git describe --tags) # Checkout the latest release</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake .. -DBUILD_TESTING=OFF -DBUILD_EXAMPLES=OFF</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">安装colmap</span></span><br><span class="line">git clone https://github.com/colmap/colmap</span><br><span class="line">cd colmap</span><br><span class="line">git checkout dev</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+<h3 id="exr文件转hdr文件"><a href="#exr文件转hdr文件" class="headerlink" title="exr文件转hdr文件"></a>exr文件转hdr文件</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install pfstools</span><br><span class="line">sudo apt install pfsview</span><br><span class="line"><span class="keyword">for</span> img <span class="keyword">in</span> *.exr; <span class="keyword">do</span> pfsin <span class="variable">$&#123;img&#125;</span> | pfsout <span class="variable">$&#123;img%%.exr&#125;</span>.hdr; done</span><br><span class="line">sudo mv *.hdr <span class="regexp">/media/</span>pabebe<span class="regexp">/E/</span>download<span class="regexp">/100samplesDataset/</span>hdr<span class="regexp">/train/</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://pfstools.sourceforge.net/download.html" target="_blank" rel="noopener">http://pfstools.sourceforge.net/download.html</a></p>
+<h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成3000随机透明物体形状</span></span><br><span class="line">python createShape.py --mode train --rs <span class="number">0</span> --re <span class="number">3000</span></span><br><span class="line"><span class="comment"># 生成相机参数以及对应depth maps渲染的xml</span></span><br><span class="line">python createRenderFilesForDepths.py --mode train --rs <span class="number">0</span> --re <span class="number">3000</span></span><br><span class="line"><span class="comment"># 对于每种形状，从不同的视图渲染75个depth maps，并将depth maps融合在一起以生成一个mesh</span></span><br><span class="line">python renderAndIntegrate.py --mode train --rs <span class="number">0</span> --re <span class="number">3000</span> --renderProgram /home/pabebe/workspace/OptixRenderer-master/build/bin/optixRenderer</span><br><span class="line"><span class="comment"># 为10个视图重建创建相机姿势</span></span><br><span class="line">python createCamera10.py  --mode train --rs <span class="number">0</span> --re <span class="number">3000</span></span><br><span class="line"><span class="comment">#创建渲染文件</span></span><br><span class="line">python createRenderFilesRegularized.py --mode train --rs <span class="number">0</span> --re <span class="number">3000</span> --envRoot /media/pabebe/E/download/<span class="number">100</span>samplesDataset</span><br><span class="line"><span class="comment"># 一个形状渲染10张图片</span></span><br><span class="line">python renderImage.py --camNum <span class="number">10</span> --mode train --rs <span class="number">0</span> --re <span class="number">3000</span> --renderProgram /home/pabebe/workspace/OptixRenderer-master/build/bin/optixRenderer</span><br><span class="line"><span class="comment"># 渲染the ground-truth  两次折射或反射后的法线和深度</span></span><br><span class="line">python renderTwoBounce.py --camNum <span class="number">10</span> --mode train --rs  <span class="number">0</span> --re <span class="number">3000</span> --renderProgram /home/pabebe/workspace/TransparentShapeDatasetCreation/OptixRenderer/build/bin/optixRenderer</span><br><span class="line"></span><br><span class="line"><span class="comment">#为每个形状创建10个视图visual hull 。</span></span><br><span class="line">python createVisualHull.py --camNum <span class="number">10</span> --mode train --rs  <span class="number">0</span> --re <span class="number">3000</span></span><br><span class="line"><span class="comment">#创建对应的渲染xml </span></span><br><span class="line">python createRenderFileForVH.py --camNum <span class="number">10</span> --mode train --rs <span class="number">0</span> --re <span class="number">3000</span></span><br><span class="line"><span class="comment">#结合两次折射或反射后的法线和深度渲染visual hull </span></span><br><span class="line">python renderTwoBounceVisualHull.py --camNum <span class="number">10</span> --mode train --rs <span class="number">0</span> --re <span class="number">3000</span></span><br></pre></td></tr></table></figure>
+<p>sh: 1: xvfb-run: not found</p>
+<p>Xvfb是一个在类Unix系统中运行在内存的显示服务器，让你可以没有连接物理显示设备就能运行图形用户界面程序（比如谷歌浏览器）。许多人用Xvfb运行早期版本的谷歌浏览器来做“headless”测试。</p>
+<p><code>sudo apt install xvfb</code></p>
+<h1 id="相机参数"><a href="#相机参数" class="headerlink" title="相机参数"></a>相机参数</h1><p>camera中有三个参数，position、lookAt、up。</p>
+<p>position，设置camera的位置。也就是把摄像机放在哪里。</p>
+<p>lookAt，设置camera看向的位置，即摄像机在position的位置看向哪里。若position设置为（500,500,500），lookAt设置为（100,100,100）。其意思就是把camera放在坐标为（500,500,500）的位置，并把摄像头对准（100,100,100）位置看过去。</p>
+<p>up。为摄像头的正方向。假设人眼为摄像头，那么摄像头的正方向就是从嘴巴–&gt;眼睛–&gt;头顶的方向为正方向。那么如果设置up为（1,0,0），则说明摄像头正方向（嘴巴–&gt;眼睛–&gt;头顶的方向）正方向和X轴的正方向平行。若up为（-1,0,0），则与X轴的负半轴平行。同理yz轴一致。（up值决定了你是躺着看，还是站着看还是倒立着看）</p>
+<p><img src="https://img-blog.csdnimg.cn/20191025114448765.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1FpWmlfWnBs,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p><img src="http://wiki.povray.org/uploaded/f/fd/RefImgPerspcam.gif" alt="RefImgPerspcam.gif"></p>
+<h1 id="球坐标系"><a href="#球坐标系" class="headerlink" title="球坐标系"></a>球坐标系</h1><p>球坐标系是一种利用球坐标(r,θ,φ)来表示一个点 P 在三维空间的位置的三维正交坐标系。</p>
+<p>下图描述了球坐标的几何意义：原点O与目标点P之间的径向距离为r，O到P的连线与正z-轴之间的夹角为天顶角θ，O到P的连线在xy-平面上的投影线与正x-轴之间的夹角为方位角φ。</p>
+<p> 假设 P 点在三维空间的位置的三个坐标是 (r,theta,phi)。那么， 0 ≤ r 是从原点到 P 点的距离， 0 ≤ θ ≤ π  是从原点到 P 点的连线与正 z-轴的夹角， 0 ≤ φ &lt; 2π 是从原点到 P 点的连线在 xy-平面的投影线，与正 x-轴的夹角。当 r=0 时，theta 与 phi 都一起失去意义。当 theta = 0 或 theta = pi 时，phi 失去意义。</p>
+<p><img src="/article/5dace05d/20201004153838189.png" alt="20201004153838189"></p>
+<p><img src="/article/5dace05d/20201007214718398.png" alt="20201007214718398"></p>
+<h1 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h1><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">normal2 <span class="keyword">gt</span> 出现 nan值, 说明之前渲染有问题</span><br></pre></td></tr></table></figure>
+<p><img src="/article/5dace05d/image-20210111163718046.png" alt="image-20210111163718046"></p>
+<p>39\</p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p> <a href="https://www.cnblogs.com/wangguchangqing/p/8126333.html" target="_blank" rel="noopener">SLAM入门之视觉里程计(2)：相机模型（内参数，外参数)</a>   讲的很详细          </p>
+<p><a href="https://blog.csdn.net/humanking7/article/details/45037239" target="_blank" rel="noopener">[图像]畸变校正详解</a></p>
+<p><a href="https://blog.csdn.net/u011178262/article/details/74159480#_fisheye_133" target="_blank" rel="noopener">针孔相机投影模型以及畸变模型</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/54139614" target="_blank" rel="noopener">多视图几何基础——深入理解相机内外参数</a></p>
+<p><a href="https://github.com/phongnhhn92/RealEstate10K_Downloader" target="_blank" rel="noopener">预处理realEstate10K代码</a>，由于是两年前的版本不适用于现在，因此大幅度修改。</p>
+<p><a href="https://blog.csdn.net/chentravelling/article/details/53558096?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">相机成像原理：世界坐标系、相机坐标系、图像坐标系、像素坐标系之间的转换</a></p>
+<p><a href="https://www.cnblogs.com/YanQing1998/p/10986911.html" target="_blank" rel="noopener">如何使用Typora编辑数学公式</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">----------------  本文结束  ----------------</div>
+<br>
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>paperMemo-prepare</p>
+  <p><span>文章作者:</span>Pabebe</p>
+  <p><span>发布时间:</span>2020年12月06日 - 17:31:26</p>
+  <p><span>最后更新:</span>2021年04月08日 - 17:19:41</p>
+  <p><span>原始链接:</span><a href="/article/5dace05d/" title="paperMemo-prepare">https://pabebezz.github.io/article/5dace05d/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/5dace05d/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+
+    
+</div>
+
+
+    
+
+    
+
+    
+    
+   <!-- 添加版权声明 -->
+    <div>
+    
+        
+     
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/paper/" rel="tag"><i class="menu-item-icon fa fa-fw fa-tags"></i>&nbsp;paper</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/article/d95dcfe5/" rel="next" title="理财小知识">
+                <i class="fa fa-chevron-left"></i> 理财小知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/a5fe7d01/" rel="prev" title="打怪之旅-准备工作">
+                打怪之旅-准备工作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Pabebe">
+            
+              <p class="site-author-name" itemprop="name">Pabebe</p>
+              <p class="site-description motion-element" itemprop="description">I have the soulful eyes of a cow</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Pabebezz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/Pabebe" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zezuwang@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#寻找数据集的网站"><span class="nav-number">1.</span> <span class="nav-text">寻找数据集的网站</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#预处理RealEstate10K"><span class="nav-number">2.</span> <span class="nav-text">预处理RealEstate10K</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#补充知识"><span class="nav-number">3.</span> <span class="nav-text">补充知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相机模型"><span class="nav-number">3.1.</span> <span class="nav-text">相机模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内参数"><span class="nav-number">3.2.</span> <span class="nav-text">内参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外参数"><span class="nav-number">3.3.</span> <span class="nav-text">外参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相机坐标系参数转换"><span class="nav-number">4.</span> <span class="nav-text">相机坐标系参数转换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bug"><span class="nav-number">5.</span> <span class="nav-text">bug</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#‘No-module-named-‘quaternion’’"><span class="nav-number">5.1.</span> <span class="nav-text">‘No module named ‘quaternion’’</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#No-module-named-‘skimage’"><span class="nav-number">5.2.</span> <span class="nav-text">No module named ‘skimage’</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#No-module-named-‘open3d’"><span class="nav-number">5.3.</span> <span class="nav-text">No module named ‘open3d’</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#No-module-named-‘pytorch3d’"><span class="nav-number">5.4.</span> <span class="nav-text">No module named ‘pytorch3d’</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#No-module-named-‘openEXR’"><span class="nav-number">5.5.</span> <span class="nav-text">No module named ‘openEXR’</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AttributeError-Can’t-pickle-local-object-‘Sharpen-create-matrices’"><span class="nav-number">5.6.</span> <span class="nav-text">AttributeError: Can’t pickle local object ‘Sharpen..create_matrices’</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AttributeError-module-‘numpy’-has-no-attribute-‘float128’"><span class="nav-number">5.7.</span> <span class="nav-text">AttributeError: module ‘numpy’ has no attribute ‘float128’</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Missing-key-s-in-state-dict-“module-backbone-layers-0-stage-1-layers-0-weight”"><span class="nav-number">5.8.</span> <span class="nav-text">Missing key(s) in state_dict: “module.backbone.layers.0.stage_1.layers.0.weight”,</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#当前模型框架"><span class="nav-number">6.</span> <span class="nav-text">当前模型框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#训练Normal时内存不够"><span class="nav-number">6.1.</span> <span class="nav-text">训练Normal时内存不够</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#透明多视角数据集的构建"><span class="nav-number">7.</span> <span class="nav-text">透明多视角数据集的构建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#所需"><span class="nav-number">7.1.</span> <span class="nav-text">所需</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境配置"><span class="nav-number">7.2.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#window（一直出错）"><span class="nav-number">7.3.</span> <span class="nav-text">window（一直出错）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编译-OptixRenderer-renderer-twobounce-论文已经包含的两次折射反射"><span class="nav-number">7.3.1.</span> <span class="nav-text">编译 OptixRenderer(renderer-twobounce,论文已经包含的两次折射反射)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Meshlab"><span class="nav-number">7.3.2.</span> <span class="nav-text">Meshlab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Colmap"><span class="nav-number">7.3.3.</span> <span class="nav-text">Colmap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exr文件转hdr文件"><span class="nav-number">7.3.4.</span> <span class="nav-text">exr文件转hdr文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成"><span class="nav-number">7.3.5.</span> <span class="nav-text">生成</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相机参数"><span class="nav-number">8.</span> <span class="nav-text">相机参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#球坐标系"><span class="nav-number">9.</span> <span class="nav-text">球坐标系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#训练"><span class="nav-number">10.</span> <span class="nav-text">训练</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">11.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pabebe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">本站总字数&#58;</span>
+    
+    <span title="本站总字数">190.4k</span> 
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+    总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+    </span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user-md"></i>
+    </span>
+    <span id="busuanzi_container_site_uv" style="display:none">
+    有<span id="busuanzi_value_site_uv"></span>人到访
+    </span>
+
+  
+</div>
+
+<div>
+
+</div>
+
+<!--  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div> 
+
+
+
+   <span class="post-meta-divider">|</span>
+ 
+
+ 
+ <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div> 
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+
+<!-- 页面点击出现文字 -->
+ <script type="text/javascript" src="/js/src/myLittleWits.js"></script>
+ 
+</html>
