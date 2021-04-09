@@ -114,46 +114,6 @@
   </entry>
   
   <entry>
-    <title>打怪之旅-准备工作</title>
-    <link href="https://pabebezz.github.io/article/a5fe7d01/"/>
-    <id>https://pabebezz.github.io/article/a5fe7d01/</id>
-    <published>2021-01-20T10:53:37.000Z</published>
-    <updated>2021-04-07T09:11:07.722Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;简历&quot;&gt;&lt;a href=&quot;#简历&quot; class=&quot;headerlink&quot; title=&quot;简历&quot;&gt;&lt;/a&gt;简历&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&amp;amp;mid=2247485960&amp;amp;idx=1&amp;amp;sn=37cbdb8fc7d5ce102d20f75982a9e404&amp;amp;scene=21#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简历模板&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;准备项目的重难点&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;准备C++，【熟悉C++、了解Python】&lt;/p&gt;
-&lt;p&gt;计算机语言            Python, C/C++&lt;br&gt;深度学习框架          PyTorch&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;#　C++开发&lt;/p&gt;
-&lt;p&gt;１， &lt;a href=&quot;https://github.com/youngyangyang04/leetcode-master&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LeetCode 刷题攻略：配思维导图，各个类型的经典题目刷题顺序、经典算法模板，以及详细题解。&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;２，梳理&lt;a href=&quot;https://github.com/youngyangyang04/TechCPP&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;C++后台研发的知识体系&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;《C++_primer5》入门&lt;/p&gt;
-&lt;p&gt;《effective C++》进阶&lt;/p&gt;
-&lt;p&gt;《effectiveSTL》进阶（掌握）&lt;/p&gt;
-&lt;p&gt;《STL源码剖析》（掌握＋＋　－＞熟悉）&lt;/p&gt;
-&lt;p&gt;《深度探索C++对象模型》（熟悉）&lt;/p&gt;
-&lt;p&gt;3, &lt;a href=&quot;https://www.nowcoder.com/tutorial/93/a34ed23d58b84da3a707c70371f59c21&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;牛客网面试宝典&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
-    
-    
-      <category term="code" scheme="https://pabebezz.github.io/tags/code/"/>
-    
-      <category term="C++" scheme="https://pabebezz.github.io/tags/C/"/>
-    
-      <category term="algorithm" scheme="https://pabebezz.github.io/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>paperMemo-prepare</title>
     <link href="https://pabebezz.github.io/article/5dace05d/"/>
     <id>https://pabebezz.github.io/article/5dace05d/</id>
@@ -452,6 +412,26 @@
     
     
       <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu18.04下深度学习环境与blog搭建</title>
+    <link href="https://pabebezz.github.io/article/acdf71cc/"/>
+    <id>https://pabebezz.github.io/article/acdf71cc/</id>
+    <published>2020-06-17T01:45:23.000Z</published>
+    <updated>2021-03-11T09:43:25.220Z</updated>
+    
+    <summary type="html">
+    
+      深度学习环境与hexoBlog搭建
+    
+    </summary>
+    
+      <category term="deep learning" scheme="https://pabebezz.github.io/categories/deep-learning/"/>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
     
   </entry>
   
