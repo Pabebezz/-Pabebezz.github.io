@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2021-04-09T13:48:09.068Z</updated>
+  <updated>2021-04-16T13:34:17.133Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -17,18 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>线性表、顺序表、广义表（其表头表尾）</title>
+    <link href="https://pabebezz.github.io/article/13827808/"/>
+    <id>https://pabebezz.github.io/article/13827808/</id>
+    <published>2021-04-16T13:02:48.000Z</published>
+    <updated>2021-04-16T13:34:17.133Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;线性表&quot;&gt;&lt;a href=&quot;#线性表&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="数据结构" scheme="https://pabebezz.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>为什么拷贝构造函数参数必须为引用？</title>
     <link href="https://pabebezz.github.io/article/c13c7aad/"/>
     <id>https://pabebezz.github.io/article/c13c7aad/</id>
     <published>2021-04-09T13:08:03.000Z</published>
-    <updated>2021-04-09T13:48:09.068Z</updated>
+    <updated>2021-04-16T11:58:56.859Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;今天朋友问我一个特别有意思的点，eg：&lt;/p&gt;
 &lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Person&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; m_age;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; *m_height;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;comment&quot;&gt;//构造函数  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Person(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; a, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; h) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		m_age = p.m_age;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   		&lt;span class=&quot;comment&quot;&gt;//堆区&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		m_height = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;(h);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//拷贝构造函数  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Person(&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; Person&amp;amp; p) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;string&quot;&gt;&quot;拷贝构造函数!&quot;&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;comment&quot;&gt;//如果不利用深拷贝在堆区创建新内存，会导致浅拷贝带来的重复释放堆区问题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		m_age = p.m_age;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &lt;span class=&quot;comment&quot;&gt;//m_height =   p.m_heigh (浅拷贝，系统默认拷贝构造函数)　 //m_height 是指针&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		m_height = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;(*p.m_height);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;Person &lt;span class=&quot;title&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;Person &lt;span class=&quot;title&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(p1)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;无论是系统默认还是自定义的拷贝构造函数，都是传一个&lt;code&gt;引用&lt;/code&gt;，而不是&lt;code&gt;值&lt;/code&gt;，这是为什么呢？&lt;/p&gt;
-&lt;p&gt;naive的我想了想：节省一次值拷贝（赋值给形参）,节省空间?&lt;/p&gt;
     
     </summary>
     
@@ -97,7 +122,7 @@
     <link href="https://pabebezz.github.io/article/e0627a3a/"/>
     <id>https://pabebezz.github.io/article/e0627a3a/</id>
     <published>2021-01-30T00:53:37.000Z</published>
-    <updated>2021-04-07T12:35:08.439Z</updated>
+    <updated>2021-04-14T09:21:11.433Z</updated>
     
     <summary type="html">
     
@@ -117,7 +142,7 @@
     <link href="https://pabebezz.github.io/article/737c8fe7/"/>
     <id>https://pabebezz.github.io/article/737c8fe7/</id>
     <published>2021-01-24T09:53:37.000Z</published>
-    <updated>2021-04-06T03:21:26.830Z</updated>
+    <updated>2021-04-12T11:20:41.799Z</updated>
     
     <summary type="html">
     
@@ -415,26 +440,6 @@
     
     
       <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>paperMemo-图片质量评价指标</title>
-    <link href="https://pabebezz.github.io/article/e3c77110/"/>
-    <id>https://pabebezz.github.io/article/e3c77110/</id>
-    <published>2020-06-17T02:24:41.000Z</published>
-    <updated>2020-06-21T12:23:41.920Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;SSIM&quot;&gt;&lt;a href=&quot;#SSIM&quot; class=&quot;headerlink&quot; title=&quot;SSIM&quot;&gt;&lt;/a&gt;SSIM&lt;/h1&gt;&lt;p&gt;结构相似性指数（structural similarity index，SSIM）是一种用于量化两幅图像间的结构相似性的指标。与L2损失函数不同，SSIM仿照人类的视觉系统（Human Visual System,HVS）实现了结构相似性的有关理论，对图像的局部结构变化的感知敏感。SSIM从亮度、对比度以及结构量化图像的属性，用均值估计亮度，方差估计对比度，协方差估计结构相似程度。SSIM值的范围为0至1，越大代表图像越相似。如果两张图片完全一样时，SSIM值为1。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
-    
-    
-      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
     
   </entry>
   

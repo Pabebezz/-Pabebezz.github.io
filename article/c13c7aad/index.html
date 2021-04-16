@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
 <meta property="og:description" content="今天朋友问我一个特别有意思的点，eg： 1234567891011121314151617181920212223242526class Person&amp;#123;private:    int m_age;    int *m_height;public:     //构造函数  	Person(int a, int h) &amp;#123;		m_age = p.m_age;   		//堆区		m_">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-04-09T13:48:09.068Z">
+<meta property="og:updated_time" content="2021-04-16T11:58:56.859Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为什么拷贝构造函数参数必须为引用？">
 <meta name="twitter:description" content="今天朋友问我一个特别有意思的点，eg： 1234567891011121314151617181920212223242526class Person&amp;#123;private:    int m_age;    int *m_height;public:     //构造函数  	Person(int a, int h) &amp;#123;		m_age = p.m_age;   		//堆区		m_">
@@ -431,8 +431,8 @@
         <p>今天朋友问我一个特别有意思的点，eg：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_age;</span><br><span class="line">    <span class="keyword">int</span> *m_height;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">     <span class="comment">//构造函数  </span></span><br><span class="line">	Person(<span class="keyword">int</span> a, <span class="keyword">int</span> h) &#123;</span><br><span class="line">		m_age = p.m_age;</span><br><span class="line">   		<span class="comment">//堆区</span></span><br><span class="line">		m_height = <span class="keyword">new</span> <span class="keyword">int</span>(h);</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">//拷贝构造函数  </span></span><br><span class="line">	Person(<span class="keyword">const</span> Person&amp; p) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"拷贝构造函数!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="comment">//如果不利用深拷贝在堆区创建新内存，会导致浅拷贝带来的重复释放堆区问题</span></span><br><span class="line">		m_age = p.m_age;</span><br><span class="line">       <span class="comment">//m_height =   p.m_heigh (浅拷贝，系统默认拷贝构造函数)　 //m_height 是指针</span></span><br><span class="line">		m_height = <span class="keyword">new</span> <span class="keyword">int</span>(*p.m_height);</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function">Person <span class="title">p1</span><span class="params">(<span class="number">1</span>,<span class="number">2</span>)</span></span>;</span><br><span class="line">    <span class="function">Person <span class="title">p2</span><span class="params">(p1)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>无论是系统默认还是自定义的拷贝构造函数，都是传一个<code>引用</code>，而不是<code>值</code>，这是为什么呢？</p>
-<p>naive的我想了想：节省一次值拷贝（赋值给形参）,节省空间?</p>
 <a id="more"></a>
+<p>naive的我想了想：节省一次值拷贝（赋值给形参）,节省空间?</p>
 <p>当然不会那么简单。若拷贝构造函数参数为值传递，当实参赋值给形参时，又发生了一次拷贝函数的调用，无限递归下去，导致爆栈。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//拷贝构造函数变成这样  </span></span><br><span class="line">Person(<span class="keyword">const</span> Person p);</span><br><span class="line">	</span><br><span class="line"><span class="function">Person <span class="title">p2</span><span class="params">(p1)</span></span>; </span><br><span class="line"><span class="comment">// 等价于p2(Person temp = p1),此时又调用一次拷贝构造函数(赋值引起)，变成 p2(Person temp(p1)) </span></span><br><span class="line"><span class="comment">// p2(Person temp(p1)) 又等价于p2(Person temp(Person temp2 = p1),赋值引起拷贝，变成 p2(Person temp( Person temp2(p1)))...</span></span><br></pre></td></tr></table></figure>
 <p>这个例子还要注意一点：<code>m_height</code>开辟在<strong>堆区</strong>，利用<strong>赋值运算符 operator=进行类对象赋值时</strong>，因此不能只是做简单浅拷贝（防止<strong>析构时</strong>野指针的出现—-一个内存地址有两个指向的指针），因此需要自定义拷贝构造函数。</p>
@@ -462,7 +462,7 @@
   <p><span>本文标题:</span>为什么拷贝构造函数参数必须为引用？</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2021年04月09日 - 21:08:03</p>
-  <p><span>最后更新:</span>2021年04月09日 - 21:48:09</p>
+  <p><span>最后更新:</span>2021年04月16日 - 19:58:56</p>
   <p><span>原始链接:</span><a href="/article/c13c7aad/" title="为什么拷贝构造函数参数必须为引用？">https://pabebezz.github.io/article/c13c7aad/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/c13c7aad/" aria-label="复制成功！"></i></span>
   </p>
@@ -527,6 +527,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/13827808/" rel="prev" title="线性表、顺序表、广义表（其表头表尾）">
+                线性表、顺序表、广义表（其表头表尾） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -596,7 +600,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -618,7 +622,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -712,7 +716,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">188.8k</span> 
+    <span title="本站总字数">192.1k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
