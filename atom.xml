@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2021-04-16T13:34:17.133Z</updated>
+  <updated>2021-04-17T10:11:26.697Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>常函数的运用</title>
+    <link href="https://pabebezz.github.io/article/e17bc1d7/"/>
+    <id>https://pabebezz.github.io/article/e17bc1d7/</id>
+    <published>2021-04-17T09:03:52.000Z</published>
+    <updated>2021-04-17T10:11:26.697Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;统计一段词中出现次数最多的高频词（不区分大小写）&lt;/p&gt;
+&lt;p&gt;思路：用map存储每个词出现的频率（注意为什么不用unordered_map，因为若想实现“不区分大小写”的功能，就必须添加一个自定义比较器，unordered_map不支持这一选项），然后用priority_queue优先级队列的小顶堆特性找到高频词（TOPK问题转换为TOP1）。&lt;/p&gt;
+&lt;p&gt;（小顶堆求最大TOPK）堆（size = k）里存放的是当前元素的频率，其中堆顶的元素最小。加入新进来的元素，此时若size&amp;gt;k，弹出堆顶元素，调整堆。【大顶堆求最小TOPK类似】&lt;/p&gt;
+&lt;p&gt;在写自定义比较器的过程中出现bug&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;错误    C3848    具有类型“const my_less”的表达式会丢失一些 const-volatile 限定符以调用“bool my_less::operator ()(const std::string &amp;amp;,const std::string &amp;amp;)”&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/categories/C/"/>
+    
+    
+      <category term="C++ Primer" scheme="https://pabebezz.github.io/tags/C-Primer/"/>
+    
+  </entry>
+  
+  <entry>
     <title>线性表、顺序表、广义表（其表头表尾）</title>
     <link href="https://pabebezz.github.io/article/13827808/"/>
     <id>https://pabebezz.github.io/article/13827808/</id>
     <published>2021-04-16T13:02:48.000Z</published>
-    <updated>2021-04-16T13:34:17.133Z</updated>
+    <updated>2021-04-16T13:34:55.994Z</updated>
     
     <summary type="html">
     
@@ -142,7 +166,7 @@
     <link href="https://pabebezz.github.io/article/737c8fe7/"/>
     <id>https://pabebezz.github.io/article/737c8fe7/</id>
     <published>2021-01-24T09:53:37.000Z</published>
-    <updated>2021-04-12T11:20:41.799Z</updated>
+    <updated>2021-04-17T09:41:29.092Z</updated>
     
     <summary type="html">
     
@@ -411,28 +435,6 @@
     <summary type="html">
     
       shell命令集合
-    
-    </summary>
-    
-      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
-    
-    
-      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu使用Visual Profiler</title>
-    <link href="https://pabebezz.github.io/article/ed84546b/"/>
-    <id>https://pabebezz.github.io/article/ed84546b/</id>
-    <published>2020-06-21T04:15:58.000Z</published>
-    <updated>2020-06-21T12:24:04.027Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Ubuntu使用Visual-Profiler&quot;&gt;&lt;a href=&quot;#Ubuntu使用Visual-Profiler&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu使用Visual Profiler&quot;&gt;&lt;/a&gt;Ubuntu使用Visual Profiler&lt;/h1&gt;&lt;h2 id=&quot;配置java环境&quot;&gt;&lt;a href=&quot;#配置java环境&quot; class=&quot;headerlink&quot; title=&quot;配置java环境&quot;&gt;&lt;/a&gt;配置java环境&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;//卸载OpenJDK&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get purge openjdk/openjdk*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get clean/autoclean&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//安装jre、jdk&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install openjdk-8-jre-headless&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install openjdk-8-jdk-headless&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//添加环境变量&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo vim ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; oracle jdk environment&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_191  ## 这里要注意目录要换成自己解压的jdk 目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export JRE_HOME=$&amp;#123;JAVA_HOME&amp;#125;/jre  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export CLASSPATH=.:$&amp;#123;JAVA_HOME&amp;#125;/lib:$&amp;#123;JRE_HOME&amp;#125;/lib  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PATH=$&amp;#123;JAVA_HOME&amp;#125;/bin:$PATH  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;source ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//验证&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;java -version&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//如果你安装了多个版本的jdk，你可以通过以下命令在这些版本之间切换&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo update-alternatives –config java&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;使用nvvp&quot;&gt;&lt;a href=&quot;#使用nvvp&quot; class=&quot;headerlink&quot; title=&quot;使用nvvp&quot;&gt;&lt;/a&gt;使用nvvp&lt;/h1&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;nvvp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;出现Visual Profiler图形化界面&lt;/p&gt;
     
     </summary>
     
