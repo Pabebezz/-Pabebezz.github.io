@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="for(auto i:s)不改变s的值，详情请点击~">
+<meta name="description" content="for(auto i:s)相当于拷贝，不改变s的值，详情请点击~">
 <meta name="keywords" content="C++ Primer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="for(auto &amp;i:s)和for(auto i:s)的区别">
 <meta property="og:url" content="https://pabebezz.github.io/article/4aa05e8/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="for(auto i:s)不改变s的值，详情请点击~">
+<meta property="og:description" content="for(auto i:s)相当于拷贝，不改变s的值，详情请点击~">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://pabebezz.github.io/article/4aa05e8/image-20210419144958282.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/4aa05e8/image-20210419145120107.png">
-<meta property="og:updated_time" content="2021-04-19T07:35:43.033Z">
+<meta property="og:updated_time" content="2021-04-19T08:01:18.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="for(auto &amp;i:s)和for(auto i:s)的区别">
-<meta name="twitter:description" content="for(auto i:s)不改变s的值，详情请点击~">
+<meta name="twitter:description" content="for(auto i:s)相当于拷贝，不改变s的值，详情请点击~">
 <meta name="twitter:image" content="https://pabebezz.github.io/article/4aa05e8/image-20210419144958282.png">
 
 
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k 字
+                  1.2k 字
                 </span>
               
 
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -418,7 +418,7 @@
 
           
               <div class="post-description">
-                  for(auto i:s)不改变s的值，详情请点击~
+                  for(auto i:s)相当于拷贝，不改变s的值，详情请点击~
               </div>
           
 
@@ -446,14 +446,16 @@
 <p>这个bug产生的原因是什么呢?</p>
 <p>参考《C++prime》与<a href="https://blog.csdn.net/Azathouth/article/details/109328679?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-2.control&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-2.control" target="_blank" rel="noopener">C++ auto类型说明符如for(atuo &amp;x : s)</a></p>
 <p>如果要更改字符串中的字符值，我们必须将<strong>循环变量定义为引用类型</strong>。当我们使用引用（别名）作为我们的控制变量时，该变量依次绑定到序列中的每个元素。使用引用，我们可以更改引用所绑定的字符。for循环中的每个迭代初始化一个新的引用。</p>
-<p><strong>for(auto i:s)</strong>会拷贝一份s中的元素，而不会改变s中元素； <strong>特例：使用for(auto x:vector<bool>)时得到一个proxy class,操作时会改变vector<bool>本身元素。</bool></bool></strong></p>
-<p><strong>for(auto &amp;i:s)</strong>：s中的元素的别名，可修改元素值；<strong>特例：当vector<bool>返回临时对象，使用auto&amp;会编译错误，临时对象不能绑在non-const l-value reference （左值引用）需使用</bool></strong>auto&amp;&amp;<strong>,初始化右值时也可捕获</strong></p>
+<p><strong>for(auto i:s)</strong>会拷贝一份s中的元素，而不会改变s中元素； <strong>特例：使用<code>for(auto x:vector&lt;bool&gt;)</code>时得到一个proxy class,操作时会改变<code>vector&lt;bool&gt;</code>本身元素。</strong></p>
+<p><strong>for(auto &amp;i:s)</strong>：s中的元素的别名，可修改元素值；<strong>特例：当<code>vector&lt;bool&gt;</code>返回临时对象，使用auto&amp;会编译错误，临时对象不能绑在non-const l-value reference （左值引用），需使用</strong><code>auto&amp;&amp;</code><strong>,初始化右值时也可捕获(右值引用)</strong></p>
 <p>总结：</p>
 <p>如果只是访问容器，<strong>for(auto i:s)</strong>与<strong>for(auto &amp;i:s)</strong>作用类似；</p>
 <p>但是访问的同时进行改变其值，那就<strong>for(auto &amp;i:s)</strong>没得跑，或者选用迭代器；</p>
 <p>想要只读元素：<strong>for(const auto&amp; i:s)</strong>  不会像for(auto i:s)一样产生拷贝开销，也不会像for(auto &amp;i:s)改变元素值。</p>
-<p>ps:补充 auto（自动类型推断） 、static</p>
-<p>auto 的对应类型不是使用 new 出来的变量，也不是static变量<br>auto 变量在函数结束时即释放了，再次调用这个函数时，又重新定义了一个新的变量。<br>static 变量是程序结束的时候才释放对象的，但它不需要手动释放。<br>static 如果在一个函数内申明，这每次进入这个函数时，还是使用第一次声明的变量，并且还保存的上次使用的值。<br>static 变量如果在结构和类中使用，这结构或类定义的一切对象，都将共享唯一 static 变量。</p>
+<p>ps:回顾 auto（自动类型推断） 、static、new</p>
+<p>auto 的对应类型(既不是new 出来，也不是static变量)，它只是该作用域（可能是函数体内、for内）定义的局部变量。<strong>C++中auto定义的变量必须初始化（因编译器推断变量或表达式的类型），而C中auto关键字修饰的变量默认为int 型数据</strong></p>
+<p>static 变量（无论全局还是局部）是程序结束的时候才释放对象的，但它不需要手动释放，保存在全局区。<br>（1）static 如果在一个函数内申明，这每次进入这个函数时，还是使用第一次声明的变量，并且还保存的上次使用的值【用于“记忆化”】。<br>（2）static 变量如果在结构和类中使用，这结构或类定义的一切对象，都将共享唯一 static 变量（所以需要类外初始化）。</p>
+<p>new创建存储在堆区的变量，必须手动释放（delete）,避免内存泄漏。</p>
 
       
     </div>
@@ -477,7 +479,7 @@
   <p><span>本文标题:</span>for(auto &i:s)和for(auto i:s)的区别</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2021年04月19日 - 14:19:38</p>
-  <p><span>最后更新:</span>2021年04月19日 - 15:35:43</p>
+  <p><span>最后更新:</span>2021年04月19日 - 16:01:18</p>
   <p><span>原始链接:</span><a href="/article/4aa05e8/" title="for(auto &i:s)和for(auto i:s)的区别">https://pabebezz.github.io/article/4aa05e8/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/4aa05e8/" aria-label="复制成功！"></i></span>
   </p>
@@ -542,6 +544,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/44f6a7d2/" rel="prev" title="C++常见面试题总结">
+                C++常见面试题总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -611,7 +617,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">78</span>
+                  <span class="site-state-item-count">79</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -727,7 +733,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">194.2k</span> 
+    <span title="本站总字数">194.6k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
