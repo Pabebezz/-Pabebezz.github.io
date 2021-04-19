@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2021-04-17T10:11:49.361Z</updated>
+  <updated>2021-04-19T07:35:43.033Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>for(auto &amp;i:s)和for(auto i:s)的区别</title>
+    <link href="https://pabebezz.github.io/article/4aa05e8/"/>
+    <id>https://pabebezz.github.io/article/4aa05e8/</id>
+    <published>2021-04-19T06:19:38.000Z</published>
+    <updated>2021-04-19T07:35:43.033Z</updated>
+    
+    <summary type="html">
+    
+      for(auto i:s)不改变s的值，详情请点击~
+    
+    </summary>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/categories/C/"/>
+    
+    
+      <category term="C++ Primer" scheme="https://pabebezz.github.io/tags/C-Primer/"/>
+    
+  </entry>
   
   <entry>
     <title>常函数的运用</title>
@@ -416,26 +436,6 @@
     
     
       <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu各种命令详解</title>
-    <link href="https://pabebezz.github.io/article/79acc1fa/"/>
-    <id>https://pabebezz.github.io/article/79acc1fa/</id>
-    <published>2020-06-22T07:15:58.000Z</published>
-    <updated>2020-07-04T02:58:52.644Z</updated>
-    
-    <summary type="html">
-    
-      shell命令集合
-    
-    </summary>
-    
-      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
-    
-    
-      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
     
   </entry>
   
