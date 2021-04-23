@@ -190,7 +190,7 @@
 <meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210328145623082.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210328145645977.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/6cc0fe42/image-20210328145815839.png">
-<meta property="og:updated_time" content="2021-04-17T13:33:36.256Z">
+<meta property="og:updated_time" content="2021-04-22T11:40:12.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打怪之旅-计算机网络">
 <meta name="twitter:description" content="术语ISP (Internet Service Provider) RFC (Request For Comments)因特网标准 ISOC因特网协会 实体：任何可发送或接受信息的硬件或软件进程 对等实体:收发双方相同层次中的实体 协议: 控制两个对等实体进行逻辑通信的规则集合（三要素：语法－定义所交换信息的格式；语义－定义收发双方所要完成的操作；同步－定义收发双方的时许关系） 服务：在协议的控制">
@@ -493,7 +493,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  10.7k 字
+                  10.9k 字
                 </span>
               
 
@@ -637,6 +637,7 @@
 <th>层</th>
 <th>解决问题</th>
 <th>设备</th>
+<th>常用协议</th>
 </tr>
 </thead>
 <tbody>
@@ -644,28 +645,46 @@
 <td>应用层</td>
 <td>解决通过应用进程的交互来实现特定网络应用的问题</td>
 <td></td>
+<td>HTTP FTP SMTP DNS协议</td>
+</tr>
+<tr>
+<td>表示层</td>
+<td>对上层数据或者信息进行变换，以保证一个主机应用层信息可以被另一个主机应用层所理解，包括数据加密、格式转换、压缩等—-OSI七层</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>会话层</td>
+<td>负责建立、管理、终止进程之间的会话—-OSI七层</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>运输层</td>
 <td>解决进程之间基于网络的通信问题（<strong>两台主机中进程之间的通信</strong>提供<strong>通用的数据传输服务</strong>。）－端口；出现误码\丢包</td>
 <td></td>
+<td>TCP UDP协议</td>
 </tr>
 <tr>
 <td>网络层</td>
-<td>解决分组在多个网络上传输（路由）的问题－标识各网络以及各主机（共同编址－IP地址）；路由转发；路由选择</td>
-<td></td>
+<td>解决分组在多个网络上传输（路由）的问题－标识各网络以及各主机（共同编址－IP地址）；路由转发；路由选择 （<strong>负责为分组交换网上的不同主机提供通信服务</strong>）</td>
+<td>路由器</td>
+<td>ARP协议、OSPF/RIP路由寻址协议、DHCP协议、ICMP协议、IGMP组播协议、IP协议、CIDR协议、IP协议</td>
 </tr>
 <tr>
 <td>数据链路层</td>
 <td>解决分组在一个网络（或一段链路）上传输的问题－标识网络中各主机（主机编址－MAC地址；从一串比特流中区分地址与数据；协同主机争用总线）</td>
-<td></td>
+<td>交换机、网桥</td>
+<td>GBN后退N帧协议<code>、</code>SR选择重传协议<code>、</code>以太网协议</td>
 </tr>
 <tr>
 <td>物理层</td>
 <td>解决使用何种信号来传输比特的问题－用什么介质\接口\信号（<strong>传输媒体不属于物理层</strong>，<strong>也不属于任何一层</strong>）</td>
+<td>中继器、集线器</td>
 </tr>
 </tbody>
 </table>
+<p>“arp协议在TCP/IP模型中属于IP层（网络层），在OSI模型中属于链路层。</p>
 <h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><p><img src="/article/6cc0fe42/image-20210322171720933.png" alt="image-20210322171720933"></p>
 <p>双绞线绞合的作用：（１）抵御部分来自外界的电磁波干扰，（２）减少相邻导线的电磁干扰</p>
 <h2 id="传输方式"><a href="#传输方式" class="headerlink" title="传输方式"></a>传输方式</h2><p><img src="/article/6cc0fe42/image-20210322174023818.png" alt="image-20210322174023818"></p>
@@ -1212,7 +1231,7 @@
   <p><span>本文标题:</span>打怪之旅-计算机网络</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2021年02月03日 - 08:53:37</p>
-  <p><span>最后更新:</span>2021年04月17日 - 21:33:36</p>
+  <p><span>最后更新:</span>2021年04月22日 - 19:40:12</p>
   <p><span>原始链接:</span><a href="/article/6cc0fe42/" title="打怪之旅-计算机网络">https://pabebezz.github.io/article/6cc0fe42/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/6cc0fe42/" aria-label="复制成功！"></i></span>
   </p>
@@ -1491,7 +1510,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">190.4k</span> 
+    <span title="本站总字数">191.6k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
