@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="int 类型的++i与i++的实现, 注意i++的返回是 const int类型,由于oldValue是一个编译器自动分配的临时变量，并不是程序中定义的变量，返回的是一个数据值，而非地址，所以不能对它进行寻址（不能通过地址对它进行操作）.第二，常量不能作为左值使用。 123456789101112131415161718// 前缀形式：++iint&amp;amp; int::operator++() /">
+<meta name="description" content="int 类型的++i与i++的实现, 注意i++的返回是 const int类型,由于oldValue是一个编译器自动分配的临时变量，并不是程序中定义的变量，返回的是一个数据值，而非地址，所以不能对它进行寻址（不能通过地址对它进行操作）.第二，常量不能作为左值使用。">
 <meta name="keywords" content="Pabebe&#39;s Blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="i++ 不能作为左值,而++i能 的原因">
 <meta property="og:url" content="https://pabebezz.github.io/article/ee51884a/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="int 类型的++i与i++的实现, 注意i++的返回是 const int类型,由于oldValue是一个编译器自动分配的临时变量，并不是程序中定义的变量，返回的是一个数据值，而非地址，所以不能对它进行寻址（不能通过地址对它进行操作）.第二，常量不能作为左值使用。 123456789101112131415161718// 前缀形式：++iint&amp;amp; int::operator++() /">
+<meta property="og:description" content="int 类型的++i与i++的实现, 注意i++的返回是 const int类型,由于oldValue是一个编译器自动分配的临时变量，并不是程序中定义的变量，返回的是一个数据值，而非地址，所以不能对它进行寻址（不能通过地址对它进行操作）.第二，常量不能作为左值使用。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-04-24T13:20:41.576Z">
+<meta property="og:updated_time" content="2021-04-24T13:24:43.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="i++ 不能作为左值,而++i能 的原因">
-<meta name="twitter:description" content="int 类型的++i与i++的实现, 注意i++的返回是 const int类型,由于oldValue是一个编译器自动分配的临时变量，并不是程序中定义的变量，返回的是一个数据值，而非地址，所以不能对它进行寻址（不能通过地址对它进行操作）.第二，常量不能作为左值使用。 123456789101112131415161718// 前缀形式：++iint&amp;amp; int::operator++() /">
+<meta name="twitter:description" content="int 类型的++i与i++的实现, 注意i++的返回是 const int类型,由于oldValue是一个编译器自动分配的临时变量，并不是程序中定义的变量，返回的是一个数据值，而非地址，所以不能对它进行寻址（不能通过地址对它进行操作）.第二，常量不能作为左值使用。">
 
 
 
@@ -407,6 +407,7 @@
 
       
         <p>int 类型的++i与i++的实现, 注意i++的返回是 <code>const int</code>类型,由于oldValue是一个编译器自动分配的临时变量，并不是程序中定义的变量，返回的是一个数据值，而非地址，所以不能对它进行寻址（不能通过地址对它进行操作）.第二，常量不能作为左值使用。</p>
+<a id="more"></a>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 前缀形式：++i</span></span><br><span class="line"><span class="keyword">int</span>&amp; <span class="keyword">int</span>::<span class="keyword">operator</span>++() <span class="comment">//这里返回的是一个引用形式，就是说函数返回值也可以作为一个左值使用</span></span><br><span class="line">&#123;<span class="comment">//函数本身无参，意味着是在自身空间内增加1的</span></span><br><span class="line">  *<span class="keyword">this</span> += <span class="number">1</span>;  <span class="comment">// 增加</span></span><br><span class="line">  <span class="keyword">return</span> *<span class="keyword">this</span>;  <span class="comment">// 取回值</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//后缀形式: i++</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> <span class="keyword">int</span>::<span class="keyword">operator</span>++(<span class="keyword">int</span>) <span class="comment">//这里的(int)是一个占位符</span></span><br><span class="line"><span class="comment">//函数返回值是一个非左值型的，与前缀形式的差别所在。 </span></span><br><span class="line">&#123;<span class="comment">//函数带参，说明有另外的空间开辟</span></span><br><span class="line">  <span class="keyword">int</span> oldValue = *<span class="keyword">this</span>;  <span class="comment">// 取回值</span></span><br><span class="line">  ++(*<span class="keyword">this</span>);  <span class="comment">// 增加</span></span><br><span class="line">  <span class="keyword">return</span> oldValue;  <span class="comment">// 返回被取回的值</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在自定义对象中，后置++要多生成一个<strong>局部对象 tmp</strong>，这个对象有可能包含很多的成员，因此执行速度比前置的慢。在次数很多的循环中，++i和i++可能就会造成运行时间上可观的差别了。因此，对<strong>循环控制变量i，要养成写++i、不写i++的习惯。</strong></p>
 <h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="http://www.bubuko.com/infodetail-210314.html" target="_blank" rel="noopener">http://www.bubuko.com/infodetail-210314.html</a></p>
@@ -436,7 +437,7 @@
   <p><span>本文标题:</span>i++ 不能作为左值,而++i能 的原因</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2021年04月24日 - 18:46:00</p>
-  <p><span>最后更新:</span>2021年04月24日 - 21:20:41</p>
+  <p><span>最后更新:</span>2021年04月24日 - 21:24:43</p>
   <p><span>原始链接:</span><a href="/article/ee51884a/" title="i++ 不能作为左值,而++i能 的原因">https://pabebezz.github.io/article/ee51884a/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/ee51884a/" aria-label="复制成功！"></i></span>
   </p>

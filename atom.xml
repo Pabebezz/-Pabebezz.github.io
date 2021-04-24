@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2021-04-24T13:20:41.576Z</updated>
+  <updated>2021-04-24T13:24:43.787Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -21,17 +21,11 @@
     <link href="https://pabebezz.github.io/article/ee51884a/"/>
     <id>https://pabebezz.github.io/article/ee51884a/</id>
     <published>2021-04-24T10:46:00.000Z</published>
-    <updated>2021-04-24T13:20:41.576Z</updated>
+    <updated>2021-04-24T13:24:43.787Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;int 类型的++i与i++的实现, 注意i++的返回是 &lt;code&gt;const
-        
-      
+      &lt;p&gt;int 类型的++i与i++的实现, 注意i++的返回是 &lt;code&gt;const int&lt;/code&gt;类型,由于oldValue是一个编译器自动分配的临时变量，并不是程序中定义的变量，返回的是一个数据值，而非地址，所以不能对它进行寻址（不能通过地址对它进行操作）.第二，常量不能作为左值使用。&lt;/p&gt;
     
     </summary>
     
