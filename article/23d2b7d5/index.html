@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://pabebezz.github.io/article/23d2b7d5/image-20210319115652532.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/23d2b7d5/image-20210319115836252.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/23d2b7d5/image-20210407161123403.png">
-<meta property="og:updated_time" content="2021-04-19T08:00:19.227Z">
+<meta property="og:updated_time" content="2021-04-23T13:48:50.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打怪之旅-C++基础">
 <meta name="twitter:description" content="过一遍语法知识">
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  12.5k 字
+                  12.6k 字
                 </span>
               
 
@@ -553,6 +553,8 @@
 <li>匿名 union 不能包含 protected 成员或 private 成员</li>
 <li>全局匿名联合必须是静态（static）的</li>
 </ul>
+</li>
+<li><p>字节对齐（结构体、共用体）：1，<strong>占用的内存空间大小需要是结构体中占用最大内存空间的类型的整数倍。</strong> 2，<strong>内存起始地址要是数据类型的整数倍</strong></p>
 </li>
 <li><p><code>#pragma once</code> <strong>指定该文件在编译源代码文件时仅由编译器包含（打开）一次</strong>。使用预处理宏定义<code>#ifndef HEADER_H_     .....#define HEADER_H_</code>来避免多次包含文件的内容的<strong>效果是一样</strong>的，但是需要键入的代码少，可减少错误率</p>
 </li>
@@ -706,6 +708,7 @@
 </li>
 <li>静态成员函数<ul>
 <li>所有对象共享同一个函数</li>
+<li><strong>C++规定静态成员函数没有this指针</strong></li>
 <li><strong>静态成员函数只能访问静态成员变量</strong>（因为静态成员在编译阶段就已经分配好内存了，非静态成员变量只有在实例化后才分配内存；还有一种解释是非静态成员变量独属于一个对象，无法确定静态成员函数访问的哪个对象的非静态成员变量）</li>
 </ul>
 </li>
@@ -716,7 +719,7 @@
 <p><img src="/article/23d2b7d5/image-20210319114817848.png" alt="image-20210319114817848"></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Person() &#123;</span><br><span class="line">		mA = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//非静态成员变量占对象空间</span></span><br><span class="line">	<span class="keyword">int</span> mA;</span><br><span class="line">	<span class="comment">//静态成员变量不占对象空间</span></span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> mB; </span><br><span class="line">	<span class="comment">//函数也不占对象空间，所有函数共享一个函数实例</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"mA:"</span> &lt;&lt; <span class="keyword">this</span>-&gt;mA &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//静态成员函数也不占对象空间</span></span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sfunc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="this指针"><a href="#this指针" class="headerlink" title="this指针"></a>this指针</h3><p><strong>this指针指向 被调用的成员函数所属的 对象,this指针的本质是一个指针常量</strong></p>
-<p>this指针是隐含每一个非静态成员函数内的一种指针</p>
+<p>this指针是隐含每一个<strong>非静态成员函数</strong>内的一种指针</p>
 <p>this指针不需要定义，直接使用即可</p>
 <p>this指针的用途：</p>
 <ul>
@@ -1183,7 +1186,7 @@
   <p><span>本文标题:</span>打怪之旅-C++基础</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2021年03月01日 - 17:53:37</p>
-  <p><span>最后更新:</span>2021年04月19日 - 16:00:19</p>
+  <p><span>最后更新:</span>2021年04月23日 - 21:48:50</p>
   <p><span>原始链接:</span><a href="/article/23d2b7d5/" title="打怪之旅-C++基础">https://pabebezz.github.io/article/23d2b7d5/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/23d2b7d5/" aria-label="复制成功！"></i></span>
   </p>
@@ -1332,7 +1335,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">78</span>
+                  <span class="site-state-item-count">79</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1464,7 +1467,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">191.6k</span> 
+    <span title="本站总字数">192.1k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
