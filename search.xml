@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[引用到底占不占内存空间？]]></title>
+    <url>%2Farticle%2F6d801e4%2F</url>
+    <content type="text"><![CDATA[“声明”和“定义”的区别首先理解：“声明”和“定义”的区别 在我以往的课本中，没有明确说明声明和定义的作用。 在《C++Primer》中 声明：向编译器“介绍”变量（标识符），告诉编译器该变量的类型与名字。 定义：向变量分配存储空间，也可进行初始化。在程序中，变量有且只有一个定义 声明包括： 定义（因在定义时就已经声明了变量的类型与名字） extern关键字，以标示变量或者函数的定义在别的文件中 函数的声明和定义区别比较简单，带有{ }的就是定义，否则就是声明。 引用在C++里的作用是：变量的别名（对引用只有声明没有定义） 有些人认为：引用不占据内存空间，或者说和原始变量共享同一内存 也有一些人认为：引用占用内存空间，因为编译器会将其解析为一个* const p，在内存中为引用开辟了一个指针型的内存单元(我比较赞同这一点)。 不过，我觉得这位CSDN大佬说的也有一定道理。 参考文章https://blog.csdn.net/sjxbf/article/details/6310150 http://www.karottc.com/blog/2015/07/29/cpp-reference/ https://blog.csdn.net/wanttifa/article/details/100904422 https://blog.csdn.net/weixin_42709632/article/details/104814514?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++ Primer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[i++ 不能作为左值,而++i能 的原因]]></title>
     <url>%2Farticle%2Fee51884a%2F</url>
     <content type="text"><![CDATA[int 类型的++i与i++的实现, 注意i++的返回是 const int类型,由于oldValue是一个编译器自动分配的临时变量，并不是程序中定义的变量，返回的是一个数据值，而非地址，所以不能对它进行寻址（不能通过地址对它进行操作）.第二，常量不能作为左值使用。 123456789101112131415161718// 前缀形式：++iint&amp; int::operator++() //这里返回的是一个引用形式，就是说函数返回值也可以作为一个左值使用&#123;//函数本身无参，意味着是在自身空间内增加1的 *this += 1; // 增加 return *this; // 取回值&#125;//后缀形式: i++const int int::operator++(int) //这里的(int)是一个占位符//函数返回值是一个非左值型的，与前缀形式的差别所在。 &#123;//函数带参，说明有另外的空间开辟 int oldValue = *this; // 取回值 ++(*this); // 增加 return oldValue; // 返回被取回的值&#125; 在自定义对象中，后置++要多生成一个局部对象 tmp，这个对象有可能包含很多的成员，因此执行速度比前置的慢。在次数很多的循环中，++i和i++可能就会造成运行时间上可观的差别了。因此，对循环控制变量i，要养成写++i、不写i++的习惯。 参考文章http://www.bubuko.com/infodetail-210314.html http://www.voidcn.com/article/p-dixrdrsg-bxk.html https://blog.csdn.net/metheir/article/details/58708405 http://www.javashuo.com/article/p-uzugvwjp-km.html]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++ Primer</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[for(auto &i:s)和for(auto i:s)的区别]]></title>
