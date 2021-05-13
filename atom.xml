@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2021-04-08T11:23:48.942Z</updated>
+  <updated>2021-05-13T09:34:34.492Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -17,11 +17,169 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>为什么很多题目都对1e9+7(即1000000007)取模？</title>
+    <link href="https://pabebezz.github.io/article/78656074/"/>
+    <id>https://pabebezz.github.io/article/78656074/</id>
+    <published>2021-05-13T09:08:42.000Z</published>
+    <updated>2021-05-13T09:34:34.492Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;剑指 Offer 10- II.
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>引用到底占不占内存空间？</title>
+    <link href="https://pabebezz.github.io/article/6d801e4/"/>
+    <id>https://pabebezz.github.io/article/6d801e4/</id>
+    <published>2021-04-30T01:37:48.000Z</published>
+    <updated>2021-04-30T06:02:10.538Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;“声明”和“定义”的区别&quot;&gt;&lt;a href=&quot;#“声明”和“定义”的区别&quot; class=&quot;headerlink&quot; title=&quot;“声明”和“定义”的区别&quot;&gt;&lt;/a&gt;“声明”和“定义”的区别&lt;/h1&gt;&lt;p&gt;首先理解：“声明”和“定义”的区别&lt;/p&gt;
+&lt;p&gt;在我以往的课本中，没有明确说明声明和定义的作用。&lt;/p&gt;
+&lt;p&gt;在《C++Primer》中&lt;/p&gt;
+&lt;p&gt;声明：向编译器“介绍”变量（标识符），告诉编译器该变量的类型与名字。&lt;/p&gt;
+&lt;p&gt;定义：向变量分配&lt;strong&gt;存储空间&lt;/strong&gt;，也可进行初始化。&lt;strong&gt;在程序中，变量有且只有一个定义&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;声明包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;定义（因在定义时就已经声明了变量的类型与名字）&lt;/li&gt;
+&lt;li&gt;extern关键字，以标示变量或者函数的定义在别的文件中&lt;/li&gt;
+&lt;li&gt;函数的声明和定义区别比较简单，带有{ }的就是定义，否则就是声明。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/categories/C/"/>
+    
+    
+      <category term="C++ Primer" scheme="https://pabebezz.github.io/tags/C-Primer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>i++ 不能作为左值,而++i能 的原因</title>
+    <link href="https://pabebezz.github.io/article/ee51884a/"/>
+    <id>https://pabebezz.github.io/article/ee51884a/</id>
+    <published>2021-04-24T10:46:00.000Z</published>
+    <updated>2021-04-30T06:02:10.532Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;int 类型的++i与i++的实现, 注意i++的返回是 &lt;code&gt;const int&lt;/code&gt;类型,由于oldValue是一个编译器自动分配的临时变量，并不是程序中定义的变量，返回的是一个数据值，而非地址，所以不能对它进行寻址（不能通过地址对它进行操作）.第二，常量不能作为左值使用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/categories/C/"/>
+    
+    
+      <category term="C++ Primer" scheme="https://pabebezz.github.io/tags/C-Primer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>for(auto &amp;i:s)和for(auto i:s)的区别</title>
+    <link href="https://pabebezz.github.io/article/4aa05e8/"/>
+    <id>https://pabebezz.github.io/article/4aa05e8/</id>
+    <published>2021-04-19T06:19:38.000Z</published>
+    <updated>2021-04-30T02:58:00.086Z</updated>
+    
+    <summary type="html">
+    
+      for(auto i:s)相当于拷贝，不改变s的值，详情请点击~
+    
+    </summary>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/categories/C/"/>
+    
+    
+      <category term="C++ Primer" scheme="https://pabebezz.github.io/tags/C-Primer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常函数的运用</title>
+    <link href="https://pabebezz.github.io/article/e17bc1d7/"/>
+    <id>https://pabebezz.github.io/article/e17bc1d7/</id>
+    <published>2021-04-17T09:03:52.000Z</published>
+    <updated>2021-04-18T04:25:59.892Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;统计一段词中出现次数最多的高频词（不区分大小写）&lt;/p&gt;
+&lt;p&gt;思路：用map存储每个词出现的频率（注意为什么不用unordered_map，因为若想实现“不区分大小写”的功能，就必须添加一个自定义比较器，unordered_map不支持这一选项），然后用priority_queue优先级队列的小顶堆特性找到高频词（TOPK问题转换为TOP1）。&lt;/p&gt;
+&lt;p&gt;（小顶堆求最大TOPK）堆（size = k）里存放的是当前元素的频率，其中堆顶的元素最小。加入新进来的元素，此时若size&amp;gt;k，弹出堆顶元素，调整堆。【大顶堆求最小TOPK类似】&lt;/p&gt;
+&lt;p&gt;在写自定义比较器的过程中出现bug&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;错误    C3848    具有类型“const my_less”的表达式会丢失一些 const-volatile 限定符以调用“bool my_less::operator ()(const std::string &amp;amp;,const std::string &amp;amp;)”&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/categories/C/"/>
+    
+    
+      <category term="C++ Primer" scheme="https://pabebezz.github.io/tags/C-Primer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性表、顺序表、广义表（其表头表尾）</title>
+    <link href="https://pabebezz.github.io/article/13827808/"/>
+    <id>https://pabebezz.github.io/article/13827808/</id>
+    <published>2021-04-16T13:02:48.000Z</published>
+    <updated>2021-04-18T04:25:59.945Z</updated>
+    
+    <summary type="html">
+    
+      注意广义表的特殊性
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="数据结构" scheme="https://pabebezz.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为什么拷贝构造函数参数必须为引用？</title>
+    <link href="https://pabebezz.github.io/article/c13c7aad/"/>
+    <id>https://pabebezz.github.io/article/c13c7aad/</id>
+    <published>2021-04-09T13:08:03.000Z</published>
+    <updated>2021-04-17T07:43:03.225Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天朋友问我一个特别有意思的点，eg：&lt;/p&gt;
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Person&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; m_age;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; *m_height;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;comment&quot;&gt;//构造函数  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Person(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; a, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; h) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		m_age = p.m_age;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   		&lt;span class=&quot;comment&quot;&gt;//堆区&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		m_height = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;(h);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//拷贝构造函数  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	Person(&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; Person&amp;amp; p) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;string&quot;&gt;&quot;拷贝构造函数!&quot;&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;comment&quot;&gt;//如果不利用深拷贝在堆区创建新内存，会导致浅拷贝带来的重复释放堆区问题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		m_age = p.m_age;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &lt;span class=&quot;comment&quot;&gt;//m_height =   p.m_heigh (浅拷贝，系统默认拷贝构造函数)　 //m_height 是指针&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		m_height = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;(*p.m_height);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;Person &lt;span class=&quot;title&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;Person &lt;span class=&quot;title&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(p1)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;无论是系统默认还是自定义的拷贝构造函数，都是传一个&lt;code&gt;引用&lt;/code&gt;，而不是&lt;code&gt;值&lt;/code&gt;，这是为什么呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/categories/C/"/>
+    
+    
+      <category term="C++ Primer" scheme="https://pabebezz.github.io/tags/C-Primer/"/>
+    
+  </entry>
+  
+  <entry>
     <title>打怪之旅-C++基础</title>
     <link href="https://pabebezz.github.io/article/23d2b7d5/"/>
     <id>https://pabebezz.github.io/article/23d2b7d5/</id>
     <published>2021-03-01T09:53:37.000Z</published>
-    <updated>2021-04-08T11:23:48.942Z</updated>
+    <updated>2021-04-30T02:58:00.116Z</updated>
     
     <summary type="html">
     
@@ -43,7 +201,7 @@
     <link href="https://pabebezz.github.io/article/6cc0fe42/"/>
     <id>https://pabebezz.github.io/article/6cc0fe42/</id>
     <published>2021-02-03T00:53:37.000Z</published>
-    <updated>2021-03-31T03:24:21.463Z</updated>
+    <updated>2021-04-30T02:58:00.174Z</updated>
     
     <summary type="html">
     
@@ -74,7 +232,7 @@
     <link href="https://pabebezz.github.io/article/e0627a3a/"/>
     <id>https://pabebezz.github.io/article/e0627a3a/</id>
     <published>2021-01-30T00:53:37.000Z</published>
-    <updated>2021-04-08T11:23:48.973Z</updated>
+    <updated>2021-04-17T07:43:03.265Z</updated>
     
     <summary type="html">
     
@@ -94,51 +252,11 @@
     <link href="https://pabebezz.github.io/article/737c8fe7/"/>
     <id>https://pabebezz.github.io/article/737c8fe7/</id>
     <published>2021-01-24T09:53:37.000Z</published>
-    <updated>2021-04-08T11:23:49.002Z</updated>
+    <updated>2021-04-30T02:58:00.155Z</updated>
     
     <summary type="html">
     
       leetcode刷题记录以及总结
-    
-    </summary>
-    
-      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
-    
-    
-      <category term="code" scheme="https://pabebezz.github.io/tags/code/"/>
-    
-      <category term="C++" scheme="https://pabebezz.github.io/tags/C/"/>
-    
-      <category term="algorithm" scheme="https://pabebezz.github.io/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>打怪之旅-准备工作</title>
-    <link href="https://pabebezz.github.io/article/a5fe7d01/"/>
-    <id>https://pabebezz.github.io/article/a5fe7d01/</id>
-    <published>2021-01-20T10:53:37.000Z</published>
-    <updated>2021-04-08T14:58:37.701Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;简历&quot;&gt;&lt;a href=&quot;#简历&quot; class=&quot;headerlink&quot; title=&quot;简历&quot;&gt;&lt;/a&gt;简历&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&amp;amp;mid=2247485960&amp;amp;idx=1&amp;amp;sn=37cbdb8fc7d5ce102d20f75982a9e404&amp;amp;scene=21#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简历模板&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;准备项目的重难点&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;准备C++，【熟悉C++、了解Python】&lt;/p&gt;
-&lt;p&gt;计算机语言            Python, C/C++&lt;br&gt;深度学习框架          PyTorch&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;#　C++开发&lt;/p&gt;
-&lt;p&gt;１， &lt;a href=&quot;https://github.com/youngyangyang04/leetcode-master&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LeetCode 刷题攻略：配思维导图，各个类型的经典题目刷题顺序、经典算法模板，以及详细题解。&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;２，梳理&lt;a href=&quot;https://github.com/youngyangyang04/TechCPP&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;C++后台研发的知识体系&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;《C++_primer5》入门&lt;/p&gt;
-&lt;p&gt;《effective C++》进阶&lt;/p&gt;
-&lt;p&gt;《effectiveSTL》进阶（掌握）&lt;/p&gt;
-&lt;p&gt;《STL源码剖析》（掌握＋＋　－＞熟悉）&lt;/p&gt;
-&lt;p&gt;《深度探索C++对象模型》（熟悉）&lt;/p&gt;
-&lt;p&gt;3, &lt;a href=&quot;https://www.nowcoder.com/tutorial/93/a34ed23d58b84da3a707c70371f59c21&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;牛客网面试宝典&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -330,128 +448,6 @@
     
     
       <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python语法奇奇怪怪小合集</title>
-    <link href="https://pabebezz.github.io/article/e58acc82/"/>
-    <id>https://pabebezz.github.io/article/e58acc82/</id>
-    <published>2020-07-15T09:41:54.000Z</published>
-    <updated>2021-03-31T03:24:21.423Z</updated>
-    
-    <summary type="html">
-    
-      说是奇奇怪怪，只是自己没学通，记录一下python tip
-    
-    </summary>
-    
-      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
-    
-    
-      <category term="Python" scheme="https://pabebezz.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安装Ubuntu18.04后的优化</title>
-    <link href="https://pabebezz.github.io/article/e0fdde43/"/>
-    <id>https://pabebezz.github.io/article/e0fdde43/</id>
-    <published>2020-07-05T02:00:51.000Z</published>
-    <updated>2021-03-31T03:24:21.436Z</updated>
-    
-    <summary type="html">
-    
-      让乌邦图更美好
-    
-    </summary>
-    
-      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
-    
-    
-      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>paperUnderstanding-ClearGrasp</title>
-    <link href="https://pabebezz.github.io/article/2d17733a/"/>
-    <id>https://pabebezz.github.io/article/2d17733a/</id>
-    <published>2020-06-28T05:32:16.000Z</published>
-    <updated>2021-03-31T03:24:21.421Z</updated>
-    
-    <summary type="html">
-    
-      该论文理解与复现
-    
-    </summary>
-    
-      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
-    
-    
-      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu各种命令详解</title>
-    <link href="https://pabebezz.github.io/article/79acc1fa/"/>
-    <id>https://pabebezz.github.io/article/79acc1fa/</id>
-    <published>2020-06-22T07:15:58.000Z</published>
-    <updated>2020-09-01T01:22:53.069Z</updated>
-    
-    <summary type="html">
-    
-      shell命令集合
-    
-    </summary>
-    
-      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
-    
-    
-      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu使用Visual Profiler</title>
-    <link href="https://pabebezz.github.io/article/ed84546b/"/>
-    <id>https://pabebezz.github.io/article/ed84546b/</id>
-    <published>2020-06-21T04:15:58.000Z</published>
-    <updated>2020-06-23T01:36:21.015Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Ubuntu使用Visual-Profiler&quot;&gt;&lt;a href=&quot;#Ubuntu使用Visual-Profiler&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu使用Visual Profiler&quot;&gt;&lt;/a&gt;Ubuntu使用Visual Profiler&lt;/h1&gt;&lt;h2 id=&quot;配置java环境&quot;&gt;&lt;a href=&quot;#配置java环境&quot; class=&quot;headerlink&quot; title=&quot;配置java环境&quot;&gt;&lt;/a&gt;配置java环境&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;//卸载OpenJDK&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get purge openjdk/openjdk*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get clean/autoclean&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//安装jre、jdk&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install openjdk-8-jre-headless&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install openjdk-8-jdk-headless&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//添加环境变量&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo vim ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; oracle jdk environment&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_191  ## 这里要注意目录要换成自己解压的jdk 目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export JRE_HOME=$&amp;#123;JAVA_HOME&amp;#125;/jre  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export CLASSPATH=.:$&amp;#123;JAVA_HOME&amp;#125;/lib:$&amp;#123;JRE_HOME&amp;#125;/lib  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PATH=$&amp;#123;JAVA_HOME&amp;#125;/bin:$PATH  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;source ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//验证&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;java -version&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//如果你安装了多个版本的jdk，你可以通过以下命令在这些版本之间切换&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo update-alternatives –config java&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;使用nvvp&quot;&gt;&lt;a href=&quot;#使用nvvp&quot; class=&quot;headerlink&quot; title=&quot;使用nvvp&quot;&gt;&lt;/a&gt;使用nvvp&lt;/h1&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;nvvp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;出现Visual Profiler图形化界面&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
-    
-    
-      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>paperMemo-图片质量评价指标</title>
-    <link href="https://pabebezz.github.io/article/e3c77110/"/>
-    <id>https://pabebezz.github.io/article/e3c77110/</id>
-    <published>2020-06-17T02:24:41.000Z</published>
-    <updated>2020-06-23T01:36:21.037Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;SSIM&quot;&gt;&lt;a href=&quot;#SSIM&quot; class=&quot;headerlink&quot; title=&quot;SSIM&quot;&gt;&lt;/a&gt;SSIM&lt;/h1&gt;&lt;p&gt;结构相似性指数（structural similarity index，SSIM）是一种用于量化两幅图像间的结构相似性的指标。与L2损失函数不同，SSIM仿照人类的视觉系统（Human Visual System,HVS）实现了结构相似性的有关理论，对图像的局部结构变化的感知敏感。SSIM从亮度、对比度以及结构量化图像的属性，用均值估计亮度，方差估计对比度，协方差估计结构相似程度。SSIM值的范围为0至1，越大代表图像越相似。如果两张图片完全一样时，SSIM值为1。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
-    
-    
-      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
     
   </entry>
   
