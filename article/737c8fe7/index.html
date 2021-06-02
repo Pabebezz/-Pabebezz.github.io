@@ -103,7 +103,7 @@
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/ciaqDnJprwv7lMMuvp0iakIvJyzQbPMFNicJS5KdwTJf5Xr9GCXE4d7wM9hxYXx1anr3O1TiaQPcYbDbejtic6PgmbQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
 <meta property="og:image" content="https://pabebezz.github.io/article/737c8fe7/image-20210423144319654.png">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/1024555/201612/1024555-20161218163120151-452283750.png">
-<meta property="og:updated_time" content="2021-04-25T12:15:05.920Z">
+<meta property="og:updated_time" content="2021-05-23T10:39:20.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打怪之旅-数据结构与算法">
 <meta name="twitter:description" content="leetcode刷题记录以及总结">
@@ -817,7 +817,7 @@ LeetCode 994. Rotting Oranges
 <ul>
 <li><p><code>while (left &lt; right)</code> 退出循环的时候有 <code>left == right</code> 成立，因此无需考虑返回 <code>left</code> 还是 <code>right</code></p>
 </li>
-<li><p>每一轮区间被划分成 22 部分，理解 区间划分 决定中间数取法（ 无需记忆，需要练习 + 理解 ），在调试的过程中理解 区间和中间数划分的配对关系：<br>划分 <strong>[left, mid] 与 [mid + 1, right]</strong> ，mid 被分到左边，对应 int mid = left + (right - left) / 2;；<br>划分 <strong>[left, mid - 1] 与 [mid, right]</strong> ，mid 被分到右边，对应 int mid = left + (right - left + 1) / 2;。</p>
+<li><p>每一轮区间被划分成 2 部分，理解 区间划分 决定中间数取法（ 无需记忆，需要练习 + 理解 ），在调试的过程中理解 区间和中间数划分的配对关系：<br>划分 <strong>[left, mid] 与 [mid + 1, right]</strong> ，mid 被分到左边，对应 int mid = left + (right - left) / 2;；<br>划分 <strong>[left, mid - 1] 与 [mid, right]</strong> ，mid 被分到右边，对应 int mid = left + (right - left + 1) / 2;。</p>
 </li>
 <li><p>至于为什么划分是这种对应关系，原因在于区间只有 2 个数的时候，如果中间数的取法不对，<strong>一旦进入的分支不能使得区间缩小</strong>，会出现 <strong>死循环</strong>。</p>
 </li>
@@ -911,7 +911,7 @@ LeetCode 994. Rotting Oranges
   <p><span>本文标题:</span>打怪之旅-数据结构与算法</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2021年01月24日 - 17:53:37</p>
-  <p><span>最后更新:</span>2021年04月25日 - 20:15:05</p>
+  <p><span>最后更新:</span>2021年05月23日 - 18:39:20</p>
   <p><span>原始链接:</span><a href="/article/737c8fe7/" title="打怪之旅-数据结构与算法">https://pabebezz.github.io/article/737c8fe7/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/737c8fe7/" aria-label="复制成功！"></i></span>
   </p>
@@ -1062,7 +1062,7 @@ LeetCode 994. Rotting Oranges
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">80</span>
+                  <span class="site-state-item-count">81</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1194,7 +1194,7 @@ LeetCode 994. Rotting Oranges
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">192.7k</span> 
+    <span title="本站总字数">193k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
