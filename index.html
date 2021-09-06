@@ -621,9 +621,13 @@
 
       
         
-          
-          位运算剑指 Offer 65. 不用加减乘除做加法参考：https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/solution/mian-shi-ti-65-bu-yong-jia-jian-cheng
-          ...
+          <h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><h2 id="剑指-Offer-65-不用加减乘除做加法"><a href="#剑指-Offer-65-不用加减乘除做加法" class="headerlink" title="剑指 Offer 65. 不用加减乘除做加法"></a><a href="https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/" target="_blank" rel="noopener">剑指 Offer 65. 不用加减乘除做加法</a></h2><p>参考：<a href="https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/solution/mian-shi-ti-65-bu-yong-jia-jian-cheng-chu-zuo-ji-7/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/solution/mian-shi-ti-65-bu-yong-jia-jian-cheng-chu-zuo-ji-7/</a></p>
+<p>用到位运算，分解成两步：</p>
+<p>（1）无进位：异或 （a^b）</p>
+<p>（2）进位 :与+左移1位 (a&amp;b&lt;&lt;1)</p>
+<p>累加，直至不进位。</p>
+<p>C++\JAVA【Python有所不同】</p>
+<p> 若数字 aaa 和 bbb 中有负数，则变成了减法，如何处理？<br>A ： 在计算机系统中，数值一律用 补码 来表示和存储。补码的优势： 加法、减法可以统一处理（CPU只有加法器）。因此，以上方法 同时适用于正数和负数的加法 。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/2633a26/#more" rel="contents">

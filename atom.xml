@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2021-07-25T11:41:58.833Z</updated>
+  <updated>2021-07-25T11:54:38.674Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -21,17 +21,17 @@
     <link href="https://pabebezz.github.io/article/2633a26/"/>
     <id>https://pabebezz.github.io/article/2633a26/</id>
     <published>2021-07-25T11:40:20.000Z</published>
-    <updated>2021-07-25T11:41:58.833Z</updated>
+    <updated>2021-07-25T11:54:38.674Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;位运算&quot;&gt;&lt;a href=&quot;#位运算&quot; class=&quot;headerlink&quot; title=&quot;位运算&quot;&gt;&lt;/a&gt;位运算&lt;/h1&gt;&lt;h2 id=&quot;剑指-Offer-65-不用加减乘除做加法&quot;&gt;&lt;a href=&quot;#剑指-Offer-65-不用加减乘除做加法&quot;
-        
-      
+      &lt;h1 id=&quot;位运算&quot;&gt;&lt;a href=&quot;#位运算&quot; class=&quot;headerlink&quot; title=&quot;位运算&quot;&gt;&lt;/a&gt;位运算&lt;/h1&gt;&lt;h2 id=&quot;剑指-Offer-65-不用加减乘除做加法&quot;&gt;&lt;a href=&quot;#剑指-Offer-65-不用加减乘除做加法&quot; class=&quot;headerlink&quot; title=&quot;剑指 Offer 65. 不用加减乘除做加法&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;剑指 Offer 65. 不用加减乘除做加法&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;参考：&lt;a href=&quot;https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/solution/mian-shi-ti-65-bu-yong-jia-jian-cheng-chu-zuo-ji-7/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/solution/mian-shi-ti-65-bu-yong-jia-jian-cheng-chu-zuo-ji-7/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;用到位运算，分解成两步：&lt;/p&gt;
+&lt;p&gt;（1）无进位：异或 （a^b）&lt;/p&gt;
+&lt;p&gt;（2）进位 :与+左移1位 (a&amp;amp;b&amp;lt;&amp;lt;1)&lt;/p&gt;
+&lt;p&gt;累加，直至不进位。&lt;/p&gt;
+&lt;p&gt;C++\JAVA【Python有所不同】&lt;/p&gt;
+&lt;p&gt; 若数字 aaa 和 bbb 中有负数，则变成了减法，如何处理？&lt;br&gt;A ： 在计算机系统中，数值一律用 补码 来表示和存储。补码的优势： 加法、减法可以统一处理（CPU只有加法器）。因此，以上方法 同时适用于正数和负数的加法 。&lt;/p&gt;
     
     </summary>
     
