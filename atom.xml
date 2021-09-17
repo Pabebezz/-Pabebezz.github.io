@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2021-05-17T12:35:46.941Z</updated>
+  <updated>2021-09-17T12:49:05.205Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面题汇总</title>
+    <link href="https://pabebezz.github.io/article/e4767f57/"/>
+    <id>https://pabebezz.github.io/article/e4767f57/</id>
+    <published>2021-09-10T09:53:37.000Z</published>
+    <updated>2021-09-17T12:49:05.205Z</updated>
+    
+    <summary type="html">
+    
+      持续更新ing.
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="code" scheme="https://pabebezz.github.io/tags/code/"/>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/tags/C/"/>
+    
+      <category term="algorithm" scheme="https://pabebezz.github.io/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>位运算</title>
+    <link href="https://pabebezz.github.io/article/2633a26/"/>
+    <id>https://pabebezz.github.io/article/2633a26/</id>
+    <published>2021-07-25T11:40:20.000Z</published>
+    <updated>2021-09-06T02:52:17.067Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;位运算&quot;&gt;&lt;a href=&quot;#位运算&quot; class=&quot;headerlink&quot; title=&quot;位运算&quot;&gt;&lt;/a&gt;位运算&lt;/h1&gt;&lt;h2 id=&quot;剑指-Offer-65-不用加减乘除做加法&quot;&gt;&lt;a href=&quot;#剑指-Offer-65-不用加减乘除做加法&quot; class=&quot;headerlink&quot; title=&quot;剑指 Offer 65. 不用加减乘除做加法&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;剑指 Offer 65. 不用加减乘除做加法&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;参考：&lt;a href=&quot;https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/solution/mian-shi-ti-65-bu-yong-jia-jian-cheng-chu-zuo-ji-7/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/solution/mian-shi-ti-65-bu-yong-jia-jian-cheng-chu-zuo-ji-7/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;用到位运算，分解成两步：&lt;/p&gt;
+&lt;p&gt;（1）无进位：异或 （a^b）&lt;/p&gt;
+&lt;p&gt;（2）进位 :与+左移1位 (a&amp;amp;b&amp;lt;&amp;lt;1)&lt;/p&gt;
+&lt;p&gt;累加，直至不进位。&lt;/p&gt;
+&lt;p&gt;C++\JAVA【Python有所不同】&lt;/p&gt;
+&lt;p&gt; 若数字 aaa 和 bbb 中有负数，则变成了减法，如何处理？&lt;br&gt;A ： 在计算机系统中，数值一律用 补码 来表示和存储。补码的优势： 加法、减法可以统一处理（CPU只有加法器）。因此，以上方法 同时适用于正数和负数的加法 。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/categories/C/"/>
+    
+    
+      <category term="C++ Primer" scheme="https://pabebezz.github.io/tags/C-Primer/"/>
+    
+  </entry>
   
   <entry>
     <title>为什么很多题目都对1e9+7(即1000000007)取模？</title>
@@ -70,7 +120,7 @@
     <link href="https://pabebezz.github.io/article/ee51884a/"/>
     <id>https://pabebezz.github.io/article/ee51884a/</id>
     <published>2021-04-24T10:46:00.000Z</published>
-    <updated>2021-04-30T05:33:22.892Z</updated>
+    <updated>2021-09-12T13:36:56.338Z</updated>
     
     <summary type="html">
     
@@ -249,7 +299,7 @@
     <link href="https://pabebezz.github.io/article/737c8fe7/"/>
     <id>https://pabebezz.github.io/article/737c8fe7/</id>
     <published>2021-01-24T09:53:37.000Z</published>
-    <updated>2021-05-23T10:39:20.838Z</updated>
+    <updated>2021-09-10T02:03:46.580Z</updated>
     
     <summary type="html">
     
@@ -405,46 +455,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>window编译并运行TOY2DAC</title>
-    <link href="https://pabebezz.github.io/article/71a7f63d/"/>
-    <id>https://pabebezz.github.io/article/71a7f63d/</id>
-    <published>2020-07-26T05:19:03.000Z</published>
-    <updated>2020-08-10T05:05:00.930Z</updated>
-    
-    <summary type="html">
-    
-      TOY2DAC有关文档以及使用
-    
-    </summary>
-    
-      <category term="window" scheme="https://pabebezz.github.io/categories/window/"/>
-    
-    
-      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu18.04下python安装并使用Oracle19.8</title>
-    <link href="https://pabebezz.github.io/article/a8446d42/"/>
-    <id>https://pabebezz.github.io/article/a8446d42/</id>
-    <published>2020-07-26T05:12:12.000Z</published>
-    <updated>2020-07-26T09:45:05.964Z</updated>
-    
-    <summary type="html">
-    
-      目前貌似木有比较完整最新版的安装指导，有些步骤都不需要啦，记录一下，免得走弯路。
-    
-    </summary>
-    
-      <category term="Ubuntu" scheme="https://pabebezz.github.io/categories/Ubuntu/"/>
-    
-    
-      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
     
   </entry>
   
