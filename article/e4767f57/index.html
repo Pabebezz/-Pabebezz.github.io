@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="持续更新ing.">
+<meta name="description" content="持续更新ing. 手撕常见类或函数strcpy()VS2015环境下，显示strcpy()函数出错的解决办法： This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help f">
 <meta name="keywords" content="code,C++,algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面题汇总">
 <meta property="og:url" content="https://pabebezz.github.io/article/e4767f57/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="持续更新ing.">
+<meta property="og:description" content="持续更新ing. 手撕常见类或函数strcpy()VS2015环境下，显示strcpy()函数出错的解决办法： This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help f">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://pabebezz.github.io/article/e4767f57/image-20210909105022850.png">
-<meta property="og:updated_time" content="2021-09-17T13:32:51.481Z">
+<meta property="og:updated_time" content="2021-09-17T13:36:03.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面题汇总">
-<meta name="twitter:description" content="持续更新ing.">
+<meta name="twitter:description" content="持续更新ing. 手撕常见类或函数strcpy()VS2015环境下，显示strcpy()函数出错的解决办法： This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help f">
 <meta name="twitter:image" content="https://pabebezz.github.io/article/e4767f57/image-20210909105022850.png">
 
 
@@ -416,10 +416,6 @@
           
 
           
-              <div class="post-description">
-                  持续更新ing.
-              </div>
-          
 
         </div>
       </header>
@@ -434,7 +430,8 @@
       
 
       
-        <h1 id="手撕常见类或函数"><a href="#手撕常见类或函数" class="headerlink" title="手撕常见类或函数"></a>手撕常见类或函数</h1><h2 id="strcpy"><a href="#strcpy" class="headerlink" title="strcpy()"></a>strcpy()</h2><p>VS2015环境下，显示strcpy()函数出错的解决办法： This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.  即使前面加了头函数文件cstring 也无济于事。</p>
+        <p>持续更新ing.</p>
+<h1 id="手撕常见类或函数"><a href="#手撕常见类或函数" class="headerlink" title="手撕常见类或函数"></a>手撕常见类或函数</h1><h2 id="strcpy"><a href="#strcpy" class="headerlink" title="strcpy()"></a>strcpy()</h2><p>VS2015环境下，显示strcpy()函数出错的解决办法： This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.  即使前面加了头函数文件cstring 也无济于事。</p>
 <p>原因：vs准备弃用strcpy的，安全性较低，所以微软提供了<strong>strcpy_s</strong>来代替.如果继续使用strcpy的，那么只需要在函数体前面加上#pragma warning(disable:4996)就可以了。</p>
 <p><strong>strcpy_s(dest, bufsize, src);</strong><br><strong>bufsize为dest缓冲区最大长度。</strong>它与 strcpy 的不同在于，在它取得额外参数来决定目的缓冲区大小时，会因为发生溢位而出现错误，如此一来，就可以预防缓冲区溢位。</p>
 <a id="more"></a>
@@ -533,7 +530,7 @@
   <p><span>本文标题:</span>面题汇总</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2021年09月10日 - 17:53:37</p>
-  <p><span>最后更新:</span>2021年09月17日 - 21:32:51</p>
+  <p><span>最后更新:</span>2021年09月17日 - 21:36:03</p>
   <p><span>原始链接:</span><a href="/article/e4767f57/" title="面题汇总">https://pabebezz.github.io/article/e4767f57/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/e4767f57/" aria-label="复制成功！"></i></span>
   </p>

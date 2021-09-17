@@ -621,10 +621,13 @@
 
       
         
-          持续更新ing.
+          <p>持续更新ing.</p>
+<h1 id="手撕常见类或函数"><a href="#手撕常见类或函数" class="headerlink" title="手撕常见类或函数"></a>手撕常见类或函数</h1><h2 id="strcpy"><a href="#strcpy" class="headerlink" title="strcpy()"></a>strcpy()</h2><p>VS2015环境下，显示strcpy()函数出错的解决办法： This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.  即使前面加了头函数文件cstring 也无济于事。</p>
+<p>原因：vs准备弃用strcpy的，安全性较低，所以微软提供了<strong>strcpy_s</strong>来代替.如果继续使用strcpy的，那么只需要在函数体前面加上#pragma warning(disable:4996)就可以了。</p>
+<p><strong>strcpy_s(dest, bufsize, src);</strong><br><strong>bufsize为dest缓冲区最大长度。</strong>它与 strcpy 的不同在于，在它取得额外参数来决定目的缓冲区大小时，会因为发生溢位而出现错误，如此一来，就可以预防缓冲区溢位。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/article/e4767f57/">
+            <a class="btn" href="/article/e4767f57/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

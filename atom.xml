@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2021-09-17T13:32:51.481Z</updated>
+  <updated>2021-09-17T13:36:03.113Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -21,11 +21,14 @@
     <link href="https://pabebezz.github.io/article/e4767f57/"/>
     <id>https://pabebezz.github.io/article/e4767f57/</id>
     <published>2021-09-10T09:53:37.000Z</published>
-    <updated>2021-09-17T13:32:51.481Z</updated>
+    <updated>2021-09-17T13:36:03.113Z</updated>
     
     <summary type="html">
     
-      持续更新ing.
+      &lt;p&gt;持续更新ing.&lt;/p&gt;
+&lt;h1 id=&quot;手撕常见类或函数&quot;&gt;&lt;a href=&quot;#手撕常见类或函数&quot; class=&quot;headerlink&quot; title=&quot;手撕常见类或函数&quot;&gt;&lt;/a&gt;手撕常见类或函数&lt;/h1&gt;&lt;h2 id=&quot;strcpy&quot;&gt;&lt;a href=&quot;#strcpy&quot; class=&quot;headerlink&quot; title=&quot;strcpy()&quot;&gt;&lt;/a&gt;strcpy()&lt;/h2&gt;&lt;p&gt;VS2015环境下，显示strcpy()函数出错的解决办法： This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.  即使前面加了头函数文件cstring 也无济于事。&lt;/p&gt;
+&lt;p&gt;原因：vs准备弃用strcpy的，安全性较低，所以微软提供了&lt;strong&gt;strcpy_s&lt;/strong&gt;来代替.如果继续使用strcpy的，那么只需要在函数体前面加上#pragma warning(disable:4996)就可以了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;strcpy_s(dest, bufsize, src);&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;bufsize为dest缓冲区最大长度。&lt;/strong&gt;它与 strcpy 的不同在于，在它取得额外参数来决定目的缓冲区大小时，会因为发生溢位而出现错误，如此一来，就可以预防缓冲区溢位。&lt;/p&gt;
     
     </summary>
     
