@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2021-07-25T11:54:38.674Z</updated>
+  <updated>2021-09-24T11:20:36.919Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>strcpy()函数被弃用的原因以及扩展</title>
+    <link href="https://pabebezz.github.io/article/98352641/"/>
+    <id>https://pabebezz.github.io/article/98352641/</id>
+    <published>2021-08-24T11:04:35.000Z</published>
+    <updated>2021-09-24T11:20:36.919Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;bug&quot;&gt;&lt;a href=&quot;#bug&quot; class=&quot;headerlink&quot; title=&quot;bug&quot;&gt;&lt;/a&gt;bug&lt;/h1&gt;&lt;p&gt;VS2015环境下，显示strcpy()函数出错的解决办法： This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.  即使前面加了头函数文件cstring 也无济于事。&lt;/p&gt;
+&lt;p&gt;原因：vs准备弃用strcpy的，安全性较低，所以微软提供了&lt;strong&gt;strcpy_s&lt;/strong&gt;来代替.如果继续使用strcpy的，那么只需要在函数体前面加上#pragma warning(disable:4996)就可以了。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;strcpy_s(dest, bufsize, src);&lt;/code&gt;&lt;br&gt;&lt;strong&gt;bufsize为dest缓冲区最大长度。&lt;/strong&gt;它与 strcpy 的不同在于，在它取得额外参数来决定目的缓冲区大小时，会因为发生溢位而出现错误，如此一来，就可以预防缓冲区溢位。&lt;/p&gt;
+&lt;h1 id=&quot;PS-缓冲区溢位攻击&quot;&gt;&lt;a href=&quot;#PS-缓冲区溢位攻击&quot; class=&quot;headerlink&quot; title=&quot;PS: 缓冲区溢位攻击&quot;&gt;&lt;/a&gt;PS: 缓冲区溢位攻击&lt;/h1&gt;&lt;p&gt;当前存入的数据量大于缓冲区的容量，可能导致栈帧指向原本的函数返回地址被覆盖，黑客利用一点，篡改进程运行时栈（比如指向shell脚本），从而改变程序的正常流向。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="code" scheme="https://pabebezz.github.io/tags/code/"/>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/tags/C/"/>
+    
+      <category term="algorithm" scheme="https://pabebezz.github.io/tags/algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>位运算</title>
@@ -431,26 +458,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>window编译并运行TOY2DAC</title>
-    <link href="https://pabebezz.github.io/article/71a7f63d/"/>
-    <id>https://pabebezz.github.io/article/71a7f63d/</id>
-    <published>2020-07-26T05:19:03.000Z</published>
-    <updated>2020-09-01T01:22:53.103Z</updated>
-    
-    <summary type="html">
-    
-      TOY2DAC有关文档以及使用
-    
-    </summary>
-    
-      <category term="window" scheme="https://pabebezz.github.io/categories/window/"/>
-    
-    
-      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
     
   </entry>
   
