@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2021-09-24T11:20:36.919Z</updated>
+  <updated>2021-09-24T11:45:20.005Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>排查网络故障</title>
+    <link href="https://pabebezz.github.io/article/d9b803c4/"/>
+    <id>https://pabebezz.github.io/article/d9b803c4/</id>
+    <published>2021-09-24T09:23:21.000Z</published>
+    <updated>2021-09-24T11:45:20.005Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由內到外，一层一层排除，并定位问题。&lt;/p&gt;
+&lt;h1 id=&quot;网络不通&quot;&gt;&lt;a href=&quot;#网络不通&quot; class=&quot;headerlink&quot; title=&quot;网络不通&quot;&gt;&lt;/a&gt;网络不通&lt;/h1&gt;&lt;p&gt;1，硬件&lt;/p&gt;
+&lt;p&gt;（1）先排查链路，网线有没有问题？ &lt;/p&gt;
+&lt;p&gt;网线插好且连接可用&lt;/p&gt;
+&lt;p&gt;然后看网卡&lt;/p&gt;
+&lt;p&gt;（2）&lt;code&gt;ethtool ethN(网卡编号)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;看关键字  Link detected 为 yes，说明网卡连接正常；Speed 显示当前网卡的速度。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
     <title>strcpy()函数被弃用的原因以及扩展</title>
     <link href="https://pabebezz.github.io/article/98352641/"/>
     <id>https://pabebezz.github.io/article/98352641/</id>
     <published>2021-08-24T11:04:35.000Z</published>
-    <updated>2021-09-24T11:20:36.919Z</updated>
+    <updated>2021-09-24T11:21:24.108Z</updated>
     
     <summary type="html">
     
@@ -442,22 +466,6 @@
     
     
       <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2020华为杯数学建模研赛</title>
-    <link href="https://pabebezz.github.io/article/421938b8/"/>
-    <id>https://pabebezz.github.io/article/421938b8/</id>
-    <published>2020-08-08T03:45:55.000Z</published>
-    <updated>2021-03-31T03:24:21.341Z</updated>
-    
-    <summary type="html">
-    
-      记录
-    
-    </summary>
-    
     
   </entry>
   
