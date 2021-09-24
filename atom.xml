@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2021-09-24T11:45:20.005Z</updated>
+  <updated>2021-09-24T13:28:20.966Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <title>排查网络故障</title>
     <link href="https://pabebezz.github.io/article/d9b803c4/"/>
     <id>https://pabebezz.github.io/article/d9b803c4/</id>
-    <published>2021-09-24T09:23:21.000Z</published>
-    <updated>2021-09-24T11:45:20.005Z</updated>
+    <published>2021-09-22T09:23:21.000Z</published>
+    <updated>2021-09-24T13:28:20.966Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;由內到外，一层一层排除，并定位问题。&lt;/p&gt;
+      &lt;p&gt;校园网又出问题了，补一波，由內到外，一层一层排除，并定位问题。&lt;/p&gt;
 &lt;h1 id=&quot;网络不通&quot;&gt;&lt;a href=&quot;#网络不通&quot; class=&quot;headerlink&quot; title=&quot;网络不通&quot;&gt;&lt;/a&gt;网络不通&lt;/h1&gt;&lt;p&gt;1，硬件&lt;/p&gt;
 &lt;p&gt;（1）先排查链路，网线有没有问题？ &lt;/p&gt;
 &lt;p&gt;网线插好且连接可用&lt;/p&gt;

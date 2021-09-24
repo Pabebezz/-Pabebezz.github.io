@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[排查网络故障]]></title>
     <url>%2Farticle%2Fd9b803c4%2F</url>
-    <content type="text"><![CDATA[由內到外，一层一层排除，并定位问题。 网络不通1，硬件 （1）先排查链路，网线有没有问题？ 网线插好且连接可用 然后看网卡 （2）ethtool ethN(网卡编号) 看关键字 Link detected 为 yes，说明网卡连接正常；Speed 显示当前网卡的速度。 2，配置 ifconfig ethN(网卡编号)查看对该网卡的配置，包括IP，子网掩码等，检查网卡配置信息是否出错。 3，转发路径 所用到的命令： route 命令查看路由表 traceroute追踪路由状况 ping发送ICMP报文，检查响应情况。 主机到网关：无法ping通网关，可能是网关限制了ICMP数据包，或者交换机设置的问题。 4，DNS故障或配置不当 nslookup命令查看DNS解析 网速慢1, traceroute 查看网络中每一跳的延时. 2, iftop 查看连接占用的网络带宽,从而确定哪些网络连接占用的带宽较多 ref:https://blog.csdn.net/weixin_43302039/article/details/84072483]]></content>
+    <content type="text"><![CDATA[校园网又出问题了，补一波，由內到外，一层一层排除，并定位问题。 网络不通1，硬件 （1）先排查链路，网线有没有问题？ 网线插好且连接可用 然后看网卡 （2）ethtool ethN(网卡编号) 看关键字 Link detected 为 yes，说明网卡连接正常；Speed 显示当前网卡的速度。 2，配置 ifconfig ethN(网卡编号)查看对该网卡的配置，包括IP，子网掩码等，检查网卡配置信息是否出错。 3，转发路径 所用到的命令： route 命令查看路由表 traceroute追踪路由状况 ping发送ICMP报文，检查响应情况。 主机到网关：无法ping通网关，可能是网关限制了ICMP数据包，或者交换机设置的问题。 4，DNS故障或配置不当 nslookup命令查看DNS解析 网速慢1, traceroute 查看网络中每一跳的延时. 2, iftop 查看连接占用的网络带宽,从而确定哪些网络连接占用的带宽较多 ref:https://blog.csdn.net/weixin_43302039/article/details/84072483]]></content>
       <tags>
         <tag>tutorial</tag>
       </tags>
