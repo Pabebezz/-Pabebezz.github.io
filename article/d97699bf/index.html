@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="OC特点OC没有命名空间，对象的成员变量是默认受保护的。 弱类型语言，单继承 init系统自带的初始化方法，默认是给基本数据类型赋值0，0.0，指针赋值NULL，对象指针类型赋值nil  本质上都是(void *)0 [CLASS  new] [[CLASS alloc]]init] [类型/对象 方法] autoreleasepool (自动释放池：清理动态分配对象【由工厂模式创建的、自动释放池">
+<meta name="description" content="OC特点OC没有命名空间，对象的成员变量是默认受保护的。 弱类型语言，单继承 init系统自带的初始化方法，默认是给基本数据类型赋值0，0.0，指针赋值NULL，对象指针类型赋值nil  本质上都是(void *)0 [CLASS  new] [[CLASS alloc]]init] [类型/对象 方法] 12345678910111213141516重写init-(instancetype)in">
 <meta name="keywords" content="Pabebe&#39;s Blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Objective-C语法点">
 <meta property="og:url" content="https://pabebezz.github.io/article/d97699bf/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="OC特点OC没有命名空间，对象的成员变量是默认受保护的。 弱类型语言，单继承 init系统自带的初始化方法，默认是给基本数据类型赋值0，0.0，指针赋值NULL，对象指针类型赋值nil  本质上都是(void *)0 [CLASS  new] [[CLASS alloc]]init] [类型/对象 方法] autoreleasepool (自动释放池：清理动态分配对象【由工厂模式创建的、自动释放池">
+<meta property="og:description" content="OC特点OC没有命名空间，对象的成员变量是默认受保护的。 弱类型语言，单继承 init系统自带的初始化方法，默认是给基本数据类型赋值0，0.0，指针赋值NULL，对象指针类型赋值nil  本质上都是(void *)0 [CLASS  new] [[CLASS alloc]]init] [类型/对象 方法] 12345678910111213141516重写init-(instancetype)in">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-04-14T07:52:58.573Z">
+<meta property="og:updated_time" content="2022-04-14T08:12:23.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objective-C语法点">
-<meta name="twitter:description" content="OC特点OC没有命名空间，对象的成员变量是默认受保护的。 弱类型语言，单继承 init系统自带的初始化方法，默认是给基本数据类型赋值0，0.0，指针赋值NULL，对象指针类型赋值nil  本质上都是(void *)0 [CLASS  new] [[CLASS alloc]]init] [类型/对象 方法] autoreleasepool (自动释放池：清理动态分配对象【由工厂模式创建的、自动释放池">
+<meta name="twitter:description" content="OC特点OC没有命名空间，对象的成员变量是默认受保护的。 弱类型语言，单继承 init系统自带的初始化方法，默认是给基本数据类型赋值0，0.0，指针赋值NULL，对象指针类型赋值nil  本质上都是(void *)0 [CLASS  new] [[CLASS alloc]]init] [类型/对象 方法] 12345678910111213141516重写init-(instancetype)in">
 
 
 
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.1k 字
+                  2.2k 字
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7 分钟
+                  8 分钟
                 </span>
               
             </div>
@@ -434,6 +434,7 @@
 <p>[CLASS  new]</p>
 <p>[[CLASS alloc]]init]</p>
 <p>[类型/对象 方法]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">重写init</span><br><span class="line">-(instancetype)init&#123;</span><br><span class="line">    // self若为nil说明生成实例失败</span><br><span class="line">    if(self = [super init])&#123;</span><br><span class="line">        初始化代码</span><br><span class="line">    &#125;</span><br><span class="line">    return self;</span><br><span class="line">&#125;</span><br><span class="line">//带参构造函数</span><br><span class="line">-(instancetype)initWithName:(NSString *)name andAge:(int)age&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//调用</span><br><span class="line">类名 *p = [[类名 alloc] init]; // [类名 new];</span><br><span class="line">类名 *p = [[类名 alloc] nitWithName: @&quot;xx&quot; andAge:18];</span><br></pre></td></tr></table></figure>
 <p>autoreleasepool (自动释放池：清理动态分配对象【由工厂模式创建的、自动释放池对象】)</p>
 <p>description 快速打印类中所有成员，属于NSObject类，不能显式调用</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">NSLog</span><span class="params">(@<span class="string">"%@"</span>,CLASSNAME.obj)</span></span></span><br></pre></td></tr></table></figure>
@@ -497,7 +498,7 @@
   <p><span>本文标题:</span>Objective-C语法点</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2021年11月10日 - 17:10:18</p>
-  <p><span>最后更新:</span>2022年04月14日 - 15:52:58</p>
+  <p><span>最后更新:</span>2022年04月14日 - 16:12:23</p>
   <p><span>原始链接:</span><a href="/article/d97699bf/" title="Objective-C语法点">https://pabebezz.github.io/article/d97699bf/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/d97699bf/" aria-label="复制成功！"></i></span>
   </p>
@@ -638,7 +639,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">88</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -770,7 +771,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">197.2k</span> 
+    <span title="本站总字数">197.5k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
