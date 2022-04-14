@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2022-04-14T07:52:33.901Z</updated>
+  <updated>2022-04-14T08:32:27.739Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -21,29 +21,7 @@
     <link href="https://pabebezz.github.io/article/ff7cf303/"/>
     <id>https://pabebezz.github.io/article/ff7cf303/</id>
     <published>2022-04-14T07:40:10.000Z</published>
-    <updated>2022-04-14T07:52:33.901Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;查重&quot;&gt;&lt;a href=&quot;#查重&quot; class=&quot;headerlink&quot; title=&quot;查重&quot;&gt;&lt;/a&gt;查重&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.paperyy.cn/member_new/thesis/post.aspx&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>论文所需合集</title>
-    <link href="https://pabebezz.github.io/article/ff7cf303/"/>
-    <id>https://pabebezz.github.io/article/ff7cf303/</id>
-    <published>2022-04-14T07:40:10.000Z</published>
-    <updated>2022-04-14T07:53:33.595Z</updated>
+    <updated>2022-04-14T08:32:27.739Z</updated>
     
     <summary type="html">
     
@@ -127,6 +105,30 @@
     
     
       <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面题汇总</title>
+    <link href="https://pabebezz.github.io/article/e4767f57/"/>
+    <id>https://pabebezz.github.io/article/e4767f57/</id>
+    <published>2021-09-10T09:53:37.000Z</published>
+    <updated>2022-04-14T08:34:05.409Z</updated>
+    
+    <summary type="html">
+    
+      持续更新ing.
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
+    
+    
+      <category term="code" scheme="https://pabebezz.github.io/tags/code/"/>
+    
+      <category term="C++" scheme="https://pabebezz.github.io/tags/C/"/>
+    
+      <category term="algorithm" scheme="https://pabebezz.github.io/tags/algorithm/"/>
     
   </entry>
   
