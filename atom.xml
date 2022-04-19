@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2022-04-14T08:32:27.739Z</updated>
+  <updated>2022-04-19T07:10:15.934Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -21,17 +21,12 @@
     <link href="https://pabebezz.github.io/article/ff7cf303/"/>
     <id>https://pabebezz.github.io/article/ff7cf303/</id>
     <published>2022-04-14T07:40:10.000Z</published>
-    <updated>2022-04-14T08:32:27.739Z</updated>
+    <updated>2022-04-19T07:10:15.934Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;查重&quot;&gt;&lt;a href=&quot;#查重&quot; class=&quot;headerlink&quot; title=&quot;查重&quot;&gt;&lt;/a&gt;查重&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.paperyy.cn/member_new/thesis/post.aspx&quot;
-        
-      
+      &lt;h1 id=&quot;查重&quot;&gt;&lt;a href=&quot;#查重&quot; class=&quot;headerlink&quot; title=&quot;查重&quot;&gt;&lt;/a&gt;查重&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.paperyy.cn/member_new/thesis/post.aspx&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.paperyy.cn/member_new/thesis/post.aspx&lt;/a&gt;  （paperyy每天11:11~11:22至尊版查重）&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/d8-NwLLaIrRrxAH7W0IsfQ&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://mp.weixin.qq.com/s/d8-NwLLaIrRrxAH7W0IsfQ&lt;/a&gt; （学信网联合万方，应届生有一次免费查重机会）&lt;/p&gt;
     
     </summary>
     
@@ -65,17 +60,16 @@
     <link href="https://pabebezz.github.io/article/d97699bf/"/>
     <id>https://pabebezz.github.io/article/d97699bf/</id>
     <published>2021-11-10T09:10:18.000Z</published>
-    <updated>2022-04-14T09:42:50.372Z</updated>
+    <updated>2022-04-19T10:07:38.580Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;OC特点&quot;&gt;&lt;a href=&quot;#OC特点&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h1 id=&quot;OC特点&quot;&gt;&lt;a href=&quot;#OC特点&quot; class=&quot;headerlink&quot; title=&quot;OC特点&quot;&gt;&lt;/a&gt;OC特点&lt;/h1&gt;&lt;p&gt;OC没有命名空间，对象的成员变量是默认受保护的。&lt;/p&gt;
+&lt;p&gt;弱类型语言，单继承&lt;/p&gt;
+&lt;p&gt;init系统自带的初始化方法，默认是给基本数据类型赋值0，0.0，指针赋值NULL，&lt;strong&gt;对象&lt;/strong&gt;指针类型赋值&lt;strong&gt;nil&lt;/strong&gt;  本质上都是(void *)0&lt;/p&gt;
+&lt;p&gt;[CLASS  new]&lt;/p&gt;
+&lt;p&gt;[[CLASS alloc]]init]&lt;/p&gt;
+&lt;p&gt;[类型/对象 方法]&lt;/p&gt;
     
     </summary>
     
