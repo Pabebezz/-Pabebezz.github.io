@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2022-04-19T07:10:15.934Z</updated>
+  <updated>2022-04-24T12:35:08.841Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IOS-UI</title>
+    <link href="https://pabebezz.github.io/article/62d71045/"/>
+    <id>https://pabebezz.github.io/article/62d71045/</id>
+    <published>2022-04-24T11:40:50.000Z</published>
+    <updated>2022-04-24T12:35:08.841Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;UIKit还是SwiftUI&quot;&gt;&lt;a href=&quot;#UIKit还是SwiftUI&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="IOS" scheme="https://pabebezz.github.io/categories/IOS/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>论文所需合集</title>
@@ -60,7 +84,7 @@
     <link href="https://pabebezz.github.io/article/d97699bf/"/>
     <id>https://pabebezz.github.io/article/d97699bf/</id>
     <published>2021-11-10T09:10:18.000Z</published>
-    <updated>2022-04-24T11:33:14.965Z</updated>
+    <updated>2022-04-24T12:05:33.013Z</updated>
     
     <summary type="html">
     
@@ -448,26 +472,6 @@
     
     
       <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>理财小知识</title>
-    <link href="https://pabebezz.github.io/article/d95dcfe5/"/>
-    <id>https://pabebezz.github.io/article/d95dcfe5/</id>
-    <published>2020-11-27T02:46:45.000Z</published>
-    <updated>2020-11-27T03:03:35.771Z</updated>
-    
-    <summary type="html">
-    
-      涉猎
-    
-    </summary>
-    
-      <category term="Finance" scheme="https://pabebezz.github.io/categories/Finance/"/>
-    
-    
-      <category term="tutorial" scheme="https://pabebezz.github.io/tags/tutorial/"/>
     
   </entry>
   
