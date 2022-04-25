@@ -81,18 +81,20 @@
 
 
 
-<meta name="description" content="UIKit还是SwiftUIstoryboard">
+<meta name="description" content="UIKit or SwiftUI右边为storyboard-》objective-C ，左边为SwiftUI-》swift  IOSCore OS【 内核 Unix的BSD变体】 ，Core Services，Media，Cocoa Touch【UI层】 MVC模式Model与View不能通信：Model与UI完全独立，UI组件都是generic的，需要Controller为其翻译并格式化Mode">
 <meta name="keywords" content="Pabebe&#39;s Blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IOS-UI">
 <meta property="og:url" content="https://pabebezz.github.io/article/62d71045/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="UIKit还是SwiftUIstoryboard">
+<meta property="og:description" content="UIKit or SwiftUI右边为storyboard-》objective-C ，左边为SwiftUI-》swift  IOSCore OS【 内核 Unix的BSD变体】 ，Core Services，Media，Cocoa Touch【UI层】 MVC模式Model与View不能通信：Model与UI完全独立，UI组件都是generic的，需要Controller为其翻译并格式化Mode">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-04-24T12:35:08.841Z">
+<meta property="og:image" content="https://pabebezz.github.io/article/62d71045/UI代码模式对比.png">
+<meta property="og:updated_time" content="2022-04-25T07:26:55.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IOS-UI">
-<meta name="twitter:description" content="UIKit还是SwiftUIstoryboard">
+<meta name="twitter:description" content="UIKit or SwiftUI右边为storyboard-》objective-C ，左边为SwiftUI-》swift  IOSCore OS【 内核 Unix的BSD变体】 ，Core Services，Media，Cocoa Touch【UI层】 MVC模式Model与View不能通信：Model与UI完全独立，UI组件都是generic的，需要Controller为其翻译并格式化Mode">
+<meta name="twitter:image" content="https://pabebezz.github.io/article/62d71045/UI代码模式对比.png">
 
 
 
@@ -391,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3 字
+                  210 字
                 </span>
               
 
@@ -428,7 +430,10 @@
       
 
       
-        <h1 id="UIKit还是SwiftUI"><a href="#UIKit还是SwiftUI" class="headerlink" title="UIKit还是SwiftUI"></a>UIKit还是SwiftUI</h1><p>storyboard</p>
+        <h1 id="UIKit-or-SwiftUI"><a href="#UIKit-or-SwiftUI" class="headerlink" title="UIKit or SwiftUI"></a>UIKit or SwiftUI</h1><p>右边为storyboard-》objective-C ，左边为SwiftUI-》swift</p>
+<p><img src="/article/62d71045/UI代码模式对比.png" alt="UI代码模式对比"></p>
+<h1 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h1><p>Core OS【 内核 Unix的BSD变体】 ，Core Services，Media，Cocoa Touch【UI层】</p>
+<h1 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h1><p>Model与View不能通信：Model与UI完全独立，UI组件都是generic的，需要Controller为其翻译并格式化Model的信息用于显示。<br>Controller-&gt;View：View里的UI组件以outlet形式存在于Controller中。<br>View-&gt;Controller：Controller自己注册target，告诉View当有指定的action（如按钮点击）发生时，发送这个action给我这个target。View通过delegate将should、will、did等动作的响应交给Controller处理。View不拥有其显示的数据，它是通过data source（也算一种特殊的delegate）从Controller那里拿数据，而数据来自Model。<br>Model-&gt;Controller：Model将自己的属性变化通过广播发送给感兴趣的订阅者（一般是Controller），Notification &amp; KVO，然后Controller去Model中取新的数据。</p>
 
       
     </div>
@@ -452,7 +457,7 @@
   <p><span>本文标题:</span>IOS-UI</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2022年04月24日 - 19:40:50</p>
-  <p><span>最后更新:</span>2022年04月24日 - 20:35:08</p>
+  <p><span>最后更新:</span>2022年04月25日 - 15:26:55</p>
   <p><span>原始链接:</span><a href="/article/62d71045/" title="IOS-UI">https://pabebezz.github.io/article/62d71045/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/62d71045/" aria-label="复制成功！"></i></span>
   </p>
@@ -511,6 +516,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/4b695336/" rel="prev" title="iOS开发的底层原理">
+                iOS开发的底层原理 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -589,7 +598,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -687,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UIKit还是SwiftUI"><span class="nav-number">1.</span> <span class="nav-text">UIKit还是SwiftUI</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UIKit-or-SwiftUI"><span class="nav-number">1.</span> <span class="nav-text">UIKit or SwiftUI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOS"><span class="nav-number">2.</span> <span class="nav-text">IOS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC模式"><span class="nav-number">3.</span> <span class="nav-text">MVC模式</span></a></li></ol></div>
             
 
           </div>
@@ -721,7 +730,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">212.3k</span> 
+    <span title="本站总字数">213.8k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>

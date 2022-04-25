@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[IOS学习路线以及资料]]></title>
+    <url>%2Farticle%2F7f017bb1%2F</url>
+    <content type="text"><![CDATA[学习路线从网上找了一张iOS自学路线图 编程语言:C -&gt; OC -&gt;Swift 学习点【作者：Kevin Chiang，来源：知乎】1.了解MVC模型 认识Model，View，Controller他们的作用，这点很重要，在写任何一个页面的时候，你可能都会用到它 2.View相关的控件 也就是UIKit里面的各种UI组件，可以先学一些最常见的，UILabel，UIButton，UIImageView，UITableView，UIScrollView，UIAlertController，UISwitch等。认识这些控件后，需要学习iOS的UI布局，frame布局，autolayout布局等，学会把这些控件组合起来形成自己想要的UI样式 3.ViewController的生命周期*viewDidLoad,viewWillAppear,viewDidAppear,viewWillDisappear,viewDidDisappear等，了解他们的调用时机，以及他们执行的工作 4.事件响应机制 iOS的事件采用事件链，了解事件是如何传递和响应的，这有助于你写好页面的交互用于响应用户点击、长按、拖动等。 5.JSON数据格式 了解JSON数据是如何构造的，它有哪些规范，然后是要会把JSON反序列化为一个实例对象，或者反过来，把一个实例对象序列化为JSON 6.数据持久化 需要掌握NSUserDefaults的用法，用来存储和读取数据，如果数据量比较大的情况，可以学习iOS的数据库相关的第三方库，比如FMD，Realm等 7.多媒体 在iOS开发中，可能需要用到图片，音频，视频等相关功能，如何下载和显示图片，可以学习SDWebImage的使用，音视频相关如果有用到，也可以在网上找一些开源库学习 8.网络 一些app可能仅仅在本机运行，不需要和远端的服务器交互，但是大多app还是需要服务端参与，所以网络请求相关的知识也是必备的。需要学习NSURLSession发送网络请求，解析JSON数据，然后反序列化。也可以学习第三方库AFNetWorking，它封装了系统的API，使用它发送网络请求，解析网络数据是非常方便的。 9.动画 动画让APP的交互更加炫酷，需要学习UIView所支持的各种动画，比如frame动画等 10.多线程 在较为复杂的app中，多线程是必备的操作，比如在网络请求中需要开启子线程来发送网络请求或者解析数据，然后回到主线程渲染UI，多线程相关的知识可以学习GCD 11.调试 在开发app的过程中，不可避免会出现一些bug，基本的Xcode调试功能就派上用场了，借助于Xcode提供的调试工具，可以完成bug修复 12.开发者账号 如果你的APP想上架app store，那么你需要购买苹果的开发者账号，用于上传你app应用 13.网络抓包 在和服务端交互时，我们需要查看数据是否正确，这时需要使用charles工具，可以在官网下载，具体使用方法可以参考这篇文章 charles抓包配置 14.CocoaPods 它是iOS开发的依赖管理工具，在开发app的过程中，会用到很多成熟的第三方库，比如上面提到的AFNetworking，SDWebImage等，这些库可以通过CocoaPods管理 15.webView 当前比较流行的h5渲染组件是WKWebview，了解iOS开发中如何使用h5页面，并且和h5进行交互，许多app采用的是原生Native开发和h5混合的模式 iOS开发视频 资源 备注 Objective-C学习 讲的很细，可以2倍速快速学习 斯坦福（Stanford）Swift 语言教程 iOS 11 开发 苹果公司 编程 CS193P【2017年】 深入浅出，知识架构比较好源码：https://github.com/jamfly/cs193p-2017-fall-demo-and-solutionhttps://cs193p.sites.stanford.edu/ 【有22最新版但是英文无字幕】 培训班课：尚学堂IOS-UI视频教程【2016年】iOS全栈式开发工程师【2014年】 Objective-C版本UI 斯坦福CS193P 2021春季SwiftUI 2.0课程 目前SwiftUI支持的版本要求过高，至少要IOS13以上，如果是旧产品是绝对不敢出新版说只支持ios13放弃老旧系统的用户的，新产品且不指望占领市场的倒是敢。二是SwiftUI需要一个完善的过程。三是在原有Swift与OC够用的情况下，部分领导者拒绝新架构，部分开发者拒绝付出精力学习新东西。 资源合集iOS 学习资料整理 {非常有用, 强烈推荐} 新手入门iOS开发推荐教程？ - shitboy的回答 - 知乎 开发文档简体中文版的开发者文档 Objective-C官方文档 Swift官方文档 UIKit官方文档 书Scott Knaster出的《Objective-C基础教程》，电子版 ：https://pan.baidu.com/s/1sjlyONV。Big Nerd Ranch出的《Objective-C编程（第2版）》（推荐华中师大出的版本）]]></content>
+      <categories>
+        <category>IOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS开发的底层原理]]></title>
+    <url>%2Farticle%2F4b695336%2F</url>
+    <content type="text"><![CDATA[【待学习】 iOS内存管理、iOS运行时机制、RunLoop、多线程等]]></content>
+      <categories>
+        <category>IOS</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[IOS-UI]]></title>
     <url>%2Farticle%2F62d71045%2F</url>
-    <content type="text"><![CDATA[UIKit还是SwiftUIstoryboard]]></content>
+    <content type="text"><![CDATA[UIKit or SwiftUI右边为storyboard-》objective-C ，左边为SwiftUI-》swift IOSCore OS【 内核 Unix的BSD变体】 ，Core Services，Media，Cocoa Touch【UI层】 MVC模式Model与View不能通信：Model与UI完全独立，UI组件都是generic的，需要Controller为其翻译并格式化Model的信息用于显示。Controller-&gt;View：View里的UI组件以outlet形式存在于Controller中。View-&gt;Controller：Controller自己注册target，告诉View当有指定的action（如按钮点击）发生时，发送这个action给我这个target。View通过delegate将should、will、did等动作的响应交给Controller处理。View不拥有其显示的数据，它是通过data source（也算一种特殊的delegate）从Controller那里拿数据，而数据来自Model。Model-&gt;Controller：Model将自己的属性变化通过广播发送给感兴趣的订阅者（一般是Controller），Notification &amp; KVO，然后Controller去Model中取新的数据。]]></content>
       <categories>
         <category>IOS</category>
       </categories>

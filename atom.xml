@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2022-04-24T12:35:08.841Z</updated>
+  <updated>2022-04-25T10:20:24.742Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>IOS-UI</title>
-    <link href="https://pabebezz.github.io/article/62d71045/"/>
-    <id>https://pabebezz.github.io/article/62d71045/</id>
-    <published>2022-04-24T11:40:50.000Z</published>
-    <updated>2022-04-24T12:35:08.841Z</updated>
+    <title>IOS学习路线以及资料</title>
+    <link href="https://pabebezz.github.io/article/7f017bb1/"/>
+    <id>https://pabebezz.github.io/article/7f017bb1/</id>
+    <published>2022-04-25T04:59:43.000Z</published>
+    <updated>2022-04-25T10:20:24.742Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,58 @@
       
         
         
-          &lt;h1 id=&quot;UIKit还是SwiftUI&quot;&gt;&lt;a href=&quot;#UIKit还是SwiftUI&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;学习路线&quot;&gt;&lt;a href=&quot;#学习路线&quot; class=&quot;headerlink&quot; title=&quot;学习路线&quot;&gt;&lt;/a&gt;学习路线&lt;/h1&gt;&lt;p&gt;从网上找了一张iOS自学路线图&lt;/p&gt;
+&lt;p&gt;编程语言:C -&amp;gt; OC 
+        
+      
+    
+    </summary>
+    
+      <category term="IOS" scheme="https://pabebezz.github.io/categories/IOS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS开发的底层原理</title>
+    <link href="https://pabebezz.github.io/article/4b695336/"/>
+    <id>https://pabebezz.github.io/article/4b695336/</id>
+    <published>2022-04-25T04:26:30.000Z</published>
+    <updated>2022-04-25T07:10:25.966Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;【待学习】&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS内存管理、iOS运行时机制、RunLoop、多线程等&lt;/strong&gt;&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="IOS" scheme="https://pabebezz.github.io/categories/IOS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>IOS-UI</title>
+    <link href="https://pabebezz.github.io/article/62d71045/"/>
+    <id>https://pabebezz.github.io/article/62d71045/</id>
+    <published>2022-04-24T11:40:50.000Z</published>
+    <updated>2022-04-25T07:26:55.615Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;UIKit-or-SwiftUI&quot;&gt;&lt;a href=&quot;#UIKit-or-SwiftUI&quot; class=&quot;headerlink&quot; title=&quot;UIKit or SwiftUI&quot;&gt;&lt;/a&gt;UIKit or
         
       
     
@@ -84,7 +135,7 @@
     <link href="https://pabebezz.github.io/article/d97699bf/"/>
     <id>https://pabebezz.github.io/article/d97699bf/</id>
     <published>2021-11-10T09:10:18.000Z</published>
-    <updated>2022-04-24T12:05:33.013Z</updated>
+    <updated>2022-04-25T10:20:00.268Z</updated>
     
     <summary type="html">
     
@@ -428,50 +479,6 @@
     
     
       <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>打怪之旅-数据结构与算法</title>
-    <link href="https://pabebezz.github.io/article/737c8fe7/"/>
-    <id>https://pabebezz.github.io/article/737c8fe7/</id>
-    <published>2021-01-24T09:53:37.000Z</published>
-    <updated>2021-09-10T02:03:46.580Z</updated>
-    
-    <summary type="html">
-    
-      leetcode刷题记录以及总结
-    
-    </summary>
-    
-      <category term="Programming" scheme="https://pabebezz.github.io/categories/Programming/"/>
-    
-    
-      <category term="code" scheme="https://pabebezz.github.io/tags/code/"/>
-    
-      <category term="C++" scheme="https://pabebezz.github.io/tags/C/"/>
-    
-      <category term="algorithm" scheme="https://pabebezz.github.io/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>paperMemo-prepare</title>
-    <link href="https://pabebezz.github.io/article/5dace05d/"/>
-    <id>https://pabebezz.github.io/article/5dace05d/</id>
-    <published>2020-12-06T09:31:26.000Z</published>
-    <updated>2021-04-08T09:19:41.699Z</updated>
-    
-    <summary type="html">
-    
-      论文准备工作，不上传
-    
-    </summary>
-    
-      <category term="Scientific Research" scheme="https://pabebezz.github.io/categories/Scientific-Research/"/>
-    
-    
-      <category term="paper" scheme="https://pabebezz.github.io/tags/paper/"/>
     
   </entry>
   
