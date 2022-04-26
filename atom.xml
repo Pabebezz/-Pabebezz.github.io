@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2022-04-25T10:22:22.449Z</updated>
+  <updated>2022-04-26T12:32:04.271Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Swift</title>
+    <link href="https://pabebezz.github.io/article/6cb05388/"/>
+    <id>https://pabebezz.github.io/article/6cb05388/</id>
+    <published>2022-04-26T06:56:56.000Z</published>
+    <updated>2022-04-26T12:32:04.271Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;奇特标识&quot;&gt;&lt;a href=&quot;#奇特标识&quot; class=&quot;headerlink&quot; title=&quot;奇特标识&quot;&gt;&lt;/a&gt;奇特标识&lt;/h1&gt;&lt;h2 id&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;?&quot;&gt;&lt;/a&gt;?&lt;/h2&gt;&lt;h2 id=&quot;-1&quot;&gt;&lt;a href=&quot;#-1&quot; class=&quot;headerlink&quot; title=&quot;??&quot;&gt;&lt;/a&gt;??&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;双问号的意思是，判断前面的表达式的值为nil。否为前面的表达式的值，是为后面的值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;当值为0时，是不走后面的值的&lt;/p&gt;
+&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//类似三元运算符&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; emoji[card.identifier] ?? &lt;span class=&quot;string&quot;&gt;&quot;?&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;-2&quot;&gt;&lt;a href=&quot;#-2&quot; class=&quot;headerlink&quot; title=&quot;!&quot;&gt;&lt;/a&gt;!&lt;/h2&gt;&lt;p&gt;无须初始化&lt;/p&gt;
+&lt;h2 id=&quot;-3&quot;&gt;&lt;a href=&quot;#-3&quot; class=&quot;headerlink&quot; title=&quot;_&quot;&gt;&lt;/a&gt;_&lt;/h2&gt;&lt;p&gt;忽略&lt;/p&gt;
+&lt;h2 id=&quot;nil&quot;&gt;&lt;a href=&quot;#nil&quot; class=&quot;headerlink&quot; title=&quot;nil&quot;&gt;&lt;/a&gt;nil&lt;/h2&gt;&lt;p&gt;表示未设置的选项&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>IOS学习路线以及资料</title>
@@ -72,7 +97,7 @@
     <link href="https://pabebezz.github.io/article/62d71045/"/>
     <id>https://pabebezz.github.io/article/62d71045/</id>
     <published>2022-04-24T11:40:50.000Z</published>
-    <updated>2022-04-26T03:48:58.951Z</updated>
+    <updated>2022-04-26T07:24:27.153Z</updated>
     
     <summary type="html">
     
@@ -135,7 +160,7 @@
     <link href="https://pabebezz.github.io/article/d97699bf/"/>
     <id>https://pabebezz.github.io/article/d97699bf/</id>
     <published>2021-11-10T09:10:18.000Z</published>
-    <updated>2022-04-25T10:20:00.268Z</updated>
+    <updated>2022-04-26T10:29:29.980Z</updated>
     
     <summary type="html">
     
@@ -452,26 +477,6 @@
 &lt;p&gt;&lt;strong&gt;PDU－协议数据单元：对等层次之间传送的数据包&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;SDU－服务数据单元：同一系统内，层与层之间交换的数据报&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/article/6cc0fe42/image-20210322170050493.png&quot; alt=&quot;image-20210322170050493&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Computer Operating" scheme="https://pabebezz.github.io/categories/Computer-Operating/"/>
-    
-    
-      <category term="study notes" scheme="https://pabebezz.github.io/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>打怪之旅-操作系统</title>
-    <link href="https://pabebezz.github.io/article/e0627a3a/"/>
-    <id>https://pabebezz.github.io/article/e0627a3a/</id>
-    <published>2021-01-30T00:53:37.000Z</published>
-    <updated>2021-04-14T09:21:11.433Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;所有网络协议也都是采用大端字节序的方式来传输数据的。所以有时我们把大端字节序方式称之为网络字节序&lt;/strong&gt;。&lt;/p&gt;
     
     </summary>
     
