@@ -81,25 +81,26 @@
 
 
 
-<meta name="description" content="UIKit or SwiftUI右边为storyboard-》objective-C ，左边为SwiftUI-》swift  IOSCore OS【 内核 Unix的BSD变体】 ，Core Services，Media，Cocoa Touch【UI层】 MVC模式Model与View不能通信：Model与UI完全独立，UI组件都是generic的，需要Controller为其翻译并格式化Mode">
+<meta name="description" content="UIKit or SwiftUI右边为storyboard-》objective-C ，左边为SwiftUI-》swift  IOSCore OS【 内核 Unix的BSD变体】 ，Core Services，Media，Cocoa Touch【UI层】 MVC设计模式Model与View不能通信：Model与UI完全独立，UI组件都是generic的，需要Controller为其翻译并格式化Mo">
 <meta name="keywords" content="Pabebe&#39;s Blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IOS-UI">
 <meta property="og:url" content="https://pabebezz.github.io/article/62d71045/index.html">
 <meta property="og:site_name" content="Pabebe&#39;s Blog">
-<meta property="og:description" content="UIKit or SwiftUI右边为storyboard-》objective-C ，左边为SwiftUI-》swift  IOSCore OS【 内核 Unix的BSD变体】 ，Core Services，Media，Cocoa Touch【UI层】 MVC模式Model与View不能通信：Model与UI完全独立，UI组件都是generic的，需要Controller为其翻译并格式化Mode">
+<meta property="og:description" content="UIKit or SwiftUI右边为storyboard-》objective-C ，左边为SwiftUI-》swift  IOSCore OS【 内核 Unix的BSD变体】 ，Core Services，Media，Cocoa Touch【UI层】 MVC设计模式Model与View不能通信：Model与UI完全独立，UI组件都是generic的，需要Controller为其翻译并格式化Mo">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://pabebezz.github.io/article/62d71045/UI代码模式对比.png">
+<meta property="og:image" content="https://pabebezz.github.io/article/62d71045/MVC.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/62d71045/助手编辑.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/62d71045/插入动作.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/62d71045/对应事件.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/62d71045/插入动作结果.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/62d71045/ViewController连接按钮与代码区.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/62d71045/重命名.png">
-<meta property="og:updated_time" content="2022-04-26T07:24:27.153Z">
+<meta property="og:updated_time" content="2022-04-27T12:43:29.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IOS-UI">
-<meta name="twitter:description" content="UIKit or SwiftUI右边为storyboard-》objective-C ，左边为SwiftUI-》swift  IOSCore OS【 内核 Unix的BSD变体】 ，Core Services，Media，Cocoa Touch【UI层】 MVC模式Model与View不能通信：Model与UI完全独立，UI组件都是generic的，需要Controller为其翻译并格式化Mode">
+<meta name="twitter:description" content="UIKit or SwiftUI右边为storyboard-》objective-C ，左边为SwiftUI-》swift  IOSCore OS【 内核 Unix的BSD变体】 ，Core Services，Media，Cocoa Touch【UI层】 MVC设计模式Model与View不能通信：Model与UI完全独立，UI组件都是generic的，需要Controller为其翻译并格式化Mo">
 <meta name="twitter:image" content="https://pabebezz.github.io/article/62d71045/UI代码模式对比.png">
 
 
@@ -399,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  351 字
+                  353 字
                 </span>
               
 
@@ -439,7 +440,8 @@
         <h1 id="UIKit-or-SwiftUI"><a href="#UIKit-or-SwiftUI" class="headerlink" title="UIKit or SwiftUI"></a>UIKit or SwiftUI</h1><p>右边为storyboard-》objective-C ，左边为SwiftUI-》swift</p>
 <p><img src="/article/62d71045/UI代码模式对比.png" alt="UI代码模式对比"></p>
 <h1 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h1><p>Core OS【 内核 Unix的BSD变体】 ，Core Services，Media，Cocoa Touch【UI层】</p>
-<h1 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h1><p>Model与View不能通信：Model与UI完全独立，UI组件都是generic的，需要Controller为其翻译并格式化Model的信息用于显示。<br>Controller-&gt;View：View里的UI组件以outlet形式存在于Controller中。<br>View-&gt;Controller：Controller自己注册target，告诉View当有指定的action（如按钮点击）发生时，发送这个action给我这个target。View通过delegate将should、will、did等动作的响应交给Controller处理。View不拥有其显示的数据，它是通过data source（也算一种特殊的delegate）从Controller那里拿数据，而数据来自Model。<br>Model-&gt;Controller：Model将自己的属性变化通过广播发送给感兴趣的订阅者（一般是Controller），Notification &amp; KVO，然后Controller去Model中取新的数据。</p>
+<h1 id="MVC设计模式"><a href="#MVC设计模式" class="headerlink" title="MVC设计模式"></a>MVC设计模式</h1><p>Model与View不能通信：Model与UI完全独立，UI组件都是generic的，需要Controller为其翻译并格式化Model的信息用于显示。<br>Controller-&gt;View：View里的UI组件以outlet形式存在于Controller中。<br>View-&gt;Controller：Controller自己注册target，告诉View当有指定的action（如按钮点击）发生时，发送这个action给我这个target。View通过delegate将should、will、did等动作的响应交给Controller处理。View不拥有其显示的数据，它是通过data source（也算一种特殊的delegate）从Controller那里拿数据，而数据来自Model。<br>Model-&gt;Controller：Model将自己的属性变化【Notification &amp; KVO】通过广播发送给感兴趣的订阅者（一般是Controller），然后Controller去Model中取新的数据。</p>
+<p><img src="/article/62d71045/MVC.png" alt="UI代码模式对比"></p>
 <h1 id="IOS快捷方式"><a href="#IOS快捷方式" class="headerlink" title="IOS快捷方式"></a>IOS快捷方式</h1><h2 id="storyboard-UI快捷插入Action响应代码"><a href="#storyboard-UI快捷插入Action响应代码" class="headerlink" title="storyboard UI快捷插入Action响应代码"></a>storyboard UI快捷插入Action响应代码</h2><h3 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h3><p>（1）调出Assistant 使得UI界面与代码界面同步展现</p>
 <p><img src="/article/62d71045/助手编辑.png" alt="助手编辑"></p>
 <p>（2）插入动作，如图 点击“南瓜”按钮并按下ctrl键，指向代码区【最好是ViewController.h 这样才会同时生成方法的声明与实现】。</p>
@@ -476,7 +478,7 @@
   <p><span>本文标题:</span>IOS-UI</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2022年04月24日 - 19:40:50</p>
-  <p><span>最后更新:</span>2022年04月26日 - 15:24:27</p>
+  <p><span>最后更新:</span>2022年04月27日 - 20:43:29</p>
   <p><span>原始链接:</span><a href="/article/62d71045/" title="IOS-UI">https://pabebezz.github.io/article/62d71045/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/62d71045/" aria-label="复制成功！"></i></span>
   </p>
@@ -715,7 +717,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UIKit-or-SwiftUI"><span class="nav-number">1.</span> <span class="nav-text">UIKit or SwiftUI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOS"><span class="nav-number">2.</span> <span class="nav-text">IOS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC模式"><span class="nav-number">3.</span> <span class="nav-text">MVC模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOS快捷方式"><span class="nav-number">4.</span> <span class="nav-text">IOS快捷方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#storyboard-UI快捷插入Action响应代码"><span class="nav-number">4.1.</span> <span class="nav-text">storyboard UI快捷插入Action响应代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一"><span class="nav-number">4.1.1.</span> <span class="nav-text">方式一</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#同时重命名代码区与storyboard中同一变量-方法"><span class="nav-number">5.</span> <span class="nav-text">同时重命名代码区与storyboard中同一变量/方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UIKit-or-SwiftUI"><span class="nav-number">1.</span> <span class="nav-text">UIKit or SwiftUI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOS"><span class="nav-number">2.</span> <span class="nav-text">IOS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC设计模式"><span class="nav-number">3.</span> <span class="nav-text">MVC设计模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOS快捷方式"><span class="nav-number">4.</span> <span class="nav-text">IOS快捷方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#storyboard-UI快捷插入Action响应代码"><span class="nav-number">4.1.</span> <span class="nav-text">storyboard UI快捷插入Action响应代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一"><span class="nav-number">4.1.1.</span> <span class="nav-text">方式一</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#同时重命名代码区与storyboard中同一变量-方法"><span class="nav-number">5.</span> <span class="nav-text">同时重命名代码区与storyboard中同一变量/方法</span></a></li></ol></div>
             
 
           </div>
