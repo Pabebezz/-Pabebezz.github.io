@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pabebezz.github.io/"/>
-  <updated>2022-04-26T12:35:04.250Z</updated>
+  <updated>2022-04-28T06:38:48.184Z</updated>
   <id>https://pabebezz.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://pabebezz.github.io/article/6cb05388/"/>
     <id>https://pabebezz.github.io/article/6cb05388/</id>
     <published>2022-04-26T06:56:56.000Z</published>
-    <updated>2022-04-26T12:35:04.250Z</updated>
+    <updated>2022-04-28T06:38:48.184Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,42 @@
 &lt;h2 id=&quot;-2&quot;&gt;&lt;a href=&quot;#-2&quot; class=&quot;headerlink&quot; title=&quot;!&quot;&gt;&lt;/a&gt;!&lt;/h2&gt;&lt;p&gt;无须初始化&lt;/p&gt;
 &lt;h2 id=&quot;-3&quot;&gt;&lt;a href=&quot;#-3&quot; class=&quot;headerlink&quot; title=&quot;_&quot;&gt;&lt;/a&gt;_&lt;/h2&gt;&lt;p&gt;忽略&lt;/p&gt;
 &lt;h2 id=&quot;nil&quot;&gt;&lt;a href=&quot;#nil&quot; class=&quot;headerlink&quot; title=&quot;nil&quot;&gt;&lt;/a&gt;nil&lt;/h2&gt;&lt;p&gt;表示未设置的选项&lt;/p&gt;
+&lt;h1 id=&quot;win-与-macOS&quot;&gt;&lt;a href=&quot;#win-与-macOS&quot; class=&quot;headerlink&quot; title=&quot;win 与 macOS&quot;&gt;&lt;/a&gt;win 与 macOS&lt;/h1&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;苹果键盘&lt;/th&gt;
+&lt;th&gt;苹果符号&lt;/th&gt;
+&lt;th&gt;对应window键盘&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Cammand&lt;/td&gt;
+&lt;td&gt;⌘&lt;/td&gt;
+&lt;td&gt;win键&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Option&lt;/td&gt;
+&lt;td&gt;⌥&lt;/td&gt;
+&lt;td&gt;alt键&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Control&lt;/td&gt;
+&lt;td&gt;^&lt;/td&gt;
+&lt;td&gt;ctrl键&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Shift&lt;/td&gt;
+&lt;td&gt;⇧&lt;/td&gt;
+&lt;td&gt;Shift键&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Caps Lock&lt;/td&gt;
+&lt;td&gt;⇪ 或者 . 中/英&lt;/td&gt;
+&lt;td&gt;Caps Lock键&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
     
     </summary>
     
@@ -97,7 +133,7 @@
     <link href="https://pabebezz.github.io/article/62d71045/"/>
     <id>https://pabebezz.github.io/article/62d71045/</id>
     <published>2022-04-24T11:40:50.000Z</published>
-    <updated>2022-04-27T12:43:29.155Z</updated>
+    <updated>2022-04-28T05:42:53.280Z</updated>
     
     <summary type="html">
     
@@ -160,7 +196,7 @@
     <link href="https://pabebezz.github.io/article/d97699bf/"/>
     <id>https://pabebezz.github.io/article/d97699bf/</id>
     <published>2021-11-10T09:10:18.000Z</published>
-    <updated>2022-04-26T10:29:29.980Z</updated>
+    <updated>2022-04-28T13:09:37.872Z</updated>
     
     <summary type="html">
     
