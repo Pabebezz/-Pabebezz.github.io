@@ -100,7 +100,8 @@
 <meta property="og:image" content="https://pabebezz.github.io/article/62d71045/插入动作结果.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/62d71045/ViewController连接按钮与代码区.png">
 <meta property="og:image" content="https://pabebezz.github.io/article/62d71045/重命名.png">
-<meta property="og:updated_time" content="2022-05-02T06:41:24.596Z">
+<meta property="og:image" content="https://pabebezz.github.io/article/62d71045/bug-keyvalue问题.png">
+<meta property="og:updated_time" content="2022-05-02T12:10:48.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IOS-UI">
 <meta name="twitter:description" content="UIKit or SwiftUI右边为storyboard-》objective-C ，左边为SwiftUI-》swift  IOSCore OS【 内核 Unix的BSD变体】 ，Core Services，Media，Cocoa Touch【UI层】 MVC设计模式Modelmodel 代表应用是什么、干什么事即本质【但不是”它怎么展示的“】 Model与View不能通信：Model与UI完全">
@@ -403,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  871 字
+                  894 字
                 </span>
               
 
@@ -522,6 +523,9 @@
 <p><img src="/article/62d71045/ViewController连接按钮与代码区.png" alt="ViewController连接按钮与代码区"></p>
 <h2 id="同时重命名代码区与storyboard中同一变量-方法"><a href="#同时重命名代码区与storyboard中同一变量-方法" class="headerlink" title="同时重命名代码区与storyboard中同一变量/方法"></a>同时重命名代码区与storyboard中同一变量/方法</h2><p>command-》rename</p>
 <p><img src="/article/62d71045/重命名.png" alt="重命名"></p>
+<h1 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h1><p>view key value</p>
+<p>大多数情况为 响应连接错误，可在以下界面查看</p>
+<p><img src="/article/62d71045/bug-keyvalue问题.png" alt="bug-keyvalue问题"></p>
 
       
     </div>
@@ -545,7 +549,7 @@
   <p><span>本文标题:</span>IOS-UI</p>
   <p><span>文章作者:</span>Pabebe</p>
   <p><span>发布时间:</span>2022年04月24日 - 19:40:50</p>
-  <p><span>最后更新:</span>2022年05月02日 - 14:41:24</p>
+  <p><span>最后更新:</span>2022年05月02日 - 20:10:48</p>
   <p><span>原始链接:</span><a href="/article/62d71045/" title="IOS-UI">https://pabebezz.github.io/article/62d71045/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://pabebezz.github.io/article/62d71045/" aria-label="复制成功！"></i></span>
   </p>
@@ -784,7 +788,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UIKit-or-SwiftUI"><span class="nav-number">1.</span> <span class="nav-text">UIKit or SwiftUI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOS"><span class="nav-number">2.</span> <span class="nav-text">IOS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC设计模式"><span class="nav-number">3.</span> <span class="nav-text">MVC设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">3.1.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller"><span class="nav-number">3.2.</span> <span class="nav-text">Controller</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">3.3.</span> <span class="nav-text">View</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#win-与-macOS"><span class="nav-number">4.</span> <span class="nav-text">win 与 macOS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XCode标记"><span class="nav-number">5.</span> <span class="nav-text">XCode标记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分组导航标记"><span class="nav-number">5.1.</span> <span class="nav-text">分组导航标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完成列表-TODOlist"><span class="nav-number">5.2.</span> <span class="nav-text">未完成列表 TODOlist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标示处代码提示"><span class="nav-number">5.3.</span> <span class="nav-text">标示处代码提示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XCode-快捷键"><span class="nav-number">6.</span> <span class="nav-text">XCode 快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览view"><span class="nav-number">6.1.</span> <span class="nav-text">浏览view</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本区"><span class="nav-number">6.2.</span> <span class="nav-text">文本区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行与调试"><span class="nav-number">6.3.</span> <span class="nav-text">运行与调试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOS快捷方式"><span class="nav-number">7.</span> <span class="nav-text">IOS快捷方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#storyboard-UI快捷插入Action响应代码"><span class="nav-number">7.1.</span> <span class="nav-text">storyboard UI快捷插入Action响应代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一"><span class="nav-number">7.1.1.</span> <span class="nav-text">方式一</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同时重命名代码区与storyboard中同一变量-方法"><span class="nav-number">7.2.</span> <span class="nav-text">同时重命名代码区与storyboard中同一变量/方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UIKit-or-SwiftUI"><span class="nav-number">1.</span> <span class="nav-text">UIKit or SwiftUI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOS"><span class="nav-number">2.</span> <span class="nav-text">IOS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC设计模式"><span class="nav-number">3.</span> <span class="nav-text">MVC设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">3.1.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller"><span class="nav-number">3.2.</span> <span class="nav-text">Controller</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">3.3.</span> <span class="nav-text">View</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#win-与-macOS"><span class="nav-number">4.</span> <span class="nav-text">win 与 macOS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XCode标记"><span class="nav-number">5.</span> <span class="nav-text">XCode标记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分组导航标记"><span class="nav-number">5.1.</span> <span class="nav-text">分组导航标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完成列表-TODOlist"><span class="nav-number">5.2.</span> <span class="nav-text">未完成列表 TODOlist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标示处代码提示"><span class="nav-number">5.3.</span> <span class="nav-text">标示处代码提示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XCode-快捷键"><span class="nav-number">6.</span> <span class="nav-text">XCode 快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览view"><span class="nav-number">6.1.</span> <span class="nav-text">浏览view</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本区"><span class="nav-number">6.2.</span> <span class="nav-text">文本区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行与调试"><span class="nav-number">6.3.</span> <span class="nav-text">运行与调试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IOS快捷方式"><span class="nav-number">7.</span> <span class="nav-text">IOS快捷方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#storyboard-UI快捷插入Action响应代码"><span class="nav-number">7.1.</span> <span class="nav-text">storyboard UI快捷插入Action响应代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一"><span class="nav-number">7.1.1.</span> <span class="nav-text">方式一</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同时重命名代码区与storyboard中同一变量-方法"><span class="nav-number">7.2.</span> <span class="nav-text">同时重命名代码区与storyboard中同一变量/方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bug"><span class="nav-number">8.</span> <span class="nav-text">bug</span></a></li></ol></div>
             
 
           </div>
@@ -818,7 +822,7 @@
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">215.1k</span> 
+    <span title="本站总字数">215.2k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
