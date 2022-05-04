@@ -561,7 +561,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  118 字
+                  803 字
                 </span>
               
 
@@ -577,7 +577,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -599,52 +599,7 @@
 
       
         
-          <h1 id="奇特标识"><a href="#奇特标识" class="headerlink" title="奇特标识"></a>奇特标识</h1><h2 id><a href="#" class="headerlink" title="?"></a>?</h2><h2 id="-1"><a href="#-1" class="headerlink" title="??"></a>??</h2><ol>
-<li><p>双问号的意思是，判断前面的表达式的值为nil。否为前面的表达式的值，是为后面的值</p>
-</li>
-<li><p>当值为0时，是不走后面的值的</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//类似三元运算符</span></span><br><span class="line"><span class="keyword">return</span> emoji[card.identifier] ?? <span class="string">"?"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="-2"><a href="#-2" class="headerlink" title="!"></a>!</h2><p>无须初始化</p>
-<h2 id="-3"><a href="#-3" class="headerlink" title="_"></a>_</h2><p>忽略</p>
-<h2 id="nil"><a href="#nil" class="headerlink" title="nil"></a>nil</h2><p>表示未设置的选项</p>
-<h1 id="win-与-macOS"><a href="#win-与-macOS" class="headerlink" title="win 与 macOS"></a>win 与 macOS</h1><table>
-<thead>
-<tr>
-<th>苹果键盘</th>
-<th>苹果符号</th>
-<th>对应window键盘</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Cammand</td>
-<td>⌘</td>
-<td>win键</td>
-</tr>
-<tr>
-<td>Option</td>
-<td>⌥</td>
-<td>alt键</td>
-</tr>
-<tr>
-<td>Control</td>
-<td>^</td>
-<td>ctrl键</td>
-</tr>
-<tr>
-<td>Shift</td>
-<td>⇧</td>
-<td>Shift键</td>
-</tr>
-<tr>
-<td>Caps Lock</td>
-<td>⇪ 或者 . 中/英</td>
-<td>Caps Lock键</td>
-</tr>
-</tbody>
-</table>
+          <h1 id="CountableRange"><a href="#CountableRange" class="headerlink" title="CountableRange"></a>CountableRange</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// CountableClosedRange: [0,2] 可数的闭区间</span></span><br><span class="line"><span class="keyword">let</span> rangea = <span class="number">0</span>...<span class="number">2</span> </span><br><span class="line"><span class="comment">// CountableRange: [0,2) 可数的开区间</span></span><br><span class="line"><span class="keyword">let</span> rangeb = <span class="number">0</span>..&lt;<span class="number">2</span></span><br><span class="line"><span class="comment">// ClosedRange: [0.1,2.1] 不可数的闭区间</span></span><br><span class="line"><span class="keyword">let</span> rangec = <span class="number">0.1</span>...<span class="number">2.1</span></span><br><span class="line"><span class="comment">// Range: [0.1,2.1) 不可数的开区间</span></span><br><span class="line"><span class="keyword">let</span> ranged = <span class="number">0.1</span>..&lt;<span class="number">2.1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//可数区间能直接for循环</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...<span class="number">10</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//不可数区间不能直接for循环，需要利用stride创建可数范围</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">stride</span>(from:<span class="number">0.5</span>, through:<span class="number">15.25</span>, by:<span class="number">0.3</span>)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/6cb05388/#more" rel="contents">
@@ -2349,7 +2304,7 @@ MVC设计模式Modelmodel 代表应用
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">215.2k</span> 
+    <span title="本站总字数">215.8k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
