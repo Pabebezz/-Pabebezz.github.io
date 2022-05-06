@@ -561,7 +561,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2k 字
+                  3k 字
                 </span>
               
 
@@ -577,7 +577,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9 分钟
+                  13 分钟
                 </span>
               
             </div>
@@ -599,7 +599,8 @@
 
       
         
-          <h1 id="CountableRange"><a href="#CountableRange" class="headerlink" title="CountableRange"></a>CountableRange</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// CountableClosedRange: [0,2] 可数的闭区间</span></span><br><span class="line"><span class="keyword">let</span> rangea = <span class="number">0</span>...<span class="number">2</span> </span><br><span class="line"><span class="comment">// CountableRange: [0,2) 可数的开区间</span></span><br><span class="line"><span class="keyword">let</span> rangeb = <span class="number">0</span>..&lt;<span class="number">2</span></span><br><span class="line"><span class="comment">// ClosedRange: [0.1,2.1] 不可数的闭区间</span></span><br><span class="line"><span class="keyword">let</span> rangec = <span class="number">0.1</span>...<span class="number">2.1</span></span><br><span class="line"><span class="comment">// Range: [0.1,2.1) 不可数的开区间</span></span><br><span class="line"><span class="keyword">let</span> ranged = <span class="number">0.1</span>..&lt;<span class="number">2.1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//可数区间能直接for循环</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...<span class="number">10</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//不可数区间不能直接for循环，需要利用stride创建可数范围</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">stride</span>(from:<span class="number">0.5</span>, through:<span class="number">15.25</span>, by:<span class="number">0.3</span>)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h1 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a>Swift</h1><p>支持“面向对象编程”或者“Functional 编程”【利用generics和extensions（default implementations）-》结合protocol】</p>
+<h1 id="CountableRange"><a href="#CountableRange" class="headerlink" title="CountableRange"></a>CountableRange</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// CountableClosedRange: [0,2] 可数的闭区间</span></span><br><span class="line"><span class="keyword">let</span> rangea = <span class="number">0</span>...<span class="number">2</span> </span><br><span class="line"><span class="comment">// CountableRange: [0,2) 可数的开区间</span></span><br><span class="line"><span class="keyword">let</span> rangeb = <span class="number">0</span>..&lt;<span class="number">2</span></span><br><span class="line"><span class="comment">// ClosedRange: [0.1,2.1] 不可数的闭区间</span></span><br><span class="line"><span class="keyword">let</span> rangec = <span class="number">0.1</span>...<span class="number">2.1</span></span><br><span class="line"><span class="comment">// Range: [0.1,2.1) 不可数的开区间</span></span><br><span class="line"><span class="keyword">let</span> ranged = <span class="number">0.1</span>..&lt;<span class="number">2.1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//可数区间能直接for循环</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...<span class="number">10</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//不可数区间不能直接for循环，需要利用stride创建可数范围</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">stride</span>(from:<span class="number">0.5</span>, through:<span class="number">15.25</span>, by:<span class="number">0.3</span>)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/6cb05388/#more" rel="contents">
@@ -1678,7 +1679,7 @@ MVC设计模式Modelmodel 代表应用
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  13.1k 字
+                  13.3k 字
                 </span>
               
 
@@ -1694,7 +1695,7 @@ MVC设计模式Modelmodel 代表应用
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  50 分钟
+                  51 分钟
                 </span>
               
             </div>
@@ -2304,7 +2305,7 @@ MVC设计模式Modelmodel 代表应用
     
       <span class="post-meta-item-text">本站总字数&#58;</span>
     
-    <span title="本站总字数">217.4k</span> 
+    <span title="本站总字数">218.6k</span> 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-divider">|</span>
