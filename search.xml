@@ -32,7 +32,7 @@
   <entry>
     <title><![CDATA[论文所需合集]]></title>
     <url>%2Farticle%2Fff7cf303%2F</url>
-    <content type="text"><![CDATA[查重https://www.paperyy.cn/member_new/thesis/post.aspx （paperyy每天11:11~11:22至尊版查重） https://mp.weixin.qq.com/s/d8-NwLLaIrRrxAH7W0IsfQ （学信网联合万方，应届生有一次免费查重机会） 排版https://blog.csdn.net/qq_44486550/article/details/107330656 （word公式和中文 行间距过大）https://jingyan.baidu.com/article/6079ad0ee85a7328fe86db4a.html （章节标号）https://blog.csdn.net/weixin_40446557/article/details/106119885（插图索引）https://blog.csdn.net/CV_Jason/article/details/86498472（引用参考文献）https://blog.csdn.net/zaishuiyifangxym/article/details/106736148（引用多篇参考文献）https://blog.csdn.net/weixin_44499266/article/details/91161158 （PDF左侧导航书签显示目录）]]></content>
+    <content type="text"><![CDATA[查重https://www.paperyy.cn/member_new/thesis/post.aspx （paperyy每天11:11~11:22至尊版查重） https://mp.weixin.qq.com/s/d8-NwLLaIrRrxAH7W0IsfQ （学信网联合万方，应届生有一次免费查重机会） 排版 （word公式和中文 行间距过大）（章节标号）（插图索引）（引用参考文献）（引用多篇参考文献）（PDF左侧导航书签显示目录） 更新目录、插入索引、参考文献参考文献中有变动，中间插入、删除文献后导致编号变化时，如果只更新单个编号，则选中该编号并点击右键更新域，这时编号自动更新全部更新的话，CtrI+A全选文章内容， F9更新， 文章中的编号即可统一更新， 与参考文献相对应。 1引用和参考文献是匹配的2当参考文献不需要时，删除参考文献，参考文献序号发生变化，与原文引用不匹配， 全局更新后会更新引用序号，删除的参考文献对应的引文会被标记找不到参考文献。3当参考文献序号调整的时候，全局更新后引文序号也将进行调整。4当引文顺序进行调整后，全局更新会导致引文错乱，一定要先调整参考文献顺序，再全局更新。]]></content>
   </entry>
   <entry>
     <title><![CDATA[安全设置手段]]></title>
